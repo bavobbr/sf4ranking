@@ -1,0 +1,23 @@
+<Context>
+    <Resource
+            name="jdbc/mydb"
+            auth="Container"
+            type="javax.sql.DataSource"
+
+            url="jdbc:${DATABASE_URL_MYDB}"
+            username="${DATABASE_USERNAME_MYDB}"
+            password="${DATABASE_PASSWORD_MYDB}"
+
+            driverClassName="com.mysql.jdbc.Driver"
+
+            maxActive="20"
+            maxIdle="1"
+            maxWait="10000"
+            removeAbandoned="true"
+            removeAbandonedTimeout="60"
+            logAbandoned="true"
+
+            validationQuery="SELECT 1"
+            testOnBorrow="true"
+            />
+</Context>
