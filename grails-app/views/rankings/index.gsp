@@ -51,7 +51,7 @@
 
     </table></div>
 <div id="pagination">
-<g:paginate total="${total}" controller="rankings" action="index" max="50" params="[country:params.country]"/>
+<g:paginate total="${total}" controller="rankings" action="index" max="30" params="[country:params.country]"/>
 </div>
 
 <div class="panel panel-info">

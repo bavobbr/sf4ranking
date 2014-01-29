@@ -11,7 +11,7 @@ class RankingsController
     def index()
     {
         if (!params.offset) params.offset = 0
-        if (!params.max) params.max = 50
+        if (!params.max) params.max = 30
         boolean filtered = (params.country && params.country != "any")? true : false
         def query = Player.where {
             if (params.country && params.country != "any") {

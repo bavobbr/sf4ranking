@@ -82,105 +82,104 @@
 
 
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-    <g:if test="${session.user != null}">
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><g:link action="index" controller="rankings">Ranking</g:link></li>
-          <li><g:link action="tournaments" controller="rankings">Tournaments</g:link></li>
-          <li><g:link action="index" controller="about">How it works</g:link></li>
-          <li><g:link action="index" controller="admin">[Actions]</g:link></li>
-          <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
-          <li><g:link action="index" controller="player">[Players]</g:link></li>
-          <li><g:link action="index" controller="result">[Results]</g:link></li>
-          <li><g:link action="index" controller="user">[User]</g:link></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </g:if>
-    <g:else>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><g:link action="index" controller="rankings">Ranking</g:link></li>
-          <li><g:link action="tournaments" controller="rankings">Tournaments</g:link></li>
-          <li><g:link action="index" controller="about">How it works</g:link></li>
-          <li><g:link action="index" controller="admin">Admin</g:link></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </g:else>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><g:link action="index" controller="rankings">Ranking</g:link></li>
+        <li><g:link action="tournaments" controller="rankings">Tournaments</g:link></li>
+        <li><g:link action="index" controller="about">How it works</g:link></li>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input id="playerSearch" class="form-control" placeholder="player">
+          </div>
+        </form>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input id="tournamentSearch" class="form-control" placeholder="tournament">
+          </div>
+        </form>
+
+        <g:if test="${session.user != null}">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><g:link action="index" controller="admin">[Actions]</g:link></li>
+              <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
+              <li><g:link action="index" controller="player">[Players]</g:link></li>
+              <li><g:link action="index" controller="result">[Results]</g:link></li>
+              <li><g:link action="index" controller="user">[User]</g:link></li>
+            </ul>
+          </li>
+        </g:if>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
   </div>
 </nav>
 
-<div class="container">
 
+<div class="container">
   <div class="row">
 
     <div class="col-md-10">
-      <g:img dir="images" file="sf4_stage.jpg" class="img-responsive"/>
+      <g:img dir="images" file="sf4_stage2.jpg" class="img-responsive"/>
       <div class="starter-template">
         <g:layoutBody/>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Share</h3>
+          </div>
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-4">
+
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
+                <script>!function (d, s, id)
+                {
+                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                  if (!d.getElementById(id))
+                  {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }
+                }(document, 'script', 'twitter-wjs');</script>
+              </div>
+
+              <div class="col-md-4">
+                <a href="https://twitter.com/bavobbr" class="twitter-follow-button" data-show-count="false">Follow @bavobbr</a>
+                <script>!function (d, s, id)
+                {
+                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                  if (!d.getElementById(id))
+                  {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }
+                }(document, 'script', 'twitter-wjs');</script>
+              </div>
+
+              <div class="col-md-4">
+                <div class="fb-share-button" data-href="http://sf4ranking.bavobbr.eu.cloudbees.net/" data-type="button_count"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="footer">
         <p>Street Fighter 4 World Tournament Ranking &copy; Bavo Bruylandt 2013</p>
       </div>
     </div>
-
-    <div class="col-md-2">
-
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">Search</h3>
-        </div>
-
-        <div class="panel-body">
-          <div class="ui-widget">
-            <label for="playerSearch">Player:</label>
-            <input id="playerSearch" class="form-control" placeholder="name">
-          </div>
-
-          <div class="ui-widget">
-            <label for="tournamentSearch">Tournament:</label>
-            <input id="tournamentSearch" class="form-control" placeholder="name">
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">Share</h3>
-        </div>
-
-        <div class="panel-body">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
-          <script>!function (d, s, id)
-          {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id))
-            {
-              js = d.createElement(s);
-              js.id = id;
-              js.src = p + '://platform.twitter.com/widgets.js';
-              fjs.parentNode.insertBefore(js, fjs);
-            }
-          }(document, 'script', 'twitter-wjs');</script>
-          <a href="https://twitter.com/bavobbr" class="twitter-follow-button" data-show-count="false">Follow @bavobbr</a>
-          <script>!function (d, s, id)
-          {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id))
-            {
-              js = d.createElement(s);
-              js.id = id;
-              js.src = p + '://platform.twitter.com/widgets.js';
-              fjs.parentNode.insertBefore(js, fjs);
-            }
-          }(document, 'script', 'twitter-wjs');</script>
-
-          <div class="fb-share-button" data-href="http://sf4ranking.bavobbr.eu.cloudbees.net/" data-type="button_count"></div>
-        </div>
-      </div>
-    </div>
   </div>
+
 </div>
 
 <r:layoutResources/>
