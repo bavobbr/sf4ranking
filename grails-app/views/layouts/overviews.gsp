@@ -9,7 +9,6 @@
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
-  <link rel="stylesheet" href="${resource(dir: 'css', file: 'paginate.css')}" type="text/css">
   <style>
   .ui-autocomplete-loading {
     background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;

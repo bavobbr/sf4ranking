@@ -1,6 +1,7 @@
 package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
+import groovy.json.JsonSlurper
 
 @Transactional
 class RankingService
@@ -136,89 +137,37 @@ class RankingService
         return tournament
     }
 
-    void importFileData()
+    String importFileData()
     {
-        def dir = new File(RankingService.class.getResource("/data/").toURI())
-        dir.eachFile {File filename ->
-            Tournament tournament = null
-            String file = filename.text
-            log.info("Parsing file $filename")
-            file.eachLine {String line, index ->
-                log.info("Parsing line $line")
-                if (index == 0)
-                {
-                    def tokens = line.trim().tokenize("/")
-                    Date date = Date.parse("dd-MM-yyyy", tokens[0].trim())
-                    def tcc = tokens[1].trim() as CountryCode
-                    def tversion = tokens[2].trim() as Version
-                    def tvideos = null
-                    if (tokens.size() >= 4)
-                    {
-                        tvideos = tokens[3].trim().tokenize(" ")
-                    }
-                    log.info("version is $tversion")
-                    tournament = new Tournament(name: filename.name - ".txt", countryCode: tcc, date: date, weight: 1, game: tversion,
-                                                videos: tvideos)
-                    tournament.save()
-                }
-                else
-                {
+        if (Player.count() > 0 || Tournament.count() > 0) {
+            return "Delete data first, re-import works only on empty database"
+        }
+        def playerFile = new File(RankingService.class.getResource("/data/players.json").toURI())
+        def pdata = new JsonSlurper().parseText(playerFile.text)
+        pdata.each {
+            log.info "Saving player $it.name"
+            def cc = it.countryCode as CountryCode
+            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank)
+            p.save(failOnError: true)
+        }
 
-                    String pname = line.trim().tokenize("/").first().trim()
-                    String pchar = line.trim().tokenize("/").last().trim()
-                    Player p = Player.findByCodename(pname.toUpperCase())
-                    if (!p)
-                    {
-                        p = new Player(name: pname, skill: 0)
-                        log.info("Creating player $p using char $pchar")
-                        p.save(failOnError: true)
-                    }
-                    CharacterType ctype
-                    try
-                    {
-                        ctype = pchar.toUpperCase() as CharacterType
-                    }
-                    catch (e)
-                    {
-                        ctype = CharacterType.UNKNOWN
-                    }
-                    Result r = new Result(player: p, place: index, pcharacter: ctype, tournament: tournament)
-                    r.save(failOnError: true)
-                    tournament.addToResults(r)
-                }
+
+        def tournamentFile = new File(RankingService.class.getResource("/data/tournaments.json").toURI())
+        def tdata = new JsonSlurper().parseText(tournamentFile.text)
+        tdata.each {
+            log.info "Importing tournament $it.name"
+            CountryCode country = it.country as CountryCode
+            Version version = it.version as Version
+            Date date = Date.parse("dd-MM-yyyy", it.date as String)
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: 1)
+            it.players.each {
+                Player p = Player.findByCodename(it.player.toUpperCase())
+                CharacterType ctype = it.character as CharacterType
+                Result result = new Result(place: it.place, player: p, pcharacter: ctype)
+                tournament.addToResults(result)
             }
-
             tournament.save(failOnError: true)
-            log.info("Saved tournament " + tournament)
         }
-
-        String file = new File(RankingService.class.getResource("/skills.txt").toURI()).text
-        file.eachLine {
-            def tokens = it.tokenize("/")
-            def skill = tokens.first() as Integer
-            def code = tokens[1]
-            def cc = code == "-" ? null : code as CountryCode
-            def name = tokens[2].trim()
-            def pvideos = null
-            if (tokens.size() >= 4)
-            {
-                pvideos = tokens[3].trim().tokenize(" ")
-            }
-            log.info("Applying skill $skill to $name")
-            Player p = Player.findByCodename(name.toUpperCase())
-            if (p)
-            {
-                p.skill = skill
-                p.countryCode = cc
-                p.save(failOnError: true)
-                p.videos = pvideos
-            }
-            else
-            {
-                log.error(" Player with name $name could not be found")
-            }
-
-        }
-
+        return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings and ${Player.count()} players"
     }
 }

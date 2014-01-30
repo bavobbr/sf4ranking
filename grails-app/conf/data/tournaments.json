@@ -1,0 +1,6484 @@
+[
+    {
+        "version": "AE2012",
+        "date": "09-06-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Northwest Major 5",
+        "players": [
+            {
+                "place": 1,
+                "player": "Bokkin",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "XsK Samurai",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 4,
+                "player": "FineLikeWine49",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "Kineda",
+                "character": "AKUMA"
+            },
+            {
+                "place": 8,
+                "player": "Duncan",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-12-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Hadocon 4",
+        "players": [
+            {
+                "place": 1,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 2,
+                "player": "Julio",
+                "character": "YUN"
+            },
+            {
+                "place": 3,
+                "player": "Crizzle",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 5,
+                "player": "Kineda",
+                "character": "AKUMA"
+            },
+            {
+                "place": 6,
+                "player": "Noej",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 7,
+                "player": "Kurokiba",
+                "character": "DJ"
+            },
+            {
+                "place": 8,
+                "player": "Jesus",
+                "character": "ADON"
+            },
+            {
+                "place": 9,
+                "player": "TylerJ",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 10,
+                "player": "Kimo",
+                "character": "HAKAN"
+            },
+            {
+                "place": 11,
+                "player": "Yeb",
+                "character": "GEN"
+            },
+            {
+                "place": 12,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "30-06-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Godsgarden Gate",
+        "players": [
+            {
+                "place": 1,
+                "player": "Uryo",
+                "character": "VIPER"
+            },
+            {
+                "place": 2,
+                "player": "-6",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "Haitani",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "Taigaa",
+                "character": "YUN"
+            },
+            {
+                "place": 5,
+                "player": "Banbaban",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Youshikibi",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Taku@Ratio4",
+                "character": "BLANKA"
+            },
+            {
+                "place": 8,
+                "player": "Inbe",
+                "character": "GUY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "04-11-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Youmacon Battle Opera 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 3,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 5,
+                "player": "Slinkun",
+                "character": "GUILE"
+            },
+            {
+                "place": 6,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "HappyMedicine",
+                "character": "BISON"
+            },
+            {
+                "place": 8,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Playing2Win",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 10,
+                "player": "Buy Hungry Human",
+                "character": "RUFUS"
+            },
+            {
+                "place": 11,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 12,
+                "player": "Chad de Thunder",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 13,
+                "player": "MeanSaltine",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 14,
+                "player": "WeaponsLeft",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 15,
+                "player": "Noel Brown",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 16,
+                "player": "BAKA",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "06-05-2012",
+        "country": "US",
+        "videos": ["zMK_mPsag9g"],
+        "name": "Season Beatings Summer Slam",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "GOUKEN"
+            },
+            {
+                "place": 2,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 3,
+                "player": "Combofiend",
+                "character": "ONI"
+            },
+            {
+                "place": 4,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 6,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 7,
+                "player": "Banana Ken",
+                "character": "KEN"
+            },
+            {
+                "place": 8,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "27-05-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Mix Up Night 12",
+        "players": [
+            {
+                "place": 1,
+                "player": "Hurun",
+                "character": "SAKURA"
+            },
+            {
+                "place": 2,
+                "player": "dath",
+                "character": "VIPER"
+            },
+            {
+                "place": 3,
+                "player": "Dogura",
+                "character": "BISON"
+            },
+            {
+                "place": 4,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "Haitani",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "-6",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "Amiyu",
+                "character": "GEN"
+            },
+            {
+                "place": 8,
+                "player": "KojiKOG",
+                "character": "HAWK"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "21-07-2013",
+        "country": "US",
+        "videos": [],
+        "name": "VXG 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 4,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "DR Ray",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 8,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "17-06-2012",
+        "country": "SE",
+        "videos": [],
+        "name": "Dreamhack Energizer",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "Problem X",
+                "character": "SETH"
+            },
+            {
+                "place": 4,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
+                "player": "Taaha",
+                "character": "ABEL"
+            },
+            {
+                "place": 6,
+                "player": "Veggey",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "DRz_Yagami",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 8,
+                "player": "Gonza",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "20-05-2012",
+        "country": "CA",
+        "videos": [],
+        "name": "Toryuken 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "Snafoo",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 6,
+                "player": "Mooney",
+                "character": "GUY"
+            },
+            {
+                "place": 7,
+                "player": "Eric Hai",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Spiralguy",
+                "character": "FEI"
+            },
+            {
+                "place": 9,
+                "player": "Riceata",
+                "character": "BLANKA"
+            },
+            {
+                "place": 10,
+                "player": "JSMaster",
+                "character": "BALROG"
+            },
+            {
+                "place": 11,
+                "player": "JTN",
+                "character": "BISON"
+            },
+            {
+                "place": 12,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 13,
+                "player": "Jugg",
+                "character": "GUY"
+            },
+            {
+                "place": 14,
+                "player": "Rebelo",
+                "character": "GUILE"
+            },
+            {
+                "place": 15,
+                "player": "AK Heero",
+                "character": "AKUMA"
+            },
+            {
+                "place": 16,
+                "player": "BlueBlazer",
+                "character": "HAWK"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "08-09-2013",
+        "country": "BR",
+        "videos": [],
+        "name": "Treta Aftermath",
+        "players": [
+            {
+                "place": 1,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 2,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Keoma",
+                "character": "ABEL"
+            },
+            {
+                "place": 4,
+                "player": "Chuchu",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Kbot",
+                "character": "SETH"
+            },
+            {
+                "place": 6,
+                "player": "BahiaWong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Coju",
+                "character": "HAKAN"
+            },
+            {
+                "place": 8,
+                "player": "BrenoFight3rs",
+                "character": "RYU"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "13-10-2013",
+        "country": "AU",
+        "videos": ["Ui20lHMkMwM"],
+        "name": "Shadowloo Showdown 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 5,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "Shungoku Neurosis",
+                "character": "BISON"
+            },
+            {
+                "place": 8,
+                "player": "Xian",
+                "character": "GEN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "10-06-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Eastcoast Throwdown 4",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 4,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 6,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "Gridman",
+                "character": "VIPER"
+            },
+            {
+                "place": 8,
+                "player": "AquaSilk",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-08-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Summer Jam 7",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 3,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 6,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "Tampa Bison",
+                "character": "BISON"
+            },
+            {
+                "place": 8,
+                "player": "DemonHyo",
+                "character": "SETH"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "10-11-2013",
+        "country": "SG",
+        "videos": [],
+        "name": "Capcom Cup Asia Final",
+        "players": [
+            {
+                "place": 1,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 4,
+                "player": "Dakou",
+                "character": "KEN"
+            },
+            {
+                "place": 5,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 6,
+                "player": "Momochi",
+                "character": "CODY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-03-2013",
+        "country": "NL",
+        "videos": [],
+        "name": "Red Fight District 2",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 3,
+                "player": "Will2Pac",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "Cuongster",
+                "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "F-Word",
+                "character": "IBUKI"
+            },
+            {
+                "place": 6,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 7,
+                "player": "Fasoll",
+                "character": "IBUKI"
+            },
+            {
+                "place": 8,
+                "player": "MoMi",
+                "character": "FEI"
+            },
+            {
+                "place": 9,
+                "player": "Easyman",
+                "character": "RYU"
+            },
+            {
+                "place": 10,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 11,
+                "player": "DoomDomainn",
+                "character": "RYU"
+            },
+            {
+                "place": 12,
+                "player": "Sheva",
+                "character": "CODY"
+            },
+            {
+                "place": 13,
+                "player": "Kenpachi",
+                "character": "YUN"
+            },
+            {
+                "place": 14,
+                "player": "ChaozTheory",
+                "character": "BISON"
+            },
+            {
+                "place": 15,
+                "player": "Popi",
+                "character": "CAMMY"
+            },
+            {
+                "place": 16,
+                "player": "Emersion",
+                "character": "VEGA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "01-11-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Apex 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "DemonHyo",
+                "character": "SETH"
+            },
+            {
+                "place": 3,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 4,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 6,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "Meteo",
+                "character": "VEGA"
+            },
+            {
+                "place": 8,
+                "player": "Alex Smith",
+                "character": "ABEL"
+            },
+            {
+                "place": 9,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 10,
+                "player": "Gridman",
+                "character": "VIPER"
+            },
+            {
+                "place": 11,
+                "player": "CMX",
+                "character": "SAGAT"
+            },
+            {
+                "place": 12,
+                "player": "MMS Native",
+                "character": "HAWK"
+            },
+            {
+                "place": 13,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 14,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 15,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 16,
+                "player": "Spab Rog",
+                "character": "FUERTE"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "31-10-2012",
+        "country": "FR",
+        "videos": [],
+        "name": "SF 25th Paris",
+        "players": [
+            {
+                "place": 1,
+                "player": "Alioune",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Starnab",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Will2Pac",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 5,
+                "player": "Cuongster",
+                "character": "HONDA"
+            },
+            {
+                "place": 6,
+                "player": "Adone Stylz",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "TKO X Isoudw",
+                "character": "GUILE"
+            },
+            {
+                "place": 8,
+                "player": "Saunic",
+                "character": "IBUKI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "08-12-2013",
+        "country": "JP",
+        "videos": ["oO1RsP3_dsY"],
+        "name": "Topanga League 3",
+        "players": [
+            {
+                "place": 1,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 2,
+                "player": "wao",
+                "character": "ONI"
+            },
+            {
+                "place": 3,
+                "player": "Momochi",
+                "character": "KEN"
+            },
+            {
+                "place": 4,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 5,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 6,
+                "player": "Michael-tan",
+                "character": "KEN"
+            },
+            {
+                "place": 7,
+                "player": "Uryo",
+                "character": "VIPER"
+            },
+            {
+                "place": 8,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 9,
+                "player": "Dashio",
+                "character": "SETH"
+            },
+            {
+                "place": 10,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 11,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 12,
+                "player": "Mago",
+                "character": "FEI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "07-04-2013",
+        "country": "CA",
+        "videos": [],
+        "name": "April Duels 2",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 4,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "20-10-2013",
+        "country": "KR",
+        "videos": [],
+        "name": "Capcom Cup Qualifier Korea",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "RYU"
+            },
+            {
+                "place": 2,
+                "player": "Momochi",
+                "character": "KEN"
+            },
+            {
+                "place": 3,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 4,
+                "player": "M. Lizard",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "DBKoopa",
+                "character": "YUN"
+            },
+            {
+                "place": 6,
+                "player": "BIGDANMUL",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 7,
+                "player": "Kim Legend",
+                "character": "BLANKA"
+            },
+            {
+                "place": 8,
+                "player": "hydeBUFFY",
+                "character": "ADON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "30-06-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Topanga League 2 B",
+        "players": [
+            {
+                "place": 1,
+                "player": "Eita",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "YHC-Mochi",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 3,
+                "player": "Naruo",
+                "character": "ERYU"
+            },
+            {
+                "place": 4,
+                "player": "Kyabetsu",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Michael-tan",
+                "character": "KEN"
+            },
+            {
+                "place": 6,
+                "player": "Pamyu",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "Machabo",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Dogura",
+                "character": "BISON"
+            },
+            {
+                "place": 9,
+                "player": "Sasaki",
+                "character": "CODY"
+            },
+            {
+                "place": 10,
+                "player": "Banbaban",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "-6",
+                "character": "AKUMA"
+            },
+            {
+                "place": 12,
+                "player": "VER",
+                "character": "GOUKEN"
+            },
+            {
+                "place": 13,
+                "player": "Dashio",
+                "character": "SETH"
+            },
+            {
+                "place": 14,
+                "player": "Juso",
+                "character": "SAKURA"
+            },
+            {
+                "place": 15,
+                "player": "Ojisan Boy",
+                "character": "ABEL"
+            },
+            {
+                "place": 16,
+                "player": "Yazu",
+                "character": "GUILE"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "28-04-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Norcal 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 3,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 8,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 9,
+                "player": "fLoE",
+                "character": "RUFUS"
+            },
+            {
+                "place": 10,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 11,
+                "player": "Julio",
+                "character": "YUN"
+            },
+            {
+                "place": 12,
+                "player": "Marq Teddy",
+                "character": "GUY"
+            },
+            {
+                "place": 13,
+                "player": "Chris",
+                "character": "KEN"
+            },
+            {
+                "place": 14,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 15,
+                "player": "Hsien Chang",
+                "character": "YUN"
+            },
+            {
+                "place": 16,
+                "player": "LPN",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "30-11-2013",
+        "country": "CN",
+        "videos": [],
+        "name": "WCG 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Chuan",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 6,
+                "player": "Darlan",
+                "character": "RYU"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "26-02-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Topanga League 1",
+        "players": [
+            {
+                "place": 1,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 2,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 3,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Kazunoko",
+                "character": "SETH"
+            },
+            {
+                "place": 6,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 10,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 11,
+                "player": "Kindevu",
+                "character": "CAMMY"
+            },
+            {
+                "place": 12,
+                "player": "RF",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "14-07-2013",
+        "country": "US",
+        "videos": ["CN72u1K8Cv0"],
+        "name": "EVO 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 4,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 5,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 6,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 7,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 8,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 10,
+                "player": "Dakou",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "Poongko",
+                "character": "SETH"
+            },
+            {
+                "place": 12,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 13,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 14,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 15,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 16,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "23-02-2012",
+        "country": "FR",
+        "videos": [],
+        "name": "Shadowloo EU Qualifier",
+        "players": [
+            {
+                "place": 1,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 2,
+                "player": "YouGenius",
+                "character": "VEGA"
+            },
+            {
+                "place": 3,
+                "player": "Starnab",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Perplex",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "DoomDomainn",
+                "character": "RYU"
+            },
+            {
+                "place": 6,
+                "player": "Phenix",
+                "character": "HAWK"
+            },
+            {
+                "place": 7,
+                "player": "Gamein",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Will2Pac",
+                "character": "VIPER"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "03-03-2013",
+        "country": "FR",
+        "videos": [],
+        "name": "WGC 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Poongko",
+                "character": "SETH"
+            },
+            {
+                "place": 5,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 6,
+                "player": "Andreas",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Gagapa",
+                "character": "BISON"
+            },
+            {
+                "place": 8,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "28-07-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Austin SF25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "HappyMedicine",
+                "character": "BISON"
+            },
+            {
+                "place": 3,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 5,
+                "player": "NashFan",
+                "character": "CHUN"
+            },
+            {
+                "place": 6,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Joe Love",
+                "character": "CODY"
+            },
+            {
+                "place": 8,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "06-05-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Topanga Asian League",
+        "players": [
+            {
+                "place": 1,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 2,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 7,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 8,
+                "player": "Poongko",
+                "character": "SETH"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "04-11-2013",
+        "country": "SG",
+        "videos": [],
+        "name": "Capcom Cup Qualifier Singapore",
+        "players": [
+            {
+                "place": 1,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Dakou",
+                "character": "KEN"
+            },
+            {
+                "place": 3,
+                "player": "Leslie",
+                "character": "SAGAT"
+            },
+            {
+                "place": 4,
+                "player": "Kaiser",
+                "character": "YUN"
+            },
+            {
+                "place": 5,
+                "player": "Dixon",
+                "character": "BALROG"
+            },
+            {
+                "place": 6,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Frazer",
+                "character": "JURI"
+            },
+            {
+                "place": 8,
+                "player": "Random King",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "20-01-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Socal 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Hugo101",
+                "character": "BISON"
+            },
+            {
+                "place": 3,
+                "player": "PR Balrog",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 7,
+                "player": "CJ Truth",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 10,
+                "player": "Keno",
+                "character": "BALROG"
+            },
+            {
+                "place": 11,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 12,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 13,
+                "player": "Marq Teddy",
+                "character": "GUY"
+            },
+            {
+                "place": 14,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 15,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 16,
+                "player": "Alex Jebailey",
+                "character": "BALROG"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "16-09-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Topanga League 2",
+        "players": [
+            {
+                "place": 1,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "sako",
+                "character": "IBUKI"
+            },
+            {
+                "place": 4,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 6,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 7,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 8,
+                "player": "YHC-Mochi",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 10,
+                "player": "Kyabetsu",
+                "character": "VIPER"
+            },
+            {
+                "place": 11,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 12,
+                "player": "Eita",
+                "character": "AKUMA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "23-02-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Shadowloo US Qualifier",
+        "players": [
+            {
+                "place": 1,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 2,
+                "player": "Marq Teddy",
+                "character": "GUY"
+            },
+            {
+                "place": 3,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "Chris",
+                "character": "KEN"
+            },
+            {
+                "place": 5,
+                "player": "Unchained",
+                "character": "CODY"
+            },
+            {
+                "place": 6,
+                "player": "Hugo101",
+                "character": "BISON"
+            },
+            {
+                "place": 7,
+                "player": "Brentt",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "Combojack",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "11-08-2012",
+        "country": "US",
+        "videos": [],
+        "name": "NYC SF25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 3,
+                "player": "AquaSilk",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 4,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 8,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 9,
+                "player": "HZY",
+                "character": "VIPER"
+            },
+            {
+                "place": 10,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 11,
+                "player": "Henry Cen",
+                "character": "HONDA"
+            },
+            {
+                "place": 12,
+                "player": "Arturo Sanchez",
+                "character": "ROSE"
+            },
+            {
+                "place": 13,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 14,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 15,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 16,
+                "player": "Chris Hu",
+                "character": "ONI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "28-10-2012",
+        "country": "CA",
+        "videos": [],
+        "name": "Canada Cup",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 8,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 10,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 11,
+                "player": "Riceata",
+                "character": "BLANKA"
+            },
+            {
+                "place": 12,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 13,
+                "player": "Cuongster",
+                "character": "HONDA"
+            },
+            {
+                "place": 14,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 15,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 16,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "03-06-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Northwest Major 4",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 3,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 4,
+                "player": "John Choi",
+                "character": "RYU"
+            },
+            {
+                "place": 5,
+                "player": "Hsien Chang",
+                "character": "YUN"
+            },
+            {
+                "place": 6,
+                "player": "801 Strider",
+                "character": "ABEL"
+            },
+            {
+                "place": 7,
+                "player": "Clim",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 8,
+                "player": "Lapchi",
+                "character": "BLANKA"
+            },
+            {
+                "place": 9,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 10,
+                "player": "HiHiPuffyamiyumi",
+                "character": "BISON"
+            },
+            {
+                "place": 11,
+                "player": "SBA Harrison",
+                "character": "CODY"
+            },
+            {
+                "place": 12,
+                "player": "Jason Cole",
+                "character": "DJ"
+            },
+            {
+                "place": 13,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 14,
+                "player": "Arthur",
+                "character": "HONDA"
+            },
+            {
+                "place": 15,
+                "player": "FineLikeWine49",
+                "character": "GUILE"
+            },
+            {
+                "place": 16,
+                "player": "Buktooth",
+                "character": "IBUKI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "26-08-2012",
+        "country": "US",
+        "videos": [],
+        "name": "GVN Summer Jam 6",
+        "players": [
+            {
+                "place": 1,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Gridman",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "Manny",
+                "character": "FUERTE"
+            },
+            {
+                "place": 6,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 8,
+                "player": "DragonGod",
+                "character": "IBUKI"
+            },
+            {
+                "place": 9,
+                "player": "Min",
+                "character": "HONDA"
+            },
+            {
+                "place": 10,
+                "player": "Flash Metroid",
+                "character": "GEN"
+            },
+            {
+                "place": 11,
+                "player": "Julian Robinson",
+                "character": "ROSE"
+            },
+            {
+                "place": 12,
+                "player": "WeirdoNeo",
+                "character": "JURI"
+            },
+            {
+                "place": 13,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 14,
+                "player": "Weaksauce",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 15,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 16,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "02-12-2012",
+        "country": "US",
+        "videos": [],
+        "name": "NEC 13",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "HappyMedicine",
+                "character": "BISON"
+            },
+            {
+                "place": 4,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 6,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "Flash Metroid",
+                "character": "GEN"
+            },
+            {
+                "place": 8,
+                "player": "L.I. Joe",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "WeirdoNeo",
+                "character": "JURI"
+            },
+            {
+                "place": 10,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 12,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 14,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "12-06-2012",
+        "country": "SG",
+        "videos": [],
+        "name": "Southeast Major 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Daigo Umehara",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Raymus",
+                "character": "VEGA"
+            },
+            {
+                "place": 5,
+                "player": "Rodney",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 6,
+                "player": "Dixon",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "Leslie",
+                "character": "SAGAT"
+            },
+            {
+                "place": 8,
+                "player": "Foxy",
+                "character": "DHALSIM"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "29-09-2013",
+        "country": "CA",
+        "videos": [],
+        "name": "Canada Cup 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 4,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Dakou",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 8,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 9,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 10,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 11,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 12,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 13,
+                "player": "Chaotix",
+                "character": "DUDLEY"
+            },
+            {
+                "place": 14,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 15,
+                "player": "Chris",
+                "character": "KEN"
+            },
+            {
+                "place": 16,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "03-11-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Youmacon Championship 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 2,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "MeanSaltine",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 4,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "HappyMedicine",
+                "character": "BISON"
+            },
+            {
+                "place": 6,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 7,
+                "player": "OctopusOnFire",
+                "character": "BLANKA"
+            },
+            {
+                "place": 8,
+                "player": "Playing2Win",
+                "character": "DHALSIM"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "20-10-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Japan SF25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 2,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Eita",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "Kyoku",
+                "character": "YANG"
+            },
+            {
+                "place": 6,
+                "player": "dath",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Kindou",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "-R-",
+                "character": "BALROG"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-08-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Starting Over 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "ACQUA",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "SuperSantarouMan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Nashikun",
+                "character": "JURI"
+            },
+            {
+                "place": 4,
+                "player": "NISHIKIN",
+                "character": "BLANKA"
+            },
+            {
+                "place": 5,
+                "player": "Shungoku Neurosis",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 6,
+                "player": "Reiketsu",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 7,
+                "player": "Shimosan",
+                "character": "YANG"
+            },
+            {
+                "place": 8,
+                "player": "Zangitan",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "26-05-2013",
+        "country": "US",
+        "videos": [],
+        "name": "UFGT 9",
+        "players": [
+            {
+                "place": 1,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 2,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 3,
+                "player": "CJ Truth",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "Flash Metroid",
+                "character": "GEN"
+            },
+            {
+                "place": 6,
+                "player": "AlucarD",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "Arturo Sanchez",
+                "character": "ROSE"
+            },
+            {
+                "place": 9,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 10,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 12,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 13,
+                "player": "MeanSaltine",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 14,
+                "player": "fLoE",
+                "character": "RUFUS"
+            },
+            {
+                "place": 15,
+                "player": "iRedman",
+                "character": "GUY"
+            },
+            {
+                "place": 16,
+                "player": "BAKA",
+                "character": "FEI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "14-10-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Season Beatings Ascension",
+        "players": [
+            {
+                "place": 1,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 4,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 8,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 9,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 10,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 11,
+                "player": "Combofiend",
+                "character": "ONI"
+            },
+            {
+                "place": 12,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 13,
+                "player": "FC|Cardell",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 14,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 15,
+                "player": "AlucarD",
+                "character": "BALROG"
+            },
+            {
+                "place": 16,
+                "player": "Brennan K.",
+                "character": "RYU"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "28-08-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Arkansas Regional Knockouts 5",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "XI",
+                "character": "RYU"
+            },
+            {
+                "place": 4,
+                "player": "Arthur",
+                "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "Ranmasama",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Zohta",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "Good Meal Joe",
+                "character": "CODY"
+            },
+            {
+                "place": 8,
+                "player": "Crazyclown101",
+                "character": "HONDA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "13-04-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Spring Fighter 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 4,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
+                "player": "Insaynne",
+                "character": "BLANKA"
+            },
+            {
+                "place": 6,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "Manny Fuerte",
+                "character": "FUERTE"
+            },
+            {
+                "place": 8,
+                "player": "Glitch",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "27-10-2013",
+        "country": "JP",
+        "videos": ["nGVTlr-OY7Q"],
+        "name": "Topanga League 3 B",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dashio",
+                "character": "SETH"
+            },
+            {
+                "place": 2,
+                "player": "wao",
+                "character": "ONI"
+            },
+            {
+                "place": 3,
+                "player": "Michael-tan",
+                "character": "KEN"
+            },
+            {
+                "place": 4,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "NISHIKIN",
+                "character": "BLANKA"
+            },
+            {
+                "place": 7,
+                "player": "Kyoku",
+                "character": "YANG"
+            },
+            {
+                "place": 8,
+                "player": "Youshikibi",
+                "character": "CAMMY"
+            },
+            {
+                "place": 9,
+                "player": "Inko",
+                "character": "RUFUS"
+            },
+            {
+                "place": 10,
+                "player": "Sasaki",
+                "character": "CODY"
+            },
+            {
+                "place": 11,
+                "player": "Tsuna",
+                "character": "JURI"
+            },
+            {
+                "place": 12,
+                "player": "Matsugoro",
+                "character": "DUDLEY"
+            },
+            {
+                "place": 13,
+                "player": "KojiKOG",
+                "character": "HAWK"
+            },
+            {
+                "place": 14,
+                "player": "Kyabetsu",
+                "character": "VIPER"
+            },
+            {
+                "place": 15,
+                "player": "Eita",
+                "character": "RYU"
+            },
+            {
+                "place": 16,
+                "player": "Naruo",
+                "character": "ERYU"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "30-11-2013",
+        "country": "SE",
+        "videos": [],
+        "name": "Dreamhack Winter 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 2,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 4,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "I'm Still Da Daddy",
+                "character": "GUILE"
+            },
+            {
+                "place": 7,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 8,
+                "player": "Kusanagi",
+                "character": "SETH"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-11-2013",
+        "country": "TH",
+        "videos": ["llmrjVbvjB0"],
+        "name": "Thaiger Uppercut 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 3,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 4,
+                "player": "sako",
+                "character": "ERYU"
+            },
+            {
+                "place": 5,
+                "player": "SuperSantarouMan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "Sekiganryu",
+                "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Danhill",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-02-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Winter Brawl 7",
+        "players": [
+            {
+                "place": 1,
+                "player": "PR Balrog",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "Vivaldi",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "Rico Suave",
+                "character": "ABEL"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-08-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Shadowloo Showdown Qualifier JP",
+        "players": [
+            {
+                "place": 1,
+                "player": "Y.",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Reiketsu",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 3,
+                "player": "NISHIKIN",
+                "character": "BLANKA"
+            },
+            {
+                "place": 4,
+                "player": "Gachikun",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
+                "player": "ACQUA",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Charisma",
+                "character": "ADON"
+            },
+            {
+                "place": 7,
+                "player": "Younashi",
+                "character": "JURI"
+            },
+            {
+                "place": 8,
+                "player": "SuperSantarouMan",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "23-06-2013",
+        "country": "JP",
+        "videos": [],
+        "name": "Mix Up Night 13",
+        "players": [
+            {
+                "place": 1,
+                "player": "sako",
+                "character": "ERYU"
+            },
+            {
+                "place": 2,
+                "player": "Uryo",
+                "character": "VIPER"
+            },
+            {
+                "place": 3,
+                "player": "Amiyu",
+                "character": "GEN"
+            },
+            {
+                "place": 4,
+                "player": "Noriyasu",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
+                "player": "Harideshi",
+                "character": "BISON"
+            },
+            {
+                "place": 6,
+                "player": "Haitani",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "KojiKOG",
+                "character": "HAWK"
+            },
+            {
+                "place": 8,
+                "player": "Rokkun",
+                "character": "SETH"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "19-05-2013",
+        "country": "US",
+        "videos": [],
+        "name": "East Coast Throwdown 5",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Gridman",
+                "character": "VIPER"
+            },
+            {
+                "place": 3,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 4,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "WeirdoNeo",
+                "character": "JURI"
+            },
+            {
+                "place": 6,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Arturo Sanchez",
+                "character": "ROSE"
+            },
+            {
+                "place": 8,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "30-07-2013",
+        "country": "US",
+        "videos": [],
+        "name": "CEO 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Momochi",
+                "character": "KEN"
+            },
+            {
+                "place": 3,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 5,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 8,
+                "player": "Ramen Addict",
+                "character": "ADON"
+            },
+            {
+                "place": 9,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 10,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 11,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 12,
+                "player": "Snafoo",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 13,
+                "player": "Tampa Bison",
+                "character": "BISON"
+            },
+            {
+                "place": 14,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 15,
+                "player": "Dark Jiewa",
+                "character": "KEN"
+            },
+            {
+                "place": 16,
+                "player": "Rico Suave",
+                "character": "ABEL"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "15-06-2013",
+        "country": "SE",
+        "videos": [],
+        "name": "Dreamhack Summer 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Popi",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Infiltration",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 4,
+                "player": "Ettelman",
+                "character": "ADON"
+            },
+            {
+                "place": 5,
+                "player": "F-Word",
+                "character": "IBUKI"
+            },
+            {
+                "place": 6,
+                "player": "Problem X",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Ixion",
+                "character": "DAN"
+            },
+            {
+                "place": 8,
+                "player": "Emersion",
+                "character": "VEGA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-08-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Lanhammer 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 3,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 4,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 6,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "El Cubano Loco",
+                "character": "VEGA"
+            },
+            {
+                "place": 8,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "Kineda",
+                "character": "AKUMA"
+            },
+            {
+                "place": 10,
+                "player": "XsK Samurai",
+                "character": "RYU"
+            },
+            {
+                "place": 11,
+                "player": "Brass",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 12,
+                "player": "Julio",
+                "character": "YUN"
+            },
+            {
+                "place": 13,
+                "player": "Rom",
+                "character": "YANG"
+            },
+            {
+                "place": 14,
+                "player": "Illiterate",
+                "character": "YANG"
+            },
+            {
+                "place": 15,
+                "player": "Boba Tapioca",
+                "character": "FEI"
+            },
+            {
+                "place": 16,
+                "player": "UyuuPop",
+                "character": "GUY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "22-07-2013",
+        "country": "SG",
+        "videos": [],
+        "name": "Southeast Asia Major 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 2,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 3,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "GambleBoxer",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Leslie",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Penang@Chuan",
+                "character": "FEI"
+            },
+            {
+                "place": 10,
+                "player": "Ren",
+                "character": "IBUKI"
+            },
+            {
+                "place": 11,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 12,
+                "player": "Kaiser",
+                "character": "YUN"
+            },
+            {
+                "place": 13,
+                "player": "SuperSantarouMan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 14,
+                "player": "Itabashi Zangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 15,
+                "player": "Rockpon",
+                "character": "IBUKI"
+            },
+            {
+                "place": 16,
+                "player": "Tommy",
+                "character": "CHUN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "31-03-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Final Round 16",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 4,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 6,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 7,
+                "player": "XsK Samurai",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 9,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 10,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 11,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 12,
+                "player": "Druseph",
+                "character": "HONDA"
+            },
+            {
+                "place": 13,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 14,
+                "player": "Flash Metroid",
+                "character": "AKUMA"
+            },
+            {
+                "place": 15,
+                "player": "801 Strider",
+                "character": "ABEL"
+            },
+            {
+                "place": 16,
+                "player": "CJ Truth",
+                "character": "FEI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "14-04-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Texas Showdown 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 3,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
+                "player": "Integra",
+                "character": "KEN"
+            },
+            {
+                "place": 6,
+                "player": "Rain",
+                "character": "YUN"
+            },
+            {
+                "place": 7,
+                "player": "Foxy Brown",
+                "character": "ADON"
+            },
+            {
+                "place": 8,
+                "player": "FourWude",
+                "character": "AKUMA"
+            },
+            {
+                "place": 9,
+                "player": "Synx",
+                "character": "VIPER"
+            },
+            {
+                "place": 10,
+                "player": "AV Joe",
+                "character": "CODY"
+            },
+            {
+                "place": 11,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 12,
+                "player": "Hadoken6969",
+                "character": "RYU"
+            },
+            {
+                "place": 13,
+                "player": "Lone Star",
+                "character": "GUILE"
+            },
+            {
+                "place": 14,
+                "player": "Hammad",
+                "character": "FEI"
+            },
+            {
+                "place": 15,
+                "player": "PCutta",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 16,
+                "player": "Dandy Cheeks",
+                "character": "YANG"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "20-10-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Los Angeles SF25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 2,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 4,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 6,
+                "player": "ClakeyD",
+                "character": "IBUKI"
+            },
+            {
+                "place": 7,
+                "player": "Filipino Man",
+                "character": "ROSE"
+            },
+            {
+                "place": 8,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 9,
+                "player": "Chris",
+                "character": "KEN"
+            },
+            {
+                "place": 10,
+                "player": "Luken",
+                "character": "RYU"
+            },
+            {
+                "place": 11,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 12,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 13,
+                "player": "fLoE",
+                "character": "RUFUS"
+            },
+            {
+                "place": 14,
+                "player": "Flash Metroid",
+                "character": "GEN"
+            },
+            {
+                "place": 15,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 16,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "05-06-2013",
+        "country": "CA",
+        "videos": [],
+        "name": "Montreal Annual Tournament 10",
+        "players": [
+            {
+                "place": 1,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Rameo",
+                "character": "GUY"
+            },
+            {
+                "place": 3,
+                "player": "Ed Ma",
+                "character": "JURI"
+            },
+            {
+                "place": 4,
+                "player": "Money514",
+                "character": "GUY"
+            },
+            {
+                "place": 5,
+                "player": "Ital Dan",
+                "character": "ONI"
+            },
+            {
+                "place": 6,
+                "player": "JimmyFierce",
+                "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Chinta",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 8,
+                "player": "Karamba",
+                "character": "GUY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "17-07-2012",
+        "country": "US",
+        "videos": [],
+        "name": "CEO 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 3,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 5,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 6,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 8,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 10,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 11,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 12,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 13,
+                "player": "West",
+                "character": "GEN"
+            },
+            {
+                "place": 14,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 15,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 16,
+                "player": "Combofiend",
+                "character": "ONI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "28-01-2013",
+        "country": "DE",
+        "videos": [],
+        "name": "Da Ultimate Crushing",
+        "players": [
+            {
+                "place": 1,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "MoMi",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Halibel",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "Demulant",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 6,
+                "player": "Gagapa",
+                "character": "BISON"
+            },
+            {
+                "place": 7,
+                "player": "Emersion",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 8,
+                "player": "DoomDomainn",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "04-11-2012",
+        "country": "FR",
+        "videos": [],
+        "name": "Master Series Europe",
+        "players": [
+            {
+                "place": 1,
+                "player": "Problem X",
+                "character": "SETH"
+            },
+            {
+                "place": 2,
+                "player": "Alioune",
+                "character": "CAMMY"
+            },
+            {
+                "place": 3,
+                "player": "Andreas",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "Phenix",
+                "character": "HAWK"
+            },
+            {
+                "place": 5,
+                "player": "Starnab",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "Easyman",
+                "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Skatan",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "Phenom",
+                "character": "BISON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "27-10-2013",
+        "country": "TW",
+        "videos": [],
+        "name": "Capcom Cup Qualifier Taiwan",
+        "players": [
+            {
+                "place": 1,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 2,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "RB",
+                "character": "GUY"
+            },
+            {
+                "place": 4,
+                "player": "Tomy Huang",
+                "character": "HAWK"
+            },
+            {
+                "place": 5,
+                "player": "ET",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "Rockpon",
+                "character": "IBUKI"
+            },
+            {
+                "place": 7,
+                "player": "Yoro",
+                "character": "ADON"
+            },
+            {
+                "place": 8,
+                "player": "Zalk",
+                "character": "ONI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "14-10-2012",
+        "country": "CA",
+        "videos": [],
+        "name": "T13 Toronto Series",
+        "players": [
+            {
+                "place": 1,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Heero",
+                "character": "AKUMA"
+            },
+            {
+                "place": 4,
+                "player": "Snafoo",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 6,
+                "player": "Eric Hai",
+                "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Shine",
+                "character": "GUILE"
+            },
+            {
+                "place": 8,
+                "player": "JimmyFierce",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "CD Jr.",
+                "character": "CAMMY"
+            },
+            {
+                "place": 10,
+                "player": "Broshadian",
+                "character": "ABEL"
+            },
+            {
+                "place": 11,
+                "player": "FreddyLoco",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 12,
+                "player": "LedHendrix",
+                "character": "ABEL"
+            },
+            {
+                "place": 13,
+                "player": "BlueBlazer",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 14,
+                "player": "Tactix",
+                "character": "GOUKEN"
+            },
+            {
+                "place": 15,
+                "player": "Kiras",
+                "character": "KEN"
+            },
+            {
+                "place": 16,
+                "player": "JTN",
+                "character": "SAKURA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "01-12-2012",
+        "country": "GB",
+        "videos": [],
+        "name": "SF 25th UK",
+        "players": [
+            {
+                "place": 1,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 2,
+                "player": "Momochi",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "Ryan Hart",
+                "character": "YUN"
+            },
+            {
+                "place": 4,
+                "player": "I'm Still Da Daddy",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Yota",
+                "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "Taaha",
+                "character": "ABEL"
+            },
+            {
+                "place": 8,
+                "player": "Andreas",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "26-08-2012",
+        "country": "TW",
+        "videos": [],
+        "name": "Taiwan SF25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "Poongko",
+                "character": "SETH"
+            },
+            {
+                "place": 4,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Gameouttt",
+                "character": "GUILE"
+            },
+            {
+                "place": 6,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            },
+            {
+                "place": 7,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 8,
+                "player": "Yoro",
+                "character": "ADON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "05-05-2013",
+        "country": "CA",
+        "videos": [],
+        "name": "Toryuken 2",
+        "players": [
+            {
+                "place": 1,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 2,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Jozhear",
+                "character": "VEGA"
+            },
+            {
+                "place": 6,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Money514",
+                "character": "GUY"
+            },
+            {
+                "place": 8,
+                "player": "Snafoo",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "Rameo",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 10,
+                "player": "Shine",
+                "character": "GUILE"
+            },
+            {
+                "place": 11,
+                "player": "JimmyFierce",
+                "character": "RYU"
+            },
+            {
+                "place": 12,
+                "player": "Rebelo",
+                "character": "GUILE"
+            },
+            {
+                "place": 13,
+                "player": "Heero",
+                "character": "AKUMA"
+            },
+            {
+                "place": 14,
+                "player": "Rami",
+                "character": "AKUMA"
+            },
+            {
+                "place": 15,
+                "player": "BlueBlazer",
+                "character": "HAWK"
+            },
+            {
+                "place": 16,
+                "player": "Tactix",
+                "character": "GOUKEN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "21-09-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Capcom Cup TGS",
+        "players": [
+            {
+                "place": 1,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 2,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Juso",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "ChocoBlanka",
+                "character": "BLANKA"
+            },
+            {
+                "place": 6,
+                "player": "Machabo",
+                "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 8,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Kyabetsu",
+                "character": "VIPER"
+            },
+            {
+                "place": 10,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 11,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 12,
+                "player": "Eita",
+                "character": "RYU"
+            },
+            {
+                "place": 13,
+                "player": "Momochi",
+                "character": "KEN"
+            },
+            {
+                "place": 14,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 15,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 16,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "06-07-2012",
+        "country": "US",
+        "videos": ["9GFvZJ2eW68", "hPBV4pxPy68"],
+        "name": "EVO 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 4,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 6,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            },
+            {
+                "place": 7,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 8,
+                "player": "Poongko",
+                "character": "SETH"
+            },
+            {
+                "place": 9,
+                "player": "Kindevu",
+                "character": "CAMMY"
+            },
+            {
+                "place": 10,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 11,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 12,
+                "player": "Dogura",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 14,
+                "player": "Kyabetsu",
+                "character": "VIPER"
+            },
+            {
+                "place": 15,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 16,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "08-12-2012",
+        "country": "US",
+        "videos": [],
+        "name": "SF 25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Daigo Umehara",
+                "character": "RYU"
+            },
+            {
+                "place": 3,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 6,
+                "player": "SnakeEyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "Alioune",
+                "character": "CAMMY"
+            },
+            {
+                "place": 10,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 11,
+                "player": "Problem X",
+                "character": "SETH"
+            },
+            {
+                "place": 12,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 13,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 14,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 15,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 16,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "15-09-2013",
+        "country": "US",
+        "videos": [],
+        "name": "The Fall Classic",
+        "players": [
+            {
+                "place": 1,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 2,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 4,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 6,
+                "player": "Poem",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 8,
+                "player": "Foomy",
+                "character": "SAKURA"
+            },
+            {
+                "place": 9,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 10,
+                "player": "Rico Suave",
+                "character": "ABEL"
+            },
+            {
+                "place": 11,
+                "player": "Kreymore",
+                "character": "GUY"
+            },
+            {
+                "place": 12,
+                "player": "Tampa Bison",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "Damascus",
+                "character": "IBUKI"
+            },
+            {
+                "place": 14,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 15,
+                "player": "Insaynne",
+                "character": "BLANKA"
+            },
+            {
+                "place": 16,
+                "player": "Fuerte",
+                "character": "HONDA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "05-05-2012",
+        "country": "AU",
+        "videos": ["Ui20lHMkMwM"],
+        "name": "Shadowloo Showdown 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Eita",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Banbaban",
+                "character": "CAMMY"
+            },
+            {
+                "place": 3,
+                "player": "Shungoku Neurosis",
+                "character": "BISON"
+            },
+            {
+                "place": 4,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "Amiyu",
+                "character": "GEN"
+            },
+            {
+                "place": 6,
+                "player": "GamerBee",
+                "character": "ADON"
+            },
+            {
+                "place": 7,
+                "player": "Naruo",
+                "character": "ERYU"
+            },
+            {
+                "place": 8,
+                "player": "Dakou",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 10,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "KOK",
+                "character": "ERYU"
+            },
+            {
+                "place": 12,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 13,
+                "player": "Gachikun",
+                "character": "SAGAT"
+            },
+            {
+                "place": 14,
+                "player": "M. Lizard",
+                "character": "VIPER"
+            },
+            {
+                "place": 15,
+                "player": "Michael-tan",
+                "character": "KEN"
+            },
+            {
+                "place": 16,
+                "player": "EX Mamehara",
+                "character": "ADON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "13-10-2012",
+        "country": "BR",
+        "videos": [],
+        "name": "Brazil SF 25th",
+        "players": [
+            {
+                "place": 1,
+                "player": "BrenoFight3rs",
+                "character": "CAMMY"
+            },
+            {
+                "place": 2,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "Chuchu",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "House",
+                "character": "GEN"
+            },
+            {
+                "place": 5,
+                "player": "Ludo",
+                "character": "SAGAT"
+            },
+            {
+                "place": 6,
+                "player": "Sarda",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "LordxSaka",
+                "character": "AKUMA"
+            },
+            {
+                "place": 8,
+                "player": "Binop",
+                "character": "IBUKI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "15-12-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Hadocon 5",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 3,
+                "player": "UyuuPop",
+                "character": "GUY"
+            },
+            {
+                "place": 4,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 5,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Julio",
+                "character": "YUN"
+            },
+            {
+                "place": 7,
+                "player": "Hargi",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Kelvin Jeon",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 9,
+                "player": "Hoodaman",
+                "character": "HONDA"
+            },
+            {
+                "place": 10,
+                "player": "Mattypie",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 11,
+                "player": "Crizzle",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 12,
+                "player": "Kineda",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 13,
+                "player": "BSIDA",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 14,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 15,
+                "player": "bjUnchained",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 16,
+                "player": "Slompo",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "27-05-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Ultimate Fighting Game Tournament 8",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 4,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 6,
+                "player": "fLoE",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 8,
+                "player": "Juicebox",
+                "character": "ABEL"
+            },
+            {
+                "place": 9,
+                "player": "Antwan Ortiz",
+                "character": "BALROG"
+            },
+            {
+                "place": 10,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 11,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 12,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 13,
+                "player": "CJ Truth",
+                "character": "FEI"
+            },
+            {
+                "place": 14,
+                "player": "Yanu Cerda",
+                "character": "CAMMY"
+            },
+            {
+                "place": 15,
+                "player": "Big Marcus",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 16,
+                "player": "aks",
+                "character": "UNKNOWN"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "04-03-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Final Round 15",
+        "players": [
+            {
+                "place": 1,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 2,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "FourWude",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 6,
+                "player": "Ramen Addict",
+                "character": "ADON"
+            },
+            {
+                "place": 7,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "DBJoseph",
+                "character": "SAKURA"
+            },
+            {
+                "place": 9,
+                "player": "Combofiend",
+                "character": "ABEL"
+            },
+            {
+                "place": 10,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 11,
+                "player": "CJ Truth",
+                "character": "FEI"
+            },
+            {
+                "place": 12,
+                "player": "Nobody",
+                "character": "CAMMY"
+            },
+            {
+                "place": 13,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 14,
+                "player": "fLoE",
+                "character": "SAGAT"
+            },
+            {
+                "place": 15,
+                "player": "BoomCube",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 16,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "19-02-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Winter Brawl 6",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "ADON"
+            },
+            {
+                "place": 2,
+                "player": "Juicebox",
+                "character": "ABEL"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Gridman",
+                "character": "VIPER"
+            },
+            {
+                "place": 6,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 7,
+                "player": "Arturo Sanchez",
+                "character": "ROSE"
+            },
+            {
+                "place": 8,
+                "player": "Weaksauce",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Henry Cen",
+                "character": "HONDA"
+            },
+            {
+                "place": 10,
+                "player": "DemonHyo",
+                "character": "BLANKA"
+            },
+            {
+                "place": 11,
+                "player": "AquaSilk",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 12,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 13,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 14,
+                "player": "Manny",
+                "character": "FUERTE"
+            },
+            {
+                "place": 15,
+                "player": "Flash Metroid",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 16,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "29-04-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Civil War 4",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "LuckyD",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 3,
+                "player": "Min",
+                "character": "HONDA"
+            },
+            {
+                "place": 4,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 6,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Vivaldi",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "RyRy",
+                "character": "VIPER"
+            },
+            {
+                "place": 10,
+                "player": "West",
+                "character": "GEN"
+            },
+            {
+                "place": 11,
+                "player": "LUD",
+                "character": "CHUN"
+            },
+            {
+                "place": 12,
+                "player": "MarlinPie",
+                "character": "CAMMY"
+            },
+            {
+                "place": 13,
+                "player": "Sev",
+                "character": "BISON"
+            },
+            {
+                "place": 14,
+                "player": "Fuerte",
+                "character": "HONDA"
+            },
+            {
+                "place": 15,
+                "player": "MagnetoManiac",
+                "character": "VIPER"
+            },
+            {
+                "place": 16,
+                "player": "Foomy",
+                "character": "SAKURA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "23-05-2012",
+        "country": "DE",
+        "videos": [],
+        "name": "Fight Club NRW 6",
+        "players": [
+            {
+                "place": 1,
+                "player": "Cuongster",
+                "character": "HONDA"
+            },
+            {
+                "place": 2,
+                "player": "Evans",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "EZO",
+                "character": "RYU"
+            },
+            {
+                "place": 4,
+                "player": "MoMi",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 6,
+                "player": "Halibel",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "Demulant",
+                "character": "SAGAT"
+            },
+            {
+                "place": 8,
+                "player": "Veggey",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "10-12-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Absolute Battle 4",
+        "players": [
+            {
+                "place": 1,
+                "player": "Rain",
+                "character": "YUN"
+            },
+            {
+                "place": 2,
+                "player": "Filipino Champ",
+                "character": "SETH"
+            },
+            {
+                "place": 3,
+                "player": "NashFan",
+                "character": "CHUN"
+            },
+            {
+                "place": 4,
+                "player": "Mike Weng",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "Find My Farms",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Arthur",
+                "character": "HONDA"
+            },
+            {
+                "place": 7,
+                "player": "Chuvylicious",
+                "character": "RUFUS"
+            },
+            {
+                "place": 8,
+                "player": "Jett Jackson",
+                "character": "ADON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "19-01-2014",
+        "country": "US",
+        "videos": [],
+        "name": "Apex 2014",
+        "players": [
+            {
+                "place": 1,
+                "player": "Sanford Kelly",
+                "character": "ONI"
+            },
+            {
+                "place": 2,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Tampa Bison",
+                "character": "BISON"
+            },
+            {
+                "place": 6,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 7,
+                "player": "PR Balrog",
+                "character": "FEI"
+            },
+            {
+                "place": 8,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "12-01-2014",
+        "country": "US",
+        "videos": [],
+        "name": "Defend The North 2014",
+        "players": [
+            {
+                "place": 1,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 2,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 3,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 4,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 6,
+                "player": "Smug",
+                "character": "DUDLEY"
+            },
+            {
+                "place": 7,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 8,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "Jav1ts",
+                "character": "BALROG"
+            },
+            {
+                "place": 10,
+                "player": "DaFeetLee",
+                "character": "CAMMY"
+            },
+            {
+                "place": 11,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 12,
+                "player": "HappyMedicine",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "Zaferino",
+                "character": "FEI"
+            },
+            {
+                "place": 14,
+                "player": "Chin341",
+                "character": "CODY"
+            },
+            {
+                "place": 15,
+                "player": "RemyBleu",
+                "character": "YUN"
+            },
+            {
+                "place": 16,
+                "player": "Alex Smith",
+                "character": "ABEL"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "14-11-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Capcom Cup 2013",
+        "players": [
+            {
+                "place": 1,
+                "player": "sako",
+                "character": "ERYU"
+            },
+            {
+                "place": 2,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 3,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 5,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 6,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "Alioune",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-02-2012",
+        "country": "AU",
+        "videos": [],
+        "name": "OzHadou Nationals 10",
+        "players": [
+            {
+                "place": 1,
+                "player": "Xian",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Shang Tsung",
+                "character": "BISON"
+            },
+            {
+                "place": 3,
+                "player": "Robsux",
+                "character": "IBUKI"
+            },
+            {
+                "place": 4,
+                "player": "Huck",
+                "character": "VEGA"
+            },
+            {
+                "place": 5,
+                "player": "CrazyFreeRider",
+                "character": "BLANKA"
+            },
+            {
+                "place": 6,
+                "player": "ToXY",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "Heavy Weapons",
+                "character": "SAGAT"
+            },
+            {
+                "place": 8,
+                "player": "Carnage",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-01-2014",
+        "country": "JP",
+        "videos": [],
+        "name": "Mix Up Night 16",
+        "players": [
+            {
+                "place": 1,
+                "player": "Amiyu",
+                "character": "GEN"
+            },
+            {
+                "place": 2,
+                "player": "Tarezou",
+                "character": "ADON"
+            },
+            {
+                "place": 3,
+                "player": "Uryo",
+                "character": "CHUN"
+            },
+            {
+                "place": 4,
+                "player": "dath",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Rokkun",
+                "character": "SETH"
+            },
+            {
+                "place": 6,
+                "player": "Super Uriajjou",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "KojiKOG",
+                "character": "HAWK"
+            },
+            {
+                "place": 8,
+                "player": "CANTONA",
+                "character": "ZANGIEF"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "08-12-2013",
+        "country": "US",
+        "videos": [],
+        "name": "NEC 14",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 3,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 4,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Insaynne",
+                "character": "BLANKA"
+            },
+            {
+                "place": 6,
+                "player": "Spab Rog",
+                "character": "FUERTE"
+            },
+            {
+                "place": 7,
+                "player": "Chris Hu",
+                "character": "ONI"
+            },
+            {
+                "place": 8,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 9,
+                "player": "Hiro",
+                "character": "BISON"
+            },
+            {
+                "place": 10,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 11,
+                "player": "Capcom's Hero",
+                "character": "GOUKEN"
+            },
+            {
+                "place": 12,
+                "player": "Rico Suave",
+                "character": "ABEL"
+            },
+            {
+                "place": 13,
+                "player": "Snake Eyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 14,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 15,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 16,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "19-02-2012",
+        "country": "FR",
+        "videos": [],
+        "name": "World Game Cup 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Tokido",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 3,
+                "player": "Alioune",
+                "character": "CAMMY"
+            },
+            {
+                "place": 4,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 5,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "RF",
+                "character": "SAGAT"
+            },
+            {
+                "place": 8,
+                "player": "Gagapa",
+                "character": "BISON"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-01-2014",
+        "country": "US",
+        "videos": [],
+        "name": "Kumite in Tennessee",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 4,
+                "player": "Nice1",
+                "character": "GUY"
+            },
+            {
+                "place": 5,
+                "player": "MLSwear",
+                "character": "HAKAN"
+            },
+            {
+                "place": 6,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "Camel Eyez",
+                "character": "FEI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "16-12-2012",
+        "country": "JP",
+        "videos": [],
+        "name": "Tengu Cup 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "EBI@Baki-Zei",
+                "character": "HAKAN"
+            },
+            {
+                "place": 2,
+                "player": "Epsilon J",
+                "character": "ONI"
+            },
+            {
+                "place": 3,
+                "player": "Chiba",
+                "character": "CODY"
+            },
+            {
+                "place": 4,
+                "player": "Y24",
+                "character": "CHUN"
+            },
+            {
+                "place": 5,
+                "player": "Banbaban",
+                "character": "CAMMY"
+            },
+            {
+                "place": 6,
+                "player": "Super Uriajjo",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 7,
+                "player": "[kai]",
+                "character": "SAKURA"
+            },
+            {
+                "place": 8,
+                "player": "Rukupuru",
+                "character": "FUERTE"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "18-11-2012",
+        "country": "US",
+        "videos": [],
+        "name": "SoCal Regionals 2011",
+        "players": [
+            {
+                "place": 1,
+                "player": "Justin Wong",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 3,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 4,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 6,
+                "player": "Hugo101",
+                "character": "BISON"
+            },
+            {
+                "place": 7,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Masarap",
+                "character": "CAMMY"
+            },
+            {
+                "place": 9,
+                "player": "Warahk",
+                "character": "GUILE"
+            },
+            {
+                "place": 10,
+                "player": "Mike Chow",
+                "character": "ABEL"
+            },
+            {
+                "place": 11,
+                "player": "Viscant",
+                "character": "DJ"
+            },
+            {
+                "place": 12,
+                "player": "Snake Eyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 13,
+                "player": "Jago",
+                "character": "BISON"
+            },
+            {
+                "place": 14,
+                "player": "Online Tony",
+                "character": "SETH"
+            },
+            {
+                "place": 15,
+                "player": "Kane",
+                "character": "GEN"
+            },
+            {
+                "place": 16,
+                "player": "Chris King",
+                "character": "VEGA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "25-03-2012",
+        "country": "US",
+        "videos": [],
+        "name": "NorCal Regionals 10",
+        "players": [
+            {
+                "place": 1,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 2,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 3,
+                "player": "PR Balrog",
+                "character": "BALROG"
+            },
+            {
+                "place": 4,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "Combofiend",
+                "character": "ONI"
+            },
+            {
+                "place": 6,
+                "player": "Alex Valle",
+                "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Air",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 9,
+                "player": "Cynistar",
+                "character": "AKUMA"
+            },
+            {
+                "place": 10,
+                "player": "XsK Samurai",
+                "character": "RYU"
+            },
+            {
+                "place": 11,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 12,
+                "player": "Mike Chow",
+                "character": "ABEL"
+            },
+            {
+                "place": 13,
+                "player": "Illiterate",
+                "character": "YANG"
+            },
+            {
+                "place": 14,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 15,
+                "player": "Sonny",
+                "character": "CAMMY"
+            },
+            {
+                "place": 16,
+                "player": "Mike Ross",
+                "character": "BLANKA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "08-01-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Apex 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 2,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 3,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 4,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 6,
+                "player": "Meteo",
+                "character": "VEGA"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "24-11-2012",
+        "country": "US",
+        "videos": [],
+        "name": "Dreamhack 2012",
+        "players": [
+            {
+                "place": 1,
+                "player": "Infiltration",
+                "character": "AKUMA"
+            },
+            {
+                "place": 2,
+                "player": "Ryan Hart",
+                "character": "YUN"
+            },
+            {
+                "place": 3,
+                "player": "MoMi",
+                "character": "FEI"
+            },
+            {
+                "place": 4,
+                "player": "F-Word",
+                "character": "IBUKI"
+            },
+            {
+                "place": 5,
+                "player": "Skatan",
+                "character": "SAKURA"
+            },
+            {
+                "place": 6,
+                "player": "Yagami",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 8,
+                "player": "Slizzle",
+                "character": "FEI"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "02-09-2012",
+        "country": "FR",
+        "videos": [],
+        "name": "Bushido Impact International II",
+        "players": [
+            {
+                "place": 1,
+                "player": "V-Ryu",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 2,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 3,
+                "player": "Luffy",
+                "character": "ROSE"
+            },
+            {
+                "place": 4,
+                "player": "Easyman",
+                "character": "RYU"
+            },
+            {
+                "place": 5,
+                "player": "MoMi",
+                "character": "FEI"
+            },
+            {
+                "place": 6,
+                "player": "MBR",
+                "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "Problem X",
+                "character": "SETH"
+            },
+            {
+                "place": 8,
+                "player": "Afii",
+                "character": "DJ"
+            }
+        ]
+    },
+    {
+        "version": "AE2012",
+        "date": "21-04-2013",
+        "country": "US",
+        "videos": [],
+        "name": "Civil War V",
+        "players": [
+            {
+                "place": 1,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 2,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 3,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 4,
+                "player": "Min",
+                "character": "HAWK"
+            },
+            {
+                "place": 5,
+                "player": "DarkChild",
+                "character": "BALROG"
+            },
+            {
+                "place": 6,
+                "player": "Vivaldi",
+                "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "NuckleDu",
+                "character": "GUILE"
+            },
+            {
+                "place": 8,
+                "player": "Madness",
+                "character": "ADON"
+            },
+            {
+                "place": 9,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 10,
+                "player": "Fawkes",
+                "character": "BISON"
+            },
+            {
+                "place": 11,
+                "player": "Fuerte",
+                "character": "HONDA"
+            },
+            {
+                "place": 12,
+                "player": "Sev",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "Ken P",
+                "character": "KEN"
+            },
+            {
+                "place": 14,
+                "player": "AceUnlimited",
+                "character": "GUY"
+            },
+            {
+                "place": 15,
+                "player": "Diego V",
+                "character": "KEN"
+            },
+            {
+                "place": 16,
+                "player": "Ja",
+                "character": "UNKNOWN"
+            }
+        ]
+    }
+]

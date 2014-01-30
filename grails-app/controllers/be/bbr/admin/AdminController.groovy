@@ -56,7 +56,8 @@ class AdminController
 
     def importFileData()
     {
-        rankingService.importFileData()
+        String status = rankingService.importFileData()
+        flash.message = status
         render view: "index"
     }
 
