@@ -21,5 +21,6 @@
   <g:passwordField name="password" type="password" class="form-control" placeholder="Password" required="true"/>
   <button name="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </g:form>
+<br/>
 </body>
 </html>

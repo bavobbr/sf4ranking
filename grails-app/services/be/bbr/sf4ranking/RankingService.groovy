@@ -66,8 +66,14 @@ class RankingService
     Integer updatePlayerRank()
     {
         List players = Player.list(order: "desc", sort: 'score')
+        def previous = 0
+        def currentRank = 0
         players.eachWithIndex {Player p, Integer idx ->
-            p.rank = idx + 1
+            if (p.score != previous) {
+                currentRank = idx + 1
+            }
+            p.rank = currentRank
+            previous = p.score
         }
         return players.size()
     }

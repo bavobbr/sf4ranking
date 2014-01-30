@@ -12,29 +12,53 @@ class RankingsController
     {
         if (!params.offset) params.offset = 0
         if (!params.max) params.max = 30
-        boolean filtered = (params.country && params.country != "any")? true : false
-        def query = Player.where {
-            if (params.country && params.country != "any") {
-                countryCode == params.country as CountryCode
+        def pchar = CharacterType.fromString(params.pchar as String)
+        def pcc = CountryCode.fromString(params.country as String)
+        boolean filtered = ((params.country && params.country =~ "any") || (params.pchar && params.pchar =~ "any")) ? true : false
+        def pquery = Player.createCriteria()
+        def players = pquery.listDistinct {
+            if (pcc) {
+                eq("countryCode", params.country as CountryCode)
+            }
+            if (pchar)
+            {
+                results {
+                    eq('pcharacter', pchar)
+                }
+            }
+            firstResult(params.offset.toInteger())
+            maxResults(params.max.toInteger())
+            order("score", "desc")
+        }
+        def pcountq = Player.createCriteria()
+        def playercount = pcountq.count {
+            if (pcc) {
+                eq("countryCode", params.country as CountryCode)
+            }
+            if (pchar)
+            {
+                results {
+                    eq('pcharacter', pchar)
+                }
             }
         }
-        List players = query.list(order: "desc", sort: 'score', offset:params.offset, max:params.max)
-        def c = Player.createCriteria()
-        def countries = c.list {
+        def countries = Player.createCriteria().list {
             projections {
                 distinct "countryCode"
             }
         }
-        def countrynames = countries.findResults() { it?.name() }
-        countrynames.add(0, "any")
-        [players: players, countries: countrynames, filtered: filtered, total: query.count()]
+        def countrynames = countries.findResults() {it?.name()}
+        def charnames = CharacterType.values().collect { it.name() }
+        countrynames.add(0, "any country")
+        charnames.add(0, "any character")
+        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount]
     }
 
     def player(Player player)
     {
         def rankings = []
         Set chars = [] as Set
-        Result.findAllByPlayer(player).sort {a, b -> b.tournament.date<=>a.tournament.date}.each {
+        Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
             def tid = it.tournament.id
             def tname = it.tournament.name
             def ttype = it.tournament.tournamentType.value
@@ -53,9 +77,9 @@ class RankingsController
     def tournaments()
     {
         def query = Tournament.where {
-            if (params.country && params.country != "any") countryCode == params.country as CountryCode
-            if (params.version && params.version != "any") game == params.version as Version
-            if (params.type && params.type != "any") tournamentType == params.type as TournamentType
+            if (params.country && !(params.country =~ "any")) countryCode == CountryCode.fromString(params.country)
+            if (params.version && !(params.version =~ "any")) game == params.version as Version
+            if (params.type && !(params.type =~ "any")) tournamentType == params.type as TournamentType
         }
         List tournaments = query.list(order: "desc", sort: 'weight')
         def c = Tournament.createCriteria()
@@ -64,19 +88,19 @@ class RankingsController
                 distinct "countryCode"
             }
         }
-        countries = countries.collect { it.name() }
-        countries.add(0, "any")
-        def versions = Version.values().collect { it.name() }
-        versions.add(0, "any")
-        def types = TournamentType.values().collect { it.name() }
-        types.add(0, "any")
+        countries = countries.collect {it.name()}
+        countries.add(0, "any country")
+        def versions = Version.values().collect {it.name()}
+        versions.add(0, "any version")
+        def types = TournamentType.values().collect {it.name()}
+        types.add(0, "any type")
         [tournaments: tournaments, countries: countries, versions: versions, types: types]
     }
 
     def tournament(Tournament tournament)
     {
         def details = []
-        tournament.results.sort {a, b -> a.place<=>b.place}.each {
+        tournament.results.sort {a, b -> a.place <=> b.place}.each {
             def rplayer = it.player.name
             def rplayerid = it.player.id
             def rplace = it.place

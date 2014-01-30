@@ -28,7 +28,13 @@
         <td><g:link controller="rankings" action="tournament" params="['id': t.id]">${t.name}</g:link></td>
         <td>${t.tournamentType?.value}</td>
         <td>${t.date?.format("MM-yyyy")}</td>
-        <td><g:if test="${t.countryCode}"><g:img dir="images/countries" file="${t.countryCode.name().toLowerCase() + '.png'}"/></g:if></td>
+        <td>
+          <g:if test="${t.countryCode}">
+            <g:link controller="rankings" action="tournaments" params="[country: t.countryCode.name()]">
+              <g:img dir="images/countries" file="${t.countryCode.name().toLowerCase() + '.png'}"/>
+            </g:link>
+          </g:if>
+        </td>
         <td>${t.game?.value}</td>
         <td>${t.weight}</td>
         <td>

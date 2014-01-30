@@ -24,7 +24,7 @@ class Player
     Integer score = 0
     Integer rank = 0
     CountryCode countryCode
-    static hasMany = [videos: String]
+    static hasMany = [videos: String, results: Result]
 
     def beforeInsert() {
         codename = name.toUpperCase()

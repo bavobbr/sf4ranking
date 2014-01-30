@@ -13,7 +13,15 @@
   <dt>Skill</dt>
   <dd>${player.skill}</dd>
   <dt>Country</dt>
-  <dd>${player.countryCode?.name}</dd>
+  <dd>
+    ${player.countryCode?.name}
+    <g:if test="${player.countryCode != null}">
+      <g:link controller="rankings" action="index" params="[country: player.countryCode.name()]">
+        <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${player.countryCode.name}"/>
+      </g:link>
+    </g:if>
+
+  </dd>
   <dt>Score</dt>
   <dd>${player.score}</dd>
   <dt>Character used</dt>

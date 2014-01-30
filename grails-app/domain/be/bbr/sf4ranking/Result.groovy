@@ -13,7 +13,7 @@ class Result
         pcharacter nullable: false
     }
 
-    static belongsTo = [tournament:Tournament]
+    static belongsTo = [tournament:Tournament, player: Player]
 
     Player player
     Integer place

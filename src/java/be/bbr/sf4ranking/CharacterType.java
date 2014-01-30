@@ -56,4 +56,13 @@ public enum CharacterType
         return value;
     }
 
+    public static CharacterType fromString(String input) {
+        if (input == null || input.length() == 0) return null;
+        CharacterType[] characterTypes = CharacterType.values();
+        for (CharacterType ct : characterTypes)
+            if (ct.name().toLowerCase().equals(input.toLowerCase())) {
+                return ct;
+            }
+        return null;
+    }
 }

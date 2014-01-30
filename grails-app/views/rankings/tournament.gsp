@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2>Tournament details<small> for ${tournament.name}</small></h2>
+<h2>Tournament details<small>for ${tournament.name}</small></h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">
@@ -46,7 +46,9 @@
         <td>${result.rchar}</td>
         <td>
           <g:if test="${result.rcountry != null}">
-            <g:img dir="images/countries" file="${result.rcountry + '.png'}"/>
+            <g:link controller="rankings" action="tournaments" params="[country: result.rcountry]">
+              <g:img dir="images/countries" file="${result.rcountry + '.png'}"/>
+            </g:link>
           </g:if>
         </td>
         <td>${result.rscore}</td>
@@ -56,7 +58,7 @@
 </div>
 
 <g:if test="${session.user != null}">
-  <g:link controller="admin" action="selectTournamentVideos" params="['id':tournament.id]">[Update videos as admin]</g:link>
+  <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos as admin]</g:link>
 </g:if>
 
 
@@ -65,7 +67,8 @@
   <g:each in="${tournament.videos}" var="video">
     <section class="row">
       <div class="span6">
-        <div class="flex-video widescreen"><iframe width="560" height="315" src="//www.youtube.com/embed/${video}" frameborder="0" allowfullscreen></iframe></div>
+        <div class="flex-video widescreen"><iframe width="560" height="315" src="//www.youtube.com/embed/${video}" frameborder="0"
+                                                   allowfullscreen></iframe></div>
       </div>
 
     </section>
