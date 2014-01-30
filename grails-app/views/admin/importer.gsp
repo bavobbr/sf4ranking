@@ -32,5 +32,7 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </g:form>
   </fieldset>
+<br/>
 </body>
+
 </html>

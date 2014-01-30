@@ -55,6 +55,11 @@
   </table>
 </div>
 
+<g:if test="${session.user != null}">
+  <g:link controller="admin" action="selectTournamentVideos" params="['id':tournament.id]">[Update videos as admin]</g:link>
+</g:if>
+
+
 <g:if test="${tournament.videos}">
   <h2>Tournament videos <small>found ${tournament.videos.size()} videos</small></h2>
   <g:each in="${tournament.videos}" var="video">

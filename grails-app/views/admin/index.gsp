@@ -42,5 +42,6 @@ If you want to restart use DELETE ALL and then do another import
   <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
   <li><g:link action="importFileData">Import all file data...</g:link></li>
 </ul>
+<br/>
 </body>
 </html>

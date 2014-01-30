@@ -14,23 +14,19 @@
 </head>
 
 <body>
-<h2>Admin merge players</h2>
+<h2>Admin set player videos for ${player.name}</h2>
 <g:if test="${flash.message}">
   <div class="message" role="status">${flash.message}</div>
 </g:if>
 <fieldset class="form">
-  <g:form action="mergePlayers" controller="admin" name="mergeForm" class="form-inline">
-    <label for="p1">
-      <g:message message="Merge player"/>
+  <g:form action="updatePlayerVideos" controller="admin" name="form" role="form" class="form-inline">
+    <label for="videos">
+      Videos
     </label>
-    <g:select name="p1" from="${players}" optionKey="id" optionValue="name" class="form-control"/>
-    <label for="p2">
-      <g:message message="into" />
-    </label>
-    <g:select name="p2" from="${players}" optionKey="id" optionValue="name" class="form-control"/>
+    <g:textField name="videos" class="form-control" value="${player.videos.join(" ")}"/>
+    <g:hiddenField name="id" value="${player.id}"/>
     <button type="submit" class="btn btn-primary">Submit</button>
   </g:form>
 </fieldset>
-<br/>
 </body>
 </html>

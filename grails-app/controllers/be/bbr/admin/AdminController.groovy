@@ -159,4 +159,26 @@ class AdminController
 
     }
 
+    def selectTournamentVideos() {
+        [tournament : Tournament.findById(params.id)]
+    }
+
+    def selectPlayerVideos() {
+        [player : Player.findById(params.id)]
+    }
+
+    def updateTournamentVideos() {
+        def video = Tournament.findById(params.id)
+        def videos = params.videos.tokenize(" ")
+        video.videos = videos as Set
+        redirect(controller: "rankings", action: "tournament", params: [id: params.id])
+    }
+
+    def updatePlayerVideos() {
+        def video = Player.findById(params.id)
+        def videos = params.videos.tokenize(" ")
+        video.videos = videos as Set
+        redirect(controller: "rankings", action: "player", params: [id: params.id])
+    }
+
 }
