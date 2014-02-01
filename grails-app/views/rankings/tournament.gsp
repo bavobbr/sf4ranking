@@ -43,7 +43,15 @@
       <tr>
         <td>${result.rplace}</td>
         <td><g:link controller="rankings" action="player" params="['id': result.rplayerid]">${result.rplayer}</g:link></td>
-        <td>${result.rchar}</td>
+        <td>
+          <g:if test="${result.rchar}">
+            <g:link action="index" controller="rankings" params="[pchar: result.rchar]">
+              <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
+                     title="${result.rchar}"/>
+              ${result.rcharname}
+            </g:link>
+          </g:if>
+        </td>
         <td>
           <g:if test="${result.rcountry != null}">
             <g:link controller="rankings" action="tournaments" params="[country: result.rcountry]">

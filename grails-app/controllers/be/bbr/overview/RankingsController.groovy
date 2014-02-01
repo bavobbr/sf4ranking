@@ -10,48 +10,50 @@ class RankingsController
 
     def index()
     {
-        if (!params.offset) params.offset = 0
-        if (!params.max) params.max = 30
-        def pchar = CharacterType.fromString(params.pchar as String)
-        def pcc = CountryCode.fromString(params.country as String)
-        boolean filtered = ((params.country && params.country =~ "any") || (params.pchar && params.pchar =~ "any")) ? true : false
-        def pquery = Player.createCriteria()
-        def players = pquery.listDistinct {
-            if (pcc) {
-                eq("countryCode", params.country as CountryCode)
+        def poffset = params.offset?.toInteger() ?: 0
+        def pmax = params.max?.toInteger() ?: 10
+        def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
+        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
+        boolean filtered = pchar || pcountry
+        def players
+        def playercount
+        /**
+         * We have to differentiate between character search and not, because Hibernate has trouble paginating on
+         * queries that use associations
+         * This query queries all and filters in the controller, which is bad but also a rare call
+         */
+        if (pchar) {
+            def pquery = Player.where {
+                if (pcountry) countryCode == pcountry
+                results.pcharacter == pchar
             }
-            if (pchar)
-            {
-                results {
-                    eq('pcharacter', pchar)
-                }
-            }
-            firstResult(params.offset.toInteger())
-            maxResults(params.max.toInteger())
-            order("score", "desc")
+            def allPlayers = pquery.list()
+            players = pagedList(allPlayers, poffset, pmax)
+            playercount = allPlayers.size()
         }
-        def pcountq = Player.createCriteria()
-        def playercount = pcountq.count {
-            if (pcc) {
-                eq("countryCode", params.country as CountryCode)
+        /**
+         * without associatiosn there is no issue to use real pagination
+         */
+        else {
+            def pquery = Player.where {
+                if (pcountry) countryCode == pcountry
             }
-            if (pchar)
-            {
-                results {
-                    eq('pcharacter', pchar)
-                }
-            }
+            players = pquery.list(order: 'asc', sort: 'rank', max: pmax, offset: poffset)
+            playercount = players.totalCount
         }
+        // list known countries for the filter box
         def countries = Player.createCriteria().list {
             projections {
                 distinct "countryCode"
             }
         }
         def countrynames = countries.findResults() {it?.name()}
-        def charnames = CharacterType.values().collect { it.name() }
+        // list all characters for the filter box
+        def charnames = CharacterType.values().collect {it.name()}
+        // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
-        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount]
+        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount, poffset: poffset]
     }
 
     def player(Player player)
@@ -63,11 +65,13 @@ class RankingsController
             def tname = it.tournament.name
             def ttype = it.tournament.tournamentType.value
             def tchar = it.pcharacter.name().toLowerCase()
+            def tcharname = it.pcharacter?.value
             def tdate = it.tournament.date?.format("MM-yyyy")
             def tscore = rankingService.getScore(it.place, it.tournament.tournamentType)
             def tplace = it.place
             def tvideos = it.tournament.videos
-            rankings << [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tdate: tdate, tvideos: tvideos]
+            rankings <<
+            [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
             chars << it.pcharacter
         }
         log.info "Rendering player ${player}"
@@ -104,13 +108,14 @@ class RankingsController
             def rplayer = it.player.name
             def rplayerid = it.player.id
             def rplace = it.place
-            def rchar = it.pcharacter.value
+            def rchar = it.pcharacter?.name()?.toLowerCase()
+            def rcharname = it.pcharacter?.value
             def rscore = rankingService.getScore(it.place, tournament.tournamentType)
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
-            details << [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcountry: rcountry]
+            details <<
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry]
             println details
         }
-        log.info "Rendering tournament ${tournament}"
         return [tournament: tournament, details: details]
     }
 
@@ -126,6 +131,15 @@ class RankingsController
         def tournaments = Tournament.findAllByCodenameLike("%${params.term.toUpperCase()}%")
         def content = tournaments.collect {[id: it.id, label: it.name, value: it.name]}
         render(content as JSON)
+    }
+
+    /**
+     * Safe way to get a sublist
+     */
+    private List pagedList(List list, int offset, int max) {
+        int start = Math.min(list.size(), offset)
+        int end = Math.min(list.size(), offset+max)
+        return list.subList(start, end)
     }
 
 

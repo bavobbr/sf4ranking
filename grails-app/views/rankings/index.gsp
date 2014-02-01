@@ -37,7 +37,7 @@
 
       <tr>
         <g:if test="${filtered}">
-          <td>${idx + 1}</td>
+          <td>${idx + poffset + 1}</td>
         </g:if>
         <td>${p.rank}</td>
         <td><g:link controller="rankings" action="player" params="['id': p.id]">${p.name}</g:link></td>
@@ -55,7 +55,7 @@
   </table></div>
 
 <div id="pagination">
-  <g:paginate total="${total}" controller="rankings" action="index" max="30" params="[country: params.country, pchar: params.pchar]"/>
+  <g:paginate total="${total}" controller="rankings" action="index" max="10" params="[country: params.country, pchar: params.pchar]"/>
 </div>
 
 <div class="panel panel-info">
