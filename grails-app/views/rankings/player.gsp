@@ -32,7 +32,7 @@
 
 </dl>
 
-<h2>Tournament placings<small>found ${results.size()} SF4 rankings</small></h2>
+<h2>Tournament placings<small> found ${results.size()} SF4 rankings</small></h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">
@@ -56,7 +56,6 @@
           <g:if test="${result.tchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.tchar]">
               <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}" title="${result.tchar}"/>
-              ${result.tcharname}
             </g:link>
           </g:if>
 

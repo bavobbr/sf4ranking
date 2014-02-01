@@ -11,7 +11,7 @@ class RankingsController
     def index()
     {
         def poffset = params.offset?.toInteger() ?: 0
-        def pmax = params.max?.toInteger() ?: 10
+        def pmax = params.max?.toInteger() ?: 20
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
         boolean filtered = pchar || pcountry
@@ -27,7 +27,7 @@ class RankingsController
                 if (pcountry) countryCode == pcountry
                 results.pcharacter == pchar
             }
-            def allPlayers = pquery.list()
+            def allPlayers = pquery.list(order: 'asc', sort: 'rank')
             players = pagedList(allPlayers, poffset, pmax)
             playercount = allPlayers.size()
         }
@@ -53,7 +53,7 @@ class RankingsController
         // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
-        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount, poffset: poffset]
+        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry]
     }
 
     def player(Player player)

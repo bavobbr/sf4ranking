@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2>Tournament details<small>for ${tournament.name}</small></h2>
+<h2>Tournament details<small> for ${tournament.name}</small></h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">
@@ -48,7 +48,6 @@
             <g:link action="index" controller="rankings" params="[pchar: result.rchar]">
               <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
                      title="${result.rchar}"/>
-              ${result.rcharname}
             </g:link>
           </g:if>
         </td>

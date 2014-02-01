@@ -7,8 +7,12 @@
 </head>
 
 <body>
-<h2>SF4 World Ranking</h2>
-
+<g:if test="${filtered}">
+  <h2>SF4 World Ranking - Filtered on ${fcountry} ${fchar}</h2>
+</g:if>
+<g:else>
+  <h2>SF4 World Ranking</h2>
+</g:else>
 
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -55,7 +59,7 @@
   </table></div>
 
 <div id="pagination">
-  <g:paginate total="${total}" controller="rankings" action="index" max="10" params="[country: params.country, pchar: params.pchar]"/>
+  <g:paginate total="${total}" controller="rankings" action="index" max="20" params="[country: params.country, pchar: params.pchar]"/>
 </div>
 
 <div class="panel panel-info">
@@ -65,8 +69,8 @@
 
   <div class="panel-body">
     <g:form name="filter" controller="rankings" action="index" role="form" class="form-inline" method="get">
-      <g:select name="country" from="${countries}" class="form-control"/>
-      <g:select name="pchar" from="${charnames}" class="form-control"/>
+      <g:select name="country" from="${countries}" class="form-control" value="${fcountry}"/>
+      <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
       <button type="submit" class="btn btn-primary">Submit</button>
     </g:form>
   </div>
