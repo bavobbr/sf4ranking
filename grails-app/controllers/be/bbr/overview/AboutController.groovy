@@ -18,8 +18,8 @@ class AboutController
                 players: Player.count(),
                 tournaments: Tournament.count(),
                 results: Result.count(),
-                first: lowest.date.first(),
-                last: highest.date.first(),
+                first: lowest?.date? lowest.date.first() : null,
+                last: highest?.date? highest.date.first() : null
         ]
     }
 }
