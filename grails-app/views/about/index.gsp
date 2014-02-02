@@ -16,7 +16,7 @@
   <h1>Summary</h1>
 
   <p>
-    The ranking given to players is analog to <a
+    The rankings given to players is analog to <a
           href="http://www.atpworldtour.com/">ATP and WTA</a>. Players earn points by placing in tournaments.
   Tournaments are ordered by importance and given a classification. The players in those tournemants are then assigned a score based on their place within a tournament, adjusted with the tournament weight.
   </p>
@@ -25,7 +25,7 @@
   --}%
 </div>
 
-<h3>What is SF4?</h3>
+<h3>What is SFIV?</h3>
 That's a weird question to ask if you managed to end up here. But if you really don't know what the fuzz is all about I gladly give you an excerpt from Wikipedia:
 <blockquote>
   Street Fighter IV (ストリートファイター IV Sutorīto Faitā Fō?) is a 2008 fighting game produced by Capcom. It was the first numbered Street Fighter game released by Capcom since 1999, a hiatus of nine years.
