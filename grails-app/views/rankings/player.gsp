@@ -10,8 +10,8 @@
 <h2>Player details<small> for ${player.name}</small></h2>
 <dl class="dl-horizontal">
 
-  <dt>Skill</dt>
-  <dd>${player.skill}</dd>
+  <dt>World Rank</dt>
+  <dd>${player.rank}</dd>
   <dt>Country</dt>
   <dd>
     ${player.countryCode?.name}
@@ -27,8 +27,8 @@
   <dd>${player.score}</dd>
   <dt>Character used</dt>
   <dd>${chars}</dd>
-  <dt>World Rank</dt>
-  <dd>${player.rank}</dd>
+  <dt>Skill Weight</dt>
+  <dd>${player.skill}</dd>
 
 </dl>
 

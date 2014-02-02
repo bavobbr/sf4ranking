@@ -87,20 +87,22 @@
       <ul class="nav navbar-nav">
         <li><g:link action="index" controller="rankings">Ranking</g:link></li>
         <li><g:link action="tournaments" controller="rankings">Tournaments</g:link></li>
-        <li><g:link action="index" controller="about">How it works</g:link></li>
 
+        <li>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input id="playerSearch" class="form-control" placeholder="player">
           </div>
         </form>
-
+        </li>
+        <li>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input id="tournamentSearch" class="form-control" placeholder="tournament">
           </div>
         </form>
-
+        </li>
+        <li><g:link action="index" controller="about">How it works</g:link></li>
         <g:if test="${session.user != null}">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>

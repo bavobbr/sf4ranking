@@ -1,8 +1,8 @@
 package be.bbr.admin
 
+import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.RankingService
-import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.Tournament
 import grails.converters.JSON
 
@@ -10,6 +10,7 @@ class AdminController
 {
 
     RankingService rankingService
+    DataService dataService
 
     def index() {}
 
@@ -50,13 +51,13 @@ class AdminController
     {
         String tname = params.tname
         String results = params.tresults
-        rankingService.importTournament(tname, results)
+        dataService.importTournament(tname, results)
         render view: "index"
     }
 
     def importFileData()
     {
-        String status = rankingService.importFileData()
+        String status = dataService.importFileData()
         flash.message = status
         render view: "index"
     }
@@ -88,14 +89,7 @@ class AdminController
     {
         def p1 = Player.findById(params.p1)
         def p2 = Player.findById(params.p2)
-        log.info("Merging $p1 into $p2")
-        def resultsToMerge = Result.findAllByPlayer(p1)
-        resultsToMerge.each {
-            log.info "merging $it to $p2"
-            it.player = p2
-            it.save()
-        }
-        p1.delete()
+        dataService.merge(p1, p2)
         redirect(controller: "rankings", action: "player", params: [id: p2.id])
     }
 
@@ -105,9 +99,7 @@ class AdminController
         def confirmed = (params.confirm == "I do")
         if (confirmed)
         {
-            Result.list().each {it.delete()}
-            Player.list().each {it.delete()}
-            Tournament.list().each {it.delete()}
+            dataService.deleteAll()
             render view: "index"
         }
         else {
@@ -117,47 +109,14 @@ class AdminController
 
     def exportTournaments()
     {
-        def list = Tournament.list()
-        def tournaments = []
-        list.each {
-            def tournament = [:]
-            tournament.version = it.game?.name()
-            tournament.date = it.date?.format("dd-MM-yyyy")
-            tournament.country = it.countryCode?.name()
-            tournament.videos = it.videos
-            tournament.name = it.name
-            def players = []
-            it.results.sort {a, b -> a.place<=>b.place}.each {
-                def player = [:]
-                player.place = it.place
-                player.player = it.player.name
-                player.character = it.pcharacter?.name()
-                players << player
-            }
-            tournament.players = players
-            tournaments << tournament
-
-        }
+        def tournaments = dataService.exportTournaments()
         render(tournaments as JSON)
     }
 
     def exportPlayers()
     {
-        def list = Player.list()
-        def players = []
-        list.each {
-            def player = [:]
-            player.name = it.name
-            player.countryCode = it.countryCode?.name()
-            player.rank = it.rank
-            player.skill = it.skill
-            player.videos = it.videos
-            player.codename = it.codename
-            player.score = it.score
-            players << player
-        }
+        def players = dataService.exportPlayers()
         render(players as JSON)
-
     }
 
     def selectTournamentVideos() {
