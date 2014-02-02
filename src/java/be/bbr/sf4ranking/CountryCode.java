@@ -744,7 +744,7 @@ public enum CountryCode
     TV("Tuvalu", "TUV", 798),
 
     /** <a href="http://en.wikipedia.org/wiki/Taiwan">Taiwan, Province of China</a> */
-    TW("Taiwan, Province of China", "TWN", 158),
+    TW("Taiwan", "TWN", 158),
 
     /** <a href="http://en.wikipedia.org/wiki/Tanzania">United Republic of Tanzania</a> */
     TZ("United Republic of Tanzania", "TZA", 834),

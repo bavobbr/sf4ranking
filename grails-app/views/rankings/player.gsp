@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2>Player details<small>for ${player.name}</small></h2>
+<h2>Player details<small> for ${player.name}</small></h2>
 <dl class="dl-horizontal">
 
   <dt>Skill</dt>
