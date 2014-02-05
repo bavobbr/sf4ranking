@@ -1,9 +1,13 @@
 package be.bbr.admin
 
+import be.bbr.sf4ranking.CharacterType
+import be.bbr.sf4ranking.CountryCode
 import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.RankingService
 import be.bbr.sf4ranking.Tournament
+import be.bbr.sf4ranking.TournamentFormat
+import be.bbr.sf4ranking.Version
 import grails.converters.JSON
 
 class AdminController
@@ -13,6 +17,15 @@ class AdminController
     DataService dataService
 
     def index() {}
+
+    def updateAll() {
+        initializeTournamentWeights()
+        updateTournamentTypes()
+        updatePlayerScores()
+        updatePlayerRank()
+        flash.message = "Updated weight, type of tournament and score, rank of all players"
+        render view: "index"
+    }
 
     def initializeTournamentWeights()
     {
@@ -44,14 +57,21 @@ class AdminController
 
     def importer()
     {
-        render view: "importer"
+        def index = 1
+        def example = CharacterType.values().inject("") { a, b -> a+"player at place ${index++} / $b\n"}
+        render view: "importer", model: [hint: example]
     }
 
     def importTournament()
     {
         String tname = params.tname
+        Date tdate = new Date(params.tdate_year.toInteger(), params.tdate_month.toInteger(), params.tdate_day.toInteger())
+        TournamentFormat tformat = TournamentFormat.fromString(params.tformat)
+        CountryCode tcountry = CountryCode.fromString(params.tcountry)
+        Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
-        dataService.importTournament(tname, results)
+        List tvideos = params.tvideos.tokenize(" ")
+        dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos)
         render view: "index"
     }
 
