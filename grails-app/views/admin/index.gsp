@@ -35,6 +35,7 @@ This action should be triggered every time a new tournament has been entered, as
 <h3>Import/export</h3>
 <ul>
   <li><g:link action="importer">import a new Tournament...</g:link></li>
+  <li><g:link action="printTournamentSizes">print all Tournaments and player sizes</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'true']">print all Players in the DB</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>
   <li><g:link action="merge">merge specified Players...</g:link></li>

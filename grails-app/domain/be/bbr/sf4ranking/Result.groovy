@@ -7,7 +7,7 @@ class Result
 {
 
     static constraints = {
-        player nullable: false, unique: 'tournament'
+        player nullable: false
         place nullable: false
         tournament nullable: false
         pcharacter nullable: false

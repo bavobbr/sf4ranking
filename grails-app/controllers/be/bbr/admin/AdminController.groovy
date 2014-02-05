@@ -100,6 +100,16 @@ class AdminController
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
+    def printTournamentSizes() {
+        def tournamentSizes = [:]
+        Tournament.list().each {
+            def numresults = it.results.size()
+            tournamentSizes["${it.name}"] = numresults
+        }
+        def listing = tournamentSizes.collect { k, v -> "$k: $v"}.join("\r\n")
+        render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
     def merge()
     {
         [players: Player.list(order: "asc", sort: 'name')]

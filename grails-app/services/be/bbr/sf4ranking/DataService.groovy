@@ -124,8 +124,9 @@ class DataService
         resultsToMerge.each {
             log.info "merging $it to $p2"
             it.player = p2
-            it.save()
+            it.save(failOnError: true, flush: true)
         }
-        p1.delete()
+        p1.delete(failOnError: true)
+        p2.save(failOnError: true)
     }
 }
