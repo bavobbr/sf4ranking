@@ -22,7 +22,8 @@ class RankingsController
          * queries that use associations
          * This query queries all and filters in the controller, which is bad but also a rare call
          */
-        if (pchar) {
+        if (pchar)
+        {
             def pquery = Player.where {
                 if (pcountry) countryCode == pcountry
                 results.pcharacter == pchar
@@ -34,7 +35,8 @@ class RankingsController
         /**
          * without associatiosn there is no issue to use real pagination
          */
-        else {
+        else
+        {
             def pquery = Player.where {
                 if (pcountry) countryCode == pcountry
             }
@@ -53,7 +55,9 @@ class RankingsController
         // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
-        [players: players, countries: countrynames, charnames: charnames, filtered: filtered, total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry]
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
+         total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage]
     }
 
     def player(Player player)
@@ -110,7 +114,7 @@ class RankingsController
             def rplace = it.place
             def rchar = it.pcharacter?.name()?.toLowerCase()
             def rcharname = it.pcharacter?.value
-            def rscore = rankingService.getScore(it.place, tournament.tournamentType)
+            def rscore = tournament.tournamentType ? rankingService.getScore(it.place, tournament.tournamentType) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             details <<
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry]
@@ -136,9 +140,10 @@ class RankingsController
     /**
      * Safe way to get a sublist
      */
-    private List pagedList(List list, int offset, int max) {
+    private List pagedList(List list, int offset, int max)
+    {
         int start = Math.min(list.size(), offset)
-        int end = Math.min(list.size(), offset+max)
+        int end = Math.min(list.size(), offset + max)
         return list.subList(start, end)
     }
 

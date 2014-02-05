@@ -112,6 +112,7 @@
               <li><g:link action="index" controller="player">[Players]</g:link></li>
               <li><g:link action="index" controller="result">[Results]</g:link></li>
               <li><g:link action="index" controller="user">[User]</g:link></li>
+              <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
             </ul>
           </li>
         </g:if>

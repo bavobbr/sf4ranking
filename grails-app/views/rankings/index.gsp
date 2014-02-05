@@ -14,13 +14,12 @@
   <h2>SF4 World Ranking</h2>
 </g:else>
 
+<g:if test="${updateMessage}">
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  Currently the database is focusing on SSF4:AE 2012 edition, listing all high-profile tournaments of 2012 and 2013. As a result this ranking reflects the most all-round tournament players of Street Fighter 4: Arcade Edition 2012.
-  As soon as more tournaments are added in different games, new rankings will be made per game.<br/>
-  The database and website is still in beta-phase and subject to change on user feedback. Feedback is very much appreciated via the social links provided at every page!<br/>
-  UPDATE: Now allows you to search players by character, and to filter region by clicking flags.
+  <g:message message="${updateMessage}"/>
 </div>
+</g:if>
 
 <div class="table-responsive">
 
