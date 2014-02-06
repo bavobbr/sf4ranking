@@ -23,4 +23,14 @@ public enum TournamentType
     public String getValue() {
         return value;
     }
+
+    public static TournamentType fromString(String input) {
+        if (input == null || input.length() == 0) return null;
+        TournamentType[] types = TournamentType.values();
+        for (TournamentType ct : types)
+            if (ct.name().toLowerCase().equals(input.toLowerCase())) {
+                return ct;
+            }
+        return null;
+    }
 }

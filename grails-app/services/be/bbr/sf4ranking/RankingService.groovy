@@ -25,14 +25,14 @@ class RankingService
     Integer updateTypes()
     {
         def tournaments = Tournament.list().sort {a, b -> b.weight <=> a.weight}
-        applyType(tournaments, TournamentType.GRAND_SLAM, 0, 1)
-        applyType(tournaments, TournamentType.CHAMPIONSHIP, 1, 3)
-        applyType(tournaments, TournamentType.PREMIER_MANDATORY, 4, 5)
+        applyType(tournaments, TournamentType.GRAND_SLAM, 0, 4)
+        applyType(tournaments, TournamentType.CHAMPIONSHIP, 4, 1)
+        applyType(tournaments, TournamentType.PREMIER_MANDATORY, 5, 4)
         applyType(tournaments, TournamentType.PREMIER_5, 9, 5)
         applyType(tournaments, TournamentType.PREMIER_12, 14, 12)
-        applyType(tournaments, TournamentType.INTERNATIONAL, 26, 20)
-        applyType(tournaments, TournamentType.SERIES, 46, 50)
-        applyType(tournaments, TournamentType.CIRCUIT, 96, 200)
+        applyType(tournaments, TournamentType.INTERNATIONAL, 26, 31)
+        applyType(tournaments, TournamentType.SERIES, 57, 50)
+        applyType(tournaments, TournamentType.CIRCUIT, 107, 200)
         tournaments*.save()
         return tournaments.size()
     }

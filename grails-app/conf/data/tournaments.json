@@ -5,6 +5,8 @@
         "country": "US",
         "videos": [],
         "name": "Northwest Major 5",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -28,23 +30,23 @@
             },
             {
                 "place": 5,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
                 "player": "Ricky Ortiz",
                 "character": "RUFUS"
             },
             {
-                "place": 6,
-                "player": "Filipino Champ",
-                "character": "DHALSIM"
+                "place": 7,
+                "player": "Duncan",
+                "character": "RUFUS"
             },
             {
                 "place": 7,
                 "player": "Kineda",
                 "character": "AKUMA"
-            },
-            {
-                "place": 8,
-                "player": "Duncan",
-                "character": "RUFUS"
             }
         ]
     },
@@ -54,6 +56,8 @@
         "country": "US",
         "videos": [],
         "name": "Hadocon 4",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -81,9 +85,14 @@
                 "character": "AKUMA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Noej",
                 "character": "UNKNOWN"
+            },
+            {
+                "place": 7,
+                "player": "Jesus",
+                "character": "ADON"
             },
             {
                 "place": 7,
@@ -91,9 +100,14 @@
                 "character": "DJ"
             },
             {
-                "place": 8,
-                "player": "Jesus",
-                "character": "ADON"
+                "place": 9,
+                "player": "Vangief",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 9,
+                "player": "Yeb",
+                "character": "GEN"
             },
             {
                 "place": 9,
@@ -101,19 +115,9 @@
                 "character": "MAKOTO"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Kimo",
                 "character": "HAKAN"
-            },
-            {
-                "place": 11,
-                "player": "Yeb",
-                "character": "GEN"
-            },
-            {
-                "place": 12,
-                "player": "Vangief",
-                "character": "ZANGIEF"
             }
         ]
     },
@@ -123,6 +127,8 @@
         "country": "JP",
         "videos": [],
         "name": "Godsgarden Gate",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -150,19 +156,19 @@
                 "character": "CAMMY"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Youshikibi",
                 "character": "CAMMY"
             },
             {
                 "place": 7,
-                "player": "Taku@Ratio4",
-                "character": "BLANKA"
-            },
-            {
-                "place": 8,
                 "player": "Inbe",
                 "character": "GUY"
+            },
+            {
+                "place": 7,
+                "player": "Taku@Ratio4",
+                "character": "BLANKA"
             }
         ]
     },
@@ -172,6 +178,8 @@
         "country": "US",
         "videos": [],
         "name": "Youmacon Battle Opera 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -199,7 +207,7 @@
                 "character": "GUILE"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Lionheart",
                 "character": "SAGAT"
             },
@@ -209,9 +217,14 @@
                 "character": "BISON"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Alex Valle",
                 "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Buy Hungry Human",
+                "character": "RUFUS"
             },
             {
                 "place": 9,
@@ -219,19 +232,14 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 10,
-                "player": "Buy Hungry Human",
-                "character": "RUFUS"
-            },
-            {
-                "place": 11,
-                "player": "K-Brad",
-                "character": "CAMMY"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Chad de Thunder",
                 "character": "UNKNOWN"
+            },
+            {
+                "place": 9,
+                "player": "K-Brad",
+                "character": "CAMMY"
             },
             {
                 "place": 13,
@@ -239,18 +247,18 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 14,
-                "player": "WeaponsLeft",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Noel Brown",
                 "character": "UNKNOWN"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "BAKA",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 13,
+                "player": "WeaponsLeft",
                 "character": "UNKNOWN"
             }
         ]
@@ -261,6 +269,8 @@
         "country": "US",
         "videos": ["zMK_mPsag9g"],
         "name": "Season Beatings Summer Slam",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -284,23 +294,23 @@
             },
             {
                 "place": 5,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
                 "player": "Laugh",
                 "character": "RYU"
             },
             {
-                "place": 6,
-                "player": "Dieminion",
-                "character": "GUILE"
+                "place": 7,
+                "player": "Mike Ross",
+                "character": "HONDA"
             },
             {
                 "place": 7,
                 "player": "Banana Ken",
                 "character": "KEN"
-            },
-            {
-                "place": 8,
-                "player": "Mike Ross",
-                "character": "HONDA"
             }
         ]
     },
@@ -310,6 +320,8 @@
         "country": "JP",
         "videos": [],
         "name": "Mix Up Night 12",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -333,23 +345,23 @@
             },
             {
                 "place": 5,
+                "player": "-6",
+                "character": "AKUMA"
+            },
+            {
+                "place": 5,
                 "player": "Haitani",
                 "character": "RUFUS"
             },
             {
-                "place": 6,
-                "player": "-6",
-                "character": "AKUMA"
+                "place": 7,
+                "player": "KojiKOG",
+                "character": "HAWK"
             },
             {
                 "place": 7,
                 "player": "Amiyu",
                 "character": "GEN"
-            },
-            {
-                "place": 8,
-                "player": "KojiKOG",
-                "character": "HAWK"
             }
         ]
     },
@@ -359,6 +371,8 @@
         "country": "US",
         "videos": [],
         "name": "VXG 2013",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -386,7 +400,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "K-Brad",
                 "character": "CAMMY"
             },
@@ -396,7 +410,7 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Mike Ross",
                 "character": "HONDA"
             }
@@ -408,6 +422,8 @@
         "country": "SE",
         "videos": [],
         "name": "Dreamhack Energizer",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -435,19 +451,19 @@
                 "character": "ABEL"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Veggey",
                 "character": "ZANGIEF"
             },
             {
                 "place": 7,
-                "player": "DRz_Yagami",
-                "character": "DHALSIM"
-            },
-            {
-                "place": 8,
                 "player": "Gonza",
                 "character": "UNKNOWN"
+            },
+            {
+                "place": 7,
+                "player": "DRz_Yagami",
+                "character": "DHALSIM"
             }
         ]
     },
@@ -457,6 +473,8 @@
         "country": "CA",
         "videos": [],
         "name": "Toryuken 2012",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -480,13 +498,13 @@
             },
             {
                 "place": 5,
-                "player": "WolfKrone",
-                "character": "VIPER"
-            },
-            {
-                "place": 6,
                 "player": "Mooney",
                 "character": "GUY"
+            },
+            {
+                "place": 5,
+                "player": "WolfKrone",
+                "character": "VIPER"
             },
             {
                 "place": 7,
@@ -494,7 +512,7 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Spiralguy",
                 "character": "FEI"
             },
@@ -504,19 +522,24 @@
                 "character": "BLANKA"
             },
             {
-                "place": 10,
-                "player": "JSMaster",
-                "character": "BALROG"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "JTN",
                 "character": "BISON"
             },
             {
-                "place": 12,
+                "place": 9,
+                "player": "JSMaster",
+                "character": "BALROG"
+            },
+            {
+                "place": 9,
                 "player": "Air",
                 "character": "RYU"
+            },
+            {
+                "place": 13,
+                "player": "BlueBlazer",
+                "character": "HAWK"
             },
             {
                 "place": 13,
@@ -524,19 +547,14 @@
                 "character": "GUY"
             },
             {
-                "place": 14,
-                "player": "Rebelo",
-                "character": "GUILE"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "AK Heero",
                 "character": "AKUMA"
             },
             {
-                "place": 16,
-                "player": "BlueBlazer",
-                "character": "HAWK"
+                "place": 13,
+                "player": "Rebelo",
+                "character": "GUILE"
             }
         ]
     },
@@ -546,6 +564,8 @@
         "country": "BR",
         "videos": [],
         "name": "Treta Aftermath",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -573,19 +593,19 @@
                 "character": "SETH"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "BahiaWong",
                 "character": "RUFUS"
             },
             {
                 "place": 7,
-                "player": "Coju",
-                "character": "HAKAN"
-            },
-            {
-                "place": 8,
                 "player": "BrenoFight3rs",
                 "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "Coju",
+                "character": "HAKAN"
             }
         ]
     },
@@ -595,6 +615,8 @@
         "country": "AU",
         "videos": ["Ui20lHMkMwM"],
         "name": "Shadowloo Showdown 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -622,19 +644,19 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "SnakeEyez",
                 "character": "ZANGIEF"
             },
             {
                 "place": 7,
-                "player": "Shungoku Neurosis",
-                "character": "BISON"
-            },
-            {
-                "place": 8,
                 "player": "Xian",
                 "character": "GEN"
+            },
+            {
+                "place": 7,
+                "player": "Shungoku Neurosis",
+                "character": "BISON"
             }
         ]
     },
@@ -644,6 +666,8 @@
         "country": "US",
         "videos": [],
         "name": "Eastcoast Throwdown 4",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -671,7 +695,7 @@
                 "character": "GUILE"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Sanford Kelly",
                 "character": "SAGAT"
             },
@@ -681,7 +705,7 @@
                 "character": "VIPER"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "AquaSilk",
                 "character": "ZANGIEF"
             }
@@ -693,6 +717,8 @@
         "country": "US",
         "videos": [],
         "name": "Summer Jam 7",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -720,19 +746,19 @@
                 "character": "VEGA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Sanford Kelly",
                 "character": "SAGAT"
             },
             {
                 "place": 7,
-                "player": "Tampa Bison",
-                "character": "BISON"
-            },
-            {
-                "place": 8,
                 "player": "DemonHyo",
                 "character": "SETH"
+            },
+            {
+                "place": 7,
+                "player": "Tampa Bison",
+                "character": "BISON"
             }
         ]
     },
@@ -742,6 +768,8 @@
         "country": "SG",
         "videos": [],
         "name": "Capcom Cup Asia Final",
+        "type": "PREMIER_5",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -769,7 +797,7 @@
                 "character": "ADON"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Momochi",
                 "character": "CODY"
             }
@@ -781,6 +809,8 @@
         "country": "NL",
         "videos": [],
         "name": "Red Fight District 2",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -804,13 +834,18 @@
             },
             {
                 "place": 5,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
                 "player": "F-Word",
                 "character": "IBUKI"
             },
             {
-                "place": 6,
-                "player": "NYChrisG",
-                "character": "SAKURA"
+                "place": 7,
+                "player": "MoMi",
+                "character": "FEI"
             },
             {
                 "place": 7,
@@ -818,9 +853,14 @@
                 "character": "IBUKI"
             },
             {
-                "place": 8,
-                "player": "MoMi",
-                "character": "FEI"
+                "place": 9,
+                "player": "Sheva",
+                "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "DoomDomainn",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -828,19 +868,9 @@
                 "character": "RYU"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Dieminion",
                 "character": "GUILE"
-            },
-            {
-                "place": 11,
-                "player": "DoomDomainn",
-                "character": "RYU"
-            },
-            {
-                "place": 12,
-                "player": "Sheva",
-                "character": "CODY"
             },
             {
                 "place": 13,
@@ -848,17 +878,17 @@
                 "character": "YUN"
             },
             {
-                "place": 14,
-                "player": "ChaozTheory",
-                "character": "BISON"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Popi",
                 "character": "CAMMY"
             },
             {
-                "place": 16,
+                "place": 13,
+                "player": "ChaozTheory",
+                "character": "BISON"
+            },
+            {
+                "place": 13,
                 "player": "Emersion",
                 "character": "VEGA"
             }
@@ -870,6 +900,8 @@
         "country": "US",
         "videos": [],
         "name": "Apex 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -893,13 +925,18 @@
             },
             {
                 "place": 5,
+                "player": "Arturo Sanchez",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 5,
                 "player": "Hiro",
                 "character": "BISON"
             },
             {
-                "place": 6,
-                "player": "Arturo Sanchez",
-                "character": "DHALSIM"
+                "place": 7,
+                "player": "Alex Smith",
+                "character": "ABEL"
             },
             {
                 "place": 7,
@@ -907,9 +944,14 @@
                 "character": "VEGA"
             },
             {
-                "place": 8,
-                "player": "Alex Smith",
-                "character": "ABEL"
+                "place": 9,
+                "player": "MMS Native",
+                "character": "HAWK"
+            },
+            {
+                "place": 9,
+                "player": "Gridman",
+                "character": "VIPER"
             },
             {
                 "place": 9,
@@ -917,19 +959,14 @@
                 "character": "SAGAT"
             },
             {
-                "place": 10,
-                "player": "Gridman",
-                "character": "VIPER"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "CMX",
                 "character": "SAGAT"
             },
             {
-                "place": 12,
-                "player": "MMS Native",
-                "character": "HAWK"
+                "place": 13,
+                "player": "Spab Rog",
+                "character": "FUERTE"
             },
             {
                 "place": 13,
@@ -937,19 +974,14 @@
                 "character": "VIPER"
             },
             {
-                "place": 14,
-                "player": "Dieminion",
-                "character": "GUILE"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "LuckyD",
                 "character": "DHALSIM"
             },
             {
-                "place": 16,
-                "player": "Spab Rog",
-                "character": "FUERTE"
+                "place": 13,
+                "player": "Dieminion",
+                "character": "GUILE"
             }
         ]
     },
@@ -959,6 +991,8 @@
         "country": "FR",
         "videos": [],
         "name": "SF 25th Paris",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -986,19 +1020,19 @@
                 "character": "HONDA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Adone Stylz",
                 "character": "SAGAT"
             },
             {
                 "place": 7,
-                "player": "TKO X Isoudw",
-                "character": "GUILE"
-            },
-            {
-                "place": 8,
                 "player": "Saunic",
                 "character": "IBUKI"
+            },
+            {
+                "place": 7,
+                "player": "TKO X Isoudw",
+                "character": "GUILE"
             }
         ]
     },
@@ -1008,6 +1042,8 @@
         "country": "JP",
         "videos": ["oO1RsP3_dsY"],
         "name": "Topanga League 3",
+        "type": "CHAMPIONSHIP",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -1077,6 +1113,8 @@
         "country": "CA",
         "videos": [],
         "name": "April Duels 2",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1104,7 +1142,7 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Chi-Rithy",
                 "character": "CAMMY"
             },
@@ -1114,7 +1152,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "PR Balrog",
                 "character": "BALROG"
             }
@@ -1126,6 +1164,8 @@
         "country": "KR",
         "videos": [],
         "name": "Capcom Cup Qualifier Korea",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1153,19 +1193,19 @@
                 "character": "YUN"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "BIGDANMUL",
                 "character": "MAKOTO"
             },
             {
                 "place": 7,
-                "player": "Kim Legend",
-                "character": "BLANKA"
-            },
-            {
-                "place": 8,
                 "player": "hydeBUFFY",
                 "character": "ADON"
+            },
+            {
+                "place": 7,
+                "player": "Kim Legend",
+                "character": "BLANKA"
             }
         ]
     },
@@ -1175,6 +1215,8 @@
         "country": "JP",
         "videos": [],
         "name": "Topanga League 2 B",
+        "type": "INTERNATIONAL",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -1264,6 +1306,8 @@
         "country": "US",
         "videos": [],
         "name": "Norcal 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1291,7 +1335,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Justin Wong",
                 "character": "RUFUS"
             },
@@ -1301,9 +1345,14 @@
                 "character": "HONDA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "WolfKrone",
                 "character": "VIPER"
+            },
+            {
+                "place": 9,
+                "player": "Marq Teddy",
+                "character": "GUY"
             },
             {
                 "place": 9,
@@ -1311,19 +1360,24 @@
                 "character": "RUFUS"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "PR Balrog",
                 "character": "BALROG"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "Julio",
                 "character": "YUN"
             },
             {
-                "place": 12,
-                "player": "Marq Teddy",
-                "character": "GUY"
+                "place": 13,
+                "player": "Hsien Chang",
+                "character": "YUN"
+            },
+            {
+                "place": 13,
+                "player": "LPN",
+                "character": "CAMMY"
             },
             {
                 "place": 13,
@@ -1331,19 +1385,9 @@
                 "character": "KEN"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Alex Valle",
                 "character": "RYU"
-            },
-            {
-                "place": 15,
-                "player": "Hsien Chang",
-                "character": "YUN"
-            },
-            {
-                "place": 16,
-                "player": "LPN",
-                "character": "CAMMY"
             }
         ]
     },
@@ -1353,6 +1397,8 @@
         "country": "CN",
         "videos": [],
         "name": "WCG 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1380,7 +1426,7 @@
                 "character": "AKUMA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Darlan",
                 "character": "RYU"
             }
@@ -1392,6 +1438,8 @@
         "country": "JP",
         "videos": [],
         "name": "Topanga League 1",
+        "type": "CHAMPIONSHIP",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -1461,6 +1509,8 @@
         "country": "FR",
         "videos": [],
         "name": "Shadowloo EU Qualifier",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1484,23 +1534,23 @@
             },
             {
                 "place": 5,
+                "player": "Phenix",
+                "character": "HAWK"
+            },
+            {
+                "place": 5,
                 "player": "DoomDomainn",
                 "character": "RYU"
             },
             {
-                "place": 6,
-                "player": "Phenix",
-                "character": "HAWK"
+                "place": 7,
+                "player": "Will2Pac",
+                "character": "VIPER"
             },
             {
                 "place": 7,
                 "player": "Gamein",
                 "character": "FEI"
-            },
-            {
-                "place": 8,
-                "player": "Will2Pac",
-                "character": "VIPER"
             }
         ]
     },
@@ -1510,6 +1560,8 @@
         "country": "FR",
         "videos": [],
         "name": "WGC 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1533,23 +1585,23 @@
             },
             {
                 "place": 5,
+                "player": "Andreas",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
                 "player": "Luffy",
                 "character": "ROSE"
             },
             {
-                "place": 6,
-                "player": "Andreas",
-                "character": "RUFUS"
+                "place": 7,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
             },
             {
                 "place": 7,
                 "player": "Gagapa",
                 "character": "BISON"
-            },
-            {
-                "place": 8,
-                "player": "Ryan Hart",
-                "character": "SAGAT"
             }
         ]
     },
@@ -1559,6 +1611,8 @@
         "country": "US",
         "videos": [],
         "name": "Austin SF25th",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1582,13 +1636,13 @@
             },
             {
                 "place": 5,
-                "player": "NashFan",
-                "character": "CHUN"
-            },
-            {
-                "place": 6,
                 "player": "Justin Wong",
                 "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "NashFan",
+                "character": "CHUN"
             },
             {
                 "place": 7,
@@ -1596,7 +1650,7 @@
                 "character": "CODY"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Vangief",
                 "character": "ZANGIEF"
             }
@@ -1608,6 +1662,8 @@
         "country": "JP",
         "videos": [],
         "name": "Topanga Asian League",
+        "type": "PREMIER_MANDATORY",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -1657,6 +1713,8 @@
         "country": "SG",
         "videos": [],
         "name": "Capcom Cup Qualifier Singapore",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1680,13 +1738,13 @@
             },
             {
                 "place": 5,
-                "player": "Dixon",
-                "character": "BALROG"
-            },
-            {
-                "place": 6,
                 "player": "Xiaohai",
                 "character": "CAMMY"
+            },
+            {
+                "place": 5,
+                "player": "Dixon",
+                "character": "BALROG"
             },
             {
                 "place": 7,
@@ -1694,7 +1752,7 @@
                 "character": "JURI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Random King",
                 "character": "UNKNOWN"
             }
@@ -1706,6 +1764,8 @@
         "country": "US",
         "videos": [],
         "name": "Socal 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1729,13 +1789,18 @@
             },
             {
                 "place": 5,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
                 "player": "LPN",
                 "character": "CAMMY"
             },
             {
-                "place": 6,
-                "player": "Dieminion",
-                "character": "GUILE"
+                "place": 7,
+                "player": "Hoodaman",
+                "character": "HONDA"
             },
             {
                 "place": 7,
@@ -1743,9 +1808,9 @@
                 "character": "FEI"
             },
             {
-                "place": 8,
-                "player": "Hoodaman",
-                "character": "HONDA"
+                "place": 9,
+                "player": "fLoE",
+                "character": "GUY"
             },
             {
                 "place": 9,
@@ -1753,19 +1818,14 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 10,
-                "player": "Keno",
-                "character": "BALROG"
-            },
-            {
-                "place": 11,
-                "player": "fLoE",
-                "character": "GUY"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Mike Ross",
                 "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "Keno",
+                "character": "BALROG"
             },
             {
                 "place": 13,
@@ -1773,17 +1833,17 @@
                 "character": "GUY"
             },
             {
-                "place": 14,
-                "player": "Filipino Champ",
-                "character": "DHALSIM"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "NYChrisG",
                 "character": "SAKURA"
             },
             {
-                "place": 16,
+                "place": 13,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 13,
                 "player": "Alex Jebailey",
                 "character": "BALROG"
             }
@@ -1795,6 +1855,8 @@
         "country": "JP",
         "videos": [],
         "name": "Topanga League 2",
+        "type": "PREMIER_MANDATORY",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -1864,6 +1926,8 @@
         "country": "US",
         "videos": [],
         "name": "Shadowloo US Qualifier",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1887,23 +1951,23 @@
             },
             {
                 "place": 5,
+                "player": "Hugo101",
+                "character": "BISON"
+            },
+            {
+                "place": 5,
                 "player": "Unchained",
                 "character": "CODY"
             },
             {
-                "place": 6,
-                "player": "Hugo101",
-                "character": "BISON"
+                "place": 7,
+                "player": "Combojack",
+                "character": "SAGAT"
             },
             {
                 "place": 7,
                 "player": "Brentt",
                 "character": "RUFUS"
-            },
-            {
-                "place": 8,
-                "player": "Combojack",
-                "character": "SAGAT"
             }
         ]
     },
@@ -1913,6 +1977,8 @@
         "country": "US",
         "videos": [],
         "name": "NYC SF25th",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -1940,7 +2006,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "K-Brad",
                 "character": "CAMMY"
             },
@@ -1950,9 +2016,19 @@
                 "character": "BALROG"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Zeus",
                 "character": "VEGA"
+            },
+            {
+                "place": 9,
+                "player": "Henry Cen",
+                "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "Arturo Sanchez",
+                "character": "ROSE"
             },
             {
                 "place": 9,
@@ -1960,19 +2036,19 @@
                 "character": "VIPER"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Hiro",
                 "character": "BISON"
             },
             {
-                "place": 11,
-                "player": "Henry Cen",
-                "character": "HONDA"
+                "place": 13,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
             },
             {
-                "place": 12,
-                "player": "Arturo Sanchez",
-                "character": "ROSE"
+                "place": 13,
+                "player": "Lionheart",
+                "character": "SAGAT"
             },
             {
                 "place": 13,
@@ -1980,17 +2056,7 @@
                 "character": "SAKURA"
             },
             {
-                "place": 14,
-                "player": "Lionheart",
-                "character": "SAGAT"
-            },
-            {
-                "place": 15,
-                "player": "Chi-Rithy",
-                "character": "CAMMY"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Chris Hu",
                 "character": "ONI"
             }
@@ -2002,6 +2068,8 @@
         "country": "CA",
         "videos": [],
         "name": "Canada Cup",
+        "type": "PREMIER_MANDATORY",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2029,9 +2097,14 @@
                 "character": "RUFUS"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Infiltration",
                 "character": "AKUMA"
+            },
+            {
+                "place": 7,
+                "player": "Bonchan",
+                "character": "SAGAT"
             },
             {
                 "place": 7,
@@ -2039,9 +2112,9 @@
                 "character": "BALROG"
             },
             {
-                "place": 8,
-                "player": "Bonchan",
-                "character": "SAGAT"
+                "place": 9,
+                "player": "Riceata",
+                "character": "BLANKA"
             },
             {
                 "place": 9,
@@ -2049,17 +2122,12 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "GamerBee",
                 "character": "ADON"
             },
             {
-                "place": 11,
-                "player": "Riceata",
-                "character": "BLANKA"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Mike Ross",
                 "character": "HONDA"
             },
@@ -2069,19 +2137,19 @@
                 "character": "HONDA"
             },
             {
-                "place": 14,
+                "place": 13,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 13,
                 "player": "Justin Wong",
                 "character": "RUFUS"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "Laugh",
                 "character": "RYU"
-            },
-            {
-                "place": 16,
-                "player": "NYChrisG",
-                "character": "SAKURA"
             }
         ]
     },
@@ -2091,6 +2159,8 @@
         "country": "US",
         "videos": [],
         "name": "Northwest Major 4",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2114,13 +2184,13 @@
             },
             {
                 "place": 5,
-                "player": "Hsien Chang",
-                "character": "YUN"
-            },
-            {
-                "place": 6,
                 "player": "801 Strider",
                 "character": "ABEL"
+            },
+            {
+                "place": 5,
+                "player": "Hsien Chang",
+                "character": "YUN"
             },
             {
                 "place": 7,
@@ -2128,9 +2198,24 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Lapchi",
                 "character": "BLANKA"
+            },
+            {
+                "place": 9,
+                "player": "SBA Harrison",
+                "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "Jason Cole",
+                "character": "DJ"
+            },
+            {
+                "place": 9,
+                "player": "HiHiPuffyamiyumi",
+                "character": "BISON"
             },
             {
                 "place": 9,
@@ -2138,19 +2223,9 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 10,
-                "player": "HiHiPuffyamiyumi",
-                "character": "BISON"
-            },
-            {
-                "place": 11,
-                "player": "SBA Harrison",
-                "character": "CODY"
-            },
-            {
-                "place": 12,
-                "player": "Jason Cole",
-                "character": "DJ"
+                "place": 13,
+                "player": "Buktooth",
+                "character": "IBUKI"
             },
             {
                 "place": 13,
@@ -2158,19 +2233,14 @@
                 "character": "RYU"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Arthur",
                 "character": "HONDA"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "FineLikeWine49",
                 "character": "GUILE"
-            },
-            {
-                "place": 16,
-                "player": "Buktooth",
-                "character": "IBUKI"
             }
         ]
     },
@@ -2180,6 +2250,8 @@
         "country": "US",
         "videos": [],
         "name": "GVN Summer Jam 6",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2203,13 +2275,18 @@
             },
             {
                 "place": 5,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 5,
                 "player": "Manny",
                 "character": "FUERTE"
             },
             {
-                "place": 6,
-                "player": "K-Brad",
-                "character": "CAMMY"
+                "place": 7,
+                "player": "DragonGod",
+                "character": "IBUKI"
             },
             {
                 "place": 7,
@@ -2217,9 +2294,14 @@
                 "character": "BISON"
             },
             {
-                "place": 8,
-                "player": "DragonGod",
-                "character": "IBUKI"
+                "place": 9,
+                "player": "WeirdoNeo",
+                "character": "JURI"
+            },
+            {
+                "place": 9,
+                "player": "Flash Metroid",
+                "character": "GEN"
             },
             {
                 "place": 9,
@@ -2227,19 +2309,14 @@
                 "character": "HONDA"
             },
             {
-                "place": 10,
-                "player": "Flash Metroid",
-                "character": "GEN"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "Julian Robinson",
                 "character": "ROSE"
             },
             {
-                "place": 12,
-                "player": "WeirdoNeo",
-                "character": "JURI"
+                "place": 13,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
             },
             {
                 "place": 13,
@@ -2247,19 +2324,14 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 14,
-                "player": "Weaksauce",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "LuckyD",
                 "character": "DHALSIM"
             },
             {
-                "place": 16,
-                "player": "Sanford Kelly",
-                "character": "SAGAT"
+                "place": 13,
+                "player": "Weaksauce",
+                "character": "UNKNOWN"
             }
         ]
     },
@@ -2269,6 +2341,8 @@
         "country": "US",
         "videos": [],
         "name": "NEC 13",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2296,9 +2370,14 @@
                 "character": "VEGA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "LuckyD",
                 "character": "DHALSIM"
+            },
+            {
+                "place": 7,
+                "player": "L.I. Joe",
+                "character": "SAGAT"
             },
             {
                 "place": 7,
@@ -2306,29 +2385,24 @@
                 "character": "GEN"
             },
             {
-                "place": 8,
-                "player": "L.I. Joe",
-                "character": "SAGAT"
-            },
-            {
                 "place": 9,
                 "player": "WeirdoNeo",
                 "character": "JURI"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "K-Brad",
                 "character": "CAMMY"
             },
             {
-                "place": 11,
-                "player": "NYChrisG",
-                "character": "SAKURA"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Hiro",
                 "character": "BISON"
+            },
+            {
+                "place": 9,
+                "player": "NYChrisG",
+                "character": "SAKURA"
             },
             {
                 "place": 13,
@@ -2336,7 +2410,7 @@
                 "character": "RYU"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Sanford Kelly",
                 "character": "SAGAT"
             }
@@ -2348,6 +2422,8 @@
         "country": "SG",
         "videos": [],
         "name": "Southeast Major 2012",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2371,13 +2447,13 @@
             },
             {
                 "place": 5,
-                "player": "Rodney",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 6,
                 "player": "Dixon",
                 "character": "BALROG"
+            },
+            {
+                "place": 5,
+                "player": "Rodney",
+                "character": "UNKNOWN"
             },
             {
                 "place": 7,
@@ -2385,7 +2461,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Foxy",
                 "character": "DHALSIM"
             }
@@ -2397,6 +2473,8 @@
         "country": "CA",
         "videos": [],
         "name": "Canada Cup 2013",
+        "type": "PREMIER_MANDATORY",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2420,13 +2498,18 @@
             },
             {
                 "place": 5,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
                 "player": "Dakou",
                 "character": "CAMMY"
             },
             {
-                "place": 6,
-                "player": "Jayce The Ace",
-                "character": "VIPER"
+                "place": 7,
+                "player": "Mago",
+                "character": "FEI"
             },
             {
                 "place": 7,
@@ -2434,9 +2517,9 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 8,
-                "player": "Mago",
-                "character": "FEI"
+                "place": 9,
+                "player": "Tokido",
+                "character": "AKUMA"
             },
             {
                 "place": 9,
@@ -2444,19 +2527,24 @@
                 "character": "AKUMA"
             },
             {
-                "place": 10,
-                "player": "Tokido",
-                "character": "AKUMA"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "Justin Wong",
                 "character": "RUFUS"
             },
             {
-                "place": 12,
+                "place": 9,
                 "player": "NYChrisG",
                 "character": "SAKURA"
+            },
+            {
+                "place": 13,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
+            },
+            {
+                "place": 13,
+                "player": "PR Balrog",
+                "character": "BALROG"
             },
             {
                 "place": 13,
@@ -2464,19 +2552,9 @@
                 "character": "DUDLEY"
             },
             {
-                "place": 14,
-                "player": "PR Balrog",
-                "character": "BALROG"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Chris",
                 "character": "KEN"
-            },
-            {
-                "place": 16,
-                "player": "Chi-Rithy",
-                "character": "CAMMY"
             }
         ]
     },
@@ -2486,6 +2564,8 @@
         "country": "US",
         "videos": [],
         "name": "Youmacon Championship 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2509,13 +2589,13 @@
             },
             {
                 "place": 5,
-                "player": "HappyMedicine",
-                "character": "BISON"
-            },
-            {
-                "place": 6,
                 "player": "Mike Ross",
                 "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "HappyMedicine",
+                "character": "BISON"
             },
             {
                 "place": 7,
@@ -2523,7 +2603,7 @@
                 "character": "BLANKA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Playing2Win",
                 "character": "DHALSIM"
             }
@@ -2535,6 +2615,8 @@
         "country": "JP",
         "videos": [],
         "name": "Japan SF25th",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2562,7 +2644,7 @@
                 "character": "YANG"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "dath",
                 "character": "VIPER"
             },
@@ -2572,7 +2654,7 @@
                 "character": "FEI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "-R-",
                 "character": "BALROG"
             }
@@ -2584,6 +2666,8 @@
         "country": "JP",
         "videos": [],
         "name": "Starting Over 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2607,12 +2691,12 @@
             },
             {
                 "place": 5,
-                "player": "Shungoku Neurosis",
+                "player": "Reiketsu",
                 "character": "UNKNOWN"
             },
             {
-                "place": 6,
-                "player": "Reiketsu",
+                "place": 5,
+                "player": "Shungoku Neurosis",
                 "character": "UNKNOWN"
             },
             {
@@ -2621,7 +2705,7 @@
                 "character": "YANG"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Zangitan",
                 "character": "ZANGIEF"
             }
@@ -2633,6 +2717,8 @@
         "country": "US",
         "videos": [],
         "name": "UFGT 9",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2660,7 +2746,7 @@
                 "character": "GEN"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "AlucarD",
                 "character": "BALROG"
             },
@@ -2670,9 +2756,14 @@
                 "character": "SAKURA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Arturo Sanchez",
                 "character": "ROSE"
+            },
+            {
+                "place": 9,
+                "player": "Air",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -2680,19 +2771,19 @@
                 "character": "VIPER"
             },
             {
-                "place": 10,
+                "place": 9,
+                "player": "Jayce The Ace",
+                "character": "VIPER"
+            },
+            {
+                "place": 9,
                 "player": "K-Brad",
                 "character": "CAMMY"
             },
             {
-                "place": 11,
-                "player": "Air",
-                "character": "RYU"
-            },
-            {
-                "place": 12,
-                "player": "Jayce The Ace",
-                "character": "VIPER"
+                "place": 13,
+                "player": "fLoE",
+                "character": "RUFUS"
             },
             {
                 "place": 13,
@@ -2700,17 +2791,12 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 14,
-                "player": "fLoE",
-                "character": "RUFUS"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "iRedman",
                 "character": "GUY"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "BAKA",
                 "character": "FEI"
             }
@@ -2722,6 +2808,8 @@
         "country": "US",
         "videos": [],
         "name": "Season Beatings Ascension",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2749,7 +2837,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Vangief",
                 "character": "ZANGIEF"
             },
@@ -2759,9 +2847,24 @@
                 "character": "BALROG"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Justin Wong",
                 "character": "RUFUS"
+            },
+            {
+                "place": 9,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 9,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 9,
+                "player": "Combofiend",
+                "character": "ONI"
             },
             {
                 "place": 9,
@@ -2769,19 +2872,9 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 10,
-                "player": "Dieminion",
-                "character": "GUILE"
-            },
-            {
-                "place": 11,
-                "player": "Combofiend",
-                "character": "ONI"
-            },
-            {
-                "place": 12,
-                "player": "NYChrisG",
-                "character": "SAKURA"
+                "place": 13,
+                "player": "AlucarD",
+                "character": "BALROG"
             },
             {
                 "place": 13,
@@ -2789,17 +2882,12 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "SnakeEyez",
                 "character": "ZANGIEF"
             },
             {
-                "place": 15,
-                "player": "AlucarD",
-                "character": "BALROG"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Brennan K.",
                 "character": "RYU"
             }
@@ -2811,6 +2899,8 @@
         "country": "US",
         "videos": [],
         "name": "Arkansas Regional Knockouts 5",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2834,23 +2924,23 @@
             },
             {
                 "place": 5,
+                "player": "Zohta",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
                 "player": "Ranmasama",
                 "character": "RUFUS"
             },
             {
-                "place": 6,
-                "player": "Zohta",
-                "character": "ZANGIEF"
+                "place": 7,
+                "player": "Crazyclown101",
+                "character": "HONDA"
             },
             {
                 "place": 7,
                 "player": "Good Meal Joe",
                 "character": "CODY"
-            },
-            {
-                "place": 8,
-                "player": "Crazyclown101",
-                "character": "HONDA"
             }
         ]
     },
@@ -2860,6 +2950,8 @@
         "country": "US",
         "videos": [],
         "name": "Spring Fighter 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -2883,23 +2975,23 @@
             },
             {
                 "place": 5,
+                "player": "Lionheart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
                 "player": "Insaynne",
                 "character": "BLANKA"
             },
             {
-                "place": 6,
-                "player": "Lionheart",
-                "character": "SAGAT"
+                "place": 7,
+                "player": "Glitch",
+                "character": "RUFUS"
             },
             {
                 "place": 7,
                 "player": "Manny Fuerte",
                 "character": "FUERTE"
-            },
-            {
-                "place": 8,
-                "player": "Glitch",
-                "character": "RUFUS"
             }
         ]
     },
@@ -2909,6 +3001,8 @@
         "country": "JP",
         "videos": ["nGVTlr-OY7Q"],
         "name": "Topanga League 3 B",
+        "type": "PREMIER_12",
+        "format": "LEAGUE",
         "players": [
             {
                 "place": 1,
@@ -2998,6 +3092,8 @@
         "country": "SE",
         "videos": [],
         "name": "Dreamhack Winter 2013",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3021,23 +3117,23 @@
             },
             {
                 "place": 5,
+                "player": "I'm Still Da Daddy",
+                "character": "GUILE"
+            },
+            {
+                "place": 5,
                 "player": "Ryan Hart",
                 "character": "SAGAT"
             },
             {
-                "place": 6,
-                "player": "I'm Still Da Daddy",
-                "character": "GUILE"
+                "place": 7,
+                "player": "Kusanagi",
+                "character": "SETH"
             },
             {
                 "place": 7,
                 "player": "Xian",
                 "character": "GEN"
-            },
-            {
-                "place": 8,
-                "player": "Kusanagi",
-                "character": "SETH"
             }
         ]
     },
@@ -3047,6 +3143,8 @@
         "country": "TH",
         "videos": ["llmrjVbvjB0"],
         "name": "Thaiger Uppercut 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3074,7 +3172,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Sekiganryu",
                 "character": "RYU"
             },
@@ -3084,7 +3182,7 @@
                 "character": "SAKURA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "HumanBomb",
                 "character": "SAKURA"
             }
@@ -3096,6 +3194,8 @@
         "country": "US",
         "videos": [],
         "name": "Winter Brawl 7",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3119,13 +3219,13 @@
             },
             {
                 "place": 5,
-                "player": "Ricky Ortiz",
-                "character": "RUFUS"
-            },
-            {
-                "place": 6,
                 "player": "SnakeEyez",
                 "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
             },
             {
                 "place": 7,
@@ -3133,7 +3233,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Rico Suave",
                 "character": "ABEL"
             }
@@ -3145,6 +3245,8 @@
         "country": "JP",
         "videos": [],
         "name": "Shadowloo Showdown Qualifier JP",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3172,19 +3274,19 @@
                 "character": "CAMMY"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Charisma",
                 "character": "ADON"
             },
             {
                 "place": 7,
-                "player": "Younashi",
-                "character": "JURI"
-            },
-            {
-                "place": 8,
                 "player": "SuperSantarouMan",
                 "character": "SAGAT"
+            },
+            {
+                "place": 7,
+                "player": "Younashi",
+                "character": "JURI"
             }
         ]
     },
@@ -3194,6 +3296,8 @@
         "country": "JP",
         "videos": [],
         "name": "Mix Up Night 13",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3221,7 +3325,7 @@
                 "character": "BISON"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Haitani",
                 "character": "RUFUS"
             },
@@ -3231,7 +3335,7 @@
                 "character": "HAWK"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Rokkun",
                 "character": "SETH"
             }
@@ -3243,6 +3347,8 @@
         "country": "US",
         "videos": [],
         "name": "East Coast Throwdown 5",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3266,13 +3372,13 @@
             },
             {
                 "place": 5,
-                "player": "WeirdoNeo",
-                "character": "JURI"
-            },
-            {
-                "place": 6,
                 "player": "WolfKrone",
                 "character": "VIPER"
+            },
+            {
+                "place": 5,
+                "player": "WeirdoNeo",
+                "character": "JURI"
             },
             {
                 "place": 7,
@@ -3280,7 +3386,7 @@
                 "character": "ROSE"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Ricky Ortiz",
                 "character": "RUFUS"
             }
@@ -3292,6 +3398,8 @@
         "country": "US",
         "videos": [],
         "name": "CEO 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3315,13 +3423,13 @@
             },
             {
                 "place": 5,
-                "player": "Mago",
-                "character": "FEI"
-            },
-            {
-                "place": 6,
                 "player": "Justin Wong",
                 "character": "RUFUS"
+            },
+            {
+                "place": 5,
+                "player": "Mago",
+                "character": "FEI"
             },
             {
                 "place": 7,
@@ -3329,9 +3437,24 @@
                 "character": "VIPER"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Ramen Addict",
                 "character": "ADON"
+            },
+            {
+                "place": 9,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Snafoo",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
             },
             {
                 "place": 9,
@@ -3339,39 +3462,24 @@
                 "character": "SAGAT"
             },
             {
-                "place": 10,
-                "player": "Filipino Champ",
-                "character": "DHALSIM"
-            },
-            {
-                "place": 11,
-                "player": "Sanford Kelly",
-                "character": "SAGAT"
-            },
-            {
-                "place": 12,
-                "player": "Snafoo",
-                "character": "DHALSIM"
-            },
-            {
                 "place": 13,
                 "player": "Tampa Bison",
                 "character": "BISON"
             },
             {
-                "place": 14,
+                "place": 13,
+                "player": "Rico Suave",
+                "character": "ABEL"
+            },
+            {
+                "place": 13,
                 "player": "Mike Ross",
                 "character": "HONDA"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "Dark Jiewa",
                 "character": "KEN"
-            },
-            {
-                "place": 16,
-                "player": "Rico Suave",
-                "character": "ABEL"
             }
         ]
     },
@@ -3381,6 +3489,8 @@
         "country": "SE",
         "videos": [],
         "name": "Dreamhack Summer 2013",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3404,23 +3514,23 @@
             },
             {
                 "place": 5,
+                "player": "Problem X",
+                "character": "VIPER"
+            },
+            {
+                "place": 5,
                 "player": "F-Word",
                 "character": "IBUKI"
             },
             {
-                "place": 6,
-                "player": "Problem X",
-                "character": "VIPER"
+                "place": 7,
+                "player": "Emersion",
+                "character": "VEGA"
             },
             {
                 "place": 7,
                 "player": "Ixion",
                 "character": "DAN"
-            },
-            {
-                "place": 8,
-                "player": "Emersion",
-                "character": "VEGA"
             }
         ]
     },
@@ -3430,6 +3540,8 @@
         "country": "US",
         "videos": [],
         "name": "Lanhammer 2013",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3457,7 +3569,7 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Filipino Champ",
                 "character": "DHALSIM"
             },
@@ -3467,9 +3579,19 @@
                 "character": "VEGA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Hoodaman",
                 "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "Brass",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 9,
+                "player": "XsK Samurai",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -3477,39 +3599,29 @@
                 "character": "AKUMA"
             },
             {
-                "place": 10,
-                "player": "XsK Samurai",
-                "character": "RYU"
-            },
-            {
-                "place": 11,
-                "player": "Brass",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Julio",
                 "character": "YUN"
             },
             {
                 "place": 13,
-                "player": "Rom",
-                "character": "YANG"
+                "player": "UyuuPop",
+                "character": "GUY"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Illiterate",
                 "character": "YANG"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "Boba Tapioca",
                 "character": "FEI"
             },
             {
-                "place": 16,
-                "player": "UyuuPop",
-                "character": "GUY"
+                "place": 13,
+                "player": "Rom",
+                "character": "YANG"
             }
         ]
     },
@@ -3519,6 +3631,8 @@
         "country": "SG",
         "videos": [],
         "name": "Southeast Asia Major 2013",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3546,7 +3660,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "GambleBoxer",
                 "character": "BALROG"
             },
@@ -3556,9 +3670,19 @@
                 "character": "FEI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Leslie",
                 "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Kazunoko",
+                "character": "YUN"
+            },
+            {
+                "place": 9,
+                "player": "Ren",
+                "character": "IBUKI"
             },
             {
                 "place": 9,
@@ -3566,19 +3690,19 @@
                 "character": "FEI"
             },
             {
-                "place": 10,
-                "player": "Ren",
-                "character": "IBUKI"
-            },
-            {
-                "place": 11,
-                "player": "Kazunoko",
-                "character": "YUN"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Kaiser",
                 "character": "YUN"
+            },
+            {
+                "place": 13,
+                "player": "Tommy",
+                "character": "CHUN"
+            },
+            {
+                "place": 13,
+                "player": "Rockpon",
+                "character": "IBUKI"
             },
             {
                 "place": 13,
@@ -3586,19 +3710,9 @@
                 "character": "SAGAT"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Itabashi Zangief",
                 "character": "ZANGIEF"
-            },
-            {
-                "place": 15,
-                "player": "Rockpon",
-                "character": "IBUKI"
-            },
-            {
-                "place": 16,
-                "player": "Tommy",
-                "character": "CHUN"
             }
         ]
     },
@@ -3608,6 +3722,8 @@
         "country": "US",
         "videos": [],
         "name": "Final Round 16",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3631,13 +3747,13 @@
             },
             {
                 "place": 5,
-                "player": "Xian",
-                "character": "GEN"
-            },
-            {
-                "place": 6,
                 "player": "NuckleDu",
                 "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "Xian",
+                "character": "GEN"
             },
             {
                 "place": 7,
@@ -3645,7 +3761,7 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Ricky Ortiz",
                 "character": "RUFUS"
             },
@@ -3655,19 +3771,29 @@
                 "character": "RUFUS"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "fLoE",
                 "character": "GUY"
             },
             {
-                "place": 11,
+                "place": 9,
+                "player": "Druseph",
+                "character": "HONDA"
+            },
+            {
+                "place": 9,
                 "player": "NYChrisG",
                 "character": "SAKURA"
             },
             {
-                "place": 12,
-                "player": "Druseph",
-                "character": "HONDA"
+                "place": 13,
+                "player": "Flash Metroid",
+                "character": "AKUMA"
+            },
+            {
+                "place": 13,
+                "player": "CJ Truth",
+                "character": "FEI"
             },
             {
                 "place": 13,
@@ -3675,19 +3801,9 @@
                 "character": "SAGAT"
             },
             {
-                "place": 14,
-                "player": "Flash Metroid",
-                "character": "AKUMA"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "801 Strider",
                 "character": "ABEL"
-            },
-            {
-                "place": 16,
-                "player": "CJ Truth",
-                "character": "FEI"
             }
         ]
     },
@@ -3697,6 +3813,8 @@
         "country": "US",
         "videos": [],
         "name": "Texas Showdown 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3720,13 +3838,18 @@
             },
             {
                 "place": 5,
+                "player": "Rain",
+                "character": "YUN"
+            },
+            {
+                "place": 5,
                 "player": "Integra",
                 "character": "KEN"
             },
             {
-                "place": 6,
-                "player": "Rain",
-                "character": "YUN"
+                "place": 7,
+                "player": "FourWude",
+                "character": "AKUMA"
             },
             {
                 "place": 7,
@@ -3734,9 +3857,19 @@
                 "character": "ADON"
             },
             {
-                "place": 8,
-                "player": "FourWude",
-                "character": "AKUMA"
+                "place": 9,
+                "player": "AV Joe",
+                "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "Hadoken6969",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Alex Valle",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -3744,19 +3877,9 @@
                 "character": "VIPER"
             },
             {
-                "place": 10,
-                "player": "AV Joe",
-                "character": "CODY"
-            },
-            {
-                "place": 11,
-                "player": "Alex Valle",
-                "character": "RYU"
-            },
-            {
-                "place": 12,
-                "player": "Hadoken6969",
-                "character": "RYU"
+                "place": 13,
+                "player": "PCutta",
+                "character": "UNKNOWN"
             },
             {
                 "place": 13,
@@ -3764,17 +3887,12 @@
                 "character": "GUILE"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Hammad",
                 "character": "FEI"
             },
             {
-                "place": 15,
-                "player": "PCutta",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Dandy Cheeks",
                 "character": "YANG"
             }
@@ -3786,6 +3904,8 @@
         "country": "US",
         "videos": [],
         "name": "Los Angeles SF25th",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3813,9 +3933,14 @@
                 "character": "VIPER"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "ClakeyD",
                 "character": "IBUKI"
+            },
+            {
+                "place": 7,
+                "player": "PR Balrog",
+                "character": "BALROG"
             },
             {
                 "place": 7,
@@ -3823,9 +3948,14 @@
                 "character": "ROSE"
             },
             {
-                "place": 8,
-                "player": "PR Balrog",
-                "character": "BALROG"
+                "place": 9,
+                "player": "LPN",
+                "character": "CAMMY"
+            },
+            {
+                "place": 9,
+                "player": "Luken",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -3833,18 +3963,13 @@
                 "character": "KEN"
             },
             {
-                "place": 10,
-                "player": "Luken",
-                "character": "RYU"
-            },
-            {
-                "place": 11,
-                "player": "LPN",
-                "character": "CAMMY"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 13,
+                "player": "Hoodaman",
                 "character": "HONDA"
             },
             {
@@ -3853,17 +3978,12 @@
                 "character": "RUFUS"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Flash Metroid",
                 "character": "GEN"
             },
             {
-                "place": 15,
-                "player": "Hoodaman",
-                "character": "HONDA"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Chi-Rithy",
                 "character": "CAMMY"
             }
@@ -3875,6 +3995,8 @@
         "country": "CA",
         "videos": [],
         "name": "Montreal Annual Tournament 10",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3902,7 +4024,7 @@
                 "character": "ONI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "JimmyFierce",
                 "character": "RYU"
             },
@@ -3912,7 +4034,7 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Karamba",
                 "character": "GUY"
             }
@@ -3924,6 +4046,8 @@
         "country": "US",
         "videos": [],
         "name": "CEO 2012",
+        "type": "PREMIER_5",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -3951,7 +4075,7 @@
                 "character": "HONDA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "WolfKrone",
                 "character": "VIPER"
             },
@@ -3961,9 +4085,19 @@
                 "character": "ADON"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Daigo Umehara",
                 "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "iPeru",
+                "character": "FUERTE"
+            },
+            {
+                "place": 9,
+                "player": "Mago",
+                "character": "FEI"
             },
             {
                 "place": 9,
@@ -3971,39 +4105,29 @@
                 "character": "CAMMY"
             },
             {
-                "place": 10,
-                "player": "iPeru",
-                "character": "FUERTE"
-            },
-            {
-                "place": 11,
-                "player": "Mago",
-                "character": "FEI"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "NYChrisG",
                 "character": "SAKURA"
             },
             {
                 "place": 13,
-                "player": "West",
-                "character": "GEN"
-            },
-            {
-                "place": 14,
                 "player": "K-Brad",
                 "character": "CAMMY"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "Dieminion",
                 "character": "GUILE"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "Combofiend",
                 "character": "ONI"
+            },
+            {
+                "place": 13,
+                "player": "West",
+                "character": "GEN"
             }
         ]
     },
@@ -4013,6 +4137,8 @@
         "country": "DE",
         "videos": [],
         "name": "Da Ultimate Crushing",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4036,13 +4162,13 @@
             },
             {
                 "place": 5,
-                "player": "Demulant",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 6,
                 "player": "Gagapa",
                 "character": "BISON"
+            },
+            {
+                "place": 5,
+                "player": "Demulant",
+                "character": "UNKNOWN"
             },
             {
                 "place": 7,
@@ -4050,7 +4176,7 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "DoomDomainn",
                 "character": "UNKNOWN"
             }
@@ -4062,6 +4188,8 @@
         "country": "FR",
         "videos": [],
         "name": "Master Series Europe",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4089,19 +4217,19 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Easyman",
                 "character": "RYU"
             },
             {
                 "place": 7,
-                "player": "Skatan",
-                "character": "SAKURA"
-            },
-            {
-                "place": 8,
                 "player": "Phenom",
                 "character": "BISON"
+            },
+            {
+                "place": 7,
+                "player": "Skatan",
+                "character": "SAKURA"
             }
         ]
     },
@@ -4111,6 +4239,8 @@
         "country": "TW",
         "videos": [],
         "name": "Capcom Cup Qualifier Taiwan",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4138,19 +4268,19 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Rockpon",
                 "character": "IBUKI"
             },
             {
                 "place": 7,
-                "player": "Yoro",
-                "character": "ADON"
-            },
-            {
-                "place": 8,
                 "player": "Zalk",
                 "character": "ONI"
+            },
+            {
+                "place": 7,
+                "player": "Yoro",
+                "character": "ADON"
             }
         ]
     },
@@ -4160,6 +4290,8 @@
         "country": "CA",
         "videos": [],
         "name": "T13 Toronto Series",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4183,13 +4315,13 @@
             },
             {
                 "place": 5,
-                "player": "Justin Wong",
-                "character": "RUFUS"
-            },
-            {
-                "place": 6,
                 "player": "Eric Hai",
                 "character": "RYU"
+            },
+            {
+                "place": 5,
+                "player": "Justin Wong",
+                "character": "RUFUS"
             },
             {
                 "place": 7,
@@ -4197,7 +4329,7 @@
                 "character": "GUILE"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "JimmyFierce",
                 "character": "RYU"
             },
@@ -4207,19 +4339,29 @@
                 "character": "CAMMY"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Broshadian",
                 "character": "ABEL"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "FreddyLoco",
                 "character": "MAKOTO"
             },
             {
-                "place": 12,
+                "place": 9,
                 "player": "LedHendrix",
                 "character": "ABEL"
+            },
+            {
+                "place": 13,
+                "player": "Kiras",
+                "character": "KEN"
+            },
+            {
+                "place": 13,
+                "player": "Tactix",
+                "character": "GOUKEN"
             },
             {
                 "place": 13,
@@ -4227,17 +4369,7 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 14,
-                "player": "Tactix",
-                "character": "GOUKEN"
-            },
-            {
-                "place": 15,
-                "player": "Kiras",
-                "character": "KEN"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "JTN",
                 "character": "SAKURA"
             }
@@ -4249,6 +4381,8 @@
         "country": "GB",
         "videos": [],
         "name": "SF 25th UK",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4272,13 +4406,13 @@
             },
             {
                 "place": 5,
-                "player": "Chi-Rithy",
-                "character": "CAMMY"
-            },
-            {
-                "place": 6,
                 "player": "Yota",
                 "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Chi-Rithy",
+                "character": "CAMMY"
             },
             {
                 "place": 7,
@@ -4286,7 +4420,7 @@
                 "character": "ABEL"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Andreas",
                 "character": "RUFUS"
             }
@@ -4298,6 +4432,8 @@
         "country": "TW",
         "videos": [],
         "name": "Taiwan SF25th",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4321,23 +4457,23 @@
             },
             {
                 "place": 5,
+                "player": "HumanBomb",
+                "character": "SAKURA"
+            },
+            {
+                "place": 5,
                 "player": "Gameouttt",
                 "character": "GUILE"
             },
             {
-                "place": 6,
-                "player": "HumanBomb",
-                "character": "SAKURA"
+                "place": 7,
+                "player": "Yoro",
+                "character": "ADON"
             },
             {
                 "place": 7,
                 "player": "Xian",
                 "character": "GEN"
-            },
-            {
-                "place": 8,
-                "player": "Yoro",
-                "character": "ADON"
             }
         ]
     },
@@ -4347,6 +4483,8 @@
         "country": "CA",
         "videos": [],
         "name": "Toryuken 2",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4374,9 +4512,14 @@
                 "character": "VEGA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Chi-Rithy",
                 "character": "CAMMY"
+            },
+            {
+                "place": 7,
+                "player": "Snafoo",
+                "character": "DHALSIM"
             },
             {
                 "place": 7,
@@ -4384,9 +4527,9 @@
                 "character": "GUY"
             },
             {
-                "place": 8,
-                "player": "Snafoo",
-                "character": "DHALSIM"
+                "place": 9,
+                "player": "Rebelo",
+                "character": "GUILE"
             },
             {
                 "place": 9,
@@ -4394,19 +4537,24 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 10,
-                "player": "Shine",
-                "character": "GUILE"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "JimmyFierce",
                 "character": "RYU"
             },
             {
-                "place": 12,
-                "player": "Rebelo",
+                "place": 9,
+                "player": "Shine",
                 "character": "GUILE"
+            },
+            {
+                "place": 13,
+                "player": "BlueBlazer",
+                "character": "HAWK"
+            },
+            {
+                "place": 13,
+                "player": "Rami",
+                "character": "AKUMA"
             },
             {
                 "place": 13,
@@ -4414,17 +4562,7 @@
                 "character": "AKUMA"
             },
             {
-                "place": 14,
-                "player": "Rami",
-                "character": "AKUMA"
-            },
-            {
-                "place": 15,
-                "player": "BlueBlazer",
-                "character": "HAWK"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Tactix",
                 "character": "GOUKEN"
             }
@@ -4436,6 +4574,8 @@
         "country": "JP",
         "videos": [],
         "name": "Capcom Cup TGS",
+        "type": "PREMIER_5",
+        "format": "SINGLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4453,9 +4593,14 @@
                 "character": "SAKURA"
             },
             {
-                "place": 4,
+                "place": 3,
                 "player": "Fuudo",
                 "character": "FEI"
+            },
+            {
+                "place": 5,
+                "player": "Xian",
+                "character": "GEN"
             },
             {
                 "place": 5,
@@ -4463,19 +4608,24 @@
                 "character": "BLANKA"
             },
             {
-                "place": 6,
+                "place": 5,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 5,
                 "player": "Machabo",
                 "character": "FEI"
             },
             {
-                "place": 7,
-                "player": "Xian",
-                "character": "GEN"
+                "place": 9,
+                "player": "Justin Wong",
+                "character": "RUFUS"
             },
             {
-                "place": 8,
-                "player": "Bonchan",
-                "character": "SAGAT"
+                "place": 9,
+                "player": "Infiltration",
+                "character": "AKUMA"
             },
             {
                 "place": 9,
@@ -4483,39 +4633,29 @@
                 "character": "VIPER"
             },
             {
-                "place": 10,
-                "player": "Ryan Hart",
-                "character": "SAGAT"
-            },
-            {
-                "place": 11,
-                "player": "Infiltration",
-                "character": "AKUMA"
-            },
-            {
-                "place": 12,
-                "player": "Eita",
-                "character": "RYU"
-            },
-            {
-                "place": 13,
-                "player": "Momochi",
-                "character": "KEN"
-            },
-            {
-                "place": 14,
-                "player": "Mike Ross",
-                "character": "HONDA"
-            },
-            {
-                "place": 15,
+                "place": 9,
                 "player": "Tokido",
                 "character": "AKUMA"
             },
             {
-                "place": 16,
-                "player": "Justin Wong",
-                "character": "RUFUS"
+                "place": 9,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
+            },
+            {
+                "place": 9,
+                "player": "Mike Ross",
+                "character": "HONDA"
+            },
+            {
+                "place": 9,
+                "player": "Momochi",
+                "character": "KEN"
+            },
+            {
+                "place": 9,
+                "player": "Eita",
+                "character": "RYU"
             }
         ]
     },
@@ -4525,6 +4665,8 @@
         "country": "US",
         "videos": [],
         "name": "SF 25th",
+        "type": "PREMIER_MANDATORY",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4548,13 +4690,13 @@
             },
             {
                 "place": 5,
-                "player": "GamerBee",
-                "character": "ADON"
-            },
-            {
-                "place": 6,
                 "player": "SnakeEyez",
                 "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
+                "player": "GamerBee",
+                "character": "ADON"
             },
             {
                 "place": 7,
@@ -4562,9 +4704,24 @@
                 "character": "FEI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Momochi",
                 "character": "CODY"
+            },
+            {
+                "place": 9,
+                "player": "Dieminion",
+                "character": "GUILE"
+            },
+            {
+                "place": 9,
+                "player": "WolfKrone",
+                "character": "VIPER"
+            },
+            {
+                "place": 9,
+                "player": "Problem X",
+                "character": "SETH"
             },
             {
                 "place": 9,
@@ -4572,19 +4729,14 @@
                 "character": "CAMMY"
             },
             {
-                "place": 10,
-                "player": "Dieminion",
-                "character": "GUILE"
+                "place": 13,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
             },
             {
-                "place": 11,
-                "player": "Problem X",
-                "character": "SETH"
-            },
-            {
-                "place": 12,
-                "player": "WolfKrone",
-                "character": "VIPER"
+                "place": 13,
+                "player": "Vangief",
+                "character": "ZANGIEF"
             },
             {
                 "place": 13,
@@ -4592,18 +4744,8 @@
                 "character": "GUY"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Justin Wong",
-                "character": "RUFUS"
-            },
-            {
-                "place": 15,
-                "player": "Vangief",
-                "character": "ZANGIEF"
-            },
-            {
-                "place": 16,
-                "player": "Ricky Ortiz",
                 "character": "RUFUS"
             }
         ]
@@ -4614,6 +4756,8 @@
         "country": "US",
         "videos": [],
         "name": "The Fall Classic",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4641,9 +4785,14 @@
                 "character": "BALROG"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Poem",
                 "character": "BALROG"
+            },
+            {
+                "place": 7,
+                "player": "Foomy",
+                "character": "SAKURA"
             },
             {
                 "place": 7,
@@ -4651,9 +4800,19 @@
                 "character": "VIPER"
             },
             {
-                "place": 8,
-                "player": "Foomy",
-                "character": "SAKURA"
+                "place": 9,
+                "player": "Kreymore",
+                "character": "GUY"
+            },
+            {
+                "place": 9,
+                "player": "Tampa Bison",
+                "character": "BISON"
+            },
+            {
+                "place": 9,
+                "player": "Rico Suave",
+                "character": "ABEL"
             },
             {
                 "place": 9,
@@ -4661,37 +4820,22 @@
                 "character": "GUILE"
             },
             {
-                "place": 10,
-                "player": "Rico Suave",
-                "character": "ABEL"
-            },
-            {
-                "place": 11,
-                "player": "Kreymore",
-                "character": "GUY"
-            },
-            {
-                "place": 12,
-                "player": "Tampa Bison",
-                "character": "BISON"
-            },
-            {
                 "place": 13,
                 "player": "Damascus",
                 "character": "IBUKI"
             },
             {
-                "place": 14,
-                "player": "Ricky Ortiz",
-                "character": "RUFUS"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Insaynne",
                 "character": "BLANKA"
             },
             {
-                "place": 16,
+                "place": 13,
+                "player": "Ricky Ortiz",
+                "character": "RUFUS"
+            },
+            {
+                "place": 13,
                 "player": "Fuerte",
                 "character": "HONDA"
             }
@@ -4703,6 +4847,8 @@
         "country": "AU",
         "videos": ["Ui20lHMkMwM"],
         "name": "Shadowloo Showdown 2012",
+        "type": "PREMIER_5",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4730,7 +4876,7 @@
                 "character": "GEN"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "GamerBee",
                 "character": "ADON"
             },
@@ -4740,7 +4886,7 @@
                 "character": "ERYU"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Dakou",
                 "character": "RYU"
             },
@@ -4750,19 +4896,29 @@
                 "character": "RUFUS"
             },
             {
-                "place": 10,
+                "place": 9,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 9,
                 "player": "Xiaohai",
                 "character": "CAMMY"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "KOK",
                 "character": "ERYU"
             },
             {
-                "place": 12,
-                "player": "Fuudo",
-                "character": "FEI"
+                "place": 13,
+                "player": "Michael-tan",
+                "character": "KEN"
+            },
+            {
+                "place": 13,
+                "player": "M. Lizard",
+                "character": "VIPER"
             },
             {
                 "place": 13,
@@ -4770,17 +4926,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 14,
-                "player": "M. Lizard",
-                "character": "VIPER"
-            },
-            {
-                "place": 15,
-                "player": "Michael-tan",
-                "character": "KEN"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "EX Mamehara",
                 "character": "ADON"
             }
@@ -4792,6 +4938,8 @@
         "country": "BR",
         "videos": [],
         "name": "Brazil SF 25th",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4819,7 +4967,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Sarda",
                 "character": "AKUMA"
             },
@@ -4829,7 +4977,7 @@
                 "character": "AKUMA"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Binop",
                 "character": "IBUKI"
             }
@@ -4841,6 +4989,8 @@
         "country": "US",
         "videos": [],
         "name": "Hadocon 5",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4864,13 +5014,13 @@
             },
             {
                 "place": 5,
-                "player": "LPN",
-                "character": "CAMMY"
-            },
-            {
-                "place": 6,
                 "player": "Julio",
                 "character": "YUN"
+            },
+            {
+                "place": 5,
+                "player": "LPN",
+                "character": "CAMMY"
             },
             {
                 "place": 7,
@@ -4878,9 +5028,24 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Kelvin Jeon",
                 "character": "MAKOTO"
+            },
+            {
+                "place": 9,
+                "player": "Crizzle",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 9,
+                "player": "Kineda",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 9,
+                "player": "Mattypie",
+                "character": "UNKNOWN"
             },
             {
                 "place": 9,
@@ -4888,39 +5053,24 @@
                 "character": "HONDA"
             },
             {
-                "place": 10,
-                "player": "Mattypie",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 11,
-                "player": "Crizzle",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 12,
-                "player": "Kineda",
-                "character": "UNKNOWN"
-            },
-            {
                 "place": 13,
                 "player": "BSIDA",
                 "character": "UNKNOWN"
             },
             {
-                "place": 14,
-                "player": "Filipino Champ",
-                "character": "DHALSIM"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "bjUnchained",
                 "character": "UNKNOWN"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "Slompo",
                 "character": "UNKNOWN"
+            },
+            {
+                "place": 13,
+                "player": "Filipino Champ",
+                "character": "DHALSIM"
             }
         ]
     },
@@ -4930,6 +5080,8 @@
         "country": "US",
         "videos": [],
         "name": "Ultimate Fighting Game Tournament 8",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -4953,13 +5105,18 @@
             },
             {
                 "place": 5,
+                "player": "fLoE",
+                "character": "RUFUS"
+            },
+            {
+                "place": 5,
                 "player": "Dieminion",
                 "character": "GUILE"
             },
             {
-                "place": 6,
-                "player": "fLoE",
-                "character": "RUFUS"
+                "place": 7,
+                "player": "Juicebox",
+                "character": "ABEL"
             },
             {
                 "place": 7,
@@ -4967,9 +5124,9 @@
                 "character": "HONDA"
             },
             {
-                "place": 8,
-                "player": "Juicebox",
-                "character": "ABEL"
+                "place": 9,
+                "player": "Hiro",
+                "character": "BISON"
             },
             {
                 "place": 9,
@@ -4977,19 +5134,19 @@
                 "character": "BALROG"
             },
             {
-                "place": 10,
+                "place": 9,
+                "player": "NYChrisG",
+                "character": "SAKURA"
+            },
+            {
+                "place": 9,
                 "player": "NuckleDu",
                 "character": "GUILE"
             },
             {
-                "place": 11,
-                "player": "Hiro",
-                "character": "BISON"
-            },
-            {
-                "place": 12,
-                "player": "NYChrisG",
-                "character": "SAKURA"
+                "place": 13,
+                "player": "Yanu Cerda",
+                "character": "CAMMY"
             },
             {
                 "place": 13,
@@ -4997,18 +5154,13 @@
                 "character": "FEI"
             },
             {
-                "place": 14,
-                "player": "Yanu Cerda",
-                "character": "CAMMY"
-            },
-            {
-                "place": 15,
-                "player": "Big Marcus",
+                "place": 13,
+                "player": "aks",
                 "character": "UNKNOWN"
             },
             {
-                "place": 16,
-                "player": "aks",
+                "place": 13,
+                "player": "Big Marcus",
                 "character": "UNKNOWN"
             }
         ]
@@ -5019,6 +5171,8 @@
         "country": "US",
         "videos": [],
         "name": "Final Round 15",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5046,9 +5200,14 @@
                 "character": "BALROG"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Ramen Addict",
                 "character": "ADON"
+            },
+            {
+                "place": 7,
+                "player": "DBJoseph",
+                "character": "SAKURA"
             },
             {
                 "place": 7,
@@ -5056,9 +5215,9 @@
                 "character": "RUFUS"
             },
             {
-                "place": 8,
-                "player": "DBJoseph",
-                "character": "SAKURA"
+                "place": 9,
+                "player": "Mike Ross",
+                "character": "HONDA"
             },
             {
                 "place": 9,
@@ -5066,19 +5225,24 @@
                 "character": "ABEL"
             },
             {
-                "place": 10,
-                "player": "Mike Ross",
-                "character": "HONDA"
+                "place": 9,
+                "player": "Nobody",
+                "character": "CAMMY"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "CJ Truth",
                 "character": "FEI"
             },
             {
-                "place": 12,
-                "player": "Nobody",
-                "character": "CAMMY"
+                "place": 13,
+                "player": "BoomCube",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 13,
+                "player": "fLoE",
+                "character": "SAGAT"
             },
             {
                 "place": 13,
@@ -5086,17 +5250,7 @@
                 "character": "CAMMY"
             },
             {
-                "place": 14,
-                "player": "fLoE",
-                "character": "SAGAT"
-            },
-            {
-                "place": 15,
-                "player": "BoomCube",
-                "character": "MAKOTO"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Filipino Champ",
                 "character": "DHALSIM"
             }
@@ -5108,6 +5262,8 @@
         "country": "US",
         "videos": [],
         "name": "Winter Brawl 6",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5135,7 +5291,7 @@
                 "character": "VIPER"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "NYChrisG",
                 "character": "SAKURA"
             },
@@ -5145,7 +5301,7 @@
                 "character": "ROSE"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Weaksauce",
                 "character": "SAGAT"
             },
@@ -5155,19 +5311,29 @@
                 "character": "HONDA"
             },
             {
-                "place": 10,
+                "place": 9,
+                "player": "fLoE",
+                "character": "GUY"
+            },
+            {
+                "place": 9,
                 "player": "DemonHyo",
                 "character": "BLANKA"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "AquaSilk",
                 "character": "ZANGIEF"
             },
             {
-                "place": 12,
-                "player": "fLoE",
-                "character": "GUY"
+                "place": 13,
+                "player": "Flash Metroid",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 13,
+                "player": "Sanford Kelly",
+                "character": "SAGAT"
             },
             {
                 "place": 13,
@@ -5175,19 +5341,9 @@
                 "character": "BISON"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Manny",
                 "character": "FUERTE"
-            },
-            {
-                "place": 15,
-                "player": "Flash Metroid",
-                "character": "ZANGIEF"
-            },
-            {
-                "place": 16,
-                "player": "Sanford Kelly",
-                "character": "SAGAT"
             }
         ]
     },
@@ -5197,6 +5353,8 @@
         "country": "US",
         "videos": [],
         "name": "Civil War 4",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5224,9 +5382,14 @@
                 "character": "SAKURA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "WolfKrone",
                 "character": "VIPER"
+            },
+            {
+                "place": 7,
+                "player": "Lionheart",
+                "character": "SAGAT"
             },
             {
                 "place": 7,
@@ -5234,9 +5397,14 @@
                 "character": "RUFUS"
             },
             {
-                "place": 8,
-                "player": "Lionheart",
-                "character": "SAGAT"
+                "place": 9,
+                "player": "MarlinPie",
+                "character": "CAMMY"
+            },
+            {
+                "place": 9,
+                "player": "West",
+                "character": "GEN"
             },
             {
                 "place": 9,
@@ -5244,19 +5412,19 @@
                 "character": "VIPER"
             },
             {
-                "place": 10,
-                "player": "West",
-                "character": "GEN"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "LUD",
                 "character": "CHUN"
             },
             {
-                "place": 12,
-                "player": "MarlinPie",
-                "character": "CAMMY"
+                "place": 13,
+                "player": "MagnetoManiac",
+                "character": "VIPER"
+            },
+            {
+                "place": 13,
+                "player": "Foomy",
+                "character": "SAKURA"
             },
             {
                 "place": 13,
@@ -5264,19 +5432,9 @@
                 "character": "BISON"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Fuerte",
                 "character": "HONDA"
-            },
-            {
-                "place": 15,
-                "player": "MagnetoManiac",
-                "character": "VIPER"
-            },
-            {
-                "place": 16,
-                "player": "Foomy",
-                "character": "SAKURA"
             }
         ]
     },
@@ -5286,6 +5444,8 @@
         "country": "DE",
         "videos": [],
         "name": "Fight Club NRW 6",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5313,7 +5473,7 @@
                 "character": "ROSE"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Halibel",
                 "character": "AKUMA"
             },
@@ -5323,7 +5483,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Veggey",
                 "character": "ZANGIEF"
             }
@@ -5335,6 +5495,8 @@
         "country": "US",
         "videos": [],
         "name": "Absolute Battle 4",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5358,13 +5520,13 @@
             },
             {
                 "place": 5,
-                "player": "Find My Farms",
-                "character": "CAMMY"
-            },
-            {
-                "place": 6,
                 "player": "Arthur",
                 "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "Find My Farms",
+                "character": "CAMMY"
             },
             {
                 "place": 7,
@@ -5372,7 +5534,7 @@
                 "character": "RUFUS"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Jett Jackson",
                 "character": "ADON"
             }
@@ -5384,6 +5546,8 @@
         "country": "US",
         "videos": [],
         "name": "Apex 2014",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5407,13 +5571,13 @@
             },
             {
                 "place": 5,
-                "player": "Tampa Bison",
-                "character": "BISON"
-            },
-            {
-                "place": 6,
                 "player": "NuckleDu",
                 "character": "GUILE"
+            },
+            {
+                "place": 5,
+                "player": "Tampa Bison",
+                "character": "BISON"
             },
             {
                 "place": 7,
@@ -5421,7 +5585,7 @@
                 "character": "FEI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Mike Ross",
                 "character": "HONDA"
             }
@@ -5433,6 +5597,8 @@
         "country": "US",
         "videos": [],
         "name": "Defend The North 2014",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5460,7 +5626,7 @@
                 "character": "SAKURA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Smug",
                 "character": "DUDLEY"
             },
@@ -5470,9 +5636,14 @@
                 "character": "SAGAT"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Arturo Sanchez",
                 "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "DaFeetLee",
+                "character": "CAMMY"
             },
             {
                 "place": 9,
@@ -5480,19 +5651,19 @@
                 "character": "BALROG"
             },
             {
-                "place": 10,
-                "player": "DaFeetLee",
-                "character": "CAMMY"
-            },
-            {
-                "place": 11,
+                "place": 9,
                 "player": "Hiro",
                 "character": "BISON"
             },
             {
-                "place": 12,
+                "place": 9,
                 "player": "HappyMedicine",
                 "character": "BISON"
+            },
+            {
+                "place": 13,
+                "player": "RemyBleu",
+                "character": "YUN"
             },
             {
                 "place": 13,
@@ -5500,17 +5671,12 @@
                 "character": "FEI"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Chin341",
                 "character": "CODY"
             },
             {
-                "place": 15,
-                "player": "RemyBleu",
-                "character": "YUN"
-            },
-            {
-                "place": 16,
+                "place": 13,
                 "player": "Alex Smith",
                 "character": "ABEL"
             }
@@ -5522,6 +5688,8 @@
         "country": "US",
         "videos": [],
         "name": "Capcom Cup 2013",
+        "type": "PREMIER_5",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5545,23 +5713,23 @@
             },
             {
                 "place": 5,
+                "player": "Gackt",
+                "character": "FEI"
+            },
+            {
+                "place": 5,
                 "player": "Tokido",
                 "character": "AKUMA"
             },
             {
-                "place": 6,
-                "player": "Gackt",
-                "character": "FEI"
+                "place": 7,
+                "player": "Alioune",
+                "character": "CAMMY"
             },
             {
                 "place": 7,
                 "player": "NYChrisG",
                 "character": "SAKURA"
-            },
-            {
-                "place": 8,
-                "player": "Alioune",
-                "character": "CAMMY"
             }
         ]
     },
@@ -5571,6 +5739,8 @@
         "country": "AU",
         "videos": [],
         "name": "OzHadou Nationals 10",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5594,13 +5764,13 @@
             },
             {
                 "place": 5,
-                "player": "CrazyFreeRider",
-                "character": "BLANKA"
-            },
-            {
-                "place": 6,
                 "player": "ToXY",
                 "character": "AKUMA"
+            },
+            {
+                "place": 5,
+                "player": "CrazyFreeRider",
+                "character": "BLANKA"
             },
             {
                 "place": 7,
@@ -5608,7 +5778,7 @@
                 "character": "SAGAT"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Carnage",
                 "character": "CAMMY"
             }
@@ -5620,6 +5790,8 @@
         "country": "JP",
         "videos": [],
         "name": "Mix Up Night 16",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5643,23 +5815,23 @@
             },
             {
                 "place": 5,
+                "player": "Super Uriajjou",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 5,
                 "player": "Rokkun",
                 "character": "SETH"
             },
             {
-                "place": 6,
-                "player": "Super Uriajjou",
+                "place": 7,
+                "player": "CANTONA",
                 "character": "ZANGIEF"
             },
             {
                 "place": 7,
                 "player": "KojiKOG",
                 "character": "HAWK"
-            },
-            {
-                "place": 8,
-                "player": "CANTONA",
-                "character": "ZANGIEF"
             }
         ]
     },
@@ -5669,6 +5841,8 @@
         "country": "US",
         "videos": [],
         "name": "NEC 14",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5692,13 +5866,13 @@
             },
             {
                 "place": 5,
-                "player": "Insaynne",
-                "character": "BLANKA"
-            },
-            {
-                "place": 6,
                 "player": "Spab Rog",
                 "character": "FUERTE"
+            },
+            {
+                "place": 5,
+                "player": "Insaynne",
+                "character": "BLANKA"
             },
             {
                 "place": 7,
@@ -5706,9 +5880,24 @@
                 "character": "ONI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "NuckleDu",
                 "character": "GUILE"
+            },
+            {
+                "place": 9,
+                "player": "Capcom's Hero",
+                "character": "GOUKEN"
+            },
+            {
+                "place": 9,
+                "player": "LuckyD",
+                "character": "DHALSIM"
+            },
+            {
+                "place": 9,
+                "player": "Rico Suave",
+                "character": "ABEL"
             },
             {
                 "place": 9,
@@ -5716,19 +5905,9 @@
                 "character": "BISON"
             },
             {
-                "place": 10,
-                "player": "LuckyD",
-                "character": "DHALSIM"
-            },
-            {
-                "place": 11,
-                "player": "Capcom's Hero",
-                "character": "GOUKEN"
-            },
-            {
-                "place": 12,
-                "player": "Rico Suave",
-                "character": "ABEL"
+                "place": 13,
+                "player": "Lionheart",
+                "character": "SAGAT"
             },
             {
                 "place": 13,
@@ -5736,17 +5915,12 @@
                 "character": "ZANGIEF"
             },
             {
-                "place": 14,
-                "player": "Lionheart",
-                "character": "SAGAT"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Zeus",
                 "character": "VEGA"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "K-Brad",
                 "character": "CAMMY"
             }
@@ -5758,6 +5932,8 @@
         "country": "FR",
         "videos": [],
         "name": "World Game Cup 2012",
+        "type": "PREMIER_12",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5785,19 +5961,19 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Ryan Hart",
                 "character": "SAGAT"
             },
             {
                 "place": 7,
-                "player": "RF",
-                "character": "SAGAT"
-            },
-            {
-                "place": 8,
                 "player": "Gagapa",
                 "character": "BISON"
+            },
+            {
+                "place": 7,
+                "player": "RF",
+                "character": "SAGAT"
             }
         ]
     },
@@ -5807,6 +5983,8 @@
         "country": "US",
         "videos": [],
         "name": "Kumite in Tennessee",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5834,19 +6012,19 @@
                 "character": "HAKAN"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "PR Balrog",
                 "character": "BALROG"
             },
             {
                 "place": 7,
-                "player": "NYChrisG",
-                "character": "SAKURA"
-            },
-            {
-                "place": 8,
                 "player": "Camel Eyez",
                 "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "NYChrisG",
+                "character": "SAKURA"
             }
         ]
     },
@@ -5856,6 +6034,8 @@
         "country": "JP",
         "videos": [],
         "name": "Tengu Cup 2012",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5883,19 +6063,19 @@
                 "character": "CAMMY"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Super Uriajjo",
                 "character": "ZANGIEF"
             },
             {
                 "place": 7,
-                "player": "[kai]",
-                "character": "SAKURA"
-            },
-            {
-                "place": 8,
                 "player": "Rukupuru",
                 "character": "FUERTE"
+            },
+            {
+                "place": 7,
+                "player": "[kai]",
+                "character": "SAKURA"
             }
         ]
     },
@@ -5905,6 +6085,8 @@
         "country": "US",
         "videos": [],
         "name": "SoCal Regionals 2011",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -5928,13 +6110,13 @@
             },
             {
                 "place": 5,
-                "player": "Air",
-                "character": "RYU"
-            },
-            {
-                "place": 6,
                 "player": "Hugo101",
                 "character": "BISON"
+            },
+            {
+                "place": 5,
+                "player": "Air",
+                "character": "RYU"
             },
             {
                 "place": 7,
@@ -5942,9 +6124,19 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Masarap",
                 "character": "CAMMY"
+            },
+            {
+                "place": 9,
+                "player": "Snake Eyez",
+                "character": "ZANGIEF"
+            },
+            {
+                "place": 9,
+                "player": "Viscant",
+                "character": "DJ"
             },
             {
                 "place": 9,
@@ -5952,39 +6144,29 @@
                 "character": "GUILE"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Mike Chow",
                 "character": "ABEL"
             },
             {
-                "place": 11,
-                "player": "Viscant",
-                "character": "DJ"
+                "place": 13,
+                "player": "Online Tony",
+                "character": "SETH"
             },
             {
-                "place": 12,
-                "player": "Snake Eyez",
-                "character": "ZANGIEF"
+                "place": 13,
+                "player": "Chris King",
+                "character": "VEGA"
+            },
+            {
+                "place": 13,
+                "player": "Kane",
+                "character": "GEN"
             },
             {
                 "place": 13,
                 "player": "Jago",
                 "character": "BISON"
-            },
-            {
-                "place": 14,
-                "player": "Online Tony",
-                "character": "SETH"
-            },
-            {
-                "place": 15,
-                "player": "Kane",
-                "character": "GEN"
-            },
-            {
-                "place": 16,
-                "player": "Chris King",
-                "character": "VEGA"
             }
         ]
     },
@@ -5994,6 +6176,8 @@
         "country": "US",
         "videos": [],
         "name": "NorCal Regionals 10",
+        "type": "INTERNATIONAL",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6021,9 +6205,14 @@
                 "character": "ONI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Alex Valle",
                 "character": "RYU"
+            },
+            {
+                "place": 7,
+                "player": "fLoE",
+                "character": "GUY"
             },
             {
                 "place": 7,
@@ -6031,9 +6220,19 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
-                "player": "fLoE",
-                "character": "GUY"
+                "place": 9,
+                "player": "Laugh",
+                "character": "RYU"
+            },
+            {
+                "place": 9,
+                "player": "Mike Chow",
+                "character": "ABEL"
+            },
+            {
+                "place": 9,
+                "player": "XsK Samurai",
+                "character": "RYU"
             },
             {
                 "place": 9,
@@ -6041,37 +6240,22 @@
                 "character": "AKUMA"
             },
             {
-                "place": 10,
-                "player": "XsK Samurai",
-                "character": "RYU"
-            },
-            {
-                "place": 11,
-                "player": "Laugh",
-                "character": "RYU"
-            },
-            {
-                "place": 12,
-                "player": "Mike Chow",
-                "character": "ABEL"
-            },
-            {
                 "place": 13,
                 "player": "Illiterate",
                 "character": "YANG"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "LPN",
                 "character": "CAMMY"
             },
             {
-                "place": 15,
+                "place": 13,
                 "player": "Sonny",
                 "character": "CAMMY"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "Mike Ross",
                 "character": "BLANKA"
             }
@@ -6083,6 +6267,8 @@
         "country": "US",
         "videos": [],
         "name": "Apex 2012",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6110,7 +6296,7 @@
                 "character": "DHALSIM"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Meteo",
                 "character": "VEGA"
             }
@@ -6122,6 +6308,8 @@
         "country": "US",
         "videos": [],
         "name": "Dreamhack 2012",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6149,19 +6337,19 @@
                 "character": "SAKURA"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Yagami",
                 "character": "DHALSIM"
             },
             {
                 "place": 7,
-                "player": "Laugh",
-                "character": "RYU"
-            },
-            {
-                "place": 8,
                 "player": "Slizzle",
                 "character": "FEI"
+            },
+            {
+                "place": 7,
+                "player": "Laugh",
+                "character": "RYU"
             }
         ]
     },
@@ -6171,6 +6359,8 @@
         "country": "FR",
         "videos": [],
         "name": "Bushido Impact International II",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6198,7 +6388,7 @@
                 "character": "FEI"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "MBR",
                 "character": "AKUMA"
             },
@@ -6208,7 +6398,7 @@
                 "character": "SETH"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Afii",
                 "character": "DJ"
             }
@@ -6220,6 +6410,8 @@
         "country": "US",
         "videos": [],
         "name": "Civil War V",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6247,9 +6439,14 @@
                 "character": "BALROG"
             },
             {
-                "place": 6,
+                "place": 5,
                 "player": "Vivaldi",
                 "character": "RUFUS"
+            },
+            {
+                "place": 7,
+                "player": "Madness",
+                "character": "ADON"
             },
             {
                 "place": 7,
@@ -6257,9 +6454,9 @@
                 "character": "GUILE"
             },
             {
-                "place": 8,
-                "player": "Madness",
-                "character": "ADON"
+                "place": 9,
+                "player": "Fuerte",
+                "character": "HONDA"
             },
             {
                 "place": 9,
@@ -6267,17 +6464,12 @@
                 "character": "CAMMY"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Fawkes",
                 "character": "BISON"
             },
             {
-                "place": 11,
-                "player": "Fuerte",
-                "character": "HONDA"
-            },
-            {
-                "place": 12,
+                "place": 9,
                 "player": "Sev",
                 "character": "BISON"
             },
@@ -6287,19 +6479,19 @@
                 "character": "KEN"
             },
             {
-                "place": 14,
-                "player": "AceUnlimited",
-                "character": "GUY"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Diego V",
                 "character": "KEN"
             },
             {
-                "place": 16,
+                "place": 13,
                 "player": "Ja",
                 "character": "UNKNOWN"
+            },
+            {
+                "place": 13,
+                "player": "AceUnlimited",
+                "character": "GUY"
             }
         ]
     },
@@ -6309,6 +6501,8 @@
         "country": "ES",
         "videos": [],
         "name": "DreamHack Valencia 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6332,22 +6526,22 @@
             },
             {
                 "place": 5,
-                "player": "Fasoll",
-                "character": "UNKNOWN"
-            },
-            {
-                "place": 6,
                 "player": "Problem X",
                 "character": "SETH"
             },
             {
-                "place": 7,
-                "player": "JHeuty",
+                "place": 5,
+                "player": "Fasoll",
                 "character": "UNKNOWN"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Perplex",
+                "character": "UNKNOWN"
+            },
+            {
+                "place": 7,
+                "player": "JHeuty",
                 "character": "UNKNOWN"
             }
         ]
@@ -6358,6 +6552,8 @@
         "country": "FR",
         "videos": [],
         "name": "Paris Full Contact I",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6381,13 +6577,13 @@
             },
             {
                 "place": 5,
-                "player": "Starnab",
-                "character": "FEI"
-            },
-            {
-                "place": 6,
                 "player": "Cuongster",
                 "character": "HONDA"
+            },
+            {
+                "place": 5,
+                "player": "Starnab",
+                "character": "FEI"
             },
             {
                 "place": 7,
@@ -6395,7 +6591,7 @@
                 "character": "IBUKI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Phenix",
                 "character": "HAWK"
             }
@@ -6407,6 +6603,8 @@
         "country": "BR",
         "videos": [],
         "name": "Revox 2013",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6430,12 +6628,12 @@
             },
             {
                 "place": 5,
-                "player": "Ludo",
+                "player": "Keoma",
                 "character": "UNKNOWN"
             },
             {
-                "place": 6,
-                "player": "Keoma",
+                "place": 5,
+                "player": "Ludo",
                 "character": "UNKNOWN"
             },
             {
@@ -6444,7 +6642,7 @@
                 "character": "UNKNOWN"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "House",
                 "character": "UNKNOWN"
             }
@@ -6456,6 +6654,8 @@
         "country": "US",
         "videos": [],
         "name": "PowerUp 2012",
+        "type": "SERIES",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6485,6 +6685,8 @@
         "country": "US",
         "videos": [],
         "name": "CEO Winterfest 2014",
+        "type": "CIRCUIT",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6508,13 +6710,13 @@
             },
             {
                 "place": 5,
-                "player": "So.Flo.Bison",
-                "character": "BISON"
-            },
-            {
-                "place": 6,
                 "player": "CJ Tahj",
                 "character": "ADON"
+            },
+            {
+                "place": 5,
+                "player": "So.Flo.Bison",
+                "character": "BISON"
             },
             {
                 "place": 7,
@@ -6522,7 +6724,7 @@
                 "character": "IBUKI"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "InTehWeeds",
                 "character": "BLANKA"
             }
@@ -6534,6 +6736,8 @@
         "country": "US",
         "videos": ["9GFvZJ2eW68"],
         "name": "Evolution 2012",
+        "type": "GRAND_SLAM",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6557,13 +6761,13 @@
             },
             {
                 "place": 5,
-                "player": "Daigo Umehara",
-                "character": "RYU"
-            },
-            {
-                "place": 6,
                 "player": "Human Bomb",
                 "character": "SAKURA"
+            },
+            {
+                "place": 5,
+                "player": "Daigo Umehara",
+                "character": "RYU"
             },
             {
                 "place": 7,
@@ -6571,9 +6775,19 @@
                 "character": "GUILE"
             },
             {
-                "place": 8,
+                "place": 7,
                 "player": "Poongko",
                 "character": "SETH"
+            },
+            {
+                "place": 9,
+                "player": "Dogura",
+                "character": "BISON"
+            },
+            {
+                "place": 9,
+                "player": "Fuudo",
+                "character": "FEI"
             },
             {
                 "place": 9,
@@ -6581,19 +6795,19 @@
                 "character": "CAMMY"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Haitani",
                 "character": "MAKOTO"
             },
             {
-                "place": 11,
-                "player": "Fuudo",
-                "character": "FEI"
+                "place": 13,
+                "player": "Kyabetsu",
+                "character": "VIPER"
             },
             {
-                "place": 12,
-                "player": "Dogura",
-                "character": "BISON"
+                "place": 13,
+                "player": "Justin Wong",
+                "character": "RUFUS"
             },
             {
                 "place": 13,
@@ -6601,19 +6815,29 @@
                 "character": "FUERTE"
             },
             {
-                "place": 14,
-                "player": "Kyabetsu",
-                "character": "VIPER"
-            },
-            {
-                "place": 15,
+                "place": 13,
                 "player": "Mike Ross",
                 "character": "HONDA"
             },
             {
-                "place": 16,
-                "player": "Justin Wong",
-                "character": "RUFUS"
+                "place": 17,
+                "player": "Ibrahim",
+                "character": "BISON"
+            },
+            {
+                "place": 17,
+                "player": "MOV",
+                "character": "KEN"
+            },
+            {
+                "place": 17,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 17,
+                "player": "sako",
+                "character": "IBUKI"
             },
             {
                 "place": 17,
@@ -6621,39 +6845,44 @@
                 "character": "KEN"
             },
             {
-                "place": 18,
-                "player": "Ibrahim",
-                "character": "BISON"
-            },
-            {
-                "place": 19,
-                "player": "Ryan Hart",
-                "character": "SAGAT"
-            },
-            {
-                "place": 20,
+                "place": 17,
                 "player": "Hsien Chang",
                 "character": "YUN"
             },
             {
-                "place": 21,
-                "player": "sako",
-                "character": "IBUKI"
-            },
-            {
-                "place": 22,
+                "place": 17,
                 "player": "John Choi",
                 "character": "RYU"
             },
             {
-                "place": 23,
-                "player": "MOV",
-                "character": "KEN"
+                "place": 17,
+                "player": "Ryan Hart",
+                "character": "SAGAT"
             },
             {
-                "place": 24,
-                "player": "Uryo",
-                "character": "SAKURA"
+                "place": 25,
+                "player": "Momochi",
+                "character": "CODY"
+            },
+            {
+                "place": 25,
+                "player": "Zeus",
+                "character": "VEGA"
+            },
+            {
+                "place": 25,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 25,
+                "player": "Combofiend",
+                "character": "CAMMY"
+            },
+            {
+                "place": 25,
+                "player": "Alex Valle",
+                "character": "RYU"
             },
             {
                 "place": 25,
@@ -6661,37 +6890,12 @@
                 "character": "RYU"
             },
             {
-                "place": 26,
-                "player": "Zeus",
-                "character": "VEGA"
-            },
-            {
-                "place": 27,
-                "player": "Momochi",
-                "character": "CODY"
-            },
-            {
-                "place": 28,
-                "player": "Combofiend",
-                "character": "CAMMY"
-            },
-            {
-                "place": 29,
-                "player": "Mago",
-                "character": "FEI"
-            },
-            {
-                "place": 30,
+                "place": 25,
                 "player": "CJ Truth",
                 "character": "FEI"
             },
             {
-                "place": 31,
-                "player": "Alex Valle",
-                "character": "RYU"
-            },
-            {
-                "place": 32,
+                "place": 25,
                 "player": "Kazunoko",
                 "character": "YUN"
             }
@@ -6703,6 +6907,8 @@
         "country": "US",
         "videos": ["zetoK600AmI"],
         "name": "Evolution 2013",
+        "type": "CHAMPIONSHIP",
+        "format": "DOUBLE_BRACKET",
         "players": [
             {
                 "place": 1,
@@ -6726,13 +6932,18 @@
             },
             {
                 "place": 5,
+                "player": "Haitani",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 5,
                 "player": "sako",
                 "character": "ERYU"
             },
             {
-                "place": 6,
-                "player": "Haitani",
-                "character": "MAKOTO"
+                "place": 7,
+                "player": "GamerBee",
+                "character": "ADON"
             },
             {
                 "place": 7,
@@ -6740,29 +6951,34 @@
                 "character": "RYU"
             },
             {
-                "place": 8,
-                "player": "GamerBee",
-                "character": "ADON"
-            },
-            {
                 "place": 9,
                 "player": "SnakeEyez",
                 "character": "ZANGIEF"
             },
             {
-                "place": 10,
+                "place": 9,
                 "player": "Poongko",
                 "character": "SETH"
             },
             {
-                "place": 11,
+                "place": 9,
                 "player": "Dakou",
                 "character": "CAMMY"
             },
             {
-                "place": 12,
+                "place": 9,
                 "player": "Laugh",
                 "character": "RYU"
+            },
+            {
+                "place": 13,
+                "player": "Latif",
+                "character": "VIPER"
+            },
+            {
+                "place": 13,
+                "player": "Justin Wong",
+                "character": "RUFUS"
             },
             {
                 "place": 13,
@@ -6770,19 +6986,9 @@
                 "character": "VIPER"
             },
             {
-                "place": 14,
+                "place": 13,
                 "player": "Kazunoko",
                 "character": "YUN"
-            },
-            {
-                "place": 15,
-                "player": "Justin Wong",
-                "character": "RUFUS"
-            },
-            {
-                "place": 16,
-                "player": "Latif",
-                "character": "VIPER"
             },
             {
                 "place": 17,
@@ -6790,39 +6996,54 @@
                 "character": "VEGA"
             },
             {
-                "place": 18,
+                "place": 17,
+                "player": "Bonchan",
+                "character": "SAGAT"
+            },
+            {
+                "place": 17,
                 "player": "Luffy",
                 "character": "ROSE"
             },
             {
-                "place": 19,
-                "player": "Mago",
-                "character": "FEI"
-            },
-            {
-                "place": 20,
-                "player": "K-Brad",
-                "character": "CAMMY"
-            },
-            {
-                "place": 21,
-                "player": "Xiaohai",
-                "character": "CAMMY"
-            },
-            {
-                "place": 22,
-                "player": "Uryo",
-                "character": "SAKURA"
-            },
-            {
-                "place": 23,
+                "place": 17,
                 "player": "HumanBomb",
                 "character": "SAKURA"
             },
             {
-                "place": 24,
-                "player": "Bonchan",
-                "character": "SAGAT"
+                "place": 17,
+                "player": "Mago",
+                "character": "FEI"
+            },
+            {
+                "place": 17,
+                "player": "K-Brad",
+                "character": "CAMMY"
+            },
+            {
+                "place": 17,
+                "player": "Uryo",
+                "character": "SAKURA"
+            },
+            {
+                "place": 17,
+                "player": "Xiaohai",
+                "character": "CAMMY"
+            },
+            {
+                "place": 25,
+                "player": "Misse",
+                "character": "MAKOTO"
+            },
+            {
+                "place": 25,
+                "player": "Fuudo",
+                "character": "FEI"
+            },
+            {
+                "place": 25,
+                "player": "Alex Valle",
+                "character": "RYU"
             },
             {
                 "place": 25,
@@ -6830,39 +7051,24 @@
                 "character": "GOUKEN"
             },
             {
-                "place": 26,
-                "player": "Fuudo",
-                "character": "FEI"
-            },
-            {
-                "place": 27,
+                "place": 25,
                 "player": "KichijojiKEN",
                 "character": "KEN"
             },
             {
-                "place": 28,
-                "player": "Misse",
-                "character": "MAKOTO"
-            },
-            {
-                "place": 29,
+                "place": 25,
                 "player": "Crizzle",
                 "character": "VIPER"
             },
             {
-                "place": 30,
-                "player": "Itabashi Zangief",
-                "character": "ZANGIEF"
-            },
-            {
-                "place": 31,
+                "place": 25,
                 "player": "Chris Hu",
                 "character": "ONI"
             },
             {
-                "place": 32,
-                "player": "Alex Valle",
-                "character": "RYU"
+                "place": 25,
+                "player": "Itabashi Zangief",
+                "character": "ZANGIEF"
             }
         ]
     }

@@ -56,7 +56,9 @@ class DataService
             CountryCode country = it.country as CountryCode
             Version version = it.version as Version
             Date date = Date.parse("dd-MM-yyyy", it.date as String)
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: 1)
+            TournamentFormat format = TournamentFormat.fromString(it.format)?: TournamentFormat.UNKNOWN
+            TournamentType type = TournamentType.fromString(it.type)
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: 1, tournamentFormat: format, tournamentType: type)
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 CharacterType ctype = it.character as CharacterType
@@ -79,6 +81,8 @@ class DataService
             tournament.country = it.countryCode?.name()
             tournament.videos = it.videos
             tournament.name = it.name
+            tournament.type = it.tournamentType?.name()
+            tournament.format = it.tournamentFormat?.name()
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]

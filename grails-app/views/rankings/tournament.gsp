@@ -16,12 +16,14 @@
       <td>Type</td>
       <td>Country</td>
       <td>Date</td>
+      <td>Format</td>
     </tr>
     </thead>
     <tr>
       <td>${tournament.tournamentType?.value}</td>
       <td>${tournament.countryCode?.name}</td>
       <td>${tournament.date?.format("MM-yyyy")}</td>
+      <td>${tournament.tournamentFormat?.value}</td>
     </tr>
   </table>
 </div>

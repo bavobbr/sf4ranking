@@ -67,11 +67,11 @@ class RankingsController
         Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
             def tid = it.tournament.id
             def tname = it.tournament.name
-            def ttype = it.tournament.tournamentType.value
+            def ttype = it.tournament.tournamentType?.value
             def tchar = it.pcharacter.name().toLowerCase()
             def tcharname = it.pcharacter?.value
             def tdate = it.tournament.date?.format("MM-yyyy")
-            def tscore = rankingService.getScore(it.place, it.tournament.tournamentType)
+            def tscore = it.tournament.tournamentType? rankingService.getScore(it.place, it.tournament.tournamentType) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
             rankings <<
