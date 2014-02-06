@@ -40,6 +40,16 @@
   </div>
 
   <div class="form-group">
+    <label for="tweight">Weighting type</label>
+    <g:select name="tweight" from="${be.bbr.sf4ranking.WeightingType.values()}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
+    <label for="ttype">Tournament Type (ignored if weighting is AUTO)</label>
+    <g:select name="ttype" from="${be.bbr.sf4ranking.TournamentType.values()}" class="form-control"/>
+  </div>
+
+  <div class="form-group">
     <label for="tcountry">Country</label>
     <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control"/>
   </div>

@@ -1,1 +1,3638 @@
-[{"name":"Bokkin","countryCode":"US","rank":103,"skill":1,"videos":[],"codename":"BOKKIN","score":160},{"name":"XsK Samurai","countryCode":"US","rank":63,"skill":7,"videos":[],"codename":"XSK SAMURAI","score":375},{"name":"Air","countryCode":"CA","rank":85,"skill":5,"videos":[],"codename":"AIR","score":206},{"name":"FineLikeWine49","countryCode":null,"rank":164,"skill":1,"videos":[],"codename":"FINELIKEWINE49","score":72},{"name":"Ricky Ortiz","countryCode":"US","rank":14,"skill":7,"videos":[],"codename":"RICKY ORTIZ","score":2900},{"name":"Filipino Champ","countryCode":"US","rank":37,"skill":8,"videos":["s9sasM2zv6c"],"codename":"FILIPINO CHAMP","score":709},{"name":"Kineda","countryCode":"US","rank":140,"skill":3,"videos":[],"codename":"KINEDA","score":103},{"name":"Duncan","countryCode":null,"rank":264,"skill":4,"videos":[],"codename":"DUNCAN","score":29},{"name":"Hoodaman","countryCode":"US","rank":58,"skill":6,"videos":[],"codename":"HOODAMAN","score":422},{"name":"Julio","countryCode":"US","rank":83,"skill":6,"videos":[],"codename":"JULIO","score":209},{"name":"Crizzle","countryCode":"US","rank":100,"skill":4,"videos":[],"codename":"CRIZZLE","score":172},{"name":"PR Balrog","countryCode":"US","rank":10,"skill":9,"videos":["6NcfdsxicKc"],"codename":"PR BALROG","score":3855},{"name":"Noej","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"NOEJ","score":29},{"name":"Kurokiba","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"KUROKIBA","score":29},{"name":"Jesus","countryCode":"US","rank":264,"skill":1,"videos":[],"codename":"JESUS","score":29},{"name":"TylerJ","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"TYLERJ","score":15},{"name":"Kimo","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"KIMO","score":15},{"name":"Yeb","countryCode":"US","rank":352,"skill":4,"videos":[],"codename":"YEB","score":15},{"name":"Uryo","countryCode":"JP","rank":19,"skill":9,"videos":["L0M-jbxfXVA"],"codename":"URYO","score":2109},{"name":"-6","countryCode":"JP","rank":110,"skill":7,"videos":[],"codename":"-6","score":154},{"name":"Haitani","countryCode":"JP","rank":11,"skill":9,"videos":["u2pJdrCMLzY","dhM0ip3DHiQ","lLIzwEsXr4g"],"codename":"HAITANI","score":3485},{"name":"Taigaa","countryCode":null,"rank":197,"skill":1,"videos":[],"codename":"TAIGAA","score":57},{"name":"Banbaban","countryCode":"JP","rank":40,"skill":5,"videos":[],"codename":"BANBABAN","score":664},{"name":"Youshikibi","countryCode":"JP","rank":116,"skill":5,"videos":[],"codename":"YOUSHIKIBI","score":129},{"name":"Taku@Ratio4","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"TAKU@RATIO4","score":29},{"name":"Inbe","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"INBE","score":29},{"name":"Justin Wong","countryCode":"US","rank":8,"skill":9,"videos":[],"codename":"JUSTIN WONG","score":4125},{"name":"iPeru","countryCode":"US","rank":45,"skill":5,"videos":[],"codename":"IPERU","score":573},{"name":"Slinkun","countryCode":null,"rank":264,"skill":2,"videos":[],"codename":"SLINKUN","score":29},{"name":"Lionheart","countryCode":"US","rank":87,"skill":4,"videos":[],"codename":"LIONHEART","score":204},{"name":"Alex Valle","countryCode":"US","rank":32,"skill":7,"videos":[],"codename":"ALEX VALLE","score":903},{"name":"Playing2Win","countryCode":"US","rank":227,"skill":1,"videos":[],"codename":"PLAYING2WIN","score":44},{"name":"Buy Hungry Human","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"BUY HUNGRY HUMAN","score":15},{"name":"K-Brad","countryCode":"US","rank":24,"skill":7,"videos":[],"codename":"K-BRAD","score":1503},{"name":"Chad de Thunder","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"CHAD DE THUNDER","score":15},{"name":"WeaponsLeft","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"WEAPONSLEFT","score":15},{"name":"Noel Brown","countryCode":"US","rank":352,"skill":4,"videos":[],"codename":"NOEL BROWN","score":15},{"name":"BAKA","countryCode":"US","rank":223,"skill":2,"videos":[],"codename":"BAKA","score":45},{"name":"Infiltration","countryCode":"KR","rank":1,"skill":10,"videos":[],"codename":"INFILTRATION","score":7560},{"name":"Combofiend","countryCode":"US","rank":48,"skill":6,"videos":[],"codename":"COMBOFIEND","score":480},{"name":"Laugh","countryCode":"KR","rank":34,"skill":8,"videos":[],"codename":"LAUGH","score":776},{"name":"Dieminion","countryCode":"US","rank":15,"skill":8,"videos":["6NcfdsxicKc","SLvgNQs3tfk"],"codename":"DIEMINION","score":2640},{"name":"Banana Ken","countryCode":"US","rank":128,"skill":7,"videos":[],"codename":"BANANA KEN","score":117},{"name":"Mike Ross","countryCode":"US","rank":26,"skill":6,"videos":[],"codename":"MIKE ROSS","score":1384},{"name":"Hurun","countryCode":"JP","rank":103,"skill":1,"videos":[],"codename":"HURUN","score":160},{"name":"dath","countryCode":"JP","rank":81,"skill":6,"videos":[],"codename":"DATH","score":212},{"name":"Dogura","countryCode":"JP","rank":66,"skill":8,"videos":[],"codename":"DOGURA","score":357},{"name":"Amiyu","countryCode":"JP","rank":56,"skill":7,"videos":[],"codename":"AMIYU","score":436},{"name":"KojiKOG","countryCode":"JP","rank":113,"skill":7,"videos":[],"codename":"KOJIKOG","score":142},{"name":"GamerBee","countryCode":"TW","rank":5,"skill":9,"videos":[],"codename":"GAMERBEE","score":4685},{"name":"NYChrisG","countryCode":"US","rank":20,"skill":8,"videos":["HvttrJ5CMGM"],"codename":"NYCHRISG","score":2080},{"name":"Ryan Hart","countryCode":"GB","rank":21,"skill":9,"videos":[],"codename":"RYAN HART","score":1669},{"name":"DR Ray","countryCode":"US","rank":171,"skill":5,"videos":[],"codename":"DR RAY","score":60},{"name":"Problem X","countryCode":"GB","rank":52,"skill":8,"videos":[],"codename":"PROBLEM X","score":455},{"name":"Taaha","countryCode":null,"rank":188,"skill":4,"videos":[],"codename":"TAAHA","score":58},{"name":"Veggey","countryCode":null,"rank":188,"skill":1,"videos":[],"codename":"VEGGEY","score":58},{"name":"DRz_Yagami","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"DRZ_YAGAMI","score":29},{"name":"Gonza","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"GONZA","score":29},{"name":"Chi-Rithy","countryCode":"CA","rank":33,"skill":7,"videos":[],"codename":"CHI-RITHY","score":863},{"name":"Snafoo","countryCode":"CA","rank":90,"skill":5,"videos":[],"codename":"SNAFOO","score":198},{"name":"WolfKrone","countryCode":"US","rank":18,"skill":7,"videos":[],"codename":"WOLFKRONE","score":2247},{"name":"Mooney","countryCode":null,"rank":264,"skill":3,"videos":[],"codename":"MOONEY","score":29},{"name":"Eric Hai","countryCode":null,"rank":188,"skill":5,"videos":[],"codename":"ERIC HAI","score":58},{"name":"Spiralguy","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"SPIRALGUY","score":29},{"name":"Riceata","countryCode":"CA","rank":115,"skill":7,"videos":[],"codename":"RICEATA","score":135},{"name":"JSMaster","countryCode":"CA","rank":352,"skill":5,"videos":[],"codename":"JSMASTER","score":15},{"name":"JTN","countryCode":null,"rank":238,"skill":1,"videos":[],"codename":"JTN","score":30},{"name":"Jugg","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"JUGG","score":15},{"name":"Rebelo","countryCode":null,"rank":238,"skill":1,"videos":[],"codename":"REBELO","score":30},{"name":"AK Heero","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"AK HEERO","score":15},{"name":"BlueBlazer","countryCode":null,"rank":223,"skill":1,"videos":[],"codename":"BLUEBLAZER","score":45},{"name":"sako","countryCode":"JP","rank":4,"skill":10,"videos":["gyx39xXFtIA","-xJZtTRHrNg","kpCYKXZV1dM","VEZT1Y_sQ7o"],"codename":"SAKO","score":4807},{"name":"Keoma","countryCode":"BR","rank":155,"skill":6,"videos":[],"codename":"KEOMA","score":86},{"name":"Chuchu","countryCode":"BR","rank":121,"skill":2,"videos":[],"codename":"CHUCHU","score":121},{"name":"Kbot","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"KBOT","score":29},{"name":"BahiaWong","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"BAHIAWONG","score":29},{"name":"Coju","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"COJU","score":29},{"name":"BrenoFight3rs","countryCode":"BR","rank":79,"skill":7,"videos":[],"codename":"BRENOFIGHT3RS","score":224},{"name":"Tokido","countryCode":"JP","rank":6,"skill":9,"videos":["eBScgnpODm0","HvttrJ5CMGM"],"codename":"TOKIDO","score":4590},{"name":"Luffy","countryCode":"FR","rank":25,"skill":9,"videos":[],"codename":"LUFFY","score":1418},{"name":"Mago","countryCode":"JP","rank":9,"skill":9,"videos":["nGVTlr-OY7Q"],"codename":"MAGO","score":3960},{"name":"Shungoku Neurosis","countryCode":"JP","rank":49,"skill":6,"videos":[],"codename":"SHUNGOKU NEUROSIS","score":479},{"name":"Xian","countryCode":"SG","rank":2,"skill":9,"videos":["BvkXaNO9Kio","zetoK600AmI"],"codename":"XIAN","score":6050},{"name":"Sanford Kelly","countryCode":"US","rank":30,"skill":6,"videos":[],"codename":"SANFORD KELLY","score":1200},{"name":"Gridman","countryCode":"US","rank":64,"skill":6,"videos":[],"codename":"GRIDMAN","score":372},{"name":"AquaSilk","countryCode":"US","rank":89,"skill":6,"videos":[],"codename":"AQUASILK","score":200},{"name":"NuckleDu","countryCode":"US","rank":36,"skill":5,"videos":[],"codename":"NUCKLEDU","score":727},{"name":"LuckyD","countryCode":"CA","rank":72,"skill":3,"videos":[],"codename":"LUCKYD","score":272},{"name":"Zeus","countryCode":"US","rank":51,"skill":7,"videos":[],"codename":"ZEUS","score":459},{"name":"Tampa Bison","countryCode":"US","rank":98,"skill":5,"videos":[],"codename":"TAMPA BISON","score":178},{"name":"Gackt","countryCode":"SG","rank":22,"skill":8,"videos":[],"codename":"GACKT","score":1592},{"name":"Fuudo","countryCode":"JP","rank":3,"skill":10,"videos":["-xJZtTRHrNg","qTKu05IZCYo","SLvgNQs3tfk"],"codename":"FUUDO","score":5370},{"name":"Dakou","countryCode":"CN","rank":31,"skill":8,"videos":[],"codename":"DAKOU","score":1050},{"name":"Momochi","countryCode":"JP","rank":13,"skill":9,"videos":["P8GcotqroQo"],"codename":"MOMOCHI","score":3025},{"name":"Will2Pac","countryCode":"GB","rank":91,"skill":6,"videos":[],"codename":"WILL2PAC","score":196},{"name":"Cuongster","countryCode":"FR","rank":54,"skill":7,"videos":[],"codename":"CUONGSTER","score":448},{"name":"F-Word","countryCode":"GB","rank":77,"skill":7,"videos":[],"codename":"F-WORD","score":234},{"name":"Fasoll","countryCode":null,"rank":151,"skill":4,"videos":[],"codename":"FASOLL","score":89},{"name":"MoMi","countryCode":"NL","rank":73,"skill":5,"videos":[],"codename":"MOMI","score":260},{"name":"Easyman","countryCode":"CH","rank":131,"skill":6,"videos":[],"codename":"EASYMAN","score":116},{"name":"DoomDomainn","countryCode":"NL","rank":152,"skill":7,"videos":[],"codename":"DOOMDOMAINN","score":88},{"name":"Sheva","countryCode":null,"rank":238,"skill":5,"videos":[],"codename":"SHEVA","score":30},{"name":"Kenpachi","countryCode":"BE","rank":238,"skill":7,"videos":[],"codename":"KENPACHI","score":30},{"name":"ChaozTheory","countryCode":null,"rank":238,"skill":5,"videos":[],"codename":"CHAOZTHEORY","score":30},{"name":"Popi","countryCode":"SE","rank":68,"skill":8,"videos":[],"codename":"POPI","score":310},{"name":"Emersion","countryCode":"GB","rank":126,"skill":7,"videos":[],"codename":"EMERSION","score":119},{"name":"DemonHyo","countryCode":"US","rank":110,"skill":4,"videos":[],"codename":"DEMONHYO","score":154},{"name":"Hiro","countryCode":"US","rank":70,"skill":5,"videos":[],"codename":"HIRO","score":280},{"name":"Arturo Sanchez","countryCode":"US","rank":59,"skill":7,"videos":[],"codename":"ARTURO SANCHEZ","score":411},{"name":"Meteo","countryCode":null,"rank":188,"skill":2,"videos":[],"codename":"METEO","score":58},{"name":"Alex Smith","countryCode":null,"rank":227,"skill":2,"videos":[],"codename":"ALEX SMITH","score":44},{"name":"CMX","countryCode":null,"rank":352,"skill":2,"videos":[],"codename":"CMX","score":15},{"name":"MMS Native","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"MMS NATIVE","score":15},{"name":"Spab Rog","countryCode":null,"rank":160,"skill":3,"videos":[],"codename":"SPAB ROG","score":75},{"name":"Alioune","countryCode":"FR","rank":35,"skill":9,"videos":[],"codename":"ALIOUNE","score":750},{"name":"Starnab","countryCode":"FR","rank":82,"skill":7,"videos":[],"codename":"STARNAB","score":210},{"name":"Adone Stylz","countryCode":null,"rank":264,"skill":3,"videos":[],"codename":"ADONE STYLZ","score":29},{"name":"TKO X Isoudw","countryCode":null,"rank":264,"skill":2,"videos":[],"codename":"TKO X ISOUDW","score":29},{"name":"Saunic","countryCode":null,"rank":188,"skill":2,"videos":[],"codename":"SAUNIC","score":58},{"name":"Bonchan","countryCode":"JP","rank":12,"skill":9,"videos":["tQ5kX0U6lf4","VEZT1Y_sQ7o","SPiOIxfgpGM"],"codename":"BONCHAN","score":3460},{"name":"wao","countryCode":"JP","rank":27,"skill":9,"videos":["kyKyLfmRIyc","P8GcotqroQo","oO1RsP3_dsY","SPiOIxfgpGM"],"codename":"WAO","score":1355},{"name":"Kazunoko","countryCode":"JP","rank":17,"skill":9,"videos":["gyx39xXFtIA","lvm09Wo0BvY"],"codename":"KAZUNOKO","score":2380},{"name":"Michael-tan","countryCode":"JP","rank":39,"skill":9,"videos":["pFltbx7BQFI","Z1y2Bf9v5gU","eBScgnpODm0"],"codename":"MICHAEL-TAN","score":670},{"name":"Dashio","countryCode":"JP","rank":38,"skill":7,"videos":["xvj2TQL7hpI"],"codename":"DASHIO","score":700},{"name":"Jayce The Ace","countryCode":"US","rank":42,"skill":6,"videos":[],"codename":"JAYCE THE ACE","score":640},{"name":"DBKoopa","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"DBKOOPA","score":29},{"name":"BIGDANMUL","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"BIGDANMUL","score":29},{"name":"Kim Legend","countryCode":null,"rank":264,"skill":5,"videos":[],"codename":"KIM LEGEND","score":29},{"name":"hydeBUFFY","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"HYDEBUFFY","score":29},{"name":"Eita","countryCode":"JP","rank":23,"skill":8,"videos":[],"codename":"EITA","score":1570},{"name":"YHC-Mochi","countryCode":"JP","rank":60,"skill":8,"videos":[],"codename":"YHC-MOCHI","score":395},{"name":"Naruo","countryCode":"JP","rank":67,"skill":7,"videos":[],"codename":"NARUO","score":355},{"name":"Kyabetsu","countryCode":"JP","rank":43,"skill":8,"videos":[],"codename":"KYABETSU","score":630},{"name":"Pamyu","countryCode":"JP","rank":171,"skill":7,"videos":[],"codename":"PAMYU","score":60},{"name":"Machabo","countryCode":"JP","rank":74,"skill":7,"videos":[],"codename":"MACHABO","score":250},{"name":"Sasaki","countryCode":"JP","rank":157,"skill":7,"videos":[],"codename":"SASAKI","score":85},{"name":"VER","countryCode":"JP","rank":238,"skill":5,"videos":[],"codename":"VER","score":30},{"name":"Juso","countryCode":"JP","rank":62,"skill":6,"videos":[],"codename":"JUSO","score":380},{"name":"Ojisan Boy","countryCode":"JP","rank":238,"skill":5,"videos":[],"codename":"OJISAN BOY","score":30},{"name":"Yazu","countryCode":"JP","rank":238,"skill":1,"videos":[],"codename":"YAZU","score":30},{"name":"fLoE","countryCode":"US","rank":44,"skill":6,"videos":[],"codename":"FLOE","score":582},{"name":"Marq Teddy","countryCode":"US","rank":86,"skill":7,"videos":[],"codename":"MARQ TEDDY","score":205},{"name":"Chris","countryCode":"US","rank":61,"skill":5,"videos":[],"codename":"CHRIS","score":382},{"name":"Hsien Chang","countryCode":"US","rank":87,"skill":6,"videos":[],"codename":"HSIEN CHANG","score":204},{"name":"LPN","countryCode":"US","rank":53,"skill":7,"videos":[],"codename":"LPN","score":454},{"name":"Chuan","countryCode":null,"rank":197,"skill":3,"videos":[],"codename":"CHUAN","score":57},{"name":"Darlan","countryCode":null,"rank":264,"skill":3,"videos":[],"codename":"DARLAN","score":29},{"name":"Kindevu","countryCode":"JP","rank":55,"skill":8,"videos":[],"codename":"KINDEVU","score":440},{"name":"RF","countryCode":"JP","rank":69,"skill":7,"videos":[],"codename":"RF","score":300},{"name":"Poongko","countryCode":"KR","rank":28,"skill":8,"videos":[],"codename":"POONGKO","score":1215},{"name":"SnakeEyez","countryCode":"US","rank":29,"skill":7,"videos":[],"codename":"SNAKEEYEZ","score":1204},{"name":"Latif","countryCode":"SA","rank":41,"skill":8,"videos":[],"codename":"LATIF","score":642},{"name":"YouGenius","countryCode":null,"rank":148,"skill":1,"videos":[],"codename":"YOUGENIUS","score":95},{"name":"Perplex","countryCode":null,"rank":97,"skill":1,"videos":[],"codename":"PERPLEX","score":181},{"name":"Phenix","countryCode":"BE","rank":132,"skill":6,"videos":[],"codename":"PHENIX","score":115},{"name":"Gamein","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"GAMEIN","score":29},{"name":"Andreas","countryCode":"GB","rank":95,"skill":8,"videos":[],"codename":"ANDREAS","score":186},{"name":"Gagapa","countryCode":"FR","rank":78,"skill":8,"videos":[],"codename":"GAGAPA","score":229},{"name":"NashFan","countryCode":"US","rank":167,"skill":4,"videos":[],"codename":"NASHFAN","score":64},{"name":"Joe Love","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"JOE LOVE","score":29},{"name":"Vangief","countryCode":"US","rank":47,"skill":5,"videos":[],"codename":"VANGIEF","score":506},{"name":"Leslie","countryCode":"SG","rank":95,"skill":7,"videos":[],"codename":"LESLIE","score":186},{"name":"Kaiser","countryCode":"SG","rank":135,"skill":5,"videos":[],"codename":"KAISER","score":112},{"name":"Dixon","countryCode":null,"rank":188,"skill":5,"videos":[],"codename":"DIXON","score":58},{"name":"Frazer","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"FRAZER","score":29},{"name":"Random King","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"RANDOM KING","score":29},{"name":"Hugo101","countryCode":"US","rank":65,"skill":6,"videos":[],"codename":"HUGO101","score":363},{"name":"CJ Truth","countryCode":"US","rank":46,"skill":6,"videos":[],"codename":"CJ TRUTH","score":545},{"name":"Keno","countryCode":"US","rank":209,"skill":3,"videos":[],"codename":"KENO","score":55},{"name":"Alex Jebailey","countryCode":"US","rank":209,"skill":6,"videos":[],"codename":"ALEX JEBAILEY","score":55},{"name":"Daigo Umehara","countryCode":"JP","rank":7,"skill":10,"videos":["u2pJdrCMLzY","kyKyLfmRIyc","Z1y2Bf9v5gU","oO1RsP3_dsY","v8UTLt6-4b0"],"codename":"DAIGO UMEHARA","score":4185},{"name":"Unchained","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"UNCHAINED","score":29},{"name":"Brentt","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"BRENTT","score":29},{"name":"Combojack","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"COMBOJACK","score":29},{"name":"HZY","countryCode":null,"rank":238,"skill":2,"videos":[],"codename":"HZY","score":30},{"name":"Henry Cen","countryCode":"US","rank":171,"skill":5,"videos":[],"codename":"HENRY CEN","score":60},{"name":"Chris Hu","countryCode":"US","rank":92,"skill":5,"videos":[],"codename":"CHRIS HU","score":190},{"name":"Min","countryCode":"US","rank":116,"skill":6,"videos":[],"codename":"MIN","score":129},{"name":"Vivaldi","countryCode":"US","rank":153,"skill":4,"videos":[],"codename":"VIVALDI","score":87},{"name":"DarkChild","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"DARKCHILD","score":29},{"name":"Madness","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"MADNESS","score":29},{"name":"John Choi","countryCode":"US","rank":99,"skill":5,"videos":[],"codename":"JOHN CHOI","score":177},{"name":"801 Strider","countryCode":"US","rank":158,"skill":5,"videos":[],"codename":"801 STRIDER","score":84},{"name":"Clim","countryCode":"CA","rank":264,"skill":5,"videos":[],"codename":"CLIM","score":29},{"name":"Lapchi","countryCode":"CA","rank":264,"skill":6,"videos":[],"codename":"LAPCHI","score":29},{"name":"HiHiPuffyamiyumi","countryCode":null,"rank":352,"skill":3,"videos":[],"codename":"HIHIPUFFYAMIYUMI","score":15},{"name":"SBA Harrison","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"SBA HARRISON","score":15},{"name":"Jason Cole","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"JASON COLE","score":15},{"name":"Buktooth","countryCode":"US","rank":352,"skill":4,"videos":[],"codename":"BUKTOOTH","score":15},{"name":"Manny","countryCode":null,"rank":187,"skill":1,"videos":[],"codename":"MANNY","score":59},{"name":"DragonGod","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"DRAGONGOD","score":29},{"name":"Flash Metroid","countryCode":"US","rank":74,"skill":7,"videos":[],"codename":"FLASH METROID","score":250},{"name":"Julian Robinson","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"JULIAN ROBINSON","score":15},{"name":"Weaksauce","countryCode":null,"rank":160,"skill":3,"videos":[],"codename":"WEAKSAUCE","score":75},{"name":"HappyMedicine","countryCode":"US","rank":71,"skill":7,"videos":[],"codename":"HAPPYMEDICINE","score":278},{"name":"L.I. Joe","countryCode":"US","rank":171,"skill":5,"videos":[],"codename":"L.I. JOE","score":60},{"name":"WeirdoNeo","countryCode":"US","rank":137,"skill":5,"videos":[],"codename":"WEIRDONEO","score":105},{"name":"Raymus","countryCode":null,"rank":197,"skill":1,"videos":[],"codename":"RAYMUS","score":57},{"name":"Rodney","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"RODNEY","score":29},{"name":"Foxy","countryCode":"SG","rank":264,"skill":5,"videos":[],"codename":"FOXY","score":29},{"name":"Chaotix","countryCode":"US","rank":122,"skill":4,"videos":[],"codename":"CHAOTIX","score":120},{"name":"MeanSaltine","countryCode":null,"rank":141,"skill":1,"videos":[],"codename":"MEANSALTINE","score":102},{"name":"OctopusOnFire","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"OCTOPUSONFIRE","score":29},{"name":"Kyoku","countryCode":"JP","rank":103,"skill":7,"videos":[],"codename":"KYOKU","score":160},{"name":"Kindou","countryCode":"JP","rank":171,"skill":4,"videos":[],"codename":"KINDOU","score":60},{"name":"-R-","countryCode":"JP","rank":171,"skill":8,"videos":[],"codename":"-R-","score":60},{"name":"ACQUA","countryCode":"JP","rank":94,"skill":8,"videos":[],"codename":"ACQUA","score":189},{"name":"Nashikun","countryCode":null,"rank":197,"skill":1,"videos":[],"codename":"NASHIKUN","score":57},{"name":"NISHIKIN","countryCode":"JP","rank":80,"skill":8,"videos":[],"codename":"NISHIKIN","score":214},{"name":"Reiketsu","countryCode":"JP","rank":120,"skill":6,"videos":[],"codename":"REIKETSU","score":124},{"name":"Shimosan","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"SHIMOSAN","score":29},{"name":"Zangitan","countryCode":"JP","rank":264,"skill":6,"videos":[],"codename":"ZANGITAN","score":29},{"name":"AlucarD","countryCode":"US","rank":132,"skill":5,"videos":[],"codename":"ALUCARD","score":115},{"name":"iRedman","countryCode":"US","rank":238,"skill":3,"videos":[],"codename":"IREDMAN","score":30},{"name":"FC|Cardell","countryCode":null,"rank":209,"skill":1,"videos":[],"codename":"FC|CARDELL","score":55},{"name":"Brennan K.","countryCode":null,"rank":209,"skill":1,"videos":[],"codename":"BRENNAN K.","score":55},{"name":"XI","countryCode":null,"rank":230,"skill":1,"videos":[],"codename":"XI","score":35},{"name":"Arthur","countryCode":"US","rank":166,"skill":1,"videos":[],"codename":"ARTHUR","score":70},{"name":"Ranmasama","countryCode":"US","rank":329,"skill":3,"videos":[],"codename":"RANMASAMA","score":20},{"name":"Zohta","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"ZOHTA","score":20},{"name":"Good Meal Joe","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"GOOD MEAL JOE","score":20},{"name":"Crazyclown101","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"CRAZYCLOWN101","score":20},{"name":"Insaynne","countryCode":null,"rank":126,"skill":2,"videos":[],"codename":"INSAYNNE","score":119},{"name":"Manny Fuerte","countryCode":null,"rank":264,"skill":2,"videos":[],"codename":"MANNY FUERTE","score":29},{"name":"Glitch","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"GLITCH","score":29},{"name":"Inko","countryCode":"JP","rank":209,"skill":7,"videos":[],"codename":"INKO","score":55},{"name":"Tsuna","countryCode":"JP","rank":209,"skill":6,"videos":[],"codename":"TSUNA","score":55},{"name":"Matsugoro","countryCode":"JP","rank":209,"skill":6,"videos":[],"codename":"MATSUGORO","score":55},{"name":"Kusanagi","countryCode":null,"rank":128,"skill":1,"videos":[],"codename":"KUSANAGI","score":117},{"name":"Sekiganryu","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"SEKIGANRYU","score":29},{"name":"Danhill","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"DANHILL","score":29},{"name":"Rico Suave","countryCode":"US","rank":112,"skill":6,"videos":[],"codename":"RICO SUAVE","score":144},{"name":"Y.","countryCode":"JP","rank":103,"skill":8,"videos":[],"codename":"Y.","score":160},{"name":"Gachikun","countryCode":"JP","rank":101,"skill":8,"videos":[],"codename":"GACHIKUN","score":162},{"name":"Charisma","countryCode":"JP","rank":264,"skill":5,"videos":[],"codename":"CHARISMA","score":29},{"name":"Younashi","countryCode":"JP","rank":264,"skill":5,"videos":[],"codename":"YOUNASHI","score":29},{"name":"Noriyasu","countryCode":null,"rank":197,"skill":1,"videos":[],"codename":"NORIYASU","score":57},{"name":"Harideshi","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"HARIDESHI","score":29},{"name":"Rokkun","countryCode":null,"rank":188,"skill":5,"videos":[],"codename":"ROKKUN","score":58},{"name":"Ramen Addict","countryCode":"US","rank":103,"skill":3,"videos":[],"codename":"RAMEN ADDICT","score":160},{"name":"Dark Jiewa","countryCode":null,"rank":209,"skill":1,"videos":[],"codename":"DARK JIEWA","score":55},{"name":"Ettelman","countryCode":null,"rank":136,"skill":2,"videos":[],"codename":"ETTELMAN","score":110},{"name":"Ixion","countryCode":"SE","rank":171,"skill":7,"videos":[],"codename":"IXION","score":60},{"name":"El Cubano Loco","countryCode":"US","rank":171,"skill":1,"videos":[],"codename":"EL CUBANO LOCO","score":60},{"name":"Brass","countryCode":"US","rank":238,"skill":1,"videos":[],"codename":"BRASS","score":30},{"name":"Rom","countryCode":"US","rank":238,"skill":5,"videos":[],"codename":"ROM","score":30},{"name":"Illiterate","countryCode":"US","rank":171,"skill":2,"videos":[],"codename":"ILLITERATE","score":60},{"name":"Boba Tapioca","countryCode":"US","rank":238,"skill":1,"videos":[],"codename":"BOBA TAPIOCA","score":30},{"name":"UyuuPop","countryCode":"US","rank":153,"skill":1,"videos":[],"codename":"UYUUPOP","score":87},{"name":"HumanBomb","countryCode":"HK","rank":50,"skill":8,"videos":[],"codename":"HUMANBOMB","score":471},{"name":"GambleBoxer","countryCode":"SG","rank":142,"skill":6,"videos":[],"codename":"GAMBLEBOXER","score":100},{"name":"Penang@Chuan","countryCode":null,"rank":209,"skill":5,"videos":[],"codename":"PENANG@CHUAN","score":55},{"name":"Ren","countryCode":null,"rank":209,"skill":2,"videos":[],"codename":"REN","score":55},{"name":"SuperSantarouMan","countryCode":"JP","rank":84,"skill":6,"videos":[],"codename":"SUPERSANTAROUMAN","score":208},{"name":"Itabashi Zangief","countryCode":"JP","rank":109,"skill":7,"videos":[],"codename":"ITABASHI ZANGIEF","score":155},{"name":"Rockpon","countryCode":null,"rank":158,"skill":5,"videos":[],"codename":"ROCKPON","score":84},{"name":"Tommy","countryCode":null,"rank":209,"skill":3,"videos":[],"codename":"TOMMY","score":55},{"name":"Druseph","countryCode":null,"rank":209,"skill":4,"videos":[],"codename":"DRUSEPH","score":55},{"name":"Integra","countryCode":"US","rank":264,"skill":2,"videos":[],"codename":"INTEGRA","score":29},{"name":"Rain","countryCode":"US","rank":116,"skill":1,"videos":[],"codename":"RAIN","score":129},{"name":"Foxy Brown","countryCode":"US","rank":264,"skill":1,"videos":[],"codename":"FOXY BROWN","score":29},{"name":"FourWude","countryCode":"US","rank":114,"skill":1,"videos":[],"codename":"FOURWUDE","score":139},{"name":"Synx","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"SYNX","score":15},{"name":"AV Joe","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"AV JOE","score":15},{"name":"Hadoken6969","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"HADOKEN6969","score":15},{"name":"Lone Star","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"LONE STAR","score":15},{"name":"Hammad","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"HAMMAD","score":15},{"name":"PCutta","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"PCUTTA","score":15},{"name":"Dandy Cheeks","countryCode":"US","rank":352,"skill":1,"videos":[],"codename":"DANDY CHEEKS","score":15},{"name":"ClakeyD","countryCode":"US","rank":171,"skill":6,"videos":[],"codename":"CLAKEYD","score":60},{"name":"Filipino Man","countryCode":"US","rank":171,"skill":6,"videos":[],"codename":"FILIPINO MAN","score":60},{"name":"Luken","countryCode":null,"rank":238,"skill":3,"videos":[],"codename":"LUKEN","score":30},{"name":"Rameo","countryCode":null,"rank":160,"skill":2,"videos":[],"codename":"RAMEO","score":75},{"name":"Ed Ma","countryCode":"US","rank":230,"skill":3,"videos":[],"codename":"ED MA","score":35},{"name":"Ital Dan","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"ITAL DAN","score":20},{"name":"JimmyFierce","countryCode":null,"rank":167,"skill":3,"videos":[],"codename":"JIMMYFIERCE","score":64},{"name":"Chinta","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"CHINTA","score":20},{"name":"Karamba","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"KARAMBA","score":20},{"name":"West","countryCode":null,"rank":122,"skill":1,"videos":[],"codename":"WEST","score":120},{"name":"Halibel","countryCode":null,"rank":155,"skill":5,"videos":[],"codename":"HALIBEL","score":86},{"name":"Demulant","countryCode":null,"rank":188,"skill":1,"videos":[],"codename":"DEMULANT","score":58},{"name":"Skatan","countryCode":"SE","rank":188,"skill":7,"videos":[],"codename":"SKATAN","score":58},{"name":"Phenom","countryCode":null,"rank":264,"skill":5,"videos":[],"codename":"PHENOM","score":29},{"name":"RB","countryCode":"TW","rank":197,"skill":5,"videos":[],"codename":"RB","score":57},{"name":"Tomy Huang","countryCode":null,"rank":197,"skill":1,"videos":[],"codename":"TOMY HUANG","score":57},{"name":"ET","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"ET","score":29},{"name":"Yoro","countryCode":"TW","rank":116,"skill":6,"videos":[],"codename":"YORO","score":129},{"name":"Zalk","countryCode":null,"rank":264,"skill":1,"videos":[],"codename":"ZALK","score":29},{"name":"Heero","countryCode":null,"rank":164,"skill":1,"videos":[],"codename":"HEERO","score":72},{"name":"Shine","countryCode":null,"rank":227,"skill":4,"videos":[],"codename":"SHINE","score":44},{"name":"CD Jr.","countryCode":"US","rank":352,"skill":2,"videos":[],"codename":"CD JR.","score":15},{"name":"Broshadian","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"BROSHADIAN","score":15},{"name":"FreddyLoco","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"FREDDYLOCO","score":15},{"name":"LedHendrix","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"LEDHENDRIX","score":15},{"name":"Tactix","countryCode":null,"rank":238,"skill":1,"videos":[],"codename":"TACTIX","score":30},{"name":"Kiras","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"KIRAS","score":15},{"name":"I'm Still Da Daddy","countryCode":null,"rank":128,"skill":5,"videos":[],"codename":"I'M STILL DA DADDY","score":117},{"name":"Yota","countryCode":null,"rank":264,"skill":2,"videos":[],"codename":"YOTA","score":29},{"name":"Gameouttt","countryCode":null,"rank":142,"skill":7,"videos":[],"codename":"GAMEOUTTT","score":100},{"name":"Jozhear","countryCode":"CA","rank":264,"skill":7,"videos":[],"codename":"JOZHEAR","score":29},{"name":"Money514","countryCode":null,"rank":167,"skill":2,"videos":[],"codename":"MONEY514","score":64},{"name":"Rami","countryCode":null,"rank":352,"skill":1,"videos":[],"codename":"RAMI","score":15},{"name":"ChocoBlanka","countryCode":"JP","rank":92,"skill":6,"videos":[],"codename":"CHOCOBLANKA","score":190},{"name":"Xiaohai","countryCode":"CN","rank":16,"skill":9,"videos":[],"codename":"XIAOHAI","score":2404},{"name":"Poem","countryCode":"US","rank":171,"skill":5,"videos":[],"codename":"POEM","score":60},{"name":"Foomy","countryCode":"US","rank":160,"skill":3,"videos":[],"codename":"FOOMY","score":75},{"name":"Kreymore","countryCode":"US","rank":238,"skill":4,"videos":[],"codename":"KREYMORE","score":30},{"name":"Damascus","countryCode":null,"rank":238,"skill":1,"videos":[],"codename":"DAMASCUS","score":30},{"name":"Fuerte","countryCode":null,"rank":171,"skill":1,"videos":[],"codename":"FUERTE","score":60},{"name":"KOK","countryCode":"JP","rank":137,"skill":8,"videos":[],"codename":"KOK","score":105},{"name":"M. Lizard","countryCode":"JP","rank":101,"skill":5,"videos":[],"codename":"M. LIZARD","score":162},{"name":"EX Mamehara","countryCode":"JP","rank":137,"skill":7,"videos":[],"codename":"EX MAMEHARA","score":105},{"name":"House","countryCode":null,"rank":167,"skill":2,"videos":[],"codename":"HOUSE","score":64},{"name":"Ludo","countryCode":null,"rank":222,"skill":2,"videos":[],"codename":"LUDO","score":49},{"name":"Sarda","countryCode":null,"rank":329,"skill":2,"videos":[],"codename":"SARDA","score":20},{"name":"LordxSaka","countryCode":null,"rank":329,"skill":2,"videos":[],"codename":"LORDXSAKA","score":20},{"name":"Binop","countryCode":null,"rank":329,"skill":1,"videos":[],"codename":"BINOP","score":20},{"name":"Hargi","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"HARGI","score":29},{"name":"Kelvin Jeon","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"KELVIN JEON","score":29},{"name":"Mattypie","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"MATTYPIE","score":15},{"name":"BSIDA","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"BSIDA","score":15},{"name":"bjUnchained","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"BJUNCHAINED","score":15},{"name":"Slompo","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"SLOMPO","score":15},{"name":"Juicebox","countryCode":"US","rank":76,"skill":7,"videos":[],"codename":"JUICEBOX","score":240},{"name":"Antwan Ortiz","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"ANTWAN ORTIZ","score":30},{"name":"Yanu Cerda","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"YANU CERDA","score":30},{"name":"Big Marcus","countryCode":"US","rank":238,"skill":5,"videos":[],"codename":"BIG MARCUS","score":30},{"name":"aks","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"AKS","score":30},{"name":"DBJoseph","countryCode":null,"rank":171,"skill":0,"videos":[],"codename":"DBJOSEPH","score":60},{"name":"Nobody","countryCode":null,"rank":221,"skill":0,"videos":[],"codename":"NOBODY","score":50},{"name":"BoomCube","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"BOOMCUBE","score":30},{"name":"RyRy","countryCode":"US","rank":352,"skill":3,"videos":[],"codename":"RYRY","score":15},{"name":"LUD","countryCode":"US","rank":352,"skill":5,"videos":[],"codename":"LUD","score":15},{"name":"MarlinPie","countryCode":"US","rank":352,"skill":3,"videos":[],"codename":"MARLINPIE","score":15},{"name":"Sev","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"SEV","score":30},{"name":"MagnetoManiac","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"MAGNETOMANIAC","score":15},{"name":"Evans","countryCode":"FR","rank":148,"skill":7,"videos":[],"codename":"EVANS","score":95},{"name":"EZO","countryCode":"FR","rank":197,"skill":5,"videos":[],"codename":"EZO","score":57},{"name":"Mike Weng","countryCode":null,"rank":230,"skill":0,"videos":[],"codename":"MIKE WENG","score":35},{"name":"Find My Farms","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"FIND MY FARMS","score":20},{"name":"Chuvylicious","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"CHUVYLICIOUS","score":20},{"name":"Jett Jackson","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"JETT JACKSON","score":20},{"name":"Smug","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"SMUG","score":29},{"name":"Jav1ts","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"JAV1TS","score":15},{"name":"DaFeetLee","countryCode":null,"rank":352,"skill":6,"videos":[],"codename":"DAFEETLEE","score":15},{"name":"Zaferino","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"ZAFERINO","score":15},{"name":"Chin341","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"CHIN341","score":15},{"name":"RemyBleu","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"REMYBLEU","score":15},{"name":"Shang Tsung","countryCode":null,"rank":171,"skill":0,"videos":[],"codename":"SHANG TSUNG","score":60},{"name":"Robsux","countryCode":null,"rank":230,"skill":0,"videos":[],"codename":"ROBSUX","score":35},{"name":"Huck","countryCode":null,"rank":230,"skill":0,"videos":[],"codename":"HUCK","score":35},{"name":"CrazyFreeRider","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"CRAZYFREERIDER","score":20},{"name":"ToXY","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"TOXY","score":20},{"name":"Heavy Weapons","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"HEAVY WEAPONS","score":20},{"name":"Carnage","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"CARNAGE","score":20},{"name":"Tarezou","countryCode":null,"rank":148,"skill":0,"videos":[],"codename":"TAREZOU","score":95},{"name":"Super Uriajjou","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"SUPER URIAJJOU","score":29},{"name":"CANTONA","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"CANTONA","score":29},{"name":"Capcom's Hero","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"CAPCOM'S HERO","score":30},{"name":"Snake Eyez","countryCode":null,"rank":223,"skill":0,"videos":[],"codename":"SNAKE EYEZ","score":45},{"name":"Nice1","countryCode":null,"rank":197,"skill":0,"videos":[],"codename":"NICE1","score":57},{"name":"MLSwear","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"MLSWEAR","score":29},{"name":"Camel Eyez","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"CAMEL EYEZ","score":29},{"name":"EBI@Baki-Zei","countryCode":null,"rank":142,"skill":0,"videos":[],"codename":"EBI@BAKI-ZEI","score":100},{"name":"Epsilon J","countryCode":null,"rank":171,"skill":0,"videos":[],"codename":"EPSILON J","score":60},{"name":"Chiba","countryCode":null,"rank":230,"skill":0,"videos":[],"codename":"CHIBA","score":35},{"name":"Y24","countryCode":null,"rank":230,"skill":0,"videos":[],"codename":"Y24","score":35},{"name":"Super Uriajjo","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"SUPER URIAJJO","score":20},{"name":"[kai]","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"[KAI]","score":20},{"name":"Rukupuru","countryCode":null,"rank":329,"skill":0,"videos":[],"codename":"RUKUPURU","score":20},{"name":"Masarap","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"MASARAP","score":29},{"name":"Warahk","countryCode":null,"rank":352,"skill":3,"videos":[],"codename":"WARAHK","score":15},{"name":"Mike Chow","countryCode":null,"rank":223,"skill":0,"videos":[],"codename":"MIKE CHOW","score":45},{"name":"Viscant","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"VISCANT","score":15},{"name":"Jago","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"JAGO","score":15},{"name":"Online Tony","countryCode":"US","rank":352,"skill":6,"videos":[],"codename":"ONLINE TONY","score":15},{"name":"Kane","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"KANE","score":15},{"name":"Chris King","countryCode":null,"rank":132,"skill":0,"videos":[],"codename":"CHRIS KING","score":115},{"name":"Cynistar","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"CYNISTAR","score":30},{"name":"Sonny","countryCode":null,"rank":238,"skill":0,"videos":[],"codename":"SONNY","score":30},{"name":"Yagami","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"YAGAMI","score":29},{"name":"Slizzle","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"SLIZZLE","score":29},{"name":"V-Ryu","countryCode":null,"rank":103,"skill":7,"videos":[],"codename":"V-RYU","score":160},{"name":"MBR","countryCode":null,"rank":264,"skill":6,"videos":[],"codename":"MBR","score":29},{"name":"Afii","countryCode":"GB","rank":264,"skill":6,"videos":[],"codename":"AFII","score":29},{"name":"Fawkes","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"FAWKES","score":15},{"name":"Ken P","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"KEN P","score":15},{"name":"AceUnlimited","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"ACEUNLIMITED","score":15},{"name":"Diego V","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"DIEGO V","score":15},{"name":"Ja","countryCode":null,"rank":352,"skill":0,"videos":[],"codename":"JA","score":15},{"name":"Roy Macoi","countryCode":null,"rank":197,"skill":0,"videos":[],"codename":"ROY MACOI","score":57},{"name":"JHeuty","countryCode":null,"rank":264,"skill":0,"videos":[],"codename":"JHEUTY","score":29},{"name":"Valmaster","countryCode":null,"rank":197,"skill":0,"videos":[],"codename":"VALMASTER","score":57},{"name":"BrunoFight3rs","countryCode":null,"rank":197,"skill":0,"videos":[],"codename":"BRUNOFIGHT3RS","score":57},{"name":"Private Joker","countryCode":"US","rank":230,"skill":2,"videos":[],"codename":"PRIVATE JOKER","score":35},{"name":"So.Flo.Bison","countryCode":"US","rank":329,"skill":2,"videos":[],"codename":"SO.FLO.BISON","score":20},{"name":"CJ Tahj","countryCode":"US","rank":329,"skill":2,"videos":[],"codename":"CJ TAHJ","score":20},{"name":"InTehWeeds","countryCode":"US","rank":329,"skill":2,"videos":[],"codename":"INTEHWEEDS","score":20},{"name":"Human Bomb","countryCode":null,"rank":57,"skill":0,"videos":[],"codename":"HUMAN BOMB","score":430},{"name":"Ibrahim","countryCode":null,"rank":122,"skill":0,"videos":[],"codename":"IBRAHIM","score":120},{"name":"MOV","countryCode":null,"rank":122,"skill":0,"videos":[],"codename":"MOV","score":120},{"name":"Veloc1raptor","countryCode":null,"rank":142,"skill":0,"videos":[],"codename":"VELOC1RAPTOR","score":100},{"name":"KichijojiKEN","countryCode":null,"rank":142,"skill":0,"videos":[],"codename":"KICHIJOJIKEN","score":100},{"name":"Misse","countryCode":null,"rank":142,"skill":0,"videos":[],"codename":"MISSE","score":100}]
+[
+    {
+        "name": "Bokkin",
+        "countryCode": "US",
+        "rank": 116,
+        "skill": 1,
+        "videos": [],
+        "codename": "BOKKIN",
+        "score": 160
+    },
+    {
+        "name": "XsK Samurai",
+        "countryCode": "US",
+        "rank": 60,
+        "skill": 7,
+        "videos": [],
+        "codename": "XSK SAMURAI",
+        "score": 400
+    },
+    {
+        "name": "Air",
+        "countryCode": "CA",
+        "rank": 85,
+        "skill": 5,
+        "videos": [],
+        "codename": "AIR",
+        "score": 261
+    },
+    {
+        "name": "FineLikeWine49",
+        "countryCode": null,
+        "rank": 177,
+        "skill": 1,
+        "videos": [],
+        "codename": "FINELIKEWINE49",
+        "score": 72
+    },
+    {
+        "name": "Ricky Ortiz",
+        "countryCode": "US",
+        "rank": 14,
+        "skill": 7,
+        "videos": [],
+        "codename": "RICKY ORTIZ",
+        "score": 3180
+    },
+    {
+        "name": "Filipino Champ",
+        "countryCode": "US",
+        "rank": 37,
+        "skill": 8,
+        "videos": ["s9sasM2zv6c"],
+        "codename": "FILIPINO CHAMP",
+        "score": 794
+    },
+    {
+        "name": "Kineda",
+        "countryCode": "US",
+        "rank": 149,
+        "skill": 3,
+        "videos": [],
+        "codename": "KINEDA",
+        "score": 103
+    },
+    {
+        "name": "Duncan",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 4,
+        "videos": [],
+        "codename": "DUNCAN",
+        "score": 29
+    },
+    {
+        "name": "Hoodaman",
+        "countryCode": "US",
+        "rank": 59,
+        "skill": 6,
+        "videos": [],
+        "codename": "HOODAMAN",
+        "score": 422
+    },
+    {
+        "name": "Julio",
+        "countryCode": "US",
+        "rank": 100,
+        "skill": 6,
+        "videos": [],
+        "codename": "JULIO",
+        "score": 209
+    },
+    {
+        "name": "Crizzle",
+        "countryCode": "US",
+        "rank": 105,
+        "skill": 4,
+        "videos": [],
+        "codename": "CRIZZLE",
+        "score": 192
+    },
+    {
+        "name": "PR Balrog",
+        "countryCode": "US",
+        "rank": 8,
+        "skill": 9,
+        "videos": ["6NcfdsxicKc"],
+        "codename": "PR BALROG",
+        "score": 4385
+    },
+    {
+        "name": "Noej",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "NOEJ",
+        "score": 29
+    },
+    {
+        "name": "Kurokiba",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "KUROKIBA",
+        "score": 29
+    },
+    {
+        "name": "Jesus",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "JESUS",
+        "score": 29
+    },
+    {
+        "name": "TylerJ",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "TYLERJ",
+        "score": 15
+    },
+    {
+        "name": "Kimo",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "KIMO",
+        "score": 15
+    },
+    {
+        "name": "Yeb",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 4,
+        "videos": [],
+        "codename": "YEB",
+        "score": 15
+    },
+    {
+        "name": "Uryo",
+        "countryCode": "JP",
+        "rank": 20,
+        "skill": 9,
+        "videos": ["L0M-jbxfXVA"],
+        "codename": "URYO",
+        "score": 2287
+    },
+    {
+        "name": "-6",
+        "countryCode": "JP",
+        "rank": 114,
+        "skill": 7,
+        "videos": [],
+        "codename": "-6",
+        "score": 162
+    },
+    {
+        "name": "Haitani",
+        "countryCode": "JP",
+        "rank": 11,
+        "skill": 9,
+        "videos": ["u2pJdrCMLzY", "dhM0ip3DHiQ", "lLIzwEsXr4g"],
+        "codename": "HAITANI",
+        "score": 3916
+    },
+    {
+        "name": "Taigaa",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "TAIGAA",
+        "score": 57
+    },
+    {
+        "name": "Banbaban",
+        "countryCode": "JP",
+        "rank": 40,
+        "skill": 5,
+        "videos": [],
+        "codename": "BANBABAN",
+        "score": 650
+    },
+    {
+        "name": "Youshikibi",
+        "countryCode": "JP",
+        "rank": 248,
+        "skill": 5,
+        "videos": [],
+        "codename": "YOUSHIKIBI",
+        "score": 49
+    },
+    {
+        "name": "Taku@Ratio4",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "TAKU@RATIO4",
+        "score": 29
+    },
+    {
+        "name": "Inbe",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "INBE",
+        "score": 29
+    },
+    {
+        "name": "Justin Wong",
+        "countryCode": "US",
+        "rank": 9,
+        "skill": 9,
+        "videos": [],
+        "codename": "JUSTIN WONG",
+        "score": 4315
+    },
+    {
+        "name": "iPeru",
+        "countryCode": "US",
+        "rank": 41,
+        "skill": 5,
+        "videos": [],
+        "codename": "IPERU",
+        "score": 626
+    },
+    {
+        "name": "Slinkun",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 2,
+        "videos": [],
+        "codename": "SLINKUN",
+        "score": 60
+    },
+    {
+        "name": "Lionheart",
+        "countryCode": "US",
+        "rank": 75,
+        "skill": 4,
+        "videos": [],
+        "codename": "LIONHEART",
+        "score": 288
+    },
+    {
+        "name": "Alex Valle",
+        "countryCode": "US",
+        "rank": 33,
+        "skill": 7,
+        "videos": [],
+        "codename": "ALEX VALLE",
+        "score": 994
+    },
+    {
+        "name": "Playing2Win",
+        "countryCode": "US",
+        "rank": 207,
+        "skill": 1,
+        "videos": [],
+        "codename": "PLAYING2WIN",
+        "score": 59
+    },
+    {
+        "name": "Buy Hungry Human",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "BUY HUNGRY HUMAN",
+        "score": 30
+    },
+    {
+        "name": "K-Brad",
+        "countryCode": "US",
+        "rank": 22,
+        "skill": 7,
+        "videos": [],
+        "codename": "K-BRAD",
+        "score": 1774
+    },
+    {
+        "name": "Chad de Thunder",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "CHAD DE THUNDER",
+        "score": 30
+    },
+    {
+        "name": "WeaponsLeft",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "WEAPONSLEFT",
+        "score": 30
+    },
+    {
+        "name": "Noel Brown",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 4,
+        "videos": [],
+        "codename": "NOEL BROWN",
+        "score": 30
+    },
+    {
+        "name": "BAKA",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 2,
+        "videos": [],
+        "codename": "BAKA",
+        "score": 60
+    },
+    {
+        "name": "Infiltration",
+        "countryCode": "KR",
+        "rank": 1,
+        "skill": 10,
+        "videos": [],
+        "codename": "INFILTRATION",
+        "score": 7775
+    },
+    {
+        "name": "Combofiend",
+        "countryCode": "US",
+        "rank": 50,
+        "skill": 6,
+        "videos": [],
+        "codename": "COMBOFIEND",
+        "score": 520
+    },
+    {
+        "name": "Laugh",
+        "countryCode": "KR",
+        "rank": 35,
+        "skill": 8,
+        "videos": [],
+        "codename": "LAUGH",
+        "score": 841
+    },
+    {
+        "name": "Dieminion",
+        "countryCode": "US",
+        "rank": 15,
+        "skill": 8,
+        "videos": ["6NcfdsxicKc", "SLvgNQs3tfk"],
+        "codename": "DIEMINION",
+        "score": 2910
+    },
+    {
+        "name": "Banana Ken",
+        "countryCode": "US",
+        "rank": 112,
+        "skill": 7,
+        "videos": [],
+        "codename": "BANANA KEN",
+        "score": 170
+    },
+    {
+        "name": "Mike Ross",
+        "countryCode": "US",
+        "rank": 26,
+        "skill": 6,
+        "videos": [],
+        "codename": "MIKE ROSS",
+        "score": 1505
+    },
+    {
+        "name": "Hurun",
+        "countryCode": "JP",
+        "rank": 78,
+        "skill": 1,
+        "videos": [],
+        "codename": "HURUN",
+        "score": 280
+    },
+    {
+        "name": "dath",
+        "countryCode": "JP",
+        "rank": 74,
+        "skill": 6,
+        "videos": [],
+        "codename": "DATH",
+        "score": 297
+    },
+    {
+        "name": "Dogura",
+        "countryCode": "JP",
+        "rank": 64,
+        "skill": 8,
+        "videos": [],
+        "codename": "DOGURA",
+        "score": 370
+    },
+    {
+        "name": "Amiyu",
+        "countryCode": "JP",
+        "rank": 55,
+        "skill": 7,
+        "videos": [],
+        "codename": "AMIYU",
+        "score": 467
+    },
+    {
+        "name": "KojiKOG",
+        "countryCode": "JP",
+        "rank": 126,
+        "skill": 7,
+        "videos": [],
+        "codename": "KOJIKOG",
+        "score": 125
+    },
+    {
+        "name": "GamerBee",
+        "countryCode": "TW",
+        "rank": 6,
+        "skill": 9,
+        "videos": [],
+        "codename": "GAMERBEE",
+        "score": 4900
+    },
+    {
+        "name": "NYChrisG",
+        "countryCode": "US",
+        "rank": 19,
+        "skill": 8,
+        "videos": ["HvttrJ5CMGM"],
+        "codename": "NYCHRISG",
+        "score": 2350
+    },
+    {
+        "name": "Ryan Hart",
+        "countryCode": "GB",
+        "rank": 21,
+        "skill": 9,
+        "videos": [],
+        "codename": "RYAN HART",
+        "score": 1819
+    },
+    {
+        "name": "DR Ray",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "DR RAY",
+        "score": 60
+    },
+    {
+        "name": "Problem X",
+        "countryCode": "GB",
+        "rank": 43,
+        "skill": 8,
+        "videos": [],
+        "codename": "PROBLEM X",
+        "score": 606
+    },
+    {
+        "name": "Taaha",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 4,
+        "videos": [],
+        "codename": "TAAHA",
+        "score": 58
+    },
+    {
+        "name": "Veggey",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 1,
+        "videos": [],
+        "codename": "VEGGEY",
+        "score": 58
+    },
+    {
+        "name": "DRz_Yagami",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "DRZ_YAGAMI",
+        "score": 29
+    },
+    {
+        "name": "Gonza",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "GONZA",
+        "score": 29
+    },
+    {
+        "name": "Chi-Rithy",
+        "countryCode": "CA",
+        "rank": 32,
+        "skill": 7,
+        "videos": [],
+        "codename": "CHI-RITHY",
+        "score": 1043
+    },
+    {
+        "name": "Snafoo",
+        "countryCode": "CA",
+        "rank": 72,
+        "skill": 5,
+        "videos": [],
+        "codename": "SNAFOO",
+        "score": 301
+    },
+    {
+        "name": "WolfKrone",
+        "countryCode": "US",
+        "rank": 18,
+        "skill": 7,
+        "videos": [],
+        "codename": "WOLFKRONE",
+        "score": 2495
+    },
+    {
+        "name": "Mooney",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 3,
+        "videos": [],
+        "codename": "MOONEY",
+        "score": 60
+    },
+    {
+        "name": "Eric Hai",
+        "countryCode": null,
+        "rank": 162,
+        "skill": 5,
+        "videos": [],
+        "codename": "ERIC HAI",
+        "score": 89
+    },
+    {
+        "name": "Spiralguy",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "SPIRALGUY",
+        "score": 60
+    },
+    {
+        "name": "Riceata",
+        "countryCode": "CA",
+        "rank": 118,
+        "skill": 7,
+        "videos": [],
+        "codename": "RICEATA",
+        "score": 150
+    },
+    {
+        "name": "JSMaster",
+        "countryCode": "CA",
+        "rank": 253,
+        "skill": 5,
+        "videos": [],
+        "codename": "JSMASTER",
+        "score": 30
+    },
+    {
+        "name": "JTN",
+        "countryCode": null,
+        "rank": 249,
+        "skill": 1,
+        "videos": [],
+        "codename": "JTN",
+        "score": 45
+    },
+    {
+        "name": "Jugg",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "JUGG",
+        "score": 30
+    },
+    {
+        "name": "Rebelo",
+        "countryCode": null,
+        "rank": 249,
+        "skill": 1,
+        "videos": [],
+        "codename": "REBELO",
+        "score": 45
+    },
+    {
+        "name": "AK Heero",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "AK HEERO",
+        "score": 30
+    },
+    {
+        "name": "BlueBlazer",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "BLUEBLAZER",
+        "score": 60
+    },
+    {
+        "name": "sako",
+        "countryCode": "JP",
+        "rank": 4,
+        "skill": 10,
+        "videos": ["gyx39xXFtIA", "-xJZtTRHrNg", "kpCYKXZV1dM", "VEZT1Y_sQ7o"],
+        "codename": "SAKO",
+        "score": 5770
+    },
+    {
+        "name": "Keoma",
+        "countryCode": "BR",
+        "rank": 166,
+        "skill": 6,
+        "videos": [],
+        "codename": "KEOMA",
+        "score": 86
+    },
+    {
+        "name": "Chuchu",
+        "countryCode": "BR",
+        "rank": 121,
+        "skill": 2,
+        "videos": [],
+        "codename": "CHUCHU",
+        "score": 143
+    },
+    {
+        "name": "Kbot",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "KBOT",
+        "score": 29
+    },
+    {
+        "name": "BahiaWong",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "BAHIAWONG",
+        "score": 29
+    },
+    {
+        "name": "Coju",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "COJU",
+        "score": 29
+    },
+    {
+        "name": "BrenoFight3rs",
+        "countryCode": "BR",
+        "rank": 76,
+        "skill": 7,
+        "videos": [],
+        "codename": "BRENOFIGHT3RS",
+        "score": 284
+    },
+    {
+        "name": "Tokido",
+        "countryCode": "JP",
+        "rank": 7,
+        "skill": 9,
+        "videos": ["eBScgnpODm0", "HvttrJ5CMGM"],
+        "codename": "TOKIDO",
+        "score": 4740
+    },
+    {
+        "name": "Luffy",
+        "countryCode": "FR",
+        "rank": 24,
+        "skill": 9,
+        "videos": [],
+        "codename": "LUFFY",
+        "score": 1616
+    },
+    {
+        "name": "Mago",
+        "countryCode": "JP",
+        "rank": 10,
+        "skill": 9,
+        "videos": ["nGVTlr-OY7Q"],
+        "codename": "MAGO",
+        "score": 4215
+    },
+    {
+        "name": "Shungoku Neurosis",
+        "countryCode": "JP",
+        "rank": 52,
+        "skill": 6,
+        "videos": [],
+        "codename": "SHUNGOKU NEUROSIS",
+        "score": 479
+    },
+    {
+        "name": "Xian",
+        "countryCode": "SG",
+        "rank": 2,
+        "skill": 9,
+        "videos": ["BvkXaNO9Kio", "zetoK600AmI"],
+        "codename": "XIAN",
+        "score": 7480
+    },
+    {
+        "name": "Sanford Kelly",
+        "countryCode": "US",
+        "rank": 23,
+        "skill": 6,
+        "videos": [],
+        "codename": "SANFORD KELLY",
+        "score": 1622
+    },
+    {
+        "name": "Gridman",
+        "countryCode": "US",
+        "rank": 56,
+        "skill": 6,
+        "videos": [],
+        "codename": "GRIDMAN",
+        "score": 440
+    },
+    {
+        "name": "AquaSilk",
+        "countryCode": "US",
+        "rank": 104,
+        "skill": 6,
+        "videos": [],
+        "codename": "AQUASILK",
+        "score": 200
+    },
+    {
+        "name": "NuckleDu",
+        "countryCode": "US",
+        "rank": 34,
+        "skill": 5,
+        "videos": [],
+        "codename": "NUCKLEDU",
+        "score": 846
+    },
+    {
+        "name": "LuckyD",
+        "countryCode": "CA",
+        "rank": 71,
+        "skill": 3,
+        "videos": [],
+        "codename": "LUCKYD",
+        "score": 302
+    },
+    {
+        "name": "Zeus",
+        "countryCode": "US",
+        "rank": 46,
+        "skill": 7,
+        "videos": [],
+        "codename": "ZEUS",
+        "score": 579
+    },
+    {
+        "name": "Tampa Bison",
+        "countryCode": "US",
+        "rank": 77,
+        "skill": 5,
+        "videos": [],
+        "codename": "TAMPA BISON",
+        "score": 281
+    },
+    {
+        "name": "Gackt",
+        "countryCode": "SG",
+        "rank": 25,
+        "skill": 8,
+        "videos": [],
+        "codename": "GACKT",
+        "score": 1592
+    },
+    {
+        "name": "Fuudo",
+        "countryCode": "JP",
+        "rank": 3,
+        "skill": 10,
+        "videos": ["-xJZtTRHrNg", "qTKu05IZCYo", "SLvgNQs3tfk"],
+        "codename": "FUUDO",
+        "score": 6350
+    },
+    {
+        "name": "Dakou",
+        "countryCode": "CN",
+        "rank": 31,
+        "skill": 8,
+        "videos": [],
+        "codename": "DAKOU",
+        "score": 1090
+    },
+    {
+        "name": "Momochi",
+        "countryCode": "JP",
+        "rank": 13,
+        "skill": 9,
+        "videos": ["P8GcotqroQo"],
+        "codename": "MOMOCHI",
+        "score": 3400
+    },
+    {
+        "name": "Will2Pac",
+        "countryCode": "GB",
+        "rank": 82,
+        "skill": 6,
+        "videos": [],
+        "codename": "WILL2PAC",
+        "score": 271
+    },
+    {
+        "name": "Cuongster",
+        "countryCode": "FR",
+        "rank": 48,
+        "skill": 7,
+        "videos": [],
+        "codename": "CUONGSTER",
+        "score": 523
+    },
+    {
+        "name": "F-Word",
+        "countryCode": "GB",
+        "rank": 81,
+        "skill": 7,
+        "videos": [],
+        "codename": "F-WORD",
+        "score": 274
+    },
+    {
+        "name": "Fasoll",
+        "countryCode": null,
+        "rank": 124,
+        "skill": 4,
+        "videos": [],
+        "codename": "FASOLL",
+        "score": 129
+    },
+    {
+        "name": "MoMi",
+        "countryCode": "NL",
+        "rank": 68,
+        "skill": 5,
+        "videos": [],
+        "codename": "MOMI",
+        "score": 331
+    },
+    {
+        "name": "Easyman",
+        "countryCode": "CH",
+        "rank": 94,
+        "skill": 6,
+        "videos": [],
+        "codename": "EASYMAN",
+        "score": 225
+    },
+    {
+        "name": "DoomDomainn",
+        "countryCode": "NL",
+        "rank": 141,
+        "skill": 7,
+        "videos": [],
+        "codename": "DOOMDOMAINN",
+        "score": 113
+    },
+    {
+        "name": "Sheva",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 5,
+        "videos": [],
+        "codename": "SHEVA",
+        "score": 55
+    },
+    {
+        "name": "Kenpachi",
+        "countryCode": "BE",
+        "rank": 235,
+        "skill": 7,
+        "videos": [],
+        "codename": "KENPACHI",
+        "score": 55
+    },
+    {
+        "name": "ChaozTheory",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 5,
+        "videos": [],
+        "codename": "CHAOZTHEORY",
+        "score": 55
+    },
+    {
+        "name": "Popi",
+        "countryCode": "SE",
+        "rank": 67,
+        "skill": 8,
+        "videos": [],
+        "codename": "POPI",
+        "score": 335
+    },
+    {
+        "name": "Emersion",
+        "countryCode": "GB",
+        "rank": 119,
+        "skill": 7,
+        "videos": [],
+        "codename": "EMERSION",
+        "score": 144
+    },
+    {
+        "name": "DemonHyo",
+        "countryCode": "US",
+        "rank": 89,
+        "skill": 4,
+        "videos": [],
+        "codename": "DEMONHYO",
+        "score": 239
+    },
+    {
+        "name": "Hiro",
+        "countryCode": "US",
+        "rank": 66,
+        "skill": 5,
+        "videos": [],
+        "codename": "HIRO",
+        "score": 357
+    },
+    {
+        "name": "Arturo Sanchez",
+        "countryCode": "US",
+        "rank": 54,
+        "skill": 7,
+        "videos": [],
+        "codename": "ARTURO SANCHEZ",
+        "score": 473
+    },
+    {
+        "name": "Meteo",
+        "countryCode": null,
+        "rank": 162,
+        "skill": 2,
+        "videos": [],
+        "codename": "METEO",
+        "score": 89
+    },
+    {
+        "name": "Alex Smith",
+        "countryCode": null,
+        "rank": 158,
+        "skill": 2,
+        "videos": [],
+        "codename": "ALEX SMITH",
+        "score": 90
+    },
+    {
+        "name": "CMX",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 2,
+        "videos": [],
+        "codename": "CMX",
+        "score": 30
+    },
+    {
+        "name": "MMS Native",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "MMS NATIVE",
+        "score": 30
+    },
+    {
+        "name": "Spab Rog",
+        "countryCode": null,
+        "rank": 158,
+        "skill": 3,
+        "videos": [],
+        "codename": "SPAB ROG",
+        "score": 90
+    },
+    {
+        "name": "Alioune",
+        "countryCode": "FR",
+        "rank": 36,
+        "skill": 9,
+        "videos": [],
+        "codename": "ALIOUNE",
+        "score": 835
+    },
+    {
+        "name": "Starnab",
+        "countryCode": "FR",
+        "rank": 87,
+        "skill": 7,
+        "videos": [],
+        "codename": "STARNAB",
+        "score": 241
+    },
+    {
+        "name": "Adone Stylz",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 3,
+        "videos": [],
+        "codename": "ADONE STYLZ",
+        "score": 29
+    },
+    {
+        "name": "TKO X Isoudw",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "TKO X ISOUDW",
+        "score": 29
+    },
+    {
+        "name": "Saunic",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 2,
+        "videos": [],
+        "codename": "SAUNIC",
+        "score": 58
+    },
+    {
+        "name": "Bonchan",
+        "countryCode": "JP",
+        "rank": 12,
+        "skill": 9,
+        "videos": ["tQ5kX0U6lf4", "VEZT1Y_sQ7o", "SPiOIxfgpGM"],
+        "codename": "BONCHAN",
+        "score": 3910
+    },
+    {
+        "name": "wao",
+        "countryCode": "JP",
+        "rank": 30,
+        "skill": 9,
+        "videos": ["kyKyLfmRIyc", "P8GcotqroQo", "oO1RsP3_dsY", "SPiOIxfgpGM"],
+        "codename": "WAO",
+        "score": 1110
+    },
+    {
+        "name": "Kazunoko",
+        "countryCode": "JP",
+        "rank": 17,
+        "skill": 9,
+        "videos": ["gyx39xXFtIA", "lvm09Wo0BvY"],
+        "codename": "KAZUNOKO",
+        "score": 2525
+    },
+    {
+        "name": "Michael-tan",
+        "countryCode": "JP",
+        "rank": 51,
+        "skill": 9,
+        "videos": ["pFltbx7BQFI", "Z1y2Bf9v5gU", "eBScgnpODm0"],
+        "codename": "MICHAEL-TAN",
+        "score": 480
+    },
+    {
+        "name": "Dashio",
+        "countryCode": "JP",
+        "rank": 70,
+        "skill": 7,
+        "videos": ["xvj2TQL7hpI"],
+        "codename": "DASHIO",
+        "score": 307
+    },
+    {
+        "name": "Jayce The Ace",
+        "countryCode": "US",
+        "rank": 39,
+        "skill": 6,
+        "videos": [],
+        "codename": "JAYCE THE ACE",
+        "score": 730
+    },
+    {
+        "name": "DBKoopa",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "DBKOOPA",
+        "score": 29
+    },
+    {
+        "name": "BIGDANMUL",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "BIGDANMUL",
+        "score": 29
+    },
+    {
+        "name": "Kim Legend",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 5,
+        "videos": [],
+        "codename": "KIM LEGEND",
+        "score": 29
+    },
+    {
+        "name": "hydeBUFFY",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "HYDEBUFFY",
+        "score": 29
+    },
+    {
+        "name": "Eita",
+        "countryCode": "JP",
+        "rank": 27,
+        "skill": 8,
+        "videos": [],
+        "codename": "EITA",
+        "score": 1437
+    },
+    {
+        "name": "YHC-Mochi",
+        "countryCode": "JP",
+        "rank": 63,
+        "skill": 8,
+        "videos": [],
+        "codename": "YHC-MOCHI",
+        "score": 380
+    },
+    {
+        "name": "Naruo",
+        "countryCode": "JP",
+        "rank": 92,
+        "skill": 7,
+        "videos": [],
+        "codename": "NARUO",
+        "score": 232
+    },
+    {
+        "name": "Kyabetsu",
+        "countryCode": "JP",
+        "rank": 45,
+        "skill": 8,
+        "videos": [],
+        "codename": "KYABETSU",
+        "score": 602
+    },
+    {
+        "name": "Pamyu",
+        "countryCode": "JP",
+        "rank": 359,
+        "skill": 7,
+        "videos": [],
+        "codename": "PAMYU",
+        "score": 20
+    },
+    {
+        "name": "Machabo",
+        "countryCode": "JP",
+        "rank": 91,
+        "skill": 7,
+        "videos": [],
+        "codename": "MACHABO",
+        "score": 235
+    },
+    {
+        "name": "Sasaki",
+        "countryCode": "JP",
+        "rank": 398,
+        "skill": 7,
+        "videos": [],
+        "codename": "SASAKI",
+        "score": 14
+    },
+    {
+        "name": "VER",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 5,
+        "videos": [],
+        "codename": "VER",
+        "score": 7
+    },
+    {
+        "name": "Juso",
+        "countryCode": "JP",
+        "rank": 61,
+        "skill": 6,
+        "videos": [],
+        "codename": "JUSO",
+        "score": 397
+    },
+    {
+        "name": "Ojisan Boy",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 5,
+        "videos": [],
+        "codename": "OJISAN BOY",
+        "score": 7
+    },
+    {
+        "name": "Yazu",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 1,
+        "videos": [],
+        "codename": "YAZU",
+        "score": 7
+    },
+    {
+        "name": "fLoE",
+        "countryCode": "US",
+        "rank": 42,
+        "skill": 6,
+        "videos": [],
+        "codename": "FLOE",
+        "score": 622
+    },
+    {
+        "name": "Marq Teddy",
+        "countryCode": "US",
+        "rank": 102,
+        "skill": 7,
+        "videos": [],
+        "codename": "MARQ TEDDY",
+        "score": 205
+    },
+    {
+        "name": "Chris",
+        "countryCode": "US",
+        "rank": 62,
+        "skill": 5,
+        "videos": [],
+        "codename": "CHRIS",
+        "score": 382
+    },
+    {
+        "name": "Hsien Chang",
+        "countryCode": "US",
+        "rank": 103,
+        "skill": 6,
+        "videos": [],
+        "codename": "HSIEN CHANG",
+        "score": 204
+    },
+    {
+        "name": "LPN",
+        "countryCode": "US",
+        "rank": 52,
+        "skill": 7,
+        "videos": [],
+        "codename": "LPN",
+        "score": 479
+    },
+    {
+        "name": "Chuan",
+        "countryCode": null,
+        "rank": 143,
+        "skill": 3,
+        "videos": [],
+        "codename": "CHUAN",
+        "score": 110
+    },
+    {
+        "name": "Darlan",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 3,
+        "videos": [],
+        "codename": "DARLAN",
+        "score": 60
+    },
+    {
+        "name": "Kindevu",
+        "countryCode": "JP",
+        "rank": 56,
+        "skill": 8,
+        "videos": [],
+        "codename": "KINDEVU",
+        "score": 440
+    },
+    {
+        "name": "RF",
+        "countryCode": "JP",
+        "rank": 73,
+        "skill": 7,
+        "videos": [],
+        "codename": "RF",
+        "score": 300
+    },
+    {
+        "name": "Poongko",
+        "countryCode": "KR",
+        "rank": 28,
+        "skill": 8,
+        "videos": [],
+        "codename": "POONGKO",
+        "score": 1360
+    },
+    {
+        "name": "SnakeEyez",
+        "countryCode": "US",
+        "rank": 29,
+        "skill": 7,
+        "videos": [],
+        "codename": "SNAKEEYEZ",
+        "score": 1275
+    },
+    {
+        "name": "Latif",
+        "countryCode": "SA",
+        "rank": 38,
+        "skill": 8,
+        "videos": [],
+        "codename": "LATIF",
+        "score": 757
+    },
+    {
+        "name": "YouGenius",
+        "countryCode": null,
+        "rank": 153,
+        "skill": 1,
+        "videos": [],
+        "codename": "YOUGENIUS",
+        "score": 95
+    },
+    {
+        "name": "Perplex",
+        "countryCode": null,
+        "rank": 109,
+        "skill": 1,
+        "videos": [],
+        "codename": "PERPLEX",
+        "score": 181
+    },
+    {
+        "name": "Phenix",
+        "countryCode": "BE",
+        "rank": 113,
+        "skill": 6,
+        "videos": [],
+        "codename": "PHENIX",
+        "score": 168
+    },
+    {
+        "name": "Gamein",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "GAMEIN",
+        "score": 29
+    },
+    {
+        "name": "Andreas",
+        "countryCode": "GB",
+        "rank": 89,
+        "skill": 8,
+        "videos": [],
+        "codename": "ANDREAS",
+        "score": 239
+    },
+    {
+        "name": "Gagapa",
+        "countryCode": "FR",
+        "rank": 93,
+        "skill": 8,
+        "videos": [],
+        "codename": "GAGAPA",
+        "score": 229
+    },
+    {
+        "name": "NashFan",
+        "countryCode": "US",
+        "rank": 166,
+        "skill": 4,
+        "videos": [],
+        "codename": "NASHFAN",
+        "score": 86
+    },
+    {
+        "name": "Joe Love",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "JOE LOVE",
+        "score": 29
+    },
+    {
+        "name": "Vangief",
+        "countryCode": "US",
+        "rank": 49,
+        "skill": 5,
+        "videos": [],
+        "codename": "VANGIEF",
+        "score": 521
+    },
+    {
+        "name": "Leslie",
+        "countryCode": "SG",
+        "rank": 108,
+        "skill": 7,
+        "videos": [],
+        "codename": "LESLIE",
+        "score": 186
+    },
+    {
+        "name": "Kaiser",
+        "countryCode": "SG",
+        "rank": 142,
+        "skill": 5,
+        "videos": [],
+        "codename": "KAISER",
+        "score": 112
+    },
+    {
+        "name": "Dixon",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 5,
+        "videos": [],
+        "codename": "DIXON",
+        "score": 58
+    },
+    {
+        "name": "Frazer",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "FRAZER",
+        "score": 29
+    },
+    {
+        "name": "Random King",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "RANDOM KING",
+        "score": 29
+    },
+    {
+        "name": "Hugo101",
+        "countryCode": "US",
+        "rank": 65,
+        "skill": 6,
+        "videos": [],
+        "codename": "HUGO101",
+        "score": 363
+    },
+    {
+        "name": "CJ Truth",
+        "countryCode": "US",
+        "rank": 44,
+        "skill": 6,
+        "videos": [],
+        "codename": "CJ TRUTH",
+        "score": 605
+    },
+    {
+        "name": "Keno",
+        "countryCode": "US",
+        "rank": 235,
+        "skill": 3,
+        "videos": [],
+        "codename": "KENO",
+        "score": 55
+    },
+    {
+        "name": "Alex Jebailey",
+        "countryCode": "US",
+        "rank": 235,
+        "skill": 6,
+        "videos": [],
+        "codename": "ALEX JEBAILEY",
+        "score": 55
+    },
+    {
+        "name": "Daigo Umehara",
+        "countryCode": "JP",
+        "rank": 5,
+        "skill": 10,
+        "videos": ["u2pJdrCMLzY", "kyKyLfmRIyc", "Z1y2Bf9v5gU", "oO1RsP3_dsY", "v8UTLt6-4b0"],
+        "codename": "DAIGO UMEHARA",
+        "score": 5095
+    },
+    {
+        "name": "Unchained",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "UNCHAINED",
+        "score": 29
+    },
+    {
+        "name": "Brentt",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "BRENTT",
+        "score": 29
+    },
+    {
+        "name": "Combojack",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "COMBOJACK",
+        "score": 29
+    },
+    {
+        "name": "HZY",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 2,
+        "videos": [],
+        "codename": "HZY",
+        "score": 30
+    },
+    {
+        "name": "Henry Cen",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "HENRY CEN",
+        "score": 60
+    },
+    {
+        "name": "Chris Hu",
+        "countryCode": "US",
+        "rank": 99,
+        "skill": 5,
+        "videos": [],
+        "codename": "CHRIS HU",
+        "score": 210
+    },
+    {
+        "name": "Min",
+        "countryCode": "US",
+        "rank": 119,
+        "skill": 6,
+        "videos": [],
+        "codename": "MIN",
+        "score": 144
+    },
+    {
+        "name": "Vivaldi",
+        "countryCode": "US",
+        "rank": 136,
+        "skill": 4,
+        "videos": [],
+        "codename": "VIVALDI",
+        "score": 118
+    },
+    {
+        "name": "DarkChild",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "DARKCHILD",
+        "score": 29
+    },
+    {
+        "name": "Madness",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "MADNESS",
+        "score": 29
+    },
+    {
+        "name": "John Choi",
+        "countryCode": "US",
+        "rank": 110,
+        "skill": 5,
+        "videos": [],
+        "codename": "JOHN CHOI",
+        "score": 177
+    },
+    {
+        "name": "801 Strider",
+        "countryCode": "US",
+        "rank": 172,
+        "skill": 5,
+        "videos": [],
+        "codename": "801 STRIDER",
+        "score": 84
+    },
+    {
+        "name": "Clim",
+        "countryCode": "CA",
+        "rank": 284,
+        "skill": 5,
+        "videos": [],
+        "codename": "CLIM",
+        "score": 29
+    },
+    {
+        "name": "Lapchi",
+        "countryCode": "CA",
+        "rank": 284,
+        "skill": 6,
+        "videos": [],
+        "codename": "LAPCHI",
+        "score": 29
+    },
+    {
+        "name": "HiHiPuffyamiyumi",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 3,
+        "videos": [],
+        "codename": "HIHIPUFFYAMIYUMI",
+        "score": 15
+    },
+    {
+        "name": "SBA Harrison",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "SBA HARRISON",
+        "score": 15
+    },
+    {
+        "name": "Jason Cole",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "JASON COLE",
+        "score": 15
+    },
+    {
+        "name": "Buktooth",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 4,
+        "videos": [],
+        "codename": "BUKTOOTH",
+        "score": 15
+    },
+    {
+        "name": "Manny",
+        "countryCode": null,
+        "rank": 158,
+        "skill": 1,
+        "videos": [],
+        "codename": "MANNY",
+        "score": 90
+    },
+    {
+        "name": "DragonGod",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "DRAGONGOD",
+        "score": 60
+    },
+    {
+        "name": "Flash Metroid",
+        "countryCode": "US",
+        "rank": 84,
+        "skill": 7,
+        "videos": [],
+        "codename": "FLASH METROID",
+        "score": 265
+    },
+    {
+        "name": "Julian Robinson",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "JULIAN ROBINSON",
+        "score": 30
+    },
+    {
+        "name": "Weaksauce",
+        "countryCode": null,
+        "rank": 158,
+        "skill": 3,
+        "videos": [],
+        "codename": "WEAKSAUCE",
+        "score": 90
+    },
+    {
+        "name": "HappyMedicine",
+        "countryCode": "US",
+        "rank": 69,
+        "skill": 7,
+        "videos": [],
+        "codename": "HAPPYMEDICINE",
+        "score": 324
+    },
+    {
+        "name": "L.I. Joe",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "L.I. JOE",
+        "score": 60
+    },
+    {
+        "name": "WeirdoNeo",
+        "countryCode": "US",
+        "rank": 127,
+        "skill": 5,
+        "videos": [],
+        "codename": "WEIRDONEO",
+        "score": 120
+    },
+    {
+        "name": "Raymus",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "RAYMUS",
+        "score": 57
+    },
+    {
+        "name": "Rodney",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "RODNEY",
+        "score": 29
+    },
+    {
+        "name": "Foxy",
+        "countryCode": "SG",
+        "rank": 284,
+        "skill": 5,
+        "videos": [],
+        "codename": "FOXY",
+        "score": 29
+    },
+    {
+        "name": "Chaotix",
+        "countryCode": "US",
+        "rank": 127,
+        "skill": 4,
+        "videos": [],
+        "codename": "CHAOTIX",
+        "score": 120
+    },
+    {
+        "name": "MeanSaltine",
+        "countryCode": null,
+        "rank": 137,
+        "skill": 1,
+        "videos": [],
+        "codename": "MEANSALTINE",
+        "score": 117
+    },
+    {
+        "name": "OctopusOnFire",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "OCTOPUSONFIRE",
+        "score": 29
+    },
+    {
+        "name": "Kyoku",
+        "countryCode": "JP",
+        "rank": 174,
+        "skill": 7,
+        "videos": [],
+        "codename": "KYOKU",
+        "score": 80
+    },
+    {
+        "name": "Kindou",
+        "countryCode": "JP",
+        "rank": 180,
+        "skill": 4,
+        "videos": [],
+        "codename": "KINDOU",
+        "score": 60
+    },
+    {
+        "name": "-R-",
+        "countryCode": "JP",
+        "rank": 180,
+        "skill": 8,
+        "videos": [],
+        "codename": "-R-",
+        "score": 60
+    },
+    {
+        "name": "ACQUA",
+        "countryCode": "JP",
+        "rank": 96,
+        "skill": 8,
+        "videos": [],
+        "codename": "ACQUA",
+        "score": 220
+    },
+    {
+        "name": "Nashikun",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "NASHIKUN",
+        "score": 57
+    },
+    {
+        "name": "NISHIKIN",
+        "countryCode": "JP",
+        "rank": 107,
+        "skill": 8,
+        "videos": [],
+        "codename": "NISHIKIN",
+        "score": 187
+    },
+    {
+        "name": "Reiketsu",
+        "countryCode": "JP",
+        "rank": 100,
+        "skill": 6,
+        "videos": [],
+        "codename": "REIKETSU",
+        "score": 209
+    },
+    {
+        "name": "Shimosan",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "SHIMOSAN",
+        "score": 29
+    },
+    {
+        "name": "Zangitan",
+        "countryCode": "JP",
+        "rank": 284,
+        "skill": 6,
+        "videos": [],
+        "codename": "ZANGITAN",
+        "score": 29
+    },
+    {
+        "name": "AlucarD",
+        "countryCode": "US",
+        "rank": 140,
+        "skill": 5,
+        "videos": [],
+        "codename": "ALUCARD",
+        "score": 115
+    },
+    {
+        "name": "iRedman",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 3,
+        "videos": [],
+        "codename": "IREDMAN",
+        "score": 30
+    },
+    {
+        "name": "FC|Cardell",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 1,
+        "videos": [],
+        "codename": "FC|CARDELL",
+        "score": 55
+    },
+    {
+        "name": "Brennan K.",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 1,
+        "videos": [],
+        "codename": "BRENNAN K.",
+        "score": 55
+    },
+    {
+        "name": "XI",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "XI",
+        "score": 57
+    },
+    {
+        "name": "Arthur",
+        "countryCode": "US",
+        "rank": 150,
+        "skill": 1,
+        "videos": [],
+        "codename": "ARTHUR",
+        "score": 101
+    },
+    {
+        "name": "Ranmasama",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 3,
+        "videos": [],
+        "codename": "RANMASAMA",
+        "score": 29
+    },
+    {
+        "name": "Zohta",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "ZOHTA",
+        "score": 29
+    },
+    {
+        "name": "Good Meal Joe",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "GOOD MEAL JOE",
+        "score": 29
+    },
+    {
+        "name": "Crazyclown101",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "CRAZYCLOWN101",
+        "score": 29
+    },
+    {
+        "name": "Insaynne",
+        "countryCode": null,
+        "rank": 135,
+        "skill": 2,
+        "videos": [],
+        "codename": "INSAYNNE",
+        "score": 119
+    },
+    {
+        "name": "Manny Fuerte",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "MANNY FUERTE",
+        "score": 29
+    },
+    {
+        "name": "Glitch",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "GLITCH",
+        "score": 29
+    },
+    {
+        "name": "Inko",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 7,
+        "videos": [],
+        "codename": "INKO",
+        "score": 7
+    },
+    {
+        "name": "Tsuna",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 6,
+        "videos": [],
+        "codename": "TSUNA",
+        "score": 7
+    },
+    {
+        "name": "Matsugoro",
+        "countryCode": "JP",
+        "rank": 399,
+        "skill": 6,
+        "videos": [],
+        "codename": "MATSUGORO",
+        "score": 7
+    },
+    {
+        "name": "Kusanagi",
+        "countryCode": null,
+        "rank": 137,
+        "skill": 1,
+        "videos": [],
+        "codename": "KUSANAGI",
+        "score": 117
+    },
+    {
+        "name": "Sekiganryu",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "SEKIGANRYU",
+        "score": 60
+    },
+    {
+        "name": "Danhill",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "DANHILL",
+        "score": 60
+    },
+    {
+        "name": "Rico Suave",
+        "countryCode": "US",
+        "rank": 94,
+        "skill": 6,
+        "videos": [],
+        "codename": "RICO SUAVE",
+        "score": 225
+    },
+    {
+        "name": "Y.",
+        "countryCode": "JP",
+        "rank": 78,
+        "skill": 8,
+        "videos": [],
+        "codename": "Y.",
+        "score": 280
+    },
+    {
+        "name": "Gachikun",
+        "countryCode": "JP",
+        "rank": 97,
+        "skill": 8,
+        "videos": [],
+        "codename": "GACHIKUN",
+        "score": 215
+    },
+    {
+        "name": "Charisma",
+        "countryCode": "JP",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "CHARISMA",
+        "score": 60
+    },
+    {
+        "name": "Younashi",
+        "countryCode": "JP",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "YOUNASHI",
+        "score": 60
+    },
+    {
+        "name": "Noriyasu",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "NORIYASU",
+        "score": 57
+    },
+    {
+        "name": "Harideshi",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "HARIDESHI",
+        "score": 29
+    },
+    {
+        "name": "Rokkun",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 5,
+        "videos": [],
+        "codename": "ROKKUN",
+        "score": 58
+    },
+    {
+        "name": "Ramen Addict",
+        "countryCode": "US",
+        "rank": 86,
+        "skill": 3,
+        "videos": [],
+        "codename": "RAMEN ADDICT",
+        "score": 250
+    },
+    {
+        "name": "Dark Jiewa",
+        "countryCode": null,
+        "rank": 146,
+        "skill": 1,
+        "videos": [],
+        "codename": "DARK JIEWA",
+        "score": 105
+    },
+    {
+        "name": "Ettelman",
+        "countryCode": null,
+        "rank": 143,
+        "skill": 2,
+        "videos": [],
+        "codename": "ETTELMAN",
+        "score": 110
+    },
+    {
+        "name": "Ixion",
+        "countryCode": "SE",
+        "rank": 180,
+        "skill": 7,
+        "videos": [],
+        "codename": "IXION",
+        "score": 60
+    },
+    {
+        "name": "El Cubano Loco",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "EL CUBANO LOCO",
+        "score": 60
+    },
+    {
+        "name": "Brass",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "BRASS",
+        "score": 30
+    },
+    {
+        "name": "Rom",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 5,
+        "videos": [],
+        "codename": "ROM",
+        "score": 30
+    },
+    {
+        "name": "Illiterate",
+        "countryCode": "US",
+        "rank": 171,
+        "skill": 2,
+        "videos": [],
+        "codename": "ILLITERATE",
+        "score": 85
+    },
+    {
+        "name": "Boba Tapioca",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "BOBA TAPIOCA",
+        "score": 30
+    },
+    {
+        "name": "UyuuPop",
+        "countryCode": "US",
+        "rank": 165,
+        "skill": 1,
+        "videos": [],
+        "codename": "UYUUPOP",
+        "score": 87
+    },
+    {
+        "name": "HumanBomb",
+        "countryCode": "HK",
+        "rank": 47,
+        "skill": 8,
+        "videos": [],
+        "codename": "HUMANBOMB",
+        "score": 575
+    },
+    {
+        "name": "GambleBoxer",
+        "countryCode": "SG",
+        "rank": 151,
+        "skill": 6,
+        "videos": [],
+        "codename": "GAMBLEBOXER",
+        "score": 100
+    },
+    {
+        "name": "Penang@Chuan",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 5,
+        "videos": [],
+        "codename": "PENANG@CHUAN",
+        "score": 55
+    },
+    {
+        "name": "Ren",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 2,
+        "videos": [],
+        "codename": "REN",
+        "score": 55
+    },
+    {
+        "name": "SuperSantarouMan",
+        "countryCode": "JP",
+        "rank": 83,
+        "skill": 6,
+        "videos": [],
+        "codename": "SUPERSANTAROUMAN",
+        "score": 270
+    },
+    {
+        "name": "Itabashi Zangief",
+        "countryCode": "JP",
+        "rank": 111,
+        "skill": 7,
+        "videos": [],
+        "codename": "ITABASHI ZANGIEF",
+        "score": 175
+    },
+    {
+        "name": "Rockpon",
+        "countryCode": null,
+        "rank": 172,
+        "skill": 5,
+        "videos": [],
+        "codename": "ROCKPON",
+        "score": 84
+    },
+    {
+        "name": "Tommy",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 3,
+        "videos": [],
+        "codename": "TOMMY",
+        "score": 55
+    },
+    {
+        "name": "Druseph",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 4,
+        "videos": [],
+        "codename": "DRUSEPH",
+        "score": 55
+    },
+    {
+        "name": "Integra",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "INTEGRA",
+        "score": 29
+    },
+    {
+        "name": "Rain",
+        "countryCode": "US",
+        "rank": 106,
+        "skill": 1,
+        "videos": [],
+        "codename": "RAIN",
+        "score": 189
+    },
+    {
+        "name": "Foxy Brown",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "FOXY BROWN",
+        "score": 29
+    },
+    {
+        "name": "FourWude",
+        "countryCode": "US",
+        "rank": 122,
+        "skill": 1,
+        "videos": [],
+        "codename": "FOURWUDE",
+        "score": 139
+    },
+    {
+        "name": "Synx",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "SYNX",
+        "score": 15
+    },
+    {
+        "name": "AV Joe",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "AV JOE",
+        "score": 15
+    },
+    {
+        "name": "Hadoken6969",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "HADOKEN6969",
+        "score": 15
+    },
+    {
+        "name": "Lone Star",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "LONE STAR",
+        "score": 15
+    },
+    {
+        "name": "Hammad",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "HAMMAD",
+        "score": 15
+    },
+    {
+        "name": "PCutta",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "PCUTTA",
+        "score": 15
+    },
+    {
+        "name": "Dandy Cheeks",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "DANDY CHEEKS",
+        "score": 15
+    },
+    {
+        "name": "ClakeyD",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 6,
+        "videos": [],
+        "codename": "CLAKEYD",
+        "score": 60
+    },
+    {
+        "name": "Filipino Man",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 6,
+        "videos": [],
+        "codename": "FILIPINO MAN",
+        "score": 60
+    },
+    {
+        "name": "Luken",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 3,
+        "videos": [],
+        "codename": "LUKEN",
+        "score": 30
+    },
+    {
+        "name": "Rameo",
+        "countryCode": null,
+        "rank": 143,
+        "skill": 2,
+        "videos": [],
+        "codename": "RAMEO",
+        "score": 110
+    },
+    {
+        "name": "Ed Ma",
+        "countryCode": "US",
+        "rank": 216,
+        "skill": 3,
+        "videos": [],
+        "codename": "ED MA",
+        "score": 57
+    },
+    {
+        "name": "Ital Dan",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "ITAL DAN",
+        "score": 29
+    },
+    {
+        "name": "JimmyFierce",
+        "countryCode": null,
+        "rank": 176,
+        "skill": 3,
+        "videos": [],
+        "codename": "JIMMYFIERCE",
+        "score": 73
+    },
+    {
+        "name": "Chinta",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "CHINTA",
+        "score": 29
+    },
+    {
+        "name": "Karamba",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "KARAMBA",
+        "score": 29
+    },
+    {
+        "name": "West",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 1,
+        "videos": [],
+        "codename": "WEST",
+        "score": 120
+    },
+    {
+        "name": "Halibel",
+        "countryCode": null,
+        "rank": 166,
+        "skill": 5,
+        "videos": [],
+        "codename": "HALIBEL",
+        "score": 86
+    },
+    {
+        "name": "Demulant",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 1,
+        "videos": [],
+        "codename": "DEMULANT",
+        "score": 58
+    },
+    {
+        "name": "Skatan",
+        "countryCode": "SE",
+        "rank": 162,
+        "skill": 7,
+        "videos": [],
+        "codename": "SKATAN",
+        "score": 89
+    },
+    {
+        "name": "Phenom",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "PHENOM",
+        "score": 60
+    },
+    {
+        "name": "RB",
+        "countryCode": "TW",
+        "rank": 216,
+        "skill": 5,
+        "videos": [],
+        "codename": "RB",
+        "score": 57
+    },
+    {
+        "name": "Tomy Huang",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 1,
+        "videos": [],
+        "codename": "TOMY HUANG",
+        "score": 57
+    },
+    {
+        "name": "ET",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "ET",
+        "score": 29
+    },
+    {
+        "name": "Yoro",
+        "countryCode": "TW",
+        "rank": 124,
+        "skill": 6,
+        "videos": [],
+        "codename": "YORO",
+        "score": 129
+    },
+    {
+        "name": "Zalk",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "ZALK",
+        "score": 29
+    },
+    {
+        "name": "Heero",
+        "countryCode": null,
+        "rank": 177,
+        "skill": 1,
+        "videos": [],
+        "codename": "HEERO",
+        "score": 72
+    },
+    {
+        "name": "Shine",
+        "countryCode": null,
+        "rank": 252,
+        "skill": 4,
+        "videos": [],
+        "codename": "SHINE",
+        "score": 44
+    },
+    {
+        "name": "CD Jr.",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 2,
+        "videos": [],
+        "codename": "CD JR.",
+        "score": 15
+    },
+    {
+        "name": "Broshadian",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "BROSHADIAN",
+        "score": 15
+    },
+    {
+        "name": "FreddyLoco",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "FREDDYLOCO",
+        "score": 15
+    },
+    {
+        "name": "LedHendrix",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "LEDHENDRIX",
+        "score": 15
+    },
+    {
+        "name": "Tactix",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "TACTIX",
+        "score": 30
+    },
+    {
+        "name": "Kiras",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "KIRAS",
+        "score": 15
+    },
+    {
+        "name": "I'm Still Da Daddy",
+        "countryCode": null,
+        "rank": 137,
+        "skill": 5,
+        "videos": [],
+        "codename": "I'M STILL DA DADDY",
+        "score": 117
+    },
+    {
+        "name": "Yota",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "YOTA",
+        "score": 29
+    },
+    {
+        "name": "Gameouttt",
+        "countryCode": null,
+        "rank": 151,
+        "skill": 7,
+        "videos": [],
+        "codename": "GAMEOUTTT",
+        "score": 100
+    },
+    {
+        "name": "Jozhear",
+        "countryCode": "CA",
+        "rank": 284,
+        "skill": 7,
+        "videos": [],
+        "codename": "JOZHEAR",
+        "score": 29
+    },
+    {
+        "name": "Money514",
+        "countryCode": null,
+        "rank": 166,
+        "skill": 2,
+        "videos": [],
+        "codename": "MONEY514",
+        "score": 86
+    },
+    {
+        "name": "Rami",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 1,
+        "videos": [],
+        "codename": "RAMI",
+        "score": 15
+    },
+    {
+        "name": "ChocoBlanka",
+        "countryCode": "JP",
+        "rank": 97,
+        "skill": 6,
+        "videos": [],
+        "codename": "CHOCOBLANKA",
+        "score": 215
+    },
+    {
+        "name": "Xiaohai",
+        "countryCode": "CN",
+        "rank": 16,
+        "skill": 9,
+        "videos": [],
+        "codename": "XIAOHAI",
+        "score": 2724
+    },
+    {
+        "name": "Poem",
+        "countryCode": "US",
+        "rank": 180,
+        "skill": 5,
+        "videos": [],
+        "codename": "POEM",
+        "score": 60
+    },
+    {
+        "name": "Foomy",
+        "countryCode": "US",
+        "rank": 175,
+        "skill": 3,
+        "videos": [],
+        "codename": "FOOMY",
+        "score": 75
+    },
+    {
+        "name": "Kreymore",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 4,
+        "videos": [],
+        "codename": "KREYMORE",
+        "score": 30
+    },
+    {
+        "name": "Damascus",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 1,
+        "videos": [],
+        "codename": "DAMASCUS",
+        "score": 30
+    },
+    {
+        "name": "Fuerte",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 1,
+        "videos": [],
+        "codename": "FUERTE",
+        "score": 60
+    },
+    {
+        "name": "KOK",
+        "countryCode": "JP",
+        "rank": 146,
+        "skill": 8,
+        "videos": [],
+        "codename": "KOK",
+        "score": 105
+    },
+    {
+        "name": "M. Lizard",
+        "countryCode": "JP",
+        "rank": 114,
+        "skill": 5,
+        "videos": [],
+        "codename": "M. LIZARD",
+        "score": 162
+    },
+    {
+        "name": "EX Mamehara",
+        "countryCode": "JP",
+        "rank": 146,
+        "skill": 7,
+        "videos": [],
+        "codename": "EX MAMEHARA",
+        "score": 105
+    },
+    {
+        "name": "House",
+        "countryCode": null,
+        "rank": 166,
+        "skill": 2,
+        "videos": [],
+        "codename": "HOUSE",
+        "score": 86
+    },
+    {
+        "name": "Ludo",
+        "countryCode": null,
+        "rank": 209,
+        "skill": 2,
+        "videos": [],
+        "codename": "LUDO",
+        "score": 58
+    },
+    {
+        "name": "Sarda",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "SARDA",
+        "score": 29
+    },
+    {
+        "name": "LordxSaka",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "LORDXSAKA",
+        "score": 29
+    },
+    {
+        "name": "Binop",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 1,
+        "videos": [],
+        "codename": "BINOP",
+        "score": 29
+    },
+    {
+        "name": "Hargi",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "HARGI",
+        "score": 29
+    },
+    {
+        "name": "Kelvin Jeon",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "KELVIN JEON",
+        "score": 29
+    },
+    {
+        "name": "Mattypie",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "MATTYPIE",
+        "score": 15
+    },
+    {
+        "name": "BSIDA",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "BSIDA",
+        "score": 15
+    },
+    {
+        "name": "bjUnchained",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "BJUNCHAINED",
+        "score": 15
+    },
+    {
+        "name": "Slompo",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "SLOMPO",
+        "score": 15
+    },
+    {
+        "name": "Juicebox",
+        "countryCode": "US",
+        "rank": 88,
+        "skill": 7,
+        "videos": [],
+        "codename": "JUICEBOX",
+        "score": 240
+    },
+    {
+        "name": "Antwan Ortiz",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "ANTWAN ORTIZ",
+        "score": 30
+    },
+    {
+        "name": "Yanu Cerda",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "YANU CERDA",
+        "score": 30
+    },
+    {
+        "name": "Big Marcus",
+        "countryCode": "US",
+        "rank": 253,
+        "skill": 5,
+        "videos": [],
+        "codename": "BIG MARCUS",
+        "score": 30
+    },
+    {
+        "name": "aks",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "AKS",
+        "score": 30
+    },
+    {
+        "name": "DBJoseph",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 0,
+        "videos": [],
+        "codename": "DBJOSEPH",
+        "score": 60
+    },
+    {
+        "name": "Nobody",
+        "countryCode": null,
+        "rank": 207,
+        "skill": 0,
+        "videos": [],
+        "codename": "NOBODY",
+        "score": 59
+    },
+    {
+        "name": "BoomCube",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "BOOMCUBE",
+        "score": 30
+    },
+    {
+        "name": "RyRy",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 3,
+        "videos": [],
+        "codename": "RYRY",
+        "score": 15
+    },
+    {
+        "name": "LUD",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 5,
+        "videos": [],
+        "codename": "LUD",
+        "score": 15
+    },
+    {
+        "name": "MarlinPie",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 3,
+        "videos": [],
+        "codename": "MARLINPIE",
+        "score": 15
+    },
+    {
+        "name": "Sev",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "SEV",
+        "score": 30
+    },
+    {
+        "name": "MagnetoManiac",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "MAGNETOMANIAC",
+        "score": 15
+    },
+    {
+        "name": "Evans",
+        "countryCode": "FR",
+        "rank": 153,
+        "skill": 7,
+        "videos": [],
+        "codename": "EVANS",
+        "score": 95
+    },
+    {
+        "name": "EZO",
+        "countryCode": "FR",
+        "rank": 216,
+        "skill": 5,
+        "videos": [],
+        "codename": "EZO",
+        "score": 57
+    },
+    {
+        "name": "Mike Weng",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "MIKE WENG",
+        "score": 57
+    },
+    {
+        "name": "Find My Farms",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "FIND MY FARMS",
+        "score": 29
+    },
+    {
+        "name": "Chuvylicious",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "CHUVYLICIOUS",
+        "score": 29
+    },
+    {
+        "name": "Jett Jackson",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "JETT JACKSON",
+        "score": 29
+    },
+    {
+        "name": "Smug",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 0,
+        "videos": [],
+        "codename": "SMUG",
+        "score": 60
+    },
+    {
+        "name": "Jav1ts",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "JAV1TS",
+        "score": 30
+    },
+    {
+        "name": "DaFeetLee",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 6,
+        "videos": [],
+        "codename": "DAFEETLEE",
+        "score": 30
+    },
+    {
+        "name": "Zaferino",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "ZAFERINO",
+        "score": 30
+    },
+    {
+        "name": "Chin341",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "CHIN341",
+        "score": 30
+    },
+    {
+        "name": "RemyBleu",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "REMYBLEU",
+        "score": 30
+    },
+    {
+        "name": "Shang Tsung",
+        "countryCode": null,
+        "rank": 153,
+        "skill": 0,
+        "videos": [],
+        "codename": "SHANG TSUNG",
+        "score": 95
+    },
+    {
+        "name": "Robsux",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "ROBSUX",
+        "score": 57
+    },
+    {
+        "name": "Huck",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "HUCK",
+        "score": 57
+    },
+    {
+        "name": "CrazyFreeRider",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "CRAZYFREERIDER",
+        "score": 29
+    },
+    {
+        "name": "ToXY",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "TOXY",
+        "score": 29
+    },
+    {
+        "name": "Heavy Weapons",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "HEAVY WEAPONS",
+        "score": 29
+    },
+    {
+        "name": "Carnage",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "CARNAGE",
+        "score": 29
+    },
+    {
+        "name": "Tarezou",
+        "countryCode": null,
+        "rank": 153,
+        "skill": 0,
+        "videos": [],
+        "codename": "TAREZOU",
+        "score": 95
+    },
+    {
+        "name": "Super Uriajjou",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "SUPER URIAJJOU",
+        "score": 29
+    },
+    {
+        "name": "CANTONA",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "CANTONA",
+        "score": 29
+    },
+    {
+        "name": "Capcom's Hero",
+        "countryCode": null,
+        "rank": 253,
+        "skill": 0,
+        "videos": [],
+        "codename": "CAPCOM'S HERO",
+        "score": 30
+    },
+    {
+        "name": "Snake Eyez",
+        "countryCode": null,
+        "rank": 249,
+        "skill": 0,
+        "videos": [],
+        "codename": "SNAKE EYEZ",
+        "score": 45
+    },
+    {
+        "name": "Nice1",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "NICE1",
+        "score": 57
+    },
+    {
+        "name": "MLSwear",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "MLSWEAR",
+        "score": 29
+    },
+    {
+        "name": "Camel Eyez",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "CAMEL EYEZ",
+        "score": 29
+    },
+    {
+        "name": "EBI@Baki-Zei",
+        "countryCode": null,
+        "rank": 116,
+        "skill": 0,
+        "videos": [],
+        "codename": "EBI@BAKI-ZEI",
+        "score": 160
+    },
+    {
+        "name": "Epsilon J",
+        "countryCode": null,
+        "rank": 153,
+        "skill": 0,
+        "videos": [],
+        "codename": "EPSILON J",
+        "score": 95
+    },
+    {
+        "name": "Chiba",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "CHIBA",
+        "score": 57
+    },
+    {
+        "name": "Y24",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "Y24",
+        "score": 57
+    },
+    {
+        "name": "Super Uriajjo",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "SUPER URIAJJO",
+        "score": 29
+    },
+    {
+        "name": "[kai]",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "[KAI]",
+        "score": 29
+    },
+    {
+        "name": "Rukupuru",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "RUKUPURU",
+        "score": 29
+    },
+    {
+        "name": "Masarap",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "MASARAP",
+        "score": 29
+    },
+    {
+        "name": "Warahk",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 3,
+        "videos": [],
+        "codename": "WARAHK",
+        "score": 15
+    },
+    {
+        "name": "Mike Chow",
+        "countryCode": null,
+        "rank": 179,
+        "skill": 0,
+        "videos": [],
+        "codename": "MIKE CHOW",
+        "score": 70
+    },
+    {
+        "name": "Viscant",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "VISCANT",
+        "score": 15
+    },
+    {
+        "name": "Jago",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "JAGO",
+        "score": 15
+    },
+    {
+        "name": "Online Tony",
+        "countryCode": "US",
+        "rank": 360,
+        "skill": 6,
+        "videos": [],
+        "codename": "ONLINE TONY",
+        "score": 15
+    },
+    {
+        "name": "Kane",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "KANE",
+        "score": 15
+    },
+    {
+        "name": "Chris King",
+        "countryCode": null,
+        "rank": 123,
+        "skill": 0,
+        "videos": [],
+        "codename": "CHRIS KING",
+        "score": 135
+    },
+    {
+        "name": "Cynistar",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 0,
+        "videos": [],
+        "codename": "CYNISTAR",
+        "score": 55
+    },
+    {
+        "name": "Sonny",
+        "countryCode": null,
+        "rank": 235,
+        "skill": 0,
+        "videos": [],
+        "codename": "SONNY",
+        "score": 55
+    },
+    {
+        "name": "Yagami",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "YAGAMI",
+        "score": 29
+    },
+    {
+        "name": "Slizzle",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "SLIZZLE",
+        "score": 29
+    },
+    {
+        "name": "V-Ryu",
+        "countryCode": null,
+        "rank": 78,
+        "skill": 7,
+        "videos": [],
+        "codename": "V-RYU",
+        "score": 280
+    },
+    {
+        "name": "MBR",
+        "countryCode": null,
+        "rank": 180,
+        "skill": 6,
+        "videos": [],
+        "codename": "MBR",
+        "score": 60
+    },
+    {
+        "name": "Afii",
+        "countryCode": "GB",
+        "rank": 180,
+        "skill": 6,
+        "videos": [],
+        "codename": "AFII",
+        "score": 60
+    },
+    {
+        "name": "Fawkes",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "FAWKES",
+        "score": 15
+    },
+    {
+        "name": "Ken P",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "KEN P",
+        "score": 15
+    },
+    {
+        "name": "AceUnlimited",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "ACEUNLIMITED",
+        "score": 15
+    },
+    {
+        "name": "Diego V",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "DIEGO V",
+        "score": 15
+    },
+    {
+        "name": "Ja",
+        "countryCode": null,
+        "rank": 360,
+        "skill": 0,
+        "videos": [],
+        "codename": "JA",
+        "score": 15
+    },
+    {
+        "name": "Roy Macoi",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "ROY MACOI",
+        "score": 57
+    },
+    {
+        "name": "JHeuty",
+        "countryCode": null,
+        "rank": 284,
+        "skill": 0,
+        "videos": [],
+        "codename": "JHEUTY",
+        "score": 29
+    },
+    {
+        "name": "Valmaster",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "VALMASTER",
+        "score": 57
+    },
+    {
+        "name": "BrunoFight3rs",
+        "countryCode": null,
+        "rank": 216,
+        "skill": 0,
+        "videos": [],
+        "codename": "BRUNOFIGHT3RS",
+        "score": 57
+    },
+    {
+        "name": "Private Joker",
+        "countryCode": "US",
+        "rank": 216,
+        "skill": 2,
+        "videos": [],
+        "codename": "PRIVATE JOKER",
+        "score": 57
+    },
+    {
+        "name": "So.Flo.Bison",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "SO.FLO.BISON",
+        "score": 29
+    },
+    {
+        "name": "CJ Tahj",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "CJ TAHJ",
+        "score": 29
+    },
+    {
+        "name": "InTehWeeds",
+        "countryCode": "US",
+        "rank": 284,
+        "skill": 2,
+        "videos": [],
+        "codename": "INTEHWEEDS",
+        "score": 29
+    },
+    {
+        "name": "Human Bomb",
+        "countryCode": null,
+        "rank": 58,
+        "skill": 0,
+        "videos": [],
+        "codename": "HUMAN BOMB",
+        "score": 430
+    },
+    {
+        "name": "Ibrahim",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 0,
+        "videos": [],
+        "codename": "IBRAHIM",
+        "score": 120
+    },
+    {
+        "name": "MOV",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 0,
+        "videos": [],
+        "codename": "MOV",
+        "score": 120
+    },
+    {
+        "name": "Veloc1raptor",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 0,
+        "videos": [],
+        "codename": "VELOC1RAPTOR",
+        "score": 120
+    },
+    {
+        "name": "KichijojiKEN",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 0,
+        "videos": [],
+        "codename": "KICHIJOJIKEN",
+        "score": 120
+    },
+    {
+        "name": "Misse",
+        "countryCode": null,
+        "rank": 127,
+        "skill": 0,
+        "videos": [],
+        "codename": "MISSE",
+        "score": 120
+    }
+]

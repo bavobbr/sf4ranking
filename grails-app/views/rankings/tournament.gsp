@@ -17,6 +17,7 @@
       <td>Country</td>
       <td>Date</td>
       <td>Format</td>
+      <td>Weight</td>
     </tr>
     </thead>
     <tr>
@@ -24,6 +25,7 @@
       <td>${tournament.countryCode?.name}</td>
       <td>${tournament.date?.format("MM-yyyy")}</td>
       <td>${tournament.tournamentFormat?.value}</td>
+      <td>${tournament.weight}</td>
     </tr>
   </table>
 </div>

@@ -8,11 +8,12 @@ class Tournament
 
     static constraints = {
         name nullable: false, unique: true
-        weight range: 1..100
+        weight range: 0..200
         date nullable: false
         countryCode nullable: true
         tournamentType nullable: true
         tournamentFormat nullable: false
+        weightingType nullable: false
         game nullable: false
         codename nullable: true, unique: true
         videos nullable: true, unique: false
@@ -26,6 +27,7 @@ class Tournament
     TournamentType tournamentType
     TournamentFormat tournamentFormat = TournamentFormat.UNKNOWN
     Version game = Version.UNKNOWN
+    WeightingType weightingType = WeightingType.AUTO
 
     static hasMany = [videos: String, results: Result]
 

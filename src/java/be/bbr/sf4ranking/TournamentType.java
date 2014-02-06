@@ -3,25 +3,31 @@ package be.bbr.sf4ranking;
 
 public enum TournamentType
 {
-    GRAND_SLAM("Grand Slam"),
-    CHAMPIONSHIP("Championship"),
-    PREMIER_MANDATORY("Premier Mandatory"),
-    PREMIER_5("Premier 5"),
-    PREMIER_12("Premier 12"),
-    INTERNATIONAL("International"),
-    SERIES("Series"),
-    CIRCUIT("Circuit"),
-    TOURNAMENT_CHAMPIONS("Tournament Of Champions");
+    GRAND_SLAM("Grand Slam",200),
+    CHAMPIONSHIP("Championship",190),
+    PREMIER_MANDATORY("Premier Mandatory",180),
+    PREMIER_5("Premier 5",170),
+    PREMIER_12("Premier 12",160),
+    INTERNATIONAL("International",150),
+    SERIES("Series",140),
+    CIRCUIT("Circuit",130),
+    TOURNAMENT_CHAMPIONS("Tournament Of Champions",120);
 
     private final String value;
+    // this value is used when WeightingType is FIXED, to assign a fixed weight
+    private final Integer classWeight;
 
-    TournamentType(String value)
+    TournamentType(String value, Integer classWeight)
     {
         this.value = value;
+        this.classWeight = classWeight;
     }
 
     public String getValue() {
         return value;
+    }
+    public Integer getClassWeight() {
+        return classWeight;
     }
 
     public static TournamentType fromString(String input) {

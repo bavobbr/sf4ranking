@@ -10,30 +10,39 @@ class RankingService
     {
         def tournaments = Tournament.list()
         tournaments.each {tournament ->
-            def topresults = tournament.results.sort {a, b -> b.player.skill <=> a.player.skill}.take(8)
-            if (topresults)
+            def weight = 0
+            if (tournament.weightingType == WeightingType.AUTO)
             {
-                Integer skillScore = topresults.sum {Result r -> r.player.skill}
-                tournament.weight = (skillScore as Double) / topresults.size() * 10
-                tournament.save(flush: true)
-                log.info "Updated tournament $tournament with weight ${tournament.weight}"
+                def topresults = tournament.results.sort {a, b -> b.player.skill <=> a.player.skill}.take(8)
+                if (topresults)
+                {
+                    Integer skillScore = topresults.sum {Result r -> r.player.skill}
+                    weight = (skillScore as Double) / topresults.size() * 10
+                }
             }
+            else
+            {
+                weight = tournament.tournamentType.classWeight
+            }
+            tournament.weight = weight
+            tournament.save(flush: true, failOnError: true)
+            log.info "Updated tournament $tournament with weight ${tournament.weight}"
         }
         return tournaments.size()
     }
 
     Integer updateTypes()
     {
-        def tournaments = Tournament.list().sort {a, b -> b.weight <=> a.weight}
-        applyType(tournaments, TournamentType.GRAND_SLAM, 0, 4)
-        applyType(tournaments, TournamentType.CHAMPIONSHIP, 4, 1)
-        applyType(tournaments, TournamentType.PREMIER_MANDATORY, 5, 4)
-        applyType(tournaments, TournamentType.PREMIER_5, 9, 5)
-        applyType(tournaments, TournamentType.PREMIER_12, 14, 12)
-        applyType(tournaments, TournamentType.INTERNATIONAL, 26, 31)
-        applyType(tournaments, TournamentType.SERIES, 57, 50)
-        applyType(tournaments, TournamentType.CIRCUIT, 107, 200)
-        tournaments*.save()
+        def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
+        //applyType(tournaments, TournamentType.GRAND_SLAM, 0, 4)
+        //applyType(tournaments, TournamentType.CHAMPIONSHIP, 4, 1)
+        applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
+        applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
+        applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
+        applyType(tournaments, TournamentType.INTERNATIONAL, 21, 31)
+        applyType(tournaments, TournamentType.SERIES, 52, 50)
+        applyType(tournaments, TournamentType.CIRCUIT, 102, 200)
+        tournaments*.save(failOnError: true)
         return tournaments.size()
     }
 
@@ -74,12 +83,14 @@ class RankingService
         if (start > tournaments.size() - 1) return
         def endIndex = Math.min(start + amount - 1, tournaments.size() - 1)
         tournaments[start..endIndex]*.tournamentType = type
+        log.info "Applied type $type"
     }
 
     /**
      * Keeping this here too so I dont need to change the views which could give merge issues with Kineda
      */
-    public Integer getScore(Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
+    public Integer getScore(Integer rank, TournamentType tournamentType,
+                            TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
         ScoringSystem.getScore(rank, tournamentType, tournamentFormat)
     }

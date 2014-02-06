@@ -8,10 +8,12 @@ class DataService
 {
 
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos)
+                                List videos, WeightingType wtype, TournamentType type)
     {
+        if (wtype == WeightingType.AUTO) type = null
+        else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
         Tournament tournament = null
-        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, format: format)
+        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, format: format, weightingType: wtype, tournamentType: type)
         tournament.save(failOnError: true)
         results.eachLine {String line, index ->
             log.info("Parsing line $line")
@@ -57,8 +59,10 @@ class DataService
             Version version = it.version as Version
             Date date = Date.parse("dd-MM-yyyy", it.date as String)
             TournamentFormat format = TournamentFormat.fromString(it.format)?: TournamentFormat.UNKNOWN
+            WeightingType weightingType = WeightingType.fromString(it.wtype)?: WeightingType.AUTO
             TournamentType type = TournamentType.fromString(it.type)
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: 1, tournamentFormat: format, tournamentType: type)
+            Integer weight = it.weight?: 0
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType)
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 CharacterType ctype = it.character as CharacterType
@@ -83,6 +87,8 @@ class DataService
             tournament.name = it.name
             tournament.type = it.tournamentType?.name()
             tournament.format = it.tournamentFormat?.name()
+            tournament.wtype = it.weightingType?.name()
+            tournament.weight = it.weight
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]

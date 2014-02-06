@@ -8,7 +8,9 @@ import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.RankingService
 import be.bbr.sf4ranking.Tournament
 import be.bbr.sf4ranking.TournamentFormat
+import be.bbr.sf4ranking.TournamentType
 import be.bbr.sf4ranking.Version
+import be.bbr.sf4ranking.WeightingType
 import grails.converters.JSON
 
 class AdminController
@@ -67,14 +69,16 @@ class AdminController
     def importTournament()
     {
         String tname = params.tname
-        Date tdate = new Date(params.tdate_year.toInteger(), params.tdate_month.toInteger(), params.tdate_day.toInteger())
+        Date tdate = new Date(params.tdate_year.toInteger()-1900, params.tdate_month.toInteger(), params.tdate_day.toInteger())
         TournamentFormat tformat = TournamentFormat.fromString(params.tformat)
+        TournamentType ttype = TournamentType.fromString(params.ttype)
+        WeightingType tweight = WeightingType.fromString(params.tweight)
         CountryCode tcountry = CountryCode.fromString(params.tcountry)
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
         List tvideos = params.tvideos.tokenize(" ")
-        dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos)
-        render view: "index"
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype)
+        redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 
     def importFileData()
