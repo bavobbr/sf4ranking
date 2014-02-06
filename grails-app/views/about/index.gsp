@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -7,9 +7,7 @@
 </head>
 
 <body>
-<%
-  def rankingService = grailsApplication.mainContext.getBean("rankingService");
-%>
+
 <h2>How does it work?</h2>
 
 <div class="jumbotron">
@@ -20,9 +18,6 @@
           href="http://www.atpworldtour.com/">ATP and WTA</a>. Players earn points by placing in tournaments.
   Tournaments are ordered by importance and given a classification. The players in those tournemants are then assigned a score based on their place within a tournament, adjusted with the tournament weight.
   </p>
-  %{--
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
-  --}%
 </div>
 
 <h3>What is SFIV?</h3>
@@ -67,14 +62,14 @@ The tournament ranking is done by sorting on weight and then ditributing them in
       <tr>
         <td>${type.value}</td>
         <td>1</td>
-        <td>${rankingService.getScore(1, type)}</td>
-        <td>${rankingService.getScore(2, type)}</td>
-        <td>${rankingService.getScore(3, type)}</td>
-        <td>${rankingService.getScore(4, type)}</td>
-        <td>${rankingService.getScore(5, type)}</td>
-        <td>${rankingService.getScore(6, type)}</td>
-        <td>${rankingService.getScore(7, type)}</td>
-        <td>${rankingService.getScore(8, type)}</td>
+        <td>${ScoringSystem.getScore(1, type)}</td>
+        <td>${ScoringSystem.getScore(2, type)}</td>
+        <td>${ScoringSystem.getScore(3, type)}</td>
+        <td>${ScoringSystem.getScore(4, type)}</td>
+        <td>${ScoringSystem.getScore(5, type)}</td>
+        <td>${ScoringSystem.getScore(6, type)}</td>
+        <td>${ScoringSystem.getScore(7, type)}</td>
+        <td>${ScoringSystem.getScore(8, type)}</td>
       </tr>
     </g:each>
     </tbody>

@@ -74,7 +74,7 @@ class ScoringSystem
             "LEAGUE": league_scores
     ]
 
-    public static Integer getScore(Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat)
+    public static Integer getScore(Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
         Map formatscores = scores[tournamentFormat.name()]
         List typescores = formatscores[tournamentType.name()] as List

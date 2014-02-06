@@ -53,7 +53,7 @@ class RankingService
             log.info("Evaluating player $p")
             def results = Result.findAllByPlayer(p)
             def scores = results.collect {
-                getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
+                ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
             }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
             p.score = bestof.sum() as Integer
@@ -86,13 +86,6 @@ class RankingService
         log.info "Applied type $type"
     }
 
-    /**
-     * Keeping this here too so I dont need to change the views which could give merge issues with Kineda
-     */
-    public Integer getScore(Integer rank, TournamentType tournamentType,
-                            TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
-    {
-        ScoringSystem.getScore(rank, tournamentType, tournamentFormat)
-    }
+
 
 }

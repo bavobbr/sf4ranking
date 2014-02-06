@@ -71,7 +71,7 @@ class RankingsController
             def tchar = it.pcharacter.name().toLowerCase()
             def tcharname = it.pcharacter?.value
             def tdate = it.tournament.date?.format("MM-yyyy")
-            def tscore = it.tournament.tournamentType? rankingService.getScore(it.place, it.tournament.tournamentType) : -1
+            def tscore = it.tournament.tournamentType? ScoringSystem.getScore(it.place, it.tournament.tournamentType) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
             rankings <<
@@ -114,7 +114,7 @@ class RankingsController
             def rplace = it.place
             def rchar = it.pcharacter?.name()?.toLowerCase()
             def rcharname = it.pcharacter?.value
-            def rscore = tournament.tournamentType ? rankingService.getScore(it.place, tournament.tournamentType) : -1
+            def rscore = tournament.tournamentType ? ScoringSystem.getScore(it.place, tournament.tournamentType) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             details <<
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry]
