@@ -18,11 +18,14 @@
   </center>
 </g:else>
 
-<p>Street Fighter World Rankings features high-profile tournaments from Super Street Fighter IV: Arcade Edition ver. 2012, with rankings that reflect the most all-around tournament players.  Tournaments and players are continually being added.  The site is in beta, and is subject to change based on community feedback.  Please participate in our official SRK thread, if you are interesting in helping. </p>
+
+<g:if test="${updateMessage}">
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-   <strong>UPDATE:</strong> Added ability to search players by character, and to filter region by clicking flags.
+  <g:message message="${updateMessage}"/>
+
 </div>
+</g:if>
 
 <div class="table-responsive">
 

@@ -12,6 +12,7 @@ class Tournament
         date nullable: false
         countryCode nullable: true
         tournamentType nullable: true
+        tournamentFormat nullable: false
         game nullable: false
         codename nullable: true, unique: true
         videos nullable: true, unique: false
@@ -23,6 +24,7 @@ class Tournament
     Date date
     CountryCode countryCode
     TournamentType tournamentType
+    TournamentFormat tournamentFormat = TournamentFormat.UNKNOWN
     Version game = Version.UNKNOWN
 
     static hasMany = [videos: String, results: Result]

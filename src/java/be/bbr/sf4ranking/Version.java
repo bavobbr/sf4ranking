@@ -17,4 +17,14 @@ public enum Version
         return value;
     }
 
+    public static Version fromString(String input) {
+        if (input == null || input.length() == 0) return null;
+        Version[] games = Version.values();
+        for (Version ct : games)
+            if (ct.name().toLowerCase().equals(input.toLowerCase())) {
+                return ct;
+            }
+        return null;
+    }
+
 }
