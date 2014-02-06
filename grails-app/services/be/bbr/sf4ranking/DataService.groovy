@@ -7,6 +7,8 @@ import groovy.json.JsonSlurper
 class DataService
 {
 
+    RankingService rankingService
+
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
                                 List videos)
     {
@@ -25,7 +27,8 @@ class DataService
                 p.save(failOnError: true)
             }
             CharacterType ctype = CharacterType.fromString(pchar.toUpperCase())?: CharacterType.UNKNOWN
-            Result r = new Result(player: p, place: index+1, pcharacter: ctype, tournament: tournament)
+            def rank = rankingService(index+1, tournament.tournamentFormat)
+            Result r = new Result(player: p, place: rank, pcharacter: ctype, tournament: tournament)
             r.save(failOnError: true)
             tournament.addToResults(r)
         }
