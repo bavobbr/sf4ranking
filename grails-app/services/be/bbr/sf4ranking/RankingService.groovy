@@ -6,24 +6,6 @@ import grails.transaction.Transactional
 class RankingService
 {
 
-    private static final Map scores = [
-            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16].flatten(),
-            "CHAMPIONSHIP": [1500, 1050, [690] * 2, [320] * 4, [200] * 8, [100] * 16].flatten(),
-            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16].flatten(),
-            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16].flatten(),
-            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16].flatten(),
-            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16].flatten(),
-            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16].flatten(),
-            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
-    ]
-
-    private static final Map ranks = [
-            LEAGUE: 1..32,
-            UNKNOWN: 1..32,
-            SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16].flatten(),
-            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8].flatten()
-    ]
-
     Integer updateWeights()
     {
         def tournaments = Tournament.list()
@@ -61,7 +43,9 @@ class RankingService
         players.each {Player p ->
             log.info("Evaluating player $p")
             def results = Result.findAllByPlayer(p)
-            def scores = results.collect {getScore(it.place, it.tournament.tournamentType)}.sort {a, b -> b <=> a}
+            def scores = results.collect {
+                getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
+            }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
             p.score = bestof.sum() as Integer
             p.save()
@@ -92,17 +76,12 @@ class RankingService
         tournaments[start..endIndex]*.tournamentType = type
     }
 
-    public Integer getScore(Integer rank, TournamentType tournamentType)
+    /**
+     * Keeping this here too so I dont need to change the views which could give merge issues with Kineda
+     */
+    public Integer getScore(Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
-        List typescores = scores[tournamentType.name()] as List
-        return typescores[rank - 1] as Integer
+        ScoringSystem.getScore(rank, tournamentType, tournamentFormat)
     }
-
-    public Integer getRank(Integer index, TournamentFormat tournamentFormat)
-    {
-        List typeranks = ranks[tournamentFormat.name()] as List
-        return typeranks[index - 1] as Integer
-    }
-
 
 }

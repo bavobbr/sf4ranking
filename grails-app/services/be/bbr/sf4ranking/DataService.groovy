@@ -7,8 +7,6 @@ import groovy.json.JsonSlurper
 class DataService
 {
 
-    RankingService rankingService
-
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
                                 List videos)
     {
@@ -27,7 +25,7 @@ class DataService
                 p.save(failOnError: true)
             }
             CharacterType ctype = CharacterType.fromString(pchar.toUpperCase())?: CharacterType.UNKNOWN
-            def rank = rankingService(index+1, tournament.tournamentFormat)
+            def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
             Result r = new Result(player: p, place: rank, pcharacter: ctype, tournament: tournament)
             r.save(failOnError: true)
             tournament.addToResults(r)
@@ -43,7 +41,7 @@ class DataService
         {
             return "Delete data first, re-import works only on empty database"
         }
-        def playerFile = new File(RankingService.class.getResource("/data/players.json").toURI())
+        def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
         def pdata = new JsonSlurper().parseText(playerFile.text)
         pdata.each {
             log.info "Saving player $it.name"
@@ -51,7 +49,7 @@ class DataService
             Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank)
             p.save(failOnError: true)
         }
-        def tournamentFile = new File(RankingService.class.getResource("/data/tournaments.json").toURI())
+        def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
         def tdata = new JsonSlurper().parseText(tournamentFile.text)
         tdata.each {
             log.info "Importing tournament $it.name"

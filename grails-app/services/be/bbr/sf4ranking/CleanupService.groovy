@@ -3,10 +3,12 @@ package be.bbr.sf4ranking
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
 
+/**
+ * This is mainly used to upgrade old data
+ */
 @Transactional
 class CleanupService
 {
-    RankingService rankingService
 
     def fixTournamentFormats() {
         Tournament.list().each {
@@ -29,7 +31,7 @@ class CleanupService
     def fixPlayerRankings() {
         Tournament.list().each { Tournament t ->
             t.results.each { Result r ->
-                r.place = rankingService.getRank(r.place, t.tournamentFormat)
+                r.place = ScoringSystem.getRank(r.place, t.tournamentFormat)
                 r.save()
             }
             log.info "Fixed ranks of tournament $t"

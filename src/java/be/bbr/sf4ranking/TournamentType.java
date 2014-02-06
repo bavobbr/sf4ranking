@@ -10,7 +10,8 @@ public enum TournamentType
     PREMIER_12("Premier 12"),
     INTERNATIONAL("International"),
     SERIES("Series"),
-    CIRCUIT("Circuit");
+    CIRCUIT("Circuit"),
+    TOURNAMENT_CHAMPIONS("Tournament Of Champions");
 
     private final String value;
 
