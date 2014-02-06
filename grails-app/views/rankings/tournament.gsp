@@ -7,10 +7,10 @@
 </head>
 
 <body>
-<h2>Tournament details<small> for ${tournament.name}</small></h2>
+<h2 class="tournament"><small> ${tournament.name}</small> Tournament details</h2>
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover tdetails">
     <thead>
     <tr>
       <td>Type</td>
@@ -26,7 +26,7 @@
   </table>
 </div>
 
-<h2>Tournament placings <small>found ${details.size()} rankings</small></h2>
+<h2 class="tournament"><large>found ${details.size()} rankings</large></h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">

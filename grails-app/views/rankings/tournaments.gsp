@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2>Tournaments Registered<small> found ${tournaments.size()} tournaments</small></h2>
+<h2 class="tournament"><small>${tournaments.size()} Tournaments Registered</small></h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">

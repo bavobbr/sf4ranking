@@ -7,11 +7,15 @@
 </head>
 
 <body>
-<h2>Player details<small> for ${player.name}</small></h2>
-<dl class="dl-horizontal">
-
-  <dt>World Rank</dt>
-  <dd>${player.rank}</dd>
+<center>
+  <center>
+  	<h6 class="player-heading">Street Fighter World Rankings</h6><span class="glyphicon glyphicon-flash"></span>
+  	<h4 class="subtitle">rank.shoryuken.com</h4>
+  </center>
+<h1 class="player_name">${player.name}</h1>
+<h3 class="world_rank">${player.rank}</h3>
+<span class="glyphicon glyphicon-flash"></span><span class="world_rank_title"> Street Fighter World Rank </span><span class="glyphicon glyphicon-flash"></span>
+<dl class="dl-horizontal player_details">
   <dt>Country</dt>
   <dd>
     ${player.countryCode?.name}
@@ -25,14 +29,14 @@
   </dd>
   <dt>Score</dt>
   <dd>${player.score}</dd>
-  <dt>Character used</dt>
+  <dt>Character(s)</dt>
   <dd>${chars}</dd>
   <dt>Skill Weight</dt>
   <dd>${player.skill}</dd>
 
 </dl>
-
-<h2>Tournament placings<small> found ${results.size()} SF4 rankings</small></h2>
+<h3 class="tournaments">Tournament placings<small> found [${results.size()}] SSFIV:AE ver. 2012 rankings for </small>${player.name}</h3>
+</center>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">

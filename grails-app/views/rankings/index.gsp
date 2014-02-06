@@ -8,18 +8,20 @@
 
 <body>
 <g:if test="${filtered}">
-  <h2>SF4 World Ranking - Filtered on ${fcountry} ${fchar}</h2>
+  <center><h2 class="title-filtered">Street Fighter World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
+  	<h4 class="subtitle">rank.shoryuken.com</h4></center>
 </g:if>
 <g:else>
-  <h2>SF4 World Ranking</h2>
+  <center>
+  	<h2 class="title">Street Fighter World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
+  	<h4 class="subtitle">rank.shoryuken.com</h4>
+  </center>
 </g:else>
 
+<p>Street Fighter World Rankings features high-profile tournaments from Super Street Fighter IV: Arcade Edition ver. 2012, with rankings that reflect the most all-around tournament players.  Tournaments and players are continually being added.  The site is in beta, and is subject to change based on community feedback.  Please participate in our official SRK thread, if you are interesting in helping. </p>
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  Currently the database is focusing on SSF4:AE 2012 edition, listing all high-profile tournaments of 2012 and 2013. As a result this ranking reflects the most all-round tournament players of Street Fighter 4: Arcade Edition 2012.
-  As soon as more tournaments are added in different games, new rankings will be made per game.<br/>
-  The database and website is still in beta-phase and subject to change on user feedback. Feedback is very much appreciated via the social links provided at every page!<br/>
-  UPDATE: Now allows you to search players by character, and to filter region by clicking flags.
+   <strong>UPDATE:</strong> Added ability to search players by character, and to filter region by clicking flags.
 </div>
 
 <div class="table-responsive">

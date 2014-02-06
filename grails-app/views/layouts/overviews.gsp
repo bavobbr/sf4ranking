@@ -9,6 +9,10 @@
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
+  <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <style>
   .ui-autocomplete-loading {
     background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
@@ -65,45 +69,69 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+
+<div class="container">
+
 <nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="container">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <g:link action="index" controller="rankings" class="navbar-brand">SF4 World Ranking</g:link>
+      <a class="navbar-brand" href="/sf4ranking/">Shoryuken Rankings</a>
     </div>
 
-
-
-
     <!-- Collect the nav links, forms, and other content for toggling -->
-
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><g:link action="index" controller="rankings">Ranking</g:link></li>
-        <li><g:link action="tournaments" controller="rankings">Tournaments</g:link></li>
-
-        <li>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input id="playerSearch" class="form-control" placeholder="player">
-          </div>
-        </form>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-right top-search" role="search">
+        <div class="form-group">
+          <input id="playerSearch" class="form-control" placeholder="Find a Player">
+        </div>
+		<div class="form-group">
+          <input id="tournamentSearch" class="form-control" placeholder="Search Tournaments">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+	      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+			<li><g:link action="index" controller="rankings">World Rankings</g:link></li>
+        	<li><g:link action="tournaments" controller="rankings">View Tournaments</g:link></li>
+            <li class="divider"></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </li>
-        <li>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input id="tournamentSearch" class="form-control" placeholder="tournament">
-          </div>
-        </form>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARTICIPATE <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Rankings Discussion</a></li>
+            <li class="divider"></li>
+			<li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shoryuken.com</a></li>
+          </ul>
         </li>
-        <li><g:link action="index" controller="about">How it works</g:link></li>
-        <g:if test="${session.user != null}">
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      
+      <div class="starter-template">
+        <g:layoutBody/>
+        
+
+      <div class="footer">
+        <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
+		<p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a href="http://www.shoryuken.com">Shoryuken</a>  &middot; Bootstrap mods by <a <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="#">official thread</a>.</p>
+	  <ul class="nav navbar-nav">
+		 <g:if test="${session.user != null}">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -116,67 +144,6 @@
           </li>
         </g:if>
       </ul>
-    </div><!-- /.navbar-collapse -->
-
-  </div>
-</nav>
-
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-md-10">
-      <g:img dir="images" file="sf4_stage2.jpg" class="img-responsive"/>
-      <div class="starter-template">
-        <g:layoutBody/>
-        <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">Share</h3>
-          </div>
-
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-4">
-
-                <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
-                <script>!function (d, s, id)
-                {
-                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                  if (!d.getElementById(id))
-                  {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + '://platform.twitter.com/widgets.js';
-                    fjs.parentNode.insertBefore(js, fjs);
-                  }
-                }(document, 'script', 'twitter-wjs');</script>
-              </div>
-
-              <div class="col-md-4">
-                <a href="https://twitter.com/bavobbr" class="twitter-follow-button" data-show-count="false">Follow @bavobbr</a>
-                <script>!function (d, s, id)
-                {
-                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                  if (!d.getElementById(id))
-                  {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + '://platform.twitter.com/widgets.js';
-                    fjs.parentNode.insertBefore(js, fjs);
-                  }
-                }(document, 'script', 'twitter-wjs');</script>
-              </div>
-
-              <div class="col-md-4">
-                <div class="fb-share-button" data-href="http://sf4ranking.bavobbr.eu.cloudbees.net/" data-type="button_count"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>Street Fighter 4 World Tournament Ranking &copy; Bavo Bruylandt 2013</p>
       </div>
     </div>
   </div>
