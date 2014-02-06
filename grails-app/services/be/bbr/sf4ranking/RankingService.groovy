@@ -1,7 +1,6 @@
 package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
-import groovy.json.JsonSlurper
 
 @Transactional
 class RankingService
@@ -18,11 +17,18 @@ class RankingService
             "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
     ]
 
+    private static final Map ranks = [
+            LEAGUE: 1..32,
+            UNKNOWN: 1..32,
+            SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16].flatten(),
+            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8].flatten()
+    ]
+
     Integer updateWeights()
     {
         def tournaments = Tournament.list()
         tournaments.each {tournament ->
-            def topresults = tournament.results.sort {a, b -> b.player.skill<=>a.player.skill}.take(8)
+            def topresults = tournament.results.sort {a, b -> b.player.skill <=> a.player.skill}.take(8)
             if (topresults)
             {
                 Integer skillScore = topresults.sum {Result r -> r.player.skill}
@@ -36,7 +42,7 @@ class RankingService
 
     Integer updateTypes()
     {
-        def tournaments = Tournament.list().sort {a, b -> b.weight<=>a.weight}
+        def tournaments = Tournament.list().sort {a, b -> b.weight <=> a.weight}
         applyType(tournaments, TournamentType.GRAND_SLAM, 0, 1)
         applyType(tournaments, TournamentType.CHAMPIONSHIP, 1, 3)
         applyType(tournaments, TournamentType.PREMIER_MANDATORY, 4, 5)
@@ -55,7 +61,7 @@ class RankingService
         players.each {Player p ->
             log.info("Evaluating player $p")
             def results = Result.findAllByPlayer(p)
-            def scores = results.collect { getScore(it.place, it.tournament.tournamentType) }.sort { a, b -> b <=> a}
+            def scores = results.collect {getScore(it.place, it.tournament.tournamentType)}.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
             p.score = bestof.sum() as Integer
             p.save()
@@ -69,7 +75,8 @@ class RankingService
         def previous = 0
         def currentRank = 0
         players.eachWithIndex {Player p, Integer idx ->
-            if (p.score != previous) {
+            if (p.score != previous)
+            {
                 currentRank = idx + 1
             }
             p.rank = currentRank
@@ -87,8 +94,14 @@ class RankingService
 
     public Integer getScore(Integer rank, TournamentType tournamentType)
     {
-        List typescores = scores[tournamentType.name()]
-        return typescores[rank - 1]
+        List typescores = scores[tournamentType.name()] as List
+        return typescores[rank - 1] as Integer
+    }
+
+    public Integer getRank(Integer index, TournamentFormat tournamentFormat)
+    {
+        List typeranks = ranks[tournamentFormat.name()] as List
+        return typeranks[index - 1] as Integer
     }
 
 

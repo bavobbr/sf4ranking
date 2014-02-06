@@ -46,11 +46,13 @@ This action should be triggered every time a new tournament has been entered, as
 <h2>BEWARE</h2>
 
 One should first import all file data to initialize the database with content. Do not do it twice, it may override newer data or add the same.<br/>
-If you want to restart use DELETE ALL and then do another import. This imports the data bundled with the app, not the previous export.
+If you want to restart use DELETE ALL and then do another import. This imports the data bundled with the app, not the previous export. The fix methods are supplied to apply default values for data that previously did not have it.
 
 <ul>
   <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
   <li><g:link action="importFileData">Import server-side JSON data</g:link></li>
+  <li><g:link action="fixTournamentFormats">Do a best guess on ALL tournament formats and apply it</g:link></li>
+  <li><g:link action="fixPlayerRankings">Re-adjust ALL player ranks based on tournament format</g:link></li>
 </ul>
 <br/>
 </body>

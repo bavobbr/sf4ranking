@@ -1,6 +1,7 @@
 package be.bbr.admin
 
 import be.bbr.sf4ranking.CharacterType
+import be.bbr.sf4ranking.CleanupService
 import be.bbr.sf4ranking.CountryCode
 import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
@@ -15,6 +16,7 @@ class AdminController
 
     RankingService rankingService
     DataService dataService
+    CleanupService cleanupService
 
     def index() {}
 
@@ -169,6 +171,16 @@ class AdminController
         def videos = params.videos.tokenize(" ")
         video.videos = videos as Set
         redirect(controller: "rankings", action: "player", params: [id: params.id])
+    }
+
+    def fixTournamentFormats() {
+        cleanupService.fixTournamentFormats()
+        render view: "index"
+    }
+
+    def fixPlayerRankings() {
+        cleanupService.fixPlayerRankings()
+        render view: "index"
     }
 
 }
