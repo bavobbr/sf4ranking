@@ -10,16 +10,16 @@
 <h2 class="tournament"><small>${tournaments.size()} Tournaments Registered</small></h2>
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table class="tablehead">
     <thead>
-    <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Date</td>
-      <td>Location</td>
-      <td>Game</td>
-      <td>Weight</td>
-      <td>Video</td>
+    <tr class="stathead">
+      <th>Name</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Game</th>
+      <th>Weight</th>
+      <th>Video</th>
     </tr>
     </thead>
     <g:each in="${tournaments}" var="t">
