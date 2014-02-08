@@ -53,12 +53,14 @@
               <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
                      title="${result.rchar}"/>
             </g:link>
+            ${result.rcharname}
           </g:if>
         </td>
         <td>
           <g:if test="${result.rcountry != null}">
             <g:link controller="rankings" action="tournaments" params="[country: result.rcountry]">
               <g:img dir="images/countries" file="${result.rcountry + '.png'}"/>
+            ${result.rcountryname}
             </g:link>
           </g:if>
         </td>

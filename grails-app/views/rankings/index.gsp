@@ -55,6 +55,7 @@
           <g:if test="${p.countryCode}">
             <g:link controller="rankings" action="index" params="[country: p.countryCode.name()]">
               <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}"/>
+              ${p.countryCode.name}
             </g:link>
           </g:if>
         </td>

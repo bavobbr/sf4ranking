@@ -30,7 +30,11 @@
   <dt>Score</dt>
   <dd>${player.score}</dd>
   <dt>Character(s)</dt>
-  <dd>${chars}</dd>
+  <dd>
+    <g:each in="${chars}" var="pchar">
+      <g:link action="index" controller="rankings" params="[pchar: pchar.name()]">${pchar.value}</g:link>
+    </g:each>
+  </dd>
   <dt>Skill Weight</dt>
   <dd>${player.skill}</dd>
 
@@ -60,6 +64,7 @@
           <g:if test="${result.tchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.tchar]">
               <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}" title="${result.tchar}"/>
+              ${result.tcharname}
             </g:link>
           </g:if>
 

@@ -32,6 +32,7 @@
           <g:if test="${t.countryCode}">
             <g:link controller="rankings" action="tournaments" params="[country: t.countryCode.name()]">
               <g:img dir="images/countries" file="${t.countryCode.name().toLowerCase() + '.png'}"/>
+              ${t.countryCode.name}
             </g:link>
           </g:if>
         </td>

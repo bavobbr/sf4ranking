@@ -116,8 +116,9 @@ class RankingsController
             def rcharname = it.pcharacter?.value
             def rscore = tournament.tournamentType ? ScoringSystem.getScore(it.place, tournament.tournamentType) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
+            def rcountryname = it.player.countryCode?.name
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname]
             println details
         }
         return [tournament: tournament, details: details]
