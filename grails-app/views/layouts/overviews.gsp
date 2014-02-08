@@ -172,7 +172,7 @@
   $(document).ready(function ()
                     {
                       $("table").tablecloth({
-                                              theme: "paper",
+                                              theme: "default",
                                               striped: true,
                                               sortable: true,
                                               condensed: true
