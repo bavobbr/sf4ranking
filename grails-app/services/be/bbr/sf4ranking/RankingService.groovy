@@ -34,8 +34,7 @@ class RankingService
     Integer updateTypes()
     {
         def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
-        //applyType(tournaments, TournamentType.GRAND_SLAM, 0, 4)
-        //applyType(tournaments, TournamentType.CHAMPIONSHIP, 4, 1)
+        // AUTO weighting starts from premier 5
         applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
         applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
         applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
