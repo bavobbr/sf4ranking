@@ -6,7 +6,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BOKKIN",
-        "score": 160
+        "score": 160,
+        "wikilink": null
     },
     {
         "name": "XsK Samurai",
@@ -15,7 +16,8 @@
         "skill": 7,
         "videos": [],
         "codename": "XSK SAMURAI",
-        "score": 400
+        "score": 400,
+        "wikilink": null
     },
     {
         "name": "Air",
@@ -24,7 +26,8 @@
         "skill": 5,
         "videos": [],
         "codename": "AIR",
-        "score": 261
+        "score": 261,
+        "wikilink": null
     },
     {
         "name": "FineLikeWine49",
@@ -33,7 +36,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FINELIKEWINE49",
-        "score": 72
+        "score": 72,
+        "wikilink": null
     },
     {
         "name": "Ricky Ortiz",
@@ -42,7 +46,8 @@
         "skill": 7,
         "videos": [],
         "codename": "RICKY ORTIZ",
-        "score": 3180
+        "score": 3180,
+        "wikilink": null
     },
     {
         "name": "Filipino Champ",
@@ -51,7 +56,8 @@
         "skill": 8,
         "videos": ["s9sasM2zv6c"],
         "codename": "FILIPINO CHAMP",
-        "score": 794
+        "score": 794,
+        "wikilink": null
     },
     {
         "name": "Kineda",
@@ -60,7 +66,8 @@
         "skill": 3,
         "videos": [],
         "codename": "KINEDA",
-        "score": 103
+        "score": 103,
+        "wikilink": null
     },
     {
         "name": "Duncan",
@@ -69,7 +76,8 @@
         "skill": 4,
         "videos": [],
         "codename": "DUNCAN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Hoodaman",
@@ -78,7 +86,8 @@
         "skill": 6,
         "videos": [],
         "codename": "HOODAMAN",
-        "score": 422
+        "score": 422,
+        "wikilink": null
     },
     {
         "name": "Julio",
@@ -87,7 +96,8 @@
         "skill": 6,
         "videos": [],
         "codename": "JULIO",
-        "score": 209
+        "score": 209,
+        "wikilink": null
     },
     {
         "name": "Crizzle",
@@ -96,7 +106,8 @@
         "skill": 4,
         "videos": [],
         "codename": "CRIZZLE",
-        "score": 192
+        "score": 192,
+        "wikilink": null
     },
     {
         "name": "PR Balrog",
@@ -105,7 +116,8 @@
         "skill": 9,
         "videos": ["6NcfdsxicKc"],
         "codename": "PR BALROG",
-        "score": 4385
+        "score": 4385,
+        "wikilink": null
     },
     {
         "name": "Noej",
@@ -114,7 +126,8 @@
         "skill": 2,
         "videos": [],
         "codename": "NOEJ",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Kurokiba",
@@ -123,7 +136,8 @@
         "skill": 2,
         "videos": [],
         "codename": "KUROKIBA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Jesus",
@@ -132,7 +146,8 @@
         "skill": 1,
         "videos": [],
         "codename": "JESUS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "TylerJ",
@@ -141,7 +156,8 @@
         "skill": 1,
         "videos": [],
         "codename": "TYLERJ",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Kimo",
@@ -150,7 +166,8 @@
         "skill": 1,
         "videos": [],
         "codename": "KIMO",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Yeb",
@@ -159,7 +176,8 @@
         "skill": 4,
         "videos": [],
         "codename": "YEB",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Uryo",
@@ -168,7 +186,8 @@
         "skill": 9,
         "videos": ["L0M-jbxfXVA"],
         "codename": "URYO",
-        "score": 2287
+        "score": 2287,
+        "wikilink": null
     },
     {
         "name": "-6",
@@ -177,7 +196,8 @@
         "skill": 7,
         "videos": [],
         "codename": "-6",
-        "score": 162
+        "score": 162,
+        "wikilink": null
     },
     {
         "name": "Haitani",
@@ -186,7 +206,8 @@
         "skill": 9,
         "videos": ["u2pJdrCMLzY", "dhM0ip3DHiQ", "lLIzwEsXr4g"],
         "codename": "HAITANI",
-        "score": 3916
+        "score": 3916,
+        "wikilink": null
     },
     {
         "name": "Taigaa",
@@ -195,7 +216,8 @@
         "skill": 1,
         "videos": [],
         "codename": "TAIGAA",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Banbaban",
@@ -204,7 +226,8 @@
         "skill": 5,
         "videos": [],
         "codename": "BANBABAN",
-        "score": 650
+        "score": 650,
+        "wikilink": null
     },
     {
         "name": "Youshikibi",
@@ -213,7 +236,8 @@
         "skill": 5,
         "videos": [],
         "codename": "YOUSHIKIBI",
-        "score": 49
+        "score": 49,
+        "wikilink": null
     },
     {
         "name": "Taku@Ratio4",
@@ -222,7 +246,8 @@
         "skill": 1,
         "videos": [],
         "codename": "TAKU@RATIO4",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Inbe",
@@ -231,7 +256,8 @@
         "skill": 1,
         "videos": [],
         "codename": "INBE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Justin Wong",
@@ -240,7 +266,8 @@
         "skill": 9,
         "videos": [],
         "codename": "JUSTIN WONG",
-        "score": 4315
+        "score": 4315,
+        "wikilink": null
     },
     {
         "name": "iPeru",
@@ -249,7 +276,8 @@
         "skill": 5,
         "videos": [],
         "codename": "IPERU",
-        "score": 626
+        "score": 626,
+        "wikilink": null
     },
     {
         "name": "Slinkun",
@@ -258,7 +286,8 @@
         "skill": 2,
         "videos": [],
         "codename": "SLINKUN",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Lionheart",
@@ -267,7 +296,8 @@
         "skill": 4,
         "videos": [],
         "codename": "LIONHEART",
-        "score": 288
+        "score": 288,
+        "wikilink": null
     },
     {
         "name": "Alex Valle",
@@ -276,7 +306,8 @@
         "skill": 7,
         "videos": [],
         "codename": "ALEX VALLE",
-        "score": 994
+        "score": 994,
+        "wikilink": null
     },
     {
         "name": "Playing2Win",
@@ -285,7 +316,8 @@
         "skill": 1,
         "videos": [],
         "codename": "PLAYING2WIN",
-        "score": 59
+        "score": 59,
+        "wikilink": null
     },
     {
         "name": "Buy Hungry Human",
@@ -294,7 +326,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BUY HUNGRY HUMAN",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "K-Brad",
@@ -303,7 +336,8 @@
         "skill": 7,
         "videos": [],
         "codename": "K-BRAD",
-        "score": 1774
+        "score": 1774,
+        "wikilink": null
     },
     {
         "name": "Chad de Thunder",
@@ -312,7 +346,8 @@
         "skill": 1,
         "videos": [],
         "codename": "CHAD DE THUNDER",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "WeaponsLeft",
@@ -321,7 +356,8 @@
         "skill": 1,
         "videos": [],
         "codename": "WEAPONSLEFT",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Noel Brown",
@@ -330,7 +366,8 @@
         "skill": 4,
         "videos": [],
         "codename": "NOEL BROWN",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "BAKA",
@@ -339,7 +376,8 @@
         "skill": 2,
         "videos": [],
         "codename": "BAKA",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Infiltration",
@@ -348,7 +386,8 @@
         "skill": 10,
         "videos": [],
         "codename": "INFILTRATION",
-        "score": 7775
+        "score": 7775,
+        "wikilink": null
     },
     {
         "name": "Combofiend",
@@ -357,7 +396,8 @@
         "skill": 6,
         "videos": [],
         "codename": "COMBOFIEND",
-        "score": 520
+        "score": 520,
+        "wikilink": null
     },
     {
         "name": "Laugh",
@@ -366,7 +406,8 @@
         "skill": 8,
         "videos": [],
         "codename": "LAUGH",
-        "score": 841
+        "score": 841,
+        "wikilink": null
     },
     {
         "name": "Dieminion",
@@ -375,7 +416,8 @@
         "skill": 8,
         "videos": ["6NcfdsxicKc", "SLvgNQs3tfk"],
         "codename": "DIEMINION",
-        "score": 2910
+        "score": 2910,
+        "wikilink": null
     },
     {
         "name": "Banana Ken",
@@ -384,7 +426,8 @@
         "skill": 7,
         "videos": [],
         "codename": "BANANA KEN",
-        "score": 170
+        "score": 170,
+        "wikilink": null
     },
     {
         "name": "Mike Ross",
@@ -393,7 +436,8 @@
         "skill": 6,
         "videos": [],
         "codename": "MIKE ROSS",
-        "score": 1505
+        "score": 1505,
+        "wikilink": null
     },
     {
         "name": "Hurun",
@@ -402,7 +446,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HURUN",
-        "score": 280
+        "score": 280,
+        "wikilink": null
     },
     {
         "name": "dath",
@@ -411,7 +456,8 @@
         "skill": 6,
         "videos": [],
         "codename": "DATH",
-        "score": 297
+        "score": 297,
+        "wikilink": null
     },
     {
         "name": "Dogura",
@@ -420,7 +466,8 @@
         "skill": 8,
         "videos": [],
         "codename": "DOGURA",
-        "score": 370
+        "score": 370,
+        "wikilink": null
     },
     {
         "name": "Amiyu",
@@ -429,7 +476,8 @@
         "skill": 7,
         "videos": [],
         "codename": "AMIYU",
-        "score": 467
+        "score": 467,
+        "wikilink": null
     },
     {
         "name": "KojiKOG",
@@ -438,7 +486,8 @@
         "skill": 7,
         "videos": [],
         "codename": "KOJIKOG",
-        "score": 125
+        "score": 125,
+        "wikilink": null
     },
     {
         "name": "GamerBee",
@@ -447,7 +496,8 @@
         "skill": 9,
         "videos": [],
         "codename": "GAMERBEE",
-        "score": 4900
+        "score": 4900,
+        "wikilink": null
     },
     {
         "name": "NYChrisG",
@@ -456,7 +506,8 @@
         "skill": 8,
         "videos": ["HvttrJ5CMGM"],
         "codename": "NYCHRISG",
-        "score": 2350
+        "score": 2350,
+        "wikilink": null
     },
     {
         "name": "Ryan Hart",
@@ -465,7 +516,8 @@
         "skill": 9,
         "videos": [],
         "codename": "RYAN HART",
-        "score": 1819
+        "score": 1819,
+        "wikilink": null
     },
     {
         "name": "DR Ray",
@@ -474,7 +526,8 @@
         "skill": 5,
         "videos": [],
         "codename": "DR RAY",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Problem X",
@@ -483,7 +536,8 @@
         "skill": 8,
         "videos": [],
         "codename": "PROBLEM X",
-        "score": 606
+        "score": 606,
+        "wikilink": null
     },
     {
         "name": "Taaha",
@@ -492,7 +546,8 @@
         "skill": 4,
         "videos": [],
         "codename": "TAAHA",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Veggey",
@@ -501,7 +556,8 @@
         "skill": 1,
         "videos": [],
         "codename": "VEGGEY",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "DRz_Yagami",
@@ -510,7 +566,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DRZ_YAGAMI",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Gonza",
@@ -519,7 +576,8 @@
         "skill": 1,
         "videos": [],
         "codename": "GONZA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Chi-Rithy",
@@ -528,7 +586,8 @@
         "skill": 7,
         "videos": [],
         "codename": "CHI-RITHY",
-        "score": 1043
+        "score": 1043,
+        "wikilink": null
     },
     {
         "name": "Snafoo",
@@ -537,7 +596,8 @@
         "skill": 5,
         "videos": [],
         "codename": "SNAFOO",
-        "score": 301
+        "score": 301,
+        "wikilink": null
     },
     {
         "name": "WolfKrone",
@@ -546,7 +606,8 @@
         "skill": 7,
         "videos": [],
         "codename": "WOLFKRONE",
-        "score": 2495
+        "score": 2495,
+        "wikilink": null
     },
     {
         "name": "Mooney",
@@ -555,7 +616,8 @@
         "skill": 3,
         "videos": [],
         "codename": "MOONEY",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Eric Hai",
@@ -564,7 +626,8 @@
         "skill": 5,
         "videos": [],
         "codename": "ERIC HAI",
-        "score": 89
+        "score": 89,
+        "wikilink": null
     },
     {
         "name": "Spiralguy",
@@ -573,7 +636,8 @@
         "skill": 1,
         "videos": [],
         "codename": "SPIRALGUY",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Riceata",
@@ -582,7 +646,8 @@
         "skill": 7,
         "videos": [],
         "codename": "RICEATA",
-        "score": 150
+        "score": 150,
+        "wikilink": null
     },
     {
         "name": "JSMaster",
@@ -591,7 +656,8 @@
         "skill": 5,
         "videos": [],
         "codename": "JSMASTER",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "JTN",
@@ -600,7 +666,8 @@
         "skill": 1,
         "videos": [],
         "codename": "JTN",
-        "score": 45
+        "score": 45,
+        "wikilink": null
     },
     {
         "name": "Jugg",
@@ -609,7 +676,8 @@
         "skill": 1,
         "videos": [],
         "codename": "JUGG",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Rebelo",
@@ -618,7 +686,8 @@
         "skill": 1,
         "videos": [],
         "codename": "REBELO",
-        "score": 45
+        "score": 45,
+        "wikilink": null
     },
     {
         "name": "AK Heero",
@@ -627,7 +696,8 @@
         "skill": 1,
         "videos": [],
         "codename": "AK HEERO",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "BlueBlazer",
@@ -636,7 +706,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BLUEBLAZER",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "sako",
@@ -645,7 +716,8 @@
         "skill": 10,
         "videos": ["gyx39xXFtIA", "-xJZtTRHrNg", "kpCYKXZV1dM", "VEZT1Y_sQ7o"],
         "codename": "SAKO",
-        "score": 5770
+        "score": 5770,
+        "wikilink": null
     },
     {
         "name": "Keoma",
@@ -654,7 +726,8 @@
         "skill": 6,
         "videos": [],
         "codename": "KEOMA",
-        "score": 86
+        "score": 86,
+        "wikilink": null
     },
     {
         "name": "Chuchu",
@@ -663,7 +736,8 @@
         "skill": 2,
         "videos": [],
         "codename": "CHUCHU",
-        "score": 143
+        "score": 143,
+        "wikilink": null
     },
     {
         "name": "Kbot",
@@ -672,7 +746,8 @@
         "skill": 1,
         "videos": [],
         "codename": "KBOT",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "BahiaWong",
@@ -681,7 +756,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BAHIAWONG",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Coju",
@@ -690,7 +766,8 @@
         "skill": 1,
         "videos": [],
         "codename": "COJU",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "BrenoFight3rs",
@@ -699,7 +776,8 @@
         "skill": 7,
         "videos": [],
         "codename": "BRENOFIGHT3RS",
-        "score": 284
+        "score": 284,
+        "wikilink": null
     },
     {
         "name": "Tokido",
@@ -708,7 +786,8 @@
         "skill": 9,
         "videos": ["eBScgnpODm0", "HvttrJ5CMGM"],
         "codename": "TOKIDO",
-        "score": 4740
+        "score": 4740,
+        "wikilink": null
     },
     {
         "name": "Luffy",
@@ -717,7 +796,8 @@
         "skill": 9,
         "videos": [],
         "codename": "LUFFY",
-        "score": 1616
+        "score": 1616,
+        "wikilink": null
     },
     {
         "name": "Mago",
@@ -726,7 +806,8 @@
         "skill": 9,
         "videos": ["nGVTlr-OY7Q"],
         "codename": "MAGO",
-        "score": 4215
+        "score": 4215,
+        "wikilink": null
     },
     {
         "name": "Shungoku Neurosis",
@@ -735,7 +816,8 @@
         "skill": 6,
         "videos": [],
         "codename": "SHUNGOKU NEUROSIS",
-        "score": 479
+        "score": 479,
+        "wikilink": null
     },
     {
         "name": "Xian",
@@ -744,7 +826,8 @@
         "skill": 9,
         "videos": ["BvkXaNO9Kio", "zetoK600AmI"],
         "codename": "XIAN",
-        "score": 7480
+        "score": 7480,
+        "wikilink": null
     },
     {
         "name": "Sanford Kelly",
@@ -753,7 +836,8 @@
         "skill": 6,
         "videos": [],
         "codename": "SANFORD KELLY",
-        "score": 1622
+        "score": 1622,
+        "wikilink": null
     },
     {
         "name": "Gridman",
@@ -762,7 +846,8 @@
         "skill": 6,
         "videos": [],
         "codename": "GRIDMAN",
-        "score": 440
+        "score": 440,
+        "wikilink": null
     },
     {
         "name": "AquaSilk",
@@ -771,7 +856,8 @@
         "skill": 6,
         "videos": [],
         "codename": "AQUASILK",
-        "score": 200
+        "score": 200,
+        "wikilink": null
     },
     {
         "name": "NuckleDu",
@@ -780,7 +866,8 @@
         "skill": 5,
         "videos": [],
         "codename": "NUCKLEDU",
-        "score": 846
+        "score": 846,
+        "wikilink": null
     },
     {
         "name": "LuckyD",
@@ -789,7 +876,8 @@
         "skill": 3,
         "videos": [],
         "codename": "LUCKYD",
-        "score": 302
+        "score": 302,
+        "wikilink": null
     },
     {
         "name": "Zeus",
@@ -798,7 +886,8 @@
         "skill": 7,
         "videos": [],
         "codename": "ZEUS",
-        "score": 579
+        "score": 579,
+        "wikilink": null
     },
     {
         "name": "Tampa Bison",
@@ -807,7 +896,8 @@
         "skill": 5,
         "videos": [],
         "codename": "TAMPA BISON",
-        "score": 281
+        "score": 281,
+        "wikilink": null
     },
     {
         "name": "Gackt",
@@ -816,7 +906,8 @@
         "skill": 8,
         "videos": [],
         "codename": "GACKT",
-        "score": 1592
+        "score": 1592,
+        "wikilink": null
     },
     {
         "name": "Fuudo",
@@ -825,7 +916,8 @@
         "skill": 10,
         "videos": ["-xJZtTRHrNg", "qTKu05IZCYo", "SLvgNQs3tfk"],
         "codename": "FUUDO",
-        "score": 6350
+        "score": 6350,
+        "wikilink": null
     },
     {
         "name": "Dakou",
@@ -834,7 +926,8 @@
         "skill": 8,
         "videos": [],
         "codename": "DAKOU",
-        "score": 1090
+        "score": 1090,
+        "wikilink": null
     },
     {
         "name": "Momochi",
@@ -843,7 +936,8 @@
         "skill": 9,
         "videos": ["P8GcotqroQo"],
         "codename": "MOMOCHI",
-        "score": 3400
+        "score": 3400,
+        "wikilink": null
     },
     {
         "name": "Will2Pac",
@@ -852,7 +946,8 @@
         "skill": 6,
         "videos": [],
         "codename": "WILL2PAC",
-        "score": 271
+        "score": 271,
+        "wikilink": null
     },
     {
         "name": "Cuongster",
@@ -861,7 +956,8 @@
         "skill": 7,
         "videos": [],
         "codename": "CUONGSTER",
-        "score": 523
+        "score": 523,
+        "wikilink": null
     },
     {
         "name": "F-Word",
@@ -870,7 +966,8 @@
         "skill": 7,
         "videos": [],
         "codename": "F-WORD",
-        "score": 274
+        "score": 274,
+        "wikilink": null
     },
     {
         "name": "Fasoll",
@@ -879,7 +976,8 @@
         "skill": 4,
         "videos": [],
         "codename": "FASOLL",
-        "score": 129
+        "score": 129,
+        "wikilink": null
     },
     {
         "name": "MoMi",
@@ -888,7 +986,8 @@
         "skill": 5,
         "videos": [],
         "codename": "MOMI",
-        "score": 331
+        "score": 331,
+        "wikilink": null
     },
     {
         "name": "Easyman",
@@ -897,7 +996,8 @@
         "skill": 6,
         "videos": [],
         "codename": "EASYMAN",
-        "score": 225
+        "score": 225,
+        "wikilink": null
     },
     {
         "name": "DoomDomainn",
@@ -906,7 +1006,8 @@
         "skill": 7,
         "videos": [],
         "codename": "DOOMDOMAINN",
-        "score": 113
+        "score": 113,
+        "wikilink": null
     },
     {
         "name": "Sheva",
@@ -915,7 +1016,8 @@
         "skill": 5,
         "videos": [],
         "codename": "SHEVA",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Kenpachi",
@@ -924,7 +1026,8 @@
         "skill": 7,
         "videos": [],
         "codename": "KENPACHI",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "ChaozTheory",
@@ -933,7 +1036,8 @@
         "skill": 5,
         "videos": [],
         "codename": "CHAOZTHEORY",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Popi",
@@ -942,7 +1046,8 @@
         "skill": 8,
         "videos": [],
         "codename": "POPI",
-        "score": 335
+        "score": 335,
+        "wikilink": null
     },
     {
         "name": "Emersion",
@@ -951,7 +1056,8 @@
         "skill": 7,
         "videos": [],
         "codename": "EMERSION",
-        "score": 144
+        "score": 144,
+        "wikilink": null
     },
     {
         "name": "DemonHyo",
@@ -960,7 +1066,8 @@
         "skill": 4,
         "videos": [],
         "codename": "DEMONHYO",
-        "score": 239
+        "score": 239,
+        "wikilink": null
     },
     {
         "name": "Hiro",
@@ -969,7 +1076,8 @@
         "skill": 5,
         "videos": [],
         "codename": "HIRO",
-        "score": 357
+        "score": 357,
+        "wikilink": null
     },
     {
         "name": "Arturo Sanchez",
@@ -978,7 +1086,8 @@
         "skill": 7,
         "videos": [],
         "codename": "ARTURO SANCHEZ",
-        "score": 473
+        "score": 473,
+        "wikilink": null
     },
     {
         "name": "Meteo",
@@ -987,7 +1096,8 @@
         "skill": 2,
         "videos": [],
         "codename": "METEO",
-        "score": 89
+        "score": 89,
+        "wikilink": null
     },
     {
         "name": "Alex Smith",
@@ -996,7 +1106,8 @@
         "skill": 2,
         "videos": [],
         "codename": "ALEX SMITH",
-        "score": 90
+        "score": 90,
+        "wikilink": null
     },
     {
         "name": "CMX",
@@ -1005,7 +1116,8 @@
         "skill": 2,
         "videos": [],
         "codename": "CMX",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "MMS Native",
@@ -1014,7 +1126,8 @@
         "skill": 1,
         "videos": [],
         "codename": "MMS NATIVE",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Spab Rog",
@@ -1023,7 +1136,8 @@
         "skill": 3,
         "videos": [],
         "codename": "SPAB ROG",
-        "score": 90
+        "score": 90,
+        "wikilink": null
     },
     {
         "name": "Alioune",
@@ -1032,7 +1146,8 @@
         "skill": 9,
         "videos": [],
         "codename": "ALIOUNE",
-        "score": 835
+        "score": 835,
+        "wikilink": null
     },
     {
         "name": "Starnab",
@@ -1041,7 +1156,8 @@
         "skill": 7,
         "videos": [],
         "codename": "STARNAB",
-        "score": 241
+        "score": 241,
+        "wikilink": null
     },
     {
         "name": "Adone Stylz",
@@ -1050,7 +1166,8 @@
         "skill": 3,
         "videos": [],
         "codename": "ADONE STYLZ",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "TKO X Isoudw",
@@ -1059,7 +1176,8 @@
         "skill": 2,
         "videos": [],
         "codename": "TKO X ISOUDW",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Saunic",
@@ -1068,7 +1186,8 @@
         "skill": 2,
         "videos": [],
         "codename": "SAUNIC",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Bonchan",
@@ -1077,7 +1196,8 @@
         "skill": 9,
         "videos": ["tQ5kX0U6lf4", "VEZT1Y_sQ7o", "SPiOIxfgpGM"],
         "codename": "BONCHAN",
-        "score": 3910
+        "score": 3910,
+        "wikilink": null
     },
     {
         "name": "wao",
@@ -1086,7 +1206,8 @@
         "skill": 9,
         "videos": ["kyKyLfmRIyc", "P8GcotqroQo", "oO1RsP3_dsY", "SPiOIxfgpGM"],
         "codename": "WAO",
-        "score": 1110
+        "score": 1110,
+        "wikilink": null
     },
     {
         "name": "Kazunoko",
@@ -1095,7 +1216,8 @@
         "skill": 9,
         "videos": ["gyx39xXFtIA", "lvm09Wo0BvY"],
         "codename": "KAZUNOKO",
-        "score": 2525
+        "score": 2525,
+        "wikilink": null
     },
     {
         "name": "Michael-tan",
@@ -1104,7 +1226,8 @@
         "skill": 9,
         "videos": ["pFltbx7BQFI", "Z1y2Bf9v5gU", "eBScgnpODm0"],
         "codename": "MICHAEL-TAN",
-        "score": 480
+        "score": 480,
+        "wikilink": null
     },
     {
         "name": "Dashio",
@@ -1113,7 +1236,8 @@
         "skill": 7,
         "videos": ["xvj2TQL7hpI"],
         "codename": "DASHIO",
-        "score": 307
+        "score": 307,
+        "wikilink": null
     },
     {
         "name": "Jayce The Ace",
@@ -1122,7 +1246,8 @@
         "skill": 6,
         "videos": [],
         "codename": "JAYCE THE ACE",
-        "score": 730
+        "score": 730,
+        "wikilink": null
     },
     {
         "name": "DBKoopa",
@@ -1131,7 +1256,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DBKOOPA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "BIGDANMUL",
@@ -1140,7 +1266,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BIGDANMUL",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Kim Legend",
@@ -1149,7 +1276,8 @@
         "skill": 5,
         "videos": [],
         "codename": "KIM LEGEND",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "hydeBUFFY",
@@ -1158,7 +1286,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HYDEBUFFY",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Eita",
@@ -1167,7 +1296,8 @@
         "skill": 8,
         "videos": [],
         "codename": "EITA",
-        "score": 1437
+        "score": 1437,
+        "wikilink": null
     },
     {
         "name": "YHC-Mochi",
@@ -1176,7 +1306,8 @@
         "skill": 8,
         "videos": [],
         "codename": "YHC-MOCHI",
-        "score": 380
+        "score": 380,
+        "wikilink": null
     },
     {
         "name": "Naruo",
@@ -1185,7 +1316,8 @@
         "skill": 7,
         "videos": [],
         "codename": "NARUO",
-        "score": 232
+        "score": 232,
+        "wikilink": null
     },
     {
         "name": "Kyabetsu",
@@ -1194,7 +1326,8 @@
         "skill": 8,
         "videos": [],
         "codename": "KYABETSU",
-        "score": 602
+        "score": 602,
+        "wikilink": null
     },
     {
         "name": "Pamyu",
@@ -1203,7 +1336,8 @@
         "skill": 7,
         "videos": [],
         "codename": "PAMYU",
-        "score": 20
+        "score": 20,
+        "wikilink": null
     },
     {
         "name": "Machabo",
@@ -1212,7 +1346,8 @@
         "skill": 7,
         "videos": [],
         "codename": "MACHABO",
-        "score": 235
+        "score": 235,
+        "wikilink": null
     },
     {
         "name": "Sasaki",
@@ -1221,7 +1356,8 @@
         "skill": 7,
         "videos": [],
         "codename": "SASAKI",
-        "score": 14
+        "score": 14,
+        "wikilink": null
     },
     {
         "name": "VER",
@@ -1230,7 +1366,8 @@
         "skill": 5,
         "videos": [],
         "codename": "VER",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "Juso",
@@ -1239,7 +1376,8 @@
         "skill": 6,
         "videos": [],
         "codename": "JUSO",
-        "score": 397
+        "score": 397,
+        "wikilink": null
     },
     {
         "name": "Ojisan Boy",
@@ -1248,7 +1386,8 @@
         "skill": 5,
         "videos": [],
         "codename": "OJISAN BOY",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "Yazu",
@@ -1257,7 +1396,8 @@
         "skill": 1,
         "videos": [],
         "codename": "YAZU",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "fLoE",
@@ -1266,7 +1406,8 @@
         "skill": 6,
         "videos": [],
         "codename": "FLOE",
-        "score": 622
+        "score": 622,
+        "wikilink": null
     },
     {
         "name": "Marq Teddy",
@@ -1275,7 +1416,8 @@
         "skill": 7,
         "videos": [],
         "codename": "MARQ TEDDY",
-        "score": 205
+        "score": 205,
+        "wikilink": null
     },
     {
         "name": "Chris",
@@ -1284,7 +1426,8 @@
         "skill": 5,
         "videos": [],
         "codename": "CHRIS",
-        "score": 382
+        "score": 382,
+        "wikilink": null
     },
     {
         "name": "Hsien Chang",
@@ -1293,7 +1436,8 @@
         "skill": 6,
         "videos": [],
         "codename": "HSIEN CHANG",
-        "score": 204
+        "score": 204,
+        "wikilink": null
     },
     {
         "name": "LPN",
@@ -1302,7 +1446,8 @@
         "skill": 7,
         "videos": [],
         "codename": "LPN",
-        "score": 479
+        "score": 479,
+        "wikilink": null
     },
     {
         "name": "Chuan",
@@ -1311,7 +1456,8 @@
         "skill": 3,
         "videos": [],
         "codename": "CHUAN",
-        "score": 110
+        "score": 110,
+        "wikilink": null
     },
     {
         "name": "Darlan",
@@ -1320,7 +1466,8 @@
         "skill": 3,
         "videos": [],
         "codename": "DARLAN",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Kindevu",
@@ -1329,7 +1476,8 @@
         "skill": 8,
         "videos": [],
         "codename": "KINDEVU",
-        "score": 440
+        "score": 440,
+        "wikilink": null
     },
     {
         "name": "RF",
@@ -1338,7 +1486,8 @@
         "skill": 7,
         "videos": [],
         "codename": "RF",
-        "score": 300
+        "score": 300,
+        "wikilink": null
     },
     {
         "name": "Poongko",
@@ -1347,7 +1496,8 @@
         "skill": 8,
         "videos": [],
         "codename": "POONGKO",
-        "score": 1360
+        "score": 1360,
+        "wikilink": null
     },
     {
         "name": "SnakeEyez",
@@ -1356,7 +1506,8 @@
         "skill": 7,
         "videos": [],
         "codename": "SNAKEEYEZ",
-        "score": 1275
+        "score": 1275,
+        "wikilink": null
     },
     {
         "name": "Latif",
@@ -1365,7 +1516,8 @@
         "skill": 8,
         "videos": [],
         "codename": "LATIF",
-        "score": 757
+        "score": 757,
+        "wikilink": null
     },
     {
         "name": "YouGenius",
@@ -1374,7 +1526,8 @@
         "skill": 1,
         "videos": [],
         "codename": "YOUGENIUS",
-        "score": 95
+        "score": 95,
+        "wikilink": null
     },
     {
         "name": "Perplex",
@@ -1383,7 +1536,8 @@
         "skill": 1,
         "videos": [],
         "codename": "PERPLEX",
-        "score": 181
+        "score": 181,
+        "wikilink": null
     },
     {
         "name": "Phenix",
@@ -1392,7 +1546,8 @@
         "skill": 6,
         "videos": [],
         "codename": "PHENIX",
-        "score": 168
+        "score": 168,
+        "wikilink": null
     },
     {
         "name": "Gamein",
@@ -1401,7 +1556,8 @@
         "skill": 1,
         "videos": [],
         "codename": "GAMEIN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Andreas",
@@ -1410,7 +1566,8 @@
         "skill": 8,
         "videos": [],
         "codename": "ANDREAS",
-        "score": 239
+        "score": 239,
+        "wikilink": null
     },
     {
         "name": "Gagapa",
@@ -1419,7 +1576,8 @@
         "skill": 8,
         "videos": [],
         "codename": "GAGAPA",
-        "score": 229
+        "score": 229,
+        "wikilink": null
     },
     {
         "name": "NashFan",
@@ -1428,7 +1586,8 @@
         "skill": 4,
         "videos": [],
         "codename": "NASHFAN",
-        "score": 86
+        "score": 86,
+        "wikilink": null
     },
     {
         "name": "Joe Love",
@@ -1437,7 +1596,8 @@
         "skill": 2,
         "videos": [],
         "codename": "JOE LOVE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Vangief",
@@ -1446,7 +1606,8 @@
         "skill": 5,
         "videos": [],
         "codename": "VANGIEF",
-        "score": 521
+        "score": 521,
+        "wikilink": null
     },
     {
         "name": "Leslie",
@@ -1455,7 +1616,8 @@
         "skill": 7,
         "videos": [],
         "codename": "LESLIE",
-        "score": 186
+        "score": 186,
+        "wikilink": null
     },
     {
         "name": "Kaiser",
@@ -1464,7 +1626,8 @@
         "skill": 5,
         "videos": [],
         "codename": "KAISER",
-        "score": 112
+        "score": 112,
+        "wikilink": null
     },
     {
         "name": "Dixon",
@@ -1473,7 +1636,8 @@
         "skill": 5,
         "videos": [],
         "codename": "DIXON",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Frazer",
@@ -1482,7 +1646,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FRAZER",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Random King",
@@ -1491,7 +1656,8 @@
         "skill": 1,
         "videos": [],
         "codename": "RANDOM KING",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Hugo101",
@@ -1500,7 +1666,8 @@
         "skill": 6,
         "videos": [],
         "codename": "HUGO101",
-        "score": 363
+        "score": 363,
+        "wikilink": null
     },
     {
         "name": "CJ Truth",
@@ -1509,7 +1676,8 @@
         "skill": 6,
         "videos": [],
         "codename": "CJ TRUTH",
-        "score": 605
+        "score": 605,
+        "wikilink": null
     },
     {
         "name": "Keno",
@@ -1518,7 +1686,8 @@
         "skill": 3,
         "videos": [],
         "codename": "KENO",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Alex Jebailey",
@@ -1527,7 +1696,8 @@
         "skill": 6,
         "videos": [],
         "codename": "ALEX JEBAILEY",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Daigo Umehara",
@@ -1536,7 +1706,8 @@
         "skill": 10,
         "videos": ["u2pJdrCMLzY", "kyKyLfmRIyc", "Z1y2Bf9v5gU", "oO1RsP3_dsY", "v8UTLt6-4b0"],
         "codename": "DAIGO UMEHARA",
-        "score": 5095
+        "score": 5095,
+        "wikilink": null
     },
     {
         "name": "Unchained",
@@ -1545,7 +1716,8 @@
         "skill": 1,
         "videos": [],
         "codename": "UNCHAINED",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Brentt",
@@ -1554,7 +1726,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BRENTT",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Combojack",
@@ -1563,7 +1736,8 @@
         "skill": 1,
         "videos": [],
         "codename": "COMBOJACK",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "HZY",
@@ -1572,7 +1746,8 @@
         "skill": 2,
         "videos": [],
         "codename": "HZY",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Henry Cen",
@@ -1581,7 +1756,8 @@
         "skill": 5,
         "videos": [],
         "codename": "HENRY CEN",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Chris Hu",
@@ -1590,7 +1766,8 @@
         "skill": 5,
         "videos": [],
         "codename": "CHRIS HU",
-        "score": 210
+        "score": 210,
+        "wikilink": null
     },
     {
         "name": "Min",
@@ -1599,7 +1776,8 @@
         "skill": 6,
         "videos": [],
         "codename": "MIN",
-        "score": 144
+        "score": 144,
+        "wikilink": null
     },
     {
         "name": "Vivaldi",
@@ -1608,7 +1786,8 @@
         "skill": 4,
         "videos": [],
         "codename": "VIVALDI",
-        "score": 118
+        "score": 118,
+        "wikilink": null
     },
     {
         "name": "DarkChild",
@@ -1617,7 +1796,8 @@
         "skill": 2,
         "videos": [],
         "codename": "DARKCHILD",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Madness",
@@ -1626,7 +1806,8 @@
         "skill": 2,
         "videos": [],
         "codename": "MADNESS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "John Choi",
@@ -1635,7 +1816,8 @@
         "skill": 5,
         "videos": [],
         "codename": "JOHN CHOI",
-        "score": 177
+        "score": 177,
+        "wikilink": null
     },
     {
         "name": "801 Strider",
@@ -1644,7 +1826,8 @@
         "skill": 5,
         "videos": [],
         "codename": "801 STRIDER",
-        "score": 84
+        "score": 84,
+        "wikilink": null
     },
     {
         "name": "Clim",
@@ -1653,7 +1836,8 @@
         "skill": 5,
         "videos": [],
         "codename": "CLIM",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Lapchi",
@@ -1662,7 +1846,8 @@
         "skill": 6,
         "videos": [],
         "codename": "LAPCHI",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "HiHiPuffyamiyumi",
@@ -1671,7 +1856,8 @@
         "skill": 3,
         "videos": [],
         "codename": "HIHIPUFFYAMIYUMI",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "SBA Harrison",
@@ -1680,7 +1866,8 @@
         "skill": 1,
         "videos": [],
         "codename": "SBA HARRISON",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Jason Cole",
@@ -1689,7 +1876,8 @@
         "skill": 1,
         "videos": [],
         "codename": "JASON COLE",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Buktooth",
@@ -1698,7 +1886,8 @@
         "skill": 4,
         "videos": [],
         "codename": "BUKTOOTH",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Manny",
@@ -1707,7 +1896,8 @@
         "skill": 1,
         "videos": [],
         "codename": "MANNY",
-        "score": 90
+        "score": 90,
+        "wikilink": null
     },
     {
         "name": "DragonGod",
@@ -1716,7 +1906,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DRAGONGOD",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Flash Metroid",
@@ -1725,7 +1916,8 @@
         "skill": 7,
         "videos": [],
         "codename": "FLASH METROID",
-        "score": 265
+        "score": 265,
+        "wikilink": null
     },
     {
         "name": "Julian Robinson",
@@ -1734,7 +1926,8 @@
         "skill": 1,
         "videos": [],
         "codename": "JULIAN ROBINSON",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Weaksauce",
@@ -1743,7 +1936,8 @@
         "skill": 3,
         "videos": [],
         "codename": "WEAKSAUCE",
-        "score": 90
+        "score": 90,
+        "wikilink": null
     },
     {
         "name": "HappyMedicine",
@@ -1752,7 +1946,8 @@
         "skill": 7,
         "videos": [],
         "codename": "HAPPYMEDICINE",
-        "score": 324
+        "score": 324,
+        "wikilink": null
     },
     {
         "name": "L.I. Joe",
@@ -1761,7 +1956,8 @@
         "skill": 5,
         "videos": [],
         "codename": "L.I. JOE",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "WeirdoNeo",
@@ -1770,7 +1966,8 @@
         "skill": 5,
         "videos": [],
         "codename": "WEIRDONEO",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "Raymus",
@@ -1779,7 +1976,8 @@
         "skill": 1,
         "videos": [],
         "codename": "RAYMUS",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Rodney",
@@ -1788,7 +1986,8 @@
         "skill": 1,
         "videos": [],
         "codename": "RODNEY",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Foxy",
@@ -1797,7 +1996,8 @@
         "skill": 5,
         "videos": [],
         "codename": "FOXY",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Chaotix",
@@ -1806,7 +2006,8 @@
         "skill": 4,
         "videos": [],
         "codename": "CHAOTIX",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "MeanSaltine",
@@ -1815,7 +2016,8 @@
         "skill": 1,
         "videos": [],
         "codename": "MEANSALTINE",
-        "score": 117
+        "score": 117,
+        "wikilink": null
     },
     {
         "name": "OctopusOnFire",
@@ -1824,7 +2026,8 @@
         "skill": 1,
         "videos": [],
         "codename": "OCTOPUSONFIRE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Kyoku",
@@ -1833,7 +2036,8 @@
         "skill": 7,
         "videos": [],
         "codename": "KYOKU",
-        "score": 80
+        "score": 80,
+        "wikilink": null
     },
     {
         "name": "Kindou",
@@ -1842,7 +2046,8 @@
         "skill": 4,
         "videos": [],
         "codename": "KINDOU",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "-R-",
@@ -1851,7 +2056,8 @@
         "skill": 8,
         "videos": [],
         "codename": "-R-",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "ACQUA",
@@ -1860,7 +2066,8 @@
         "skill": 8,
         "videos": [],
         "codename": "ACQUA",
-        "score": 220
+        "score": 220,
+        "wikilink": null
     },
     {
         "name": "Nashikun",
@@ -1869,7 +2076,8 @@
         "skill": 1,
         "videos": [],
         "codename": "NASHIKUN",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "NISHIKIN",
@@ -1878,7 +2086,8 @@
         "skill": 8,
         "videos": [],
         "codename": "NISHIKIN",
-        "score": 187
+        "score": 187,
+        "wikilink": null
     },
     {
         "name": "Reiketsu",
@@ -1887,7 +2096,8 @@
         "skill": 6,
         "videos": [],
         "codename": "REIKETSU",
-        "score": 209
+        "score": 209,
+        "wikilink": null
     },
     {
         "name": "Shimosan",
@@ -1896,7 +2106,8 @@
         "skill": 1,
         "videos": [],
         "codename": "SHIMOSAN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Zangitan",
@@ -1905,7 +2116,8 @@
         "skill": 6,
         "videos": [],
         "codename": "ZANGITAN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "AlucarD",
@@ -1914,7 +2126,8 @@
         "skill": 5,
         "videos": [],
         "codename": "ALUCARD",
-        "score": 115
+        "score": 115,
+        "wikilink": null
     },
     {
         "name": "iRedman",
@@ -1923,7 +2136,8 @@
         "skill": 3,
         "videos": [],
         "codename": "IREDMAN",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "FC|Cardell",
@@ -1932,7 +2146,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FC|CARDELL",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Brennan K.",
@@ -1941,7 +2156,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BRENNAN K.",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "XI",
@@ -1950,7 +2166,8 @@
         "skill": 1,
         "videos": [],
         "codename": "XI",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Arthur",
@@ -1959,7 +2176,8 @@
         "skill": 1,
         "videos": [],
         "codename": "ARTHUR",
-        "score": 101
+        "score": 101,
+        "wikilink": null
     },
     {
         "name": "Ranmasama",
@@ -1968,7 +2186,8 @@
         "skill": 3,
         "videos": [],
         "codename": "RANMASAMA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Zohta",
@@ -1977,7 +2196,8 @@
         "skill": 1,
         "videos": [],
         "codename": "ZOHTA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Good Meal Joe",
@@ -1986,7 +2206,8 @@
         "skill": 1,
         "videos": [],
         "codename": "GOOD MEAL JOE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Crazyclown101",
@@ -1995,7 +2216,8 @@
         "skill": 1,
         "videos": [],
         "codename": "CRAZYCLOWN101",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Insaynne",
@@ -2004,7 +2226,8 @@
         "skill": 2,
         "videos": [],
         "codename": "INSAYNNE",
-        "score": 119
+        "score": 119,
+        "wikilink": null
     },
     {
         "name": "Manny Fuerte",
@@ -2013,7 +2236,8 @@
         "skill": 2,
         "videos": [],
         "codename": "MANNY FUERTE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Glitch",
@@ -2022,7 +2246,8 @@
         "skill": 1,
         "videos": [],
         "codename": "GLITCH",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Inko",
@@ -2031,7 +2256,8 @@
         "skill": 7,
         "videos": [],
         "codename": "INKO",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "Tsuna",
@@ -2040,7 +2266,8 @@
         "skill": 6,
         "videos": [],
         "codename": "TSUNA",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "Matsugoro",
@@ -2049,7 +2276,8 @@
         "skill": 6,
         "videos": [],
         "codename": "MATSUGORO",
-        "score": 7
+        "score": 7,
+        "wikilink": null
     },
     {
         "name": "Kusanagi",
@@ -2058,7 +2286,8 @@
         "skill": 1,
         "videos": [],
         "codename": "KUSANAGI",
-        "score": 117
+        "score": 117,
+        "wikilink": null
     },
     {
         "name": "Sekiganryu",
@@ -2067,7 +2296,8 @@
         "skill": 1,
         "videos": [],
         "codename": "SEKIGANRYU",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Danhill",
@@ -2076,7 +2306,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DANHILL",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Rico Suave",
@@ -2085,7 +2316,8 @@
         "skill": 6,
         "videos": [],
         "codename": "RICO SUAVE",
-        "score": 225
+        "score": 225,
+        "wikilink": null
     },
     {
         "name": "Y.",
@@ -2094,7 +2326,8 @@
         "skill": 8,
         "videos": [],
         "codename": "Y.",
-        "score": 280
+        "score": 280,
+        "wikilink": null
     },
     {
         "name": "Gachikun",
@@ -2103,7 +2336,8 @@
         "skill": 8,
         "videos": [],
         "codename": "GACHIKUN",
-        "score": 215
+        "score": 215,
+        "wikilink": null
     },
     {
         "name": "Charisma",
@@ -2112,7 +2346,8 @@
         "skill": 5,
         "videos": [],
         "codename": "CHARISMA",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Younashi",
@@ -2121,7 +2356,8 @@
         "skill": 5,
         "videos": [],
         "codename": "YOUNASHI",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Noriyasu",
@@ -2130,7 +2366,8 @@
         "skill": 1,
         "videos": [],
         "codename": "NORIYASU",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Harideshi",
@@ -2139,7 +2376,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HARIDESHI",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Rokkun",
@@ -2148,7 +2386,8 @@
         "skill": 5,
         "videos": [],
         "codename": "ROKKUN",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Ramen Addict",
@@ -2157,7 +2396,8 @@
         "skill": 3,
         "videos": [],
         "codename": "RAMEN ADDICT",
-        "score": 250
+        "score": 250,
+        "wikilink": null
     },
     {
         "name": "Dark Jiewa",
@@ -2166,7 +2406,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DARK JIEWA",
-        "score": 105
+        "score": 105,
+        "wikilink": null
     },
     {
         "name": "Ettelman",
@@ -2175,7 +2416,8 @@
         "skill": 2,
         "videos": [],
         "codename": "ETTELMAN",
-        "score": 110
+        "score": 110,
+        "wikilink": null
     },
     {
         "name": "Ixion",
@@ -2184,7 +2426,8 @@
         "skill": 7,
         "videos": [],
         "codename": "IXION",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "El Cubano Loco",
@@ -2193,7 +2436,8 @@
         "skill": 1,
         "videos": [],
         "codename": "EL CUBANO LOCO",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Brass",
@@ -2202,7 +2446,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BRASS",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Rom",
@@ -2211,7 +2456,8 @@
         "skill": 5,
         "videos": [],
         "codename": "ROM",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Illiterate",
@@ -2220,7 +2466,8 @@
         "skill": 2,
         "videos": [],
         "codename": "ILLITERATE",
-        "score": 85
+        "score": 85,
+        "wikilink": null
     },
     {
         "name": "Boba Tapioca",
@@ -2229,7 +2476,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BOBA TAPIOCA",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "UyuuPop",
@@ -2238,7 +2486,8 @@
         "skill": 1,
         "videos": [],
         "codename": "UYUUPOP",
-        "score": 87
+        "score": 87,
+        "wikilink": null
     },
     {
         "name": "HumanBomb",
@@ -2247,7 +2496,8 @@
         "skill": 8,
         "videos": [],
         "codename": "HUMANBOMB",
-        "score": 575
+        "score": 575,
+        "wikilink": null
     },
     {
         "name": "GambleBoxer",
@@ -2256,7 +2506,8 @@
         "skill": 6,
         "videos": [],
         "codename": "GAMBLEBOXER",
-        "score": 100
+        "score": 100,
+        "wikilink": null
     },
     {
         "name": "Penang@Chuan",
@@ -2265,7 +2516,8 @@
         "skill": 5,
         "videos": [],
         "codename": "PENANG@CHUAN",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Ren",
@@ -2274,7 +2526,8 @@
         "skill": 2,
         "videos": [],
         "codename": "REN",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "SuperSantarouMan",
@@ -2283,7 +2536,8 @@
         "skill": 6,
         "videos": [],
         "codename": "SUPERSANTAROUMAN",
-        "score": 270
+        "score": 270,
+        "wikilink": null
     },
     {
         "name": "Itabashi Zangief",
@@ -2292,7 +2546,8 @@
         "skill": 7,
         "videos": [],
         "codename": "ITABASHI ZANGIEF",
-        "score": 175
+        "score": 175,
+        "wikilink": null
     },
     {
         "name": "Rockpon",
@@ -2301,7 +2556,8 @@
         "skill": 5,
         "videos": [],
         "codename": "ROCKPON",
-        "score": 84
+        "score": 84,
+        "wikilink": null
     },
     {
         "name": "Tommy",
@@ -2310,7 +2566,8 @@
         "skill": 3,
         "videos": [],
         "codename": "TOMMY",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Druseph",
@@ -2319,7 +2576,8 @@
         "skill": 4,
         "videos": [],
         "codename": "DRUSEPH",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Integra",
@@ -2328,7 +2586,8 @@
         "skill": 2,
         "videos": [],
         "codename": "INTEGRA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Rain",
@@ -2337,7 +2596,8 @@
         "skill": 1,
         "videos": [],
         "codename": "RAIN",
-        "score": 189
+        "score": 189,
+        "wikilink": null
     },
     {
         "name": "Foxy Brown",
@@ -2346,7 +2606,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FOXY BROWN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "FourWude",
@@ -2355,7 +2616,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FOURWUDE",
-        "score": 139
+        "score": 139,
+        "wikilink": null
     },
     {
         "name": "Synx",
@@ -2364,7 +2626,8 @@
         "skill": 1,
         "videos": [],
         "codename": "SYNX",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "AV Joe",
@@ -2373,7 +2636,8 @@
         "skill": 1,
         "videos": [],
         "codename": "AV JOE",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Hadoken6969",
@@ -2382,7 +2646,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HADOKEN6969",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Lone Star",
@@ -2391,7 +2656,8 @@
         "skill": 1,
         "videos": [],
         "codename": "LONE STAR",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Hammad",
@@ -2400,7 +2666,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HAMMAD",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "PCutta",
@@ -2409,7 +2676,8 @@
         "skill": 1,
         "videos": [],
         "codename": "PCUTTA",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Dandy Cheeks",
@@ -2418,7 +2686,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DANDY CHEEKS",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "ClakeyD",
@@ -2427,7 +2696,8 @@
         "skill": 6,
         "videos": [],
         "codename": "CLAKEYD",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Filipino Man",
@@ -2436,7 +2706,8 @@
         "skill": 6,
         "videos": [],
         "codename": "FILIPINO MAN",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Luken",
@@ -2445,7 +2716,8 @@
         "skill": 3,
         "videos": [],
         "codename": "LUKEN",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Rameo",
@@ -2454,7 +2726,8 @@
         "skill": 2,
         "videos": [],
         "codename": "RAMEO",
-        "score": 110
+        "score": 110,
+        "wikilink": null
     },
     {
         "name": "Ed Ma",
@@ -2463,7 +2736,8 @@
         "skill": 3,
         "videos": [],
         "codename": "ED MA",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Ital Dan",
@@ -2472,7 +2746,8 @@
         "skill": 1,
         "videos": [],
         "codename": "ITAL DAN",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "JimmyFierce",
@@ -2481,7 +2756,8 @@
         "skill": 3,
         "videos": [],
         "codename": "JIMMYFIERCE",
-        "score": 73
+        "score": 73,
+        "wikilink": null
     },
     {
         "name": "Chinta",
@@ -2490,7 +2766,8 @@
         "skill": 1,
         "videos": [],
         "codename": "CHINTA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Karamba",
@@ -2499,7 +2776,8 @@
         "skill": 1,
         "videos": [],
         "codename": "KARAMBA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "West",
@@ -2508,7 +2786,8 @@
         "skill": 1,
         "videos": [],
         "codename": "WEST",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "Halibel",
@@ -2517,7 +2796,8 @@
         "skill": 5,
         "videos": [],
         "codename": "HALIBEL",
-        "score": 86
+        "score": 86,
+        "wikilink": null
     },
     {
         "name": "Demulant",
@@ -2526,7 +2806,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DEMULANT",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Skatan",
@@ -2535,7 +2816,8 @@
         "skill": 7,
         "videos": [],
         "codename": "SKATAN",
-        "score": 89
+        "score": 89,
+        "wikilink": null
     },
     {
         "name": "Phenom",
@@ -2544,7 +2826,8 @@
         "skill": 5,
         "videos": [],
         "codename": "PHENOM",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "RB",
@@ -2553,7 +2836,8 @@
         "skill": 5,
         "videos": [],
         "codename": "RB",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Tomy Huang",
@@ -2562,7 +2846,8 @@
         "skill": 1,
         "videos": [],
         "codename": "TOMY HUANG",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "ET",
@@ -2571,7 +2856,8 @@
         "skill": 1,
         "videos": [],
         "codename": "ET",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Yoro",
@@ -2580,7 +2866,8 @@
         "skill": 6,
         "videos": [],
         "codename": "YORO",
-        "score": 129
+        "score": 129,
+        "wikilink": null
     },
     {
         "name": "Zalk",
@@ -2589,7 +2876,8 @@
         "skill": 1,
         "videos": [],
         "codename": "ZALK",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Heero",
@@ -2598,7 +2886,8 @@
         "skill": 1,
         "videos": [],
         "codename": "HEERO",
-        "score": 72
+        "score": 72,
+        "wikilink": null
     },
     {
         "name": "Shine",
@@ -2607,7 +2896,8 @@
         "skill": 4,
         "videos": [],
         "codename": "SHINE",
-        "score": 44
+        "score": 44,
+        "wikilink": null
     },
     {
         "name": "CD Jr.",
@@ -2616,7 +2906,8 @@
         "skill": 2,
         "videos": [],
         "codename": "CD JR.",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Broshadian",
@@ -2625,7 +2916,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BROSHADIAN",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "FreddyLoco",
@@ -2634,7 +2926,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FREDDYLOCO",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "LedHendrix",
@@ -2643,7 +2936,8 @@
         "skill": 1,
         "videos": [],
         "codename": "LEDHENDRIX",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Tactix",
@@ -2652,7 +2946,8 @@
         "skill": 1,
         "videos": [],
         "codename": "TACTIX",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Kiras",
@@ -2661,7 +2956,8 @@
         "skill": 1,
         "videos": [],
         "codename": "KIRAS",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "I'm Still Da Daddy",
@@ -2670,7 +2966,8 @@
         "skill": 5,
         "videos": [],
         "codename": "I'M STILL DA DADDY",
-        "score": 117
+        "score": 117,
+        "wikilink": null
     },
     {
         "name": "Yota",
@@ -2679,7 +2976,8 @@
         "skill": 2,
         "videos": [],
         "codename": "YOTA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Gameouttt",
@@ -2688,7 +2986,8 @@
         "skill": 7,
         "videos": [],
         "codename": "GAMEOUTTT",
-        "score": 100
+        "score": 100,
+        "wikilink": null
     },
     {
         "name": "Jozhear",
@@ -2697,7 +2996,8 @@
         "skill": 7,
         "videos": [],
         "codename": "JOZHEAR",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Money514",
@@ -2706,7 +3006,8 @@
         "skill": 2,
         "videos": [],
         "codename": "MONEY514",
-        "score": 86
+        "score": 86,
+        "wikilink": null
     },
     {
         "name": "Rami",
@@ -2715,7 +3016,8 @@
         "skill": 1,
         "videos": [],
         "codename": "RAMI",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "ChocoBlanka",
@@ -2724,7 +3026,8 @@
         "skill": 6,
         "videos": [],
         "codename": "CHOCOBLANKA",
-        "score": 215
+        "score": 215,
+        "wikilink": null
     },
     {
         "name": "Xiaohai",
@@ -2733,7 +3036,8 @@
         "skill": 9,
         "videos": [],
         "codename": "XIAOHAI",
-        "score": 2724
+        "score": 2724,
+        "wikilink": null
     },
     {
         "name": "Poem",
@@ -2742,7 +3046,8 @@
         "skill": 5,
         "videos": [],
         "codename": "POEM",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Foomy",
@@ -2751,7 +3056,8 @@
         "skill": 3,
         "videos": [],
         "codename": "FOOMY",
-        "score": 75
+        "score": 75,
+        "wikilink": null
     },
     {
         "name": "Kreymore",
@@ -2760,7 +3066,8 @@
         "skill": 4,
         "videos": [],
         "codename": "KREYMORE",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Damascus",
@@ -2769,7 +3076,8 @@
         "skill": 1,
         "videos": [],
         "codename": "DAMASCUS",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Fuerte",
@@ -2778,7 +3086,8 @@
         "skill": 1,
         "videos": [],
         "codename": "FUERTE",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "KOK",
@@ -2787,7 +3096,8 @@
         "skill": 8,
         "videos": [],
         "codename": "KOK",
-        "score": 105
+        "score": 105,
+        "wikilink": null
     },
     {
         "name": "M. Lizard",
@@ -2796,7 +3106,8 @@
         "skill": 5,
         "videos": [],
         "codename": "M. LIZARD",
-        "score": 162
+        "score": 162,
+        "wikilink": null
     },
     {
         "name": "EX Mamehara",
@@ -2805,7 +3116,8 @@
         "skill": 7,
         "videos": [],
         "codename": "EX MAMEHARA",
-        "score": 105
+        "score": 105,
+        "wikilink": null
     },
     {
         "name": "House",
@@ -2814,7 +3126,8 @@
         "skill": 2,
         "videos": [],
         "codename": "HOUSE",
-        "score": 86
+        "score": 86,
+        "wikilink": null
     },
     {
         "name": "Ludo",
@@ -2823,7 +3136,8 @@
         "skill": 2,
         "videos": [],
         "codename": "LUDO",
-        "score": 58
+        "score": 58,
+        "wikilink": null
     },
     {
         "name": "Sarda",
@@ -2832,7 +3146,8 @@
         "skill": 2,
         "videos": [],
         "codename": "SARDA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "LordxSaka",
@@ -2841,7 +3156,8 @@
         "skill": 2,
         "videos": [],
         "codename": "LORDXSAKA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Binop",
@@ -2850,7 +3166,8 @@
         "skill": 1,
         "videos": [],
         "codename": "BINOP",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Hargi",
@@ -2859,7 +3176,8 @@
         "skill": 0,
         "videos": [],
         "codename": "HARGI",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Kelvin Jeon",
@@ -2868,7 +3186,8 @@
         "skill": 0,
         "videos": [],
         "codename": "KELVIN JEON",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Mattypie",
@@ -2877,7 +3196,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MATTYPIE",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "BSIDA",
@@ -2886,7 +3206,8 @@
         "skill": 0,
         "videos": [],
         "codename": "BSIDA",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "bjUnchained",
@@ -2895,7 +3216,8 @@
         "skill": 0,
         "videos": [],
         "codename": "BJUNCHAINED",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Slompo",
@@ -2904,7 +3226,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SLOMPO",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Juicebox",
@@ -2913,7 +3236,8 @@
         "skill": 7,
         "videos": [],
         "codename": "JUICEBOX",
-        "score": 240
+        "score": 240,
+        "wikilink": null
     },
     {
         "name": "Antwan Ortiz",
@@ -2922,7 +3246,8 @@
         "skill": 0,
         "videos": [],
         "codename": "ANTWAN ORTIZ",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Yanu Cerda",
@@ -2931,7 +3256,8 @@
         "skill": 0,
         "videos": [],
         "codename": "YANU CERDA",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Big Marcus",
@@ -2940,7 +3266,8 @@
         "skill": 5,
         "videos": [],
         "codename": "BIG MARCUS",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "aks",
@@ -2949,7 +3276,8 @@
         "skill": 0,
         "videos": [],
         "codename": "AKS",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "DBJoseph",
@@ -2958,7 +3286,8 @@
         "skill": 0,
         "videos": [],
         "codename": "DBJOSEPH",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Nobody",
@@ -2967,7 +3296,8 @@
         "skill": 0,
         "videos": [],
         "codename": "NOBODY",
-        "score": 59
+        "score": 59,
+        "wikilink": null
     },
     {
         "name": "BoomCube",
@@ -2976,7 +3306,8 @@
         "skill": 0,
         "videos": [],
         "codename": "BOOMCUBE",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "RyRy",
@@ -2985,7 +3316,8 @@
         "skill": 3,
         "videos": [],
         "codename": "RYRY",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "LUD",
@@ -2994,7 +3326,8 @@
         "skill": 5,
         "videos": [],
         "codename": "LUD",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "MarlinPie",
@@ -3003,7 +3336,8 @@
         "skill": 3,
         "videos": [],
         "codename": "MARLINPIE",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Sev",
@@ -3012,7 +3346,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SEV",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "MagnetoManiac",
@@ -3021,7 +3356,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MAGNETOMANIAC",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Evans",
@@ -3030,7 +3366,8 @@
         "skill": 7,
         "videos": [],
         "codename": "EVANS",
-        "score": 95
+        "score": 95,
+        "wikilink": null
     },
     {
         "name": "EZO",
@@ -3039,7 +3376,8 @@
         "skill": 5,
         "videos": [],
         "codename": "EZO",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Mike Weng",
@@ -3048,7 +3386,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MIKE WENG",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Find My Farms",
@@ -3057,7 +3396,8 @@
         "skill": 0,
         "videos": [],
         "codename": "FIND MY FARMS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Chuvylicious",
@@ -3066,7 +3406,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CHUVYLICIOUS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Jett Jackson",
@@ -3075,7 +3416,8 @@
         "skill": 0,
         "videos": [],
         "codename": "JETT JACKSON",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Smug",
@@ -3084,7 +3426,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SMUG",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Jav1ts",
@@ -3093,7 +3436,8 @@
         "skill": 0,
         "videos": [],
         "codename": "JAV1TS",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "DaFeetLee",
@@ -3102,7 +3446,8 @@
         "skill": 6,
         "videos": [],
         "codename": "DAFEETLEE",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Zaferino",
@@ -3111,7 +3456,8 @@
         "skill": 0,
         "videos": [],
         "codename": "ZAFERINO",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Chin341",
@@ -3120,7 +3466,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CHIN341",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "RemyBleu",
@@ -3129,7 +3476,8 @@
         "skill": 0,
         "videos": [],
         "codename": "REMYBLEU",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Shang Tsung",
@@ -3138,7 +3486,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SHANG TSUNG",
-        "score": 95
+        "score": 95,
+        "wikilink": null
     },
     {
         "name": "Robsux",
@@ -3147,7 +3496,8 @@
         "skill": 0,
         "videos": [],
         "codename": "ROBSUX",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Huck",
@@ -3156,7 +3506,8 @@
         "skill": 0,
         "videos": [],
         "codename": "HUCK",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "CrazyFreeRider",
@@ -3165,7 +3516,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CRAZYFREERIDER",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "ToXY",
@@ -3174,7 +3526,8 @@
         "skill": 0,
         "videos": [],
         "codename": "TOXY",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Heavy Weapons",
@@ -3183,7 +3536,8 @@
         "skill": 0,
         "videos": [],
         "codename": "HEAVY WEAPONS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Carnage",
@@ -3192,7 +3546,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CARNAGE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Tarezou",
@@ -3201,7 +3556,8 @@
         "skill": 0,
         "videos": [],
         "codename": "TAREZOU",
-        "score": 95
+        "score": 95,
+        "wikilink": null
     },
     {
         "name": "Super Uriajjou",
@@ -3210,7 +3566,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SUPER URIAJJOU",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "CANTONA",
@@ -3219,7 +3576,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CANTONA",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Capcom's Hero",
@@ -3228,7 +3586,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CAPCOM'S HERO",
-        "score": 30
+        "score": 30,
+        "wikilink": null
     },
     {
         "name": "Snake Eyez",
@@ -3237,7 +3596,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SNAKE EYEZ",
-        "score": 45
+        "score": 45,
+        "wikilink": null
     },
     {
         "name": "Nice1",
@@ -3246,7 +3606,8 @@
         "skill": 0,
         "videos": [],
         "codename": "NICE1",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "MLSwear",
@@ -3255,7 +3616,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MLSWEAR",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Camel Eyez",
@@ -3264,7 +3626,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CAMEL EYEZ",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "EBI@Baki-Zei",
@@ -3273,7 +3636,8 @@
         "skill": 0,
         "videos": [],
         "codename": "EBI@BAKI-ZEI",
-        "score": 160
+        "score": 160,
+        "wikilink": null
     },
     {
         "name": "Epsilon J",
@@ -3282,7 +3646,8 @@
         "skill": 0,
         "videos": [],
         "codename": "EPSILON J",
-        "score": 95
+        "score": 95,
+        "wikilink": null
     },
     {
         "name": "Chiba",
@@ -3291,7 +3656,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CHIBA",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Y24",
@@ -3300,7 +3666,8 @@
         "skill": 0,
         "videos": [],
         "codename": "Y24",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Super Uriajjo",
@@ -3309,7 +3676,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SUPER URIAJJO",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "[kai]",
@@ -3318,7 +3686,8 @@
         "skill": 0,
         "videos": [],
         "codename": "[KAI]",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Rukupuru",
@@ -3327,7 +3696,8 @@
         "skill": 0,
         "videos": [],
         "codename": "RUKUPURU",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Masarap",
@@ -3336,7 +3706,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MASARAP",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Warahk",
@@ -3345,7 +3716,8 @@
         "skill": 3,
         "videos": [],
         "codename": "WARAHK",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Mike Chow",
@@ -3354,7 +3726,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MIKE CHOW",
-        "score": 70
+        "score": 70,
+        "wikilink": null
     },
     {
         "name": "Viscant",
@@ -3363,7 +3736,8 @@
         "skill": 0,
         "videos": [],
         "codename": "VISCANT",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Jago",
@@ -3372,7 +3746,8 @@
         "skill": 0,
         "videos": [],
         "codename": "JAGO",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Online Tony",
@@ -3381,7 +3756,8 @@
         "skill": 6,
         "videos": [],
         "codename": "ONLINE TONY",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Kane",
@@ -3390,7 +3766,8 @@
         "skill": 0,
         "videos": [],
         "codename": "KANE",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Chris King",
@@ -3399,7 +3776,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CHRIS KING",
-        "score": 135
+        "score": 135,
+        "wikilink": null
     },
     {
         "name": "Cynistar",
@@ -3408,7 +3786,8 @@
         "skill": 0,
         "videos": [],
         "codename": "CYNISTAR",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Sonny",
@@ -3417,7 +3796,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SONNY",
-        "score": 55
+        "score": 55,
+        "wikilink": null
     },
     {
         "name": "Yagami",
@@ -3426,7 +3806,8 @@
         "skill": 0,
         "videos": [],
         "codename": "YAGAMI",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Slizzle",
@@ -3435,7 +3816,8 @@
         "skill": 0,
         "videos": [],
         "codename": "SLIZZLE",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "V-Ryu",
@@ -3444,7 +3826,8 @@
         "skill": 7,
         "videos": [],
         "codename": "V-RYU",
-        "score": 280
+        "score": 280,
+        "wikilink": null
     },
     {
         "name": "MBR",
@@ -3453,7 +3836,8 @@
         "skill": 6,
         "videos": [],
         "codename": "MBR",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Afii",
@@ -3462,7 +3846,8 @@
         "skill": 6,
         "videos": [],
         "codename": "AFII",
-        "score": 60
+        "score": 60,
+        "wikilink": null
     },
     {
         "name": "Fawkes",
@@ -3471,7 +3856,8 @@
         "skill": 0,
         "videos": [],
         "codename": "FAWKES",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Ken P",
@@ -3480,7 +3866,8 @@
         "skill": 0,
         "videos": [],
         "codename": "KEN P",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "AceUnlimited",
@@ -3489,7 +3876,8 @@
         "skill": 0,
         "videos": [],
         "codename": "ACEUNLIMITED",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Diego V",
@@ -3498,7 +3886,8 @@
         "skill": 0,
         "videos": [],
         "codename": "DIEGO V",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Ja",
@@ -3507,7 +3896,8 @@
         "skill": 0,
         "videos": [],
         "codename": "JA",
-        "score": 15
+        "score": 15,
+        "wikilink": null
     },
     {
         "name": "Roy Macoi",
@@ -3516,7 +3906,8 @@
         "skill": 0,
         "videos": [],
         "codename": "ROY MACOI",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "JHeuty",
@@ -3525,7 +3916,8 @@
         "skill": 0,
         "videos": [],
         "codename": "JHEUTY",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Valmaster",
@@ -3534,7 +3926,8 @@
         "skill": 0,
         "videos": [],
         "codename": "VALMASTER",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "BrunoFight3rs",
@@ -3543,7 +3936,8 @@
         "skill": 0,
         "videos": [],
         "codename": "BRUNOFIGHT3RS",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "Private Joker",
@@ -3552,7 +3946,8 @@
         "skill": 2,
         "videos": [],
         "codename": "PRIVATE JOKER",
-        "score": 57
+        "score": 57,
+        "wikilink": null
     },
     {
         "name": "So.Flo.Bison",
@@ -3561,7 +3956,8 @@
         "skill": 2,
         "videos": [],
         "codename": "SO.FLO.BISON",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "CJ Tahj",
@@ -3570,7 +3966,8 @@
         "skill": 2,
         "videos": [],
         "codename": "CJ TAHJ",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "InTehWeeds",
@@ -3579,7 +3976,8 @@
         "skill": 2,
         "videos": [],
         "codename": "INTEHWEEDS",
-        "score": 29
+        "score": 29,
+        "wikilink": null
     },
     {
         "name": "Human Bomb",
@@ -3588,7 +3986,8 @@
         "skill": 0,
         "videos": [],
         "codename": "HUMAN BOMB",
-        "score": 430
+        "score": 430,
+        "wikilink": null
     },
     {
         "name": "Ibrahim",
@@ -3597,7 +3996,8 @@
         "skill": 0,
         "videos": [],
         "codename": "IBRAHIM",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "MOV",
@@ -3606,7 +4006,8 @@
         "skill": 0,
         "videos": [],
         "codename": "MOV",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "Veloc1raptor",
@@ -3615,7 +4016,8 @@
         "skill": 0,
         "videos": [],
         "codename": "VELOC1RAPTOR",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "KichijojiKEN",
@@ -3624,7 +4026,8 @@
         "skill": 0,
         "videos": [],
         "codename": "KICHIJOJIKEN",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     },
     {
         "name": "Misse",
@@ -3633,6 +4036,7 @@
         "skill": 0,
         "videos": [],
         "codename": "MISSE",
-        "score": 120
+        "score": 120,
+        "wikilink": null
     }
 ]

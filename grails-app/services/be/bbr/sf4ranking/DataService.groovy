@@ -48,7 +48,7 @@ class DataService
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
-            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank)
+            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink)
             p.save(failOnError: true)
         }
         def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
@@ -62,7 +62,8 @@ class DataService
             WeightingType weightingType = WeightingType.fromString(it.wtype)?: WeightingType.AUTO
             TournamentType type = TournamentType.fromString(it.type)
             Integer weight = it.weight?: 0
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType)
+            String challonge = it.challonge
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge)
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 CharacterType ctype = it.character as CharacterType
@@ -89,6 +90,7 @@ class DataService
             tournament.format = it.tournamentFormat?.name()
             tournament.wtype = it.weightingType?.name()
             tournament.weight = it.weight
+            tournament.challonge = it.challonge
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]
@@ -116,6 +118,7 @@ class DataService
             player.videos = it.videos
             player.codename = it.codename
             player.score = it.score
+            player.wikilink = it.wikilink
             players << player
         }
         return players

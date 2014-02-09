@@ -80,7 +80,7 @@
   <g:each in="${tournament.videos}" var="video">
     <section class="row">
       <div class="span6">
-        <div class="flex-video widescreen"><iframe width="560" height="315" src="//www.youtube.com/embed/${video}" frameborder="0"
+        <div class="flex-video widescreen"><iframe width="280" height="157" src="//www.youtube.com/embed/${video}" frameborder="0"
                                                    allowfullscreen></iframe></div>
       </div>
 
