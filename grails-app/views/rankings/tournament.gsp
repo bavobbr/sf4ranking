@@ -51,15 +51,15 @@
           <g:if test="${result.rchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.rchar]">
               <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
-                     title="${result.rchar}"/>
+                     title="${result.rchar}" class="charimg" />
+					 ${result.rcharname}
             </g:link>
-            ${result.rcharname}
           </g:if>
         </td>
         <td>
           <g:if test="${result.rcountry != null}">
             <g:link controller="rankings" action="tournaments" params="[country: result.rcountry]">
-              <g:img dir="images/countries" file="${result.rcountry + '.png'}"/>
+              <g:img dir="images/countries" file="${result.rcountry + '.png'}" class="countryflag" />
             ${result.rcountryname}
             </g:link>
           </g:if>

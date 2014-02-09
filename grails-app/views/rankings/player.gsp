@@ -63,7 +63,7 @@
         <td>
           <g:if test="${result.tchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.tchar]">
-              <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}" title="${result.tchar}"/>
+              <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}" title="${result.tchar}" class="charimg" />
               ${result.tcharname}
             </g:link>
           </g:if>

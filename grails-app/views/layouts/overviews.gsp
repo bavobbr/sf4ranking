@@ -111,18 +111,31 @@
               <li><g:link action="index" controller="rankings">World Rankings</g:link></li>
               <li><g:link action="tournaments" controller="rankings">View Tournaments</g:link></li>
               <li class="divider"></li>
-              <li><a href="#">FAQ</a></li>
+              <li><g:link action="index" controller="about">FAQ</g:link></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARTICIPATE <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Rankings Discussion</a></li>
+              <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a></li>
               <li class="divider"></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Shoryuken.com</a></li>
+              <li><a href="http://www.shoryuken.com/contact-us/">Contact Us</a></li>
+              <li><a href="http://www.shoryuken.com">Shoryuken.com</a></li>
             </ul>
           </li>
+		  <g:if test="${session.user != null}">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><g:link action="index" controller="admin">[Actions]</g:link></li>
+                  <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
+                  <li><g:link action="index" controller="player">[Players]</g:link></li>
+                  <li><g:link action="index" controller="result">[Results]</g:link></li>
+                  <li><g:link action="index" controller="user">[User]</g:link></li>
+                  <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
+                </ul>
+              </li>
+            </g:if>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -140,22 +153,7 @@
           <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
 
           <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a href="http://www.shoryuken.com">Shoryuken</a>  &middot;
-            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="#">official thread</a>.</p>
-          <ul class="nav navbar-nav">
-            <g:if test="${session.user != null}">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><g:link action="index" controller="admin">[Actions]</g:link></li>
-                  <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
-                  <li><g:link action="index" controller="player">[Players]</g:link></li>
-                  <li><g:link action="index" controller="result">[Results]</g:link></li>
-                  <li><g:link action="index" controller="user">[User]</g:link></li>
-                  <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
-                </ul>
-              </li>
-            </g:if>
-          </ul>
+            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.</p>
         </div>
       </div>
     </div>

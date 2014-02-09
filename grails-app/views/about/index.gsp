@@ -11,7 +11,7 @@
 <h2>How does it work?</h2>
 
 <div class="jumbotron">
-  <h1>Summary</h1>
+  <h2>Summary</h2>
 
   <p>
     The rankings given to players is analog to <a
@@ -32,7 +32,7 @@ That's a weird question to ask if you managed to end up here. But if you really 
 Essentially Street Fighter 4 is a one-on-one fighting game which plays in 2D but rendered in 3D, keeping gameplay close to the legendary Street Fighter 2 classic.
 
 <h3>How data is entered</h3>
-Tournaments results are imported in top 8 or top 16 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the main character of that player is stored into the database.
+Tournaments results are imported in top 8, top 16 or top 32 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the main character of that player is stored into the database.
 <h3>How tournaments are weighted</h3>
 Every player that is entered into the database has an initial <i>skill</i> value. A tournament weight is the sum of the skill values of all ranked contestants divided by the number of players.
 <h3>How tournaments are classified</h3>
@@ -123,9 +123,6 @@ There are also points awarded from 8th to 16th in the same fashion. To distribut
 </div>
 These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 32. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
 
-<h3>What it tries to achieve</h3>
-There are a lot of ways to rank players, and except for gut-feeling, only <a
-        href="http://www.eventhubs.com/news/2014/jan/20/ladies-and-gentlemen-boys-and-girls-eventhubs-lists-top-10-current-ssf4-ae-v2012-players-voice-your-opinions-twitter-sf4rank/">Eventhubs</a> tried a more formal approach. This ranking tries the same, but in a transparant way, without leaving too much room for personal taste or fanboyism. If a player plays tournaments and does well, he'll be ranked. Just like WTA there is a rule that says one can only get points for his best 16 matches, so as more tournaments are being registered, the results will favor less those that play more, and reflect the rankings of those that placed best overall.
 <h3>How much data is being tracked?</h3>
 <ol>
   <li>Players ${players}</li>
@@ -138,12 +135,18 @@ There are a lot of ways to rank players, and except for gut-feeling, only <a
 <h3>What about older tournaments and versions?</h3>
 The website is prepared to track the game version and then filter accordingly. However, the ranking system will score over all versions. The site will be updated to rank per game version instead at some point. Currently it is a AE 2012 ranking as long as there are no older tournaments entered.
 It would be really neat though to have results up to Vanilla.
-<h3>What else is coming</h3>
+<h3>What else is coming?</h3>
 Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. I would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites repotrt on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
-<strong>This is how you can help!</strong>If you want a tournament listed, then tweet me @bavobbr. If you disagree with a player skill or country, then chances are I did not know the player. So update me and I'll update the data.
+<strong>This is how you can help!</strong>If you want a tournament listed, then tweet me @bavobbr. If you disagree with a player skill or country, then chances are I did not know the player. So update me and I'll update the data.  
+
+<h3>How can I provide feedbacks/comments?</h3>
+Please also join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>, where a full discussion of this site is available. 
+
 <h3>What technology is being used?</h3>
 Glad you ask! This is a <a
         href="http://grails.org/">Grails</a> application, using GORM on MySQL for persistence, Grails services and controller for business logic and GSP for data rendering. The GSP pages are HTML5 using <a
         href="http://getbootstrap.com/">Bootstrap</a> for layout and JQuery for Javascript magic. All this is deployed on CloudBees on a Tomcat server. I love it.
+<hr />
+
 </body>
 </html>

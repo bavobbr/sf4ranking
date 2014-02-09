@@ -93,6 +93,10 @@ thead tr td {
 	text-transform: uppercase;
 }
 
+.footer { 
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
 
 .footer p { 
 	padding: 7px 0 0;
@@ -247,4 +251,7 @@ thead, table {
 .tdetails {
 	margin: 0 0 40px 0;
 }
-	 
+	
+.countryflag, .charimg {
+	margin: 0 10px 0 0;
+}
