@@ -92,7 +92,7 @@
   $(document).ready(function ()
                     {
                       $("#datatable").tablecloth({
-                                              theme: "stats",
+                                              theme: "default",
                                               striped: true,
                                               sortable: true,
                                               condensed: false
