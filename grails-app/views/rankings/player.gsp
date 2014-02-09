@@ -43,15 +43,15 @@
 </center>
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table class="tablehead" id="datatable">
     <thead>
-    <tr>
-      <td>Tournament</td>
-      <td>Type</td>
-      <td>Ranking</td>
-      <td>Date</td>
-      <td>Character</td>
-      <td>Points</td>
+    <tr class="stathead">
+      <th>Tournament</th>
+      <th>Type</th>
+      <th>Ranking</th>
+      <th>Date</th>
+      <th>Character</th>
+      <th>Points</th>
     </tr>
     </thead>
     <g:each in="${results}" var="result">
@@ -91,5 +91,17 @@
     </section>
   </g:each>
 </g:if>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function ()
+                    {
+                      $("#datatable").tablecloth({
+                                                   theme: "stats",
+                                                   striped: true,
+                                                   sortable: true,
+                                                   condensed: false
+                                                 });
+                    });
+</script>
 </body>
 </html>

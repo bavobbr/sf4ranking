@@ -13,11 +13,11 @@
   <table class="table table-striped table-hover tdetails">
     <thead>
     <tr>
-      <td>Type</td>
-      <td>Country</td>
-      <td>Date</td>
-      <td>Format</td>
-      <td>Weight</td>
+      <th>Type</th>
+      <th>Country</th>
+      <th>Date</th>
+      <th>Format</th>
+      <th>Weight</th>
     </tr>
     </thead>
     <tr>
@@ -33,14 +33,14 @@
 <h2 class="tournament"><large>found ${details.size()} rankings</large></h2>
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table class="tablehead" id="datatable">
     <thead>
-    <tr>
-      <td>Place</td>
-      <td>Player</td>
-      <td>Character</td>
-      <td>Country</td>
-      <td>Score</td>
+    <tr class="stathead">
+      <th>Place</th>
+      <th>Player</th>
+      <th>Character</th>
+      <th>Country</th>
+      <th>Score</th>
     </tr>
     </thead>
     <g:each in="${details}" var="result">
@@ -87,5 +87,17 @@
     </section>
   </g:each>
 </g:if>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function ()
+                    {
+                      $("#datatable").tablecloth({
+                                              theme: "stats",
+                                              striped: true,
+                                              sortable: true,
+                                              condensed: false
+                                            });
+                    });
+</script>
 </body>
 </html>

@@ -33,12 +33,12 @@
     <thead>
     <tr>
       <g:if test="${filtered}">
-        <td>Index</td>
+        <th>Index</th>
       </g:if>
-      <td>World Rank</td>
-      <td>Name</td>
-      <td>Score</td>
-      <td>Country</td>
+      <th>World Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Country</th>
     </tr>
     </thead>
 
@@ -65,7 +65,7 @@
   </table></div>
 
 <div id="pagination">
-  <g:paginate total="${total}" controller="rankings" action="index" max="20" params="[country: params.country, pchar: params.pchar]"/>
+  <g:paginate total="${total}" controller="rankings" action="index" max="50" params="[country: params.country, pchar: params.pchar]"/>
 </div>
 
 <div class="panel panel-info">

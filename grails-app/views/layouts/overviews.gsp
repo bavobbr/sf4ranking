@@ -63,7 +63,9 @@
 </head>
 
 <body>
-
+<script src="${resource(dir: 'assets/js', file: 'jquery.metadata.js')}"></script>
+<script src="${resource(dir: 'assets/js', file: 'jquery.tablesorter.min.js')}"></script>
+<script src="${resource(dir: 'assets/js', file: 'jquery.tablecloth.js')}"></script>
 <div id="fb-root"></div>
 <script>(function (d, s, id)
 {
@@ -137,9 +139,8 @@
         <div class="footer">
           <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
 
-          <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a
-                  href="http://www.shoryuken.com">Shoryuken</a>  &middot; Bootstrap mods by <a <a
-                  href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="#">official thread</a>.</p>
+          <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a href="http://www.shoryuken.com">Shoryuken</a>  &middot;
+            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="#">official thread</a>.</p>
           <ul class="nav navbar-nav">
             <g:if test="${session.user != null}">
               <li class="dropdown">
@@ -163,22 +164,6 @@
 </div>
 
 <r:layoutResources/>
-%{--  <link rel="stylesheet" href="${resource(dir: 'assets/js', file: 'bootstrap.js')}" type="text/javascript">--}%
-<link rel="stylesheet" href="${resource(dir: 'assets/js', file: 'jquery.metadata.js')}" type="text/javascript">
-<link rel="stylesheet" href="${resource(dir: 'assets/js', file: 'jquery.tablesorter.min.js')}" type="text/javascript">
-<link rel="stylesheet" href="${resource(dir: 'assets/js', file: 'jquery.tablecloth.js')}" type="text/javascript">
-
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function ()
-                    {
-                      $("table").tablecloth({
-                                              theme: "default",
-                                              striped: true,
-                                              sortable: true,
-                                              condensed: true
-                                            });
-                    });
-</script>
 
 <script>
   (function (i, s, o, g, r, a, m)

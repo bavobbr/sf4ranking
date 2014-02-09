@@ -11,7 +11,7 @@ class RankingsController
     def index()
     {
         def poffset = params.offset?.toInteger() ?: 0
-        def pmax = params.max?.toInteger() ?: 20
+        def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
         boolean filtered = pchar || pcountry
@@ -70,7 +70,7 @@ class RankingsController
             def ttype = it.tournament.tournamentType?.value
             def tchar = it.pcharacter.name().toLowerCase()
             def tcharname = it.pcharacter?.value
-            def tdate = it.tournament.date?.format("MM-yyyy")
+            def tdate = it.tournament.date?.format("yyyy-MM-dd")
             def tscore = it.tournament.tournamentType? ScoringSystem.getScore(it.place, it.tournament.tournamentType) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos

@@ -10,7 +10,7 @@
 <h2 class="tournament"><small>${tournaments.size()} Tournaments Registered</small></h2>
 
 <div class="table-responsive">
-  <table class="tablehead">
+  <table class="tablehead" id="datatable">
     <thead>
     <tr class="stathead">
       <th>Name</th>
@@ -27,7 +27,7 @@
       <tr>
         <td><g:link controller="rankings" action="tournament" params="['id': t.id]">${t.name}</g:link></td>
         <td>${t.tournamentType?.value}</td>
-        <td>${t.date?.format("MM-yyyy")}</td>
+        <td>${t.date?.format("yyyy-MM-dd")}</td>
         <td>
           <g:if test="${t.countryCode}">
             <g:link controller="rankings" action="tournaments" params="[country: t.countryCode.name()]">
@@ -63,5 +63,20 @@
     </g:form>
   </div>
 </div>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function ()
+                    {
+                      $("#datatable").tablecloth({
+                                              theme: "stats",
+                                              striped: true,
+                                              sortable: true,
+                                              condensed: false
+                                            });
+                    });
+</script>
+
+
 </body>
 </html>
