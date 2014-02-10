@@ -110,9 +110,9 @@ class AdminController
         def tournamentSizes = [:]
         Tournament.list().each {
             def numresults = it.results.size()
-            tournamentSizes["${it.name}"] = numresults
+            tournamentSizes[it] = numresults
         }
-        def listing = tournamentSizes.collect { k, v -> "$k: $v"}.join("\r\n")
+        def listing = tournamentSizes.collect { Tournament k, def v -> "[${k.name}] $v ${k.tournamentFormat} ${k.weightingType}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 

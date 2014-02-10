@@ -13,7 +13,7 @@ class DataService
         if (wtype == WeightingType.AUTO) type = null
         else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
         Tournament tournament = null
-        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, format: format, weightingType: wtype, tournamentType: type)
+        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, tournamentFormat: format, weightingType: wtype, tournamentType: type)
         tournament.save(failOnError: true)
         results.eachLine {String line, index ->
             log.info("Parsing line $line")

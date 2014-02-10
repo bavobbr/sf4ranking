@@ -119,7 +119,6 @@ class RankingsController
             def rcountryname = it.player.countryCode?.name
             details <<
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname]
-            println details
         }
         return [tournament: tournament, details: details]
     }
