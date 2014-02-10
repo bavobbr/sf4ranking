@@ -66,6 +66,7 @@
 <script src="${resource(dir: 'assets/js', file: 'jquery.metadata.js')}"></script>
 <script src="${resource(dir: 'assets/js', file: 'jquery.tablesorter.min.js')}"></script>
 <script src="${resource(dir: 'assets/js', file: 'jquery.tablecloth.js')}"></script>
+
 <div id="fb-root"></div>
 <script>(function (d, s, id)
 {
@@ -90,7 +91,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/sf4ranking/">Shoryuken Rankings</a>
+        <g:link action="index" controller="rankings" class="navbar-brand">Shoryuken Rankings</g:link>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -117,25 +118,26 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARTICIPATE <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a></li>
+              <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a>
+              </li>
               <li class="divider"></li>
               <li><a href="http://www.shoryuken.com/contact-us/">Contact Us</a></li>
               <li><a href="http://www.shoryuken.com">Shoryuken.com</a></li>
             </ul>
           </li>
-		  <g:if test="${session.user != null}">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><g:link action="index" controller="admin">[Actions]</g:link></li>
-                  <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
-                  <li><g:link action="index" controller="player">[Players]</g:link></li>
-                  <li><g:link action="index" controller="result">[Results]</g:link></li>
-                  <li><g:link action="index" controller="user">[User]</g:link></li>
-                  <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
-                </ul>
-              </li>
-            </g:if>
+          <g:if test="${session.user != null}">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><g:link action="index" controller="admin">[Actions]</g:link></li>
+                <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
+                <li><g:link action="index" controller="player">[Players]</g:link></li>
+                <li><g:link action="index" controller="result">[Results]</g:link></li>
+                <li><g:link action="index" controller="user">[User]</g:link></li>
+                <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
+              </ul>
+            </li>
+          </g:if>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -150,10 +152,38 @@
 
 
         <div class="footer">
-          <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
+            </div>
 
-          <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a href="http://www.shoryuken.com">Shoryuken</a>  &middot;
-            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.</p>
+            <div class="col-md-4">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
+              <script>!function (d, s, id)
+              {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id))
+                {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = p + '://platform.twitter.com/widgets.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, 'script', 'twitter-wjs');</script>
+            </div>
+
+            <div class="col-md-4">
+              <div class="fb-share-button" data-href="http://sf4ranking.bavobbr.eu.cloudbees.net/" data-type="button_count"></div>
+            </div>
+          </div>
+
+
+          <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a
+                  href="http://www.shoryuken.com">Shoryuken</a>  &middot;
+            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a
+                  href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.
+          </p>
+
         </div>
       </div>
     </div>
