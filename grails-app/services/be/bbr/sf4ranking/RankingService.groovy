@@ -52,7 +52,10 @@ class RankingService
             log.info("Evaluating player $p")
             def results = Result.findAllByPlayer(p)
             def scores = results.collect {
-                ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
+                if (it.tournament.game == Version.AE2012) {
+                    ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
+                }
+                else 0
             }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
             p.score = bestof.sum() as Integer

@@ -63,6 +63,7 @@ class RankingsController
     def player(Player player)
     {
         def rankings = []
+        def old = []
         Set chars = [] as Set
         Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
             def tid = it.tournament.id
@@ -74,12 +75,17 @@ class RankingsController
             def tscore = it.tournament.tournamentType? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
-            rankings <<
-            [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
+            def data =  [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
+            if (it.tournament.game == Version.AE2012) {
+                rankings << data
+            }
+            else {
+                old << data
+            }
             chars << it.pcharacter
         }
         log.info "Rendering player ${player}"
-        [player: player, results: rankings, chars: chars]
+        [player: player, results: rankings, oldresults: old, chars: chars]
     }
 
     def tournaments()
