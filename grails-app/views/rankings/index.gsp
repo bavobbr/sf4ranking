@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>SF4 World Ranking - SSF4:AE 2012</title>
+  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012</title>
 </head>
 
 <body>

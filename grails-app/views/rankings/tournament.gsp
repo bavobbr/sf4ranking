@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>SF4 World Ranking - ${tournament.name} Tournament Details</title>
+  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - ${tournament.name} Tournament Details</title>
 </head>
 
 <body>

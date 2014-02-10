@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter 4 World Ranking - ${player.name} results</title>
+  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - ${player.name} results</title>
 </head>
 
 <body>

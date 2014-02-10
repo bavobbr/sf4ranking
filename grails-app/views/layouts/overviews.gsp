@@ -173,7 +173,7 @@
             </div>
 
             <div class="col-md-4">
-              <div class="fb-share-button" data-href="http://sf4ranking.bavobbr.eu.cloudbees.net/" data-type="button_count"></div>
+              <div class="fb-share-button" data-href="http://rank.shoryuken.com/" data-type="button_count"></div>
             </div>
           </div>
 
