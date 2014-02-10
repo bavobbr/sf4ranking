@@ -1,9 +1,9 @@
-<%@ page import="be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>SF4 World Ranking - How it works</title>
+  <title>SF4 World Ranking - FAQ</title>
 </head>
 
 <body>
@@ -34,31 +34,38 @@ Essentially Street Fighter 4 is a one-on-one fighting game which plays in 2D but
 <h3>How data is entered</h3>
 Tournaments results are imported in top 8, top 16 or top 32 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the main character of that player is stored into the database.
 <h3>How tournaments are weighted</h3>
-Every player that is entered into the database has an initial <i>skill</i> value. A tournament weight is the sum of the skill values of all ranked contestants divided by the number of players.
+Every player that is entered into the database has an initial <i>skill weight</i> value. A tournament weight then becomes the average of the skill values of the best 8 reported players.
 <h3>How tournaments are classified</h3>
 The tournament ranking is done by sorting on weight and then ditributing them into the tournament types used by <a
         href="http://en.wikipedia.org/wiki/Women%27s_Tennis_Association">WTA</a>
-<br/>The distribution is:
+<br/>The score distribution for tournaments in bracket format is:
 
 <div class="table-responsive">
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover table-condensed">
     <thead>
     <tr>
       <td>Type</td>
       <td>Amount</td>
-      <td>First place</td>
-      <td>Second place</td>
-      <td>Third place</td>
-      <td>Fourth place</td>
-      <td>Fifth place</td>
-      <td>Sixth place</td>
-      <td>Seventh place</td>
-      <td>Eight place</td>
-
+      <td>1st</td>
+      <td>2nd</td>
+      <td>3rd</td>
+      <td>4th</td>
+      <td>5th</td>
+      <td>6th</td>
+      <td>7th</td>
+      <td>8th</td>
+      <td>9th</td>
+      <td>10th</td>
+      <td>11th</td>
+      <td>12th</td>
+      <td>13th</td>
+      <td>14th</td>
+      <td>15th</td>
+      <td>16th</td>
     </tr>
     </thead>
     <tbody>
-    <g:each in="${be.bbr.sf4ranking.TournamentType.values()}" var="type">
+    <g:each in="${[TournamentType.GRAND_SLAM, TournamentType.PREMIER_MANDATORY, TournamentType.PREMIER_5, TournamentType.PREMIER_12, TournamentType.INTERNATIONAL, TournamentType.SERIES, TournamentType.CIRCUIT]}" var="type">
       <tr>
         <td>${type.value}</td>
         <td>1</td>
@@ -70,12 +77,74 @@ The tournament ranking is done by sorting on weight and then ditributing them in
         <td>${ScoringSystem.getScore(6, type)}</td>
         <td>${ScoringSystem.getScore(7, type)}</td>
         <td>${ScoringSystem.getScore(8, type)}</td>
+        <td>${ScoringSystem.getScore(9, type)}</td>
+        <td>${ScoringSystem.getScore(10, type)}</td>
+        <td>${ScoringSystem.getScore(11, type)}</td>
+        <td>${ScoringSystem.getScore(12, type)}</td>
+        <td>${ScoringSystem.getScore(13, type)}</td>
+        <td>${ScoringSystem.getScore(14, type)}</td>
+        <td>${ScoringSystem.getScore(15, type)}</td>
+        <td>${ScoringSystem.getScore(16, type)}</td>
       </tr>
     </g:each>
     </tbody>
   </table>
 </div>
-There are also points awarded from 8th to 16th in the same fashion. To distribute the tournament types the following rules are used:
+
+Tournaments in <strong>league</strong> format that are not auto-weighted score as:
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover table-condensed">
+    <thead>
+    <tr>
+      <td>Type</td>
+      <td>Amount</td>
+      <td>1st</td>
+      <td>2nd</td>
+      <td>3rd</td>
+      <td>4th</td>
+      <td>5th</td>
+      <td>6th</td>
+      <td>7th</td>
+      <td>8th</td>
+      <td>9th</td>
+      <td>10th</td>
+      <td>11th</td>
+      <td>12th</td>
+      <td>13th</td>
+      <td>14th</td>
+      <td>15th</td>
+      <td>16th</td>
+    </tr>
+    </thead>
+    <tbody>
+    <g:each in="${[TournamentType.CHAMPIONSHIP, TournamentType.TOURNAMENT_CHAMPIONS]}" var="type">
+      <tr>
+        <td>${type.value}</td>
+        <td>1</td>
+        <td>${ScoringSystem.getScore(1, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(2, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(3, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(4, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(5, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(6, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(7, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(8, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(9, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(10, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(11, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(12, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(13, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(14, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(15, type, TournamentFormat.LEAGUE)}</td>
+        <td>${ScoringSystem.getScore(16, type, TournamentFormat.LEAGUE)}</td>
+      </tr>
+    </g:each>
+    </tbody>
+  </table>
+</div>
+Currently the points in Single and Double bracket mode are the same. A tournament can be a <strong>fixed</strong> type (the <i>Grand Slam</i>, <i>Championship</i> and <i>Tournament of Champions</i> types) or auto-weighted.
+For auto-weighted tournament types the following order is used:
 <div class="table-responsive">
 
 <table class="table table-condensed">
@@ -86,14 +155,6 @@ There are also points awarded from 8th to 16th in the same fashion. To distribut
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>Grand Slam</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>Championship</td>
-    <td>3</td>
-  </tr>
   <tr>
     <td>Premier Mandatory</td>
     <td>5</td>
@@ -122,22 +183,19 @@ There are also points awarded from 8th to 16th in the same fashion. To distribut
 </table>
 </div>
 These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 32. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
+Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had aualifiers or seedings upfront.
 
 <h3>How much data is being tracked?</h3>
-<ol>
-  <li>Players ${players}</li>
-  <li>Tournaments ${tournaments}</li>
-  <li>Results ${results}</li>
-  <li>First ${first?.format("MM-yyyy")}</li>
-  <li>Last ${last?.format("MM-yyyy")}</li>
-</ol>
+A total of ${players} players seen in ${tournaments} tournaments producing ${results} tournament rankings from ${first?.format("MM-yyyy")} until ${last?.format("MM-yyyy")}. This covers most of the notable SF4:AE2012 tournaments, but it can be better and of course we would like to add older SF4 versions, or even other games such as MvC3 as well.
+
 
 <h3>What about older tournaments and versions?</h3>
 The website is prepared to track the game version and then filter accordingly. However, the ranking system will score over all versions. The site will be updated to rank per game version instead at some point. Currently it is a AE 2012 ranking as long as there are no older tournaments entered.
 It would be really neat though to have results up to Vanilla.
+
 <h3>What else is coming?</h3>
-Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. I would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites repotrt on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
-<strong>This is how you can help!</strong>If you want a tournament listed, then tweet me @bavobbr. If you disagree with a player skill or country, then chances are I did not know the player. So update me and I'll update the data.  
+Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. We would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites report on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
+<strong>This is how you can help!</strong>If you want a tournament listed or player data changed, then tweet @bavobbr or go to the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>. If you disagree with a player skill or country, then chances may be we did not know the player. So update me and we will update the data.
 
 <h3>How can I provide feedbacks/comments?</h3>
 Please also join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>, where a full discussion of this site is available. 
