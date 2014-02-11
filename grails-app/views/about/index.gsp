@@ -205,6 +205,8 @@ Glad you ask! This is a <a
         href="http://grails.org/">Grails</a> application, using GORM on MySQL for persistence, Grails services and controller for business logic and GSP for data rendering. The GSP pages are HTML5 using <a
         href="http://getbootstrap.com/">Bootstrap</a> for layout and JQuery for Javascript magic. All this is deployed on CloudBees on a Tomcat server. I love it.
 <hr />
+<h3>Where did you get the cool character sprites?</h3>
+These are kindly contributed by <a href="https://twitter.com/SpeedBrkr">SpeedBrkr</a>. He will also make new sprites ofr USF4 soon.
 
 </body>
 </html>
