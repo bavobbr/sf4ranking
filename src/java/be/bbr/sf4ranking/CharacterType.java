@@ -1,6 +1,8 @@
 package be.bbr.sf4ranking;
 
-
+/**
+ * All enums should go to Groovy as Java is too verbose in the fromString part
+ */
 public enum CharacterType
 {
     UNKNOWN("Not identified"),

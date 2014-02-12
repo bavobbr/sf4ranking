@@ -4,8 +4,7 @@ import groovy.util.logging.Log4j
 
 /**
  * This class encapsulates all logic for ranks and scores to be given when a tournament is added
- *
- * Currently all lists are 32 entries. Care should be taken to have at least that.
+ * Currently all lists are 32 entries. Care should be taken to have at least that otherwise 32-player tournaments will not find data
  */
 @Log4j
 class ScoringSystem
