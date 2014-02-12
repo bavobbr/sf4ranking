@@ -1,6 +1,9 @@
 import be.bbr.sf4ranking.Configuration
 import be.bbr.sf4ranking.User
 
+/**
+ * Creates a default user and config if no database entries exist yet
+ */
 class BootStrap {
 
     def init = { servletContext ->

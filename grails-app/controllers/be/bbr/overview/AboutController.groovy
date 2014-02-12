@@ -5,8 +5,7 @@ import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.Tournament
 
 /**
- * User: bbr
- * Date: 1/22/14
+ * Renders the FAQ and provides some statistical data about the database
  */
 class AboutController
 {

@@ -3,10 +3,18 @@ package be.bbr.sf4ranking
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
 
+/**
+ * This service is responsible for importing data and exporting it as backup
+ */
 @Transactional
 class DataService
 {
 
+    /**
+     * Takes in rich tournament data from the controller and saves it as tournament
+     * Will also auto-create unknown players
+     * Uses a specific results entry format to speed up data entry
+     */
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
                                 List videos, WeightingType wtype, TournamentType type)
     {
@@ -37,6 +45,9 @@ class DataService
         return tournament
     }
 
+    /**
+     * Imports the static JSON data which is useful for test setups and initial deploys
+     */
     String importFileData()
     {
         if (Player.count() > 0 || Tournament.count() > 0)
@@ -75,6 +86,9 @@ class DataService
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings and ${Player.count()} players"
     }
 
+    /**
+     * Exports all tournament and result data as JSON
+     */
     List<Tournament> exportTournaments()
     {
         def list = Tournament.list()
@@ -105,6 +119,9 @@ class DataService
         return tournaments
     }
 
+    /**
+     * Exports all Player data as JSON
+     */
     List<Player> exportPlayers()
     {
         def list = Player.list()
@@ -124,6 +141,9 @@ class DataService
         return players
     }
 
+    /**
+     * Cleans up database
+     */
     void deleteAll()
     {
         Result.list().each {it.delete()}
@@ -131,6 +151,9 @@ class DataService
         Tournament.list().each {it.delete()}
     }
 
+    /**
+     * Merges players into eachother to fix naming issues
+     */
     void merge(Player p1, Player p2)
     {
         log.info("Merging $p1 into $p2")

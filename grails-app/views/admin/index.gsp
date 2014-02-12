@@ -50,7 +50,7 @@ If you want to restart use DELETE ALL and then do another import. This imports t
 
 <ul>
   <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
-  <li><g:link action="importFileData">Import server-side JSON data</g:link></li>
+  <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
   <li><g:link action="fixTournamentFormats">Do a best guess on ALL tournament formats and apply it</g:link></li>
   <li><g:link action="fixPlayerRankings">Re-adjust ALL player ranks based on tournament format</g:link></li>
 </ul>

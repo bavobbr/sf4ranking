@@ -2,6 +2,10 @@ package be.bbr.admin
 
 import be.bbr.sf4ranking.User
 
+/**
+ * Simple login controller
+ * Should be replaced with Shiro
+ */
 class UserController
 {
 

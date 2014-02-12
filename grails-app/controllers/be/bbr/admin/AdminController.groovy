@@ -13,6 +13,11 @@ import be.bbr.sf4ranking.Version
 import be.bbr.sf4ranking.WeightingType
 import grails.converters.JSON
 
+/**
+ * Controller for data manipulation
+ * Allows to import/export static data, import new tournaments, update rankings, scores and weights
+ * do cleanup on data and print some useful information for debugging
+ */
 class AdminController
 {
 
@@ -22,6 +27,9 @@ class AdminController
 
     def index() {}
 
+    /**
+     * Update methods that need to be triggered after entering data
+     */
     def updateAll() {
         initializeTournamentWeights()
         updateTournamentTypes()
@@ -59,6 +67,9 @@ class AdminController
         render view: "index"
     }
 
+    /**
+     * Manual data import and manipulation
+     */
     def importer()
     {
         def index = 1
@@ -81,13 +92,88 @@ class AdminController
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 
-    def importFileData()
+    def importServerSideData()
     {
         String status = dataService.importFileData()
         flash.message = status
         render view: "index"
     }
 
+    def merge()
+    {
+        [players: Player.list(order: "asc", sort: 'name')]
+    }
+
+    def mergePlayers()
+    {
+        def p1 = Player.findById(params.p1)
+        def p2 = Player.findById(params.p2)
+        dataService.merge(p1, p2)
+        redirect(controller: "rankings", action: "player", params: [id: p2.id])
+    }
+
+
+    /**
+     * backup
+     */
+
+    def exportTournaments()
+    {
+        def tournaments = dataService.exportTournaments()
+        render(tournaments as JSON)
+    }
+
+    def exportPlayers()
+    {
+        def players = dataService.exportPlayers()
+        render(players as JSON)
+    }
+
+    /**
+     * Quick editing of certain properties that are not editable in scaffold
+     */
+
+    def selectTournamentVideos() {
+        [tournament : Tournament.findById(params.id)]
+    }
+
+    def selectPlayerVideos() {
+        [player : Player.findById(params.id)]
+    }
+
+    def updateTournamentVideos() {
+        def video = Tournament.findById(params.id)
+        def videos = params.videos.tokenize(" ")
+        video.videos = videos as Set
+        redirect(controller: "rankings", action: "tournament", params: [id: params.id])
+    }
+
+    def updatePlayerVideos() {
+        def video = Player.findById(params.id)
+        def videos = params.videos.tokenize(" ")
+        video.videos = videos as Set
+        redirect(controller: "rankings", action: "player", params: [id: params.id])
+    }
+
+    /**
+     * Maintenance methods
+     */
+
+    def fixTournamentFormats() {
+        cleanupService.fixTournamentFormats()
+        render view: "index"
+    }
+
+    def fixPlayerRankings() {
+        cleanupService.fixPlayerRankings()
+        render view: "index"
+    }
+
+    def dropUnrankedPlayers() {
+        def num = cleanupService.dropUnrankedUsers()
+        flash.message = "Dropped $num players"
+        render view: "index"
+    }
 
     def printPlayers()
     {
@@ -116,19 +202,6 @@ class AdminController
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
-    def merge()
-    {
-        [players: Player.list(order: "asc", sort: 'name')]
-    }
-
-    def mergePlayers()
-    {
-        def p1 = Player.findById(params.p1)
-        def p2 = Player.findById(params.p2)
-        dataService.merge(p1, p2)
-        redirect(controller: "rankings", action: "player", params: [id: p2.id])
-    }
-
 
     def deleteAll()
     {
@@ -141,56 +214,6 @@ class AdminController
         else {
             render view: "confirmDelete"
         }
-    }
-
-    def exportTournaments()
-    {
-        def tournaments = dataService.exportTournaments()
-        render(tournaments as JSON)
-    }
-
-    def exportPlayers()
-    {
-        def players = dataService.exportPlayers()
-        render(players as JSON)
-    }
-
-    def selectTournamentVideos() {
-        [tournament : Tournament.findById(params.id)]
-    }
-
-    def selectPlayerVideos() {
-        [player : Player.findById(params.id)]
-    }
-
-    def updateTournamentVideos() {
-        def video = Tournament.findById(params.id)
-        def videos = params.videos.tokenize(" ")
-        video.videos = videos as Set
-        redirect(controller: "rankings", action: "tournament", params: [id: params.id])
-    }
-
-    def updatePlayerVideos() {
-        def video = Player.findById(params.id)
-        def videos = params.videos.tokenize(" ")
-        video.videos = videos as Set
-        redirect(controller: "rankings", action: "player", params: [id: params.id])
-    }
-
-    def fixTournamentFormats() {
-        cleanupService.fixTournamentFormats()
-        render view: "index"
-    }
-
-    def fixPlayerRankings() {
-        cleanupService.fixPlayerRankings()
-        render view: "index"
-    }
-
-    def dropUnrankedUsers() {
-        def num = cleanupService.dropUnrankedUsers()
-        flash.message = "Dropped $num players"
-        render view: "index"
     }
 
 }

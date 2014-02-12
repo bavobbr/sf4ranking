@@ -2,10 +2,18 @@ package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
 
+/**
+ * This service applies the ranking values (rank, score, weight, type) to all imported data
+ * All the entries are evaluated together, rather than only the one that is added/updated
+ */
 @Transactional
 class RankingService
 {
 
+    /**
+     * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
+     * Only applied when weighting is set as AUTO, otherwise the weight is static per supplied tournament type
+     */
     Integer updateWeights()
     {
         def tournaments = Tournament.list()
@@ -31,6 +39,10 @@ class RankingService
         return tournaments.size()
     }
 
+    /**
+     * Distribute the types for the tournaments that use AUTO weighting
+     * Based on the tournament weight
+     */
     Integer updateTypes()
     {
         def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
@@ -45,6 +57,9 @@ class RankingService
         return tournaments.size()
     }
 
+    /**
+     * The player score is the sum of his best 16 tournaments in AE
+     */
     Integer updatePlayerScore()
     {
         List players = Player.list()
@@ -64,6 +79,10 @@ class RankingService
         return players.size()
     }
 
+    /**
+     * The player rank is based on how he positions by score
+     * If a score is equal to another player the rank is not incremented but kept equal
+     */
     Integer updatePlayerRank()
     {
         List players = Player.list(order: "desc", sort: 'score')

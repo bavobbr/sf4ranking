@@ -10,6 +10,10 @@ import groovy.json.JsonSlurper
 class CleanupService
 {
 
+    /**
+     * Assumes that almost all tournaments are double-bracket except for some known tournaments
+     * Should not be needed if tournaments are filled in correctly with format
+     */
     def fixTournamentFormats() {
         Tournament.list().each {
             it.tournamentFormat = TournamentFormat.DOUBLE_BRACKET
@@ -28,6 +32,10 @@ class CleanupService
         }
     }
 
+    /**
+     * Fixes rank in tournaments for players on equal spots
+     * Should not be needed if tournaments are entered with correct format
+     */
     def fixPlayerRankings() {
         Tournament.list().each { Tournament t ->
             t.results.each { Result r ->
@@ -39,7 +47,10 @@ class CleanupService
         }
     }
 
-    def dropUnrankedUsers()
+    /**
+     * Drops ghost users that are not ranked anywhere
+     */
+    def dropUnrankedPlayers()
     {
         def players = Player.withCriteria { isEmpty("results") }
         players.each { log.info "dropping player $it" }

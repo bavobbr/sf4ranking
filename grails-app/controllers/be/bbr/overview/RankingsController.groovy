@@ -3,11 +3,20 @@ package be.bbr.overview
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
 
+/**
+ * The controller that is public to users and shows the stats of Player, Tournament as well as overall
+ */
 class RankingsController
 {
 
     RankingService rankingService
 
+    /**
+     * The index page is also the page with all the rankings
+     * We need to find out which paghe it is on and which filters apply before doing a query
+     * At the end we also fill the filter boxes with data relevant for that type of query
+     * @return
+     */
     def index()
     {
         def poffset = params.offset?.toInteger() ?: 0
@@ -57,9 +66,12 @@ class RankingsController
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
-         total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage]
+                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage]
     }
 
+    /**
+     * Look up a player and prepare data for the view
+     */
     def player(Player player)
     {
         def rankings = []
@@ -72,14 +84,18 @@ class RankingsController
             def tchar = it.pcharacter.name().toLowerCase()
             def tcharname = it.pcharacter?.value
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
-            def tscore = it.tournament.tournamentType? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tscore = it.tournament.tournamentType ?
+                         ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
-            def data =  [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
-            if (it.tournament.game == Version.AE2012) {
+            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
+            // we only count AE2012 so create two tables
+            if (it.tournament.game == Version.AE2012)
+            {
                 rankings << data
             }
-            else {
+            else
+            {
                 old << data
             }
             chars << it.pcharacter
@@ -88,6 +104,9 @@ class RankingsController
         [player: player, results: rankings, oldresults: old, chars: chars]
     }
 
+    /**
+     * Look up all tournament and fill relevant data for the filters
+     */
     def tournaments()
     {
         def query = Tournament.where {
@@ -111,6 +130,9 @@ class RankingsController
         [tournaments: tournaments, countries: countries, versions: versions, types: types]
     }
 
+    /**
+     * Look up a Tournament and prepare data for the view
+     */
     def tournament(Tournament tournament)
     {
         def details = []
@@ -120,7 +142,8 @@ class RankingsController
             def rplace = it.place
             def rchar = it.pcharacter?.name()?.toLowerCase()
             def rcharname = it.pcharacter?.value
-            def rscore = tournament.tournamentType ? ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def rscore = tournament.tournamentType ?
+                         ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
             details <<
@@ -129,6 +152,9 @@ class RankingsController
         return [tournament: tournament, details: details]
     }
 
+    /**
+     * Endpoint for the AJAX search on players
+     */
     def autocompletePlayer()
     {
         def players = Player.findAllByCodenameLike("%${params.term.toUpperCase()}%")
@@ -136,6 +162,9 @@ class RankingsController
         render(content as JSON)
     }
 
+    /**
+     * Endpoint for the AJAX search on tournaments
+     */
     def autocompleteTournament()
     {
         def tournaments = Tournament.findAllByCodenameLike("%${params.term.toUpperCase()}%")

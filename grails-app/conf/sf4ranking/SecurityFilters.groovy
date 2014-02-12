@@ -1,5 +1,8 @@
 package sf4ranking
 
+/**
+ * Only allows access to the ranking and about controller
+ */
 class SecurityFilters {
 
     def filters = {
