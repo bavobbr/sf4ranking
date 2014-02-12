@@ -39,5 +39,10 @@ class CleanupService
         }
     }
 
-
+    def dropUnrankedUsers()
+    {
+        def players = Player.withCriteria { isEmpty("results") }
+        players.each { log.info "dropping player $it" }
+        return players.size()
+    }
 }
