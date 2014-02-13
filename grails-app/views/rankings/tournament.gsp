@@ -18,6 +18,7 @@
       <th>Date</th>
       <th>Format</th>
       <th>Weight</th>
+      <th>Share</th>
     </tr>
     </thead>
     <tr>
@@ -26,6 +27,10 @@
       <td>${tournament.date?.format("MM-yyyy")}</td>
       <td>${tournament.tournamentFormat?.value}</td>
       <td>${tournament.weight}</td>
+      <td>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none" data-hashtags="srkrank">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </td>
     </tr>
   </table>
 </div>
