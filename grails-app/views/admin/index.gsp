@@ -19,26 +19,27 @@
   <div class="alert alert-warning">${flash.message}</div>
 </g:if>
 <h3>Update database</h3>
-This action should be triggered every time a new tournament has been entered, as the tournament needs to be weighted and players scores need to be updated.
+The updateAll should be triggered every time a new tournament has been imported, as the tournament needs to be weighted and players scores need to be updated.
 <ul>
+  <li><g:link action="importer">import a new Tournament...</g:link></li>
   <li><g:link action="updateAll">update all Tournament and Player data</g:link></li>
 </ul>
 
 <h3>Update parts of database</h3>
+This is for fine-grained maintenance, usually not required.
 <ul>
+  <li><g:link action="merge">merge specified Players...</g:link></li>
   <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>
   <li><g:link action="updateTournamentTypes">update Tournament types based on tournament weights</g:link></li>
   <li><g:link action="updatePlayerScores">calculate and update Player scores based on tournament performance</g:link></li>
   <li><g:link action="updatePlayerRank">calculate and update Player rank based on player score</g:link></li>
 </ul>
 
-<h3>Import/export</h3>
+<h3>Export/debug</h3>
 <ul>
-  <li><g:link action="importer">import a new Tournament...</g:link></li>
   <li><g:link action="printTournamentSizes">print all Tournaments and player sizes</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'true']">print all Players in the DB</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>
-  <li><g:link action="merge">merge specified Players...</g:link></li>
   <li><g:link action="exportTournaments">Export Tournaments and Results as JSON data...</g:link></li>
   <li><g:link action="exportPlayers">Export Players as JSON data...</g:link></li>
 </ul>

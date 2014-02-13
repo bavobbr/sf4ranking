@@ -88,7 +88,7 @@ class RankingsController
                          ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
-            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos]
+            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos, resultid: it.id]
             // we only count AE2012 so create two tables
             if (it.tournament.game == Version.AE2012)
             {
@@ -147,7 +147,7 @@ class RankingsController
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
         }
         return [tournament: tournament, details: details]
     }

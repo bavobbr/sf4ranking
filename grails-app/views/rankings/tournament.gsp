@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h2 class="tournament"><small> ${tournament.name}</small> Tournament details</h2>
+<h2 class="tournament"><small>${tournament.name}</small> Tournament details</h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover tdetails">
@@ -41,6 +41,9 @@
       <th>Character</th>
       <th>Country</th>
       <th>Score</th>
+      <g:if test="${session.user != null}">
+        <th>Edit</th>
+      </g:if>
     </tr>
     </thead>
     <g:each in="${details}" var="result">
@@ -51,20 +54,23 @@
           <g:if test="${result.rchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.rchar]">
               <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
-                     title="${result.rchar}" class="charimg" />
-					 ${result.rcharname}
+                     title="${result.rchar}" class="charimg"/>
+              ${result.rcharname}
             </g:link>
           </g:if>
         </td>
         <td>
           <g:if test="${result.rcountry != null}">
             <g:link controller="rankings" action="tournaments" params="[country: result.rcountry]">
-              <g:img dir="images/countries" file="${result.rcountry + '.png'}" class="countryflag" />
-            ${result.rcountryname}
+              <g:img dir="images/countries" file="${result.rcountry + '.png'}" class="countryflag"/>
+              ${result.rcountryname}
             </g:link>
           </g:if>
         </td>
         <td>${result.rscore}</td>
+        <g:if test="${session.user != null}">
+          <td><g:link controller="result" action="show" params="['id': result.resultid]">[Update result as admin]</g:link></td>
+        </g:if>
       </tr>
     </g:each>
   </table>
@@ -72,6 +78,7 @@
 
 <g:if test="${session.user != null}">
   <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos as admin]</g:link>
+  <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament as admin]</g:link>
 </g:if>
 
 
@@ -92,11 +99,11 @@
   $(document).ready(function ()
                     {
                       $("#datatable").tablecloth({
-                                              theme: "default",
-                                              striped: true,
-                                              sortable: true,
-                                              condensed: false
-                                            });
+                                                   theme: "default",
+                                                   striped: true,
+                                                   sortable: true,
+                                                   condensed: false
+                                                 });
                     });
 </script>
 </body>

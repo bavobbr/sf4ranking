@@ -28,7 +28,6 @@
                  alt="Find players from ${player.countryCode.name}"/>
         </g:link>
       </g:if>
-
     </dd>
     <dt>Score</dt>
     <dd>${player.score}</dd>
@@ -43,7 +42,7 @@
 
   </dl>
 
-  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] SSFIV:AE ver. 2012 rankings for </small>${player.name}</h3>
+  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] SSFIV:AE ver. 2012 rankings for</small>${player.name}</h3>
 </center>
 
 <div class="table-responsive">
@@ -56,6 +55,9 @@
       <th>Date</th>
       <th>Character</th>
       <th>Points</th>
+      <g:if test="${session.user != null}">
+        <th>Edit</th>
+      </g:if>
     </tr>
     </thead>
     <g:each in="${results}" var="result">
@@ -73,9 +75,11 @@
               ${result.tcharname}
             </g:link>
           </g:if>
-
         </td>
         <td>${result.tscore}</td>
+        <g:if test="${session.user != null}">
+          <td><g:link controller="result" action="show" params="['id': result.resultid]">[Update result as admin]</g:link></td>
+        </g:if>
       </tr>
     </g:each>
   </table>
@@ -83,7 +87,7 @@
 
 <g:if test="${oldresults}">
   <center>
-    <h3 class="tournaments">Tournament placings <small>found [${oldresults.size()}] older rankings for </small>${player.name}</h3>
+    <h3 class="tournaments">Tournament placings <small>found [${oldresults.size()}] older rankings for</small>${player.name}</h3>
   </center>
 
   <div class="table-responsive">
@@ -96,6 +100,9 @@
         <th>Date</th>
         <th>Character</th>
         <th>Points</th>
+        <g:if test="${session.user != null}">
+          <th>Edit</th>
+        </g:if>
       </tr>
       </thead>
       <g:each in="${oldresults}" var="result">
@@ -113,9 +120,11 @@
                 ${result.tcharname}
               </g:link>
             </g:if>
-
           </td>
           <td>${result.tscore}</td>
+          <g:if test="${session.user != null}">
+            <td><g:link controller="result" action="show" params="['id': result.resultid]">[Update result as admin]</g:link></td>
+          </g:if>
         </tr>
       </g:each>
     </table>
@@ -124,6 +133,7 @@
 
 <g:if test="${session.user != null}">
   <g:link controller="admin" action="selectPlayerVideos" params="['id': player.id]">[Update videos as admin]</g:link>
+  <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
 </g:if>
 
 <g:if test="${player.videos}">
@@ -149,11 +159,11 @@
                                                    condensed: false
                                                  });
                       $("#datatable2").tablecloth({
-                                                   theme: "default",
-                                                   striped: true,
-                                                   sortable: true,
-                                                   condensed: false
-                                                 });
+                                                    theme: "default",
+                                                    striped: true,
+                                                    sortable: true,
+                                                    condensed: false
+                                                  });
                     });
 </script>
 </body>

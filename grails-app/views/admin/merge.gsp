@@ -15,6 +15,7 @@
 
 <body>
 <h2>Admin merge players</h2>
+This will delete player 1 after copying the results to player 2. Make sure player 2 has the information he needs as only the rankings are copied, not country etc.
 <g:if test="${flash.message}">
   <div class="message" role="status">${flash.message}</div>
 </g:if>
