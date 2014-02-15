@@ -42,6 +42,7 @@ This is for fine-grained maintenance, usually not required.
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>
   <li><g:link action="exportTournaments">Export Tournaments and Results as JSON data...</g:link></li>
   <li><g:link action="exportPlayers">Export Players as JSON data...</g:link></li>
+  <li><g:link action="exportTeams">Export Teams as JSON data...</g:link></li>
 </ul>
 
 <h2>BEWARE</h2>

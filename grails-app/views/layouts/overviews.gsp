@@ -111,6 +111,7 @@
             <ul class="dropdown-menu">
               <li><g:link action="index" controller="rankings">World Rankings</g:link></li>
               <li><g:link action="tournaments" controller="rankings">View Tournaments</g:link></li>
+              <li><g:link action="teams" controller="rankings">View Teams</g:link></li>
               <li class="divider"></li>
               <li><g:link action="index" controller="about">FAQ</g:link></li>
             </ul>
@@ -133,6 +134,7 @@
                 <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
                 <li><g:link action="index" controller="player">[Players]</g:link></li>
                 <li><g:link action="index" controller="result">[Results]</g:link></li>
+                <li><g:link action="index" controller="team">[Teams]</g:link></li>
                 <li><g:link action="index" controller="user">[User]</g:link></li>
                 <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
               </ul>

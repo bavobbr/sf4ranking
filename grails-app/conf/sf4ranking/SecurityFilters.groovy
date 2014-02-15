@@ -6,7 +6,7 @@ package sf4ranking
 class SecurityFilters {
 
     def filters = {
-        all(controller: 'admin|player|result|tournament|user|configuration') {
+        all(controller: 'admin|player|result|tournament|user|configuration|team') {
             before = {
                 if (!session.user && actionName != "login") {
                     redirect(controller: "user", action: "login")

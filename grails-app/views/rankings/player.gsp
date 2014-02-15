@@ -37,6 +37,12 @@
         <g:link action="index" controller="rankings" params="[pchar: pchar.name()]">${pchar.value}</g:link>
       </g:each>
     </dd>
+    <dt>Teams(s)</dt>
+    <dd>
+      <g:each in="${player.teams}" var="team">
+        <g:link action="team" controller="rankings" params="[id: team.id]">${team.name}</g:link>
+      </g:each>
+    </dd>
     <dt>Skill Weight</dt>
     <dd>${player.skill}</dd>
     <dt>Share</dt>

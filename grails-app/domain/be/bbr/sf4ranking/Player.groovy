@@ -26,7 +26,7 @@ class Player
     Integer rank = 0
     CountryCode countryCode
     String wikilink
-    static hasMany = [videos: String, results: Result]
+    static hasMany = [videos: String, results: Result, teams: Team]
 
     def beforeInsert() {
         codename = name.toUpperCase()

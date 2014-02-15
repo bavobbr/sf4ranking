@@ -54,12 +54,24 @@ class DataService
         {
             return "Delete data first, re-import works only on empty database"
         }
+        def teamsFile = new File(DataService.class.getResource("/data/teams.json").toURI())
+        def teamdata = new JsonSlurper().parseText(teamsFile.text)
+        teamdata.each {
+            log.info "Saving team $it.name"
+            Team team = new Team(name: it.name, twitter: it.twitter, logo: it.logo, website: it.website, shortname: it.shortname)
+            team.save(failOnError: true)
+        }
+
         def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
         def pdata = new JsonSlurper().parseText(playerFile.text)
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
             Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink)
+            it.teams?.each {
+                Team team = Team.get(it)
+                p.addToTeams(team)
+            }
             p.save(failOnError: true)
         }
         def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
@@ -83,7 +95,7 @@ class DataService
             }
             tournament.save(failOnError: true)
         }
-        return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings and ${Player.count()} players"
+        return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
 
     /**
@@ -136,9 +148,30 @@ class DataService
             player.codename = it.codename
             player.score = it.score
             player.wikilink = it.wikilink
+            player.teams = it.teams.collect { it.id }
             players << player
         }
         return players
+    }
+
+    /**
+     * Exports all Team data as JSON
+     */
+    List<Team> exportTeams()
+    {
+        def list = Team.list()
+        def teams = []
+        list.each {
+            def team = [:]
+            team.name = it.name
+            team.shortname = it.shortname
+            team.codename = it.codename
+            team.logo = it.logo
+            team.twitter = it.twitter
+            team.website = it.website
+            teams << team
+        }
+        return teams
     }
 
     /**

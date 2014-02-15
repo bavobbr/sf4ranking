@@ -39,6 +39,7 @@
       <th>Name</th>
       <th>Score</th>
       <th>Country</th>
+      <th>Team</th>
     </tr>
     </thead>
 
@@ -58,6 +59,11 @@
               ${p.countryCode.name}
             </g:link>
           </g:if>
+        </td>
+        <td>
+          <g:each in="${p.teams}" var="team">
+            <g:link controller="rankings" action="team" params="['id': team.id]">${team.shortname}</g:link>
+          </g:each>
         </td>
       </tr>
     </g:each>

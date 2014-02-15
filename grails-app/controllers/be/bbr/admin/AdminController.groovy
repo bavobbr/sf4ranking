@@ -129,6 +129,12 @@ class AdminController
         render(players as JSON)
     }
 
+    def exportTeams()
+    {
+        def teams = dataService.exportTeams()
+        render(teams as JSON)
+    }
+
     /**
      * Quick editing of certain properties that are not editable in scaffold
      */

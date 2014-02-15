@@ -153,6 +153,25 @@ class RankingsController
     }
 
     /**
+     * Look up all Teams
+     */
+    def teams()
+    {
+        List teams = Team.list(order: "desc", sort: 'name')
+        [teams: teams]
+    }
+
+    /**
+     * Look up a Tournament and prepare data for the view
+     */
+    def team(Team team)
+    {
+        def players = Player.where { teams { id == team.id }}.list()
+        log.info "found ${players.size()}"
+        return [team: team, players: players]
+    }    
+
+    /**
      * Endpoint for the AJAX search on players
      */
     def autocompletePlayer()
