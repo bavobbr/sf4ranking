@@ -26,7 +26,12 @@
         <a href="${team.website}" target="_blank">${team.website}</a>
         </g:if>
       </td>
-      <td>${team.twitter}</td>
+      <td>
+        <g:if test="${team.twitter}">
+          <a href="https://twitter.com/${team.twitter}" class="twitter-follow-button" data-show-count="false">Follow  @${team.twitter}</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </g:if>
+      </td>
       <td>${players.size()}</td>
       <td>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none" data-hashtags="srkrank">Tweet</a>

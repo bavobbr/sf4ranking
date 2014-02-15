@@ -37,9 +37,9 @@
       </g:if>
       <th>World Rank</th>
       <th>Name</th>
+      <th>Team</th>
       <th>Score</th>
       <th>Country</th>
-      <th>Team</th>
     </tr>
     </thead>
 
@@ -51,6 +51,11 @@
         </g:if>
         <td>${p.rank}</td>
         <td><g:link controller="rankings" action="player" params="['id': p.id]">${p.name}</g:link></td>
+        <td>
+          <g:each in="${p.teams}" var="team">
+            <g:link controller="rankings" action="team" params="['id': team.id]">${team.shortname}</g:link>
+          </g:each>
+        </td>
         <td>${p.score}</td>
         <td>
           <g:if test="${p.countryCode}">
@@ -60,11 +65,7 @@
             </g:link>
           </g:if>
         </td>
-        <td>
-          <g:each in="${p.teams}" var="team">
-            <g:link controller="rankings" action="team" params="['id': team.id]">${team.shortname}</g:link>
-          </g:each>
-        </td>
+
       </tr>
     </g:each>
 

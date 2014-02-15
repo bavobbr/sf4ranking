@@ -45,15 +45,45 @@
     </dd>
     <dt>Skill Weight</dt>
     <dd>${player.skill}</dd>
+
+    <dt>Follow</dt>
+    <dd>
+      <g:if test="${player.twitter}">
+        <a href="https://twitter.com/${player.twitter}" class="twitter-follow-button" data-show-count="false">Follow  @${player.twitter}</a>
+        <script>!function (d, s, id)
+        {
+          var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+          if (!d.getElementById(id))
+          {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + '://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        }(document, 'script', 'twitter-wjs');</script>
+      </g:if>
+    </dd>
+
     <dt>Share</dt>
     <dd>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none" data-hashtags="srkrank">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none"
+         data-hashtags="srkrank">Tweet</a>
+      <script>!function (d, s, id)
+      {
+        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id))
+        {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + '://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, 'script', 'twitter-wjs');</script>
     </dd>
 
   </dl>
 
-  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] SSFIV:AE ver. 2012 rankings for </small>${player.name}</h3>
+  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] SSFIV:AE ver. 2012 rankings for</small>${player.name}</h3>
 </center>
 
 <div class="table-responsive">

@@ -12,6 +12,7 @@ class Player
         codename nullable: true, unique: true
         videos nullable: true, unique: false
         wikilink nullable: true
+        twitter nullable: true
     }
 
     static mapping = {
@@ -26,6 +27,7 @@ class Player
     Integer rank = 0
     CountryCode countryCode
     String wikilink
+    String twitter
     static hasMany = [videos: String, results: Result, teams: Team]
 
     def beforeInsert() {

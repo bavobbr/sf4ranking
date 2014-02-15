@@ -67,7 +67,7 @@ class DataService
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
-            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink)
+            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink, twitter: it.twitter)
             it.teams?.each {
                 Team team = Team.get(it)
                 p.addToTeams(team)
@@ -148,6 +148,7 @@ class DataService
             player.codename = it.codename
             player.score = it.score
             player.wikilink = it.wikilink
+            player.twitter = it.twitter
             player.teams = it.teams.collect { it.id }
             players << player
         }
