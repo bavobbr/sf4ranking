@@ -15,7 +15,8 @@
     <tr class="stathead">
       <th>Name</th>
       <th>Website</th>
-      <th>Twitter</th>
+      <th>Team Size</th>
+      <th>Team Score</th>
     </tr>
     </thead>
     <g:each in="${teams}" var="t">
@@ -23,7 +24,8 @@
       <tr>
         <td><g:link controller="rankings" action="team" params="['id': t.id]">${t.name}</g:link></td>
         <td>${t.website}</td>
-        <td>${t.twitter}</td>
+        <td>${t.teamSize}</td>
+        <td>${t.teamScore}</td>
       </tr>
     </g:each>
 

@@ -158,6 +158,12 @@ class RankingsController
     def teams()
     {
         List teams = Team.list(order: "desc", sort: 'name')
+        teams.each { team ->
+            def players = Player.where { teams { id == team.id }}.list()
+            def score = players.sum { it.score }
+            team.metaClass.getTeamScore << { score }
+            team.metaClass.getTeamSize << { players.size() }
+        }
         [teams: teams]
     }
 
