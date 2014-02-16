@@ -22,8 +22,12 @@
     <g:each in="${teams}" var="t">
 
       <tr>
-        <td><g:link controller="rankings" action="team" params="['id': t.id]">${t.name}</g:link></td>
-        <td>${t.website}</td>
+        <td><g:link mapping="teamByName" controller="rankings" action="team" params="[name: t.name]">${t.name}</g:link></td>
+        <td>
+          <g:if test="${t.website}">
+            <a href="${t.website}" target="_blank">${t.website}</a>
+          </g:if>
+        </td>
         <td>${t.teamSize}</td>
         <td>${t.teamScore}</td>
       </tr>

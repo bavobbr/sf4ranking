@@ -101,7 +101,12 @@ class RankingsController
             chars << it.pcharacter
         }
         log.info "Rendering player ${player}"
-        [player: player, results: rankings, oldresults: old, chars: chars]
+        render view: "player", model: [player: player, results: rankings, oldresults: old, chars: chars]
+    }
+
+    def playerByName() {
+        Player p = Player.findByCodename(params.name.toUpperCase())
+        return player(p)
     }
 
     /**
@@ -149,7 +154,12 @@ class RankingsController
             details <<
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
         }
-        return [tournament: tournament, details: details]
+        render view: 'tournament', model: [tournament: tournament, details: details]
+    }
+
+    def tournamentByName() {
+        Tournament t = Tournament.findByCodename(params.name.toUpperCase())
+        return tournament(t)
     }
 
     /**
@@ -174,8 +184,13 @@ class RankingsController
     {
         def players = Player.where { teams { id == team.id }}.list()
         log.info "found ${players.size()}"
-        return [team: team, players: players]
-    }    
+        render view: 'team', model: [team: team, players: players]
+    }
+
+    def teamByName() {
+        Team t = Team.findByCodename(params.name.toUpperCase())
+        return team(t)
+    }
 
     /**
      * Endpoint for the AJAX search on players

@@ -59,7 +59,7 @@
     <g:each in="${players}" var="player">
       <tr>
         <td>${player.rank}</td>
-        <td><g:link controller="rankings" action="player" params="['id': player.id]">${player.name}</g:link></td>
+        <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: player.name]">${player.name}</g:link></td>
         <td>
           <g:if test="${player.countryCode != null}">
             <g:link controller="rankings" action="index" params="[country: player.countryCode.name()]">

@@ -54,7 +54,7 @@
     <g:each in="${details}" var="result">
       <tr>
         <td>${result.rplace}</td>
-        <td><g:link controller="rankings" action="player" params="['id': result.rplayerid]">${result.rplayer}</g:link></td>
+        <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: result.rplayer]">${result.rplayer}</g:link></td>
         <td>
           <g:if test="${result.rchar}">
             <g:link action="index" controller="rankings" params="[pchar: result.rchar]">

@@ -25,7 +25,7 @@
     <g:each in="${tournaments}" var="t">
 
       <tr>
-        <td><g:link controller="rankings" action="tournament" params="['id': t.id]">${t.name}</g:link></td>
+        <td><g:link mapping="tournamentByName" controller="rankings" action="tournament" params="[name: t.name]">${t.name}</g:link></td>
         <td>${t.tournamentType?.value}</td>
         <td>${t.date?.format("yyyy-MM-dd")}</td>
         <td>

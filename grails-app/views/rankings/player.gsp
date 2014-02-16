@@ -40,7 +40,7 @@
     <dt>Teams(s)</dt>
     <dd>
       <g:each in="${player.teams}" var="team">
-        <g:link action="team" controller="rankings" params="[id: team.id]">${team.name}</g:link>
+        <g:link mapping="teamByName" action="team" controller="rankings" params="[name: team.name]">${team.name}</g:link>
       </g:each>
     </dd>
     <dt>Skill Weight</dt>
@@ -103,7 +103,7 @@
     </thead>
     <g:each in="${results}" var="result">
       <tr>
-        <td><g:link controller="rankings" action="tournament" params="['id': result.tid]"
+        <td><g:link mapping="tournamentByName" controller="rankings" action="tournament" params="[name: result.tname]"
                     title="View tournament">${result.tname}</g:link></td>
         <td>${result.ttype}</td>
         <td>${result.tplace}</td>

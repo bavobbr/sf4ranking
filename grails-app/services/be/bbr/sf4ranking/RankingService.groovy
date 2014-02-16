@@ -47,6 +47,7 @@ class RankingService
     {
         def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
         // AUTO weighting starts from premier 5
+        tournaments.removeAll { it.game !=  Version.AE2012 }
         applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
         applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
         applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
