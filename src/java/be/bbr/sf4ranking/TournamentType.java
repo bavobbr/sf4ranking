@@ -11,7 +11,8 @@ public enum TournamentType
     INTERNATIONAL("International",150),
     SERIES("Series",140),
     CIRCUIT("Circuit",130),
-    TOURNAMENT_CHAMPIONS("Tournament Of Champions",120);
+    TOURNAMENT_CHAMPIONS("Tournament Of Champions",60),
+    UNRANKED("Unranked", 0);
 
     private final String value;
     // this value is used when WeightingType is FIXED, to assign a fixed weight

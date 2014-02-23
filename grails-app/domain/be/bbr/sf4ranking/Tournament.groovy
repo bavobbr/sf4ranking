@@ -18,6 +18,7 @@ class Tournament
         codename nullable: true, unique: true
         videos nullable: true, unique: false
         challonge nullable: true
+        ranked nullable: false
     }
 
     String name
@@ -30,6 +31,7 @@ class Tournament
     Version game = Version.UNKNOWN
     WeightingType weightingType = WeightingType.AUTO
     String challonge
+    Boolean ranked = true
 
     static hasMany = [videos: String, results: Result]
 

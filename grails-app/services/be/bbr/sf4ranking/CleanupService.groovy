@@ -48,6 +48,20 @@ class CleanupService
     }
 
     /**
+     * Fixes ranked field in tournaments, currently AE only
+     */
+    def fixTournamentUnrank() {
+        Tournament.findAllByGame(Version.AE2012).each {
+            it.ranked = true
+            log.info "setting $it as ranked"
+        }
+        Tournament.findAllByGameNotEqual(Version.AE2012).each {
+            it.ranked = false
+            log.info "setting $it as unranked"
+        }
+    }
+
+    /**
      * Drops ghost users that are not ranked anywhere
      */
     def dropUnrankedPlayers()

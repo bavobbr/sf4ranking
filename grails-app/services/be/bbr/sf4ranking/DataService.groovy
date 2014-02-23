@@ -16,12 +16,12 @@ class DataService
      * Uses a specific results entry format to speed up data entry
      */
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos, WeightingType wtype, TournamentType type)
+                                List videos, WeightingType wtype, TournamentType type, Boolean ranked)
     {
         if (wtype == WeightingType.AUTO) type = null
         else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
         Tournament tournament = null
-        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, tournamentFormat: format, weightingType: wtype, tournamentType: type)
+        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked)
         tournament.save(failOnError: true)
         results.eachLine {String line, index ->
             log.info("Parsing line $line")
@@ -60,6 +60,7 @@ class DataService
             log.info "Saving team $it.name"
             Team team = new Team(name: it.name, twitter: it.twitter, logo: it.logo, website: it.website, shortname: it.shortname)
             team.save(failOnError: true)
+            log.info "saved team $team.id"
         }
 
         def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
@@ -69,6 +70,7 @@ class DataService
             def cc = it.countryCode as CountryCode
             Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink, twitter: it.twitter)
             it.teams?.each {
+                log.info "finding team $it"
                 Team team = Team.get(it)
                 p.addToTeams(team)
             }
@@ -86,7 +88,8 @@ class DataService
             TournamentType type = TournamentType.fromString(it.type)
             Integer weight = it.weight?: 0
             String challonge = it.challonge
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge)
+            Boolean ranked = it.ranked?.toBoolean()?: false
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge, ranked: ranked)
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 CharacterType ctype = it.character as CharacterType
@@ -117,6 +120,7 @@ class DataService
             tournament.wtype = it.weightingType?.name()
             tournament.weight = it.weight
             tournament.challonge = it.challonge
+            tournament.ranked = it.ranked
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]

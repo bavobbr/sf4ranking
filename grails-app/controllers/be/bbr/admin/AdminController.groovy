@@ -88,7 +88,8 @@ class AdminController
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
         List tvideos = params.tvideos.tokenize(" ")
-        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype)
+        Boolean tranked = params.tranked.toBoolean()
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 
@@ -175,6 +176,11 @@ class AdminController
         render view: "index"
     }
 
+    def fixTournamentUnrank() {
+        cleanupService.fixTournamentUnrank()
+        render view: "index"
+    }
+
     def dropUnrankedPlayers() {
         def num = cleanupService.dropUnrankedUsers()
         flash.message = "Dropped $num players"
@@ -195,6 +201,13 @@ class AdminController
             players = Player.findAllBySkillLessThanEquals(0)
         }
         def listing = players.collect {it.name}.join("\r\n")
+        render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
+    def printPlayerRanks()
+    {
+        List players = Player.list(order: "desc", sort: 'score')
+        def listing = players.collect { Player p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 

@@ -37,6 +37,7 @@ This is for fine-grained maintenance, usually not required.
 
 <h3>Export/debug</h3>
 <ul>
+  <li><g:link action="printPlayerRanks">print all players and their score</g:link></li>
   <li><g:link action="printTournamentSizes">print all Tournaments and player sizes</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'true']">print all Players in the DB</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>

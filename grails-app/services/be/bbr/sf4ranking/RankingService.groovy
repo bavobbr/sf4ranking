@@ -47,7 +47,8 @@ class RankingService
     {
         def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
         // AUTO weighting starts from premier 5
-        tournaments.removeAll { it.game !=  Version.AE2012 }
+        tournaments.each { it.tournamentType = TournamentType.UNRANKED }
+        tournaments.removeAll { !it.ranked }
         applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
         applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
         applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
@@ -68,7 +69,7 @@ class RankingService
             log.info("Evaluating player $p")
             def results = Result.findAllByPlayer(p)
             def scores = results.collect {
-                if (it.tournament.game == Version.AE2012) {
+                if (it.tournament.ranked) {
                     ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
                 }
                 else 0
