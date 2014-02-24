@@ -75,6 +75,7 @@ class ScoringSystem
 
     public static Integer getScore(Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
+        if (tournamentType == tournamentType.UNRANKED) return 0;
         Map formatscores = scores[tournamentFormat.name()]
         List typescores = formatscores[tournamentType.name()] as List
         return typescores[rank - 1] as Integer

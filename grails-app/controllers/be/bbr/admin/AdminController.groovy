@@ -88,7 +88,7 @@ class AdminController
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
         List tvideos = params.tvideos.tokenize(" ")
-        Boolean tranked = params.tranked.toBoolean()
+        Boolean tranked = params.tranked?.toBoolean()?: true
         def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
