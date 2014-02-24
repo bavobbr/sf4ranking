@@ -84,6 +84,9 @@
 <g:if test="${session.user != null}">
   <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos as admin]</g:link>
   <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament as admin]</g:link>
+  <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>
+  <g:link controller="admin" action="playerRanksBefore" params="['id': tournament.id]">[Scores before tournament]</g:link>
+  <g:link controller="admin" action="playerRanksAfter" params="['id': tournament.id]">[Scores after tournament]</g:link>
 </g:if>
 
 

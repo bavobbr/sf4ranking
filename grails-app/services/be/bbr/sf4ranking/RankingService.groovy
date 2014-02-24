@@ -110,5 +110,42 @@ class RankingService
     }
 
 
+    private List playerScoresAt(Date date) {
+        List playerScores = []
+        List players = Player.list(readOnly: true)
+        players.each { Player p ->
+            def results = Result.findAllByPlayer(p, [readOnly: true])
+            def scores = results.collect {
+                if (it.tournament.ranked && it.tournament.date.before(date)) {
+                    ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
+                }
+                else 0
+            }.sort {a, b -> b <=> a}
+            def bestof = scores.take(16)
+            def sum = bestof.sum() as Integer
+            Expando holder = new Expando()
+            holder.score = sum
+            holder.name = p.name
+            holder.id = p.id
+            playerScores << holder
+            println "added ${holder.name} with ${holder.score} and id ${holder.id}"
+        }
+        return playerScores
+    }
+
+    List playerRanksAt(Date date) {
+        def sortedPlayers = playerScoresAt(date).sort { a, b -> b.score <=> a.score }
+        def previous = 0
+        def currentRank = 0
+        sortedPlayers.eachWithIndex { p, Integer idx ->
+            if (p.score != previous)
+            {
+                currentRank = idx + 1
+            }
+            p.rank = currentRank
+            previous = p.score
+        }
+        return sortedPlayers
+    }
 
 }

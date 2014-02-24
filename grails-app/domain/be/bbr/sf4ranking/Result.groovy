@@ -13,6 +13,11 @@ class Result
         pcharacter nullable: false
     }
 
+    static mapping = {
+        player index: 'p_Idx'
+        tournament index: 't_Idx'
+    }
+
     static belongsTo = [tournament:Tournament, player: Player]
 
     Player player

@@ -217,7 +217,7 @@ class AdminController
             def numresults = it.results.size()
             tournamentSizes[it] = numresults
         }
-        def listing = tournamentSizes.collect { Tournament k, def v -> "[${k.name}] $v ${k.tournamentFormat} ${k.weightingType}"}.join("\r\n")
+        def listing = tournamentSizes.collect { Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
@@ -233,6 +233,35 @@ class AdminController
         else {
             render view: "confirmDelete"
         }
+    }
+
+    def playerRanksBefore(Tournament tournament) {
+        def playerRanks = rankingService.playerRanksAt(tournament.date)
+        def listing = playerRanks.collect { p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
+        render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
+    def playerRanksAfter(Tournament tournament) {
+        def playerRanks = rankingService.playerRanksAt(tournament.date+1)
+        def listing = playerRanks.collect { p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
+        render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
+    def playerDiffForTournament(Tournament tournament) {
+        def pids = tournament.results.collect { it.player.id }
+        def playerRanks = rankingService.playerRanksAt(tournament.date)
+        playerRanks.retainAll { it.id in pids }
+        def playerRanksAfter = rankingService.playerRanksAt(tournament.date+1)
+        playerRanksAfter.retainAll { it.id in pids }
+        playerRanks.each { def pbefore ->
+            def other = playerRanksAfter.find { it.id == pbefore.id }
+            pbefore.rankAfter = other.rank
+            pbefore.scoreAfter = other.score
+            pbefore.scoreDiff = pbefore.scoreAfter - pbefore.score
+            pbefore.rankDiff = pbefore.rank - pbefore.rankAfter
+        }
+        //def listing = playerRanks.collect { p -> "${p.name}, ${p.rank}, ${p.score}, ${p.rankAfter}, ${p.scoreAfter}"}.join("\r\n")
+        [tournament: tournament, players: playerRanks]
     }
 
 }
