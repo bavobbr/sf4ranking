@@ -181,6 +181,11 @@ class AdminController
         render view: "index"
     }
 
+    def fixCodenames() {
+        cleanupService.fixCodenames()
+        render view: "index"
+    }
+
     def dropUnrankedPlayers() {
         def num = cleanupService.dropUnrankedUsers()
         flash.message = "Dropped $num players"

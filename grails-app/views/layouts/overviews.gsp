@@ -29,7 +29,7 @@
       {
         function search(uid)
         {
-          window.location = "${createLink(action: 'player', controller: 'rankings')}/" + uid
+          window.location = "${createLink(action: 'player', controller: 'rankings')}/byname/" + uid
         }
 
         $("#playerSearch").autocomplete({
@@ -37,7 +37,7 @@
                                           minLength: 2,
                                           select: function (event, ui)
                                           {
-                                            if (ui.item) search(ui.item.id);
+                                            if (ui.item) search(ui.item.value);
                                           }
                                         });
       });
@@ -47,7 +47,7 @@
       {
         function searchTournament(uid)
         {
-          window.location = "${createLink(action: 'tournament', controller: 'rankings')}/" + uid
+          window.location = "${createLink(action: 'tournament', controller: 'rankings')}/byname/" + uid
         }
 
         $("#tournamentSearch").autocomplete({
@@ -55,7 +55,7 @@
                                               minLength: 2,
                                               select: function (event, ui)
                                               {
-                                                if (ui.item) searchTournament(ui.item.id);
+                                                if (ui.item) searchTournament(ui.item.value);
                                               }
                                             });
       });

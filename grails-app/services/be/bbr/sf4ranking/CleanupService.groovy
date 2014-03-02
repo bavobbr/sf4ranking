@@ -62,6 +62,24 @@ class CleanupService
     }
 
     /**
+     * Fixes codenames after name update
+     */
+    def fixCodenames() {
+        Player.list().each {
+            if (it.codename != it.name?.toUpperCase()) {
+                log.info "Fixing name of ${it.codename} to ${it.name}"
+                it.codename = it.name?.toUpperCase()
+            }
+        }
+        Tournament.list().each {
+            if (it.codename != it.name?.toUpperCase()) {
+                log.info "Fixing tournament name of ${it.codename} to ${it.name}"
+                it.codename = it.name?.toUpperCase()
+            }
+        }
+    }
+
+    /**
      * Drops ghost users that are not ranked anywhere
      */
     def dropUnrankedPlayers()
