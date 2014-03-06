@@ -19,8 +19,10 @@ class Result
     }
 
     static belongsTo = [tournament:Tournament, player: Player]
+    static hasMany = [pchars: CharacterType]
 
     Player player
     Integer place
     CharacterType pcharacter = CharacterType.UNKNOWN
+
 }

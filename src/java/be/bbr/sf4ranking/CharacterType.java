@@ -60,6 +60,7 @@ public enum CharacterType
 
     public static CharacterType fromString(String input) {
         if (input == null || input.length() == 0) return null;
+        input = input.trim();
         CharacterType[] characterTypes = CharacterType.values();
         for (CharacterType ct : characterTypes)
             if (ct.name().toLowerCase().equals(input.toLowerCase())) {

@@ -26,17 +26,21 @@ class DataService
         results.eachLine {String line, index ->
             log.info("Parsing line $line")
             String pname = line.trim().tokenize("/").first().trim()
-            String pchar = line.trim().tokenize("/").last().trim()
+            String pcharsfield = line.trim().tokenize("/").last().trim()
             Player p = Player.findByCodename(pname.toUpperCase())
             if (!p)
             {
                 p = new Player(name: pname, skill: 0)
-                log.info("Creating player $p using char $pchar")
+                log.info("Creating player $p using chars $pcharsfield")
                 p.save(failOnError: true)
             }
-            CharacterType ctype = CharacterType.fromString(pchar.toUpperCase())?: CharacterType.UNKNOWN
+            List pchars = []
+            pcharsfield.trim().tokenize(",").each {
+                CharacterType ctype = CharacterType.fromString(it.toUpperCase())?: CharacterType.UNKNOWN
+                pchars << ctype
+            }
             def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
-            Result r = new Result(player: p, place: rank, pcharacter: ctype, tournament: tournament)
+            Result r = new Result(player: p, place: rank, pchars: pchars, tournament: tournament)
             r.save(failOnError: true)
             tournament.addToResults(r)
         }
@@ -93,7 +97,7 @@ class DataService
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 CharacterType ctype = it.character as CharacterType
-                Result result = new Result(place: it.place, player: p, pcharacter: ctype)
+                Result result = new Result(place: it.place, player: p, pcharacter: ctype, pchars: [ctype])
                 tournament.addToResults(result)
             }
             tournament.save(failOnError: true)
@@ -127,6 +131,7 @@ class DataService
                 player.place = it.place
                 player.player = it.player.name
                 player.character = it.pcharacter?.name()
+                player.pchars = it.pchars.collect { it.name() }
                 players << player
             }
             tournament.players = players

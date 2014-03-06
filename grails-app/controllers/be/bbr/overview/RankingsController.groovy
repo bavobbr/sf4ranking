@@ -9,7 +9,7 @@ import grails.converters.JSON
 class RankingsController
 {
 
-    RankingService rankingService
+    QueryService queryService
 
     /**
      * The index page is also the page with all the rankings
@@ -23,42 +23,13 @@ class RankingsController
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
-        boolean filtered = pchar || pcountry
-        def players
-        def playercount
-        /**
-         * We have to differentiate between character search and not, because Hibernate has trouble paginating on
-         * queries that use associations
-         * This query queries all and filters in the controller, which is bad but also a rare call
-         */
-        if (pchar)
-        {
-            def pquery = Player.where {
-                if (pcountry) countryCode == pcountry
-                results.pcharacter == pchar
-            }
-            def allPlayers = pquery.list(order: 'asc', sort: 'rank')
-            players = pagedList(allPlayers, poffset, pmax)
-            playercount = allPlayers.size()
-        }
-        /**
-         * without associatiosn there is no issue to use real pagination
-         */
-        else
-        {
-            def pquery = Player.where {
-                if (pcountry) countryCode == pcountry
-            }
-            players = pquery.list(order: 'asc', sort: 'rank', max: pmax, offset: poffset)
-            playercount = players.totalCount
-        }
-        // list known countries for the filter box
-        def countries = Player.createCriteria().list {
-            projections {
-                distinct "countryCode"
-            }
-        }
-        def countrynames = countries.findResults() {it?.name()}
+        def filtered = pchar || pcountry
+
+        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset)
+        def playercount = queryService.countPlayers(pchar, pcountry)
+        println "getAll gave ${players.size()} players out of ${playercount}"
+
+        def countrynames = queryService.getActiveCountryNames()
         // list all characters for the filter box
         def charnames = CharacterType.values().collect {it.name()}
         // add a search all for each type
@@ -104,7 +75,8 @@ class RankingsController
         render view: "player", model: [player: player, results: rankings, oldresults: old, chars: chars]
     }
 
-    def playerByName() {
+    def playerByName()
+    {
         Player p = Player.findByCodename(params.name.toUpperCase())
         return player(p)
     }
@@ -147,17 +119,19 @@ class RankingsController
             def rplace = it.place
             def rchar = it.pcharacter?.name()?.toLowerCase()
             def rcharname = it.pcharacter?.value
+            def rchars = it.pchars
             def rscore = tournament.tournamentType ?
                          ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchars: rchars, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
         }
         render view: 'tournament', model: [tournament: tournament, details: details]
     }
 
-    def tournamentByName() {
+    def tournamentByName()
+    {
         Tournament t = Tournament.findByCodename(params.name.toUpperCase())
         return tournament(t)
     }
@@ -168,11 +142,11 @@ class RankingsController
     def teams()
     {
         List teams = Team.list(order: "desc", sort: 'name')
-        teams.each { team ->
-            def players = Player.where { teams { id == team.id }}.list()
-            def score = players.sum { it.score }
-            team.metaClass.getTeamScore << { score }
-            team.metaClass.getTeamSize << { players.size() }
+        teams.each {team ->
+            def players = Player.where {teams {id == team.id}}.list()
+            def score = players.sum {it.score}
+            team.metaClass.getTeamScore << {score}
+            team.metaClass.getTeamSize << {players.size()}
         }
         [teams: teams]
     }
@@ -182,12 +156,13 @@ class RankingsController
      */
     def team(Team team)
     {
-        def players = Player.where { teams { id == team.id }}.list()
+        def players = Player.where {teams {id == team.id}}.list()
         log.info "found ${players.size()}"
         render view: 'team', model: [team: team, players: players]
     }
 
-    def teamByName() {
+    def teamByName()
+    {
         Team t = Team.findByCodename(params.name.toUpperCase())
         return team(t)
     }
@@ -211,17 +186,6 @@ class RankingsController
         def content = tournaments.collect {[id: it.id, label: it.name, value: it.name]}
         render(content as JSON)
     }
-
-    /**
-     * Safe way to get a sublist
-     */
-    private List pagedList(List list, int offset, int max)
-    {
-        int start = Math.min(list.size(), offset)
-        int end = Math.min(list.size(), offset + max)
-        return list.subList(start, end)
-    }
-
 
 }
 

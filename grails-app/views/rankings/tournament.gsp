@@ -44,6 +44,7 @@
       <th>Place</th>
       <th>Player</th>
       <th>Character</th>
+      <th>Characters</th>
       <th>Country</th>
       <th>Score</th>
       <g:if test="${session.user != null}">
@@ -62,6 +63,16 @@
                      title="${result.rchar}" class="charimg"/>
               ${result.rcharname}
             </g:link>
+          </g:if>
+        </td>
+        <td>
+          <g:if test="${result.rchars}">
+            <g:each in="${result.rchars}" var="rchar">
+            <g:link action="index" controller="rankings" params="[pchar: rchar.name()?.toLowerCase()]">
+              <g:img dir="images/chars" file="${rchar.name()?.toLowerCase() + '.png'}" width="22" height="25" alt="${rchar.name()}"
+                     title="${rchar.name()}" class="charimg"/>
+            </g:link>
+            </g:each>
           </g:if>
         </td>
         <td>
