@@ -3,7 +3,7 @@ package be.bbr.sf4ranking
 import groovy.transform.ToString
 
 @ToString(includePackage = false, ignoreNulls = true)
-class Character
+class GameCharacter
 {
 
     static constraints = {

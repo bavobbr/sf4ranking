@@ -31,6 +31,7 @@ environments {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = false
             dbCreate = 'update' // use 'update', 'validate', 'create' or 'create-drop'
+            //dbCreate = 'create-drop'
             jndiName = 'java:comp/env/jdbc/mydb'
         }
     }

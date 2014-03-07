@@ -18,7 +18,7 @@ class Result
     }
 
     static belongsTo = [tournament:Tournament, player: Player]
-    static hasMany = [pchars: Character]
+    static hasMany = [pchars: GameCharacter]
 
     Player player
     Integer place

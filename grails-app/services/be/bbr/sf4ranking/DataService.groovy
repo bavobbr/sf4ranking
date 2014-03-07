@@ -39,7 +39,7 @@ class DataService
             boolean first = true
             pcharsfield.trim().tokenize(",").each {
                 CharacterType ctype = CharacterType.fromString(it.toUpperCase())?: CharacterType.UNKNOWN
-                r.addToPchars(new Character(characterType: ctype, main: first))
+                r.addToPchars(new GameCharacter(characterType: ctype, main: first))
                 first = false
             }
             r.save(failOnError: true)
@@ -102,7 +102,7 @@ class DataService
                 it.pchars.each {
                     CharacterType ctype = it.ctype as CharacterType
                     Boolean main = it.main == true
-                    Character character = new Character(characterType: ctype, main: main)
+                    GameCharacter character = new GameCharacter(characterType: ctype, main: main)
                     log.info "Found character $character for player ${p.name}"
                     result.addToPchars(character)
                 }
