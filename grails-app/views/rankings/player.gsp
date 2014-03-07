@@ -83,7 +83,7 @@
 
   </dl>
 
-  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] SSFIV:AE ver. 2012 rankings for</small>${player.name}</h3>
+  <h3 class="tournaments">Tournament placings <small>found [${results.size()}] ranked tournaments for </small>${player.name}</h3>
 </center>
 
 <div class="table-responsive">
@@ -130,7 +130,7 @@
 
 <g:if test="${oldresults}">
   <center>
-    <h3 class="tournaments">Tournament placings <small>found [${oldresults.size()}] older rankings for</small>${player.name}</h3>
+    <h3 class="tournaments">Tournament placings <small>found [${oldresults.size()}] unranked tournaments for </small>${player.name}</h3>
   </center>
 
   <div class="table-responsive">

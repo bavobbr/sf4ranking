@@ -58,8 +58,7 @@ class RankingsController
             def tplace = it.place
             def tvideos = it.tournament.videos
             def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
-            // we only count AE2012 so create two tables
-            if (it.tournament.game == Version.AE2012)
+            if (it.tournament.ranked)
             {
                 rankings << data
             }

@@ -10,7 +10,20 @@ import groovy.util.logging.Log4j
 class ScoringSystem
 {
     /**
-     * the AUTO algorythm wont ever select CHAMPIONSHIP or TOURNAMENT_CHAMPIONS as these are reserved for Fixed LEAGUE types.
+     * This should not be used
+     */
+    private static final Map zero_scores = [
+            "GRAND_SLAM": [0] * 32,
+            "CHAMPIONSHIP": [0] * 32,
+            "PREMIER_MANDATORY": [0] * 32,
+            "PREMIER_5": [0] * 32,
+            "PREMIER_12": [0] * 32,
+            "INTERNATIONAL": [0] * 32,
+            "SERIES": [0] * 32,
+            "CIRCUIT": [0] * 32
+    ]
+    /**
+     * the AUTO algorithm wont ever select CHAMPIONSHIP or TOURNAMENT_CHAMPIONS as these are reserved for Fixed LEAGUE types.
      * But adding them in anyway helps robustness
      */
     private static final Map single_scores = [
@@ -25,7 +38,7 @@ class ScoringSystem
     ]
 
     /**
-     * the AUTO algorythm wont ever select CHAMPIONSHIP or TOURNAMENT_CHAMPIONS as these are reserved for Fixed LEAGUE types..
+     * the AUTO algorithm wont ever select CHAMPIONSHIP or TOURNAMENT_CHAMPIONS as these are reserved for Fixed LEAGUE types..
      * But adding them in anyway helps robustness
      */
     private static final Map double_scores = [
@@ -60,6 +73,7 @@ class ScoringSystem
      * These are the logical ranks to be distributed sequentially according to the given tournament format
      */
     private static final Map ranks = [
+            EXHIBITION: 1..32,
             LEAGUE: 1..32,
             UNKNOWN: 1..32,
             SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16].flatten(),
@@ -67,7 +81,8 @@ class ScoringSystem
     ]
 
     private static final Map scores = [
-            "UNKNOWN": single_scores,
+            "UNKNOWN": zero_scores,
+            "EXHIBITION": zero_scores,
             "SINGLE_BRACKET": single_scores,
             "DOUBLE_BRACKET": double_scores,
             "LEAGUE": league_scores

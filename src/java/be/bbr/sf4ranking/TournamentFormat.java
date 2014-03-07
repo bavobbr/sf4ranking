@@ -6,6 +6,7 @@ package be.bbr.sf4ranking;
 public enum TournamentFormat
 {
     UNKNOWN("Not identified"),
+    EXHIBITION("Exhibition"),
     SINGLE_BRACKET("Single Elimination"),
     DOUBLE_BRACKET("Double Elimination"),
     LEAGUE("League");
