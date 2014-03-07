@@ -109,12 +109,14 @@
         <td>${result.tplace}</td>
         <td>${result.tdate}</td>
         <td>
-          <g:if test="${result.tchar}">
-            <g:link action="index" controller="rankings" params="[pchar: result.tchar]">
-              <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}" title="${result.tchar}"
+          <g:if test="${result.tchars}">
+            <g:each in="${result.tchars}" var="tchar">
+            <g:link action="index" controller="rankings" params="[pchar: tchar.name()]">
+              <g:img dir="images/chars" file="${tchar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${tchar.value}" title="${tchar.value}"
                      class="charimg"/>
-              ${result.tcharname}
+              ${tchar.value}
             </g:link>
+            </g:each>
           </g:if>
         </td>
         <td>${result.tscore}</td>
@@ -154,12 +156,14 @@
           <td>${result.tplace}</td>
           <td>${result.tdate}</td>
           <td>
-            <g:if test="${result.tchar}">
-              <g:link action="index" controller="rankings" params="[pchar: result.tchar]">
-                <g:img dir="images/chars" file="${result.tchar + '.png'}" width="22" height="25" alt="${result.tchar}"
-                       title="${result.tchar}" class="charimg"/>
-                ${result.tcharname}
-              </g:link>
+            <g:if test="${result.tchars}">
+              <g:each in="${result.tchars}" var="tchar">
+                <g:link action="index" controller="rankings" params="[pchar: tchar.name()]">
+                  <g:img dir="images/chars" file="${tchar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${tchar.value}" title="${tchar.value}"
+                         class="charimg"/>
+                  ${tchar.value}
+                </g:link>
+              </g:each>
             </g:if>
           </td>
           <td>${result.tscore}</td>

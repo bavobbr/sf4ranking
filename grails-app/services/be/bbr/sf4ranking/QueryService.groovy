@@ -24,9 +24,8 @@ class QueryService
             {
                 results {
                     pchars {
-                        eq
+                        eq("characterType", ctype)
                     }
-                    eq("pchars", ctype)
                 }
             }
         }
@@ -43,7 +42,9 @@ class QueryService
             if (ctype)
             {
                 results {
-                    eq("pcharacter", ctype)
+                    pchars {
+                        eq("characterType", ctype)
+                    }
                 }
             }
         }.first()

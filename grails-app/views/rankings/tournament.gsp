@@ -43,7 +43,6 @@
     <tr class="stathead">
       <th>Place</th>
       <th>Player</th>
-      <th>Character</th>
       <th>Characters</th>
       <th>Country</th>
       <th>Score</th>
@@ -56,15 +55,6 @@
       <tr>
         <td>${result.rplace}</td>
         <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: result.rplayer]">${result.rplayer}</g:link></td>
-        <td>
-          <g:if test="${result.rchar}">
-            <g:link action="index" controller="rankings" params="[pchar: result.rchar]">
-              <g:img dir="images/chars" file="${result.rchar + '.png'}" width="22" height="25" alt="${result.rchar}"
-                     title="${result.rchar}" class="charimg"/>
-              ${result.rcharname}
-            </g:link>
-          </g:if>
-        </td>
         <td>
           <g:if test="${result.rchars}">
             <g:each in="${result.rchars}" var="rchar">

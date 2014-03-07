@@ -10,7 +10,6 @@ class Result
         player nullable: false
         place nullable: false
         tournament nullable: false
-        pcharacter nullable: false
     }
 
     static mapping = {
@@ -19,10 +18,8 @@ class Result
     }
 
     static belongsTo = [tournament:Tournament, player: Player]
-    static hasMany = [pchars: CharacterType]
+    static hasMany = [pchars: Character]
 
     Player player
     Integer place
-    CharacterType pcharacter = CharacterType.UNKNOWN
-
 }

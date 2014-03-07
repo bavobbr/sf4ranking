@@ -52,14 +52,12 @@ class RankingsController
             def tid = it.tournament.id
             def tname = it.tournament.name
             def ttype = it.tournament.tournamentType?.value
-            def tchar = it.pcharacter.name().toLowerCase()
-            def tcharname = it.pcharacter?.value
+            def tchars = it.pchars.sort { a, b -> a.main <=> b.main }.collect { it.characterType }
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
-            def tscore = it.tournament.tournamentType ?
-                         ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tscore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             def tvideos = it.tournament.videos
-            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchar: tchar, tcharname: tcharname, tdate: tdate, tvideos: tvideos, resultid: it.id]
+            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
             // we only count AE2012 so create two tables
             if (it.tournament.game == Version.AE2012)
             {
@@ -69,7 +67,7 @@ class RankingsController
             {
                 old << data
             }
-            chars << it.pcharacter
+            chars.addAll(it.pchars*.characterType)
         }
         log.info "Rendering player ${player}"
         render view: "player", model: [player: player, results: rankings, oldresults: old, chars: chars]
@@ -117,15 +115,13 @@ class RankingsController
             def rplayer = it.player.name
             def rplayerid = it.player.id
             def rplace = it.place
-            def rchar = it.pcharacter?.name()?.toLowerCase()
-            def rcharname = it.pcharacter?.value
-            def rchars = it.pchars
+            def rchars = it.pchars.collect { it.characterType }
             def rscore = tournament.tournamentType ?
                          ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchars: rchars, rchar: rchar, rcharname: rcharname, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchars: rchars, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
         }
         render view: 'tournament', model: [tournament: tournament, details: details]
     }

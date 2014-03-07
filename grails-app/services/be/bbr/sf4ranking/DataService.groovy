@@ -34,13 +34,14 @@ class DataService
                 log.info("Creating player $p using chars $pcharsfield")
                 p.save(failOnError: true)
             }
-            List pchars = []
+            def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
+            Result r = new Result(player: p, place: rank, tournament: tournament)
+            boolean first = true
             pcharsfield.trim().tokenize(",").each {
                 CharacterType ctype = CharacterType.fromString(it.toUpperCase())?: CharacterType.UNKNOWN
-                pchars << ctype
+                r.addToPchars(new Character(characterType: ctype, main: first))
+                first = false
             }
-            def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
-            Result r = new Result(player: p, place: rank, pchars: pchars, tournament: tournament)
             r.save(failOnError: true)
             tournament.addToResults(r)
         }
@@ -75,8 +76,8 @@ class DataService
             Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink, twitter: it.twitter)
             it.teams?.each {
                 log.info "finding team $it"
-                Team team = Team.get(it)
-                p.addToTeams(team)
+                Team team = Team.findByCodename(it.toUpperCase())
+                if (team) p.addToTeams(team)
             }
             p.save(failOnError: true)
         }
@@ -96,8 +97,16 @@ class DataService
             Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge, ranked: ranked)
             it.players.each {
                 Player p = Player.findByCodename(it.player.toUpperCase())
-                CharacterType ctype = it.character as CharacterType
-                Result result = new Result(place: it.place, player: p, pcharacter: ctype, pchars: [ctype])
+                log.info "Found player $p for tournament ${tournament.name}"
+                Result result = new Result(place: it.place, player: p)
+                it.pchars.each {
+                    CharacterType ctype = it.ctype as CharacterType
+                    Boolean main = it.main == true
+                    Character character = new Character(characterType: ctype, main: main)
+                    log.info "Found character $character for player ${p.name}"
+                    result.addToPchars(character)
+                }
+                log.info "Seen result $result"
                 tournament.addToResults(result)
             }
             tournament.save(failOnError: true)
@@ -130,8 +139,15 @@ class DataService
                 def player = [:]
                 player.place = it.place
                 player.player = it.player.name
-                player.character = it.pcharacter?.name()
-                player.pchars = it.pchars.collect { it.name() }
+                //player.character = it.pcharacter?.name()
+                def pchars = []
+                it.pchars.each {
+                    def pchar = [:]
+                    pchar.ctype = it.characterType.name()
+                    pchar.main = it.main
+                    pchars << pchar
+                }
+                player.pchars = pchars
                 players << player
             }
             tournament.players = players
@@ -158,7 +174,7 @@ class DataService
             player.score = it.score
             player.wikilink = it.wikilink
             player.twitter = it.twitter
-            player.teams = it.teams.collect { it.id }
+            player.teams = it.teams.collect { it.codename }
             players << player
         }
         return players
