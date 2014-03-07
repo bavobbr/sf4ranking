@@ -56,6 +56,9 @@ class RankingsController
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
             def tscore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
+            if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
+                tplace = it.place == 1? "Win" : "Lose"
+            }
             def tvideos = it.tournament.videos
             def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
             if (it.tournament.ranked)
@@ -114,6 +117,9 @@ class RankingsController
             def rplayer = it.player.name
             def rplayerid = it.player.id
             def rplace = it.place
+            if (tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
+                rplace = it.place == 1? "Win" : "Lose"
+            }
             def rchars = it.pchars.collect { it.characterType }
             def rscore = tournament.tournamentType ?
                          ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
