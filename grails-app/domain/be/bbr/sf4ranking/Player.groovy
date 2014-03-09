@@ -23,7 +23,7 @@ class Player
     String name
     String codename
     //Integer score = 0
-    Integer rank = 0
+    //Integer rank = 0
     CountryCode countryCode
     String wikilink
     String twitter

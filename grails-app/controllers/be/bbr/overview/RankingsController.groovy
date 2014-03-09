@@ -25,8 +25,8 @@ class RankingsController
         def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
         def filtered = pchar || pcountry
 
-        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset)
-        def playercount = queryService.countPlayers(pchar, pcountry)
+        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, Version.AE2012)
+        def playercount = queryService.countPlayers(pchar, pcountry, Version.AE2012)
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
         def countrynames = queryService.getActiveCountryNames()

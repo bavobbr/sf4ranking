@@ -103,8 +103,8 @@ class RankingService
             {
                 currentRank = idx + 1
             }
-            p.rank = currentRank
-            p.applyRank(game, p.rank)
+            def rank = currentRank
+            p.applyRank(game, rank)
             previous = p.score(game)
         }
         return players.size()
