@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -15,7 +15,7 @@
 
   <h1 class="player_name">${player.name}</h1>
 
-  <h3 class="world_rank">${player.rank}</h3>
+  <h3 class="world_rank">${player.rank(Version.AE2012)}</h3>
   <span class="glyphicon glyphicon-flash"></span><span class="world_rank_title">Street Fighter World Rank</span><span
         class="glyphicon glyphicon-flash"></span>
   <dl class="dl-horizontal player_details">

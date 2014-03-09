@@ -17,12 +17,12 @@ class Player
 
     static mapping = {
         codename index: 'Name_Idx'
-        score index: 'Score_Idx'
+        //score index: 'Score_Idx'
     }
 
     String name
     String codename
-    Integer score = 0
+    //Integer score = 0
     Integer rank = 0
     CountryCode countryCode
     String wikilink
@@ -68,5 +68,9 @@ class Player
             this.addToRankings(ranking)
         }
         return ranking
+    }
+
+    Integer overallScore() {
+        return Version.values().inject(0) { result, item -> result + score(item) }
     }
 }

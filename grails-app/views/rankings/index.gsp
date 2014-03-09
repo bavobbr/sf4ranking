@@ -49,7 +49,7 @@
         <g:if test="${filtered}">
           <td>${idx + poffset + 1}</td>
         </g:if>
-        <td>${p.rank}</td>
+        <td>${p.rank(Version.AE2012)}</td>
         <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link></td>
         <td>
           <g:each in="${p.teams}" var="team">

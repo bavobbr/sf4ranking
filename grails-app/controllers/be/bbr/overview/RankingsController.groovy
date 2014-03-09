@@ -145,7 +145,8 @@ class RankingsController
         List teams = Team.list(order: "desc", sort: 'name')
         teams.each {team ->
             def players = Player.where {teams {id == team.id}}.list()
-            def score = players.sum {it.score}
+            // the score is the sum of all players and all games they play in
+            def score = players.sum {it.overallScore()}
             team.metaClass.getTeamScore << {score}
             team.metaClass.getTeamSize << {players.size()}
         }

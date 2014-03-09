@@ -89,12 +89,12 @@ class CleanupService
         return players.size()
     }
 
-    def fixPlayerGameRankings() {
+/*    def fixPlayerGameRankings() {
         Player.list().each {
             log.info "Updating player ${it}"
             it.applyRank(Version.AE2012, it.rank)
             it.applyScore(Version.AE2012, it.score)
             it.applySkill(Version.AE2012, it.skill)
         }
-    }
+    }*/
 }

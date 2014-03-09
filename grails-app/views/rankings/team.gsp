@@ -68,7 +68,7 @@
             </g:link>
           </g:if>
         </td>
-        <td>${player.score}</td>
+        <td>${player.overallScore()}</td>
         <g:if test="${session.user != null}">
           <td><g:link controller="result" action="show" params="['id': player.id]">[Update result as admin]</g:link></td>
         </g:if>

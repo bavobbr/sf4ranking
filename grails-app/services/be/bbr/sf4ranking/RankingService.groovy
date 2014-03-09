@@ -80,8 +80,8 @@ class RankingService
                 else 0
             }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
-            p.score = (bestof.sum() as Integer)?: 0
-            p.applyScore(game, p.score)
+            def score = (bestof.sum() as Integer)?: 0
+            p.applyScore(game, score)
             p.save(failOnError: true)
             log.info "Saved player $p"
         }

@@ -13,6 +13,8 @@ import be.bbr.sf4ranking.Version
 import be.bbr.sf4ranking.WeightingType
 import grails.converters.JSON
 
+import static be.bbr.sf4ranking.Version.AE2012
+
 /**
  * Controller for data manipulation
  * Allows to import/export static data, import new tournaments, update rankings, scores and weights
@@ -216,7 +218,7 @@ class AdminController
         else
         {
             log.info("Looking for unranked player")
-            players = Player.findAllBySkillLessThanEquals(0)
+            players = Player.list().findAll { it.overallScore() <= 0 }
         }
         def listing = players.collect {it.name}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
@@ -224,8 +226,8 @@ class AdminController
 
     def printPlayerRanks()
     {
-        List players = Player.list(order: "desc", sort: 'score')
-        def listing = players.collect { Player p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
+        List players = Player.list().sort { a, b -> b.score(AE2012) <=> a.score(AE2012)}
+        def listing = players.collect { Player p -> "${p.rank(AE2012)}, ${p.name}, ${p.score(AE2012)}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
