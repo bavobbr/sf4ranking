@@ -41,29 +41,37 @@ class AdminController
 
     def initializeTournamentWeights()
     {
-        def num = rankingService.updateWeights()
-        flash.message = "Updated weight of $num tournaments"
+        def sum = Version.values().inject(0) { result, game ->
+            result + rankingService.updateWeights(game)
+        }
+        flash.message = "Updated weight of $sum tournaments"
         render view: "index"
     }
 
     def updateTournamentTypes()
     {
-        def num = rankingService.updateTypes()
-        flash.message = "Updated type of $num tournaments"
+        def sum = Version.values().inject(0) { result, game ->
+            result + rankingService.updateTypes(game)
+        }
+        flash.message = "Updated type of $sum tournaments"
         render view: "index"
     }
 
     def updatePlayerScores()
     {
-        def num = rankingService.updatePlayerScore()
-        flash.message = "Updated score of $num players"
+        def sum = Version.values().inject(0) { result, game ->
+            result + rankingService.updatePlayerScores(game)
+        }
+        flash.message = "Updated score of $sum players"
         render view: "index"
     }
 
     def updatePlayerRank()
     {
-        def num = rankingService.updatePlayerRank()
-        flash.message = "Updated rank of $num players"
+        def sum = Version.values().inject(0) { result, game ->
+            result + rankingService.updatePlayerRank(game)
+        }
+        flash.message = "Updated rank of $sum players"
         render view: "index"
     }
 
@@ -189,6 +197,11 @@ class AdminController
     def dropUnrankedPlayers() {
         def num = cleanupService.dropUnrankedUsers()
         flash.message = "Dropped $num players"
+        render view: "index"
+    }
+
+    def fixPlayerGameRankings() {
+        cleanupService.fixPlayerGameRankings()
         render view: "index"
     }
 

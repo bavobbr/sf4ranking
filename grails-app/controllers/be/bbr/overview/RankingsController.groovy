@@ -27,7 +27,7 @@ class RankingsController
 
         def players = queryService.findPlayers(pchar, pcountry, pmax, poffset)
         def playercount = queryService.countPlayers(pchar, pcountry)
-        println "getAll gave ${players.size()} players out of ${playercount}"
+        log.info "getAll gave ${players.size()} players out of ${playercount}"
 
         def countrynames = queryService.getActiveCountryNames()
         // list all characters for the filter box

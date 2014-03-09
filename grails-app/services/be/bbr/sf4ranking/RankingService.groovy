@@ -14,17 +14,18 @@ class RankingService
      * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
      * Only applied when weighting is set as AUTO, otherwise the weight is static per supplied tournament type
      */
-    Integer updateWeights()
+    Integer updateWeights(Version game)
     {
-        def tournaments = Tournament.list()
+        def tournaments = Tournament.findAllByGame(game)
         tournaments.each {tournament ->
+            log.info "Updating tournament $tournament"
             def weight = 0
             if (tournament.weightingType == WeightingType.AUTO)
             {
-                def topresults = tournament.results.sort {a, b -> b.player.skill <=> a.player.skill}.take(8)
+                def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
                 if (topresults)
                 {
-                    Integer skillScore = topresults.sum {Result r -> r.player.skill}
+                    Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
                     weight = (skillScore as Double) / topresults.size() * 10
                 }
             }
@@ -43,9 +44,9 @@ class RankingService
      * Distribute the types for the tournaments that use AUTO weighting
      * Based on the tournament weight
      */
-    Integer updateTypes()
+    Integer updateTypes(Version game)
     {
-        def tournaments = Tournament.findAllByWeightingType(WeightingType.AUTO).sort {a, b -> b.weight <=> a.weight}
+        def tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
         // AUTO weighting starts from premier 5
         tournaments.each { it.tournamentType = TournamentType.UNRANKED }
         tournaments.removeAll { !it.ranked }
@@ -62,12 +63,16 @@ class RankingService
     /**
      * The player score is the sum of his best 16 tournaments in AE
      */
-    Integer updatePlayerScore()
+    Integer updatePlayerScores(Version game)
     {
         List players = Player.list()
         players.each {Player p ->
-            log.info("Evaluating player $p")
-            def results = Result.findAllByPlayer(p)
+            log.info("Evaluating player $p, looking for results")
+            def results = Result.where {
+                player == p
+                tournament.game == game
+            }.list()
+            log.info "Found ${results.size()} results"
             def scores = results.collect {
                 if (it.tournament.ranked) {
                     ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
@@ -75,8 +80,10 @@ class RankingService
                 else 0
             }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
-            p.score = bestof.sum() as Integer
-            p.save()
+            p.score = (bestof.sum() as Integer)?: 0
+            p.applyScore(game, p.score)
+            p.save(failOnError: true)
+            log.info "Saved player $p"
         }
         return players.size()
     }
@@ -85,18 +92,20 @@ class RankingService
      * The player rank is based on how he positions by score
      * If a score is equal to another player the rank is not incremented but kept equal
      */
-    Integer updatePlayerRank()
+    Integer updatePlayerRank(Version game)
     {
-        List players = Player.list(order: "desc", sort: 'score')
+        List players = Player.where { results.tournament.game == game }.list().sort { a, b -> b.score(game) <=> a.score(game) }
         def previous = 0
         def currentRank = 0
         players.eachWithIndex {Player p, Integer idx ->
-            if (p.score != previous)
+            log.info("Updating rank of player $p")
+            if (p.score(game) != previous)
             {
                 currentRank = idx + 1
             }
             p.rank = currentRank
-            previous = p.score
+            p.applyRank(game, p.rank)
+            previous = p.score(game)
         }
         return players.size()
     }

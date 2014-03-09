@@ -19,6 +19,7 @@ class QueryService
                 distinct 'id'
             }
             property("rank")
+            gt("rank",0)
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)
             {
@@ -38,6 +39,7 @@ class QueryService
             projections {
                 countDistinct 'id'
             }
+            gt("rank",0)
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)
             {

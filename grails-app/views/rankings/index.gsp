@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -56,7 +56,7 @@
             <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>
           </g:each>
         </td>
-        <td>${p.score}</td>
+        <td>${p.score(Version.AE2012)}</td>
         <td>
           <g:if test="${p.countryCode}">
             <g:link controller="rankings" action="index" params="[country: p.countryCode.name()]">

@@ -88,4 +88,13 @@ class CleanupService
         players.each { log.info "dropping player $it" }
         return players.size()
     }
+
+    def fixPlayerGameRankings() {
+        Player.list().each {
+            log.info "Updating player ${it}"
+            it.applyRank(Version.AE2012, it.rank)
+            it.applyScore(Version.AE2012, it.score)
+            it.applySkill(Version.AE2012, it.skill)
+        }
+    }
 }

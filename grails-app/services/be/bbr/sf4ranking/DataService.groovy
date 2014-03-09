@@ -34,7 +34,9 @@ class DataService
             Player p = Player.findByCodename(pname.toUpperCase())
             if (!p)
             {
-                p = new Player(name: pname, skill: 0)
+                PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: game)
+                p = new Player(name: pname)
+                p.addToRankings(playerRanking)
                 log.info("Creating player $p using chars $pcharsfield")
                 p.save(failOnError: true)
             }
@@ -77,7 +79,9 @@ class DataService
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
-            Player p = new Player(name: it.name, countryCode: cc, skill: it.skill, videos: it.videos, score: it.score, rank: it.rank, wikilink: it.wikilink, twitter: it.twitter)
+            PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: Version.AE2012)
+            Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
+            p.addToRankings(pranking)
             it.teams?.each {
                 log.info "finding team $it"
                 Team team = Team.findByCodename(it.toUpperCase())
@@ -171,14 +175,24 @@ class DataService
             def player = [:]
             player.name = it.name
             player.countryCode = it.countryCode?.name()
-            player.rank = it.rank
-            player.skill = it.skill
+            //player.rank = it.rank
+            //player.skill = it.skill
             player.videos = it.videos
             player.codename = it.codename
-            player.score = it.score
+            //player.score = it.score
             player.wikilink = it.wikilink
             player.twitter = it.twitter
             player.teams = it.teams.collect { it.codename }
+            def rankings = []
+            it.rankings.each {
+                def ranking = [:]
+                ranking.rank = it.rank
+                ranking.score = it.score
+                ranking.skill = it.skill
+                ranking.game = it.game
+                rankings << ranking
+            }
+            player.rankings = rankings
             players << player
         }
         return players

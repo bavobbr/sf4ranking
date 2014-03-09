@@ -30,7 +30,7 @@
       </g:if>
     </dd>
     <dt>Score</dt>
-    <dd>${player.score}</dd>
+    <dd>${player.rankings.score}</dd>
     <dt>Character(s)</dt>
     <dd>
       <g:each in="${chars}" var="pchar">
@@ -44,7 +44,7 @@
       </g:each>
     </dd>
     <dt>Skill Weight</dt>
-    <dd>${player.skill}</dd>
+    <dd>${player.rankings.skill}</dd>
 
     <dt>Follow</dt>
     <dd>
