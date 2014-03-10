@@ -14,6 +14,7 @@ class QueryService
      * Search for players using parameters and paging
      */
     List<Player> findPlayers(CharacterType ctype, CountryCode countryCode, Integer max, Integer offset, Version game) {
+        log.info "Looking for $max players of ctype ${ctype} from country ${countryCode} starting from $offset in game $game"
         def playerIdQuery = Player.createCriteria()
         def playerids = playerIdQuery.list(max: max, offset: offset) {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)

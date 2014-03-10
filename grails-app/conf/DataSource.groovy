@@ -22,8 +22,13 @@ environments {
     }
     test {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
+            pooled = true
+            dbCreate = "create-drop"
+            url = "jdbc:mysql://localhost/sf4rank"
+            driverClassName = "com.mysql.jdbc.Driver"
+            username = "root"
+            password = ""
         }
     }
     production {

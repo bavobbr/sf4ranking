@@ -3,7 +3,12 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - Tournaments</title>
+  <g:if test="${gamefilter}">
+  <title>Street Fighter World Ranking - ${gamefilter.value} Tournaments</title>
+  </g:if>
+  <g:else>
+    <title>Street Fighter World Ranking - Tournaments</title>
+  </g:else>
 </head>
 
 <body>

@@ -19,14 +19,22 @@ class RankingsController
      */
     def index()
     {
+        def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        [players: players, updateMessage: lastUpdateMessage]
+    }
+
+    def rank()
+    {
+        def pgame = Version.fromString(params.id)?: Version.AE2012
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
         def filtered = pchar || pcountry
 
-        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, Version.AE2012)
-        def playercount = queryService.countPlayers(pchar, pcountry, Version.AE2012)
+        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
+        def playercount = queryService.countPlayers(pchar, pcountry, pgame)
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
         def countrynames = queryService.getActiveCountryNames()
@@ -37,7 +45,7 @@ class RankingsController
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
-                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage]
+                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage, game: pgame]
     }
 
     /**
@@ -79,9 +87,10 @@ class RankingsController
      */
     def tournaments()
     {
+        def fgame = Version.fromString(params.version)
         def query = Tournament.where {
             if (params.country && !(params.country =~ "any")) countryCode == CountryCode.fromString(params.country)
-            if (params.version && !(params.version =~ "any")) game == params.version as Version
+            if (fgame) game == fgame
             if (params.type && !(params.type =~ "any")) tournamentType == params.type as TournamentType
         }
         List tournaments = query.list(order: "desc", sort: 'weight')
@@ -97,7 +106,7 @@ class RankingsController
         versions.add(0, "any version")
         def types = TournamentType.values().collect {it.name()}
         types.add(0, "any type")
-        [tournaments: tournaments, countries: countries, versions: versions, types: types]
+        [tournaments: tournaments, countries: countries, versions: versions, types: types, gamefilter: fgame]
     }
 
     /**

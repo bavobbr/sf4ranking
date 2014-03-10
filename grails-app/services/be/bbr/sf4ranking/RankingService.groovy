@@ -67,7 +67,7 @@ class RankingService
     {
         List players = Player.list()
         players.each {Player p ->
-            log.info("Evaluating player $p, looking for results")
+            log.info("Evaluating for $game player $p, looking for results")
             def results = Result.where {
                 player == p
                 tournament.game == game
@@ -83,7 +83,7 @@ class RankingService
             def score = (bestof.sum() as Integer)?: 0
             p.applyScore(game, score)
             p.save(failOnError: true)
-            log.info "Saved player $p"
+            //log.info "Saved player $p"
         }
         return players.size()
     }
@@ -95,10 +95,11 @@ class RankingService
     Integer updatePlayerRank(Version game)
     {
         List players = Player.where { results.tournament.game == game }.list().sort { a, b -> b.score(game) <=> a.score(game) }
+        log.info("Found ${players.size()} to update rank")
         def previous = 0
         def currentRank = 0
         players.eachWithIndex {Player p, Integer idx ->
-            log.info("Updating rank of player $p")
+            log.info("Updating $game rank of player $p")
             if (p.score(game) != previous)
             {
                 currentRank = idx + 1
@@ -106,6 +107,7 @@ class RankingService
             def rank = currentRank
             p.applyRank(game, rank)
             previous = p.score(game)
+            log.info("Updated rank of player $p, setting previous as $previous")
         }
         return players.size()
     }

@@ -1,3 +1,4 @@
+<%@ page import="be.bbr.sf4ranking.Version" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +92,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <g:link action="index" controller="rankings" class="navbar-brand">Shoryuken Rankings</g:link>
+        <g:link controller="rankings" class="navbar-brand">Shoryuken Rankings</g:link>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -109,9 +110,13 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><g:link action="index" controller="rankings">World Rankings</g:link></li>
-              <li><g:link action="tournaments" controller="rankings">View Tournaments</g:link></li>
-              <li><g:link action="teams" controller="rankings">View Teams</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.AE2012.name()]">World Rankings SF4:AE 2012</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.AE.name()]">World Rankings SF4:AE</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings UMvC3</g:link></li>
+              <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
+              <li><g:link action="teams" controller="rankings">View All Teams</g:link></li>
               <li class="divider"></li>
               <li><g:link action="index" controller="about">FAQ</g:link></li>
             </ul>

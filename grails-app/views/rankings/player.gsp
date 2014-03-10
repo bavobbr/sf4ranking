@@ -29,8 +29,22 @@
       </g:link>
     </g:if>
   </dd>
+  <dt>Ranks</dt>
+  <dd>
+    <g:each in="${player.rankings}" var="ranking">
+      <g:if test="${ranking.rank > 0}">
+        ${ranking.game}: ${ranking.rank},
+      </g:if>
+    </g:each>
+  </dd>
   <dt>Score</dt>
-  <dd>${player.rankings.score}</dd>
+  <dd>
+    <g:each in="${player.rankings}" var="ranking">
+      <g:if test="${ranking.score > 0}">
+        ${ranking.game}: ${ranking.score},
+      </g:if>
+    </g:each>
+  </dd>
   <dt>Character(s)</dt>
   <dd>
     <g:each in="${chars}" var="pchar">
@@ -44,7 +58,13 @@
     </g:each>
   </dd>
   <dt>Skill Weight</dt>
-  <dd>${player.rankings.skill}</dd>
+  <dd>
+    <g:each in="${player.rankings}" var="ranking">
+      <g:if test="${ranking.score > 0}">
+        ${ranking.game}: ${ranking.skill},
+      </g:if>
+    </g:each>
+  </dd>
 
   <dt>Follow</dt>
   <dd>

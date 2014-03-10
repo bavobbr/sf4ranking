@@ -13090,7 +13090,7 @@
         "wtype": "FIXED",
         "weight": 200,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -13425,7 +13425,7 @@
         "wtype": "FIXED",
         "weight": 200,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -13760,7 +13760,7 @@
         "wtype": "FIXED",
         "weight": 200,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -13935,7 +13935,7 @@
         "wtype": "FIXED",
         "weight": 190,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -14110,7 +14110,7 @@
         "wtype": "FIXED",
         "weight": 60,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -15735,7 +15735,7 @@
         "wtype": "AUTO",
         "weight": 46,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -17540,7 +17540,7 @@
         "wtype": "AUTO",
         "weight": 91,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,
@@ -17875,7 +17875,7 @@
         "wtype": "AUTO",
         "weight": 68,
         "challonge": null,
-        "ranked": false,
+        "ranked": true,
         "players": [
             {
                 "place": 1,

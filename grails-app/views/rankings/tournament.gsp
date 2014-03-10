@@ -17,6 +17,7 @@
       <th>Country</th>
       <th>Date</th>
       <th>Format</th>
+      <th>Game</th>
       <th>Weight</th>
       <th>Share</th>
     </tr>
@@ -26,6 +27,7 @@
       <td>${tournament.countryCode?.name}</td>
       <td>${tournament.date?.format("MM-yyyy")}</td>
       <td>${tournament.tournamentFormat?.value}</td>
+      <td>${tournament.game?.value}</td>
       <td>${tournament.weight}</td>
       <td>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none" data-hashtags="srkrank">Tweet</a>
