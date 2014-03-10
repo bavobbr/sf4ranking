@@ -45,8 +45,7 @@ class RankingsController
      */
     def player(Player player)
     {
-        def rankings = []
-        def old = []
+        Map rankings = Version.values().collectEntries([:]) { [it, []]}
         Set chars = [] as Set
         Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
             def tid = it.tournament.id
@@ -61,18 +60,12 @@ class RankingsController
             }
             def tvideos = it.tournament.videos
             def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
-            if (it.tournament.ranked)
-            {
-                rankings << data
-            }
-            else
-            {
-                old << data
-            }
+            rankings[it.tournament.game] << data
             chars.addAll(it.pchars*.characterType)
         }
         log.info "Rendering player ${player}"
-        render view: "player", model: [player: player, results: rankings, oldresults: old, chars: chars]
+        rankings = rankings.findAll { k, v -> v.size() > 0}
+        render view: "player", model: [player: player, results: rankings, chars: chars]
     }
 
     def playerByName()
