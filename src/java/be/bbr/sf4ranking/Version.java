@@ -27,4 +27,16 @@ public enum Version
         return null;
     }
 
+    public static Version generalize(Version game) {
+        switch (game) {
+            case VANILLA:
+            case SUPER:
+            case AE:
+            case AE2012: return Version.AE2012;
+            case MVC3:
+            case UMVC3: return Version.UMVC3;
+            default: return Version.UNKNOWN;
+        }
+    }
+
 }

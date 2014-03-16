@@ -69,7 +69,7 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
-        runtime ':twitter-bootstrap:3.0.3'
+        runtime ':twitter-bootstrap:3.1.1'
         //compile ":less-resources:1.3.3.2"
     }
 }

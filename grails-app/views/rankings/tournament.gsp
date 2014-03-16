@@ -3,7 +3,8 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - ${tournament.name} Tournament Details</title>
+  <title>Street Fighter World Ranking - ${tournament.game.value} - ${tournament.name} Tournament Details</title>
+
 </head>
 
 <body>
@@ -30,8 +31,7 @@
       <td>${tournament.game?.value}</td>
       <td>${tournament.weight}</td>
       <td>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none" data-hashtags="srkrank">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <g:render template="/templates/share"/>
       </td>
     </tr>
   </table>
@@ -106,16 +106,6 @@
   </g:each>
 </g:if>
 
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function ()
-                    {
-                      $("#datatable").tablecloth({
-                                                   theme: "default",
-                                                   striped: true,
-                                                   sortable: true,
-                                                   condensed: false
-                                                 });
-                    });
-</script>
+<g:render template="/templates/prettify"/>
 </body>
 </html>

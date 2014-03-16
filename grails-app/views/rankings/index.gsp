@@ -20,6 +20,8 @@
 </div>
 </g:if>
 
+<div class="row">
+  <div class="col-md-6">
 <div class="table-responsive">
 
   <table class="table table-striped table-hover table-condensed">
@@ -49,7 +51,6 @@
           <g:if test="${p.countryCode}">
             <g:link controller="rankings" action="rank" params="[country: p.countryCode.name()]">
               <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}" class="countryflag"/>
-              ${p.countryCode.name}
             </g:link>
           </g:if>
         </td>
@@ -57,7 +58,45 @@
     </g:each>
 
   </table></div>
+    </div>
+  <div class="col-md-6">
+    <div class="table-responsive">
 
+      <table class="table table-striped table-hover table-condensed">
+        <thead>
+        <tr>
+          <th>World Rank</th>
+          <th>Name</th>
+          <th>Team</th>
+          <th>Score</th>
+          <th>Country</th>
+        </tr>
+        </thead>
 
+        <g:each in="${mvcplayers}" var="p" status="idx">
+
+          <tr>
+
+            <td>${p.rank(Version.UMVC3)}</td>
+            <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link></td>
+            <td>
+              <g:each in="${p.teams}" var="team">
+                <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>
+              </g:each>
+            </td>
+            <td>${p.score(Version.UMVC3)}</td>
+            <td>
+              <g:if test="${p.countryCode}">
+                <g:link controller="rankings" action="rank" params="[country: p.countryCode.name()]">
+                  <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}" class="countryflag"/>
+                </g:link>
+              </g:if>
+            </td>
+          </tr>
+        </g:each>
+
+      </table></div>
+  </div>
+  </div>
 </body>
 </html>

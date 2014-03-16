@@ -2,24 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  %{--<meta name="viewport" content="width=device-width, initial-scale=1.0">--}%
   <title><g:layoutTitle/></title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <r:layoutResources/>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
-  %{--Use Tablecloth plugin--}%
-  %{--<link href="assets/css/bootstrap.css" rel="stylesheet">--}%
-  %{--<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">--}%
   <link rel="stylesheet" href="${resource(dir: 'assets/css', file: 'tablecloth.css')}" type="text/css">
   <link rel="stylesheet" href="${resource(dir: 'assets/css', file: 'prettify.css')}" type="text/css">
 
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
   <style>
   .ui-autocomplete-loading {
     background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
@@ -68,16 +65,7 @@
 <script src="${resource(dir: 'assets/js', file: 'jquery.tablesorter.min.js')}"></script>
 <script src="${resource(dir: 'assets/js', file: 'jquery.tablecloth.js')}"></script>
 
-<div id="fb-root"></div>
-<script>(function (d, s, id)
-{
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "//connect.facebook.net/nl_NL/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<g:render template="/templates/facebook"/>
 
 
 <div class="container">
@@ -165,18 +153,7 @@
             </div>
 
             <div class="col-md-4">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
-              <script>!function (d, s, id)
-              {
-                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                if (!d.getElementById(id))
-                {
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = p + '://platform.twitter.com/widgets.js';
-                  fjs.parentNode.insertBefore(js, fjs);
-                }
-              }(document, 'script', 'twitter-wjs');</script>
+              <g:render template="/templates/share"/>
             </div>
 
             <div class="col-md-4">

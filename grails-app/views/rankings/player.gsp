@@ -21,31 +21,22 @@
 <dl class="dl-horizontal player_details">
   <dt>Country</dt>
   <dd>
-    ${player.countryCode?.name}
+
     <g:if test="${player.countryCode != null}">
-      <g:link controller="rankings" action="index" params="[country: player.countryCode.name()]">
+      <g:link controller="rankings" action="rank" params="[country: player.countryCode.name()]">
+        ${player.countryCode?.name}
         <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}"
                alt="Find players from ${player.countryCode.name}"/>
       </g:link>
     </g:if>
   </dd>
-  <dt>Ranks</dt>
-  <dd>
-    <g:each in="${player.rankings}" var="ranking">
-      <g:if test="${ranking.rank > 0}">
-        ${ranking.game}: ${ranking.rank},
-      </g:if>
-    </g:each>
-  </dd>
-  <dt>Score</dt>
-  <dd>
-    <g:each in="${player.rankings}" var="ranking">
-      <g:if test="${ranking.score > 0}">
-        ${ranking.game}: ${ranking.score},
-      </g:if>
-    </g:each>
-  </dd>
-  <dt>Character(s)</dt>
+  <dt>SF4 Rank</dt>
+  <dd>${player.rank(Version.AE2012)}</dd>
+  <dt>SF4 Score</dt>
+  <dd>${player.score(Version.AE2012)}</dd>
+  <dt>SF4 Weight</dt>
+  <dd>${player.skill(Version.AE2012)}</dd>
+  <dt>SF4 Char(s)</dt>
   <dd>
     <g:each in="${chars}" var="pchar">
       <g:link action="index" controller="rankings" params="[pchar: pchar.name()]">${pchar.value}</g:link>
@@ -57,48 +48,16 @@
       <g:link mapping="teamByName" action="team" controller="rankings" params="[name: team.name]">${team.name}</g:link>
     </g:each>
   </dd>
-  <dt>Skill Weight</dt>
-  <dd>
-    <g:each in="${player.rankings}" var="ranking">
-      <g:if test="${ranking.score > 0}">
-        ${ranking.game}: ${ranking.skill},
-      </g:if>
-    </g:each>
-  </dd>
+
 
   <dt>Follow</dt>
   <dd>
-    <g:if test="${player.twitter}">
-      <a href="https://twitter.com/${player.twitter}" class="twitter-follow-button" data-show-count="false">Follow  @${player.twitter}</a>
-      <script>!function (d, s, id)
-      {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id))
-        {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + '://platform.twitter.com/widgets.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, 'script', 'twitter-wjs');</script>
-    </g:if>
+    <g:render template="/templates/follow" model="[twitter: player.twitter]"/>
   </dd>
 
   <dt>Share</dt>
   <dd>
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr" data-count="none"
-       data-hashtags="srkrank">Tweet</a>
-    <script>!function (d, s, id)
-    {
-      var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-      if (!d.getElementById(id))
-      {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }
-    }(document, 'script', 'twitter-wjs');</script>
+    <g:render template="/templates/share"/>
   </dd>
 
 </dl>
@@ -107,8 +66,12 @@
   <center>
   <h3 class="tournaments">Tournament placings <small>found [${ranking.value.size()}] ${ranking.key} tournaments for </small>${player.name}
   </h3>
+  <h4>
+  <b>Rank: </b>${player.rank(ranking.key)}
+  <b>Score: </b>${player.score(ranking.key)}
+  <b>Skill Weight: </b>${player.skill(ranking.key)}
+  </h4>
   </center>
-
   <div class="table-responsive">
     <table class="tablehead" id="datatable_${index}">
       <thead>
@@ -171,19 +134,6 @@
   </g:each>
 </g:if>
 
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function ()
-                    {
-                      $('table[id^="datatable"]').each(function (index)
-                                                               {
-                                                                 $(this).tablecloth({
-                                                                                      theme: "default",
-                                                                                      striped: true,
-                                                                                      sortable: true,
-                                                                                      condensed: false})
-                                                               })
-                    })
-
-</script>
+<g:render template="/templates/prettify"/>
 </body>
 </html>

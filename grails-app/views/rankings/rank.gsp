@@ -59,7 +59,7 @@
         <td>${p.score(game)}</td>
         <td>
           <g:if test="${p.countryCode}">
-            <g:link controller="rankings" action="index" params="[country: p.countryCode.name()]">
+            <g:link controller="rankings" action="rank" params="[country: p.countryCode.name()]">
               <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}" class="countryflag"/>
               ${p.countryCode.name}
             </g:link>
@@ -81,7 +81,7 @@
   </div>
 
   <div class="panel-body">
-    <g:form name="filter" controller="rankings" action="index" role="form" class="form-inline" method="get">
+    <g:form name="filter" controller="rankings" action="rank" role="form" class="form-inline" method="get">
       <g:select name="country" from="${countries}" class="form-control" value="${fcountry}"/>
       <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
       <button type="submit" class="btn btn-primary">Submit</button>

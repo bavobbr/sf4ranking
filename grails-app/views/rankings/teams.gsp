@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - Teams</title>
+  <title>Street Fighter World Ranking - Teams</title>
 </head>
 
 <body>
@@ -36,19 +36,7 @@
   </table>
 </div>
 
-
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function ()
-                    {
-                      $("#datatable").tablecloth({
-                                              theme: "default",
-                                              striped: true,
-                                              sortable: true,
-                                              condensed: true
-                                            });
-                    });
-</script>
-
+<g:render template="/templates/prettify"/>
 
 </body>
 </html>

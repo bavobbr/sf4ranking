@@ -70,18 +70,7 @@
 </div>
 
 
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function ()
-                    {
-                      $("#datatable").tablecloth({
-                                              theme: "default",
-                                              striped: true,
-                                              sortable: true,
-                                              condensed: true
-                                            });
-                    });
-</script>
-
+<g:render template="/templates/prettify"/>
 
 </body>
 </html>

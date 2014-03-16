@@ -20,8 +20,9 @@ class RankingsController
     def index()
     {
         def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
+        def mvcplayers = queryService.findPlayers(null, null, 10, 0, Version.UMVC3)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        [players: players, updateMessage: lastUpdateMessage]
+        [players: players, mvcplayers: mvcplayers, updateMessage: lastUpdateMessage]
     }
 
     def rank()
@@ -30,7 +31,7 @@ class RankingsController
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
-        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String)
+        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String, pgame)
         def filtered = pchar || pcountry
 
         def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
@@ -39,7 +40,7 @@ class RankingsController
 
         def countrynames = queryService.getActiveCountryNames()
         // list all characters for the filter box
-        def charnames = CharacterType.values().collect {it.name()}
+        def charnames = CharacterType.values().findAll { it.game == Version.generalize(pgame) }.collect { it.name() }
         // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
@@ -69,7 +70,9 @@ class RankingsController
             def tvideos = it.tournament.videos
             def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
             rankings[it.tournament.game] << data
-            chars.addAll(it.pchars*.characterType)
+            if (Version.generalize(it.tournament.game) == Version.AE2012) {
+                chars.addAll(it.pchars*.characterType)
+            }
         }
         log.info "Rendering player ${player}"
         rankings = rankings.findAll { k, v -> v.size() > 0}

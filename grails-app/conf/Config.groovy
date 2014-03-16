@@ -35,7 +35,7 @@ grails.mime.types = [
 //grails.urlmapping.cache.maxsize = 1000
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/less/*']
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
@@ -84,6 +84,7 @@ grails.exceptionresolver.params.exclude = ['password']
 grails.hibernate.cache.queries = false
 
 grails.plugins.twitterbootstrap.fixtaglib = true
+grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 
 environments {
     development {
@@ -121,3 +122,4 @@ log4j = {
            'net.sf.ehcache.hibernate'
     info   'be.bbr'
 }
+

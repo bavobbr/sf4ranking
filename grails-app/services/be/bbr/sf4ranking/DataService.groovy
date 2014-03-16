@@ -44,7 +44,7 @@ class DataService
             Result r = new Result(player: p, place: rank, tournament: tournament)
             boolean first = true
             pcharsfield.trim().tokenize(",").each {
-                CharacterType ctype = CharacterType.fromString(it.toUpperCase())?: CharacterType.UNKNOWN
+                CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(game))?: CharacterType.UNKNOWN
                 r.addToPchars(new GameCharacter(characterType: ctype, main: first))
                 first = false
             }
@@ -79,9 +79,12 @@ class DataService
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
-            PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: Version.AE2012)
             Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
-            p.addToRankings(pranking)
+            it.rankings.each {
+                def game = Version.fromString(it.game)
+                PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
+                p.addToRankings(pranking)
+            }
             it.teams?.each {
                 log.info "finding team $it"
                 Team team = Team.findByCodename(it.toUpperCase())
@@ -104,11 +107,13 @@ class DataService
             Boolean ranked = it.ranked?.toBoolean()?: false
             Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge, ranked: ranked)
             it.players.each {
+                log.info "Processing ${it.player}"
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 log.info "Found player $p for tournament ${tournament.name}"
                 Result result = new Result(place: it.place, player: p)
                 it.pchars.each {
-                    CharacterType ctype = it.ctype as CharacterType
+                    CharacterType ctype = CharacterType.fromString(it.ctype, Version.generalize(version))
+                    if (ctype == null) throw new RuntimeException("ctype is null for ${it.ctype} ${version}")
                     Boolean main = it.main == true
                     GameCharacter character = new GameCharacter(characterType: ctype, main: main)
                     log.info "Found character $character for player ${p.name}"
@@ -147,7 +152,6 @@ class DataService
                 def player = [:]
                 player.place = it.place
                 player.player = it.player.name
-                //player.character = it.pcharacter?.name()
                 def pchars = []
                 it.pchars.each {
                     def pchar = [:]
@@ -175,11 +179,8 @@ class DataService
             def player = [:]
             player.name = it.name
             player.countryCode = it.countryCode?.name()
-            //player.rank = it.rank
-            //player.skill = it.skill
             player.videos = it.videos
             player.codename = it.codename
-            //player.score = it.score
             player.wikilink = it.wikilink
             player.twitter = it.twitter
             player.teams = it.teams.collect { it.codename }
@@ -189,7 +190,7 @@ class DataService
                 ranking.rank = it.rank
                 ranking.score = it.score
                 ranking.skill = it.skill
-                ranking.game = it.game
+                ranking.game = it.game.name()
                 rankings << ranking
             }
             player.rankings = rankings
@@ -226,6 +227,8 @@ class DataService
         Result.list().each {it.delete()}
         Player.list().each {it.delete()}
         Tournament.list().each {it.delete()}
+        Team.list().each {it.delete()}
+
     }
 
     /**
