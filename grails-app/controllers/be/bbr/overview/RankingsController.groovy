@@ -20,9 +20,9 @@ class RankingsController
     def index()
     {
         def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
-        def mvcplayers = queryService.findPlayers(null, null, 10, 0, Version.UMVC3)
+        def kiplayers = queryService.findPlayers(null, null, 10, 0, Version.KI)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        [players: players, mvcplayers: mvcplayers, updateMessage: lastUpdateMessage]
+        [players: players, kiplayers: kiplayers, updateMessage: lastUpdateMessage]
     }
 
     def rank()
@@ -31,8 +31,9 @@ class RankingsController
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
-        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String, pgame)
+        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
         def filtered = pchar || pcountry
+        log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered"
 
         def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
         def playercount = queryService.countPlayers(pchar, pcountry, pgame)

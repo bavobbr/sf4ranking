@@ -50,6 +50,7 @@
       <th>Score</th>
       <g:if test="${session.user != null}">
         <th>Edit</th>
+        <th>Edit</th>
       </g:if>
     </tr>
     </thead>
@@ -77,7 +78,8 @@
         </td>
         <td>${result.rscore}</td>
         <g:if test="${session.user != null}">
-          <td><g:link controller="result" action="show" params="['id': result.resultid]">[Update result as admin]</g:link></td>
+          <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result as admin]</g:link></td>
+          <td><g:link controller="player" action="edit" params="['id': result.rplayerid]">[Update player as admin]</g:link></td>
         </g:if>
       </tr>
     </g:each>

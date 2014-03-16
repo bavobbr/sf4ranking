@@ -96,7 +96,14 @@ public enum CharacterType
     TASKMASTER("TASKMASTER", "Taskmaster", Version.UMVC3),
     THOR("THOR", "Thor", Version.UMVC3),
     WOLVERINE("WOLVERINE", "Wolverine", Version.UMVC3),
-    X_23("X23", "X-23", Version.UMVC3);
+    X_23("X23", "X-23", Version.UMVC3),
+
+    GLACIUS("GLACIUS", "Glacius", Version.KI),
+    JAGO("JAGO", "Jago", Version.KI),
+    ORCHID("ORCHID", "Orchid", Version.KI),
+    SABREWULF("SABREWULF", "Sabrewulf", Version.KI),
+    SADIRA("SADIRA", "Sadira", Version.KI),
+    THUNDER("THUNDER", "Thunder", Version.KI);
 
 
     private final String value;
@@ -120,6 +127,9 @@ public enum CharacterType
     public static CharacterType fromString(String input, Version game) {
         if (input == null || input.length() == 0 || game == null) return null;
         input = input.trim();
+        if (input.toLowerCase().equals("unknown")) {
+            return CharacterType.UNKNOWN;
+        }
         CharacterType[] characterTypes = CharacterType.values();
         for (CharacterType ct : characterTypes)
             if (game.equals(ct.game) && (ct.shortname.toLowerCase().equals(input.toLowerCase()) || ct.name().toLowerCase().equals(input.toLowerCase()))) {

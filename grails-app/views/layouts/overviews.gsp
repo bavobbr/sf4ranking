@@ -95,18 +95,20 @@
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <li><g:link action="index" controller="rankings">Overview</g:link></li>
+              <li class="divider"></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE2012.name()]">World Rankings SF4:AE 2012</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE.name()]">World Rankings SF4:AE</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
-              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings UMvC3</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings KI</g:link></li>
+              <li class="divider"></li>
               <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
               <li><g:link action="teams" controller="rankings">View All Teams</g:link></li>
-              <li class="divider"></li>
-              <li><g:link action="index" controller="about">FAQ</g:link></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -119,6 +121,7 @@
               <li><a href="http://www.shoryuken.com">Shoryuken.com</a></li>
             </ul>
           </li>
+          <li><g:link action="index" controller="about">FAQ</g:link></li>
           <g:if test="${session.user != null}">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
@@ -144,6 +147,7 @@
 
       <div class="starter-template">
         <g:layoutBody/>
+        <br/>
 
 
         <div class="footer">

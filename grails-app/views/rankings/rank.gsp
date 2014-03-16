@@ -3,17 +3,17 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - ${game.value}</title>
+  <title>World Rankings - ${game.value}</title>
 </head>
 
 <body>
 <g:if test="${filtered}">
-  <center><h2 class="title-filtered">Street Fighter World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
+  <center><h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
   	<h4 class="subtitle">rank.shoryuken.com</h4></center>
 </g:if>
 <g:else>
   <center>
-  	<h2 class="title">Street Fighter World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
+  	<h2 class="title">${game.value} World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
   	<h4 class="subtitle">rank.shoryuken.com</h4>
   </center>
 </g:else>
@@ -72,7 +72,7 @@
   </table></div>
 
 <div id="pagination">
-  <g:paginate total="${total}" controller="rankings" action="index" max="50" params="[country: params.country, pchar: params.pchar]"/>
+  <g:paginate total="${total}" controller="rankings" action="rank" max="50" params="[country: params.country, pchar: params.pchar, id: game.name()]"/>
 </div>
 
 <div class="panel panel-info">
@@ -84,6 +84,7 @@
     <g:form name="filter" controller="rankings" action="rank" role="form" class="form-inline" method="get">
       <g:select name="country" from="${countries}" class="form-control" value="${fcountry}"/>
       <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
+      <g:hiddenField name="id" value="${game.name()}"/>
       <button type="submit" class="btn btn-primary">Submit</button>
     </g:form>
   </div>
