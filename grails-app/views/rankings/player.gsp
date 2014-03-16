@@ -110,7 +110,7 @@
             <td>
               <g:if test="${result.tchars}">
                 <g:each in="${result.tchars}" var="tchar">
-                  <g:link action="rank" controller="rankings" params="[pchar: tchar.name()]">
+                  <g:link action="rank" controller="rankings" params="[pchar: tchar.name(), id: ranking.key.name()]">
                     <g:img dir="images/chars" file="${tchar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${tchar.value}"
                            title="${tchar.value}"
                            class="charimg"/>
