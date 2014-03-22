@@ -3,11 +3,11 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <g:if test="${gamefilter}">
-  <title>Street Fighter World Ranking - ${gamefilter.value} Tournaments</title>
+  <g:if test="${game}">
+  <title>Fighting Games World Rankings - ${game.value} Tournaments</title>
   </g:if>
   <g:else>
-    <title>Street Fighter World Ranking - Tournaments</title>
+    <title>Fighting Games World Rankings - Tournaments</title>
   </g:else>
 </head>
 
@@ -62,7 +62,7 @@
   <div class="panel-body">
     <g:form name="filter" controller="rankings" action="tournaments" role="form" class="form-inline" method="get">
       <g:select name="country" from="${countries}" class="form-control"/>
-      <g:select name="version" from="${versions}" class="form-control"/>
+      <g:select name="id" from="${versions}" class="form-control"/>
       <g:select name="type" from="${types}" class="form-control"/>
       <button type="submit" class="btn btn-primary">Submit</button>
     </g:form>

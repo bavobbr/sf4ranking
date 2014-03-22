@@ -48,8 +48,8 @@ class RankingService
     {
         def tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
         // AUTO weighting starts from premier 5
-        tournaments.each { it.tournamentType = TournamentType.UNRANKED }
-        tournaments.removeAll { !it.ranked }
+        tournaments.each {it.tournamentType = TournamentType.UNRANKED}
+        tournaments.removeAll {!it.ranked}
         applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
         applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
         applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
@@ -74,13 +74,14 @@ class RankingService
             }.list()
             log.info "Found ${results.size()} results"
             def scores = results.collect {
-                if (it.tournament.ranked) {
+                if (it.tournament.ranked)
+                {
                     ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
                 }
                 else 0
             }.sort {a, b -> b <=> a}
             def bestof = scores.take(16)
-            def score = (bestof.sum() as Integer)?: 0
+            def score = (bestof.sum() as Integer) ?: 0
             p.applyScore(game, score)
             p.save(failOnError: true)
             //log.info "Saved player $p"
@@ -94,7 +95,7 @@ class RankingService
      */
     Integer updatePlayerRank(Version game)
     {
-        List players = Player.where { results.tournament.game == game }.list().sort { a, b -> b.score(game) <=> a.score(game) }
+        List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
         log.info("Found ${players.size()} to update rank")
         def previous = 0
         def currentRank = 0
@@ -112,6 +113,33 @@ class RankingService
         return players.size()
     }
 
+    /**
+     * The player rank is based on how he positions by score
+     * If a score is equal to another player the rank is not incremented but kept equal
+     */
+    Integer updateMainCharacters(Version game)
+    {
+        List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
+        log.info("Found ${players.size()} to update main")
+        players.each {Player p ->
+            PlayerRanking ranking = p.rankings.find {it.game == game}
+            if (ranking)
+            {
+                def filteredResults = p.results.findAll {it.tournament.game == game}
+                def chars = filteredResults.collect {Result r -> r.pchars*.characterType}.flatten()
+                def countedGroup = chars.countBy {it.name()}
+                log.info "Counts is $countedGroup"
+                def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
+                def main = sortedGroup.keySet().first()
+                log.info "applying main $main"
+                ranking.mainCharacter = main
+                ranking.save()
+            }
+
+        }
+        return players.size()
+    }
+
     private void applyType(List tournaments, TournamentType type, int start, int amount)
     {
         if (start > tournaments.size() - 1) return
@@ -121,13 +149,15 @@ class RankingService
     }
 
 
-    private List playerScoresAt(Date date) {
+    private List playerScoresAt(Date date)
+    {
         List playerScores = []
         List players = Player.list(readOnly: true)
-        players.each { Player p ->
+        players.each {Player p ->
             def results = Result.findAllByPlayer(p, [readOnly: true])
             def scores = results.collect {
-                if (it.tournament.ranked && it.tournament.date.before(date)) {
+                if (it.tournament.ranked && it.tournament.date.before(date))
+                {
                     ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
                 }
                 else 0
@@ -144,11 +174,12 @@ class RankingService
         return playerScores
     }
 
-    List playerRanksAt(Date date) {
-        def sortedPlayers = playerScoresAt(date).sort { a, b -> b.score <=> a.score }
+    List playerRanksAt(Date date)
+    {
+        def sortedPlayers = playerScoresAt(date).sort {a, b -> b.score <=> a.score}
         def previous = 0
         def currentRank = 0
-        sortedPlayers.eachWithIndex { p, Integer idx ->
+        sortedPlayers.eachWithIndex {p, Integer idx ->
             if (p.score != previous)
             {
                 currentRank = idx + 1

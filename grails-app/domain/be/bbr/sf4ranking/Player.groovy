@@ -46,6 +46,10 @@ class Player
         return rankings.find { it.game == game }?.score?: 0
     }
 
+    CharacterType main(Version game) {
+        return rankings.find { it.game == game }?.mainCharacter?: CharacterType.UNKNOWN
+    }
+
     void applyScore(Version game, Integer score)
     {
         findOrCreateRanking(game).score = score

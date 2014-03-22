@@ -82,8 +82,10 @@ class DataService
             Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
             it.rankings.each {
                 def game = Version.fromString(it.game)
-                PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
-                p.addToRankings(pranking)
+                if (game && it.rank && it.score) {
+                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
+                    p.addToRankings(pranking)
+                }
             }
             it.teams?.each {
                 log.info "finding team $it"
@@ -110,6 +112,11 @@ class DataService
                 log.info "Processing ${it.player}"
                 Player p = Player.findByCodename(it.player.toUpperCase())
                 log.info "Found player $p for tournament ${tournament.name}"
+                if (!p) {
+                    log.warn("Creating player ad hoc $it")
+                    p = new Player(name: it.player, countryCode: null)
+                    p.save(failOnError: true)
+                }
                 Result result = new Result(place: it.place, player: p)
                 it.pchars.each {
                     CharacterType ctype = CharacterType.fromString(it.ctype, Version.generalize(version))

@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - ${team.name} Team Details</title>
+  <title>Fighting Games World Rankings - ${team.name} Team Details</title>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
         <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: player.name]">${player.name}</g:link></td>
         <td>
           <g:if test="${player.countryCode != null}">
-            <g:link controller="rankings" action="index" params="[country: player.countryCode.name()]">
+            <g:link controller="rankings" action="rank" params="[country: player.countryCode.name()]">
               <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}" class="countryflag"/>
               ${player.countryCode.name}
             </g:link>

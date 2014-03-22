@@ -77,6 +77,16 @@ class AdminController
         render view: "index"
     }
 
+    def updateMainCharacters()
+    {
+        def sum = Version.values().inject(0) { result, game ->
+            result + rankingService.updateMainCharacters(game)
+        }
+        flash.message = "Updated char of $sum players"
+        render view: "index"
+    }
+
+
     /**
      * Manual data import and manipulation
      */

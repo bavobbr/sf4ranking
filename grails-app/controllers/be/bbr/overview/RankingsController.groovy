@@ -19,10 +19,11 @@ class RankingsController
      */
     def index()
     {
-        def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
-        def kiplayers = queryService.findPlayers(null, null, 10, 0, Version.KI)
+        def players = queryService.findPlayers(null, null, 20, 0, Version.AE2012)
+        def kiplayers = queryService.findPlayers(null, null, 20, 0, Version.KI)
+        def sgplayers = queryService.findPlayers(null, null, 20, 0, Version.SKULLGIRLS)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        [players: players, kiplayers: kiplayers, updateMessage: lastUpdateMessage]
+        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, updateMessage: lastUpdateMessage]
     }
 
     def rank()
@@ -91,7 +92,7 @@ class RankingsController
      */
     def tournaments()
     {
-        def fgame = Version.fromString(params.version)
+        def fgame = Version.fromString(params.id)
         def query = Tournament.where {
             if (params.country && !(params.country =~ "any")) countryCode == CountryCode.fromString(params.country)
             if (fgame) game == fgame
@@ -110,7 +111,7 @@ class RankingsController
         versions.add(0, "any version")
         def types = TournamentType.values().collect {it.name()}
         types.add(0, "any type")
-        [tournaments: tournaments, countries: countries, versions: versions, types: types, gamefilter: fgame]
+        [tournaments: tournaments, countries: countries, versions: versions, types: types, game: fgame]
     }
 
     /**

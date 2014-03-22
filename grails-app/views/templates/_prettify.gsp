@@ -4,7 +4,7 @@
                       $('table[id^="datatable"]').each(function (index)
                                                        {
                                                          $(this).tablecloth({
-                                                                              theme: "stats",
+                                                                              theme: "default",
                                                                               striped: true,
                                                                               sortable: true,
                                                                               condensed: false})
@@ -15,7 +15,7 @@
                       $('table[id^="infotable"]').each(function (index)
                                                        {
                                                          $(this).tablecloth({
-                                                                              theme: "stats",
+                                                                              theme: "default",
                                                                               striped: true,
                                                                               sortable: true,
                                                                               condensed: false})

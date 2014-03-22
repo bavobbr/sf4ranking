@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - Teams</title>
+  <title>Fighting Games World Rankings - Teams</title>
 </head>
 
 <body>

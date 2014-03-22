@@ -105,10 +105,23 @@
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE.name()]">World Rankings SF4:AE</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
-              <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings KI</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
+              <li class="divider"></li>
+              <li><g:link action="teams" controller="rankings">View All Teams</g:link></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE2012.name()]">SF4:AE 2012</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE.name()]">SF4:AE</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.SUPER.name()]">SSF4</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.VANILLA.name()]">SF4</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
               <li class="divider"></li>
               <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
-              <li><g:link action="teams" controller="rankings">View All Teams</g:link></li>
             </ul>
           </li>
           <li class="dropdown">

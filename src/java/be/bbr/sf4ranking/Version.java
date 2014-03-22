@@ -13,7 +13,7 @@ public enum Version
     USF4("Ultra SF4"),
     MVC3("Marvel vs Capcom 3"),
     UMVC3("Ultimate Marvel vs Capcom 3"),
-    KI("Killer Instinct");
+    KI("Killer Instinct"), SKULLGIRLS("Skullgirls");
 
     private String value;
 
@@ -53,6 +53,8 @@ public enum Version
                 return Version.UMVC3;
             case KI:
                 return Version.KI;
+            case SKULLGIRLS:
+                return Version.SKULLGIRLS;
             default:
                 return Version.UNKNOWN;
         }

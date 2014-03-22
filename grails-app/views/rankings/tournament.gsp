@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - ${tournament.game.value} - ${tournament.name} Tournament Details</title>
+  <title>Fighting Games World Rankings - ${tournament.game.value} - ${tournament.name} Tournament Details</title>
 
 </head>
 
@@ -61,7 +61,7 @@
         <td>
           <g:if test="${result.rchars}">
             <g:each in="${result.rchars}" var="rchar">
-            <g:link action="index" controller="rankings" params="[pchar: rchar.name()?.toLowerCase()]">
+            <g:link action="rank" controller="rankings" params="[pchar: rchar.name()?.toLowerCase(), id: tournament.game.name()]">
               <g:img dir="images/chars" file="${rchar.name()?.toLowerCase() + '.png'}" width="22" height="25" alt="${rchar.name()}"
                      title="${rchar.name()}" class="charimg"/>
             </g:link>
@@ -97,15 +97,16 @@
 
 <g:if test="${tournament.videos}">
   <h2>Tournament videos <small>found ${tournament.videos.size()} videos</small></h2>
-  <g:each in="${tournament.videos}" var="video">
-    <section class="row">
-      <div class="span6">
-        <div class="flex-video widescreen"><iframe width="280" height="157" src="//www.youtube.com/embed/${video}" frameborder="0"
-                                                   allowfullscreen></iframe></div>
+  <div class="row">
+    <g:each in="${tournament.videos}" var="video">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/${video}" frameborder="0"
+                                                     allowfullscreen></iframe></div>
+        </a>
       </div>
-
-    </section>
-  </g:each>
+    </g:each>
+  </div>
 </g:if>
 
 <g:render template="/templates/prettify"/>

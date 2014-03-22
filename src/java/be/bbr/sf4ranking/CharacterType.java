@@ -103,7 +103,22 @@ public enum CharacterType
     ORCHID("ORCHID", "Orchid", Version.KI),
     SABREWULF("SABREWULF", "Sabrewulf", Version.KI),
     SADIRA("SADIRA", "Sadira", Version.KI),
-    THUNDER("THUNDER", "Thunder", Version.KI);
+    THUNDER("THUNDER", "Thunder", Version.KI),
+
+    BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
+    CEREBELLA("CEREBELLA", "Cerebella", Version.SKULLGIRLS),
+    DOUBLE("DOUBLE", "Double", Version.SKULLGIRLS),
+    FILIA("FILIA", "Filia", Version.SKULLGIRLS),
+    MS_FORTUNE("FORTUNE", "Ms Fortune", Version.SKULLGIRLS),
+    PAINWHEEL("PAINWHEEL", "Painwheel", Version.SKULLGIRLS),
+    PARASOUL("PARASOUL", "Parasoul", Version.SKULLGIRLS),
+    PEACOCK("PEACOCK", "Peacock", Version.SKULLGIRLS),
+    SQUIGLY("SQUIGLY", "Squigly", Version.SKULLGIRLS),
+    VALENTINE("VALENTINE", "Valentine", Version.SKULLGIRLS),
+    ELIZA("ELIZA", "Eliza", Version.SKULLGIRLS),
+    BEOWULF("BEOWULF", "Beowulf", Version.SKULLGIRLS),
+    ROBO_FORTUNE("ROBO", "Robo Fortune", Version.SKULLGIRLS);
+
 
 
     private final String value;

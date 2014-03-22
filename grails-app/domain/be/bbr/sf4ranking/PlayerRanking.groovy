@@ -11,6 +11,7 @@ class PlayerRanking
         score nullable: false
         rank nullable: false
         skill range: 0..10
+        mainCharacter nullable: false
 
     }
 
@@ -23,6 +24,7 @@ class PlayerRanking
     Integer skill = 0
     Integer score = 0
     Integer rank = 0
+    CharacterType mainCharacter = CharacterType.UNKNOWN
 
     static belongsTo = [player:Player]
 

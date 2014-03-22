@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>World Rankings - ${game.value}</title>
+  <title>Fighting Games World Rankings - ${game.value}</title>
 </head>
 
 <body>
@@ -38,6 +38,7 @@
       <th>World Rank</th>
       <th>Name</th>
       <th>Team</th>
+      <th>Character</th>
       <th>Score</th>
       <th>Country</th>
     </tr>
@@ -56,10 +57,18 @@
             <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>
           </g:each>
         </td>
+        <td>
+          <g:link action="rank" controller="rankings" params="[pchar: p.main(game), id: game.name()]">
+            <g:img dir="images/chars" file="${p.main(game).name().toLowerCase() + '.png'}" width="22" height="25" alt="${p.main(game).value}"
+                   title="${p.main(game).value}"
+                   class="charimg"/>
+            ${p.main(game).value}
+          </g:link>
+        </td>
         <td>${p.score(game)}</td>
         <td>
           <g:if test="${p.countryCode}">
-            <g:link controller="rankings" action="rank" params="[country: p.countryCode.name()]">
+            <g:link controller="rankings" action="rank" params="[country: p.countryCode.name(), id: game.name()]">
               <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}" class="countryflag"/>
               ${p.countryCode.name}
             </g:link>
