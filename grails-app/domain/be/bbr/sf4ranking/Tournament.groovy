@@ -1,8 +1,6 @@
 package be.bbr.sf4ranking
 
-import groovy.transform.ToString
 
-@ToString(includePackage = false, ignoreNulls = true)
 class Tournament
 {
 
@@ -37,5 +35,9 @@ class Tournament
 
     def beforeInsert() {
         codename = name.toUpperCase()
+    }
+
+    public String toString() {
+        return "$name, $countryCode, ${game.name()}"
     }
 }

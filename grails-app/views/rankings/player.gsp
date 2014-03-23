@@ -40,11 +40,11 @@
     </dd>
     <dt>Follow</dt>
     <dd>
-      <g:render template="/templates/follow" model="[twitter: player.twitter]"/>
+      <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
     </dd>
     <dt>Share</dt>
     <dd>
-      <g:render template="/templates/share"/>
+      <g:render template="/templates/share"/>&NonBreakingSpace;
     </dd>
     <dt>SF4 Char(s)</dt>
     <dd>

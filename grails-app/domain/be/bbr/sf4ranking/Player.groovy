@@ -1,8 +1,6 @@
 package be.bbr.sf4ranking
 
-import groovy.transform.ToString
 
-@ToString(includePackage = false, ignoreNulls = true)
 class Player
 {
     static constraints = {
@@ -52,12 +50,15 @@ class Player
 
     void applyScore(Version game, Integer score)
     {
-        findOrCreateRanking(game).score = score
+        if (score > 0) findOrCreateRanking(game).score = score
+        else findOrDeleteRanking(game)
+
     }
 
     void applyRank(Version game, Integer rank)
     {
-        findOrCreateRanking(game).rank = rank
+        if (rank > 0) findOrCreateRanking(game).rank = rank
+        else findOrDeleteRanking(game)
     }
 
     void applySkill(Version game, Integer skill)
@@ -69,12 +70,23 @@ class Player
         def ranking = rankings.find { it.game == game }
         if (!ranking) {
             ranking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: game)
-            this.addToRankings(ranking)
+            this.removeFromRankings(ranking)
         }
         return ranking
     }
 
+    void findOrDeleteRanking(Version game) {
+        def ranking = rankings.find { it.game == game }
+        if (ranking) {
+            this.removeFromRankings(ranking)
+        }
+    }
+
     Integer overallScore() {
         return Version.values().inject(0) { result, item -> result + score(item) }
+    }
+
+    public String toString() {
+        return "$name, $countryCode, ${rankings.size()}"
     }
 }

@@ -58,6 +58,13 @@
                                             });
       });
   </script>
+  <script>
+
+    jQuery(function ($) {
+      $("a").tooltip()
+    });
+
+  </script>
 </head>
 
 <body>

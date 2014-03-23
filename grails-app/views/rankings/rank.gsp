@@ -58,9 +58,8 @@
           </g:each>
         </td>
         <td>
-          <g:link action="rank" controller="rankings" params="[pchar: p.main(game), id: game.name()]">
+          <g:link action="rank" controller="rankings" params="[pchar: p.main(game), id: game.name()]" data-toggle="tooltip" data-placement="top" title="Filter on character ${p.main(game).value}">
             <g:img dir="images/chars" file="${p.main(game).name().toLowerCase() + '.png'}" width="22" height="25" alt="${p.main(game).value}"
-                   title="${p.main(game).value}"
                    class="charimg"/>
             ${p.main(game).value}
           </g:link>
@@ -68,8 +67,8 @@
         <td>${p.score(game)}</td>
         <td>
           <g:if test="${p.countryCode}">
-            <g:link controller="rankings" action="rank" params="[country: p.countryCode.name(), id: game.name()]">
-              <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" alt="Find players from ${p.countryCode.name}" class="countryflag"/>
+            <g:link controller="rankings" action="rank" params="[country: p.countryCode.name(), id: game.name()]" data-toggle="tooltip" data-placement="top" title="Find players from ${p.countryCode.name}">
+              <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}" class="countryflag"/>
               ${p.countryCode.name}
             </g:link>
           </g:if>

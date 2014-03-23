@@ -82,8 +82,9 @@ class DataService
             Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
             it.rankings.each {
                 def game = Version.fromString(it.game)
+                def main = CharacterType.fromString(it.main, game)?: CharacterType.UNKNOWN
                 if (game && it.rank && it.score) {
-                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
+                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game, mainCharacter: main)
                     p.addToRankings(pranking)
                 }
             }
@@ -197,6 +198,7 @@ class DataService
                 ranking.rank = it.rank
                 ranking.score = it.score
                 ranking.skill = it.skill
+                ranking.main = it.mainCharacter?.name()
                 ranking.game = it.game.name()
                 rankings << ranking
             }
