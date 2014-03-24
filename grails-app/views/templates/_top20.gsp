@@ -1,5 +1,5 @@
 <%@ page import="be.bbr.sf4ranking.Version" %>
-<h4>${game.value} Top 20</h4>
+<h4>${game.value} Top 10</h4>
 <div class="table-responsive">
   <table class="table table-striped table-hover table-condensed">
     <thead>
@@ -44,4 +44,4 @@
       </tr>
     </g:each>
   </table></div>
-<g:link action="rank" controller="rankings" params="['id': game.name()]">View all ${game.value} World Rankings</g:link>
+<g:link action="rank" controller="rankings" params="['id': game.name()]">View complete ${game.value} World Rankings</g:link>

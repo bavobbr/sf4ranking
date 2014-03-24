@@ -19,9 +19,9 @@ class RankingsController
      */
     def index()
     {
-        def players = queryService.findPlayers(null, null, 20, 0, Version.AE2012)
-        def kiplayers = queryService.findPlayers(null, null, 20, 0, Version.KI)
-        def sgplayers = queryService.findPlayers(null, null, 20, 0, Version.SKULLGIRLS)
+        def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
+        def kiplayers = queryService.findPlayers(null, null, 10, 0, Version.KI)
+        def sgplayers = queryService.findPlayers(null, null, 10, 0, Version.SKULLGIRLS)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         [players: players, kiplayers: kiplayers, sgplayers: sgplayers, updateMessage: lastUpdateMessage]
     }

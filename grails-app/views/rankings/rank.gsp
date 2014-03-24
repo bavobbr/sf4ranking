@@ -19,11 +19,10 @@
 </g:else>
 
 
-<g:if test="${updateMessage}">
+<g:if test="${game == Version.SKULLGIRLS || game == Version.KI}">
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <g:message message="${updateMessage}"/>
-
+  We are looking to extend this list further with international tournament data! You can contribute results and corrections using the links on top. Thanks!
 </div>
 </g:if>
 
