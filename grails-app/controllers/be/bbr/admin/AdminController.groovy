@@ -12,6 +12,7 @@ import be.bbr.sf4ranking.TournamentType
 import be.bbr.sf4ranking.Version
 import be.bbr.sf4ranking.WeightingType
 import grails.converters.JSON
+import groovy.xml.MarkupBuilder
 
 import static be.bbr.sf4ranking.Version.AE2012
 
@@ -114,10 +115,26 @@ class AdminController
         CountryCode tcountry = CountryCode.fromString(params.tcountry)
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
+        String coverage = params.tcoverage
         List tvideos = params.tvideos.tokenize(" ")
         Boolean tranked = params.tranked?.toBoolean()?: true
-        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked)
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
+    }
+
+    def validateResults() {
+        def content = params.content
+        def game = Version.fromString(params.game)
+        List<String> feedback = dataService.validateResults(content, game)
+        log.info "rendering $feedback"
+        render(contentType: "text/html") {
+            div {
+                feedback.each {
+                    p(it)
+                }
+            }
+        }
+        log.info "rendered $feedback"
     }
 
     def importServerSideData()

@@ -14,6 +14,32 @@
 </head>
 
 <body>
+<script>
+  $(function ()
+    {
+      $("#dialog").dialog({
+                            autoOpen: false,
+                            modal: true,
+                            height: 400,
+                            width: 400
+                          });
+      $("#opener").click(function ()
+                         {
+                           $.ajax({
+
+                                    url: "${createLink(action: 'validateResults', controller: 'admin')}",
+                                    type: "POST",
+                                    data: {content: $('textarea#tresults').val(), game: $('#tgame').val()},
+                                    success: function (data)
+                                    {
+                                      $("#dialog").html(data);
+                                      $("#dialog").dialog("open");
+                                    }
+                                  });
+                         });
+    });
+</script>
+
 <h2>Admin import new tournament</h2>
 <g:if test="${flash.message}">
   <div class="message" role="status">${flash.message}</div>
@@ -60,13 +86,26 @@
   </div>
 
   <div class="form-group">
+    <label for="tcoverage">Link to SRK (full link)</label>
+    <g:textField name="tcoverage" class="form-control" placeholder=""/>
+  </div>
+
+  <div class="form-group">
     <label for="tresults">Results (1 up to 32 max, mouse over for tips. Make sure the character name matches a known character type)</label>
     <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player / CODY"
                 title="${hint}"/>
+    <button type="button" id="opener" class="btn btn-primary">Validate</button>
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </g:form>
 <br/>
+
+<div id="dialog" title="Basic dialog">
+  <p></p>
+</div>
+
+
+
 </body>
 
 </html>

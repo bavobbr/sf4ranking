@@ -16,7 +16,7 @@ class DataService
      * Uses a specific results entry format to speed up data entry
      */
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos, WeightingType wtype, TournamentType type, Boolean ranked)
+                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage)
     {
         if (wtype == WeightingType.AUTO) type = null
         else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
@@ -25,35 +25,81 @@ class DataService
             ranked = false
             wtype = WeightingType.AUTO
         }
-        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked)
+        tournament = new Tournament(name: tname, countryCode: country, date: date, weight: 1, game: game, videos: videos, tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked, coverage: coverage)
         tournament.save(failOnError: true)
-        results.eachLine {String line, index ->
-            log.info("Parsing line $line")
-            String pname = line.trim().tokenize("/").first().trim()
-            String pcharsfield = line.trim().tokenize("/").last().trim()
+        addResultsToTournament(results, tournament)
+        tournament.save(failOnError: true)
+        log.info("Saved tournament " + tournament)
+        return tournament
+    }
+
+    private void addResultsToTournament(String input, Tournament tournament) {
+        input.trim().eachLine { def line, index ->
+            def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
+            log.info "processing $line"
+            def namematcher = (line =~ /^[^(]*/)
+            String pname = namematcher[0].trim()
             Player p = Player.findByCodename(pname.toUpperCase())
             if (!p)
             {
-                PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: game)
+                PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: tournament.game)
                 p = new Player(name: pname)
                 p.addToRankings(playerRanking)
-                log.info("Creating player $p using chars $pcharsfield")
+                log.info "Creating player $p"
                 p.save(failOnError: true)
             }
-            def rank = ScoringSystem.getRank(index+1, tournament.tournamentFormat)
             Result r = new Result(player: p, place: rank, tournament: tournament)
-            boolean first = true
-            pcharsfield.trim().tokenize(",").each {
-                CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(game))?: CharacterType.UNKNOWN
-                r.addToPchars(new GameCharacter(characterType: ctype, main: first))
-                first = false
+            def charmatcher = (line =~ /\((.*?)\)/)
+            if (charmatcher.count > 0) {
+                boolean first = true
+                String allchars = charmatcher[0][1]
+                allchars.split(",").each {
+                    GameTeam team = new GameTeam()
+                    log.info "team: ${it.trim()}"
+                    it.split("/").each {
+                        CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(tournament.game))?: CharacterType.UNKNOWN
+                        team.addToPchars(new GameCharacter(characterType: ctype, main: first))
+                        first = false
+                    }
+                    r.addToCharacterTeams(team)
+                }
+            }
+            else {
+                GameTeam team = new GameTeam()
+                team.addToPchars(new GameCharacter(characterType: CharacterType.UNKNOWN, main: true))
+                r.addToCharacterTeams(team)
+                log.warn "no chars found, assigned empty team"
             }
             r.save(failOnError: true)
             tournament.addToResults(r)
         }
-        tournament.save(failOnError: true)
-        log.info("Saved tournament " + tournament)
-        return tournament
+    }
+
+
+    List<String> validateResults(String input, Version game) {
+        List<String> feedback = []
+        if (game == Version.UNKNOWN || game == null) feedback << "Game version given is recognized as $game"
+        input.trim().eachLine { def line, index ->
+            def namematcher = (line =~ /^[^(]*/)
+            String pname = namematcher[0].trim()
+            Player p = Player.findByCodename(pname.toUpperCase())
+            if (!p) feedback << "Player with name $pname will be created new"
+            def charmatcher = (line =~ /\((.*?)\)/)
+            if (charmatcher.count > 0) {
+                String allchars = charmatcher[0][1]
+                allchars.split(",").each { String team ->
+                    log.info "team: ${team.trim()}"
+                    team.split("/").each {
+                        CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(game))?: CharacterType.UNKNOWN
+                        if (ctype == CharacterType.UNKNOWN) feedback << "Player $pname will have UNKNOWN character in team $team due to $it"
+                    }
+                }
+            }
+            else {
+                feedback << "Player $pname will have completely UNKNOWN team"
+            }
+        }
+        return feedback
     }
 
     /**
@@ -79,23 +125,19 @@ class DataService
         pdata.each {
             log.info "Saving player $it.name"
             def cc = it.countryCode as CountryCode
-            Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
+            def mainGame = Version.fromString(it.mainGame)?: Version.UNKNOWN
+            Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter, mainGame: mainGame)
             it.rankings.each {
                 def game = Version.fromString(it.game)
-/*                GameTeam mainTeam = new GameTeam()
-                it.mainTeam.pchars.each {
-                    def teamChar = CharacterType.fromString(it, game)?: CharacterType.UNKNOWN
-                    mainTeam.addToPchars(teamChar)
-                }   */
-                def main = CharacterType.fromString(it.main, game)?: CharacterType.UNKNOWN
-                //GameCharacter gameCharacter = new GameCharacter(characterType: main)
-                List mainCharacters = [main]
-
+                List mainCharacters = []
+                it.mainTeam.each {
+                    def teamChar = CharacterType.fromString(it, Version.generalize(game))?: CharacterType.UNKNOWN
+                    mainCharacters << teamChar
+                }
                 if (game && it.rank && it.score) {
                     PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
                     p.addToRankings(pranking)
                     mainCharacters.each { pranking.addToMainCharacters(it) }
-                    //pranking.mainCharacter = mainTeam
                 }
             }
             it.teams?.each {
@@ -117,8 +159,9 @@ class DataService
             TournamentType type = TournamentType.fromString(it.type)
             Integer weight = it.weight?: 0
             String challonge = it.challonge
+            String coverage = it.coverage
             Boolean ranked = it.ranked?.toBoolean()?: false
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge, ranked: ranked)
+            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos, weight: weight, tournamentFormat: format, tournamentType: type, weightingType: weightingType, challonge: challonge, ranked: ranked, coverage: coverage)
             it.players.each {
                 log.info "Processing ${it.player}"
                 Player p = Player.findByCodename(it.player.toUpperCase())
@@ -129,33 +172,17 @@ class DataService
                     p.save(failOnError: true)
                 }
                 Result result = new Result(place: it.place, player: p)
-                it.pchars.each {
-                    CharacterType ctype = CharacterType.fromString(it.ctype, Version.generalize(version))
-                    if (ctype == null) throw new RuntimeException("ctype is null for ${it.ctype} ${version}")
-                    Boolean main = it.main == true
-                    GameCharacter character = new GameCharacter(characterType: ctype, main: main)
-                    //character.save(failOnError: true)
-                    log.info "Found character $character for player ${p.name}"
-                    if (Version.generalize(version) == Version.AE2012 || version == Version.KI) {
-                        GameTeam team = new GameTeam()
+                it.pteams.each {
+                    GameTeam team = new GameTeam()
+                    it.each {
+                        CharacterType ctype = CharacterType.fromString(it, Version.generalize(version))
+                        if (ctype == null) throw new RuntimeException("ctype is null for ${it} ${version}")
+                        GameCharacter character = new GameCharacter(characterType: ctype, main: true)
+                        //character.save(failOnError: true)
+                        log.info "Found character $character for player ${p.name}"
                         team.addToPchars(character)
-                        result.addToCharacterTeams(team)
-                        log.info("added single char gameteam ${team.pchars}")
                     }
-                    else {
-                        if (!result.characterTeams) {
-                            GameTeam team = new GameTeam()
-                            team.addToPchars(character)
-                            result.addToCharacterTeams(team)
-                            log.info("added new gameteam $team")
-                        }
-                        else {
-                            GameTeam team = result.characterTeams.first()
-                            team.addToPchars(character)
-                            result.addToCharacterTeams(team)
-                            log.info("added to gameteam $team")
-                        }
-                    }
+                    result.addToCharacterTeams(team)
                 }
                 log.info "Seen result $result"
                 tournament.addToResults(result)
@@ -184,6 +211,7 @@ class DataService
             tournament.wtype = it.weightingType?.name()
             tournament.weight = it.weight
             tournament.challonge = it.challonge
+            tournament.coverage = it.coverage
             tournament.ranked = it.ranked
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {

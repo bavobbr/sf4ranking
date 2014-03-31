@@ -29,7 +29,7 @@
           <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}"
                  alt="Find players from ${player.countryCode.name}"/>
         </g:link>
-      </g:if>
+      </g:if>&NonBreakingSpace;
     </dd>
     <dt>Teams(s)</dt>
     <dd>

@@ -21,6 +21,7 @@
       <th>Game</th>
       <th>Weight</th>
       <th>Share</th>
+      <th>Coverage</th>
     </tr>
     </thead>
     <tr>
@@ -32,6 +33,14 @@
       <td>${tournament.weight}</td>
       <td>
         <g:render template="/templates/share"/>
+      </td>
+      
+      <td>
+        <g:if test="${tournament.coverage}">
+        <g:link url="${tournament.coverage}" target="_new">
+          go to SRK
+        </g:link>
+        </g:if>
       </td>
     </tr>
   </table>

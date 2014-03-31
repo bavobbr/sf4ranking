@@ -17,6 +17,7 @@ class Tournament
         videos nullable: true, unique: false
         challonge nullable: true
         ranked nullable: false
+        coverage nullable: true
     }
 
     String name
@@ -30,6 +31,7 @@ class Tournament
     WeightingType weightingType = WeightingType.AUTO
     String challonge
     Boolean ranked = true
+    String coverage = null
 
     static hasMany = [videos: String, results: Result]
 
