@@ -20,11 +20,10 @@ class Player
 
     String name
     String codename
-    //Integer score = 0
-    //Integer rank = 0
     CountryCode countryCode
     String wikilink
     String twitter
+    Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
@@ -44,8 +43,8 @@ class Player
         return rankings.find { it.game == game }?.score?: 0
     }
 
-    CharacterType main(Version game) {
-        return rankings.find { it.game == game }?.mainCharacter?: CharacterType.UNKNOWN
+    Set<CharacterType> main(Version game) {
+        return rankings.find { it.game == game }?.mainCharacters?: []
     }
 
     void applyScore(Version game, Integer score)

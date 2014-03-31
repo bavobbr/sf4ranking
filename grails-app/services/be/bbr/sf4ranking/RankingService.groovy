@@ -114,10 +114,8 @@ class RankingService
     }
 
     /**
-     * The player rank is based on how he positions by score
-     * If a score is equal to another player the rank is not incremented but kept equal
      */
-    Integer updateMainCharacters(Version game)
+    Integer updateMainTeams(Version game)
     {
         List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
         log.info("Found ${players.size()} to update main")
@@ -125,19 +123,49 @@ class RankingService
             PlayerRanking ranking = p.rankings.find {it.game == game}
             if (ranking)
             {
+                ranking.mainCharacters.clear()
                 def filteredResults = p.results.findAll {it.tournament.game == game}
-                def chars = filteredResults.collect {Result r -> r.pchars*.characterType}.flatten()
-                def countedGroup = chars.countBy {it.name()}
+                def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
+                log.info "Teams is $teams"
+                def countedGroup = teams.countBy {GameTeam team -> team}
                 log.info "Counts is $countedGroup"
                 def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
                 def main = sortedGroup.keySet().first()
-                log.info "applying main $main"
-                ranking.mainCharacter = main
-                ranking.save()
+                log.info "applying main team $main"
+                main.pchars.each {GameCharacter gameCharacter ->
+                    log.info "Adding to mains $gameCharacter"
+                    ranking.mainCharacters.add(gameCharacter.characterType)
+                }
+                ranking.save(failOnError: true)
             }
+            p.save(failOnError: true)
 
         }
         return players.size()
+    }
+
+    Integer updateMainGames()
+    {
+        Player.list().each { Player player ->
+            log.info "Updating main game of $player.name"
+            def c = Result.createCriteria()
+            def results = c {
+                createAlias('tournament', 'tournamentAlias')
+                projections {
+                    groupProperty("tournamentAlias.game")
+                    rowCount()
+                }
+                eq("player",player)
+            }
+            log.info "Counts is $results"
+            def sorted = results.sort { a, b -> b[1] <=> a[1] }
+            if (sorted) {
+                def main = sorted.first()[0]
+                log.info "Main game is $main"
+                player.mainGame = main
+            }
+        }
+        return Player.count
     }
 
     private void applyType(List tournaments, TournamentType type, int start, int amount)

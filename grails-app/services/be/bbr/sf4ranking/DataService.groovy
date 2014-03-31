@@ -82,10 +82,20 @@ class DataService
             Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter)
             it.rankings.each {
                 def game = Version.fromString(it.game)
+/*                GameTeam mainTeam = new GameTeam()
+                it.mainTeam.pchars.each {
+                    def teamChar = CharacterType.fromString(it, game)?: CharacterType.UNKNOWN
+                    mainTeam.addToPchars(teamChar)
+                }   */
                 def main = CharacterType.fromString(it.main, game)?: CharacterType.UNKNOWN
+                //GameCharacter gameCharacter = new GameCharacter(characterType: main)
+                List mainCharacters = [main]
+
                 if (game && it.rank && it.score) {
-                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game, mainCharacter: main)
+                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
                     p.addToRankings(pranking)
+                    mainCharacters.each { pranking.addToMainCharacters(it) }
+                    //pranking.mainCharacter = mainTeam
                 }
             }
             it.teams?.each {
@@ -124,8 +134,28 @@ class DataService
                     if (ctype == null) throw new RuntimeException("ctype is null for ${it.ctype} ${version}")
                     Boolean main = it.main == true
                     GameCharacter character = new GameCharacter(characterType: ctype, main: main)
+                    //character.save(failOnError: true)
                     log.info "Found character $character for player ${p.name}"
-                    result.addToPchars(character)
+                    if (Version.generalize(version) == Version.AE2012 || version == Version.KI) {
+                        GameTeam team = new GameTeam()
+                        team.addToPchars(character)
+                        result.addToCharacterTeams(team)
+                        log.info("added single char gameteam ${team.pchars}")
+                    }
+                    else {
+                        if (!result.characterTeams) {
+                            GameTeam team = new GameTeam()
+                            team.addToPchars(character)
+                            result.addToCharacterTeams(team)
+                            log.info("added new gameteam $team")
+                        }
+                        else {
+                            GameTeam team = result.characterTeams.first()
+                            team.addToPchars(character)
+                            result.addToCharacterTeams(team)
+                            log.info("added to gameteam $team")
+                        }
+                    }
                 }
                 log.info "Seen result $result"
                 tournament.addToResults(result)
@@ -160,14 +190,15 @@ class DataService
                 def player = [:]
                 player.place = it.place
                 player.player = it.player.name
-                def pchars = []
-                it.pchars.each {
-                    def pchar = [:]
-                    pchar.ctype = it.characterType.name()
-                    pchar.main = it.main
-                    pchars << pchar
+                def pteams = []
+                it.characterTeams.each {
+                    def pteam = []
+                    it.pchars.each {
+                        pteam << it.characterType.name()
+                    }
+                    pteams << pteam
                 }
-                player.pchars = pchars
+                player.pteams = pteams
                 players << player
             }
             tournament.players = players
@@ -191,6 +222,7 @@ class DataService
             player.codename = it.codename
             player.wikilink = it.wikilink
             player.twitter = it.twitter
+            player.mainGame = it.mainGame?.name()
             player.teams = it.teams.collect { it.codename }
             def rankings = []
             it.rankings.each {
@@ -198,7 +230,11 @@ class DataService
                 ranking.rank = it.rank
                 ranking.score = it.score
                 ranking.skill = it.skill
-                ranking.main = it.mainCharacter?.name()
+                def mainTeam = []
+                it.mainCharacters.each {
+                    mainTeam << it.name()
+                }
+                ranking.mainTeam = mainTeam
                 ranking.game = it.game.name()
                 rankings << ranking
             }

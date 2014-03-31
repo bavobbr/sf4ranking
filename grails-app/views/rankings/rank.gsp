@@ -25,6 +25,11 @@
   We are looking to extend this list further with international tournament data! You can contribute results and corrections using the links on top. Thanks!
 </div>
 </g:if>
+<g:if test="${fchar}">
+  <div class="alert alert-info">
+  When filtering on a character all players that used that character are listed, even if it is not their main. If you are looking for the best player, look at those who rank high and have that character as main character
+  </div>
+</g:if>
 
 <div class="table-responsive">
 
@@ -57,11 +62,13 @@
           </g:each>
         </td>
         <td>
-          <g:link action="rank" controller="rankings" params="[pchar: p.main(game), id: game.name()]" data-toggle="tooltip" data-placement="top" title="Filter on character ${p.main(game).value}">
-            <g:img dir="images/chars" file="${p.main(game).name().toLowerCase() + '.png'}" width="22" height="25" alt="${p.main(game).value}"
+          <g:each in="${p.main(game)}" var="mainChar">
+          <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]" data-toggle="tooltip" data-placement="top" title="Filter on character ${mainChar.value}">
+            <g:img dir="images/chars" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${mainChar.value}"
                    class="charimg"/>
-            ${p.main(game).value}
+            ${mainChar.value}
           </g:link>
+          </g:each>
         </td>
         <td>${p.score(game)}</td>
         <td>

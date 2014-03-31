@@ -80,9 +80,16 @@ class AdminController
     def updateMainCharacters()
     {
         def sum = Version.values().inject(0) { result, game ->
-            result + rankingService.updateMainCharacters(game)
+            result + rankingService.updateMainTeams(game)
         }
         flash.message = "Updated char of $sum players"
+        render view: "index"
+    }
+
+    def updateMainGames()
+    {
+        def sum = rankingService.updateMainGames()
+        flash.message = "Updated main game of $sum players"
         render view: "index"
     }
 

@@ -62,7 +62,7 @@ class RankingsController
             def tid = it.tournament.id
             def tname = it.tournament.name
             def ttype = it.tournament.tournamentType?.value
-            def tchars = it.pchars.sort { a, b -> a.main <=> b.main }.collect { it.characterType }
+            def tteams = it.characterTeams
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
             def tscore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
@@ -70,11 +70,11 @@ class RankingsController
                 tplace = it.place == 1? "Win" : "Lose"
             }
             def tvideos = it.tournament.videos
-            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tchars: tchars, tdate: tdate, tvideos: tvideos, resultid: it.id]
+            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tteams: tteams, tdate: tdate, tvideos: tvideos, resultid: it.id]
             rankings[it.tournament.game] << data
-            if (Version.generalize(it.tournament.game) == Version.AE2012) {
-                chars.addAll(it.pchars*.characterType)
-            }
+/*            if (Version.generalize(it.tournament.game) == Version.AE2012) {
+                chars.addAll(it.characterTeams.collect.pchars*.characterType)
+            }*/
         }
         log.info "Rendering player ${player}"
         rankings = rankings.findAll { k, v -> v.size() > 0}
@@ -127,13 +127,13 @@ class RankingsController
             if (tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
                 rplace = it.place == 1? "Win" : "Lose"
             }
-            def rchars = it.pchars.collect { it.characterType }
+            def tteams = it.characterTeams
             def rscore = tournament.tournamentType ?
                          ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, rchars: rchars, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
         }
         render view: 'tournament', model: [tournament: tournament, details: details]
     }

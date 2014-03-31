@@ -6,9 +6,8 @@
     <tr>
       <th>Rank</th>
       <th>Name</th>
+      <th>Sponsor</th>
       <th>Team</th>
-      <th>Score</th>
-      <th>Character</th>
       <th>Country</th>
     </tr>
     </thead>
@@ -21,16 +20,16 @@
             <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>
           </g:each>
         </td>
-        <td>${p.score(game)}</td>
         <td>
-          <g:link action="rank" controller="rankings" params="[pchar: p.main(game), id: game.name()]"
+          <g:each in="${p.main(game)}" var="mainChar">
+          <g:link action="rank" controller="rankings" params="[pchar: mainChar.name(), id: game.name()]"
                   data-toggle="tooltip" data-placement="top"
-                  title="Filter on ${p.main(game).value}">
-            <g:img dir="images/chars" file="${p.main(game).name().toLowerCase() + '.png'}" width="22" height="25"
-                   alt="${p.main(game).value}"
+                  title="Filter on ${mainChar.value}">
+            <g:img dir="images/chars" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+                   alt="${mainChar.value}"
                    class="charimg"/>
-            ${p.main(game).value}
           </g:link>
+          </g:each>
         </td>
         <td>
           <g:if test="${p.countryCode}">

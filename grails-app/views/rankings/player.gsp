@@ -8,14 +8,14 @@
 
 <body>
 <div style="text-align: center;">
-  <h6 class="player-heading">Street Fighter World Rankings</h6><span class="glyphicon glyphicon-flash"></span>
+  <h6 class="player-heading">Fighting Game World Rankings</h6><span class="glyphicon glyphicon-flash"></span>
   <h4 class="subtitle">rank.shoryuken.com</h4>
 
   <h1 class="player_name">${player.name}</h1>
 
-  <h3 class="world_rank">${player.rank(Version.AE2012)}</h3>
+  <h3 class="world_rank">${player.rank(player.mainGame)}</h3>
   <span class="glyphicon glyphicon-flash"></span>
-  <span class="world_rank_title">Street Fighter World Rank</span>
+  <span class="world_rank_title">${player.mainGame.value} World Rank</span>
   <span class="glyphicon glyphicon-flash"></span>
 </div>
 <center>
@@ -40,17 +40,15 @@
     </dd>
     <dt>Follow</dt>
     <dd>
-      <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
+    <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
     </dd>
     <dt>Share</dt>
     <dd>
-      <g:render template="/templates/share"/>&NonBreakingSpace;
+    <g:render template="/templates/share"/>&NonBreakingSpace;
     </dd>
-    <dt>SF4 Char(s)</dt>
+    <dt>Main Game</dt>
     <dd>
-      <g:each in="${chars}" var="pchar">
-        <g:link action="rank" controller="rankings" params="[pchar: pchar.name(), id: Version.AE2012.name()]">${pchar.value}</g:link>
-      </g:each>&NonBreakingSpace;
+    <g:link controller="rankings" action="rank" params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
     </dd>
   </dl>
 
@@ -65,6 +63,8 @@
 
   <div id='content' class="tab-content">
     <div class="tab-pane active" id="overview">
+      <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for </small> ${player.name}
+      </h3>
       <div class="table-responsive">
         <table class="tablehead" id="infotable">
           <thead>
@@ -72,7 +72,7 @@
             <th>Game</th>
             <th>Rank</th>
             <th>Score</th>
-            <th>Main Character</th>
+            <th>Main Team</th>
             <th>Weight</th>
             <th>Tournaments played</th>
           </tr>
@@ -80,10 +80,26 @@
           <g:each in="${player.rankings}" var="ranking" status="index">
             <g:if test="${results[ranking.game] != null}">
               <tr>
-                <td>${ranking.game.value}</td>
+
+                <td>
+                <g:link controller="rankings" action="rank" params="[id: ranking.game.name()]">
+                  ${ranking.game.value}
+                </g:link>
+                  </td>
+
                 <td>${ranking.rank}</td>
                 <td>${ranking.score}</td>
-                <td>${ranking.mainCharacter}</td>
+                <td>
+                  <g:each in="${ranking.mainCharacters}" var="mainCharacter">
+                    <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]">
+                      <g:img dir="images/chars" file="${mainCharacter.name().toLowerCase() + '.png'}" width="22" height="25"
+                             alt="${mainCharacter.value}"
+                             title="${mainCharacter.value}"
+                             class="charimg"/>
+                    </g:link>
+                  </g:each>
+
+                </td>
                 <td>${ranking.skill}</td>
                 <td>${results[ranking.game]?.size()}</td>
               </tr>
@@ -94,10 +110,10 @@
     </div>
 
 
-      <g:each in="${results}" var="ranking" status="index">
-        <div class="tab-pane" id="${ranking.key.name()}">
+    <g:each in="${results}" var="ranking" status="index">
+      <div class="tab-pane" id="${ranking.key.name()}">
         <h3 class="tournaments">Tournament placings <small>found [${ranking.value.
-                size()}] ${ranking.key} tournaments for </small>${player.name}
+                size()}] ${ranking.key} tournaments for</small> ${player.name}
         </h3>
 
         <div class="table-responsive">
@@ -108,7 +124,7 @@
               <th>Type</th>
               <th>Ranking</th>
               <th>Date</th>
-              <th>Character</th>
+              <th>Team</th>
               <th>Points</th>
               <g:if test="${session.user != null}">
                 <th>Edit</th>
@@ -123,14 +139,19 @@
                 <td>${result.tplace}</td>
                 <td>${result.tdate}</td>
                 <td>
-                  <g:if test="${result.tchars}">
-                    <g:each in="${result.tchars}" var="tchar">
-                      <g:link action="rank" controller="rankings" params="[pchar: tchar.name(), id: ranking.key.name()]">
-                        <g:img dir="images/chars" file="${tchar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${tchar.value}"
-                               title="${tchar.value}"
-                               class="charimg"/>
-                        ${tchar.value}
-                      </g:link>
+                  <g:if test="${result.tteams}">
+                    <g:each in="${result.tteams}" var="tteam" status="rowidx">
+                      <g:if test="${rowidx>0}">
+                        /
+                      </g:if>
+                      <g:each in="${tteam.pchars}" var="tchar">
+                        <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: ranking.key.name()]">
+                          <g:img dir="images/chars" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
+                                 alt="${tchar.characterType.value}"
+                                 title="${tchar.characterType.value}"
+                                 class="charimg"/>
+                        </g:link>
+                      </g:each>
                     </g:each>
                   </g:if>
                 </td>
@@ -143,8 +164,8 @@
             </g:each>
           </table>
         </div>
-        </div>
-      </g:each>
+      </div>
+    </g:each>
 
 
 

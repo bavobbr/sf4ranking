@@ -45,7 +45,7 @@
     <tr class="stathead">
       <th>Place</th>
       <th>Player</th>
-      <th>Characters</th>
+      <th>Team(s)</th>
       <th>Country</th>
       <th>Score</th>
       <g:if test="${session.user != null}">
@@ -59,12 +59,19 @@
         <td>${result.rplace}</td>
         <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: result.rplayer]">${result.rplayer}</g:link></td>
         <td>
-          <g:if test="${result.rchars}">
-            <g:each in="${result.rchars}" var="rchar">
-            <g:link action="rank" controller="rankings" params="[pchar: rchar.name()?.toLowerCase(), id: tournament.game.name()]">
-              <g:img dir="images/chars" file="${rchar.name()?.toLowerCase() + '.png'}" width="22" height="25" alt="${rchar.name()}"
-                     title="${rchar.name()}" class="charimg"/>
-            </g:link>
+          <g:if test="${result.tteams}">
+            <g:each in="${result.tteams}" var="tteam" status="rowidx">
+              <g:if test="${rowidx>0}">
+                /
+              </g:if>
+              <g:each in="${tteam.pchars}" var="tchar">
+                <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: tournament.game.name()]">
+                  <g:img dir="images/chars" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
+                         alt="${tchar.characterType.value}"
+                         title="${tchar.characterType.value}"
+                         class="charimg"/>
+                </g:link>
+              </g:each>
             </g:each>
           </g:if>
         </td>

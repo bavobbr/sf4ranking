@@ -29,8 +29,10 @@ class QueryService
             if (ctype)
             {
                 results {
-                    pchars {
-                        eq("characterType", ctype)
+                    characterTeams {
+                        pchars {
+                            eq("characterType", ctype)
+                        }
                     }
                 }
             }
@@ -51,8 +53,10 @@ class QueryService
             if (ctype)
             {
                 results {
-                    pchars {
-                        eq("characterType", ctype)
+                    characterTeams {
+                        pchars {
+                            eq("characterType", ctype)
+                        }
                     }
                 }
             }
