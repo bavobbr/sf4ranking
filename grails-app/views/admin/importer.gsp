@@ -23,13 +23,27 @@
                             height: 400,
                             width: 400
                           });
-      $("#opener").click(function ()
+      $("#validatePlayers").click(function ()
                          {
                            $.ajax({
 
                                     url: "${createLink(action: 'validateResults', controller: 'admin')}",
                                     type: "POST",
-                                    data: {content: $('textarea#tresults').val(), game: $('#tgame').val()},
+                                    data: {content: $('textarea#tresults').val(), game: $('#tgame').val(), type: 'players'},
+                                    success: function (data)
+                                    {
+                                      $("#dialog").html(data);
+                                      $("#dialog").dialog("open");
+                                    }
+                                  });
+                         });
+      $("#validateChars").click(function ()
+                         {
+                           $.ajax({
+
+                                    url: "${createLink(action: 'validateResults', controller: 'admin')}",
+                                    type: "POST",
+                                    data: {content: $('textarea#tresults').val(), game: $('#tgame').val(), type: 'chars'},
                                     success: function (data)
                                     {
                                       $("#dialog").html(data);
@@ -94,13 +108,14 @@
     <label for="tresults">Results (1 up to 32 max, mouse over for tips. Make sure the character name matches a known character type)</label>
     <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player / CODY"
                 title="${hint}"/>
-    <button type="button" id="opener" class="btn btn-primary">Validate</button>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
+    <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>
+    <button type="submit" class="btn btn-primary">Create</button>
   </div>
 </g:form>
 <br/>
 
-<div id="dialog" title="Basic dialog">
+<div id="dialog" title="Validation feedback">
   <p></p>
 </div>
 

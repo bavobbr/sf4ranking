@@ -124,8 +124,9 @@ class AdminController
 
     def validateResults() {
         def content = params.content
+        def type = params.type
         def game = Version.fromString(params.game)
-        List<String> feedback = dataService.validateResults(content, game)
+        List<String> feedback = dataService.validateResults(content, game, type)
         log.info "rendering $feedback"
         render(contentType: "text/html") {
             div {

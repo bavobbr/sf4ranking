@@ -66,7 +66,6 @@
           <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]" data-toggle="tooltip" data-placement="top" title="Filter on character ${mainChar.value}">
             <g:img dir="images/chars" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25" alt="${mainChar.value}"
                    class="charimg"/>
-            ${mainChar.value}
           </g:link>
           </g:each>
         </td>
