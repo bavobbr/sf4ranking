@@ -84,7 +84,6 @@ class RankingService
             def score = (bestof.sum() as Integer) ?: 0
             p.applyScore(game, score)
             p.save(failOnError: true)
-            //log.info "Saved player $p"
         }
         return players.size()
     }
@@ -126,14 +125,11 @@ class RankingService
                 ranking.mainCharacters.clear()
                 def filteredResults = p.results.findAll {it.tournament.game == game}
                 def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
-                log.info "Teams is $teams"
                 def countedGroup = teams.countBy {GameTeam team -> team}
-                log.info "Counts is $countedGroup"
                 def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
                 def main = sortedGroup.keySet().first()
                 log.info "applying main team $main"
                 main.pchars.each {GameCharacter gameCharacter ->
-                    log.info "Adding to mains $gameCharacter"
                     ranking.mainCharacters.add(gameCharacter.characterType)
                 }
                 ranking.save(failOnError: true)

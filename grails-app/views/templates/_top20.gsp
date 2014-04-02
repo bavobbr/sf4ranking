@@ -25,7 +25,7 @@
           <g:link action="rank" controller="rankings" params="[pchar: mainChar.name(), id: game.name()]"
                   data-toggle="tooltip" data-placement="top"
                   title="Filter on ${mainChar.value}">
-            <g:img dir="images/chars" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
                    alt="${mainChar.value}"
                    class="charimg"/>
           </g:link>

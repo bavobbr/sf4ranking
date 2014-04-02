@@ -91,11 +91,10 @@
                 <td>${ranking.score}</td>
                 <td>
                   <g:each in="${ranking.mainCharacters}" var="mainCharacter">
-                    <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]">
-                      <g:img dir="images/chars" file="${mainCharacter.name().toLowerCase() + '.png'}" width="22" height="25"
-                             alt="${mainCharacter.value}"
-                             title="${mainCharacter.value}"
-                             class="charimg"/>
+                    <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
+                            data-toggle="tooltip" data-placement="top"
+                            title="Filter on ${mainCharacter.name()}">
+                      <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}" file="${mainCharacter.name().toLowerCase() + '.png'}" width="25" height="25" class="charimg"/>
                     </g:link>
                   </g:each>
 
@@ -145,10 +144,10 @@
                         /
                       </g:if>
                       <g:each in="${tteam.pchars}" var="tchar">
-                        <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: ranking.key.name()]">
-                          <g:img dir="images/chars" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
-                                 alt="${tchar.characterType.value}"
-                                 title="${tchar.characterType.value}"
+                        <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: ranking.key.name()]"
+                                data-toggle="tooltip" data-placement="top"
+                                title="Filter on ${tchar.characterType.name()}">
+                          <g:img dir="images/chars/${Version.generalize(ranking.key).name().toLowerCase()}" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
                                  class="charimg"/>
                         </g:link>
                       </g:each>

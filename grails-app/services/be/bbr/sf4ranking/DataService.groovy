@@ -47,11 +47,13 @@ class DataService
             Player p = Player.findByCodename(pname.toUpperCase())
             if (!p)
             {
-                PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: tournament.game)
                 p = new Player(name: pname)
-                p.addToRankings(playerRanking)
                 log.info "Creating player $p"
                 p.save(failOnError: true)
+            }
+            if (!p.rankings.any { it.game == tournament.game}) {
+                PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: tournament.game)
+                p.addToRankings(playerRanking)
             }
             Result r = new Result(player: p, place: rank, tournament: tournament)
             def charmatcher = (line =~ /\((.*?)\)/)
@@ -157,7 +159,7 @@ class DataService
                 }
                 if (game && it.rank && it.score)
                 {
-                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game)
+                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game, oldRank: it.oldRank, oldScore: it.oldScore)
                     p.addToRankings(pranking)
                     mainCharacters.each {pranking.addToMainCharacters(it)}
                 }
@@ -189,7 +191,6 @@ class DataService
             it.players.each {
                 log.info "Processing ${it.player}"
                 Player p = Player.findByCodename(it.player.toUpperCase())
-                log.info "Found player $p for tournament ${tournament.name}"
                 if (!p)
                 {
                     log.warn("Creating player ad hoc $it")
@@ -203,8 +204,6 @@ class DataService
                         CharacterType ctype = CharacterType.fromString(it, Version.generalize(version))
                         if (ctype == null) throw new RuntimeException("ctype is null for ${it} ${version}")
                         GameCharacter character = new GameCharacter(characterType: ctype, main: true)
-                        //character.save(failOnError: true)
-                        log.info "Found character $character for player ${p.name}"
                         team.addToPchars(character)
                     }
                     result.addToCharacterTeams(team)
@@ -283,6 +282,8 @@ class DataService
                 ranking.rank = it.rank
                 ranking.score = it.score
                 ranking.skill = it.skill
+                ranking.oldRank = it.oldRank
+                ranking.oldScore = it.oldScore
                 def mainTeam = []
                 it.mainCharacters.each {
                     mainTeam << it.name()
@@ -343,5 +344,18 @@ class DataService
         }
         p1.delete(failOnError: true)
         p2.save(failOnError: true)
+    }
+
+    Integer takeSnapshot(Version game)
+    {
+        def rankings = PlayerRanking.findAllByGame(game)
+        log.info "snapshotting ${rankings.size()} rankings for game $game"
+        Date date = new Date()
+        rankings.each {
+            it.snapshot = date
+            it.oldScore = it.score
+            it.oldRank = it.rank
+        }
+        return rankings.size()
     }
 }

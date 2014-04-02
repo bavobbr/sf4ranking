@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -58,8 +58,9 @@
       <th>Country</th>
       <th>Score</th>
       <g:if test="${session.user != null}">
-        <th>Edit</th>
-        <th>Edit</th>
+        <th>Result</th>
+        <th>Player</th>
+        <th>Skill</th>
       </g:if>
     </tr>
     </thead>
@@ -74,11 +75,10 @@
                 /
               </g:if>
               <g:each in="${tteam.pchars}" var="tchar">
-                <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: tournament.game.name()]">
-                  <g:img dir="images/chars" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
-                         alt="${tchar.characterType.value}"
-                         title="${tchar.characterType.value}"
-                         class="charimg"/>
+                <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: tournament.game.name()]"
+                        data-toggle="tooltip" data-placement="top"
+                        title="Filter on ${tchar.characterType.name()}">
+                  <g:img dir="images/chars/${Version.generalize(tournament.game).name().toLowerCase()}" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25" class="charimg"/>
                 </g:link>
               </g:each>
             </g:each>
@@ -94,8 +94,9 @@
         </td>
         <td>${result.rscore}</td>
         <g:if test="${session.user != null}">
-          <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result as admin]</g:link></td>
-          <td><g:link controller="player" action="edit" params="['id': result.rplayerid]">[Update player as admin]</g:link></td>
+          <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result]</g:link></td>
+          <td><g:link controller="player" action="edit" params="['id': result.rplayerid]">[Update player]</g:link></td>
+          <td><g:link controller="playerRanking" action="edit" params="['id': result.prankingid]">[Update skill ${result.pskill}]</g:link></td>
         </g:if>
       </tr>
     </g:each>
@@ -103,8 +104,8 @@
 </div>
 
 <g:if test="${session.user != null}">
-  <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos as admin]</g:link>
-  <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament as admin]</g:link>
+  <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos]</g:link>
+  <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament]</g:link>
   <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>
   <g:link controller="admin" action="playerRanksBefore" params="['id': tournament.id]">[Scores before tournament]</g:link>
   <g:link controller="admin" action="playerRanksAfter" params="['id': tournament.id]">[Scores after tournament]</g:link>

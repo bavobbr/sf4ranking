@@ -101,7 +101,7 @@ class AdminController
     def importer()
     {
         def index = 1
-        def example = CharacterType.values().inject("") { a, b -> a+"player at place ${index++} / $b\n"}
+        def example = "player1 (char1,char2/char1,char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
         render view: "importer", model: [hint: example]
     }
 
@@ -288,6 +288,13 @@ class AdminController
         else {
             render view: "confirmDelete"
         }
+    }
+
+    def snapshot() {
+        def game = Version.fromString(params.game)?: Version.UNKNOWN
+        def count = dataService.takeSnapshot(game)
+        flash.message = "Took snapshot of $count games"
+        render view: "index"
     }
 
     def playerRanksBefore(Tournament tournament) {

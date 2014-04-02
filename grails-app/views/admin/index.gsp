@@ -5,7 +5,7 @@
   Time: 1:51 PM
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews">
@@ -35,6 +35,14 @@ This is for fine-grained maintenance, usually not required.
   <li><g:link action="updatePlayerRank">calculate and update Player rank based on player score</g:link></li>
   <li><g:link action="updateMainCharacters">calculate and update Player main chars based on results</g:link></li>
   <li><g:link action="updateMainGames">calculate and update Player main games based on results</g:link></li>
+</ul>
+
+<h3>Snapshots</h3>
+Store state for comparison in the ranking diffs
+<ul>
+  <g:each in="${Version.values()}" var="value">
+    <li><g:link action="snapshot" params="[game: value.name()]">take a snapshot of ${value.name()}</g:link></li>
+  </g:each>
 </ul>
 
 <h3>Export/debug</h3>

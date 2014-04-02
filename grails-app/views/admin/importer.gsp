@@ -76,12 +76,12 @@
 
   <div class="form-group">
     <label for="tformat">Format (different formats have different score systems)</label>
-    <g:select name="tformat" from="${be.bbr.sf4ranking.TournamentFormat.values()}" class="form-control"/>
+    <g:select name="tformat" from="${be.bbr.sf4ranking.TournamentFormat.values()}" class="form-control" value="${be.bbr.sf4ranking.TournamentFormat.DOUBLE_BRACKET}"/>
   </div>
 
   <div class="form-group">
     <label for="tweight">Weighting type (use AUTO to let the app decide the type)</label>
-    <g:select name="tweight" from="${be.bbr.sf4ranking.WeightingType.values()}" class="form-control"/>
+    <g:select name="tweight" from="${be.bbr.sf4ranking.WeightingType.values()}" class="form-control" value="${be.bbr.sf4ranking.WeightingType.AUTO}"/>
   </div>
 
   <div class="form-group">
@@ -91,7 +91,7 @@
 
   <div class="form-group">
     <label for="tcountry">Country (ISO code, optional)</label>
-    <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control"/>
+    <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control" value="${be.bbr.sf4ranking.CountryCode.US}"/>
   </div>
 
   <div class="form-group">
@@ -106,7 +106,7 @@
 
   <div class="form-group">
     <label for="tresults">Results (1 up to 32 max, mouse over for tips. Make sure the character name matches a known character type)</label>
-    <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player / CODY"
+    <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU)"
                 title="${hint}"/>
     <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
     <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>

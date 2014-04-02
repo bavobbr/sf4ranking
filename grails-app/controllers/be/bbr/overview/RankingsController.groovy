@@ -20,10 +20,11 @@ class RankingsController
     def index()
     {
         def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
+        def umvc3players = queryService.findPlayers(null, null, 10, 0, Version.UMVC3)
         def kiplayers = queryService.findPlayers(null, null, 10, 0, Version.KI)
         def sgplayers = queryService.findPlayers(null, null, 10, 0, Version.SKULLGIRLS)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, updateMessage: lastUpdateMessage]
+        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, updateMessage: lastUpdateMessage]
     }
 
     def rank()
@@ -132,8 +133,15 @@ class RankingsController
                          ScoringSystem.getScore(it.place, tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def rcountry = it.player.countryCode?.name()?.toLowerCase()
             def rcountryname = it.player.countryCode?.name
+            def pskill = null
+            def prankingid = null
+            if (session.user != null) {
+                pskill = it.player.skill(tournament.game)
+                prankingid = it.player.rankings.find { it.game == tournament.game }?.id
+            }
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry, rcountryname: rcountryname, resultid: it.id]
+            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry,
+             rcountryname: rcountryname, resultid: it.id, pskill: pskill, prankingid: prankingid]
         }
         render view: 'tournament', model: [tournament: tournament, details: details]
     }

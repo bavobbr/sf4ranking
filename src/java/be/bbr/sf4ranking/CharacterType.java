@@ -62,7 +62,7 @@ public enum CharacterType
     JILL("JILL", "Jill", Version.UMVC3),
     MORRIGAN("MORRIGAN", "Morrigan", Version.UMVC3),
     NEMESIS("NEMESIS", "Nemesis", Version.UMVC3),
-    PHOENIX_WRIGHT("PHOENIX", "Phoenix Wright", Version.UMVC3),
+    PHOENIX_WRIGHT("Wright", "Phoenix Wright", Version.UMVC3),
     RYU_MVC3("RYU", "Ryu", Version.UMVC3),
     SPENCER("SPENCER", "Spencer", Version.UMVC3),
     STRIDER("STRIDER", "Strider", Version.UMVC3),
@@ -83,13 +83,13 @@ public enum CharacterType
     IRON_FIST("IRONFIST", "Iron Fist", Version.UMVC3),
     IRON_MAN("IRONMAN", "Iron Man", Version.UMVC3),
     MAGNETO("MAGNETO", "Magneto", Version.UMVC3),
-    MODOK("MODOK", "MODOK", Version.UMVC3),
+    MODOK("MODOK", "M.O.D.O.K.", Version.UMVC3),
     NOVA("NOVA", "Nova", Version.UMVC3),
     PHOENIX("PHOENIX", "Phoenix", Version.UMVC3),
     ROCKET_RACCOON("RACCOON", "Rocket Raccoon", Version.UMVC3),
     SENTINEL("SENTINEL", "Sentinel", Version.UMVC3),
     SHE_HULK("SHEHULK", "She-Hulk", Version.UMVC3),
-    SHUMA_GORATH("SHUMA", "Shuma Gorath", Version.UMVC3),
+    SHUMA_GORATH("SHUMA", "Shuma-Gorath", Version.UMVC3),
     SPIDER_MAN("SPIDERMAN", "Spider-Man", Version.UMVC3),
     STORM("STORM", "Storm", Version.UMVC3),
     SUPER_SKRULL("SUPERSKRULL", "Super-Skrull", Version.UMVC3),
@@ -146,10 +146,14 @@ public enum CharacterType
             return CharacterType.UNKNOWN;
         }
         CharacterType[] characterTypes = CharacterType.values();
-        for (CharacterType ct : characterTypes)
+        for (CharacterType ct : characterTypes) {
             if (game.equals(ct.game) && (ct.shortname.toLowerCase().equals(input.toLowerCase()) || ct.name().toLowerCase().equals(input.toLowerCase()))) {
                 return ct;
             }
+            else if (game.equals(ct.game) && (ct.value.toLowerCase().equals(input.toLowerCase()))) {
+                return ct;
+            }
+        }
         return null;
     }
 }

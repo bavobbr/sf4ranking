@@ -12,11 +12,13 @@ class PlayerRanking
         rank nullable: false
         skill range: 0..10
         mainCharacters nullable: false
-
+        oldRank nullable: true
+        oldScore nullable: true
+        snapshot nullable: true
     }
 
     static mapping = {
-        player index: 'Player_Idx'
+        player index: 'player_idx'
         game index: 'game_idx'
     }
 
@@ -24,6 +26,9 @@ class PlayerRanking
     Integer skill = 0
     Integer score = 0
     Integer rank = 0
+    Integer oldScore = null
+    Integer oldRank = null
+    Date snapshot = null
     Set mainCharacters = []
 
     static belongsTo = [player:Player]

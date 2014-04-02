@@ -25,11 +25,14 @@
     <g:render template="/templates/top20" model="[game: Version.AE2012, players: players]"/>
   </div>
   <div class="col-md-6">
-    <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
+    <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
   </div>
 </div>
 
 <div class="row">
+  <div class="col-md-6">
+    <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
+  </div>
   <div class="col-md-6">
     <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
   </div>
