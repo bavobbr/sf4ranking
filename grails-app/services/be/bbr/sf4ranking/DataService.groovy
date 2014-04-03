@@ -159,7 +159,7 @@ class DataService
                 }
                 if (game && it.rank && it.score)
                 {
-                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game, oldRank: it.oldRank, oldScore: it.oldScore)
+                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, game: game, oldRank: it.oldRank, oldScore: it.oldScore, snapshot: it.snapshot)
                     p.addToRankings(pranking)
                     mainCharacters.each {pranking.addToMainCharacters(it)}
                 }
@@ -284,6 +284,7 @@ class DataService
                 ranking.skill = it.skill
                 ranking.oldRank = it.oldRank
                 ranking.oldScore = it.oldScore
+                ranking.snapshot = it.snapshot
                 def mainTeam = []
                 it.mainCharacters.each {
                     mainTeam << it.name()

@@ -43,6 +43,20 @@ class Player
         return rankings.find { it.game == game }?.score?: 0
     }
 
+    Date snapshot(Version game) {
+        return rankings.find { it.game == game }?.snapshot?: null
+    }
+
+    String diff(Version game) {
+        def ranking = rankings.find { it.game == game }
+        def newRank = ranking.rank
+        def oldRank = ranking.oldRank
+        if (oldRank == null) return "-"
+        Integer diff = oldRank - newRank
+        if (diff == 0) return ""
+        return (diff > 0)? "+${diff}" : "${diff}"
+    }
+
     Set<CharacterType> main(Version game) {
         return rankings.find { it.game == game }?.mainCharacters?: []
     }

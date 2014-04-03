@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -49,7 +49,7 @@
       <th>Player</th>
       <th>Country</th>
       <th>Score</th>
-      <g:if test="${session.user != null}">
+      <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
         <th>Edit</th>
       </g:if>
     </tr>
@@ -67,7 +67,7 @@
           </g:if>
         </td>
         <td>${player.overallScore()}</td>
-        <g:if test="${session.user != null}">
+        <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
           <td><g:link controller="result" action="show" params="['id': player.id]">[Update result as admin]</g:link></td>
         </g:if>
       </tr>
@@ -75,7 +75,7 @@
   </table>
 </div>
 
-<g:if test="${session.user != null}">
+<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
   <g:link controller="team" action="show" params="['id': team.id]">[Update team as admin]</g:link>
 </g:if>
 

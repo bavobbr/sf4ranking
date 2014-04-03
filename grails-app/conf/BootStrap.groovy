@@ -1,5 +1,7 @@
 import be.bbr.sf4ranking.Configuration
-import be.bbr.sf4ranking.User
+import be.bbr.sf4ranking.shiro.Role
+import be.bbr.sf4ranking.shiro.User
+import org.apache.shiro.crypto.hash.Sha256Hash
 
 /**
  * Creates a default user and config if no database entries exist yet
@@ -9,8 +11,21 @@ class BootStrap {
     def init = { servletContext ->
 
         if (!User.first()) {
-            User initalUser = new User(login: "init", password: "init")
-            initalUser.save()
+            def adminRole = new Role(name: "Administrator")
+            adminRole.addToPermissions("admin")
+            adminRole.addToPermissions("configuration")
+            adminRole.addToPermissions("gameCharacter")
+            adminRole.addToPermissions("player")
+            adminRole.addToPermissions("playerRanking")
+            adminRole.addToPermissions("result")
+            adminRole.addToPermissions("team")
+            adminRole.addToPermissions("tournament")
+            adminRole.addToPermissions("user")
+            adminRole.addToPermissions("role")
+            adminRole.save()
+            def user = new User(username: "init", passwordHash: new Sha256Hash("init").toHex())
+            user.addToRoles(adminRole)
+            user.save()
         }
         if (!Configuration.first()) {
             Configuration cfg = new Configuration()

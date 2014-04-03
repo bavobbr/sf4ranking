@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -129,7 +129,7 @@
               <th>Date</th>
               <th>Team</th>
               <th>Points</th>
-              <g:if test="${session.user != null}">
+              <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                 <th>Edit</th>
               </g:if>
             </tr>
@@ -159,9 +159,8 @@
                   </g:if>
                 </td>
                 <td>${result.tscore}</td>
-                <g:if test="${session.user != null}">
-                  <td><g:link controller="result" action="show"
-                              params="['id': ranking.value.resultid]">[Update result as admin]</g:link></td>
+                <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+                  <td><g:link controller="result" action="show" params="[id: result.resultid]">[Update result as admin]</g:link></td>
                 </g:if>
               </tr>
             </g:each>
@@ -175,7 +174,7 @@
 
 
 
-    <g:if test="${session.user != null}">
+    <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
       <g:link controller="admin" action="selectPlayerVideos" params="['id': player.id]">[Update videos as admin]</g:link>
       <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
     </g:if>

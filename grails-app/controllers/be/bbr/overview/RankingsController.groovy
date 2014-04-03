@@ -2,6 +2,7 @@ package be.bbr.overview
 
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
+import org.apache.shiro.SecurityUtils
 
 /**
  * The controller that is public to users and shows the stats of Player, Tournament as well as overall
@@ -48,8 +49,9 @@ class RankingsController
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        def snapshot = players?.first()?.snapshot(pgame)
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
-                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage, game: pgame]
+                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
     }
 
     /**
@@ -135,7 +137,7 @@ class RankingsController
             def rcountryname = it.player.countryCode?.name
             def pskill = null
             def prankingid = null
-            if (session.user != null) {
+            if (SecurityUtils.subject.hasRole("Administrator")) {
                 pskill = it.player.skill(tournament.game)
                 prankingid = it.player.rankings.find { it.game == tournament.game }?.id
             }

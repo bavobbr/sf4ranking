@@ -71,5 +71,6 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.5"
         runtime ':twitter-bootstrap:3.1.1'
         //compile ":less-resources:1.3.3.2"
+        compile ":shiro:1.2.1"
     }
 }

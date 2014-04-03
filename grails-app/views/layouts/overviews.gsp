@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Version" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +144,7 @@
             </ul>
           </li>
           <li><g:link action="index" controller="about">FAQ</g:link></li>
-          <g:if test="${session.user != null}">
+          <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -155,6 +155,7 @@
                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
                 <li><g:link action="index" controller="user">[User]</g:link></li>
                 <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
+                <li><g:link action="signOut" controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>
               </ul>
             </li>
           </g:if>

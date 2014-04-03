@@ -85,6 +85,7 @@ class RankingService
             p.applyScore(game, score)
             p.save(failOnError: true)
         }
+        log.info "Updated ${players.size()} scores"
         return players.size()
     }
 

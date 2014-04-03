@@ -45,6 +45,9 @@
       <th>Character</th>
       <th>Score</th>
       <th>Country</th>
+      <g:if test="${snapshot != null}">
+        <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Difference between now and ${snapshot}">(?)</a></th>
+      </g:if>
     </tr>
     </thead>
 
@@ -78,6 +81,9 @@
             </g:link>
           </g:if>
         </td>
+        <g:if test="${snapshot != null}">
+          <td>${p.diff(game)}</td>
+        </g:if>
 
       </tr>
     </g:each>
