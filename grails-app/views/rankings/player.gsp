@@ -94,14 +94,18 @@
                     <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
                             data-toggle="tooltip" data-placement="top"
                             title="Filter on ${mainCharacter.name()}">
-                      <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}" file="${mainCharacter.name().toLowerCase() + '.png'}" width="25" height="25" class="charimg"/>
+                      <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}" file="${mainCharacter.name().toLowerCase() + '.png'}" height="50" class="charimg"/>
                     </g:link>
                   </g:each>
 
                 </td>
                 <td>${ranking.skill}</td>
-                <td>${results[ranking.game]?.size()}</td>
-              </tr>
+                <td>
+                  <a href="#${ranking.game.name()}" data-toggle="tab">
+                  ${results[ranking.game]?.size()}
+                  </a>
+                </td>
+            </tr>
             </g:if>
           </g:each>
         </table>

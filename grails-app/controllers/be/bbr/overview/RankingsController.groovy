@@ -190,7 +190,8 @@ class RankingsController
     def autocompletePlayer()
     {
         def players = Player.findAllByCodenameLike("%${params.term.toUpperCase()}%")
-        def content = players.collect {[id: it.id, label: it.name, value: it.name]}
+        def sorted = players.sort { a, b -> b.results.size() <=> a.results.size() }
+        def content = sorted.collect {[id: it.id, label: it.name, value: it.name]}
         render(content as JSON)
     }
 

@@ -22,20 +22,25 @@
 
 <div class="row">
   <div class="col-md-6">
+    <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
     <g:render template="/templates/top20" model="[game: Version.AE2012, players: players]"/>
   </div>
   <div class="col-md-6">
-    <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
+    <g:img dir="images/banners" file="killerinstinct.png" class="img-responsive"/>
     <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
   </div>
-  <div class="col-md-6">
-    <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+
+</div>
+&NonBreakingSpace;
+<div class="row">
+%{--  <div class="col-md-6">
+    <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
+    <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
   </div>
+  <div class="col-md-6">
+    <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
+    <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+  </div>--}%
 </div>
 </body>
 </html>

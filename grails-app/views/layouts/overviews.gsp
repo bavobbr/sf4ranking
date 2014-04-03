@@ -32,7 +32,7 @@
 
         $("#playerSearch").autocomplete({
                                           source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
-                                          minLength: 2,
+                                          minLength: 3,
                                           select: function (event, ui)
                                           {
                                             if (ui.item) search(ui.item.value);
@@ -107,9 +107,9 @@
               <li><g:link action="index" controller="rankings">Overview</g:link></li>
               <li class="divider"></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE2012.name()]">World Rankings SF4:AE 2012</g:link></li>
-              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
+%{--              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
-              <li><g:link action="rank" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>--}%
               <li class="divider"></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE.name()]">World Rankings SF4:AE</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
@@ -122,11 +122,13 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE2012.name()]">SF4:AE 2012</g:link></li>
+%{--              <li><g:link action="tournaments" controller="rankings" params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>--}%
+              <li class="divider"></li>
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE.name()]">SF4:AE</g:link></li>
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.SUPER.name()]">SSF4</g:link></li>
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.VANILLA.name()]">SF4</g:link></li>
-              <li><g:link action="tournaments" controller="rankings" params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
-              <li><g:link action="tournaments" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
               <li class="divider"></li>
               <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
             </ul>
@@ -199,7 +201,7 @@
 
           <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a
                   href="http://www.shoryuken.com">Shoryuken</a>  &middot;
-            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot For more info, visit <a
+            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot; MvC3 artwork by <a href="http://www.shunao.org/">Lyn/Shunao</a> &middot; For more info, visit <a
                   href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.
           </p>
 

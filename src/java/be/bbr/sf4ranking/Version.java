@@ -11,7 +11,6 @@ public enum Version
     AE("SSF4:AE"),
     AE2012("SSF4:AE 2012"),
     USF4("Ultra SF4"),
-    MVC3("Marvel vs Capcom 3"),
     UMVC3("Ultimate Marvel vs Capcom 3"),
     KI("Killer Instinct"), SKULLGIRLS("Skullgirls");
 
@@ -48,7 +47,6 @@ public enum Version
             case AE:
             case AE2012:
                 return Version.AE2012;
-            case MVC3:
             case UMVC3:
                 return Version.UMVC3;
             case KI:

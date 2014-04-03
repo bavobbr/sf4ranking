@@ -34,11 +34,13 @@ class AdminController
      * Update methods that need to be triggered after entering data
      */
     def updateAll() {
-        initializeTournamentWeights()
-        updateTournamentTypes()
-        updatePlayerScores()
-        updatePlayerRank()
-        flash.message = "Updated weight, type of tournament and score, rank of all players"
+        def game = Version.fromString(params.game)
+        rankingService.updateWeights(game)
+        rankingService.updateTypes(game)
+        rankingService.updatePlayerScores(game)
+        rankingService.updatePlayerRank(game)
+        rankingService.updateMainTeams(game)
+        flash.message = "Updated weight, type of tournament and score, rank of all players in $game"
         render view: "index"
     }
 

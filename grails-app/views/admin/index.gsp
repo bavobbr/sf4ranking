@@ -21,8 +21,10 @@
 <h3>Update database</h3>
 The updateAll should be triggered every time a new tournament has been imported, as the tournament needs to be weighted and players scores need to be updated.
 <ul>
-  <li><g:link action="importer">import a new Tournament...</g:link></li>
-  <li><g:link action="updateAll">update all Tournament and Player data</g:link></li>
+  <li><g:link action="importer">import a new Tournament...</g:link>
+  <g:each in="${Version.values()}" var="game">
+    <li><g:link action="updateAll" params="[game:game]">update all data for ${game}</g:link></li>
+  </g:each>
 </ul>
 
 <h3>Update parts of database</h3>
