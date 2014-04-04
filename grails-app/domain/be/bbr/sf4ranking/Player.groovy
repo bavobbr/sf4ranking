@@ -43,6 +43,10 @@ class Player
         return rankings.find { it.game == game }?.score?: 0
     }
 
+    Integer totalScore(Version game) {
+        return rankings.find { it.game == game }?.totalScore?: 0
+    }
+
     Date snapshot(Version game) {
         return rankings.find { it.game == game }?.snapshot?: null
     }
@@ -64,14 +68,20 @@ class Player
     void applyScore(Version game, Integer score)
     {
         if (score > 0) findOrCreateRanking(game).score = score
-        else findOrDeleteRanking(game)
+        else deleteRanking(game)
 
+    }
+
+    void applyTotalScore(Version game, Integer score)
+    {
+        if (score > 0) findOrCreateRanking(game).totalScore = score
+        else deleteRanking(game)
     }
 
     void applyRank(Version game, Integer rank)
     {
         if (rank > 0) findOrCreateRanking(game).rank = rank
-        else findOrDeleteRanking(game)
+        else deleteRanking(game)
     }
 
     void applySkill(Version game, Integer skill)
@@ -88,7 +98,7 @@ class Player
         return ranking
     }
 
-    void findOrDeleteRanking(Version game) {
+    void deleteRanking(Version game) {
         def ranking = rankings.find { it.game == game }
         if (ranking) {
             this.removeFromRankings(ranking)

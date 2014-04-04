@@ -44,9 +44,10 @@
       <th>Team</th>
       <th>Character</th>
       <th>Score</th>
+      <th>Base Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual score earned per tournament becomes progressively less over time. This value reflects the score without decay.">(?)</a></th>
       <th>Country</th>
       <g:if test="${snapshot != null}">
-        <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Difference between now and ${snapshot}">(?)</a></th>
+        <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
       </g:if>
     </tr>
     </thead>
@@ -73,6 +74,7 @@
           </g:each>
         </td>
         <td>${p.score(game)}</td>
+        <td>${p.totalScore(game)}</td>
         <td>
           <g:if test="${p.countryCode}">
             <g:link controller="rankings" action="rank" params="[country: p.countryCode.name(), id: game.name()]" data-toggle="tooltip" data-placement="top" title="Find players from ${p.countryCode.name}">

@@ -9,6 +9,7 @@ class PlayerRanking
     static constraints = {
         game nullable: false
         score nullable: false
+        totalScore nullable: false
         rank nullable: false
         skill range: 0..10
         mainCharacters nullable: false
@@ -25,6 +26,7 @@ class PlayerRanking
     Version game
     Integer skill = 0
     Integer score = 0
+    Integer totalScore = 0
     Integer rank = 0
     Integer oldScore = null
     Integer oldRank = null

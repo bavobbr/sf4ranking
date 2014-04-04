@@ -71,7 +71,8 @@
           <tr class="stathead">
             <th>Game</th>
             <th>Rank</th>
-            <th>Score</th>
+            <th>Relative score</th>
+            <th>Base Score</th>
             <th>Main Team</th>
             <th>Weight</th>
             <th>Tournaments played</th>
@@ -89,6 +90,7 @@
 
                 <td>${ranking.rank}</td>
                 <td>${ranking.score}</td>
+                <td>${ranking.totalScore}</td>
                 <td>
                   <g:each in="${ranking.mainCharacters}" var="mainCharacter">
                     <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
@@ -128,7 +130,8 @@
               <th>Ranking</th>
               <th>Date</th>
               <th>Team</th>
-              <th>Points</th>
+              <th>Relative Points</th>
+              <th>Base Points</th>
               <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                 <th>Edit</th>
               </g:if>
@@ -159,6 +162,7 @@
                   </g:if>
                 </td>
                 <td>${result.tscore}</td>
+                <td>${result.tbasescore}</td>
                 <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                   <td><g:link controller="result" action="show" params="[id: result.resultid]">[Update result as admin]</g:link></td>
                 </g:if>

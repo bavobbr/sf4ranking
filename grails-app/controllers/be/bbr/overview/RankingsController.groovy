@@ -67,13 +67,14 @@ class RankingsController
             def ttype = it.tournament.tournamentType?.value
             def tteams = it.characterTeams
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
-            def tscore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tscore = it.tournament.tournamentType ? ScoringSystem.getDecayedScore(it.tournament.date, it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tbasescore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
                 tplace = it.place == 1? "Win" : "Lose"
             }
             def tvideos = it.tournament.videos
-            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tplace: tplace, tteams: tteams, tdate: tdate, tvideos: tvideos, resultid: it.id]
+            def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tbasescore: tbasescore, tplace: tplace, tteams: tteams, tdate: tdate, tvideos: tvideos, resultid: it.id]
             rankings[it.tournament.game] << data
 /*            if (Version.generalize(it.tournament.game) == Version.AE2012) {
                 chars.addAll(it.characterTeams.collect.pchars*.characterType)

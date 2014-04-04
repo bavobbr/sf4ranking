@@ -2,6 +2,9 @@ package be.bbr.sf4ranking
 
 import groovy.util.logging.Log4j
 
+import static java.util.Calendar.MONTH
+import static java.util.Calendar.YEAR
+
 /**
  * This class encapsulates all logic for ranks and scores to be given when a tournament is added
  * Currently all lists are 32 entries. Care should be taken to have at least that otherwise 32-player tournaments will not find data
@@ -95,6 +98,46 @@ class ScoringSystem
         List typescores = formatscores[tournamentType.name()] as List
         return typescores[rank - 1] as Integer
     }
+
+    public static Integer getDecayedScore(Date date, Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
+    {
+        double decayFactor = 0.0
+        Integer monthsAgo = getMonthsDifference(date, new Date())
+        switch (monthsAgo) {
+            case { monthsAgo > 24 }: decayFactor = 0.9; break
+            case { monthsAgo > 23 }: decayFactor = 0.8; break
+            case { monthsAgo > 22 }: decayFactor = 0.7; break
+            case { monthsAgo > 21 }: decayFactor = 0.65; break
+            case { monthsAgo > 20 }: decayFactor = 0.6; break
+            case { monthsAgo > 19 }: decayFactor = 0.55; break
+            case { monthsAgo > 18 }: decayFactor = 0.5; break
+            case { monthsAgo > 17 }: decayFactor = 0.45; break
+            case { monthsAgo > 16 }: decayFactor = 0.4; break
+            case { monthsAgo > 15 }: decayFactor = 0.35; break
+            case { monthsAgo > 14 }: decayFactor = 0.3; break
+            case { monthsAgo > 13 }: decayFactor = 0.25; break
+            case { monthsAgo > 12 }: decayFactor = 0.20; break
+            case { monthsAgo > 11 }: decayFactor = 0.15; break
+            case { monthsAgo > 10 }: decayFactor = 0.10; break
+            case { monthsAgo > 9 }: decayFactor = 0.08; break
+            case { monthsAgo > 8 }: decayFactor = 0.05; break
+            case { monthsAgo > 7 }: decayFactor = 0.02; break
+            case { monthsAgo > 6 }: decayFactor = 0.0; break
+        }
+        def normalScore = getScore(rank, tournamentType, tournamentFormat)
+        Double decayedScore = normalScore * (1.0-decayFactor);
+        return decayedScore as Integer
+    }
+
+    private static final Integer getMonthsDifference(Date date1, Date date2) {
+        def (cal1, cal2) = [Calendar.instance, Calendar.instance]
+        cal1.time = date1
+        cal2.time = date2
+        int m1 = cal1.get(YEAR) * 12 + cal1.get(MONTH)
+        int m2 = cal2.get(YEAR) * 12 + cal2.get(MONTH)
+        return m2 - m1 + 1
+    }
+
 
     public static Integer getRank(Integer index, TournamentFormat tournamentFormat)
     {

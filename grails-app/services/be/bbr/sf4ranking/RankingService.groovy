@@ -73,20 +73,28 @@ class RankingService
                 tournament.game == game
             }.list()
             log.info "Found ${results.size()} results"
-            def scores = results.collect {
-                if (it.tournament.ranked)
-                {
-                    ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
-                }
-                else 0
-            }.sort {a, b -> b <=> a}
-            def bestof = scores.take(16)
-            def score = (bestof.sum() as Integer) ?: 0
-            p.applyScore(game, score)
+            def playerScore = getScore(results) { Result r ->
+                ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+            }
+            p.applyScore(game, playerScore)
+            def decayedScore = getScore(results) { Result r ->
+                ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+            }
+            p.applyScore(game, decayedScore)
+            p.applyTotalScore(game, playerScore)
             p.save(failOnError: true)
         }
         log.info "Updated ${players.size()} scores"
         return players.size()
+    }
+
+    private Integer getScore(List<Result> results, Closure scoringRule) {
+        def scores = results.collect {
+            if (it.tournament.ranked) { scoringRule(it) }
+            else 0
+        }.sort {a, b -> b <=> a}
+        def bestof = scores.take(16)
+        (bestof.sum() as Integer) ?: 0
     }
 
     /**
