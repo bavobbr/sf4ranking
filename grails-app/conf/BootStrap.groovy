@@ -22,6 +22,7 @@ class BootStrap {
             adminRole.addToPermissions("tournament")
             adminRole.addToPermissions("user")
             adminRole.addToPermissions("role")
+            adminRole.addToPermissions("gameTeam")
             adminRole.save()
             def user = new User(username: "init", passwordHash: new Sha256Hash("init").toHex())
             user.addToRoles(adminRole)
