@@ -45,15 +45,15 @@ class ScoringSystem
      * But adding them in anyway helps robustness
      */
     private static final Map double_scores = [
-            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16].flatten(),
-            "CHAMPIONSHIP": [1500, 1050, [690] * 2, [320] * 4, [200] * 8, [100] * 16].flatten(),
-            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16].flatten(),
-            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16].flatten(),
-            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16].flatten(),
-            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16].flatten(),
-            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16].flatten(),
-            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
-            "TOURNAMENT_CHAMPIONS": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
+            "GRAND_SLAM": [2000, 1300, 780, 600, [430] * 4, [240] * 8, [120] * 16].flatten(),
+            "CHAMPIONSHIP": [1500, 1050, 690, 500, [320] * 4, [200] * 8, [100] * 16].flatten(),
+            "PREMIER_MANDATORY": [1000, 650, 390, 300, [215] * 4, [120] * 8, [60] * 16].flatten(),
+            "PREMIER_5": [900, 585, 350, 250, [190] * 4, [105] * 8, [50] * 16].flatten(),
+            "PREMIER_12": [470, 305, 185, 150, [100] * 4, [55] * 8, [25] * 16].flatten(),
+            "INTERNATIONAL": [280, 180, 110, 80, [60] * 4, [30] * 8, [15] * 16].flatten(),
+            "SERIES": [160, 95, 57, 40, [29] * 4, [15] * 8, [7] * 16].flatten(),
+            "CIRCUIT": [100, 60, 35, 25, [20] * 4, [7] * 8, [3] * 16].flatten(),
+            "TOURNAMENT_CHAMPIONS": [100, 60, 35, 30, [20] * 4, [7] * 8, [3] * 16].flatten(),
     ]
 
     /**
