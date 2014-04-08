@@ -89,9 +89,7 @@ class RankingsController
     {
         log.info "Resolving player byname $params.name"
         String uppername = params.name.toUpperCase()
-        uppername = uppername.replace('%','').trim()
-        log.info "Resolving player cleaned up byname $params.name"
-        if (uppername == "PR%20BALROG") uppername = "PR BALROG" // damn u edouardo
+        if (uppername == "PR20BALROG") uppername = "PR BALROG" // damn u edouardo
         Player p = Player.findByCodename(uppername)
         return player(p)
     }

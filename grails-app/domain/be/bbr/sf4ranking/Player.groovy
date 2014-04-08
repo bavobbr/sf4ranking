@@ -93,7 +93,7 @@ class Player
         def ranking = rankings.find { it.game == game }
         if (!ranking) {
             ranking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: game)
-            this.removeFromRankings(ranking)
+            this.addToRankings(ranking)
         }
         return ranking
     }

@@ -6,6 +6,7 @@ import be.bbr.sf4ranking.CountryCode
 import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.RankingService
+import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.Tournament
 import be.bbr.sf4ranking.TournamentFormat
 import be.bbr.sf4ranking.TournamentType
@@ -152,12 +153,37 @@ class AdminController
         [players: Player.list(order: "asc", sort: 'name')]
     }
 
+    def split(Player p)
+    {
+        def results = p.results.inject([]) { def list, Result value ->
+            def display =  "${value.tournament.game.name()} - ${value.tournament.name} - ${value.characterTeams}"
+            list << [id: value.id, display: display]
+        }
+        [players: Player.list(order: "asc", sort: 'name'), player: p, results: results]
+    }
+
     def mergePlayers()
     {
         def p1 = Player.findById(params.p1)
         def p2 = Player.findById(params.p2)
         dataService.merge(p1, p2)
         redirect(controller: "rankings", action: "player", params: [id: p2.id])
+    }
+
+    def splitPlayers()
+    {
+        def toPlayer = new Player(name: params.to)
+        def fromPlayer = Player.findById(params.from)
+        log.info "Asked to split off ${fromPlayer.name} into ${toPlayer.name} with results ${params.results}"
+        for (id in params.list('results')) {
+            Result r = Result.findById(id)
+            fromPlayer.removeFromResults(r)
+            toPlayer.addToResults(r)
+            r.save(failOnError: true)
+        }
+        toPlayer.save(failOnError: true)
+        fromPlayer.save(failOnError: true)
+        redirect(controller: "rankings", action: "player", params: [id: toPlayer.id])
     }
 
 

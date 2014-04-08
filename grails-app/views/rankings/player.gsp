@@ -182,6 +182,7 @@
     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
       <g:link controller="admin" action="selectPlayerVideos" params="['id': player.id]">[Update videos as admin]</g:link>
       <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
+      <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
     </g:if>
 
     <div class="tab-pane" id="videos">
