@@ -107,6 +107,10 @@ thead tr td {
 	font-weight: 700;
 }
 
+.panel {
+    margin: 50px 10px 10px;
+}
+
 .alert {
 	background-color: #ffff99;
 	color: #000;

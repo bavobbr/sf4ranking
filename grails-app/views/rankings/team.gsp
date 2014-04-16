@@ -45,7 +45,7 @@
   <table class="tablehead" id="datatable">
     <thead>
     <tr class="stathead">
-      <th>Place</th>
+      <th>Main Game</th>
       <th>Player</th>
       <th>Country</th>
       <th>Score</th>
@@ -56,7 +56,7 @@
     </thead>
     <g:each in="${players}" var="player">
       <tr>
-        <td>${player.rank(Version.AE2012)}</td>
+        <td>${player.mainGame.value}</td>
         <td><g:link mapping="playerByName" controller="rankings" action="player" params="[name: player.name]">${player.name}</g:link></td>
         <td>
           <g:if test="${player.countryCode != null}">

@@ -43,4 +43,4 @@
       </tr>
     </g:each>
   </table></div>
-<g:link action="rank" controller="rankings" params="['id': game.name()]">View complete ${game.value} World Rankings</g:link>
+<g:link action="rank" controller="rankings" params="['id': game.name()]" class="toplink">View complete ${game.value} World Rankings</g:link>
