@@ -50,7 +50,7 @@ public enum CharacterType
     AKUMA_MVC3("AKUMA", "Akuma", Version.UMVC3),
     AMATERASU("AMATERASU", "Amaterasu", Version.UMVC3),
     ARTHUR("ARTHUR", "Arthur", Version.UMVC3),
-    VIPER_MVC3("VIPER", "C. Viper", Version.UMVC3),
+    VIPER_MVC3("VIPER", "C.Viper", Version.UMVC3),
     CHRIS("CHRIS", "Chris", Version.UMVC3),
     CHUN_LI("CHUN", "Chun Li", Version.UMVC3),
     DANTE("DANTE", "Dante", Version.UMVC3),
@@ -65,7 +65,7 @@ public enum CharacterType
     PHOENIX_WRIGHT("Wright", "Phoenix Wright", Version.UMVC3),
     RYU_MVC3("RYU", "Ryu", Version.UMVC3),
     SPENCER("SPENCER", "Spencer", Version.UMVC3),
-    STRIDER("STRIDER", "Strider", Version.UMVC3),
+    STRIDER("STRIDER", "Strider Hiryu", Version.UMVC3),
     TRISH("TRISH", "Trish", Version.UMVC3),
     TRON_BONNE("TRON", "Tron Bonne", Version.UMVC3),
     VERGIL("VERGIL", "Vergil", Version.UMVC3),
@@ -117,7 +117,38 @@ public enum CharacterType
     VALENTINE("VALENTINE", "Valentine", Version.SKULLGIRLS),
     ELIZA("ELIZA", "Eliza", Version.SKULLGIRLS),
     BEOWULF("BEOWULF", "Beowulf", Version.SKULLGIRLS),
-    ROBO_FORTUNE("ROBO", "Robo Fortune", Version.SKULLGIRLS);
+    ROBO_FORTUNE("ROBO", "Robo Fortune", Version.SKULLGIRLS),
+
+    AQUAMAN("AQUAMAN", "Aquaman", Version.IGAU),
+    ARES("ARES", "Ares", Version.IGAU),
+    BANE("BANE", "Bane", Version.IGAU),
+    BATGIRL_("BATGIRL", "Batgirl", Version.IGAU),
+    BATMAN("BATMAN", "Batman", Version.IGAU),
+    BLACK_ADAM("BLACK_ADAM", "Black Adam", Version.IGAU),
+    CATWOMAN("CATWOMAN", "Catwoman", Version.IGAU),
+    CYBORG("CYBORG", "Cyborg", Version.IGAU),
+    DEATHSTROKE("DEATHSTROKE", "Deathstroke", Version.IGAU),
+    DOOMSDAY("DOOMSDAY", "Doomsday", Version.IGAU),
+    FLASH("FLASH", "Flash", Version.IGAU),
+    GREEN_ARROW("GREEN_ARROW", "Green Arrow", Version.IGAU),
+    GREEN_LANTERN("GREEN_LANTERN", "Green Lantern", Version.IGAU),
+    HARLEY_QUINN("HARLEY_QUINN", "Harley Quinn", Version.IGAU),
+    HAWKGIRL("HAWKGIRL", "Hawkgirl", Version.IGAU),
+    JOKER("JOKER", "Joker", Version.IGAU),
+    KILLER_FROST("KILLER_FROST", "Killer Frost", Version.IGAU),
+    LEX_LUTHOR("LEX_LUTHOR", "Lex Luthor", Version.IGAU),
+    LOBO("LOBO", "Lobo", Version.IGAU),
+    MARTIAN_MANHUNTER("MARTIAN_MANHUNTER", "Martian Manhunter", Version.IGAU),
+    NIGHTWING("NIGHTWING", "Nightwing", Version.IGAU),
+    RAVEN("RAVEN", "Raven", Version.IGAU),
+    SCORPION("SCORPION", "Scorpion", Version.IGAU),
+    SHAZAM("SHAZAM", "Shazam", Version.IGAU),
+    SINESTRO("SINESTRO", "Sinestro", Version.IGAU),
+    SOLOMON_GRUNDY("SOLOMON_GRUNDY", "Solomon Grundy", Version.IGAU),
+    SUPERMAN("SUPERMAN", "Superman", Version.IGAU),
+    WONDER_WOMAN("WONDER_WOMAN", "Wonder Woman", Version.IGAU),
+    ZATANNA("ZATANNA", "Zatanna", Version.IGAU),
+    ZOD("ZOD", "Zod", Version.IGAU);
 
 
 
@@ -137,6 +168,11 @@ public enum CharacterType
     }
     public Version getGame() {
         return game;
+    }
+
+    public String getShortname()
+    {
+        return shortname;
     }
 
     public static CharacterType fromString(String input, Version game) {

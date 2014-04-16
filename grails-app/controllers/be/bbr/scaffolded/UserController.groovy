@@ -1,4 +1,4 @@
-package be.bbr.admin
+package be.bbr.scaffolded
 
 import be.bbr.sf4ranking.shiro.User
 import org.apache.shiro.crypto.hash.Sha256Hash

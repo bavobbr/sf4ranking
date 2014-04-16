@@ -20,8 +20,8 @@
       $("#dialog").dialog({
                             autoOpen: false,
                             modal: true,
-                            height: 400,
-                            width: 400
+                            height: 600,
+                            width: 500
                           });
       $("#validatePlayers").click(function ()
                          {
@@ -51,6 +51,21 @@
                                     }
                                   });
                          });
+      $("#renderCharacterNames").click(function ()
+                                {
+                                  $.ajax({
+
+                                           url: "${createLink(action: 'renderCharacterNames', controller: 'admin')}",
+                                           type: "POST",
+                                           data: {game: $('#tgame').val()},
+                                           success: function (data)
+                                           {
+                                             $("#dialog").html(data);
+                                             $("#dialog").dialog("open");
+                                           }
+                                         });
+                                });
+
     });
 </script>
 
@@ -110,6 +125,7 @@
                 title="${hint}"/>
     <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
     <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>
+    <button type="button" id="renderCharacterNames" class="btn btn-secondary">Show char guide</button>
     <button type="submit" class="btn btn-primary">Create</button>
   </div>
 </g:form>

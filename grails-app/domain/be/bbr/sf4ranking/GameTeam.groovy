@@ -15,7 +15,7 @@ class GameTeam implements Comparable<GameTeam>
     static hasMany = [pchars: GameCharacter]
 
     public String toString() {
-        return "[${pchars.join(",")}]"
+        return "[${pchars?.join(",")}]"
     }
 
     public boolean equals(Object other) {

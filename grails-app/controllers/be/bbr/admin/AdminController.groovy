@@ -134,6 +134,20 @@ class AdminController
         log.info "rendered $feedback"
     }
 
+    def renderCharacterNames() {
+        def game = Version.fromString(params.game);
+        def names = CharacterType.values().findAll { it.game == Version.generalize(game) }
+        log.info "rendering $game"
+        render(contentType: "text/html") {
+            ul {
+                names.each {
+                    li("${it.name()} / ${it.getValue()} / ${it.getShortname()}")
+                }
+            }
+        }
+        log.info "rendered $game"
+    }
+
     def importServerSideData()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))

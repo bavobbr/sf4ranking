@@ -12,7 +12,8 @@ public enum Version
     AE2012("SSF4:AE 2012"),
     USF4("Ultra SF4"),
     UMVC3("Ultimate Marvel vs Capcom 3"),
-    KI("Killer Instinct"), SKULLGIRLS("Skullgirls");
+    KI("Killer Instinct"), SKULLGIRLS("Skullgirls"),
+    IGAU("Injustice");
 
     private String value;
 
@@ -53,6 +54,8 @@ public enum Version
                 return Version.KI;
             case SKULLGIRLS:
                 return Version.SKULLGIRLS;
+            case IGAU:
+                return Version.IGAU;
             default:
                 return Version.UNKNOWN;
         }
