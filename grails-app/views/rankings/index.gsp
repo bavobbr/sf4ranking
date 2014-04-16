@@ -68,7 +68,7 @@
 
       <div class="panel-body">
         <ul>
-          <g:each in="${last5players}" var="p">
+          <g:each in="${lastPlayers}" var="p">
             <li><g:link controller="rankings" action="player" params="[id: p.id]">${p.name}</g:link></li>
           </g:each>
       </div>
