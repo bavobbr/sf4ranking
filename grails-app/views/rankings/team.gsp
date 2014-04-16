@@ -49,7 +49,7 @@
       <th>Player</th>
       <th>Country</th>
       <th>Score</th>
-      <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+      <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
         <th>Edit</th>
       </g:if>
     </tr>
@@ -67,7 +67,7 @@
           </g:if>
         </td>
         <td>${player.overallScore()}</td>
-        <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+        <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
           <td><g:link controller="result" action="show" params="['id': player.id]">[Update result as admin]</g:link></td>
         </g:if>
       </tr>
@@ -75,7 +75,7 @@
   </table>
 </div>
 
-<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+<g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
   <g:link controller="team" action="show" params="['id': team.id]">[Update team as admin]</g:link>
 </g:if>
 

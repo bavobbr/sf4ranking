@@ -133,7 +133,7 @@
               <th>Team</th>
               <th>Relative Points</th>
               <th>Base Points</th>
-              <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+              <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
                 <th>Edit</th>
               </g:if>
             </tr>
@@ -164,7 +164,7 @@
                 </td>
                 <td>${result.tscore}</td>
                 <td>${result.tbasescore}</td>
-                <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+                <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
                   <td><g:link controller="result" action="show" params="[id: result.resultid]">[Update result as admin]</g:link></td>
                 </g:if>
               </tr>
@@ -179,7 +179,7 @@
 
 
 
-    <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+    <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
       <g:link controller="admin" action="selectPlayerVideos" params="['id': player.id]">[Update videos as admin]</g:link>
       <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
       <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>

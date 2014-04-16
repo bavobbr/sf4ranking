@@ -12,11 +12,11 @@ class UrlMappings {
         }
         "/$controller/$action?/$id?(.${format})?"{
             constraints {
-                // apply constraints here
             }
         }
-
+        "500"(controller: "errors", action: "concurrent",
+              exception: ConcurrentModificationException)
+        "500"(view: "/error")
         "/"(controller: "/rankings")
-        "500"(view:'/error')
 	}
 }

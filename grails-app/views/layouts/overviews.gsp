@@ -159,6 +159,19 @@
               </ul>
             </li>
           </g:if>
+          <g:elseif test="${SecurityUtils.subject.hasRole("Moderator")}">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MOD <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><g:link action="index" controller="admin">[Actions]</g:link></li>
+                <li><g:link action="index" controller="tournament">[Tournaments]</g:link></li>
+                <li><g:link action="index" controller="player">[Players]</g:link></li>
+                <li><g:link action="index" controller="result">[Results]</g:link></li>
+                <li><g:link action="index" controller="team">[Teams]</g:link></li>
+                <li><g:link action="signOut" controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>
+              </ul>
+            </li>
+          </g:elseif>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

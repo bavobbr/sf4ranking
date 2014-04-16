@@ -24,18 +24,24 @@ class BootStrap {
             adminRole.addToPermissions("role")
             adminRole.addToPermissions("gameTeam")
             adminRole.save()
+            def modRole = new Role(name: "Moderator")
+            modRole.addToPermissions("admin")
+            modRole.addToPermissions("gameCharacter")
+            modRole.addToPermissions("player")
+            modRole.addToPermissions("playerRanking")
+            modRole.addToPermissions("result")
+            modRole.addToPermissions("team")
+            modRole.addToPermissions("tournament")
+            modRole.addToPermissions("role")
+            modRole.addToPermissions("gameTeam")
+            modRole.save()
             def user = new User(username: "init", passwordHash: new Sha256Hash("init").toHex())
             user.addToRoles(adminRole)
             user.save()
         }
         if (!Configuration.first()) {
             Configuration cfg = new Configuration()
-            cfg.lastUpdateMessage = """
-  Currently the database is focusing on SSF4:AE 2012 edition, listing all high-profile tournaments of 2012 and 2013. As a result this ranking reflects the most all-round tournament players of Street Fighter 4: Arcade Edition 2012.
-  As soon as more tournaments are added in different games, new rankings will be made per game.<br/>
-  The database and website is still in beta-phase and subject to change on user feedback. Feedback is very much appreciated via the social links provided at every page!<br/>
-  UPDATE: Now allows you to search players by character, and to filter region by clicking flags.
-"""
+            cfg.lastUpdateMessage = ""
             cfg.save()
         }
     }

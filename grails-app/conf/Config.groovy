@@ -123,3 +123,4 @@ log4j = {
     info   'be.bbr'
 }
 
+global.isUpdating = false

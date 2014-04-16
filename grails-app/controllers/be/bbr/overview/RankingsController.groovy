@@ -143,7 +143,7 @@ class RankingsController
             def rcountryname = it.player.countryCode?.name
             def pskill = null
             def prankingid = null
-            if (SecurityUtils.subject.hasRole("Administrator")) {
+            if (SecurityUtils.subject.hasRoles(["Administrator","Moderator"])) {
                 pskill = it.player.skill(tournament.game)
                 prankingid = it.player.rankings.find { it.game == tournament.game }?.id
             }

@@ -3,22 +3,21 @@
 <html>
 <head>
   <title><g:if env="development">Grails Runtime Exception</g:if><g:else>Error</g:else></title>
-  <meta name="layout" content="admin">
-  <g:if env="development"><link rel="stylesheet" href="${resource(dir: 'css', file: 'errors.css')}" type="text/css"></g:if>
-  <g:elseif test="${SecurityUtils.subject.hasRole("Administrator")}"><link rel="stylesheet" href="${resource(dir: 'css', file: 'errors.css')}" type="text/css"></g:elseif>
+  <meta name="layout" content="overviews">
+  <link rel="stylesheet" href="${resource(dir: 'css', file: 'errors.css')}" type="text/css">
 </head>
 
 <body>
 <g:if env="development">
   <g:renderException exception="${exception}"/>
 </g:if>
-<g:elseif test="${SecurityUtils.subject.hasRole("Administrator")}">
+<g:elseif test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
   <g:renderException exception="${exception}"/>
 </g:elseif>
 <g:else>
   <ul class="errors">
-    <li>KO. You lose.</li>
-    <li>You might want to talk to support</li>
+    <li>KO. You lose!</li>
+    <li>You might want to talk to support @bavobbr</li>
   </ul>
 </g:else>
 </body>

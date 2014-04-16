@@ -57,7 +57,7 @@
       <th>Team(s)</th>
       <th>Country</th>
       <th>Score</th>
-      <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+      <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
         <th>Result</th>
         <th>Player</th>
         <th>Skill</th>
@@ -93,7 +93,7 @@
           </g:if>
         </td>
         <td>${result.rscore}</td>
-        <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+        <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
           <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result]</g:link></td>
           <td><g:link controller="player" action="edit" params="['id': result.rplayerid]">[Update player]</g:link></td>
           <td><g:link controller="playerRanking" action="edit" params="['id': result.prankingid]">[Update skill ${result.pskill}]</g:link></td>
@@ -103,7 +103,7 @@
   </table>
 </div>
 
-<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+<g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
   <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos]</g:link>
   <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament]</g:link>
   <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>

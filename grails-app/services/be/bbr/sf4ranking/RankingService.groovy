@@ -10,32 +10,37 @@ import grails.transaction.Transactional
 class RankingService
 {
 
+    ConfigurationService configurationService
+
     /**
      * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
      * Only applied when weighting is set as AUTO, otherwise the weight is static per supplied tournament type
      */
     Integer updateWeights(Version game)
     {
-        def tournaments = Tournament.findAllByGame(game)
-        tournaments.each {tournament ->
-            log.info "Updating tournament $tournament"
-            def weight = 0
-            if (tournament.weightingType == WeightingType.AUTO)
-            {
-                def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
-                if (topresults)
+        def tournaments = []
+        configurationService.withUniqueSession {
+            tournaments = Tournament.findAllByGame(game)
+            tournaments.each {tournament ->
+                log.info "Updating tournament $tournament"
+                def weight = 0
+                if (tournament.weightingType == WeightingType.AUTO)
                 {
-                    Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
-                    weight = (skillScore as Double) / topresults.size() * 10
+                    def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
+                    if (topresults)
+                    {
+                        Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
+                        weight = (skillScore as Double) / topresults.size() * 10
+                    }
                 }
+                else
+                {
+                    weight = tournament.tournamentType.classWeight
+                }
+                tournament.weight = weight
+                tournament.save(flush: true, failOnError: true)
+                log.info "Updated tournament $tournament with weight ${tournament.weight}"
             }
-            else
-            {
-                weight = tournament.tournamentType.classWeight
-            }
-            tournament.weight = weight
-            tournament.save(flush: true, failOnError: true)
-            log.info "Updated tournament $tournament with weight ${tournament.weight}"
         }
         return tournaments.size()
     }
@@ -46,17 +51,20 @@ class RankingService
      */
     Integer updateTypes(Version game)
     {
-        def tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
-        // AUTO weighting starts from premier 5
-        tournaments.each {it.tournamentType = TournamentType.UNRANKED}
-        tournaments.removeAll {!it.ranked}
-        applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
-        applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
-        applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
-        applyType(tournaments, TournamentType.INTERNATIONAL, 21, 31)
-        applyType(tournaments, TournamentType.SERIES, 52, 50)
-        applyType(tournaments, TournamentType.CIRCUIT, 102, 200)
-        tournaments*.save(failOnError: true)
+        def tournaments = []
+        configurationService.withUniqueSession {
+            tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
+            // AUTO weighting starts from premier 5
+            tournaments.each {it.tournamentType = TournamentType.UNRANKED}
+            tournaments.removeAll {!it.ranked}
+            applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
+            applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
+            applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
+            applyType(tournaments, TournamentType.INTERNATIONAL, 21, 31)
+            applyType(tournaments, TournamentType.SERIES, 52, 50)
+            applyType(tournaments, TournamentType.CIRCUIT, 102, 200)
+            tournaments*.save(failOnError: true)
+        }
         return tournaments.size()
     }
 
@@ -66,31 +74,37 @@ class RankingService
     Integer updatePlayerScores(Version game)
     {
         List players = Player.list()
-        players.each {Player p ->
-            log.info("Evaluating for $game player $p, looking for results")
-            def results = Result.where {
-                player == p
-                tournament.game == game
-            }.list()
-            log.info "Found ${results.size()} results"
-            def playerScore = getScore(results) { Result r ->
-                ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+        configurationService.withUniqueSession {
+            players.each {Player p ->
+                log.info("Evaluating for $game player $p, looking for results")
+                def results = Result.where {
+                    player == p
+                    tournament.game == game
+                }.list()
+                log.info "Found ${results.size()} results"
+                def playerScore = getScore(results) {Result r ->
+                    ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                }
+                p.applyScore(game, playerScore)
+                def decayedScore = getScore(results) {Result r ->
+                    ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                }
+                p.applyScore(game, decayedScore)
+                p.applyTotalScore(game, playerScore)
+                p.save(failOnError: true)
             }
-            p.applyScore(game, playerScore)
-            def decayedScore = getScore(results) { Result r ->
-                ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
-            }
-            p.applyScore(game, decayedScore)
-            p.applyTotalScore(game, playerScore)
-            p.save(failOnError: true)
+            log.info "Updated ${players.size()} scores"
         }
-        log.info "Updated ${players.size()} scores"
         return players.size()
     }
 
-    private Integer getScore(List<Result> results, Closure scoringRule) {
+    private Integer getScore(List<Result> results, Closure scoringRule)
+    {
         def scores = results.collect {
-            if (it.tournament.ranked) { scoringRule(it) }
+            if (it.tournament.ranked)
+            {
+                scoringRule(it)
+            }
             else 0
         }.sort {a, b -> b <=> a}
         def bestof = scores.take(16)
@@ -104,19 +118,21 @@ class RankingService
     Integer updatePlayerRank(Version game)
     {
         List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
-        log.info("Found ${players.size()} to update rank")
-        def previous = 0
-        def currentRank = 0
-        players.eachWithIndex {Player p, Integer idx ->
-            log.info("Updating $game rank of player $p")
-            if (p.score(game) != previous)
-            {
-                currentRank = idx + 1
+        configurationService.withUniqueSession {
+            log.info("Found ${players.size()} to update rank")
+            def previous = 0
+            def currentRank = 0
+            players.eachWithIndex {Player p, Integer idx ->
+                log.info("Updating $game rank of player $p")
+                if (p.score(game) != previous)
+                {
+                    currentRank = idx + 1
+                }
+                def rank = currentRank
+                p.applyRank(game, rank)
+                previous = p.score(game)
+                log.info("Updated rank of player $p, setting previous as $previous")
             }
-            def rank = currentRank
-            p.applyRank(game, rank)
-            previous = p.score(game)
-            log.info("Updated rank of player $p, setting previous as $previous")
         }
         return players.size()
     }
@@ -126,48 +142,53 @@ class RankingService
     Integer updateMainTeams(Version game)
     {
         List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
-        log.info("Found ${players.size()} to update main")
-        players.each {Player p ->
-            PlayerRanking ranking = p.rankings.find {it.game == game}
-            if (ranking)
-            {
-                ranking.mainCharacters.clear()
-                def filteredResults = p.results.findAll {it.tournament.game == game}
-                def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
-                def countedGroup = teams.countBy {GameTeam team -> team}
-                def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
-                def main = sortedGroup.keySet().first()
-                log.info "applying main team $main"
-                main.pchars.each {GameCharacter gameCharacter ->
-                    ranking.mainCharacters.add(gameCharacter.characterType)
+        configurationService.withUniqueSession {
+            log.info("Found ${players.size()} to update main")
+            players.each {Player p ->
+                PlayerRanking ranking = p.rankings.find {it.game == game}
+                if (ranking)
+                {
+                    ranking.mainCharacters.clear()
+                    def filteredResults = p.results.findAll {it.tournament.game == game}
+                    def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
+                    def countedGroup = teams.countBy {GameTeam team -> team}
+                    def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
+                    def main = sortedGroup.keySet().first()
+                    log.info "applying main team $main"
+                    main.pchars.each {GameCharacter gameCharacter ->
+                        ranking.mainCharacters.add(gameCharacter.characterType)
+                    }
+                    ranking.save(failOnError: true)
                 }
-                ranking.save(failOnError: true)
-            }
-            p.save(failOnError: true)
+                p.save(failOnError: true)
 
+            }
         }
         return players.size()
     }
 
     Integer updateMainGames()
     {
-        Player.list().each { Player player ->
-            log.info "Updating main game of $player.name"
-            def c = Result.createCriteria()
-            def results = c {
-                createAlias('tournament', 'tournamentAlias')
-                projections {
-                    groupProperty("tournamentAlias.game")
-                    rowCount()
+        configurationService.withUniqueSession {
+            Player.list().each {Player player ->
+                log.info "Updating main game of $player.name"
+                def c = Result.createCriteria()
+                def results = c {
+                    createAlias('tournament', 'tournamentAlias')
+                    projections {
+                        groupProperty("tournamentAlias.game")
+                        rowCount()
+                    }
+                    eq("player", player)
                 }
-                eq("player",player)
-            }
-            log.info "Counts is $results"
-            def sorted = results.sort { a, b -> b[1] <=> a[1] }
-            if (sorted) {
-                def main = sorted.first()[0]
-                log.info "Main game is $main"
-                player.mainGame = main
+                log.info "Counts is $results"
+                def sorted = results.sort {a, b -> b[1] <=> a[1]}
+                if (sorted)
+                {
+                    def main = sorted.first()[0]
+                    log.info "Main game is $main"
+                    player.mainGame = main
+                }
             }
         }
         return Player.count

@@ -10,6 +10,7 @@ import groovy.json.JsonSlurper
 class DataService
 {
 
+    ConfigurationService configurationService
     /**
      * Takes in rich tournament data from the controller and saves it as tournament
      * Will also auto-create unknown players
@@ -51,7 +52,8 @@ class DataService
                 log.info "Creating player $p"
                 p.save(failOnError: true)
             }
-            if (!p.rankings.any { it.game == tournament.game}) {
+            if (!p.rankings.any {it.game == tournament.game})
+            {
                 PlayerRanking playerRanking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: tournament.game)
                 p.addToRankings(playerRanking)
             }
@@ -129,89 +131,94 @@ class DataService
      */
     String importFileData()
     {
-        if (Player.count() > 0 || Tournament.count() > 0)
-        {
-            return "Delete data first, re-import works only on empty database"
-        }
-        def teamsFile = new File(DataService.class.getResource("/data/teams.json").toURI())
-        def teamdata = new JsonSlurper().parseText(teamsFile.text)
-        teamdata.each {
-            log.info "Saving team $it.name"
-            Team team = new Team(name: it.name, twitter: it.twitter, logo: it.logo, website: it.website, shortname: it.shortname)
-            team.save(failOnError: true)
-            log.info "saved team $team.id"
-        }
+        configurationService.withUniqueSession {
+            if (Player.count() > 0 || Tournament.count() > 0)
+            {
+                return "Delete data first, re-import works only on empty database"
+            }
+            def teamsFile = new File(DataService.class.getResource("/data/teams.json").toURI())
+            def teamdata = new JsonSlurper().parseText(teamsFile.text)
+            teamdata.each {
+                log.info "Saving team $it.name"
+                Team team = new Team(name: it.name, twitter: it.twitter, logo: it.logo, website: it.website, shortname: it.shortname)
+                team.save(failOnError: true)
+                log.info "saved team $team.id"
+            }
 
-        def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
-        def pdata = new JsonSlurper().parseText(playerFile.text)
-        pdata.each {
-            log.info "Saving player $it.name"
-            def cc = it.countryCode as CountryCode
-            def mainGame = Version.fromString(it.mainGame) ?: Version.UNKNOWN
-            Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter,
-                                  mainGame: mainGame)
-            it.rankings.each {
-                def game = Version.fromString(it.game)
-                List mainCharacters = []
-                it.mainTeam.each {
-                    def teamChar = CharacterType.fromString(it, Version.generalize(game)) ?: CharacterType.UNKNOWN
-                    mainCharacters << teamChar
-                }
-                if (game && it.rank && it.score)
-                {
-                    PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score, totalScore: it.totalScore?:0, game: game, oldRank: it.oldRank, oldScore: it.oldScore, snapshot: it.snapshot)
-                    p.addToRankings(pranking)
-                    mainCharacters.each {pranking.addToMainCharacters(it)}
-                }
-            }
-            it.teams?.each {
-                log.info "finding team $it"
-                Team team = Team.findByCodename(it.toUpperCase())
-                if (team) p.addToTeams(team)
-            }
-            p.save(failOnError: true)
-        }
-        def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
-        def tdata = new JsonSlurper().parseText(tournamentFile.text)
-        tdata.each {
-            log.info "Importing tournament $it.name"
-            CountryCode country = it.country as CountryCode
-            Version version = it.version as Version
-            Date date = Date.parse("dd-MM-yyyy", it.date as String)
-            TournamentFormat format = TournamentFormat.fromString(it.format) ?: TournamentFormat.UNKNOWN
-            WeightingType weightingType = WeightingType.fromString(it.wtype) ?: WeightingType.AUTO
-            TournamentType type = TournamentType.fromString(it.type)
-            Integer weight = it.weight ?: 0
-            String challonge = it.challonge
-            String coverage = it.coverage
-            Boolean ranked = it.ranked?.toBoolean() ?: false
-            Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos,
-                                                   weight: weight, tournamentFormat: format, tournamentType: type,
-                                                   weightingType: weightingType, challonge: challonge, ranked: ranked, coverage: coverage)
-            it.players.each {
-                log.info "Processing ${it.player}"
-                Player p = Player.findByCodename(it.player.toUpperCase())
-                if (!p)
-                {
-                    log.warn("Creating player ad hoc $it")
-                    p = new Player(name: it.player, countryCode: null)
-                    p.save(failOnError: true)
-                }
-                Result result = new Result(place: it.place, player: p)
-                it.pteams.each {
-                    GameTeam team = new GameTeam()
-                    it.each {
-                        CharacterType ctype = CharacterType.fromString(it, Version.generalize(version))
-                        if (ctype == null) throw new RuntimeException("ctype is null for ${it} ${version}")
-                        GameCharacter character = new GameCharacter(characterType: ctype, main: true)
-                        team.addToPchars(character)
+            def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
+            def pdata = new JsonSlurper().parseText(playerFile.text)
+            pdata.each {
+                log.info "Saving player $it.name"
+                def cc = it.countryCode as CountryCode
+                def mainGame = Version.fromString(it.mainGame) ?: Version.UNKNOWN
+                Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter,
+                                      mainGame: mainGame)
+                it.rankings.each {
+                    def game = Version.fromString(it.game)
+                    List mainCharacters = []
+                    it.mainTeam.each {
+                        def teamChar = CharacterType.fromString(it, Version.generalize(game)) ?: CharacterType.UNKNOWN
+                        mainCharacters << teamChar
                     }
-                    result.addToCharacterTeams(team)
+                    if (game && it.rank && it.score)
+                    {
+                        PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score,
+                                                                   totalScore: it.totalScore ?: 0, game: game, oldRank: it.oldRank,
+                                                                   oldScore: it.oldScore, snapshot: it.snapshot)
+                        p.addToRankings(pranking)
+                        mainCharacters.each {pranking.addToMainCharacters(it)}
+                    }
                 }
-                log.info "Seen result $result"
-                tournament.addToResults(result)
+                it.teams?.each {
+                    log.info "finding team $it"
+                    Team team = Team.findByCodename(it.toUpperCase())
+                    if (team) p.addToTeams(team)
+                }
+                p.save(failOnError: true)
             }
-            tournament.save(failOnError: true)
+            def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
+            def tdata = new JsonSlurper().parseText(tournamentFile.text)
+            tdata.each {
+                log.info "Importing tournament $it.name"
+                CountryCode country = it.country as CountryCode
+                Version version = it.version as Version
+                Date date = Date.parse("dd-MM-yyyy", it.date as String)
+                TournamentFormat format = TournamentFormat.fromString(it.format) ?: TournamentFormat.UNKNOWN
+                WeightingType weightingType = WeightingType.fromString(it.wtype) ?: WeightingType.AUTO
+                TournamentType type = TournamentType.fromString(it.type)
+                Integer weight = it.weight ?: 0
+                String challonge = it.challonge
+                String coverage = it.coverage
+                Boolean ranked = it.ranked?.toBoolean() ?: false
+                Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos,
+                                                       weight: weight, tournamentFormat: format, tournamentType: type,
+                                                       weightingType: weightingType, challonge: challonge, ranked: ranked,
+                                                       coverage: coverage)
+                it.players.each {
+                    log.info "Processing ${it.player}"
+                    Player p = Player.findByCodename(it.player.toUpperCase())
+                    if (!p)
+                    {
+                        log.warn("Creating player ad hoc $it")
+                        p = new Player(name: it.player, countryCode: null)
+                        p.save(failOnError: true)
+                    }
+                    Result result = new Result(place: it.place, player: p)
+                    it.pteams.each {
+                        GameTeam team = new GameTeam()
+                        it.each {
+                            CharacterType ctype = CharacterType.fromString(it, Version.generalize(version))
+                            if (ctype == null) throw new RuntimeException("ctype is null for ${it} ${version}")
+                            GameCharacter character = new GameCharacter(characterType: ctype, main: true)
+                            team.addToPchars(character)
+                        }
+                        result.addToCharacterTeams(team)
+                    }
+                    log.info "Seen result $result"
+                    tournament.addToResults(result)
+                }
+                tournament.save(failOnError: true)
+            }
         }
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
@@ -325,10 +332,12 @@ class DataService
      */
     void deleteAll()
     {
-        Result.list().each {it.delete()}
-        Player.list().each {it.delete()}
-        Tournament.list().each {it.delete()}
-        Team.list().each {it.delete()}
+        configurationService.withUniqueSession {
+            Result.list().each {it.delete()}
+            Player.list().each {it.delete()}
+            Tournament.list().each {it.delete()}
+            Team.list().each {it.delete()}
+        }
 
     }
 
@@ -337,26 +346,31 @@ class DataService
      */
     void merge(Player p1, Player p2)
     {
-        log.info("Merging $p1 into $p2")
-        def resultsToMerge = Result.findAllByPlayer(p1)
-        resultsToMerge.each {
-            log.info "merging $it to $p2"
-            it.player = p2
-            it.save(failOnError: true, flush: true)
+        configurationService.withUniqueSession {
+            log.info("Merging $p1 into $p2")
+            def resultsToMerge = Result.findAllByPlayer(p1)
+            resultsToMerge.each {
+                log.info "merging $it to $p2"
+                it.player = p2
+                it.save(failOnError: true, flush: true)
+            }
+            p1.delete(failOnError: true)
+            p2.save(failOnError: true)
         }
-        p1.delete(failOnError: true)
-        p2.save(failOnError: true)
     }
 
     Integer takeSnapshot(Version game)
     {
-        def rankings = PlayerRanking.findAllByGame(game)
-        log.info "snapshotting ${rankings.size()} rankings for game $game"
-        Date date = new Date()
-        rankings.each {
-            it.snapshot = date
-            it.oldScore = it.score
-            it.oldRank = it.rank
+        def rankings = []
+        configurationService.withUniqueSession {
+            rankings = PlayerRanking.findAllByGame(game)
+            log.info "snapshotting ${rankings.size()} rankings for game $game"
+            Date date = new Date()
+            rankings.each {
+                it.snapshot = date
+                it.oldScore = it.score
+                it.oldRank = it.rank
+            }
         }
         return rankings.size()
     }

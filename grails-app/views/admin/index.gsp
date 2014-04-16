@@ -5,7 +5,7 @@
   Time: 1:51 PM
 --%>
 
-<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews">
@@ -21,9 +21,9 @@
 <h3>Update database</h3>
 The updateAll should be triggered every time a new tournament has been imported, as the tournament needs to be weighted and players scores need to be updated.
 <ul>
-  <li><g:link action="importer">import a new Tournament...</g:link>
+<li><g:link action="importer">import a new Tournament...</g:link>
   <g:each in="${Version.values()}" var="game">
-    <li><g:link action="updateAll" params="[game:game]">update all data for ${game}</g:link></li>
+    <li><g:link action="updateAll" params="[game: game]">update all data for ${game}</g:link></li>
   </g:each>
 </ul>
 
@@ -31,21 +31,25 @@ The updateAll should be triggered every time a new tournament has been imported,
 This is for fine-grained maintenance, usually not required.
 <ul>
   <li><g:link action="merge">merge specified Players...</g:link></li>
-  <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>
-  <li><g:link action="updateTournamentTypes">update Tournament types based on tournament weights</g:link></li>
-  <li><g:link action="updatePlayerScores">calculate and update Player scores based on tournament performance</g:link></li>
-  <li><g:link action="updatePlayerRank">calculate and update Player rank based on player score</g:link></li>
-  <li><g:link action="updateMainCharacters">calculate and update Player main chars based on results</g:link></li>
+  <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+    <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>
+    <li><g:link action="updateTournamentTypes">update Tournament types based on tournament weights</g:link></li>
+    <li><g:link action="updatePlayerScores">calculate and update Player scores based on tournament performance</g:link></li>
+    <li><g:link action="updatePlayerRank">calculate and update Player rank based on player score</g:link></li>
+    <li><g:link action="updateMainCharacters">calculate and update Player main chars based on results</g:link></li>
+  </g:if>
   <li><g:link action="updateMainGames">calculate and update Player main games based on results</g:link></li>
 </ul>
 
-<h3>Snapshots</h3>
-Store state for comparison in the ranking diffs
-<ul>
-  <g:each in="${Version.values()}" var="value">
-    <li><g:link action="snapshot" params="[game: value.name()]">take a snapshot of ${value.name()}</g:link></li>
-  </g:each>
-</ul>
+<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+  <h3>Snapshots</h3>
+  Store state for comparison in the ranking diffs
+  <ul>
+    <g:each in="${Version.values()}" var="value">
+      <li><g:link action="snapshot" params="[game: value.name()]">take a snapshot of ${value.name()}</g:link></li>
+    </g:each>
+  </ul>
+</g:if>
 
 <h3>Export/debug</h3>
 <ul>
@@ -58,17 +62,19 @@ Store state for comparison in the ranking diffs
   <li><g:link action="exportTeams">Export Teams as JSON data...</g:link></li>
 </ul>
 
-<h2>BEWARE</h2>
+<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+  <h2>BEWARE</h2>
 
-One should first import all file data to initialize the database with content. Do not do it twice, it may override newer data or add the same.<br/>
-If you want to restart use DELETE ALL and then do another import. This imports the data bundled with the app, not the previous export. The fix methods are supplied to apply default values for data that previously did not have it.
+  One should first import all file data to initialize the database with content. Do not do it twice, it may override newer data or add the same.<br/>
+  If you want to restart use DELETE ALL and then do another import. This imports the data bundled with the app, not the previous export. The fix methods are supplied to apply default values for data that previously did not have it.
 
-<ul>
-  <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
-  <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
-  <li><g:link action="fixTournamentFormats">Do a best guess on ALL tournament formats and apply it</g:link></li>
-  <li><g:link action="fixPlayerRankings">Re-adjust ALL player ranks based on tournament format</g:link></li>
-</ul>
-<br/>
+  <ul>
+    <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
+    <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
+    <li><g:link action="fixTournamentFormats">Do a best guess on ALL tournament formats and apply it</g:link></li>
+    <li><g:link action="fixPlayerRankings">Re-adjust ALL player ranks based on tournament format</g:link></li>
+  </ul>
+  <br/>
+</g:if>
 </body>
 </html>

@@ -1,19 +1,8 @@
 package be.bbr.admin
 
-import be.bbr.sf4ranking.CharacterType
-import be.bbr.sf4ranking.CleanupService
-import be.bbr.sf4ranking.CountryCode
-import be.bbr.sf4ranking.DataService
-import be.bbr.sf4ranking.Player
-import be.bbr.sf4ranking.RankingService
-import be.bbr.sf4ranking.Result
-import be.bbr.sf4ranking.Tournament
-import be.bbr.sf4ranking.TournamentFormat
-import be.bbr.sf4ranking.TournamentType
-import be.bbr.sf4ranking.Version
-import be.bbr.sf4ranking.WeightingType
+import be.bbr.sf4ranking.*
 import grails.converters.JSON
-import groovy.xml.MarkupBuilder
+import org.apache.shiro.SecurityUtils
 
 import static be.bbr.sf4ranking.Version.AE2012
 
@@ -34,20 +23,24 @@ class AdminController
     /**
      * Update methods that need to be triggered after entering data
      */
-    def updateAll() {
-        def game = Version.fromString(params.game)
-        rankingService.updateWeights(game)
-        rankingService.updateTypes(game)
-        rankingService.updatePlayerScores(game)
-        rankingService.updatePlayerRank(game)
-        rankingService.updateMainTeams(game)
-        flash.message = "Updated weight, type of tournament and score, rank of all players in $game"
+    def updateAll()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            def game = Version.fromString(params.game)
+            rankingService.updateWeights(game)
+            rankingService.updateTypes(game)
+            rankingService.updatePlayerScores(game)
+            rankingService.updatePlayerRank(game)
+            rankingService.updateMainTeams(game)
+            flash.message = "Updated weight, type of tournament and score, rank of all players in $game"
+        }
         render view: "index"
     }
 
     def initializeTournamentWeights()
     {
-        def sum = Version.values().inject(0) { result, game ->
+        def sum = Version.values().inject(0) {result, game ->
             result + rankingService.updateWeights(game)
         }
         flash.message = "Updated weight of $sum tournaments"
@@ -56,7 +49,7 @@ class AdminController
 
     def updateTournamentTypes()
     {
-        def sum = Version.values().inject(0) { result, game ->
+        def sum = Version.values().inject(0) {result, game ->
             result + rankingService.updateTypes(game)
         }
         flash.message = "Updated type of $sum tournaments"
@@ -65,7 +58,7 @@ class AdminController
 
     def updatePlayerScores()
     {
-        def sum = Version.values().inject(0) { result, game ->
+        def sum = Version.values().inject(0) {result, game ->
             result + rankingService.updatePlayerScores(game)
         }
         flash.message = "Updated score of $sum players"
@@ -74,7 +67,7 @@ class AdminController
 
     def updatePlayerRank()
     {
-        def sum = Version.values().inject(0) { result, game ->
+        def sum = Version.values().inject(0) {result, game ->
             result + rankingService.updatePlayerRank(game)
         }
         flash.message = "Updated rank of $sum players"
@@ -83,7 +76,7 @@ class AdminController
 
     def updateMainCharacters()
     {
-        def sum = Version.values().inject(0) { result, game ->
+        def sum = Version.values().inject(0) {result, game ->
             result + rankingService.updateMainTeams(game)
         }
         flash.message = "Updated char of $sum players"
@@ -96,7 +89,6 @@ class AdminController
         flash.message = "Updated main game of $sum players"
         render view: "index"
     }
-
 
     /**
      * Manual data import and manipulation
@@ -111,7 +103,7 @@ class AdminController
     def importTournament()
     {
         String tname = params.tname
-        Date tdate = new Date(params.tdate_year.toInteger()-1900, params.tdate_month.toInteger(), params.tdate_day.toInteger())
+        Date tdate = new Date(params.tdate_year.toInteger() - 1900, params.tdate_month.toInteger(), params.tdate_day.toInteger())
         TournamentFormat tformat = TournamentFormat.fromString(params.tformat)
         TournamentType ttype = TournamentType.fromString(params.ttype)
         WeightingType tweight = WeightingType.fromString(params.tweight)
@@ -120,12 +112,13 @@ class AdminController
         String results = params.tresults
         String coverage = params.tcoverage
         List tvideos = params.tvideos.tokenize(" ")
-        Boolean tranked = params.tranked?.toBoolean()?: true
+        Boolean tranked = params.tranked?.toBoolean() ?: true
         def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 
-    def validateResults() {
+    def validateResults()
+    {
         def content = params.content
         def type = params.type
         def game = Version.fromString(params.game)
@@ -143,8 +136,11 @@ class AdminController
 
     def importServerSideData()
     {
-        String status = dataService.importFileData()
-        flash.message = status
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            String status = dataService.importFileData()
+            flash.message = status
+        }
         render view: "index"
     }
 
@@ -155,8 +151,8 @@ class AdminController
 
     def split(Player p)
     {
-        def results = p.results.inject([]) { def list, Result value ->
-            def display =  "${value.tournament.game.name()} - ${value.tournament.name} - ${value.characterTeams}"
+        def results = p.results.inject([]) {def list, Result value ->
+            def display = "${value.tournament.game.name()} - ${value.tournament.name} - ${value.characterTeams}"
             list << [id: value.id, display: display]
         }
         [players: Player.list(order: "asc", sort: 'name'), player: p, results: results]
@@ -175,7 +171,8 @@ class AdminController
         def toPlayer = new Player(name: params.to)
         def fromPlayer = Player.findById(params.from)
         log.info "Asked to split off ${fromPlayer.name} into ${toPlayer.name} with results ${params.results}"
-        for (id in params.list('results')) {
+        for (id in params.list('results'))
+        {
             Result r = Result.findById(id)
             fromPlayer.removeFromResults(r)
             toPlayer.addToResults(r)
@@ -185,7 +182,6 @@ class AdminController
         fromPlayer.save(failOnError: true)
         redirect(controller: "rankings", action: "player", params: [id: toPlayer.id])
     }
-
 
     /**
      * backup
@@ -213,22 +209,26 @@ class AdminController
      * Quick editing of certain properties that are not editable in scaffold
      */
 
-    def selectTournamentVideos() {
-        [tournament : Tournament.findById(params.id)]
+    def selectTournamentVideos()
+    {
+        [tournament: Tournament.findById(params.id)]
     }
 
-    def selectPlayerVideos() {
-        [player : Player.findById(params.id)]
+    def selectPlayerVideos()
+    {
+        [player: Player.findById(params.id)]
     }
 
-    def updateTournamentVideos() {
+    def updateTournamentVideos()
+    {
         def video = Tournament.findById(params.id)
         def videos = params.videos.tokenize(" ")
         video.videos = videos as Set
         redirect(controller: "rankings", action: "tournament", params: [id: params.id])
     }
 
-    def updatePlayerVideos() {
+    def updatePlayerVideos()
+    {
         def video = Player.findById(params.id)
         def videos = params.videos.tokenize(" ")
         video.videos = videos as Set
@@ -239,36 +239,43 @@ class AdminController
      * Maintenance methods
      */
 
-    def fixTournamentFormats() {
-        cleanupService.fixTournamentFormats()
+    def fixTournamentFormats()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.fixTournamentFormats()
+        }
         render view: "index"
     }
 
-    def fixPlayerRankings() {
-        cleanupService.fixPlayerRankings()
+    def fixPlayerRankings()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.fixPlayerRankings()
+        }
         render view: "index"
     }
 
-    def fixTournamentUnrank() {
-        cleanupService.fixTournamentUnrank()
+    def fixTournamentUnrank()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+
+            cleanupService.fixTournamentUnrank()
+        }
         render view: "index"
     }
 
-    def fixCodenames() {
-        cleanupService.fixCodenames()
+    def fixCodenames()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.fixCodenames()
+        }
         render view: "index"
     }
 
-    def dropUnrankedPlayers() {
-        def num = cleanupService.dropUnrankedUsers()
-        flash.message = "Dropped $num players"
-        render view: "index"
-    }
-
-    def fixPlayerGameRankings() {
-        cleanupService.fixPlayerGameRankings()
-        render view: "index"
-    }
 
     def printPlayers()
     {
@@ -281,7 +288,7 @@ class AdminController
         else
         {
             log.info("Looking for unranked player")
-            players = Player.list().findAll { it.overallScore() <= 0 }
+            players = Player.list().findAll {it.overallScore() <= 0}
         }
         def listing = players.collect {it.name}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
@@ -289,18 +296,21 @@ class AdminController
 
     def printPlayerRanks()
     {
-        List players = Player.list().sort { a, b -> b.score(AE2012) <=> a.score(AE2012)}
-        def listing = players.collect { Player p -> "${p.rank(AE2012)}, ${p.name}, ${p.score(AE2012)}"}.join("\r\n")
+        List players = Player.list().sort {a, b -> b.score(AE2012) <=> a.score(AE2012)}
+        def listing = players.collect {Player p -> "${p.rank(AE2012)}, ${p.name}, ${p.score(AE2012)}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
-    def printTournamentSizes() {
+    def printTournamentSizes()
+    {
         def tournamentSizes = [:]
         Tournament.list().each {
             def numresults = it.results.size()
             tournamentSizes[it] = numresults
         }
-        def listing = tournamentSizes.collect { Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked}"}.join("\r\n")
+        def listing = tournamentSizes.collect {
+            Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked}"
+        }.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
@@ -308,43 +318,51 @@ class AdminController
     def deleteAll()
     {
         def confirmed = (params.confirm == "I do")
-        if (confirmed)
+        if (confirmed && SecurityUtils.subject.hasRole("Administrator"))
         {
             dataService.deleteAll()
             render view: "index"
         }
-        else {
+        else
+        {
             render view: "confirmDelete"
         }
     }
 
-    def snapshot() {
-        def game = Version.fromString(params.game)?: Version.UNKNOWN
-        def count = dataService.takeSnapshot(game)
-        flash.message = "Took snapshot of $count games"
+    def snapshot()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            def game = Version.fromString(params.game) ?: Version.UNKNOWN
+            def count = dataService.takeSnapshot(game)
+            flash.message = "Took snapshot of $count games"
+        }
         render view: "index"
     }
 
-    def playerRanksBefore(Tournament tournament) {
+    def playerRanksBefore(Tournament tournament)
+    {
         def playerRanks = rankingService.playerRanksAt(tournament.date)
-        def listing = playerRanks.collect { p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
+        def listing = playerRanks.collect {p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
-    def playerRanksAfter(Tournament tournament) {
-        def playerRanks = rankingService.playerRanksAt(tournament.date+1)
-        def listing = playerRanks.collect { p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
+    def playerRanksAfter(Tournament tournament)
+    {
+        def playerRanks = rankingService.playerRanksAt(tournament.date + 1)
+        def listing = playerRanks.collect {p -> "${p.rank}, ${p.name}, ${p.score}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
-    def playerDiffForTournament(Tournament tournament) {
-        def pids = tournament.results.collect { it.player.id }
+    def playerDiffForTournament(Tournament tournament)
+    {
+        def pids = tournament.results.collect {it.player.id}
         def playerRanks = rankingService.playerRanksAt(tournament.date)
-        playerRanks.retainAll { it.id in pids }
-        def playerRanksAfter = rankingService.playerRanksAt(tournament.date+1)
-        playerRanksAfter.retainAll { it.id in pids }
-        playerRanks.each { def pbefore ->
-            def other = playerRanksAfter.find { it.id == pbefore.id }
+        playerRanks.retainAll {it.id in pids}
+        def playerRanksAfter = rankingService.playerRanksAt(tournament.date + 1)
+        playerRanksAfter.retainAll {it.id in pids}
+        playerRanks.each {def pbefore ->
+            def other = playerRanksAfter.find {it.id == pbefore.id}
             pbefore.rankAfter = other.rank
             pbefore.scoreAfter = other.score
             pbefore.scoreDiff = pbefore.scoreAfter - pbefore.score
