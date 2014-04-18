@@ -51,7 +51,10 @@ class RankingsController
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        def snapshot = players?.first()?.snapshot(pgame)
+        def snapshot = null
+        if (players && !players.isEmpty()) {
+            snapshot = players?.first()?.snapshot(pgame)
+        }
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
                 total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
     }

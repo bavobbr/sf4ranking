@@ -57,12 +57,13 @@ class RankingService
             // AUTO weighting starts from premier 5
             tournaments.each {it.tournamentType = TournamentType.UNRANKED}
             tournaments.removeAll {!it.ranked}
-            applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4)
-            applyType(tournaments, TournamentType.PREMIER_5, 4, 5)
-            applyType(tournaments, TournamentType.PREMIER_12, 9, 12)
-            applyType(tournaments, TournamentType.INTERNATIONAL, 21, 31)
-            applyType(tournaments, TournamentType.SERIES, 52, 50)
-            applyType(tournaments, TournamentType.CIRCUIT, 102, 200)
+            double factor = Math.max(tournaments.size() / 100.0, 1.0)
+            int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4, factor)
+            end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, factor)
+            end = applyType(tournaments, TournamentType.PREMIER_12, end, 12, factor)
+            end = applyType(tournaments, TournamentType.INTERNATIONAL, end, 31, factor)
+            end = applyType(tournaments, TournamentType.SERIES, end, 50, factor)
+            end = applyType(tournaments, TournamentType.CIRCUIT, end, 200, factor)
             tournaments*.save(failOnError: true)
         }
         return tournaments.size()
@@ -194,12 +195,16 @@ class RankingService
         return Player.count
     }
 
-    private void applyType(List tournaments, TournamentType type, int start, int amount)
+    private int applyType(List tournaments, TournamentType type, int start, int amount, double factor)
     {
-        if (start > tournaments.size() - 1) return
-        def endIndex = Math.min(start + amount - 1, tournaments.size() - 1)
+        int factoredAmount = (int)(amount * factor)
+        log.info "Applying type $type to $amount tournaments from $start with factor $factor"
+        log.info "Translated to type $type times $factoredAmount tournaments from $start"
+        if (start > tournaments.size() - 1) return tournaments.size()
+        def endIndex = Math.min(start + factoredAmount - 1, tournaments.size() - 1)
         tournaments[start..endIndex]*.tournamentType = type
         log.info "Applied type $type"
+        return start+factoredAmount;
     }
 
 

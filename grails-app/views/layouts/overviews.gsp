@@ -107,7 +107,8 @@
               <li><g:link action="index" controller="rankings">Overview</g:link></li>
               <li class="divider"></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE2012.name()]">World Rankings SF4:AE 2012</g:link></li>
-%{--              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>--}%
+              <li><g:link action="rank" controller="rankings" params="['id': Version.USF4.name()]">World Rankings USF4</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
               <li class="divider"></li>
@@ -122,7 +123,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE2012.name()]">SF4:AE 2012</g:link></li>
-%{--              <li><g:link action="tournaments" controller="rankings" params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>--}%
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.USF4.name()]">USF4</g:link></li>
+              <li><g:link action="tournaments" controller="rankings" params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
               <li><g:link action="tournaments" controller="rankings" params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
               <li class="divider"></li>
