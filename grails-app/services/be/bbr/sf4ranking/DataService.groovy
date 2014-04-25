@@ -1,5 +1,6 @@
 package be.bbr.sf4ranking
 
+import grails.plugin.searchable.SearchableService
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
 
@@ -11,6 +12,7 @@ class DataService
 {
 
     ConfigurationService configurationService
+    SearchableService searchableService
     /**
      * Takes in rich tournament data from the controller and saves it as tournament
      * Will also auto-create unknown players
@@ -86,6 +88,24 @@ class DataService
         }
     }
 
+    List<Player> findAlikes(String original) {
+        log.info "Finding match for $original"
+        List<Player> alts = []
+        def searchResult = searchableService.search(max: 5) {
+            fuzzy("name", original, 0.4)
+        }
+        alts = searchResult.results.collect {
+            Player.read(it.id)
+        }
+        log.info "Found ${alts.size()} matches"
+        return alts
+    }
+
+    Player findAlike(String original) {
+        def alikes = findAlikes(original)
+        return alikes? alikes.first() : null
+    }
+
 
     List<String> validateResults(String input, Version game, String type)
     {
@@ -97,7 +117,15 @@ class DataService
             if (type == "players")
             {
                 Player p = Player.findByCodename(pname.toUpperCase())
-                if (!p) feedback << "Player with name $pname will be created new"
+                if (!p) {
+                    def suggestion = findAlike(pname)
+                    if (suggestion) {
+                        feedback << "Player [$pname] not found, did you mean [${suggestion.name}]?"
+                    }
+                    else {
+                        feedback << "Player with name [$pname] will be created new."
+                    }
+                }
             }
             else if (type == "chars")
             {
@@ -110,14 +138,16 @@ class DataService
                         team.split("/").each {
                             CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(game)) ?:
                                                   CharacterType.UNKNOWN
-                            if (ctype == CharacterType.UNKNOWN) feedback <<
-                                                                "Player $pname will have UNKNOWN character in team $team due to $it"
+                            if (ctype == CharacterType.UNKNOWN) {
+                                feedback <<
+                                "Player [$pname] will have UNKNOWN character in team [$team] due to [$it]"
+                            }
                         }
                     }
                 }
                 else
                 {
-                    feedback << "Player $pname will have completely UNKNOWN team"
+                    feedback << "Player [$pname] will have completely UNKNOWN team"
                 }
             }
         }
@@ -192,7 +222,7 @@ class DataService
                 Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos,
                                                        weight: weight, tournamentFormat: format, tournamentType: type,
                                                        weightingType: weightingType, challonge: challonge, ranked: ranked,
-                                                       coverage: coverage)
+                                                       coverage: coverage, creator: it.creator)
                 it.players.each {
                     log.info "Processing ${it.player}"
                     Player p = Player.findByCodename(it.player.toUpperCase())
@@ -243,6 +273,7 @@ class DataService
             tournament.challonge = it.challonge
             tournament.coverage = it.coverage
             tournament.ranked = it.ranked
+            tournament.creator = it.creator
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]

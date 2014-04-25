@@ -1,5 +1,7 @@
 package be.bbr.sf4ranking
 
+import org.apache.shiro.SecurityUtils
+
 
 class Tournament
 {
@@ -18,6 +20,7 @@ class Tournament
         challonge nullable: true
         ranked nullable: false
         coverage nullable: true
+        creator nullable: true
     }
 
     String name
@@ -32,11 +35,13 @@ class Tournament
     String challonge
     Boolean ranked = true
     String coverage = null
+    String creator
 
     static hasMany = [videos: String, results: Result]
 
     def beforeInsert() {
         codename = name.toUpperCase()
+        if (!creator) creator = SecurityUtils.subject?.principal?.toString()
     }
 
     public String toString() {

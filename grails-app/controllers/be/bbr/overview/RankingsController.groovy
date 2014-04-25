@@ -2,6 +2,7 @@ package be.bbr.overview
 
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
+import grails.plugin.searchable.SearchableService
 import org.apache.shiro.SecurityUtils
 
 /**
@@ -11,6 +12,7 @@ class RankingsController
 {
 
     QueryService queryService
+    SearchableService searchableService
 
     /**
      * The index page is also the page with all the rankings
@@ -32,11 +34,12 @@ class RankingsController
 
     def rank()
     {
-        def pgame = Version.fromString(params.id)?: Version.AE2012
+        def pgame = Version.fromString(params.id) ?: Version.AE2012
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
-        def pchar = (!params.pchar || params.pchar =~ "any") ? null : CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
+        def pchar = (!params.pchar || params.pchar =~ "any") ? null :
+                    CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
         def filtered = pchar || pcountry
         log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered"
 
@@ -46,13 +49,14 @@ class RankingsController
 
         def countrynames = queryService.getActiveCountryNames()
         // list all characters for the filter box
-        def charnames = CharacterType.values().findAll { it.game == Version.generalize(pgame) }.collect { it.name() }
+        def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.name()}
         // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def snapshot = null
-        if (players && !players.isEmpty()) {
+        if (players && !players.isEmpty())
+        {
             snapshot = players?.first()?.snapshot(pgame)
         }
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
@@ -64,7 +68,7 @@ class RankingsController
      */
     def player(Player player)
     {
-        Map rankings = Version.values().collectEntries([:]) { [it, []]}
+        Map rankings = Version.values().collectEntries([:]) {[it, []]}
         Set chars = [] as Set
         Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
             def tid = it.tournament.id
@@ -72,11 +76,14 @@ class RankingsController
             def ttype = it.tournament.tournamentType?.value
             def tteams = it.characterTeams
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
-            def tscore = it.tournament.tournamentType ? ScoringSystem.getDecayedScore(it.tournament.date, it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
-            def tbasescore = it.tournament.tournamentType ? ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tscore = it.tournament.tournamentType ? ScoringSystem.
+                    getDecayedScore(it.tournament.date, it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+            def tbasescore = it.tournament.tournamentType ?
+                             ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tplace = it.place
-            if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
-                tplace = it.place == 1? "Win" : "Lose"
+            if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION)
+            {
+                tplace = it.place == 1 ? "Win" : "Lose"
             }
             def tvideos = it.tournament.videos
             def data = [tid: tid, tname: tname, ttype: ttype, tscore: tscore, tbasescore: tbasescore, tplace: tplace, tteams: tteams, tdate: tdate, tvideos: tvideos, resultid: it.id]
@@ -86,7 +93,7 @@ class RankingsController
             }*/
         }
         log.info "Rendering player ${player}"
-        rankings = rankings.findAll { k, v -> v.size() > 0}
+        rankings = rankings.findAll {k, v -> v.size() > 0}
         render view: "player", model: [player: player, results: rankings, chars: chars]
     }
 
@@ -136,8 +143,9 @@ class RankingsController
             def rplayer = it.player.name
             def rplayerid = it.player.id
             def rplace = it.place
-            if (tournament.tournamentFormat == TournamentFormat.EXHIBITION) {
-                rplace = it.place == 1? "Win" : "Lose"
+            if (tournament.tournamentFormat == TournamentFormat.EXHIBITION)
+            {
+                rplace = it.place == 1 ? "Win" : "Lose"
             }
             def tteams = it.characterTeams
             def rscore = tournament.tournamentType ?
@@ -146,13 +154,14 @@ class RankingsController
             def rcountryname = it.player.countryCode?.name
             def pskill = null
             def prankingid = null
-            if (SecurityUtils.subject.hasRoles(["Administrator","Moderator"])) {
+            if (SecurityUtils.subject.hasRoles(["Administrator", "Moderator"]))
+            {
                 pskill = it.player.skill(tournament.game)
-                prankingid = it.player.rankings.find { it.game == tournament.game }?.id
+                prankingid = it.player.rankings.find {it.game == tournament.game}?.id
             }
             details <<
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry,
-             rcountryname: rcountryname, resultid: it.id, pskill: pskill, prankingid: prankingid]
+                    rcountryname: rcountryname, resultid: it.id, pskill: pskill, prankingid: prankingid]
         }
         render view: 'tournament', model: [tournament: tournament, details: details]
     }
@@ -200,8 +209,14 @@ class RankingsController
      */
     def autocompletePlayer()
     {
-        def players = Player.findAllByCodenameLike("%${params.term.toUpperCase()}%")
-        def sorted = players.sort { a, b -> b.results.size() <=> a.results.size() }
+        def query = "*"+params.term?.trim()+"*"
+        log.info "Processing query $query"
+        def searchResult = searchableService.search(query, params)
+        log.info "Got result $searchResult"
+        def ids = searchResult.results.collect {it.id}
+        log.info "Got ids $ids"
+        def players = ids.collect {Player.get(it)}
+        def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
         def content = sorted.collect {[id: it.id, label: it.name, value: it.name]}
         render(content as JSON)
     }
@@ -217,5 +232,3 @@ class RankingsController
     }
 
 }
-
-

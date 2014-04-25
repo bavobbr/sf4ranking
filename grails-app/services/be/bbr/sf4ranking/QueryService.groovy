@@ -73,5 +73,11 @@ class QueryService
         return countries.findResults() {it?.name()}
     }
 
+    List<Player> findOrphanedPlayers() {
+        def playerQuery = Player.createCriteria()
+        return playerQuery.list() {
+            isEmpty("rankings")
+        }
+    }
 
 }

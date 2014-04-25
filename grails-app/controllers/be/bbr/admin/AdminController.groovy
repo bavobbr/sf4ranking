@@ -17,6 +17,7 @@ class AdminController
     RankingService rankingService
     DataService dataService
     CleanupService cleanupService
+    QueryService queryService
 
     def index() {}
 
@@ -96,7 +97,7 @@ class AdminController
     def importer()
     {
         def index = 1
-        def example = "player1 (char1,char2/char1,char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
+        def example = "player1 (char1/char2,char1/char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
         render view: "importer", model: [hint: example]
     }
 
@@ -326,6 +327,21 @@ class AdminController
             Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked}"
         }.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
+    def listOrphanedPlayers() {
+        def players = queryService.findOrphanedPlayers()
+        [players: players]
+    }
+
+    def listAlikes() {
+        def players = Player.list()
+        def map = [:]
+        players.each {
+            def alts = dataService.findAlikes(it.name)
+            if (alts && alts.size() > 1) map[it] = alts
+        }
+        [players: map]
     }
 
 

@@ -18,6 +18,8 @@ class Player
         //score index: 'Score_Idx'
     }
 
+    static searchable = [only: ['name', 'twitter']]
+
     String name
     String codename
     CountryCode countryCode

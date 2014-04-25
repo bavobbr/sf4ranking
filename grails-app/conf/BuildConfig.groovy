@@ -40,6 +40,7 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
+        mavenRepo "http://repo.grails.org/grails/core"
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -72,5 +73,6 @@ grails.project.dependency.resolution = {
         runtime ':twitter-bootstrap:3.1.1'
         //compile ":less-resources:1.3.3.2"
         compile ":shiro:1.2.1"
+        compile ":searchable:0.6.6"
     }
 }

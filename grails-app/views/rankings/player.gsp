@@ -55,7 +55,7 @@
   <ul class="nav nav-tabs">
     <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
     <g:each in="${results}" var="ranking" status="index">
-      <li><a href="#${ranking.key.name()}" data-toggle="tab">${ranking.key.value} Details</a></li>
+      <li><a href="#${ranking.key.name()}" data-toggle="tab">${ranking.key.name()} Details</a></li>
     </g:each>
     <li><a href="#videos" data-toggle="tab">Videos <span class="badge">${player.videos.size()}</span></a></li>
   </ul>

@@ -121,7 +121,7 @@
 
   <div class="form-group">
     <label for="tresults">Results (1 up to 32 max, mouse over for tips. Make sure the character name matches a known character type)</label>
-    <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU)"
+    <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                 title="${hint}"/>
     <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
     <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>
