@@ -2,6 +2,7 @@ package be.bbr.sf4ranking
 
 import grails.plugin.searchable.SearchableService
 import grails.transaction.Transactional
+import grails.util.Environment
 import groovy.json.JsonSlurper
 
 /**
@@ -207,6 +208,9 @@ class DataService
             }
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
             def tdata = new JsonSlurper().parseText(tournamentFile.text)
+            if (Environment.current == Environment.DEVELOPMENT) {
+                tdata = tdata.take(10)
+            }
             tdata.each {
                 log.info "Importing tournament $it.name"
                 CountryCode country = it.country as CountryCode
@@ -248,7 +252,9 @@ class DataService
                 }
                 tournament.save(failOnError: true)
             }
+            log.info "All ${tdata.size()} tournaments imported"
         }
+        log.info "Import service completed"
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
 

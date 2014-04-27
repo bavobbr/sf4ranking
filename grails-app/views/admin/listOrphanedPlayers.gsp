@@ -17,7 +17,7 @@
 <br/>
 <ol>
 <g:each in="${players}" var="p">
-  <li>${p.name} <g:link controller="player" action="show" params="[id:p.id]">edit</g:link> </li>
+  <li>${p.name} ${p.mainGame} ${p.countryCode} <g:link controller="player" action="show" params="[id:p.id]">edit</g:link>  <g:link controller="player" action="delete" params="[id:p.id]">delete</g:link></li>
 </g:each>
 </ol>
 <br/>

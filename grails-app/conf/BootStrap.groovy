@@ -1,6 +1,7 @@
 import be.bbr.sf4ranking.Configuration
 import be.bbr.sf4ranking.shiro.Role
 import be.bbr.sf4ranking.shiro.User
+import grails.plugin.searchable.SearchableService
 import org.apache.shiro.crypto.hash.Sha256Hash
 
 /**
@@ -8,7 +9,12 @@ import org.apache.shiro.crypto.hash.Sha256Hash
  */
 class BootStrap {
 
+    SearchableService searchableService
+
     def init = { servletContext ->
+        log.info "Reindexing..."
+        searchableService.reindex()
+        log.info "Reindexed compass"
 
         if (!User.first()) {
             def adminRole = new Role(name: "Administrator")
@@ -41,7 +47,7 @@ class BootStrap {
         }
         if (!Configuration.first()) {
             Configuration cfg = new Configuration()
-            cfg.lastUpdateMessage = ""
+            cfg.lastUpdateMessage = "test"
             cfg.save()
         }
     }

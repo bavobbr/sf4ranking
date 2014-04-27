@@ -17,7 +17,11 @@
 <br/>
 <ol>
   <g:each in="${players}" var="p">
-    <li>${p.key} <=> ${p.value}</li>
+    <li><b>${p.key.name}</b><i> ${p.key.mainGame} ${p.key.countryCode }</i>  merge into
+    <g:each in="${p.value}" var="alt">
+      <g:link controller="admin" action="mergePlayers" params="[p1: p.key.id, p2: alt.id]">[${alt.name}] </g:link>
+    </g:each>
+    </li>
   </g:each>
 </ol>
 <br/>

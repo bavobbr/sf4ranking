@@ -156,6 +156,7 @@ class AdminController
             String status = dataService.importFileData()
             flash.message = status
         }
+        log.info "Import ready, returning to index"
         render view: "index"
     }
 
@@ -311,8 +312,8 @@ class AdminController
 
     def printPlayerRanks()
     {
-        List players = Player.list().sort {a, b -> b.score(AE2012) <=> a.score(AE2012)}
-        def listing = players.collect {Player p -> "${p.rank(AE2012)}, ${p.name}, ${p.score(AE2012)}"}.join("\r\n")
+        List players = Player.list().sort {a, b -> b.overallScore() <=> a.overallScore()}
+        def listing = players.collect {Player p -> "${p.rankings.size()}, ${p.name}, ${p.overallScore()}"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
