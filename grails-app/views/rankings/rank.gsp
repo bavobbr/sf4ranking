@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -49,6 +49,9 @@
       <g:if test="${snapshot != null}">
         <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
       </g:if>
+    <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
+        <th>Skill</th>
+    </g:if>
     </tr>
     </thead>
 
@@ -85,6 +88,11 @@
         </td>
         <g:if test="${snapshot != null}">
           <td>${p.diff(game)}</td>
+        </g:if>
+        <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
+          <td>
+            <g:link controller="player" action="edit" params="[id:p.id]">${p.skill(game)}</g:link>
+          </td>
         </g:if>
 
       </tr>
