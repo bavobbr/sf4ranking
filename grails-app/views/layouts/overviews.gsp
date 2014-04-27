@@ -63,6 +63,16 @@
       $("a").tooltip()
     });
   </script>
+  <script>
+    $(document).ready(function () {
+      $('#playerSearch').keypress(function (e) {
+        if (e.which == 13) {
+          $('#searchForm').submit();
+          return false;    //<---- Add this line
+        }
+      });
+    })
+  </script>
 </head>
 
 <body>
@@ -90,13 +100,13 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-right top-search" role="search">
-          <div class="form-group">
-            <input id="playerSearch" class="form-control" placeholder="Find a Player">
-          </div>
 
+        <form class="navbar-form navbar-right top-search" role="search" action="${createLink(action: 'search', controller: 'rankings')}" id="searchForm">
           <div class="form-group">
-            <input id="tournamentSearch" class="form-control" placeholder="Search Tournaments">
+            <input id="playerSearch" class="form-control" placeholder="Find a Player" name="player">
+          </div>
+          <div class="form-group">
+            <input id="tournamentSearch" class="form-control" placeholder="Search Tournaments" name="tournament">
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">

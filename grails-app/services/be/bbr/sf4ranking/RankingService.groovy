@@ -24,19 +24,13 @@ class RankingService
             tournaments.each {tournament ->
                 log.info "Updating tournament $tournament"
                 def weight = 0
-                if (tournament.weightingType == WeightingType.AUTO)
-                {
                     def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
                     if (topresults)
                     {
                         Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
                         weight = (skillScore as Double) / topresults.size() * 10
                     }
-                }
-                else
-                {
-                    weight = tournament.tournamentType.classWeight
-                }
+
                 tournament.weight = weight
                 tournament.save(flush: true, failOnError: true)
                 log.info "Updated tournament $tournament with weight ${tournament.weight}"

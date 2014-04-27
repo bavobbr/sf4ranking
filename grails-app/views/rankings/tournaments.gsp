@@ -41,7 +41,7 @@
             </g:link>
           </g:if>
         </td>
-        <td>${t.game?.value}</td>
+        <td>${t.game?.name()}</td>
         <td>${t.weight}</td>
         <td>
           <g:if test="${t.videos}">

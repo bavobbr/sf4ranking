@@ -13,6 +13,7 @@ class RankingsController
 
     QueryService queryService
     SearchableService searchableService
+    DataService dataService
 
     /**
      * The index page is also the page with all the rankings
@@ -229,6 +230,19 @@ class RankingsController
         def tournaments = Tournament.findAllByCodenameLike("%${params.term.toUpperCase()}%")
         def content = tournaments.collect {[id: it.id, label: it.name, value: it.name]}
         render(content as JSON)
+    }
+
+    def search() {
+        def player = params.player
+        def query = "*"+player?.trim()+"*"
+        log.info "Processing query $query"
+        def searchResult = searchableService.search(query, params)
+        def ids = searchResult.results.collect {it.id}
+        def players = ids.collect {Player.get(it)}
+        def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+
+        def alikes = dataService.findAlikes(player)
+        [players:sorted, alikes: alikes, query: player]
     }
 
 }
