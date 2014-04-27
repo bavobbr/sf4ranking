@@ -80,6 +80,30 @@ class CleanupService
     }
 
     /**
+     * Use the AE2012 skill as default if the player is ranked for a version but has no skill set for that version
+     * @return
+     */
+    def mergeSkills() {
+        Player.list().each { Player p ->
+            if (p.hasRanking(Version.AE2012) && p.skill(Version.AE2012) > 0) {
+                def skill = p.skill(Version.AE2012);
+                if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) == 0) {
+                    p.applySkill(Version.USF4, skill)
+                }
+                if (p.hasRanking(Version.AE) && p.skill(Version.AE) == 0) {
+                    p.applySkill(Version.AE, skill)
+                }
+                if (p.hasRanking(Version.SUPER) && p.skill(Version.SUPER) == 0) {
+                    p.applySkill(Version.SUPER, skill)
+                }
+                if (p.hasRanking(Version.VANILLA) && p.skill(Version.VANILLA) == 0) {
+                    p.applySkill(Version.VANILLA, skill)
+                }
+            }
+        }
+    }
+
+    /**
      * Drops ghost users that are not ranked anywhere
      */
     def dropUnrankedPlayers()
@@ -89,12 +113,4 @@ class CleanupService
         return players.size()
     }
 
-/*    def fixPlayerGameRankings() {
-        Player.list().each {
-            log.info "Updating player ${it}"
-            it.applyRank(Version.AE2012, it.rank)
-            it.applyScore(Version.AE2012, it.score)
-            it.applySkill(Version.AE2012, it.skill)
-        }
-    }*/
 }

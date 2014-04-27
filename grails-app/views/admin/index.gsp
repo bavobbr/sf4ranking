@@ -73,8 +73,7 @@ This is for fine-grained maintenance, usually not required.
   <ul>
     <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
     <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
-    <li><g:link action="fixTournamentFormats">Do a best guess on ALL tournament formats and apply it</g:link></li>
-    <li><g:link action="fixPlayerRankings">Re-adjust ALL player ranks based on tournament format</g:link></li>
+    <li><g:link action="mergeSkills">Merge AE2012 skill ratings into other SF4 games</g:link></li>
   </ul>
   <br/>
 </g:if>

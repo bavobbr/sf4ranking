@@ -182,7 +182,7 @@ class DataService
                 def cc = it.countryCode as CountryCode
                 def mainGame = Version.fromString(it.mainGame) ?: Version.UNKNOWN
                 Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter,
-                                      mainGame: mainGame)
+                                      mainGame: mainGame, creator: it.creator)
                 it.rankings.each {
                     def game = Version.fromString(it.game)
                     List mainCharacters = []
@@ -317,6 +317,7 @@ class DataService
             player.codename = it.codename
             player.wikilink = it.wikilink
             player.twitter = it.twitter
+            player.creator = it.creator
             player.mainGame = it.mainGame?.name()
             player.teams = it.teams.collect {it.codename}
             def rankings = []

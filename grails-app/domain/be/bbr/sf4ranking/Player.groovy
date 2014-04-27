@@ -1,5 +1,7 @@
 package be.bbr.sf4ranking
 
+import org.apache.shiro.SecurityUtils
+
 
 class Player
 {
@@ -11,11 +13,11 @@ class Player
         wikilink nullable: true
         twitter nullable: true
         rankings nullable: false
+        creator nullable: true
     }
 
     static mapping = {
         codename index: 'Name_Idx'
-        //score index: 'Score_Idx'
     }
 
     static searchable = [only: ['name', 'twitter']]
@@ -27,10 +29,13 @@ class Player
     String twitter
     Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []
+    String creator
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
     def beforeInsert() {
         codename = name.toUpperCase()
+        if (!creator) creator = SecurityUtils.subject?.principal?.toString()
+
     }
 
     Integer skill(Version game) {
@@ -89,6 +94,7 @@ class Player
     void applySkill(Version game, Integer skill)
     {
         findOrCreateRanking(game).skill = skill
+        log.info "Updated skill of $name in $game to $skill"
     }
 
     PlayerRanking findOrCreateRanking(Version game) {
@@ -105,6 +111,10 @@ class Player
         if (ranking) {
             this.removeFromRankings(ranking)
         }
+    }
+
+    boolean hasRanking(Version game) {
+        return rankings.any { it.game == game }
     }
 
     Integer overallScore() {

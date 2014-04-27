@@ -182,6 +182,13 @@ class AdminController
         redirect(controller: "rankings", action: "player", params: [id: p2.id])
     }
 
+    def mergeSkills()
+    {
+        cleanupService.mergeSkills()
+        redirect(controller: "admin", action: "index")
+    }
+
+
     def splitPlayers()
     {
         def toPlayer = new Player(name: params.to)
