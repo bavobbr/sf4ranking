@@ -49,7 +49,7 @@
       <g:if test="${snapshot != null}">
         <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
       </g:if>
-    <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
+    <g:if test="${SecurityUtils.subject.isPermitted("player")}">
         <th>Skill</th>
     </g:if>
     </tr>
@@ -89,7 +89,7 @@
         <g:if test="${snapshot != null}">
           <td>${p.diff(game)}</td>
         </g:if>
-        <g:if test="${SecurityUtils.subject.hasRoles(["Administrator","Moderator"])}">
+        <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td>
             <g:link controller="player" action="edit" params="[id:p.id]">${p.skill(game)}</g:link>
           </td>

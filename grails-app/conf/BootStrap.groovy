@@ -29,6 +29,7 @@ class BootStrap {
             adminRole.addToPermissions("user")
             adminRole.addToPermissions("role")
             adminRole.addToPermissions("gameTeam")
+            adminRole.addToPermissions("stats")
             adminRole.save()
             def modRole = new Role(name: "Moderator")
             modRole.addToPermissions("admin")

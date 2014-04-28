@@ -94,6 +94,7 @@ class DataService
         List<Player> alts = []
         def searchResult = searchableService.search(max: 5) {
             fuzzy("name", original, 0.4)
+            fuzzy("twitter", original, 0.7)
         }
         alts = searchResult.results.collect {
             Player.read(it.id)
@@ -209,7 +210,7 @@ class DataService
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
             def tdata = new JsonSlurper().parseText(tournamentFile.text)
             if (Environment.current == Environment.DEVELOPMENT) {
-                tdata = tdata.take(10)
+                //tdata = tdata.take(10)
             }
             tdata.each {
                 log.info "Importing tournament $it.name"

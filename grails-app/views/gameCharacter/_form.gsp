@@ -24,5 +24,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField id="gameTeam" name="gameTeam.id" value="${gameCharacterInstance?.gameTeam?.id}"/>
+    ${gameCharacterInstance?.gameTeam?.id}
 </div>
 

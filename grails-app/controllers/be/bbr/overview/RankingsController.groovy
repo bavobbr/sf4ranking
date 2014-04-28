@@ -210,7 +210,7 @@ class RankingsController
      */
     def autocompletePlayer()
     {
-        def query = "*"+params.term?.trim()+"*"
+        def query = "*" + params.term?.trim() + "*"
         log.info "Processing query $query"
         def searchResult = searchableService.search(query, params)
         log.info "Got result $searchResult"
@@ -232,17 +232,26 @@ class RankingsController
         render(content as JSON)
     }
 
-    def search() {
+    def search()
+    {
         def player = params.player
-        def query = "*"+player?.trim()+"*"
-        log.info "Processing query $query"
-        def searchResult = searchableService.search(query, params)
-        def ids = searchResult.results.collect {it.id}
-        def players = ids.collect {Player.get(it)}
-        def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+        def alikes = []
+        def sorted = []
+        if (player?.size() > 1)
+        {
+            def query = "*" + player?.trim() + "*"
+            log.info "Processing query $query"
+            def searchResult = searchableService.search(query, params)
+            def ids = searchResult.results.collect {it.id}
+            def players = ids.collect {Player.get(it)}
 
-        def alikes = dataService.findAlikes(player)
-        [players:sorted, alikes: alikes, query: player]
+            sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+            alikes = dataService.findAlikes(player)
+        }
+        else {
+            flash.message = "Query string too short"
+        }
+        [players: sorted, alikes: alikes, query: player]
     }
 
 }

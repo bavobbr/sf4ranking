@@ -7,6 +7,10 @@
 </head>
 
 <body>
+<g:if test="${flash.message}">
+  <div class="alert alert-warning">${flash.message}</div>
+</g:if>
+
 <h2>${players.size()} Players matching ${query}</h2>
 <div class="table-responsive">
   <table class="tablehead" id="datatable">

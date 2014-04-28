@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField name="game" from="${be.bbr.sf4ranking.Version?.values()}" keys="${be.bbr.sf4ranking.Version.values()*.name()}" required="" value="${playerRankingInstance?.game?.name()}"/>
+    ${playerRankingInstance?.game?.name()}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playerRankingInstance, field: 'score', 'error')} required">
@@ -16,6 +17,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField name="score" type="number" value="${playerRankingInstance.score}" required=""/>
+    ${playerRankingInstance.score}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playerRankingInstance, field: 'totalScore', 'error')} required">
@@ -24,6 +26,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField name="totalScore" type="number" value="${playerRankingInstance.totalScore}" required=""/>
+    ${playerRankingInstance.totalScore}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playerRankingInstance, field: 'rank', 'error')} required">
@@ -32,6 +35,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField name="rank" type="number" value="${playerRankingInstance.rank}" required=""/>
+    ${playerRankingInstance.rank}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playerRankingInstance, field: 'skill', 'error')} required">
@@ -80,5 +84,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField id="player" name="player.id" value="${playerRankingInstance?.player?.id}"/>
+    ${playerRankingInstance?.player?.name}
 </div>
 

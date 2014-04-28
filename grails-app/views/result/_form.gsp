@@ -8,6 +8,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField id="player" name="player.id" value="${resultInstance?.player?.id}"/>
+    ${resultInstance?.player?.name}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: resultInstance, field: 'place', 'error')} required">
@@ -24,6 +25,7 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:hiddenField id="tournament" name="tournament.id" value="${resultInstance?.tournament?.id}"/>
+    ${resultInstance?.tournament?.name}
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: resultInstance, field: 'characterTeams', 'error')} ">
