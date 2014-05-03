@@ -113,7 +113,7 @@ class CleanupService
         return players.size()
     }
 
-    def notchDates() {
+/*    def notchDates() {
         def tournaments = Tournament.where {
             id >= 94
         }
@@ -128,6 +128,6 @@ class CleanupService
             it.date = newdate
             it.save()
         }
-    }
+    }*/
 
 }

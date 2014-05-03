@@ -104,7 +104,7 @@ class AdminController
     def importTournament()
     {
         String tname = params.tname
-        Date tdate = new Date(params.tdate_year.toInteger() - 1900, params.tdate_month.toInteger(), params.tdate_day.toInteger())
+        Date tdate = new Date(params.tdate_year.toInteger() - 1900, params.tdate_month.toInteger()-1, params.tdate_day.toInteger())
         TournamentFormat tformat = TournamentFormat.fromString(params.tformat)
         TournamentType ttype = TournamentType.fromString(params.ttype)
         WeightingType tweight = WeightingType.fromString(params.tweight)
@@ -280,13 +280,13 @@ class AdminController
         render view: "index"
     }
 
-    def fixDates() {
+/*    def fixDates() {
         if (SecurityUtils.subject.hasRole("Administrator"))
         {
             cleanupService.notchDates()
         }
         render view: "index"
-    }
+    }*/
 
     def fixTournamentUnrank()
     {
