@@ -113,4 +113,21 @@ class CleanupService
         return players.size()
     }
 
+    def notchDates() {
+        def tournaments = Tournament.where {
+            id >= 94
+        }
+        tournaments.each {
+            log.info "need to fix tournament ${it.name} at ${it.date}"
+            def date = it.date
+            Calendar cal = date.toCalendar()
+            def oldMonth = cal.get(Calendar.MONTH)
+            cal.set(Calendar.MONTH, oldMonth-1)
+            def newdate = cal.getTime()
+            log.info "new date would be $newdate"
+            it.date = newdate
+            it.save()
+        }
+    }
+
 }

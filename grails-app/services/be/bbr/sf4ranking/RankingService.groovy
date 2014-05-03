@@ -24,12 +24,12 @@ class RankingService
             tournaments.each {tournament ->
                 log.info "Updating tournament $tournament"
                 def weight = 0
-                    def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
-                    if (topresults)
-                    {
-                        Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
-                        weight = (skillScore as Double) / topresults.size() * 10
-                    }
+                def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
+                if (topresults)
+                {
+                    Integer skillScore = topresults.sum {Result r -> r.player.skill(game)}
+                    weight = (skillScore as Double) / topresults.size() * 10
+                }
 
                 tournament.weight = weight
                 tournament.save(flush: true, failOnError: true)
@@ -146,12 +146,21 @@ class RankingService
                     ranking.mainCharacters.clear()
                     def filteredResults = p.results.findAll {it.tournament.game == game}
                     def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
+                    teams.removeAll {it.hasUnknown()}
                     def countedGroup = teams.countBy {GameTeam team -> team}
                     def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
-                    def main = sortedGroup.keySet().first()
-                    log.info "applying main team $main"
-                    main.pchars.each {GameCharacter gameCharacter ->
-                        ranking.mainCharacters.add(gameCharacter.characterType)
+                    if (sortedGroup)
+                    {
+                        def main = sortedGroup.keySet().first()
+                        log.info "applying main team $main"
+                        main.pchars.each {GameCharacter gameCharacter ->
+                            ranking.mainCharacters.add(gameCharacter.characterType)
+                        }
+                    }
+                    else
+                    {
+                        log.info "applying unknown main team to ${p.name}"
+                        ranking.mainCharacters.add(CharacterType.UNKNOWN)
                     }
                     ranking.save(failOnError: true)
                 }
@@ -191,14 +200,14 @@ class RankingService
 
     private int applyType(List tournaments, TournamentType type, int start, int amount, double factor)
     {
-        int factoredAmount = (int)(amount * factor)
+        int factoredAmount = (int) (amount * factor)
         log.info "Applying type $type to $amount tournaments from $start with factor $factor"
         log.info "Translated to type $type times $factoredAmount tournaments from $start"
         if (start > tournaments.size() - 1) return tournaments.size()
         def endIndex = Math.min(start + factoredAmount - 1, tournaments.size() - 1)
         tournaments[start..endIndex]*.tournamentType = type
         log.info "Applied type $type"
-        return start+factoredAmount;
+        return start + factoredAmount;
     }
 
 

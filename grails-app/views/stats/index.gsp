@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Version; be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -22,17 +22,23 @@
     </thead>
     <g:each in="${results}" var="cstat">
       <tr>
-        <td>${cstat.characterType}</td>
+        <td>${cstat.characterType.value}</td>
         <td>${cstat.timesUsed}</td>
         <td>${cstat.scoreAccumulated}</td>
         <td>${cstat.rankAccumulated}</td>
-        <td>${cstat.usagePercentage}</td>
+        <td>${cstat.usagePercentage?.round(2)}</td>
 
     </g:each>
 
   </table>
 </div>
-<g:render template="/templates/prettify"/>
+Do a new analyse on
+<ol>
+<g:each in="${Version.values()}" var="game">
+  <li><g:link controller="stats" action="analyze" params="[game:game.name()]">${game.name()}</g:link> </li>
+</g:each>
 
+</ol>
+<g:render template="/templates/prettify"/>
 </body>
 </html>

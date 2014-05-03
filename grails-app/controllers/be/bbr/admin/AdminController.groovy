@@ -280,6 +280,14 @@ class AdminController
         render view: "index"
     }
 
+    def fixDates() {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.notchDates()
+        }
+        render view: "index"
+    }
+
     def fixTournamentUnrank()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))

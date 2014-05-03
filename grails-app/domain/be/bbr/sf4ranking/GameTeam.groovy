@@ -14,6 +14,10 @@ class GameTeam implements Comparable<GameTeam>
     static belongsTo = [result: Result]
     static hasMany = [pchars: GameCharacter]
 
+    public boolean hasUnknown() {
+        return pchars.any { it.characterType == CharacterType.UNKNOWN }
+    }
+
     public String toString() {
         return "[${pchars?.join(",")}]"
     }

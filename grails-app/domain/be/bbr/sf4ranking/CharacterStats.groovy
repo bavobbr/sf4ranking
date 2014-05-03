@@ -6,7 +6,8 @@ package be.bbr.sf4ranking
  */
 class CharacterStats
 {
-    CharacterType characterType
+    Version game = Version.UNKNOWN
+    CharacterType characterType = CharacterType.UNKNOWN
     Integer timesUsed = 0
     Integer scoreAccumulated = 0
     Integer rankAccumulated = 0
