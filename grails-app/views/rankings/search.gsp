@@ -11,9 +11,10 @@
   <div class="alert alert-warning">${flash.message}</div>
 </g:if>
 
+<g:if test="${!(players.isEmpty())}">
 <h2>${players.size()} Players matching ${query}</h2>
 <div class="table-responsive">
-  <table class="tablehead" id="datatable">
+  <table class="tablehead" id="datatable1">
     <thead>
     <tr class="stathead">
       <th>Name</th>
@@ -33,13 +34,14 @@
 
   </table>
 </div>
+</g:if>
 
 
 
 <h2>${alikes.size()} Players which sound alike ${query}</h2>
 
 <div class="table-responsive">
-  <table class="tablehead" id="infotable">
+  <table class="tablehead" id="datatable2">
     <thead>
     <tr class="stathead">
       <th>Name</th>

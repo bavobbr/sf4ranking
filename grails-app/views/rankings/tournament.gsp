@@ -38,7 +38,7 @@
       <td>
         <g:if test="${tournament.coverage}">
         <g:link url="${tournament.coverage}" target="_new">
-          go to SRK
+          source
         </g:link>
         </g:if>
       </td>

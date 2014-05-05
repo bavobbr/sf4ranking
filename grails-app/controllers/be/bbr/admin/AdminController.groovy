@@ -353,11 +353,20 @@ class AdminController
     def listAlikes() {
         def players = Player.list()
         def map = [:]
-        players.each {
-            def alts = dataService.findAlikes(it.name)
-            if (alts && alts.size() > 1) map[it] = alts
+        players.each { Player p ->
+            log.info "Finding matches for ${p.name}"
+            def alts = dataService.findAlikes(p.name)
+            alts.removeAll { it.name == p.name }
+            if (alts && alts.size() >= 1) map[p] = alts
+            log.info "Counting results for ${p.name}"
+            def countResults = Result.countByPlayer(p)
+            p.metaClass.countResults << { countResults }
+            log.info "Counted $countResults"
         }
-        [players: map]
+        def sortedMap = map.sort { k1, k2 -> k2.key.countResults() <=> k1.key.countResults() }
+        def first10 = sortedMap.take(10)
+        log.info "first 10 is $first10"
+        [players: sortedMap]
     }
 
 

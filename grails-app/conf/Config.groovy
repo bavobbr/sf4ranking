@@ -121,7 +121,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
     debug   'be.bbr'
-    debug 'grails.plugin.searchable'
+    info 'grails.plugin.searchable'
 }
 
 global.isUpdating = false
