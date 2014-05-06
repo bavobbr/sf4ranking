@@ -33,16 +33,25 @@
     </dd>
     <dt>Teams(s)</dt>
     <dd>
+      <g:if test="${player.teams}">
       <g:each in="${player.teams}" var="team">
         <g:link mapping="teamByName" action="team" controller="rankings" params="[name: team.name]">${team.name}</g:link>
       </g:each>
-    &NonBreakingSpace;
+      </g:if>
+      <g:else>
+        <a href="#" data-toggle="tooltip" data-placement="top" title="You can add this player to a team by sharing this page on Twitter and mentioning the team">(?)</a>
+      </g:else>
     </dd>
     <dt>Follow</dt>
     <dd>
+      <g:if test="${player.twitter}">
     <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
+      </g:if>
+      <g:else>
+        <a href="#" data-toggle="tooltip" data-placement="top" title="If you want to add your twitter handle to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+      </g:else>
     </dd>
-    <dt>Share</dt>
+    <dt>Tweet results</dt>
     <dd>
     <g:render template="/templates/share"/>&NonBreakingSpace;
     </dd>

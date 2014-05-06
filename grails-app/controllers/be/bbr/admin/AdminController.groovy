@@ -307,6 +307,16 @@ class AdminController
         render view: "index"
     }
 
+    def removeFromTeam() {
+        Player p = Player.get(params.pid)
+        Team t = Team.get(params.tid)
+        log.info("Removing $t from $p")
+        p.removeFromTeams(t)
+        p.save()
+        log.info("Player $p is now in teams ${p.teams}")
+        redirect controller: "rankings", action: "team", params: [id:t.id]
+    }
+
 
     def printPlayers()
     {

@@ -68,7 +68,8 @@
         </td>
         <td>${player.overallScore()}</td>
         <g:if test="${SecurityUtils.subject.isPermitted("team")}">
-          <td><g:link controller="result" action="show" params="['id': player.id]">[Update result as admin]</g:link></td>
+          <td><g:link controller="player" action="show" params="['id': player.id]">[Update player]</g:link></td>
+          <td><g:link controller="admin" action="removeFromTeam" params="[pid: player.id, tid: team.id]">[Remove player]</g:link></td>
         </g:if>
       </tr>
     </g:each>

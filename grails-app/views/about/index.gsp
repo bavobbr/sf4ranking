@@ -3,7 +3,7 @@
 <head>
   <meta name="layout" content="overviews"/>
   <r:require modules="bootstrap"/>
-  <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - FAQ</title>
+  <title>Fighting Games World Ranking -FAQ</title>
 </head>
 
 <body>
@@ -12,31 +12,22 @@
 
 <div class="jumbotron">
   <h2>Summary</h2>
-
   <p>
     The rankings given to players is analog to <a
           href="http://www.atpworldtour.com/">ATP and WTA</a>. Players earn points by placing in tournaments.
-  Tournaments are ordered by importance and given a classification. The players in those tournemants are then assigned a score based on their place within a tournament, adjusted with the tournament weight.
-  </p>
+  Tournaments are ordered by importance and given a classification. The players in those tournaments are then assigned a score based on their place within a tournament, adjusted with the tournament weight.<br/>
+  </p><p>
+    The goals is to rank the tournament performance of players in popular fighting games like Street Fighter 4 (vanilla, super, arcade edition amd AE2012), Marvel vs Capcom 3, Killer Instinct and Skullgirls.
+</p>
 </div>
 
-<h3>What is SFIV?</h3>
-That's a weird question to ask if you managed to end up here. But if you really don't know what the fuzz is all about I gladly give you an excerpt from Wikipedia:
-<blockquote>
-  Street Fighter IV (ストリートファイター IV Sutorīto Faitā Fō?) is a 2008 fighting game produced by Capcom. It was the first numbered Street Fighter game released by Capcom since 1999, a hiatus of nine years.
-  The coin-operated arcade game version was released in Japan on July 18, 2008. The console versions for the PlayStation 3 and Xbox 360 were released in February 12, 2009. A Windows version was released on July 2. Street Fighter IV had sold over 3 million copies worldwide. An updated version, Super Street Fighter IV, was released as a standalone title in April 2010.
-  Street Fighter IV has sold 3.3 million units by September 2013. Super Street Fighter IV has sold 1.9 million units, in addition to 400,000 of the Arcade Edition, by December 2011.Super Street Fighter IV: 3D Edition sold an additional 1. million copies as of December 2011. This adds up to sales of 6.7 million copies in total.
-  <br/>Upon its release, the game received universal critical acclaim; receiving universally high scores from many gaming websites and magazines. <a
-        href="http://en.wikipedia.org/wiki/Street_fighter_4">Street Fighter 4 at Wikipedia</a>
-</blockquote>
-Essentially Street Fighter 4 is a one-on-one fighting game which plays in 2D but rendered in 3D, keeping gameplay close to the legendary Street Fighter 2 classic.
 
 <h3>How data is entered</h3>
-Tournaments results are imported in top 8, top 16 or top 32 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the main character of that player is stored into the database.
+Tournaments results are imported in top 8, top 16 or top 32 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the characters used by that player are stored into the database.
 <h3>How tournaments are weighted</h3>
-Every player that is entered into the database has an initial <i>skill weight</i> value. A tournament weight then becomes the average of the skill values of the best 8 reported players.
+Every player that is entered into the database has an initial <i>skill weight</i> value. A tournament weight then becomes the average of the skill values of the 8 most skilled players in the tournament.
 <h3>How tournaments are classified</h3>
-The tournament ranking is done by sorting on weight and then ditributing them into the tournament types used by <a
+The tournament ranking is done by sorting on tournament weight and then ditributing them into the tournament types used by <a
         href="http://en.wikipedia.org/wiki/Women%27s_Tennis_Association">WTA</a>
 <br/>The score distribution for tournaments in bracket format is:
 
@@ -90,7 +81,7 @@ The tournament ranking is done by sorting on weight and then ditributing them in
     </tbody>
   </table>
 </div>
-
+<i>This degrades down further to top32</i><br/>
 Tournaments in <strong>league</strong> format that are not auto-weighted score as:
 
 <div class="table-responsive">
@@ -143,7 +134,7 @@ Tournaments in <strong>league</strong> format that are not auto-weighted score a
     </tbody>
   </table>
 </div>
-Currently the points in Single and Double bracket mode are the same. A tournament can be a <strong>fixed</strong> type (the <i>Grand Slam</i>, <i>Championship</i> and <i>Tournament of Champions</i> types) or auto-weighted.
+A tournament can be a <strong>fixed</strong> type (the <i>Grand Slam</i>, <i>Championship</i> and <i>Tournament of Champions</i> types) or auto-weighted. Usually auto-weighting is used (based on player skills entering), but fixed types ccan be used for events that are considered Grand Slam unanimously (EVO class) or events that are very frequent but have a very local nature (like weeklies).
 For auto-weighted tournament types the following order is used:
 <div class="table-responsive">
 
@@ -183,15 +174,18 @@ For auto-weighted tournament types the following order is used:
 </table>
 </div>
 These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 32. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
-Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had aualifiers or seedings upfront.
+Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
+In order to scale out better the number of tournaments each class has scales above 120. This avoids too heavy contention for the highest classes for games that have been runnign for years (eg AE2012 and MVC3 will have 20% more PREMIER events).
+
+<h3>Ranking system</h3>
+<g:img dir="images" file="rank_flow.png" class="charimg"/>
 
 <h3>How much data is being tracked?</h3>
-A total of ${players} players seen in ${tournaments} tournaments producing ${results} tournament rankings from ${first?.format("MM-yyyy")} until ${last?.format("MM-yyyy")}. This covers most of the notable SF4:AE2012 tournaments, but it can be better and of course we would like to add older SF4 versions, or even other games such as MvC3 as well.
+A total of ${players} players seen in ${tournaments} tournaments producing ${results} tournament rankings from ${first?.format("MM-yyyy")} until ${last?.format("MM-yyyy")}.
 
 
-<h3>What about older tournaments and versions?</h3>
-The website is prepared to track the game version and then filter accordingly. However, the ranking system will score over all versions. The site will be updated to rank per game version instead at some point. Currently it is a AE 2012 ranking as long as there are no older tournaments entered.
-It would be really neat though to have results up to Vanilla.
+<h3>What about other games</h3>
+There is a moderator feature in development to allow the community to add data for new games. When a game is added some code need to be adapted (eg character types need to be defined, new hyperlinks will be added) and images need to be cut (to display the characters etc). Afterwards it is a matter of finding results and inputting them in a consistent way that does not cause duplicates. Any help is appreciated.
 
 <h3>What else is coming?</h3>
 Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. We would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites report on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
@@ -203,10 +197,11 @@ Please also join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-
 <h3>What technology is being used?</h3>
 Glad you ask! This is a <a
         href="http://grails.org/">Grails</a> application, using GORM on MySQL for persistence, Grails services and controller for business logic and GSP for data rendering. The GSP pages are HTML5 using <a
-        href="http://getbootstrap.com/">Bootstrap</a> for layout and JQuery for Javascript magic. All this is deployed on CloudBees on a Tomcat server. I love it.
-<hr />
+        href="http://getbootstrap.com/">Bootstrap</a> for layout and JQuery for Javascript magic. The search engine uses Compass/Lucene. Backups are made in JSON and security is covered with Apache Shiro. All this is deployed on CloudBees on a Tomcat server. I love it.
 <h3>Where did you get the cool character sprites?</h3>
-These are kindly contributed by <a href="https://twitter.com/SpeedBrkr">SpeedBrkr</a>. He will also make new sprites ofr USF4 soon.
+These are kindly contributed by <a href="https://twitter.com/SpeedBrkr">SpeedBrkr</a> and <a href="http://www.shunao.org/">Lyn/Shunao</a>.
+
+<hr />
 
 </body>
 </html>
