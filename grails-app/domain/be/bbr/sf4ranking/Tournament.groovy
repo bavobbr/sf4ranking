@@ -23,6 +23,12 @@ class Tournament
         creator nullable: true
     }
 
+    static mapping = {
+        game index: 'game_idx'
+        countryCode index: 'country_idx'
+        codename index: 'codename_t_index'
+    }
+
     String name
     String codename
     Long weight

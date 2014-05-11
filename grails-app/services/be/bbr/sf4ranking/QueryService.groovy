@@ -42,7 +42,7 @@ class QueryService
 
     Integer countPlayers(CharacterType ctype, CountryCode countryCode, Version game) {
         def playerCountQuery = Player.createCriteria()
-        def playercount = playerCountQuery.list() {
+        def playercount = playerCountQuery.get() {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
             projections {
                 countDistinct 'id'
@@ -60,8 +60,22 @@ class QueryService
                     }
                 }
             }
-        }.first()
+        }
         return playercount
+    }
+
+    Integer countPlayerResults(Player player, Version game) {
+        def resultCountQuery = Result.createCriteria()
+        def rcount = resultCountQuery.get() {
+            projections {
+                countDistinct 'id'
+            }
+            tournament {
+                eq("game", game)
+            }
+            eq("player",player)
+        }
+        return rcount
     }
 
     List<String> getActiveCountryNames() {

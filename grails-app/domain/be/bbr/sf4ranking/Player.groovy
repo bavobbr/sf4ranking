@@ -39,27 +39,27 @@ class Player
     }
 
     Integer skill(Version game) {
-        return rankings.find { it.game == game }?.skill?: 0
+        return findRanking(game)?.skill?: 0
     }
 
     Integer rank(Version game) {
-        return rankings.find { it.game == game }?.rank?: 0
+        return findRanking(game)?.rank?: 0
     }
 
     Integer score(Version game) {
-        return rankings.find { it.game == game }?.score?: 0
+        return findRanking(game)?.score?: 0
     }
 
     Integer totalScore(Version game) {
-        return rankings.find { it.game == game }?.totalScore?: 0
+        return findRanking(game)?.totalScore?: 0
     }
 
     Date snapshot(Version game) {
-        return rankings.find { it.game == game }?.snapshot?: null
+        return findRanking(game)?.snapshot?: null
     }
 
     String diff(Version game) {
-        def ranking = rankings.find { it.game == game }
+        def ranking = findRanking(game)
         def newRank = ranking?.rank
         def oldRank = ranking?.oldRank
         if (oldRank == null) return "-"
@@ -69,7 +69,7 @@ class Player
     }
 
     Set<CharacterType> main(Version game) {
-        return rankings.find { it.game == game }?.mainCharacters?: []
+        return findRanking(game)?.mainCharacters?: []
     }
 
     void applyScore(Version game, Integer score)
@@ -98,7 +98,7 @@ class Player
     }
 
     PlayerRanking findOrCreateRanking(Version game) {
-        def ranking = rankings.find { it.game == game }
+        def ranking = findRanking(game)
         if (!ranking) {
             ranking = new PlayerRanking(score: 0, rank: 0, skill: 0, game: game)
             this.addToRankings(ranking)
@@ -107,7 +107,7 @@ class Player
     }
 
     void deleteRanking(Version game) {
-        def ranking = rankings.find { it.game == game }
+        def ranking = findRanking(game)
         if (ranking) {
             this.removeFromRankings(ranking)
         }
@@ -115,6 +115,10 @@ class Player
 
     boolean hasRanking(Version game) {
         return rankings.any { it.game == game }
+    }
+
+    PlayerRanking findRanking(Version game) {
+        return rankings.find { it.game == game }
     }
 
     Integer overallScore() {

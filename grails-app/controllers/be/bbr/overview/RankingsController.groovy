@@ -41,10 +41,14 @@ class RankingsController
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null :
                     CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
+        def pfiltermain = params.filtermain == "on"? true:false
         def filtered = pchar || pcountry
-        log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered"
+        log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered $pfiltermain"
 
         def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
+        if (pfiltermain) {
+            players.retainAll { pchar in it.rankings.find { it.game == pgame }?.mainCharacters }
+        }
         def playercount = queryService.countPlayers(pchar, pcountry, pgame)
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
@@ -59,9 +63,14 @@ class RankingsController
         if (players && !players.isEmpty())
         {
             snapshot = players?.first()?.snapshot(pgame)
+            players.each {
+                def numResults = queryService.countPlayerResults(it, pgame)
+                it.metaClass.numResults << { numResults }
+            }
         }
+        log.info "returning ${players.size()} players for game $pgame"
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
-                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
+                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
     }
 
     /**
@@ -102,7 +111,8 @@ class RankingsController
     {
         log.info "Resolving player byname $params.name"
         String uppername = params.name.toUpperCase()
-        if (uppername == "PR20BALROG") uppername = "PR BALROG" // damn u edouardo
+        uppername = uppername.replace("%20"," ") // bugfix of url encoding. Breaks some possible names but better than nothing
+        log.info "Resolving after fix player byname $uppername"
         Player p = Player.findByCodename(uppername)
         return player(p)
     }

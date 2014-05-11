@@ -122,6 +122,8 @@
               <li><g:link action="rank" controller="rankings" params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
               <li class="divider"></li>
               <li><g:link action="teams" controller="rankings">View All Player Teams</g:link></li>
+              <li><g:link action="index" controller="stats">Character statistics</g:link></li>
+
             </ul>
           </li>
           <li class="dropdown">

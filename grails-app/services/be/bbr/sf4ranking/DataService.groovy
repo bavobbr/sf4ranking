@@ -210,7 +210,7 @@ class DataService
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
             def tdata = new JsonSlurper().parseText(tournamentFile.text)
             if (Environment.current == Environment.DEVELOPMENT) {
-                //tdata = tdata.take(10)
+                tdata = tdata.take(300)
             }
             tdata.each {
                 log.info "Importing tournament $it.name"
