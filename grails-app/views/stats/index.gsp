@@ -11,8 +11,7 @@
 <h2>Character statistics for ${game}</h2>
 <div class="alert alert-info alert-dismissable">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  You can sort on the columns by clicking the header!
-
+  You can sort on the columns by clicking the header! WORK IN PROGRESS
 </div>
 <ul class="nav nav-pills">
   <g:each in="${Version.values()}" var="g">
@@ -27,11 +26,12 @@
       <th>Character</th>
       <th>Times listed <a href="#" data-toggle="tooltip" data-placement="top" title="Number of times this character appeared in the tournament results">(?)</a></th>
       <th>List % <a href="#" data-toggle="tooltip" data-placement="top" title="Percentage of times this character appeared in the tournament results">(?)</a></th>
-      <th>Score <a href="#" data-toggle="tooltip" data-placement="top" title="Sum of scores earned by players who used this character in tournaments">(?)</a></th>
+      <th>Base Score <a href="#" data-toggle="tooltip" data-placement="top" title="Sum of scores earned by players who used this character in tournaments">(?)</a></th>
+      <th>Score <a href="#" data-toggle="tooltip" data-placement="top" title="Sum of decayed scores earned by players who used this character in tournaments">(?)</a></th>
       <th>Rank <a href="#" data-toggle="tooltip" data-placement="top" title="Sum of ranks earned by players who used this character in tournaments">(?)</a></th>
-      <th>Main total <a href="#" data-toggle="tooltip" data-placement="top" title="Number of players who use this character as main">(?)</a></th>
-      <th>Main top 100 <a href="#" data-toggle="tooltip" data-placement="top" title="Number of top 100 players who use this character as main">(?)</a></th>
       <th>Main top 50 <a href="#" data-toggle="tooltip" data-placement="top" title="Number of top 50 players who use this character as main">(?)</a></th>
+      <th>Main top 100 <a href="#" data-toggle="tooltip" data-placement="top" title="Number of top 100 players who use this character as main">(?)</a></th>
+      <th>Main total <a href="#" data-toggle="tooltip" data-placement="top" title="Number of players who use this character as main">(?)</a></th>
       <th>Best player <a href="#" data-toggle="tooltip" data-placement="top" title="Highest ranked player who uses this char as main">(?)</a></th>
       <th>Best rank <a href="#" data-toggle="tooltip" data-placement="top" title="Highest rank of this character as main">(?)</a></th>
     </tr>
@@ -39,7 +39,7 @@
     <g:each in="${results}" var="cstat">
       <tr>
         <td>
-      <g:link action="rank" controller="rankings" params="[pchar: cstat.characterType.name(), id: game.name()]"
+      <g:link action="character" controller="stats" params="[charname: cstat.characterType.name(), game: game.name()]"
               data-toggle="tooltip" data-placement="top"
               title="Filter on ${cstat.characterType.value}">
         <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
@@ -54,10 +54,11 @@
             ${cstat.totalUsagePercentage?.round(1)}
       </td>
       <td>${cstat.scoreAccumulated}</td>
+      <td>${cstat.decayedScoreAccumulated}</td>
       <td>${cstat.rankAccumulated}</td>
-      <td>${cstat.asMain}</td>
-      <td>${cstat.asMainInTop100}</td>
       <td>${cstat.asMainInTop50}</td>
+      <td>${cstat.asMainInTop100}</td>
+      <td>${cstat.asMain}</td>
       <td>
         <g:if test="${cstat.player}">
           <g:link controller="rankings" mapping="playerByName" action="player"

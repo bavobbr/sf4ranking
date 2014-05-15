@@ -31,6 +31,15 @@
         </g:link>
       </g:if>&NonBreakingSpace;
     </dd>
+    <dt>Full name</dt>
+    <dd>
+      <g:if test="${player.realname}">
+        ${player.realname}
+      </g:if>
+      <g:else>
+        <a href="#" data-toggle="tooltip" data-placement="top" title="If you want to add your name to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+      </g:else>
+    </dd>
     <dt>Teams(s)</dt>
     <dd>
       <g:if test="${player.teams}">

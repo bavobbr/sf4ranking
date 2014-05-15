@@ -313,6 +313,7 @@ class DataService
         list.each {
             def player = [:]
             player.name = it.name
+            player.realname = it.realname
             player.countryCode = it.countryCode?.name()
             player.videos = it.videos
             player.codename = it.codename

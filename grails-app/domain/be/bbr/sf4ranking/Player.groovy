@@ -14,16 +14,18 @@ class Player
         twitter nullable: true
         rankings nullable: false
         creator nullable: true
+        realname nullable: true
     }
 
     static mapping = {
         codename index: 'Name_Idx'
     }
 
-    static searchable = [only: ['name', 'twitter']]
+    static searchable = [only: ['name', 'twitter', 'realname']]
 
     String name
     String codename
+    String realname
     CountryCode countryCode
     String wikilink
     String twitter
