@@ -1,5 +1,8 @@
 package be.bbr.sf4ranking;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * All enums should go to Groovy as Java is too verbose in the fromString part
  */
@@ -98,11 +101,13 @@ public enum CharacterType
     WOLVERINE("WOLVERINE", "Wolverine", Version.UMVC3),
     X_23("X23", "X-23", Version.UMVC3),
 
+    FULGORE("FULGORE", "Fulgore", Version.KI),
     GLACIUS("GLACIUS", "Glacius", Version.KI),
     JAGO("JAGO", "Jago", Version.KI),
     ORCHID("ORCHID", "Orchid", Version.KI),
     SABREWULF("SABREWULF", "Sabrewulf", Version.KI),
     SADIRA("SADIRA", "Sadira", Version.KI),
+    SPINAL("SPINAL", "Spinal", Version.KI),
     THUNDER("THUNDER", "Thunder", Version.KI),
 
     BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
@@ -118,6 +123,7 @@ public enum CharacterType
     ELIZA("ELIZA", "Eliza", Version.SKULLGIRLS),
     BEOWULF("BEOWULF", "Beowulf", Version.SKULLGIRLS),
     ROBO_FORTUNE("ROBO", "Robo Fortune", Version.SKULLGIRLS),
+    FUKUA("FUKUA", "Fukua", Version.SKULLGIRLS),
 
     AQUAMAN("AQUAMAN", "Aquaman", Version.IGAU),
     ARES("ARES", "Ares", Version.IGAU),
@@ -161,6 +167,16 @@ public enum CharacterType
         this.value = value;
         this.shortname = shortname;
         this.game = game;
+    }
+
+    public static List<CharacterType> forGame(Version game) {
+        List<CharacterType> chars = new ArrayList<CharacterType>();
+        for (CharacterType ct : CharacterType.values()) {
+            if (ct.game == Version.generalize(game)) {
+                chars.add(ct);
+            }
+        }
+        return chars;
     }
 
     public String getValue() {

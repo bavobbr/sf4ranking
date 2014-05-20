@@ -20,6 +20,8 @@ class StatsController
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort { a, b -> b.totalTimesUsed <=> a.totalTimesUsed}
+        //def usageSeries = usageSeries(game)
+        //log.info "Usage series is ${usageSeries}"
         return [results: cstats, game: game]
     }
 
@@ -29,18 +31,21 @@ class StatsController
         CharacterStats stats = CharacterStats.findByGameAndCharacterType(game, charType)
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
-        def bestplayers = best ? best.findAll {charType in it.main(game)} : null
-        def best5 = bestplayers.take(5)
+        def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
+        def bestSecondaryplayers = best ? best.findAll { !(charType in it.main(game)) } : null
+        def best5m = bestMainplayers.take(5)
+        def best5s = bestSecondaryplayers.take(5)
         def others = CharacterStats.findAllByGame(game)
         others.removeAll { it.characterType == CharacterType.UNKNOWN }
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
-                         "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100"]
+                         "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
+                         "top1finishes", "top3finishes", "top8finishes", "top16finishes"]
         def relativeStats = [:]
         statnames.each { String stat ->
             def index = others.sort { a, b -> b."$stat" <=> a."$stat" }.findIndexOf { it.characterType == charType } + 1
             relativeStats[stat] = index
         }
-        return [stats:stats, best5:best5, relativeStats:relativeStats]
+        return [stats:stats, best5:best5m, best5secondaries: best5s, relativeStats:relativeStats, total: others.size()]
     }
 
     def analyze()
@@ -70,8 +75,22 @@ class StatsController
         scoreByTop100(game, statsmap)
         decayedScore(characters, statsmap)
         decayedScoreByTop100(game, statsmap)
+        topfinishes(characters, statsmap)
         statsmap.values()*.save(failOnError: true)
         redirect(controller: "stats", action: "index", params: [game: game])
+    }
+
+    private List usageSeries(Version game) {
+        def count = CharacterType.forGame(game).size()
+        def top300 = queryService.findPlayers(null, null, 300, 0, game)
+        List series = []
+        Set usedChars = []
+        top300.takeWhile { Player p ->
+            usedChars << p.main(game)
+            series << usedChars.size()
+            return usedChars.size() < count
+        }
+        return series
     }
 
     private def listCharacters(Version game) {
@@ -98,6 +117,47 @@ class StatsController
             stats.rankAccumulated += 33 - r.place
         }
     }
+
+    private void topfinishes(List<CharacterStats> characters, Map statsmap)
+    {
+        log.info "Top finishes"
+        HitMap<CharacterType> charhitstop1 = new HitMap<>()
+        HitMap<CharacterType> charhitstop3 = new HitMap<>()
+        HitMap<CharacterType> charhitstop8 = new HitMap<>()
+        HitMap<CharacterType> charhitstop16 = new HitMap<>()
+        characters.each { GameCharacter gc ->
+            Result r = gc.gameTeam.result
+            if (r.place == 1) {
+                charhitstop1.addHit(gc.characterType)
+            }
+            if (r.place <= 3) {
+                charhitstop3.addHit(gc.characterType)
+            }
+            if (r.place <= 8) {
+                charhitstop8.addHit(gc.characterType)
+            }
+            if (r.place <= 16) {
+                charhitstop16.addHit(gc.characterType)
+            }
+        }
+        charhitstop1.each { k, v ->
+            CharacterStats stats = statsmap[k]
+            stats?.top1finishes = v
+        }
+        charhitstop3.each { k, v ->
+            CharacterStats stats = statsmap[k]
+            stats?.top3finishes = v
+        }
+        charhitstop8.each { k, v ->
+            CharacterStats stats = statsmap[k]
+            stats?.top8finishes = v
+        }
+        charhitstop16.each { k, v ->
+            CharacterStats stats = statsmap[k]
+            stats?.top16finishes = v
+        }
+    }
+
 
     private void decayedScore(List<CharacterStats> characters, Map statsmap)
     {

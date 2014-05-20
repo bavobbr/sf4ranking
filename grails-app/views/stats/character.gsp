@@ -14,14 +14,14 @@ This list character usage and performance statistics for ${stats.characterType} 
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
   You can sort on the columns by clicking the header! WORK IN PROGRESS
 </div>
-&nbsp;
+This character is ranked against ${total} other characters
 <div class="table-responsive">
   <table class="tablehead" id="datatable">
     <thead>
     <tr class="stathead">
       <th>Statistic</th>
       <th>Value</th>
-      <th>Rank in chars</th>
+      <th>Compared to others</th>
     </tr>
     </thead>
     <tr>
@@ -74,6 +74,26 @@ This list character usage and performance statistics for ${stats.characterType} 
       <td>${stats.decayedScoreAccumulatedByTop100}</td>
       <td>${relativeStats.decayedScoreAccumulatedByTop100}</td>
     </tr>
+    <tr>
+      <td>top1finishes</td>
+      <td>${stats.top1finishes}</td>
+      <td>${relativeStats.top1finishes}</td>
+    </tr>
+    <tr>
+      <td>top3finishes</td>
+      <td>${stats.top3finishes}</td>
+      <td>${relativeStats.top3finishes}</td>
+    </tr>
+    <tr>
+      <td>top8finishes</td>
+      <td>${stats.top8finishes}</td>
+      <td>${relativeStats.top8finishes}</td>
+    </tr>
+    <tr>
+      <td>top16finishes</td>
+      <td>${stats.top16finishes}</td>
+      <td>${relativeStats.top16finishes}</td>
+    </tr>
   </table>
 </div>
 
@@ -84,7 +104,13 @@ Top players using character as main:
       <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> ${p.rank(stats.game)}</li>
   </g:each>
 </ol>
-
+Top players using character as secondary:
+<ol>
+  <g:each in="${best5secondaries}" var="p">
+    <li>
+      <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> ${p.rank(stats.game)}</li>
+  </g:each>
+</ol>
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function ()
                     {
