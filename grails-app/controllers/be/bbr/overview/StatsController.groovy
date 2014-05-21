@@ -1,6 +1,7 @@
 package be.bbr.overview
 
 import be.bbr.sf4ranking.*
+import org.apache.commons.math.stat.descriptive.SummaryStatistics
 import org.apache.shiro.SecurityUtils
 
 /**
@@ -19,38 +20,53 @@ class StatsController
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
-        cstats = cstats.sort { a, b -> b.totalTimesUsed <=> a.totalTimesUsed}
-        //def usageSeries = usageSeries(game)
-        //log.info "Usage series is ${usageSeries}"
-        return [results: cstats, game: game]
+        cstats = cstats.sort {a, b -> b.totalTimesUsed <=> a.totalTimesUsed}
+        Map<Version, GameStats> statsmap = [:]
+        if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012]) {
+            def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)
+            def superStats = GameStats.findByGame(Version.SUPER) ?: new GameStats(game: Version.SUPER)
+            def aeStats = GameStats.findByGame(Version.AE) ?: new GameStats(game: Version.AE)
+            def ae2012Stats = GameStats.findByGame(Version.AE2012) ?: new GameStats(game: Version.AE2012)
+            statsmap[vanillaStats.game] = vanillaStats
+            statsmap[superStats.game] = superStats
+            statsmap[aeStats.game] = aeStats
+            statsmap[ae2012Stats.game] = ae2012Stats
+        }
+        else {
+            def gs = GameStats.findByGame(game) ?: new GameStats(game: game)
+            statsmap[gs.game] = gs
+        }
+        return [results: cstats, game: game, gamestats: statsmap]
     }
 
-    def character() {
+    def character()
+    {
         Version game = Version.fromString(params.game)
         CharacterType charType = CharacterType.fromString(params.charname, Version.generalize(game))
         CharacterStats stats = CharacterStats.findByGameAndCharacterType(game, charType)
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
         def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
-        def bestSecondaryplayers = best ? best.findAll { !(charType in it.main(game)) } : null
+        def bestSecondaryplayers = best ? best.findAll {!(charType in it.main(game))} : null
         def best5m = bestMainplayers.take(5)
         def best5s = bestSecondaryplayers.take(5)
         def others = CharacterStats.findAllByGame(game)
-        others.removeAll { it.characterType == CharacterType.UNKNOWN }
+        others.removeAll {it.characterType == CharacterType.UNKNOWN}
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
-                         "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
-                         "top1finishes", "top3finishes", "top8finishes", "top16finishes"]
+                "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
+                "top1finishes", "top3finishes", "top8finishes", "top16finishes"]
         def relativeStats = [:]
-        statnames.each { String stat ->
-            def index = others.sort { a, b -> b."$stat" <=> a."$stat" }.findIndexOf { it.characterType == charType } + 1
+        statnames.each {String stat ->
+            def index = others.sort {a, b -> b."$stat" <=> a."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-        return [stats:stats, best5:best5m, best5secondaries: best5s, relativeStats:relativeStats, total: others.size()]
+        return [stats: stats, best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size()]
     }
 
     def analyze()
     {
-        if (!SecurityUtils.subject.hasRole("Administrator")) {
+        if (!SecurityUtils.subject.hasRole("Administrator"))
+        {
             render(status: 503, text: 'You need permission')
         }
         Version game = Version.fromString(params.game)
@@ -77,23 +93,33 @@ class StatsController
         decayedScoreByTop100(game, statsmap)
         topfinishes(characters, statsmap)
         statsmap.values()*.save(failOnError: true)
+        generateGameStats(game)
+        statisticsForGamestats(game)
         redirect(controller: "stats", action: "index", params: [game: game])
     }
 
-    private List usageSeries(Version game) {
-        def count = CharacterType.forGame(game).size()
-        def top300 = queryService.findPlayers(null, null, 300, 0, game)
+    private List usageSeries(Version game)
+    {
+        def count = CharacterType.count(game)
+        def top500 = queryService.findPlayers(null, null, 500, 0, game)
         List series = []
         Set usedChars = []
-        top300.takeWhile { Player p ->
-            usedChars << p.main(game)
-            series << usedChars.size()
+        def processed = top500.takeWhile {Player p ->
+            p.main(game).each {def main ->
+                if (main != CharacterType.UNKNOWN)
+                {
+                    usedChars << main
+                }
+                series << usedChars.size()
+            }
             return usedChars.size() < count
         }
+        log.info "Processed till ${processed?.last()} items ${processed.size()}"
         return series
     }
 
-    private def listCharacters(Version game) {
+    private def listCharacters(Version game)
+    {
         log.info "Listing all gamechars"
         def chars = GameCharacter.list()
         log.info "Grouping by game $game"
@@ -101,15 +127,75 @@ class StatsController
         return byTournamentVersion[game]
     }
 
-    private void deleteOld(Version game) {
+    private void deleteOld(Version game)
+    {
         def old = CharacterStats.findAllByGame(game)
+        def oldstats = GameStats.findAllByGame(game)
         old*.delete()
+        oldstats*.delete()
+    }
+
+    private GameStats generateGameStats(Version game)
+    {
+        def usageSeries = usageSeries(game)
+        log.info "Usage series is ${usageSeries}"
+        GameStats gs = new GameStats(game: game)
+        if (usageSeries)
+        {
+            gs.usageSeries = usageSeries.join(",")
+            def val50 = usageSeries.get(Math.min(49, usageSeries.size() - 1))
+            def val100 = usageSeries.get(Math.min(99, usageSeries.size() - 1))
+            def total = CharacterType.count(game)
+            log.info "Expecting a total of $total chars in game $game"
+            gs.percentageInTop50 = val50 / total * 100
+            gs.percentageInTop100 = val100 / total * 100
+            def countAt25 = (total * 0.25) as Integer
+            def countAt50 = (total * 0.5) as Integer
+            def countAt75 = (total * 0.75) as Integer
+            def countAt100 = total
+            gs.rankOfCharAt25Percent = usageSeries.findIndexOf {it >= countAt25}
+            gs.rankOfCharAt50Percent = usageSeries.findIndexOf {it >= countAt50}
+            gs.rankOfCharAt75Percent = usageSeries.findIndexOf {it >= countAt75}
+            gs.rankOfCharAt100Percent = usageSeries.findIndexOf {it >= countAt100}
+        }
+        log.info "Saving gamestats"
+        gs.save(failOnError: true)
+        log.info "Saved gamestats"
+        return gs
+    }
+
+    private void statisticsForGamestats(Version game) {
+        GameStats gs = GameStats.findByGame(game)
+        SummaryStatistics scorestats = new SummaryStatistics()
+        SummaryStatistics mainstats = new SummaryStatistics()
+        SummaryStatistics usagestats = new SummaryStatistics()
+        SummaryStatistics usagepercentstats = new SummaryStatistics()
+        def allChars = CharacterStats.findAllByGame(game)
+        allChars.each {
+            scorestats.addValue(it.scoreAccumulated)
+            mainstats.addValue(it.asMain)
+            usagestats.addValue(it.totalTimesUsed)
+            usagepercentstats.addValue(it.totalUsagePercentage)
+            log.info "Added samples $it.scoreAccumulated and ${it.asMain} to stats"
+        }
+        gs.meanOnScore = scorestats.mean
+        gs.varianceOnScore = scorestats.variance
+        gs.standardDeviationOnScore = scorestats.standardDeviation
+        gs.meanOnMain = mainstats.mean
+        gs.varianceOnMain = mainstats.variance
+        gs.standardDeviationOnMain = mainstats.standardDeviation
+        gs.meanOnUsage = usagestats.mean
+        gs.standardDeviationOnUsage = usagestats.standardDeviation
+        gs.meanOnUsagePercent = usagepercentstats.mean
+        gs.standardDeviationOnUsagePercent = usagepercentstats.standardDeviation
+        gs.sampleSize = mainstats.n
+        gs.save(failOnError: true)
     }
 
     private void calculateScores(List<CharacterStats> characters, Map statsmap)
     {
         log.info "Calculating scores"
-        characters.each { GameCharacter gc ->
+        characters.each {GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
             def score = ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
@@ -125,34 +211,38 @@ class StatsController
         HitMap<CharacterType> charhitstop3 = new HitMap<>()
         HitMap<CharacterType> charhitstop8 = new HitMap<>()
         HitMap<CharacterType> charhitstop16 = new HitMap<>()
-        characters.each { GameCharacter gc ->
+        characters.each {GameCharacter gc ->
             Result r = gc.gameTeam.result
-            if (r.place == 1) {
+            if (r.place == 1)
+            {
                 charhitstop1.addHit(gc.characterType)
             }
-            if (r.place <= 3) {
+            if (r.place <= 3)
+            {
                 charhitstop3.addHit(gc.characterType)
             }
-            if (r.place <= 8) {
+            if (r.place <= 8)
+            {
                 charhitstop8.addHit(gc.characterType)
             }
-            if (r.place <= 16) {
+            if (r.place <= 16)
+            {
                 charhitstop16.addHit(gc.characterType)
             }
         }
-        charhitstop1.each { k, v ->
+        charhitstop1.each {k, v ->
             CharacterStats stats = statsmap[k]
             stats?.top1finishes = v
         }
-        charhitstop3.each { k, v ->
+        charhitstop3.each {k, v ->
             CharacterStats stats = statsmap[k]
             stats?.top3finishes = v
         }
-        charhitstop8.each { k, v ->
+        charhitstop8.each {k, v ->
             CharacterStats stats = statsmap[k]
             stats?.top8finishes = v
         }
-        charhitstop16.each { k, v ->
+        charhitstop16.each {k, v ->
             CharacterStats stats = statsmap[k]
             stats?.top16finishes = v
         }
@@ -162,10 +252,11 @@ class StatsController
     private void decayedScore(List<CharacterStats> characters, Map statsmap)
     {
         log.info "Calculating scores"
-        characters.each { GameCharacter gc ->
+        characters.each {GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
-            def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+            def score = ScoringSystem.
+                    getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
             stats.decayedScoreAccumulated += score
         }
     }
@@ -187,8 +278,8 @@ class StatsController
     {
         log.info "Checking top 100 scores"
         def top100 = queryService.findPlayers(null, null, 100, 0, game)
-        top100.each { Player p ->
-            p.results.findAll{ it.tournament.game == game }.each { Result r ->
+        top100.each {Player p ->
+            p.results.findAll {it.tournament.game == game}.each {Result r ->
                 def score = ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                 r.characterTeams.each {
                     it.pchars.each {
@@ -204,9 +295,10 @@ class StatsController
     {
         log.info "Checking top 100 decayed scores"
         def top100 = queryService.findPlayers(null, null, 100, 0, game)
-        top100.each { Player p ->
-            p.results.findAll{ it.tournament.game == game }.each { Result r ->
-                def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+        top100.each {Player p ->
+            p.results.findAll {it.tournament.game == game}.each {Result r ->
+                def score = ScoringSystem.
+                        getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                 r.characterTeams.each {
                     it.pchars.each {
                         CharacterStats cstats = statsmap[it.characterType]
@@ -250,9 +342,10 @@ class StatsController
         HitMap<CharacterType> charhits = new HitMap<>()
         all.each {
             Set<CharacterType> mains = it.findRanking(game)?.mainCharacters
-            Set<CharacterType> allUsed = it.results.findAll { it.tournament.game == game }.collect { it.characterTeams.collect { it.pchars.characterType }.flatten() }.flatten()
+            Set<CharacterType> allUsed = it.results.findAll {it.tournament.game == game}.
+                    collect {it.characterTeams.collect {it.pchars.characterType}.flatten()}.flatten()
             Set<CharacterType> secondaries = allUsed.minus(mains)
-            secondaries.each { charhits.addHit(it) }
+            secondaries.each {charhits.addHit(it)}
         }
         log.info "Secondaries are ${charhits}"
         charhits.each {def k, v ->

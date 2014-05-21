@@ -114,7 +114,7 @@
                     <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
                             data-toggle="tooltip" data-placement="top"
                             title="Filter on ${mainCharacter.name()}">
-                      <g:set var="prepend" value="${Version.generalize(ranking.game) == Version.AE2012? "thumb_" : ""}"/>
+                      <g:set var="prepend" value="${Version.generalize(ranking.game) == Version.USF4? "thumb_" : ""}"/>
                       <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}" file="${prepend+mainCharacter.name().toLowerCase() + '.png'}" height="50" class="charimg"/>
                     </g:link>
                   </g:each>

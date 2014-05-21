@@ -47,7 +47,8 @@ public enum Version
             case SUPER:
             case AE:
             case AE2012:
-                return Version.AE2012;
+            case USF4:
+                return Version.USF4;
             case UMVC3:
                 return Version.UMVC3;
             case KI:

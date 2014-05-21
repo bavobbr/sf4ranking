@@ -8,46 +8,51 @@ import java.util.List;
  */
 public enum CharacterType
 {
-    UNKNOWN("UNKNOWN", "Not identified", Version.AE2012),
-    ABEL("ABEL", "Abel", Version.AE2012),
-    ADON("ADON", "Adon", Version.AE2012),
-    AKUMA("AKUMA", "Akuma", Version.AE2012),
-    BALROG("BALROG", "Balrog", Version.AE2012),
-    BLANKA("BLANKA", "Blanka", Version.AE2012),
-    CAMMY("CAMMY", "Cammy", Version.AE2012),
-    CHUN("CHUN LI", "Chun-Li", Version.AE2012),
-    CODY("CODY", "Cody", Version.AE2012),
-    VIPER("VIPER", "C. Viper", Version.AE2012),
-    DAN("DAN", "Dan", Version.AE2012),
-    DJ("DJ", "Dee Jay", Version.AE2012),
-    DHALSIM("DHALSIM", "Dhalsim", Version.AE2012),
-    DUDLEY("DUDLEY", "Dudley", Version.AE2012),
-    HONDA("E. HONDA", "Honda", Version.AE2012),
-    FUERTE("EL FUERTE", "Fuerte", Version.AE2012),
-    ERYU("ERYU", "Evil Ryu", Version.AE2012),
-    FEI("FEI", "Fei Long", Version.AE2012),
-    GEN("GEN", "Gen", Version.AE2012),
-    GOUKEN("GOUKEN", "Gouken", Version.AE2012),
-    GUILE("GUILE", "Guile", Version.AE2012),
-    GUY("GUY", "Guy", Version.AE2012),
-    HAKAN("HAKAN", "Hakan", Version.AE2012),
-    IBUKI("IBUKI", "Ibuki", Version.AE2012),
-    JURI("JURI", "Juri", Version.AE2012),
-    KEN("KEN", "Ken", Version.AE2012),
-    MAKOTO("MAKOTO", "Makoto", Version.AE2012),
-    BISON("BISON", "M. Bison", Version.AE2012),
-    ONI("ONI", "Oni", Version.AE2012),
-    ROSE("ROSE", "Rose", Version.AE2012),
-    RUFUS("RUFUS", "Rufus", Version.AE2012),
-    RYU("RYU", "Ryu", Version.AE2012),
-    SAGAT("SAGAT", "Sagat", Version.AE2012),
-    SAKURA("SAKURA", "Sakura", Version.AE2012),
-    SETH("SETH", "Seth", Version.AE2012),
-    HAWK("T.HAWK", "T. Hawk", Version.AE2012),
-    VEGA("VEGA", "Vega (Claw)", Version.AE2012),
-    YANG("YANG", "Yang", Version.AE2012),
-    YUN("YUN", "Yun", Version.AE2012),
-    ZANGIEF("ZANGIEF", "Zangief", Version.AE2012),
+    UNKNOWN("UNKNOWN", "Not identified", Version.USF4),
+    ABEL("ABEL", "Abel", Version.USF4),
+    ADON("ADON", "Adon", Version.USF4),
+    AKUMA("AKUMA", "Akuma", Version.USF4),
+    BALROG("BALROG", "Balrog", Version.USF4),
+    BLANKA("BLANKA", "Blanka", Version.USF4),
+    CAMMY("CAMMY", "Cammy", Version.USF4),
+    CHUN("CHUN LI", "Chun-Li", Version.USF4),
+    CODY("CODY", "Cody", Version.USF4),
+    VIPER("VIPER", "C. Viper", Version.USF4),
+    DAN("DAN", "Dan", Version.USF4),
+    DJ("DJ", "Dee Jay", Version.USF4),
+    DHALSIM("DHALSIM", "Dhalsim", Version.USF4),
+    DUDLEY("DUDLEY", "Dudley", Version.USF4),
+    HONDA("E. HONDA", "Honda", Version.USF4),
+    FUERTE("EL FUERTE", "Fuerte", Version.USF4),
+    ERYU("ERYU", "Evil Ryu", Version.USF4),
+    FEI("FEI", "Fei Long", Version.USF4),
+    GEN("GEN", "Gen", Version.USF4),
+    GOUKEN("GOUKEN", "Gouken", Version.USF4),
+    GUILE("GUILE", "Guile", Version.USF4),
+    GUY("GUY", "Guy", Version.USF4),
+    HAKAN("HAKAN", "Hakan", Version.USF4),
+    IBUKI("IBUKI", "Ibuki", Version.USF4),
+    JURI("JURI", "Juri", Version.USF4),
+    KEN("KEN", "Ken", Version.USF4),
+    MAKOTO("MAKOTO", "Makoto", Version.USF4),
+    BISON("BISON", "M. Bison", Version.USF4),
+    ONI("ONI", "Oni", Version.USF4),
+    ROSE("ROSE", "Rose", Version.USF4),
+    RUFUS("RUFUS", "Rufus", Version.USF4),
+    RYU("RYU", "Ryu", Version.USF4),
+    SAGAT("SAGAT", "Sagat", Version.USF4),
+    SAKURA("SAKURA", "Sakura", Version.USF4),
+    SETH("SETH", "Seth", Version.USF4),
+    HAWK("T.HAWK", "T. Hawk", Version.USF4),
+    VEGA("VEGA", "Vega (Claw)", Version.USF4),
+    YANG("YANG", "Yang", Version.USF4),
+    YUN("YUN", "Yun", Version.USF4),
+    ZANGIEF("ZANGIEF", "Zangief", Version.USF4),
+    ROLENTO("ROLENTO", "Rolento", Version.USF4),
+    HUGO("HUGO", "Hugo", Version.USF4),
+    ELENA("ELENA", "Elena", Version.USF4),
+    DECAPRE("DECAPRE", "Decapre", Version.USF4),
+    POISON("POISON", "Poison", Version.USF4),
 
 
     AKUMA_MVC3("AKUMA", "Akuma", Version.UMVC3),
@@ -172,11 +177,21 @@ public enum CharacterType
     public static List<CharacterType> forGame(Version game) {
         List<CharacterType> chars = new ArrayList<CharacterType>();
         for (CharacterType ct : CharacterType.values()) {
-            if (ct.game == Version.generalize(game)) {
+            if (ct.game == Version.generalize(game) && ct != CharacterType.UNKNOWN) {
                 chars.add(ct);
             }
         }
         return chars;
+    }
+
+    public static Integer count(Version game) {
+        switch (game) {
+            case VANILLA: return 25;
+            case SUPER: return 35;
+            case AE: return 39;
+            case AE2012: return 39;
+            default: return forGame(game).size();
+        }
     }
 
     public String getValue() {
