@@ -54,10 +54,15 @@ class StatsController
         others.removeAll {it.characterType == CharacterType.UNKNOWN}
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
                 "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
-                "top1finishes", "top3finishes", "top8finishes", "top16finishes"]
+                "top1finishes", "top3finishes", "top8finishes", "top16finishes", "meanTop5Score", "meanTop5Usage"]
         def relativeStats = [:]
         statnames.each {String stat ->
             def index = others.sort {a, b -> b."$stat" <=> a."$stat"}.findIndexOf {it.characterType == charType} + 1
+            relativeStats[stat] = index
+        }
+        def reversestatnames = ["spreadTop5Score", "standardDeviationTop5Score", "spreadTop5Usage", "standardDeviationTop5Usage"]
+        reversestatnames.each {String stat ->
+            def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
         return [stats: stats, best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size()]
@@ -92,6 +97,7 @@ class StatsController
         decayedScore(characters, statsmap)
         decayedScoreByTop100(game, statsmap)
         topfinishes(characters, statsmap)
+        statsForBest5(game, statsmap)
         statsmap.values()*.save(failOnError: true)
         generateGameStats(game)
         statisticsForGamestats(game)
@@ -288,6 +294,30 @@ class StatsController
                     }
                 }
             }
+        }
+    }
+
+    private void statsForBest5(Version game, Map statsmap)
+    {
+        log.info "doing stats top 5 players"
+        CharacterType.forGame(game).each { CharacterType charType ->
+            def best = queryService.findPlayers(charType, null, 100, 0, game)
+            def top5 = best ? best.findAll {charType in it.main(game)} : null
+            SummaryStatistics charScoreStats = new SummaryStatistics()
+            SummaryStatistics charUsageStats = new SummaryStatistics()
+            top5.each {Player p ->
+                charScoreStats.addValue(p.score(game))
+                def timesUsed = p.results.count { charType in (it.characterTeams.collect{ it.pchars.characterType}.flatten() )}
+                charUsageStats.addValue(timesUsed)
+            }
+            CharacterStats stats = statsmap[charType]
+            stats?.meanTop5Score = charScoreStats.mean
+            stats?.standardDeviationTop5Score = charScoreStats.standardDeviation
+            stats?.meanTop5Usage = charUsageStats.mean
+            stats?.standardDeviationTop5Usage = charUsageStats.standardDeviation
+            stats?.spreadTop5Score = charScoreStats.max - charScoreStats.min
+            stats?.spreadTop5Usage = charUsageStats.max - charUsageStats.min
+            log.info "Added top5 stats for char $charType"
         }
     }
 

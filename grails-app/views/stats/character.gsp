@@ -94,6 +94,26 @@ This character is ranked against ${total} other characters
       <td>${stats.top16finishes}</td>
       <td>${relativeStats.top16finishes}</td>
     </tr>
+    <tr>
+      <td>meanTop5Score</td>
+      <td>${stats.meanTop5Score?.round(1)}</td>
+      <td>${relativeStats.meanTop5Score}</td>
+    </tr>
+    <tr>
+      <td>standardDeviationTop5Score</td>
+      <td>${stats.standardDeviationTop5Score?.round(1)}</td>
+      <td>${relativeStats.standardDeviationTop5Score}</td>
+    </tr>
+    <tr>
+      <td>meanTop5Usage</td>
+      <td>${stats.meanTop5Usage?.round(1)}</td>
+      <td>${relativeStats.meanTop5Usage}</td>
+    </tr>
+    <tr>
+      <td>standardDeviationTop5Usage</td>
+      <td>${stats.standardDeviationTop5Usage?.round(1)}</td>
+      <td>${relativeStats.standardDeviationTop5Usage}</td>
+    </tr>
   </table>
 </div>
 

@@ -27,6 +27,12 @@ class CharacterStats
     Integer top3finishes = 0
     Integer top8finishes = 0
     Integer top16finishes = 0
+    Double spreadTop5Score = 0
+    Double meanTop5Score = 0
+    Double standardDeviationTop5Score = 0
+    Double spreadTop5Usage = 0
+    Double meanTop5Usage = 0
+    Double standardDeviationTop5Usage = 0
 
 
     Player player
