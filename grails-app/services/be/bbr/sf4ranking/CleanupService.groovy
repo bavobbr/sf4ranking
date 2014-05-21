@@ -99,6 +99,9 @@ class CleanupService
                 if (p.hasRanking(Version.VANILLA) && p.skill(Version.VANILLA) == 0) {
                     p.applySkill(Version.VANILLA, skill)
                 }
+                if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) == 0) {
+                    p.applySkill(Version.USF4, skill)
+                }
             }
         }
     }
