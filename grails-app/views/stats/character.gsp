@@ -95,6 +95,11 @@ This character is ranked against ${total} other characters
       <td>${relativeStats.top16finishes}</td>
     </tr>
     <tr>
+      <td>spreadTop5Score</td>
+      <td>${stats.spreadTop5Score}</td>
+      <td>${relativeStats.spreadTop5Score}</td>
+    </tr>
+    <tr>
       <td>meanTop5Score</td>
       <td>${stats.meanTop5Score?.round(1)}</td>
       <td>${relativeStats.meanTop5Score}</td>
@@ -103,6 +108,11 @@ This character is ranked against ${total} other characters
       <td>standardDeviationTop5Score</td>
       <td>${stats.standardDeviationTop5Score?.round(1)}</td>
       <td>${relativeStats.standardDeviationTop5Score}</td>
+    </tr>
+    <tr>
+      <td>spreadTop5Usage</td>
+      <td>${stats.spreadTop5Usage}</td>
+      <td>${relativeStats.spreadTop5Usage}</td>
     </tr>
     <tr>
       <td>meanTop5Usage</td>

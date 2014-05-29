@@ -13,6 +13,7 @@ public enum Version
     USF4("Ultra SF4"),
     UMVC3("Ultimate Marvel vs Capcom 3"),
     KI("Killer Instinct"), SKULLGIRLS("Skullgirls"),
+    BBCP("BlazBlue: Chronophantasma"),
     IGAU("Injustice");
 
     private String value;
@@ -57,6 +58,8 @@ public enum Version
                 return Version.SKULLGIRLS;
             case IGAU:
                 return Version.IGAU;
+            case BBCP:
+                return Version.BBCP;
             default:
                 return Version.UNKNOWN;
         }

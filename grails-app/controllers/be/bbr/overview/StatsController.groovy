@@ -24,9 +24,13 @@ class StatsController
         Map<Version, GameStats> statsmap = [:]
         if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012]) {
             def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)
+            vanillaStats.metaClass.players << { PlayerRanking.countByGame(Version.VANILLA) }
             def superStats = GameStats.findByGame(Version.SUPER) ?: new GameStats(game: Version.SUPER)
+            superStats.metaClass.players << { PlayerRanking.countByGame(Version.SUPER) }
             def aeStats = GameStats.findByGame(Version.AE) ?: new GameStats(game: Version.AE)
+            aeStats.metaClass.players << { PlayerRanking.countByGame(Version.AE) }
             def ae2012Stats = GameStats.findByGame(Version.AE2012) ?: new GameStats(game: Version.AE2012)
+            ae2012Stats.metaClass.players << { PlayerRanking.countByGame(Version.AE2012) }
             statsmap[vanillaStats.game] = vanillaStats
             statsmap[superStats.game] = superStats
             statsmap[aeStats.game] = aeStats
@@ -34,6 +38,7 @@ class StatsController
         }
         else {
             def gs = GameStats.findByGame(game) ?: new GameStats(game: game)
+            gs.metaClass.players << { PlayerRanking.countByGame(game) }
             statsmap[gs.game] = gs
         }
         return [results: cstats, game: game, gamestats: statsmap]
@@ -97,8 +102,15 @@ class StatsController
         decayedScore(characters, statsmap)
         decayedScoreByTop100(game, statsmap)
         topfinishes(characters, statsmap)
+        statsmap.values().each {
+            log.info "Saving stats for ${it.characterType}: ${it}"
+            it.save(failOnError: true)
+        }
         statsForBest5(game, statsmap)
-        statsmap.values()*.save(failOnError: true)
+        statsmap.values().each {
+            log.info "Saving stats for ${it.characterType}: ${it}"
+            it.save(failOnError: true)
+        }
         generateGameStats(game)
         statisticsForGamestats(game)
         redirect(controller: "stats", action: "index", params: [game: game])
@@ -301,14 +313,21 @@ class StatsController
     {
         log.info "doing stats top 5 players"
         CharacterType.forGame(game).each { CharacterType charType ->
+            log.info "Looking for best 5 of $charType"
             def best = queryService.findPlayers(charType, null, 100, 0, game)
+            log.info "Found ${best.size()} for $charType"
             def top5 = best ? best.findAll {charType in it.main(game)} : null
+            log.info "Found top5 $top5"
             SummaryStatistics charScoreStats = new SummaryStatistics()
             SummaryStatistics charUsageStats = new SummaryStatistics()
             top5.each {Player p ->
                 charScoreStats.addValue(p.score(game))
                 def timesUsed = p.results.count { charType in (it.characterTeams.collect{ it.pchars.characterType}.flatten() )}
+                log.info "Adding ${timesUsed} times used for char $charType by player ${p.name}"
                 charUsageStats.addValue(timesUsed)
+            }
+            if (top5) {
+                (5-top5.size()).times { charUsageStats.addValue(0) }
             }
             CharacterStats stats = statsmap[charType]
             stats?.meanTop5Score = charScoreStats.mean
