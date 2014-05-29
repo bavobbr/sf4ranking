@@ -109,6 +109,7 @@
   <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>
   <g:link controller="admin" action="playerRanksBefore" params="['id': tournament.id]">[Scores before tournament]</g:link>
   <g:link controller="admin" action="playerRanksAfter" params="['id': tournament.id]">[Scores after tournament]</g:link>
+  <g:link controller="admin" action="importer" params="['source': tournament.id]">[Use as template]</g:link>
 </g:if>
 
 

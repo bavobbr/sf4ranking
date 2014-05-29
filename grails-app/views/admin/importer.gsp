@@ -76,12 +76,12 @@
 <g:form action="importTournament" controller="admin" name="importform" role="form">
   <div class="form-group">
     <label for="tname">Name (required)</label>
-    <g:textField name="tname" class="form-control" placeholder="tournament name and year"/>
+    <g:textField name="tname" class="form-control" placeholder="tournament name and year" value="${suggestedName}"/>
   </div>
 
   <div class="form-group">
     <label for="tdate">Date (required)</label>
-    <g:datePicker name="tdate" class="form-control" precision="day" years="${2000..2020}" value="${new Date()}"/>
+    <g:datePicker name="tdate" class="form-control" precision="day" years="${2000..2020}" value="${suggestedDate?: new Date()}"/>
   </div>
 
   <div class="form-group">
@@ -106,7 +106,7 @@
 
   <div class="form-group">
     <label for="tcountry">Country (ISO code, optional)</label>
-    <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control" value="${be.bbr.sf4ranking.CountryCode.US}"/>
+    <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control" value="${suggestedCountry?: be.bbr.sf4ranking.CountryCode.US}"/>
   </div>
 
   <div class="form-group">
@@ -116,7 +116,7 @@
 
   <div class="form-group">
     <label for="tcoverage">Link to SRK (full link)</label>
-    <g:textField name="tcoverage" class="form-control" placeholder=""/>
+    <g:textField name="tcoverage" class="form-control" placeholder="" value="${suggestedSource}"/>
   </div>
 
   <div class="form-group">

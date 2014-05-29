@@ -96,9 +96,21 @@ class AdminController
      */
     def importer()
     {
-        def index = 1
+        def source = params.source
+        def suggestedName
+        def suggestedDate
+        def suggestedSource
+        def suggestedCountry
+        if (source) {
+            log.info "Importer called from tournament id ${source}"
+            Tournament base = Tournament.get(source)
+            suggestedSource = base.coverage
+            suggestedDate = base.date
+            suggestedCountry =  base.countryCode
+            suggestedName = base.name.split("-")?.first()?.trim()
+        }
         def example = "player1 (char1/char2,char1/char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
-        render view: "importer", model: [hint: example]
+        return [hint: example, suggestedName: suggestedName, suggestedDate: suggestedDate, suggestedSource: suggestedSource, suggestedCountry: suggestedCountry]
     }
 
     def importTournament()

@@ -201,6 +201,9 @@ Glad you ask! This is a <a
 <h3>Where did you get the cool character sprites?</h3>
 These are kindly contributed by <a href="https://twitter.com/SpeedBrkr">SpeedBrkr</a> and <a href="http://www.shunao.org/">Lyn/Shunao</a>.
 
+<h3>Credits</h3>
+  I would like to thank explicitly the following sources that, one way or another, were an influence to this site: Kyosuke of <a href="http://www.ssfranking.com/" target="_blank">ssfranking</a> (Arcade battle data), <a href="http://www.kuroppi.com/tournamentresults/" target="_blank">Kuroppi</a> (historical tournament results), the staff at <a href="http://shoryuken.com/" target="_blank">Shoryuken</a> for up-to-date tournament reporting, the <a href="http://forums.shoryuken.com/discussion/comment/8850159#Comment_8850159" target="_blank">SRK forums</a> community for fixes and suggestions, George at <a href="http://freedamage.com/" target="_blank">freedamage.com</a> (for ideas and cropped images), <a href="https://twitter.com/SpeedBrkr" target="_blank">SpeedBrkr</a> (8-bit SFIV images), <a href="https://twitter.com/_shunao" target="_blank">Lyn</a> (MvC3 images), <a href="http://www.tokidoblog.com/" target="_blank">Tokidoblog</a> (Asian coverage), and countless people on Twitter for suggestions.
+
 <hr />
 
 </body>
