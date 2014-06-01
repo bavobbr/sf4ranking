@@ -50,6 +50,10 @@ class Tournament
         if (!creator) creator = SecurityUtils.subject?.principal?.toString()
     }
 
+    def beforeUpdate() {
+        codename = name.toUpperCase()
+    }
+
     public String toString() {
         return "$name, $countryCode, ${game.name()}"
     }

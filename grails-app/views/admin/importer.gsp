@@ -71,7 +71,7 @@
 
 <h2>Admin import new tournament</h2>
 <g:if test="${flash.message}">
-  <div class="message" role="status">${flash.message}</div>
+  <div class="alert alert-warning">${flash.message}</div>
 </g:if>
 <g:form action="importTournament" controller="admin" name="importform" role="form">
   <div class="form-group">

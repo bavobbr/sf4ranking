@@ -40,7 +40,7 @@ class DataService
         return tournament
     }
 
-    private void addResultsToTournament(String input, Tournament tournament)
+    public void addResultsToTournament(String input, Tournament tournament)
     {
         input.trim().eachLine {def line, index ->
             def rank = ScoringSystem.getRank(index + 1, tournament.tournamentFormat)

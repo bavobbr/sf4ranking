@@ -57,11 +57,13 @@ This is for fine-grained maintenance, usually not required.
   <li><g:link action="printTournamentSizes">print all Tournaments and player sizes</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'true']">print all Players in the DB</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>
-  <li><g:link action="listOrphanedPlayers">manage all orphaned Players in the DB</g:link></li>
-  <li><g:link action="listAlikes">manage possible duplicate players</g:link></li>
   <li><g:link action="exportTournaments">Export Tournaments and Results as JSON data...</g:link></li>
   <li><g:link action="exportPlayers">Export Players as JSON data...</g:link></li>
   <li><g:link action="exportTeams">Export Teams as JSON data...</g:link></li>
+<g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
+  <li><g:link action="listOrphanedPlayers">manage all orphaned Players in the DB</g:link></li>
+  <li><g:link action="listAlikes">manage possible duplicate players</g:link></li>
+</g:if>
 </ul>
 
 <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">

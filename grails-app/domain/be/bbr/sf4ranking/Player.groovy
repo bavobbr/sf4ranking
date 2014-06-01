@@ -37,7 +37,10 @@ class Player
     def beforeInsert() {
         codename = name.toUpperCase()
         if (!creator) creator = SecurityUtils.subject?.principal?.toString()
+    }
 
+    def beforeUpdate() {
+        codename = name.toUpperCase()
     }
 
     Integer skill(Version game) {

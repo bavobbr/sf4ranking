@@ -126,6 +126,11 @@ class AdminController
         String coverage = params.tcoverage
         List tvideos = params.tvideos.tokenize(" ")
         Boolean tranked = params.tranked?.toBoolean() ?: true
+        if (!tname || !tdate || !ttype || !tweight || !tgame || !results || tgame == Version.UNKNOWN) {
+            flash.message = "Name, date, tournament type, weighting type, results and game are mandatory"
+            render view: "importer"
+            return
+        }
         def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
@@ -252,6 +257,32 @@ class AdminController
     def selectPlayerVideos()
     {
         [player: Player.findById(params.id)]
+    }
+
+    def replaceResults(Tournament tournament) {
+        StringBuffer buffer = new StringBuffer()
+        tournament.results.sort { a,b -> a.place <=> b.place}.each {
+            def chars = it.characterTeams.collect { it.pchars.collect { it.characterType?.value }.join("/")}.join(",")
+            buffer.append "${it.player.name} ($chars)\n"
+        }
+        [results: buffer.toString(), tournament: tournament]
+    }
+
+    def updateTournamentResults()
+    {
+        def tournament = Tournament.findById(params.id)
+        log.info "Update results of tournament ${tournament.name} with ${params.results}"
+        def oldrresults = []
+        oldrresults.addAll(tournament.results)
+        oldrresults.each {
+            tournament.removeFromResults(it)
+            log.info "deleting result $it"
+            it.delete(flush: true)
+        }
+        tournament.save(flush: true, failOnError: true)
+        log.info "Deleted old results, adding new ones..."
+        dataService.addResultsToTournament(params.results, tournament)
+        redirect(controller: "rankings", action: "tournament", params: [id: params.id])
     }
 
     def updateTournamentVideos()
