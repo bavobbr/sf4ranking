@@ -44,13 +44,14 @@ class RankingsController
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null :
                     CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
-        def pfiltermain = params.filtermain == "on"? true:false
+        def pfiltermain = params.filtermain == "on" ? true : false
         def filtered = pchar || pcountry
         log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered $pfiltermain"
 
         def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
-        if (pfiltermain) {
-            players.retainAll { pchar in it.rankings.find { it.game == pgame }?.mainCharacters }
+        if (pfiltermain)
+        {
+            players.retainAll {pchar in it.rankings.find {it.game == pgame}?.mainCharacters}
         }
         def playercount = queryService.countPlayers(pchar, pcountry, pgame)
         log.info "getAll gave ${players.size()} players out of ${playercount}"
@@ -68,7 +69,7 @@ class RankingsController
             snapshot = players?.first()?.snapshot(pgame)
             players.each {
                 def numResults = queryService.countPlayerResults(it, pgame)
-                it.metaClass.numResults << { numResults }
+                it.metaClass.numResults << {numResults}
             }
         }
         log.info "returning ${players.size()} players for game $pgame"
@@ -114,7 +115,7 @@ class RankingsController
     {
         log.info "Resolving player byname $params.name"
         String uppername = params.name.toUpperCase()
-        uppername = uppername.replace("%20"," ") // bugfix of url encoding. Breaks some possible names but better than nothing
+        uppername = uppername.replace("%20", " ") // bugfix of url encoding. Breaks some possible names but better than nothing
         log.info "Resolving after fix player byname $uppername"
         Player p = Player.findByCodename(uppername)
         return player(p)
@@ -223,16 +224,17 @@ class RankingsController
      */
     def autocompletePlayer()
     {
-        def query = "*" + params.term?.trim() + "*"
-        log.info "Processing query $query"
-        def searchResult = searchableService.search(query, params)
-        log.info "Got result $searchResult"
-        def ids = searchResult.results.collect {it.id}
-        log.info "Got ids $ids"
-        def players = ids.collect {Player.get(it)}
-        def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
-        def content = sorted.collect {[id: it.id, label: it.name, value: it.name]}
-        render(content as JSON)
+        if (params.term?.trim()?.size() >= 2)
+        {
+            log.info "Processing query $params.term?"
+            def players = dataService.findMatches(params.term?.trim())
+            players.each {
+                log.info "match: ${it}"
+            }
+            def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+            def content = sorted.collect {[id: it.id, label: it.name, value: it.name]}
+            render(content as JSON)
+        }
     }
 
     /**
@@ -252,16 +254,15 @@ class RankingsController
         def sorted = []
         if (player?.size() > 1)
         {
-            def query = "*" + player?.trim() + "*"
+            def query = player?.trim()
             log.info "Processing query $query"
-            def searchResult = searchableService.search(query, params)
-            def ids = searchResult.results.collect {it.id}
-            def players = ids.collect {Player.get(it)}
+            def players = dataService.findMatches(query)
 
             sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
             alikes = dataService.findAlikes(player)
         }
-        else {
+        else
+        {
             flash.message = "Query string too short"
         }
         [players: sorted, alikes: alikes, query: player]

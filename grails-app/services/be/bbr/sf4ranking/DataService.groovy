@@ -89,15 +89,27 @@ class DataService
         }
     }
 
-    List<Player> findAlikes(String original) {
+    Set<Player> findAlikes(String original) {
         log.info "Finding match for $original"
-        List<Player> alts = []
+        Set<Player> alts = []
         def searchResult = searchableService.search(max: 5) {
             fuzzy("name", original, 0.4)
             fuzzy("twitter", original, 0.7)
+            fuzzy("realname", original, 0.7)
         }
         alts = searchResult.results.collect {
             Player.read(it.id)
+        }
+        def withoutSpaces = original.replaceAll(" ","")
+        if (withoutSpaces != original) {
+            searchResult = searchableService.search(max: 5) {
+                fuzzy("withoutSpaces", withoutSpaces, 0.4)
+                fuzzy("twitter", withoutSpaces, 0.7)
+                fuzzy("realname", withoutSpaces, 0.7)
+            }
+            alts.addAll(searchResult.results.collect {
+                Player.read(it.id)
+            })
         }
         log.info "Found ${alts.size()} matches"
         return alts
@@ -105,7 +117,18 @@ class DataService
 
     Player findAlike(String original) {
         def alikes = findAlikes(original)
-        return alikes? alikes.first() : null
+        return alikes? alikes.toList().first() : null
+    }
+
+    Set<Player> findMatches(String query) {
+        def wildcardedQuery = "%${query}%"
+        log.info "Finding exact match for $query"
+        Set<Player> matches = []
+        matches.addAll(Player.findAllByCodenameIlike(wildcardedQuery))
+        matches.addAll(Player.findAllByTwitterIlike(wildcardedQuery))
+        matches.addAll(Player.findAllByRealnameIlike(wildcardedQuery))
+        log.info "Found ${matches.size()} matches"
+        return matches
     }
 
 

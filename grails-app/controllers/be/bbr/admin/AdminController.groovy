@@ -26,7 +26,7 @@ class AdminController
      */
     def updateAll()
     {
-        if (SecurityUtils.subject.hasRole("Administrator"))
+        if (SecurityUtils.subject.hasRole("Administrator") || SecurityUtils.subject.hasRole("Moderator"))
         {
             def game = Version.fromString(params.game)
             rankingService.updateWeights(game)

@@ -13,7 +13,8 @@ class QueryService
     /**
      * Search for players using parameters and paging
      */
-    List<Player> findPlayers(CharacterType ctype, CountryCode countryCode, Integer max, Integer offset, Version game) {
+    List<Player> findPlayers(CharacterType ctype, CountryCode countryCode, Integer max, Integer offset, Version game)
+    {
         log.info "Looking for $max players of ctype ${ctype} from country ${countryCode} starting from $offset in game $game"
         def playerIdQuery = Player.createCriteria()
         def playerids = playerIdQuery.list(max: max, offset: offset) {
@@ -23,15 +24,17 @@ class QueryService
             }
             eq("rankAlias.game", game)
             property("rankAlias.rank")
-            gt("rankAlias.rank",0)
+            gt("rankAlias.rank", 0)
             order("rankAlias.rank", "asc")
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)
             {
-                results {
-                    characterTeams {
-                        pchars {
-                            eq("characterType", ctype)
+                and {
+                    results {
+                        characterTeams {
+                            pchars {
+                                eq("characterType", ctype)
+                            }
                         }
                     }
                 }
@@ -40,7 +43,8 @@ class QueryService
         return Player.getAll(playerids)
     }
 
-    Integer countPlayers(CharacterType ctype, CountryCode countryCode, Version game) {
+    Integer countPlayers(CharacterType ctype, CountryCode countryCode, Version game)
+    {
         def playerCountQuery = Player.createCriteria()
         def playercount = playerCountQuery.get() {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
@@ -48,7 +52,7 @@ class QueryService
                 countDistinct 'id'
             }
             eq("rankAlias.game", game)
-            gt("rankAlias.rank",0)
+            gt("rankAlias.rank", 0)
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)
             {
@@ -64,7 +68,8 @@ class QueryService
         return playercount
     }
 
-    Integer countPlayerResults(Player player, Version game) {
+    Integer countPlayerResults(Player player, Version game)
+    {
         def resultCountQuery = Result.createCriteria()
         def rcount = resultCountQuery.get() {
             projections {
@@ -73,12 +78,13 @@ class QueryService
             tournament {
                 eq("game", game)
             }
-            eq("player",player)
+            eq("player", player)
         }
         return rcount
     }
 
-    List<String> getActiveCountryNames() {
+    List<String> getActiveCountryNames()
+    {
         def countries = Player.createCriteria().list {
             projections {
                 distinct "countryCode"
@@ -87,7 +93,8 @@ class QueryService
         return countries.findResults() {it?.name()}
     }
 
-    List<Player> findOrphanedPlayers() {
+    List<Player> findOrphanedPlayers()
+    {
         def playerQuery = Player.createCriteria()
         return playerQuery.list() {
             isEmpty("rankings")
