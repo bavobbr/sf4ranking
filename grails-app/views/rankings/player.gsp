@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<div style="text-align: center;">
+<div>
   <h6 class="player-heading">Fighting Game World Rankings</h6><span class="glyphicon glyphicon-flash"></span>
   <h4 class="subtitle">rank.shoryuken.com</h4>
 
@@ -18,7 +18,13 @@
   <span class="world_rank_title">${player.mainGame.value} World Rank</span>
   <span class="glyphicon glyphicon-flash"></span>
 </div>
-<center>
+<g:if test="${updateMessage}">
+  <div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <g:message message="${updateMessage}"/>
+
+  </div>
+</g:if>
   <dl class="dl-horizontal player_details">
     <dt>Country</dt>
     <dd>
@@ -31,7 +37,7 @@
         </g:link>
       </g:if>&NonBreakingSpace;
     </dd>
-    <dt>Full name</dt>
+    <dt>Known as</dt>
     <dd>
       <g:if test="${player.realname}">
         ${player.realname}
@@ -68,6 +74,8 @@
     <dd>
     <g:link controller="rankings" action="rank" params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
     </dd>
+    <dt>Evo2014</dt>
+    <dd><g:link url="http://evo2k4.bavobbr.eu.cloudbees.net/player/playerSearch?name=${player.name}" target="_new">lookup</g:link></dd>
   </dl>
 
   <ul class="nav nav-tabs">
@@ -218,7 +226,6 @@
           </g:each>
         </div>
       </g:if></div>
-</center>
 <g:render template="/templates/prettify"/>
 </body>
 </html>

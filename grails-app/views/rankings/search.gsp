@@ -18,6 +18,8 @@
     <thead>
     <tr class="stathead">
       <th>Name</th>
+      <th>Twitter</th>
+      <th>Known as</th>
       <th>Country</th>
       <th>Main Game</th>
     </tr>
@@ -27,6 +29,8 @@
       <tr>
         <td><g:link mapping="playerByName" controller="rankings" action="playerByName"
                     params="[name: player.name]">${player.name}</g:link></td>
+        <td>${player.twitter}</td>
+        <td>${player.realname}</td>
         <td>${player.countryCode}</td>
         <td>${player.mainGame}</td>
       </tr>
@@ -38,13 +42,15 @@
 
 
 
-<h2>${alikes.size()} Players which sound alike ${query}</h2>
+<h2>${alikes.size()} Players which may sound alike ${query}</h2>
 
 <div class="table-responsive">
   <table class="tablehead" id="datatable2">
     <thead>
     <tr class="stathead">
       <th>Name</th>
+      <th>Twitter</th>
+      <th>Known as</th>
       <th>Country</th>
       <th>Main Game</th>
     </tr>
@@ -54,6 +60,8 @@
       <tr>
         <td><g:link mapping="playerByName" controller="rankings" action="playerByName"
                     params="[name: player.name]">${player.name}</g:link></td>
+        <td>${player.twitter}</td>
+        <td>${player.realname}</td>
         <td>${player.countryCode}</td>
         <td>${player.mainGame}</td>
       </tr>

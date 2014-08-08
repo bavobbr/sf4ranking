@@ -181,25 +181,25 @@
     <tr>
       <td>Mean value on character main usage</td>
       <g:each in="${gamestats.keySet()}" var="game">
-        <td>${gamestats[game].meanOnMain.round(1)}</td>
+        <td>${gamestats[game].meanOnMain.round(1)} / ${gamestats[game].mainTotal()}</td>
       </g:each>
     </tr>
     <tr>
       <td>Standard deviation on character main usage</td>
       <g:each in="${gamestats.keySet()}" var="game">
-        <td>${gamestats[game].standardDeviationOnMain.round(1)}</td>
+        <td>${gamestats[game].standardDeviationOnMain.round(1)} / ${gamestats[game].mainTotal()}</td>
       </g:each>
     </tr>
     <tr>
       <td>Mean value on character total usage</td>
       <g:each in="${gamestats.keySet()}" var="game">
-        <td>${gamestats[game].meanOnUsage.round(1)}</td>
+        <td>${gamestats[game].meanOnUsage.round(1)} / ${gamestats[game].usageTotal()}</td>
       </g:each>
     </tr>
     <tr>
       <td>Standard deviation on character total usage</td>
       <g:each in="${gamestats.keySet()}" var="game">
-        <td>${gamestats[game].standardDeviationOnUsage.round(1)}</td>
+        <td>${gamestats[game].standardDeviationOnUsage.round(1)} / ${gamestats[game].usageTotal()}</td>
       </g:each>
     </tr>
     <tr>

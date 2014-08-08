@@ -23,7 +23,7 @@
 
 
 <h3>How data is entered</h3>
-Tournaments results are imported in top 8, top 16 or top 32 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the characters used by that player are stored into the database.
+Tournaments results are imported in top 8, top 16, top 32 or top 64 format if available. The name, date and location of that tournament is stored and players are registered if they were not in the database before. Along with the result the characters used by that player are stored into the database.
 <h3>How tournaments are weighted</h3>
 Every player that is entered into the database has an initial <i>skill weight</i> value. A tournament weight then becomes the average of the skill values of the 8 most skilled players in the tournament.
 <h3>How tournaments are classified</h3>
@@ -81,7 +81,7 @@ The tournament ranking is done by sorting on tournament weight and then ditribut
     </tbody>
   </table>
 </div>
-<i>This degrades down further to top32</i><br/>
+<i>This degrades down further to top64</i><br/>
 Tournaments in <strong>league</strong> format that are not auto-weighted score as:
 
 <div class="table-responsive">
@@ -173,7 +173,7 @@ For auto-weighted tournament types the following order is used:
   </tbody>
 </table>
 </div>
-These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 32. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
+These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
 Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
 In order to scale out better the number of tournaments each class has scales above 120. This avoids too heavy contention for the highest classes for games that have been runnign for years (eg AE2012 and MVC3 will have 20% more PREMIER events).
 

@@ -350,6 +350,53 @@ class AdminController
         render view: "index"
     }
 
+    def autoWeighAll()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.autoWeighAll()
+        }
+        render view: "index"
+    }
+
+    def rankAll()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.rankAll()
+        }
+        render view: "index"
+    }
+
+    def autoFillSkill()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            def game = Version.fromString(params.game)
+            cleanupService.autofillSkill(game)
+        }
+        render view: "index"
+    }
+
+    def findSkillDeviations()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            def deviations = []
+            Version.values().each {
+                deviations.addAll(cleanupService.findSkillDeviations(it))
+            }
+            render(contentType: "text/html") {
+                ul {
+                    deviations.each { String line ->
+                        li(line)
+                    }
+                }
+            }
+        }
+   }
+
+
     def removeFromTeam() {
         Player p = Player.get(params.pid)
         Team t = Team.get(params.tid)

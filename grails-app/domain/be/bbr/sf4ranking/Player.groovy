@@ -131,6 +131,11 @@ class Player
     }
 
     public String toString() {
-        return "$name, $countryCode, ${rankings.size()}"
+        def props = []
+        if (realname) props << realname
+        if (twitter) props << twitter
+        if (countryCode) props << countryCode.name()
+        def meta =  props.join(", ")
+        return meta? "$name ($meta)" : name
     }
 }

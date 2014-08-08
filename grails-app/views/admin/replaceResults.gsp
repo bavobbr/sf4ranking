@@ -21,7 +21,7 @@
                             autoOpen: false,
                             modal: true,
                             height: 600,
-                            width: 500
+                            width: 800
                           });
       $("#validatePlayers").click(function ()
                                   {
@@ -83,7 +83,7 @@
 <g:form action="updateTournamentResults" controller="admin" name="importform" role="form">
     <g:hiddenField name="game" class="form-control" value="${tournament.game}"/>
   <div class="form-group">
-    <label for="results">Results (1 up to 32 max, mouse over for tips. Make sure the character name matches a known character type)</label>
+    <label for="results">Results (1 up to 64 max, mouse over for tips. Make sure the character name matches a known character type)</label>
     <g:textArea name="results" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                 value="${results}"/>
     <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>

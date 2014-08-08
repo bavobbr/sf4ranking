@@ -108,7 +108,8 @@ class RankingsController
         }
         log.info "Rendering player ${player}"
         rankings = rankings.findAll {k, v -> v.size() > 0}
-        render view: "player", model: [player: player, results: rankings, chars: chars]
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        render view: "player", model: [player: player, results: rankings, chars: chars, updateMessage: lastUpdateMessage]
     }
 
     def playerByName()
@@ -232,7 +233,7 @@ class RankingsController
                 log.info "match: ${it}"
             }
             def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
-            def content = sorted.collect {[id: it.id, label: it.name, value: it.name]}
+            def content = sorted.collect {[id: it.id, label: it.toString(), value: it.name]}
             render(content as JSON)
         }
     }
@@ -243,7 +244,7 @@ class RankingsController
     def autocompleteTournament()
     {
         def tournaments = Tournament.findAllByCodenameLike("%${params.term.toUpperCase()}%")
-        def content = tournaments.collect {[id: it.id, label: it.name, value: it.name]}
+        def content = tournaments.collect {[id: it.id, label: it.toString(), value: it.name]}
         render(content as JSON)
     }
 

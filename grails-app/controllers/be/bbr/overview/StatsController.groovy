@@ -22,23 +22,77 @@ class StatsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.totalTimesUsed <=> a.totalTimesUsed}
         Map<Version, GameStats> statsmap = [:]
-        if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012]) {
+        if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012, Version.USF4]) {
             def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)
             vanillaStats.metaClass.players << { PlayerRanking.countByGame(Version.VANILLA) }
+            vanillaStats.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.VANILLA)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            vanillaStats.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.VANILLA)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
             def superStats = GameStats.findByGame(Version.SUPER) ?: new GameStats(game: Version.SUPER)
             superStats.metaClass.players << { PlayerRanking.countByGame(Version.SUPER) }
+            superStats.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.SUPER)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            superStats.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.SUPER)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
             def aeStats = GameStats.findByGame(Version.AE) ?: new GameStats(game: Version.AE)
             aeStats.metaClass.players << { PlayerRanking.countByGame(Version.AE) }
+            aeStats.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.AE)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            aeStats.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.AE)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
+
             def ae2012Stats = GameStats.findByGame(Version.AE2012) ?: new GameStats(game: Version.AE2012)
             ae2012Stats.metaClass.players << { PlayerRanking.countByGame(Version.AE2012) }
+            ae2012Stats.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.AE2012)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            ae2012Stats.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.AE2012)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
+
+            def usf4Stats = GameStats.findByGame(Version.USF4) ?: new GameStats(game: Version.USF4)
+            usf4Stats.metaClass.players << { PlayerRanking.countByGame(Version.USF4) }
+            usf4Stats.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.USF4)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            usf4Stats.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(Version.USF4)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
+
             statsmap[vanillaStats.game] = vanillaStats
             statsmap[superStats.game] = superStats
             statsmap[aeStats.game] = aeStats
             statsmap[ae2012Stats.game] = ae2012Stats
+            statsmap[usf4Stats.game] = usf4Stats
         }
         else {
             def gs = GameStats.findByGame(game) ?: new GameStats(game: game)
             gs.metaClass.players << { PlayerRanking.countByGame(game) }
+            gs.metaClass.mainTotal << {
+                def charstats = CharacterStats.findAllByGame(game)
+                charstats.sum { CharacterStats cs -> cs.asMain }
+            }
+            gs.metaClass.usageTotal << {
+                def charstats = CharacterStats.findAllByGame(game)
+                charstats.sum { CharacterStats cs -> cs.totalTimesUsed }
+            }
             statsmap[gs.game] = gs
         }
         return [results: cstats, game: game, gamestats: statsmap]

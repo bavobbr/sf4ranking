@@ -16,28 +16,28 @@ class ScoringSystem
      * This should not be used
      */
     private static final Map zero_scores = [
-            "GRAND_SLAM": [0] * 32,
-            "CHAMPIONSHIP": [0] * 32,
-            "PREMIER_MANDATORY": [0] * 32,
-            "PREMIER_5": [0] * 32,
-            "PREMIER_12": [0] * 32,
-            "INTERNATIONAL": [0] * 32,
-            "SERIES": [0] * 32,
-            "CIRCUIT": [0] * 32
+            "GRAND_SLAM": [0] * 64,
+            "CHAMPIONSHIP": [0] * 64,
+            "PREMIER_MANDATORY": [0] * 64,
+            "PREMIER_5": [0] * 64,
+            "PREMIER_12": [0] * 64,
+            "INTERNATIONAL": [0] * 64,
+            "SERIES": [0] * 64,
+            "CIRCUIT": [0] * 64
     ]
     /**
      * the AUTO algorithm wont ever select CHAMPIONSHIP or TOURNAMENT_CHAMPIONS as these are reserved for Fixed LEAGUE types.
      * But adding them in anyway helps robustness
      */
     private static final Map single_scores = [
-            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16].flatten(),
-            "CHAMPIONSHIP": [1500, 1050, [690] * 2, [320] * 4, [200] * 8, [100] * 16].flatten(),
-            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16].flatten(),
-            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16].flatten(),
-            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16].flatten(),
-            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16].flatten(),
-            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16].flatten(),
-            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
+            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16, [70] * 16, [40]*16].flatten(),
+            "CHAMPIONSHIP": [1500, 1050, [690] * 2, [320] * 4, [200] * 8, [100] * 16, [60] * 16, [35]*16].flatten(),
+            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16, [40] * 16, [25]*16].flatten(),
+            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16, [30] * 16, [20]*16].flatten(),
+            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16, [10] * 16, [5]*16].flatten(),
+            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16, [10] * 16, [6]*16].flatten(),
+            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16, [4] * 16, [2]*16].flatten(),
+            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
     ]
 
     /**
@@ -45,15 +45,15 @@ class ScoringSystem
      * But adding them in anyway helps robustness
      */
     private static final Map double_scores = [
-            "GRAND_SLAM": [2000, 1300, 780, 600, [430] * 4, [240] * 8, [120] * 16].flatten(),
-            "CHAMPIONSHIP": [1500, 1050, 690, 500, [320] * 4, [200] * 8, [100] * 16].flatten(),
-            "PREMIER_MANDATORY": [1000, 650, 390, 300, [215] * 4, [120] * 8, [60] * 16].flatten(),
-            "PREMIER_5": [900, 585, 350, 250, [190] * 4, [105] * 8, [50] * 16].flatten(),
-            "PREMIER_12": [470, 305, 185, 150, [100] * 4, [55] * 8, [25] * 16].flatten(),
-            "INTERNATIONAL": [280, 180, 110, 80, [60] * 4, [30] * 8, [15] * 16].flatten(),
-            "SERIES": [160, 95, 57, 40, [29] * 4, [15] * 8, [7] * 16].flatten(),
-            "CIRCUIT": [100, 60, 35, 25, [20] * 4, [7] * 8, [3] * 16].flatten(),
-            "TOURNAMENT_CHAMPIONS": [100, 60, 35, 30, [20] * 4, [7] * 8, [3] * 16].flatten(),
+            "GRAND_SLAM": [2000, 1300, 780, 600, [430] * 4, [240] * 8, [120] * 16, [70] * 16, [40]*16].flatten(),
+            "CHAMPIONSHIP": [1500, 1050, 690, 500, [320] * 4, [200] * 8, [100] * 16, [60] * 16, [35]*16].flatten(),
+            "PREMIER_MANDATORY": [1000, 650, 390, 300, [215] * 4, [120] * 8, [60] * 16, [40] * 16, [25]*16].flatten(),
+            "PREMIER_5": [900, 585, 350, 250, [190] * 4, [105] * 8, [50] * 16, [30] * 16, [20]*16].flatten(),
+            "PREMIER_12": [470, 305, 185, 150, [100] * 4, [55] * 8, [25] * 16, [10] * 16, [5]*16].flatten(),
+            "INTERNATIONAL": [280, 180, 110, 80, [60] * 4, [30] * 8, [15] * 16, [10] * 16, [6]*16].flatten(),
+            "SERIES": [160, 95, 57, 40, [29] * 4, [15] * 8, [7] * 16, [4] * 16, [2]*16].flatten(),
+            "CIRCUIT": [100, 60, 35, 25, [20] * 4, [7] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
+            "TOURNAMENT_CHAMPIONS": [100, 60, 35, 30, [20] * 4, [7] * 8, [3] * 16, [5] * 16, [3]*16].flatten(),
     ]
 
     /**
@@ -61,26 +61,26 @@ class ScoringSystem
      * but adding all types is safer if you want to say fixed with format league and any other type.
      */
     private static final Map league_scores = [
-            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16].flatten(),
-            "CHAMPIONSHIP": [1500, 1050, 690, 620, 550, 480, 410, 340, 270, 200, 130, [70]*5, [40]*16].flatten(),
-            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16].flatten(),
-            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16].flatten(),
-            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16].flatten(),
-            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16].flatten(),
-            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16].flatten(),
-            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16].flatten(),
-            "TOURNAMENT_CHAMPIONS": [375, 255, 180, 155, 130, 105, 80, 55, 30, [5]*7, [3]*16].flatten(),
+            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16, [70] * 16, [40]*16].flatten(),
+            "CHAMPIONSHIP": [1500, 1050, 690, 620, 550, 480, 410, 340, 270, 200, 130, [70]*5, [40]*16, [30] * 16, [20]*16].flatten(),
+            "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16, [40] * 16, [25]*16].flatten(),
+            "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16, [30] * 16, [20]*16].flatten(),
+            "PREMIER_12": [470, 305, [185] * 2, [100] * 4, [55] * 8, [25] * 16, [10] * 16, [5]*16].flatten(),
+            "INTERNATIONAL": [280, 180, [110] * 2, [60] * 4, [30] * 8, [15] * 16, [10] * 16, [6]*16].flatten(),
+            "SERIES": [160, 95, [57] * 2, [29] * 4, [15] * 8, [7] * 16, [4] * 16, [2]*16].flatten(),
+            "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
+            "TOURNAMENT_CHAMPIONS": [375, 255, 180, 155, 130, 105, 80, 55, 30, [5]*7, [3]*16, [2] * 16, [1]*16].flatten(),
     ]
 
     /**
      * These are the logical ranks to be distributed sequentially according to the given tournament format
      */
     private static final Map ranks = [
-            EXHIBITION: 1..32,
-            LEAGUE: 1..32,
-            UNKNOWN: 1..32,
-            SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16].flatten(),
-            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8].flatten()
+            EXHIBITION: 1..64,
+            LEAGUE: 1..64,
+            UNKNOWN: 1..64,
+            SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16, [33] * 32].flatten(),
+            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8, [33] * 16, [49] * 16].flatten()
     ]
 
     private static final Map scores = [

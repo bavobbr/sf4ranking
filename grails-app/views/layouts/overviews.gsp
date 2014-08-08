@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="${resource(dir: 'assets/css', file: 'prettify.css')}" type="text/css">
 
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
-  <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
-
+  <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_bootstrap.css')}" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/readable/bootstrap.min.css" rel="stylesheet">
   <script>
     $(function ()
       {
@@ -98,7 +98,7 @@
 
         <form class="navbar-form navbar-right top-search" role="search" action="${createLink(action: 'search', controller: 'rankings')}" id="searchForm">
           <div class="form-group">
-            <input id="playerSearch" class="form-control" placeholder="Find a Player" name="player">
+            <input id="playerSearch" class="form-control" placeholder="Find a Player" name="player" title="Press <ENTER> for advanced search">
           </div>
           <div class="form-group">
             <input id="tournamentSearch" class="form-control" placeholder="Search Tournaments" name="tournament">
@@ -111,7 +111,7 @@
             <ul class="dropdown-menu">
               <li><g:link action="index" controller="rankings">Overview</g:link></li>
               <li class="divider"></li>
-              <li><g:link action="rank" controller="rankings" params="['id': Version.USF4.name()]">World Rankings USF4</g:link></li>
+              <li><g:link action="rank" controller="rankings" params="['id': Version.USF4.name()]">World Rankings Ultra SF4</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.AE2012.name()]">World Rankings SF4:AE 2012</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
               <li><g:link action="rank" controller="rankings" params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
@@ -124,7 +124,8 @@
               <li><g:link action="rank" controller="rankings" params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
               <li class="divider"></li>
               <li><g:link action="teams" controller="rankings">View All Player Teams</g:link></li>
-              <li><g:link action="index" controller="stats">Character statistics</g:link></li>
+              <li class="divider"></li>
+              <li><g:link action="index" controller="stats">Character Usage Statistics</g:link></li>
 
             </ul>
           </li>

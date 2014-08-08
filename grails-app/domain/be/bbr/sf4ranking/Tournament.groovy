@@ -8,7 +8,7 @@ class Tournament
 
     static constraints = {
         name nullable: false, unique: true
-        weight range: 0..200
+        weight range: 0..9999
         date nullable: false
         countryCode nullable: true
         tournamentType nullable: true
@@ -55,6 +55,9 @@ class Tournament
     }
 
     public String toString() {
-        return "$name, $countryCode, ${game.name()}"
+        def props = []
+        if (name) props << name
+        if (countryCode) props << countryCode
+        return props.join(", ")
     }
 }
