@@ -89,7 +89,7 @@ class CleanupService
         log.info "Putting all non league/grandslams on AUTO"
         def tournaments = Tournament.list()
         def normalTypes = TournamentType.values() - TournamentType.GRAND_SLAM - TournamentType.CHAMPIONSHIP -
-                          TournamentType.TOURNAMENT_CHAMPIONS
+                          TournamentType.TOURNAMENT_CHAMPIONS - TournamentType.CIRCUIT
         tournaments.each {
             if (it.tournamentType in normalTypes)
             {

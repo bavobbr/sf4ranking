@@ -8,21 +8,17 @@
 
 <body>
 <g:if test="${filtered}">
-<h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
-  	<h4 class="subtitle">rank.shoryuken.com</h4>
+    <center><h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
+        <h4 class="subtitle">rank.shoryuken.com</h4></center>
 </g:if>
 <g:else>
-  	<h2 class="title">${game.value} World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
-  	<h4 class="subtitle">rank.shoryuken.com</h4>
+    <center>
+        <h2 class="title">${game.value} World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
+        <h4 class="subtitle">rank.shoryuken.com</h4>
+    </center>
 </g:else>
 
 
-<g:if test="${game == Version.SKULLGIRLS || game == Version.KI || game == Version.BBCP}">
-<div class="alert alert-info alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  We are looking to extend this list further with international tournament data! You can contribute results and corrections using the links on top. Thanks!
-</div>
-</g:if>
 <g:if test="${fchar && !ffiltermain}">
   <div class="alert alert-info">
   When filtering on a character all players that used the character are listed, even if it is not their main. If you are looking for the best player, use the filter main checkbox on the bottom of the page
@@ -52,7 +48,6 @@
       <th>Base Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual score earned per tournament becomes progressively less over time. This value reflects the score without decay.">(?)</a></th>
       <th>Tournaments</th>
       <th>Country</th>
-      <th>EVO <a href="#" data-toggle="tooltip" data-placement="top" title="Look up the player in the evo bracket tool to track his progress in evo 2014">(?)</a></th>
       <g:if test="${snapshot != null}">
         <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
       </g:if>
@@ -96,7 +91,6 @@
             </g:link>
           </g:if>
         </td>
-        <td><g:link url="http://evo2k4.bavobbr.eu.cloudbees.net/player/playerSearch?name=${p.name}" target="_new">lookup</g:link></td>
         <g:if test="${snapshot != null}">
           <td>${p.diff(game)}</td>
         </g:if>

@@ -116,7 +116,7 @@
 </g:if>
 
 
-<g:if test="${tournament.videos}">
+%{--<g:if test="${tournament.videos}">
   <h2>Tournament videos <small>found ${tournament.videos.size()} videos</small></h2>
   <div class="row">
     <g:each in="${tournament.videos}" var="video">
@@ -128,7 +128,7 @@
       </div>
     </g:each>
   </div>
-</g:if>
+</g:if>--}%
 
 <g:render template="/templates/prettify"/>
 </body>

@@ -114,6 +114,11 @@ public enum CharacterType
     SADIRA("SADIRA", "Sadira", Version.KI),
     SPINAL("SPINAL", "Spinal", Version.KI),
     THUNDER("THUNDER", "Thunder", Version.KI),
+    TJCOMBO("TJCOMBO", "TJ Combo", Version.KI),
+    MAYA("TJCOMBO", "TJ Combo", Version.KI),
+    KANRA("KANRA", "Kan-ra", Version.KI),
+    RIPTOR("RIPTOR", "Riptor", Version.KI),
+    CINDER("CINDER", "Cinder", Version.KI),
 
     BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
     CEREBELLA("CEREBELLA", "Cerebella", Version.SKULLGIRLS),

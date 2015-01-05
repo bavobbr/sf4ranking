@@ -7,8 +7,10 @@
 </head>
 
 <body>
-  <h2 class="title">Fighting Games World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
-  <h4 class="subtitle">rank.shoryuken.com</h4>
+<center>
+    <h2 class="title">Fighting Games World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
+    <h4 class="subtitle">rank.shoryuken.com</h4>
+</center>
 
 <g:if test="${updateMessage}">
   <div class="alert alert-info alert-dismissable">

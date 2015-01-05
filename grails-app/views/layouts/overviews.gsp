@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_bootstrap.css')}" type="text/css">
-  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/readable/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
   <script>
     $(function ()
       {
