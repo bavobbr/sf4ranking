@@ -39,7 +39,6 @@ environments {
             url = "jdbc:mysql://mysql86493-srkrank.j.layershift.co.uk/sf4rank?autoReconnect=true"
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
-
             properties {
                 maxActive = 50
                 maxIdle = 25

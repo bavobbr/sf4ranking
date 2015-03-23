@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <r:require modules="bootstrap"/>
   <title>Fighting Games World Ranking -FAQ</title>
 </head>
 

@@ -9,7 +9,6 @@
 <html>
 <head>
   <meta name="layout" content="overviews">
-  <r:require modules="bootstrap"/>
   <title>Admin panel - Orphaned players</title>
 </head>
 

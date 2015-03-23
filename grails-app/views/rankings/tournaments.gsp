@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <r:require modules="bootstrap"/>
   <g:if test="${game}">
   <title>Fighting Games World Rankings - ${game.value} Tournaments</title>
   </g:if>

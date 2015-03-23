@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <r:require modules="bootstrap"/>
   <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - ${tournament.name} Tournament Diff Details</title>
 </head>
 
