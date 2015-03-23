@@ -16,7 +16,7 @@ class StatsController
     {
         Version game = Version.fromString(params.game)
         log.info "got stats request for game $game"
-        if (!game) game = Version.AE2012
+        if (!game) game = Version.USF4
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
@@ -102,7 +102,17 @@ class StatsController
     {
         Version game = Version.fromString(params.game)
         CharacterType charType = CharacterType.fromString(params.charname, Version.generalize(game))
-        CharacterStats stats = CharacterStats.findByGameAndCharacterType(game, charType)
+        Map<Version, CharacterStats> games = [:]
+        if (game in [Version.USF4, Version.AE2012, Version.AE, Version.SUPER, Version.VANILLA]) {
+            games[Version.VANILLA.value] = CharacterStats.findByGameAndCharacterType(Version.VANILLA, charType)
+            games[Version.SUPER.value] = CharacterStats.findByGameAndCharacterType(Version.SUPER, charType)
+            games[Version.AE.value] = CharacterStats.findByGameAndCharacterType(Version.AE, charType)
+            games[Version.AE2012.value] = CharacterStats.findByGameAndCharacterType(Version.AE2012, charType)
+            games[Version.USF4.value] = CharacterStats.findByGameAndCharacterType(Version.USF4, charType)
+        }
+        else {
+            games[game.value] = CharacterStats.findByGameAndCharacterType(game, charType)
+        }
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
         def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
@@ -124,7 +134,7 @@ class StatsController
             def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-        return [stats: stats, best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size()]
+        return [stats: games.values().first(), best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size(), games: games]
     }
 
     def analyze()

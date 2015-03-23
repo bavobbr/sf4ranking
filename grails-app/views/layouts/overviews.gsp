@@ -207,7 +207,7 @@
             </div>
 
             <div class="col-md-4">
-              <a href="https://twitter.com/share" class="twitter-share-button" data-via="bavobbr">Tweet</a>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-via="SRKRanking">Tweet</a>
               <script>!function (d, s, id)
               {
                 var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -229,7 +229,7 @@
 
           <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a
                   href="http://www.shoryuken.com">Shoryuken</a>  &middot;
-            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot; MvC3 artwork by <a href="http://www.shunao.org/">Lyn/Shunao</a> &middot; For more info, visit <a
+            Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot; Twitter at <a href="https://twitter.com/SRKRanking">@SRK Ranking</a> &middot; For more info, visit <a
                   href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.
           </p>
 

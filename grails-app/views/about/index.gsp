@@ -189,7 +189,7 @@ There is a moderator feature in development to allow the community to add data f
 
 <h3>What else is coming?</h3>
 Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. We would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites report on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
-<strong>This is how you can help!</strong>If you want a tournament listed or player data changed, then tweet @bavobbr or go to the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>. If you disagree with a player skill or country, then chances may be we did not know the player. So update me and we will update the data.
+<strong>This is how you can help!</strong>If you want a tournament listed or player data changed, then tweet @SRKRanking or go to the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>. If you disagree with a player skill or country, then chances may be we did not know the player. So update me and we will update the data.
 
 <h3>How can I provide feedbacks/comments?</h3>
 Please also join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>, where a full discussion of this site is available. 

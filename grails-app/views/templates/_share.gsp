@@ -1,4 +1,4 @@
-<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-via="bavobbr" data-count="none">Tweet</a>
+<a href="https://twitter.com/intent/tweet" class="twitter-share-button" data-via="SRKRanking" data-count="none">Tweet</a>
 <script>!function (d, s, id)
 {
   var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';

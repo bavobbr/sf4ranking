@@ -18,7 +18,7 @@
 <g:else>
   <ul class="errors">
     <li>KO. You lose!</li>
-    <li>You might want to talk to support @bavobbr</li>
+    <li>You might want to talk to support @SRKRanking</li>
   </ul>
 </g:else>
 </body>

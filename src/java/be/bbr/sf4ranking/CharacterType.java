@@ -109,6 +109,7 @@ public enum CharacterType
     FULGORE("FULGORE", "Fulgore", Version.KI),
     GLACIUS("GLACIUS", "Glacius", Version.KI),
     JAGO("JAGO", "Jago", Version.KI),
+    SHADOWJAGO("SHADOWJAGO", "Shadow Jago", Version.KI),
     ORCHID("ORCHID", "Orchid", Version.KI),
     SABREWULF("SABREWULF", "Sabrewulf", Version.KI),
     SADIRA("SADIRA", "Sadira", Version.KI),
@@ -119,6 +120,10 @@ public enum CharacterType
     KANRA("KANRA", "Kan-ra", Version.KI),
     RIPTOR("RIPTOR", "Riptor", Version.KI),
     CINDER("CINDER", "Cinder", Version.KI),
+    OMEN("OMEN", "Omen", Version.KI),
+    AGANOS("AGANOS", "Aganos", Version.KI),
+    HISAKO("HISAKO", "Hisako", Version.KI),
+    ARIA("ARIA", "Aria", Version.KI),
 
     BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
     CEREBELLA("CEREBELLA", "Cerebella", Version.SKULLGIRLS),

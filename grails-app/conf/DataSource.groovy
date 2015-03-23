@@ -34,11 +34,30 @@ environments {
     production {
         dataSource {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
-            pooled = false
-            //dbCreate = 'create-drop' // use 'update', 'validate', 'create' or 'create-drop'
-            dbCreate = 'update'
-            jndiName = 'java:comp/env/jdbc/mydb'
-            //logSql = true
+            pooled = true
+            dbCreate = "update"
+            url = "jdbc:mysql://mysql86493-srkrank.j.layershift.co.uk/sf4rank?autoReconnect=true"
+            driverClassName = "com.mysql.jdbc.Driver"
+            username = "root"
+
+            properties {
+                maxActive = 50
+                maxIdle = 25
+                minIdle = 1
+                initialSize = 1
+
+                numTestsPerEvictionRun = 3
+                maxWait = 10000
+
+                testOnBorrow = true
+                testWhileIdle = true
+                testOnReturn = true
+
+                validationQuery = "select now()"
+
+                minEvictableIdleTimeMillis = 1000 * 60 * 5
+                timeBetweenEvictionRunsMillis = 1000 * 60 * 5
+            }
         }
     }
 }
