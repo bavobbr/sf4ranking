@@ -40,7 +40,10 @@ class QueryService
                 }
             }
         }
-        return Player.getAll(playerids)
+        def players = Player.getAll(playerids)
+        players.retainAll { it.findRanking(game) != null }
+        return players
+
     }
 
     Integer countPlayers(CharacterType ctype, CountryCode countryCode, Version game)

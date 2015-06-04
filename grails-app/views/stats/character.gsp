@@ -8,7 +8,7 @@
 <body>
 
 <h2>Character statistics</h2>
-This list character usage and performance statistics for ${stats.characterType} in ${stats.game}
+This list character usage and performance statistics for ${stats?.characterType} in ${stats?.game}
 <div class="alert alert-info alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
     You can sort on the columns by clicking the header!

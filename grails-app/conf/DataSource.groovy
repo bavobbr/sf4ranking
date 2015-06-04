@@ -36,9 +36,10 @@ environments {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = true
             dbCreate = "update"
-            url = "jdbc:mysql://mysql86493-srkrank.j.layershift.co.uk/sf4rank?autoReconnect=true"
+            url = ""
             driverClassName = "com.mysql.jdbc.Driver"
-            username = "root"
+            username = ""
+            password = ""
             properties {
                 maxActive = 50
                 maxIdle = 25

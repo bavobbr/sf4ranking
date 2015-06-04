@@ -197,8 +197,37 @@ public enum CharacterType
     TAOKAKA("TAOKAKA", "Taokaka", Version.BBCP),
     TERUMI("TERUMI", "Terumi", Version.BBCP),
     TSUBAKI("TSUBAKI", "Tsubaki", Version.BBCP),
-    VALKENHAYN("VALKENHAYN", "Valkenhayn", Version.BBCP);
+    VALKENHAYN("VALKENHAYN", "Valkenhayn", Version.BBCP),
 
+    CASSIE_CAGE("CASSIE_CAGE", "Cassie Cage", Version.MKX),
+    DVORAH("DVORAH", "D'Vorah", Version.MKX),
+    ERMAC("ERMAC", "Ermac", Version.MKX),
+    ERRON_BLACK("ERRON_BLACK", "Erron Black", Version.MKX),
+    FERRA_TORR("FERRA_TORR", "Ferra Torr", Version.MKX),
+    GORO("GORO", "Goro", Version.MKX),
+    JACQUELINE_BRIGGS("JACQUELINE_BRIGGS", "Jacqueline Briggs", Version.MKX),
+    JASON_VOORHEES("JASON_VOORHEES", "Jason", Version.MKX),
+    JAX_BRIGGS("JAX_BRIGGS", "Jax Briggs", Version.MKX),
+    JOHNNY_CAGE("JOHNNY_CAGE", "Johnny Cage", Version.MKX),
+    KANO("KANO", "Kano", Version.MKX),
+    KENSHI("KENSHI", "Kenshi", Version.MKX),
+    KITANA("KITANA", "Kitana", Version.MKX),
+    KOTAL_KAHN("KOTAL_KAHN", "Kotal Kahn", Version.MKX),
+    KUNG_LAO("KUNG_LAO", "Kung Lao", Version.MKX),
+    KUNG_JIN("KUNG_JIN", "Kung Jin", Version.MKX),
+    LIU_KANG("LIU_KANG", "Liu Kang", Version.MKX),
+    MILEENA("MILEENA", "Mileena", Version.MKX),
+    PREDATOR("PREDATOR", "Predator", Version.MKX),
+    QUAN_CHI("QUAN_CHI", "Quan Chi", Version.MKX),
+    RAIDEN("RAIDEN", "Raiden", Version.MKX),
+    REPTILE("REPTILE", "Reptile", Version.MKX),
+    SCORPION_MKX("SCORPION", "Scorpion", Version.MKX),
+    SHINNOK("SHINNOK", "Shinnok", Version.MKX),
+    SONYA_BLADE("SONYA_BLADE", "Sonya", Version.MKX),
+    SUB_ZERO("SUB-ZERO", "Sub-Zero", Version.MKX),
+    TAKEDA_TAKESHI("TAKEDA_TAKESHI", "Takeda", Version.MKX),
+    TANYA("TANYA", "Tanya", Version.MKX),
+    TREMOR("TREMOR", "Tremor", Version.MKX);
 
 
     private final String value;
@@ -212,30 +241,43 @@ public enum CharacterType
         this.game = game;
     }
 
-    public static List<CharacterType> forGame(Version game) {
+    public static List<CharacterType> forGame(Version game)
+    {
         List<CharacterType> chars = new ArrayList<CharacterType>();
-        for (CharacterType ct : CharacterType.values()) {
-            if (ct.game == Version.generalize(game) && ct != CharacterType.UNKNOWN) {
+        for (CharacterType ct : CharacterType.values())
+        {
+            if (ct.game == Version.generalize(game) && ct != CharacterType.UNKNOWN)
+            {
                 chars.add(ct);
             }
         }
         return chars;
     }
 
-    public static Integer count(Version game) {
-        switch (game) {
-            case VANILLA: return 25;
-            case SUPER: return 35;
-            case AE: return 39;
-            case AE2012: return 39;
-            default: return forGame(game).size();
+    public static Integer count(Version game)
+    {
+        switch (game)
+        {
+            case VANILLA:
+                return 25;
+            case SUPER:
+                return 35;
+            case AE:
+                return 39;
+            case AE2012:
+                return 39;
+            default:
+                return forGame(game).size();
         }
     }
 
-    public String getValue() {
+    public String getValue()
+    {
         return value;
     }
-    public Version getGame() {
+
+    public Version getGame()
+    {
         return game;
     }
 
@@ -244,18 +286,24 @@ public enum CharacterType
         return shortname;
     }
 
-    public static CharacterType fromString(String input, Version game) {
+    public static CharacterType fromString(String input, Version game)
+    {
         if (input == null || input.length() == 0 || game == null) return null;
         input = input.trim();
-        if (input.toLowerCase().equals("unknown")) {
+        if (input.toLowerCase().equals("unknown"))
+        {
             return CharacterType.UNKNOWN;
         }
         CharacterType[] characterTypes = CharacterType.values();
-        for (CharacterType ct : characterTypes) {
-            if (game.equals(ct.game) && (ct.shortname.toLowerCase().equals(input.toLowerCase()) || ct.name().toLowerCase().equals(input.toLowerCase()))) {
+        for (CharacterType ct : characterTypes)
+        {
+            if (game.equals(ct.game) &&
+                (ct.shortname.toLowerCase().equals(input.toLowerCase()) || ct.name().toLowerCase().equals(input.toLowerCase())))
+            {
                 return ct;
             }
-            else if (game.equals(ct.game) && (ct.value.toLowerCase().equals(input.toLowerCase()))) {
+            else if (game.equals(ct.game) && (ct.value.toLowerCase().equals(input.toLowerCase())))
+            {
                 return ct;
             }
         }

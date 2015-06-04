@@ -28,7 +28,8 @@ class RankingService
                 if (topresults)
                 {
                     Integer skillScore = topresults.sum {Result r -> Math.pow(r.player.skill(game),2)}
-                    weight = (skillScore as Double) / topresults.size() * 10
+                    def entries = Math.max(topresults.size(), 8)
+                    weight = (skillScore as Double) / entries * 10
                     def countryBonus = 1
                     Set uniqueCountries = tournament.results.collect { Result r -> r.player.countryCode }
                     uniqueCountries.remove(null)

@@ -30,10 +30,11 @@ class RankingsController
         def igauplayers = queryService.findPlayers(null, null, 10, 0, Version.IGAU)
         def usf4players = queryService.findPlayers(null, null, 10, 0, Version.USF4)
         def bbcpplayers = queryService.findPlayers(null, null, 10, 0, Version.BBCP)
+        def mkxplayers = queryService.findPlayers(null, null, 10, 0, Version.MKX)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = Tournament.list(order: "desc", sort: "date", max: 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
-        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
+        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
     }
 
     def rank()

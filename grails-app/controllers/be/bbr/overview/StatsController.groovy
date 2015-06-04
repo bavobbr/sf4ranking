@@ -134,7 +134,7 @@ class StatsController
             def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-        return [stats: games.values().first(), best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size(), games: games]
+        return [stats: games[game.value], best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size(), games: games]
     }
 
     def analyze()
@@ -347,6 +347,8 @@ class StatsController
     {
         log.info "Checking top 100 usage"
         def top100 = queryService.findPlayers(null, null, 100, 0, game)
+        log.info "top 100 size is ${top100.size()}"
+        top100.retainAll { it.findRanking(game) != null }
         List<CharacterType> mains = top100.collect {it.findRanking(game).mainCharacters}.flatten()
         def byType = mains.countBy {it}
         log.info "Top100 details are ${byType}"

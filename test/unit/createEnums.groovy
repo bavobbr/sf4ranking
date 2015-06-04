@@ -2,37 +2,40 @@
  * User: bbr
  * Date: 3/11/14
  */
-def names = """Amane
-Arakune
-Azrael
-Bang
-Bullet
-Carl
-Hakumen
-Hazama
-Izayoi
-Jin
-Kagura
-Kokonoe
-Litchi
-Makoto
-Mu-12
-Noel
-Nu-13
-Platinum
-Rachel
-Ragna
-Relius
-Tager
-Taokaka
-Terumi
-Tsubaki
-Valkenhayn
+def names = """Cassie Cage
+DVorah
+Ermac
+Erron Black
+Ferra Torr
+Goro
+Jacqueline Briggs
+Jason Voorhees
+Jax Briggs
+Johnny Cage
+Kano
+Kenshi
+Kitana
+Kotal Kahn
+Kung Lao
+Kung Jin
+Liu Kang
+Mileena
+Predator
+Quan Chi
+Raiden
+Reptile
+Scorpion
+Shinnok
+Sonya Blade
+Sub-Zero
+Takeda Takeshi
+Tanya
+Tremor
 """
 
 names.eachLine { String line ->
     line = line.trim()
     def enumName = line.replace(" ","_").replace(".","_").toUpperCase()
-    println "${enumName}(\"${enumName}\", \"$line\", Version.BBCP),"
+    println "${enumName}(\"${enumName}\", \"$line\", Version.MKX),"
 
 }
