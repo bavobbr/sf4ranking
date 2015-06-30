@@ -21,6 +21,7 @@ class Tournament
         ranked nullable: false
         coverage nullable: true
         creator nullable: true
+        cptTournament nullable: true
     }
 
     static mapping = {
@@ -38,6 +39,7 @@ class Tournament
     TournamentFormat tournamentFormat = TournamentFormat.UNKNOWN
     Version game = Version.UNKNOWN
     WeightingType weightingType = WeightingType.AUTO
+    CptTournament cptTournament = null
     String challonge
     Boolean ranked = true
     String coverage = null

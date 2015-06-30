@@ -67,6 +67,14 @@
         <dd>
             <g:link controller="rankings" action="rank" params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
         </dd>
+        <dt>CPT Score</dt>
+        <dd>
+            ${player.cptScore}
+        </dd>
+        <dt>CPT Qualified</dt>
+        <dd>
+            ${player.cptQualified? "Yes" : "No"}
+        </dd>
     </dl>
 
     <ul class="nav nav-tabs">
@@ -152,6 +160,9 @@
                             <th>Team</th>
                             <th>Relative Points</th>
                             <th>Base Points</th>
+                            <g:if test="${ranking.key == Version.USF4}">
+                            <th>CPT Points</th>
+                            </g:if>
                             <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                                 <th>Edit</th>
                             </g:if>
@@ -183,6 +194,9 @@
                                 </td>
                                 <td>${result.tscore}</td>
                                 <td>${result.tbasescore}</td>
+                                <g:if test="${ranking.key == Version.USF4}">
+                                    <td>${result.tcpt}</td>
+                                </g:if>
                                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                                     <td><g:link controller="result" action="show" params="[id: result.resultid]">[Update result as admin]</g:link></td>
                                 </g:if>

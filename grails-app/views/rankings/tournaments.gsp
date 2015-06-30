@@ -23,7 +23,9 @@
       <th>Location</th>
       <th>Game</th>
       <th>Weight</th>
-      <th>Video</th>
+      <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
+      <th>Pro Tour</th>
+      </g:if>
     </tr>
     </thead>
     <g:each in="${tournaments}" var="t">
@@ -43,8 +45,8 @@
         <td>${t.game?.name()}</td>
         <td>${t.weight}</td>
         <td>
-          <g:if test="${t.videos}">
-            <a href="http://www.youtube.com/watch?v=${t.videos.first()}" target="_blank">Open</a>
+          <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
+            ${t.cptTournament?.value}
           </g:if>
         </td>
       </tr>

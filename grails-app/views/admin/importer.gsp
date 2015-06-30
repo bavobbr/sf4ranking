@@ -103,6 +103,11 @@
     <g:select name="ttype" from="${be.bbr.sf4ranking.TournamentType.values()}" class="form-control"/>
   </div>
 
+    <div class="form-group">
+        <label for="cpttype">CPT Type</label>
+        <g:select name="cpttype" from="${be.bbr.sf4ranking.CptTournament.values()}" class="form-control"/>
+    </div>
+
   <div class="form-group">
     <label for="tcountry">Country (ISO code, optional)</label>
     <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control" value="${suggestedCountry?: be.bbr.sf4ranking.CountryCode.US}"/>

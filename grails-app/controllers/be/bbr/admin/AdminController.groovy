@@ -120,6 +120,7 @@ class AdminController
         TournamentFormat tformat = TournamentFormat.fromString(params.tformat)
         TournamentType ttype = TournamentType.fromString(params.ttype)
         WeightingType tweight = WeightingType.fromString(params.tweight)
+        CptTournament cpttype = CptTournament.fromString(params.cpttype)
         CountryCode tcountry = CountryCode.fromString(params.tcountry)
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
@@ -131,7 +132,7 @@ class AdminController
             render view: "importer"
             return
         }
-        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage)
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 

@@ -21,6 +21,9 @@
       <th>Weight</th>
       <th>Share</th>
       <th>Coverage</th>
+      <g:if test="${tournament.game == Version.USF4}">
+      <th>CPT</th>
+      </g:if>
     </tr>
     </thead>
     <tr>
@@ -41,6 +44,9 @@
         </g:link>
         </g:if>
       </td>
+      <g:if test="${tournament.game == Version.USF4}">
+        <td>${tournament.cptTournament}</td>
+      </g:if>
     </tr>
   </table>
 </div>
@@ -56,6 +62,9 @@
       <th>Team(s)</th>
       <th>Country</th>
       <th>Score</th>
+      <g:if test="${tournament.cptTournament != be.bbr.sf4ranking.CptTournament.NONE}">
+        <th>CPT Points</th>
+      </g:if>
       <g:if test="${SecurityUtils.subject.isPermitted("player")}">
         <th>Result</th>
         <th>Player</th>
@@ -92,6 +101,9 @@
           </g:if>
         </td>
         <td>${result.rscore}</td>
+        <g:if test="${tournament.cptTournament != be.bbr.sf4ranking.CptTournament.NONE}">
+          <td>${tournament.cptTournament.getScore(result.rplace)}</td>
+        </g:if>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result]</g:link></td>
           <td><g:link controller="player" action="edit" params="['id': result.rplayerid]">[Update player]</g:link></td>

@@ -99,6 +99,16 @@ class RankingService
                 }
                 p.applyScore(game, decayedScore)
                 p.applyTotalScore(game, playerScore)
+                // calculate CPT score
+                if (game == Version.USF4) {
+                    def cptScore = 0
+                    results.each {
+                        if (it.tournament.cptTournament) {
+                            cptScore += it.tournament.cptTournament.getScore(it.place)
+                        }
+                    }
+                    p.cptScore = cptScore
+                }
                 p.save(failOnError: true)
             }
             log.info "Updated ${players.size()} scores"

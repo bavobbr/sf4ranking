@@ -20,7 +20,7 @@ class DataService
      * Uses a specific results entry format to speed up data entry
      */
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage)
+                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament)
     {
         if (wtype == WeightingType.AUTO) type = null
         else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
@@ -32,7 +32,7 @@ class DataService
         def fullname = "${tname} - ${game.name()}"
         Tournament tournament = new Tournament(name: fullname, countryCode: country, date: date, weight: 1, game: game, videos: videos,
                                     tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked,
-                                    coverage: coverage)
+                                    coverage: coverage, cptTournament: cptTournament)
         tournament.save(failOnError: true)
         addResultsToTournament(results, tournament)
         tournament.save(failOnError: true)
@@ -205,8 +205,10 @@ class DataService
                 log.info "Saving player $it.name"
                 def cc = it.countryCode as CountryCode
                 def mainGame = Version.fromString(it.mainGame) ?: Version.UNKNOWN
+                def cptScore = it.cptScore? it.cptScore: 0
+                def cptQualified = it.cptQualified? (it.cptQualified as boolean): false
                 Player p = new Player(name: it.name, countryCode: cc, videos: it.videos, wikilink: it.wikilink, twitter: it.twitter,
-                                      mainGame: mainGame, creator: it.creator, realname: it.realname)
+                                      mainGame: mainGame, creator: it.creator, realname: it.realname, cptScore: cptScore, cptQualified: cptQualified)
                 it.rankings.each {
                     def game = Version.fromString(it.game)
                     List mainCharacters = []
@@ -233,7 +235,7 @@ class DataService
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
             def tdata = new JsonSlurper().parseText(tournamentFile.text)
             if (Environment.current == Environment.DEVELOPMENT) {
-                tdata = tdata.take(300)
+                //tdata = tdata.take(300)
             }
             tdata.each {
                 log.info "Importing tournament $it.name"
@@ -242,6 +244,7 @@ class DataService
                 Date date = Date.parse("dd-MM-yyyy", it.date as String)
                 TournamentFormat format = TournamentFormat.fromString(it.format) ?: TournamentFormat.UNKNOWN
                 WeightingType weightingType = WeightingType.fromString(it.wtype) ?: WeightingType.AUTO
+                CptTournament cptTournament = CptTournament.fromString(it.cptTournament) ?: CptTournament.NONE
                 TournamentType type = TournamentType.fromString(it.type)
                 Integer weight = it.weight ?: 0
                 String challonge = it.challonge
@@ -250,7 +253,7 @@ class DataService
                 Tournament tournament = new Tournament(name: it.name, countryCode: country, game: version, date: date, videos: it.videos,
                                                        weight: weight, tournamentFormat: format, tournamentType: type,
                                                        weightingType: weightingType, challonge: challonge, ranked: ranked,
-                                                       coverage: coverage, creator: it.creator)
+                                                       coverage: coverage, creator: it.creator, cptTournament: cptTournament)
                 it.players.each {
                     log.info "Processing ${it.player}"
                     Player p = Player.findByCodename(it.player.toUpperCase())
@@ -304,6 +307,7 @@ class DataService
             tournament.coverage = it.coverage
             tournament.ranked = it.ranked
             tournament.creator = it.creator
+            tournament.cptTournament = it.cptTournament?.name()
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]
@@ -344,6 +348,8 @@ class DataService
             player.twitter = it.twitter
             player.creator = it.creator
             player.mainGame = it.mainGame?.name()
+            player.cptScore = it.cptScore?: 0
+            player.cptQualified = it.cptQualified?: false
             player.teams = it.teams.collect {it.codename}
             def rankings = []
             it.rankings.each {
