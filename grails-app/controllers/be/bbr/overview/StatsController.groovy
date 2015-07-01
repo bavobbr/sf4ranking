@@ -20,7 +20,7 @@ class StatsController
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
-        cstats = cstats.sort {a, b -> b.totalTimesUsed <=> a.totalTimesUsed}
+        cstats = cstats.sort {a, b -> b.scoreAccumulated <=> a.scoreAccumulated}
         Map<Version, GameStats> statsmap = [:]
         if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012, Version.USF4]) {
             def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)

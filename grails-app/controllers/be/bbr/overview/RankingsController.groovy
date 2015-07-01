@@ -78,6 +78,34 @@ class RankingsController
                 total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
     }
 
+    def cpt()
+    {
+        def pgame = Version.USF4
+        log.info "CPT Ranking for game $pgame"
+
+        def players = queryService.findCptPlayers()
+        def playercount = players.size()
+        log.info "getAll gave ${players.size()} players out of ${playercount}"
+
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        if (players && !players.isEmpty())
+        {
+            players.each {
+                def numResults = it.results.findAll { it.tournament.cptTournament != null && it.tournament.cptTournament != CptTournament.NONE}.size()
+                it.metaClass.numResults << {numResults}
+                it.metaClass.scoreQualified << {false}
+            }
+        }
+        def unqualifiedPlayers = players.findAll { !it.cptQualified }
+        unqualifiedPlayers.take(15).each {
+            it.metaClass.scoreQualified = {true}
+        }
+
+        log.info "returning ${players.size()} players for game $pgame"
+        [players: players,
+         total: playercount, updateMessage: lastUpdateMessage, game: pgame]
+    }
+
     /**
      * Look up a player and prepare data for the view
      */

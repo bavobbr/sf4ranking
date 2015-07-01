@@ -46,6 +46,25 @@ class QueryService
 
     }
 
+    List<Player> findCptPlayers()
+    {
+        log.info "Looking for all CPT players"
+        def playerIdQuery = Player.createCriteria()
+        def playerids = playerIdQuery.list() {
+            createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
+            projections {
+                distinct 'id'
+            }
+            eq("rankAlias.game", Version.USF4)
+            property("cptScore")
+            gt("cptScore", 0)
+            order("cptScore", "desc")
+        }
+        def players = Player.getAll(playerids)
+        players.retainAll { it.findRanking(Version.USF4) != null }
+        return players
+    }
+
     Integer countPlayers(CharacterType ctype, CountryCode countryCode, Version game)
     {
         def playerCountQuery = Player.createCriteria()
