@@ -64,6 +64,15 @@
     </g:each>
 
   </table></div>
-
+<div class="col-md-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Capcom Pro Tour Ranking</h3>
+    </div>
+    <div class="panel-body">
+      This ranking is derived from the <a href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. This ranking is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
+    </div>
+  </div>
+</div>
 </body>
 </html>
