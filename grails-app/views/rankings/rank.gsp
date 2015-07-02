@@ -83,8 +83,10 @@
         <td>${p.totalScore(game)}</td>
         <td>${p.numResults()}
           <g:if test="${p.cptQualified}">
+            <g:link controller="rankings" action="cpt">
             <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
                  height="25"/>
+            </g:link>
           </g:if>
         </td>
         <td>

@@ -20,7 +20,7 @@
             This ranking is derived from the <a
                 href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
                 href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. This ranking is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
-        <br/>The currently qualifying players by score are indicated in the grey area!
+        <br/>The currently qualifying players by score are indicated in the blue area!
         </div>
     </div>
 
@@ -41,6 +41,8 @@
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>CPT Tournaments</th>
+            <th>CPT Prize<a href="#" data-toggle="tooltip" data-placement="top"
+                            title="Prize money assigned by CPT budget">(?)</a></th>
             <th>Country</th>
         </tr>
         </thead>
@@ -49,11 +51,11 @@
 
             <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
                 <td>
-                    <g:if test="${idx + 1 <= 32}">
-                        <b>${idx + 1}</b>
+                    <g:if test="${p.cptRank() <= 32}">
+                        <b>${p.cptRank()}</b>
                     </g:if>
                     <g:else>
-                        ${idx + 1}
+                        ${p.cptRank()}
                     </g:else>
                 </td>
                 <td>${p.rank(game)}</td>
@@ -85,8 +87,21 @@
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="30"
                              height="30"/>
                     </g:if>
+                <g:else>
+                    <g:if test="${p.scoreQualified()}">
+                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                           title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a></small>
+                    </g:if>
+                    <g:else>
+                        <g:if test="${p.cptRank() <= 32}">
+                            <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
+                                               title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a></small>
+                        </g:if>
+                    </g:else>
+                </g:else></td>
 
                 <td>${p.numResults()}</td>
+                <td>${p.prize()}</td>
                 <td>
                     <g:if test="${p.countryCode}">
                         <g:link controller="rankings" action="rank"

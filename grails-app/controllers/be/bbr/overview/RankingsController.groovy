@@ -92,10 +92,15 @@ class RankingsController
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         if (players && !players.isEmpty())
         {
-            players.each {
-                def numResults = it.results.findAll { it.tournament.cptTournament != null && it.tournament.cptTournament != CptTournament.NONE}.size()
-                it.metaClass.numResults << {numResults}
-                it.metaClass.scoreQualified << {false}
+            players.eachWithIndex { Player p, Integer idx ->
+                def cptTournaments = p.results.findAll { it.tournament.cptTournament != null && it.tournament.cptTournament != CptTournament.NONE}
+                def numResults = cptTournaments.size()
+                def prize = cptTournaments.sum { Result r -> r.tournament.cptTournament.getPrize(r.place) }
+                def cptRank = idx+1
+                p.metaClass.numResults << { numResults }
+                p.metaClass.scoreQualified << { false }
+                p.metaClass.prize << { prize }
+                p.metaClass.cptRank << { cptRank }
             }
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
