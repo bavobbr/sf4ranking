@@ -81,7 +81,12 @@
         </td>
         <td>${p.score(game)}</td>
         <td>${p.totalScore(game)}</td>
-        <td>${p.numResults()}</td>
+        <td>${p.numResults()}
+          <g:if test="${p.cptQualified}">
+            <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                 height="25"/>
+          </g:if>
+        </td>
         <td>
           <g:if test="${p.countryCode}">
             <g:link controller="rankings" action="rank" params="[country: p.countryCode.name(), id: game.name()]" data-toggle="tooltip" data-placement="top" title="Find players from ${p.countryCode.name}">

@@ -81,8 +81,10 @@ class RankingsController
     def cpt()
     {
         def pgame = Version.USF4
-        log.info "CPT Ranking for game $pgame"
-
+        log.info "CPT Ranking for game $pgame $params.pcountry $params.pchar"
+        def pcountry = (!params.pcountry || params.pcountry =~ "any") ? null : CountryCode.fromString(params.pcountry as String)
+        def pchar = (!params.pchar || params.pchar =~ "any") ? null :
+                CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
         def players = queryService.findCptPlayers()
         def playercount = players.size()
         log.info "getAll gave ${players.size()} players out of ${playercount}"
@@ -100,10 +102,17 @@ class RankingsController
         unqualifiedPlayers.take(15).each {
             it.metaClass.scoreQualified = {true}
         }
-
+        if (pcountry) players.retainAll { it.countryCode == pcountry}
+        if (pchar) players.retainAll { it.main(Version.USF4).contains(pchar)}
+        def countrynames = queryService.getActiveCountryNames()
+        // list all characters for the filter box
+        def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.name()}
+        // add a search all for each type
+        countrynames.add(0, "any country")
+        charnames.add(0, "any character")
         log.info "returning ${players.size()} players for game $pgame"
         [players: players,
-         total: playercount, updateMessage: lastUpdateMessage, game: pgame]
+         total: playercount, updateMessage: lastUpdateMessage, game: pgame, countries: countrynames, chars: charnames]
     }
 
     /**
