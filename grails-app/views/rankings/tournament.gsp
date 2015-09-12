@@ -1,4 +1,4 @@
-<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.CptTournament; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -65,6 +65,9 @@
       <g:if test="${tournament.cptTournament != be.bbr.sf4ranking.CptTournament.NONE}">
         <th>CPT Points</th>
       </g:if>
+      <g:if test="${tournament.cptTournament in [be.bbr.sf4ranking.CptTournament.PREMIER, be.bbr.sf4ranking.CptTournament.EVO, be.bbr.sf4ranking.CptTournament.CC]}">
+        <td>CPT Prize</td>
+      </g:if>
       <g:if test="${SecurityUtils.subject.isPermitted("player")}">
         <th>Result</th>
         <th>Player</th>
@@ -103,6 +106,9 @@
         <td>${result.rscore}</td>
         <g:if test="${tournament.cptTournament != be.bbr.sf4ranking.CptTournament.NONE}">
           <td>${tournament.cptTournament.getScore(result.rplace)}</td>
+        </g:if>
+        <g:if test="${tournament.cptTournament in [be.bbr.sf4ranking.CptTournament.PREMIER, be.bbr.sf4ranking.CptTournament.EVO, be.bbr.sf4ranking.CptTournament.CC]}">
+          <td>${tournament.cptTournament.getPrize(result.rplace)}</td>
         </g:if>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result]</g:link></td>

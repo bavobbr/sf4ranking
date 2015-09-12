@@ -102,12 +102,18 @@ class RankingService
                 // calculate CPT score
                 if (game == Version.USF4) {
                     def cptScore = 0
+                    def cptCount = 0
+                    def prize = 0
                     results.each {
-                        if (it.tournament.cptTournament) {
+                        if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE) {
                             cptScore += it.tournament.cptTournament.getScore(it.place)
+                            cptCount++
+                            prize = prize + it.tournament.cptTournament.getPrize(it.place)
                         }
                     }
                     p.cptScore = cptScore
+                    p.cptTournaments = cptCount
+                    p.cptPrize = prize
                 }
                 p.save(failOnError: true)
             }
@@ -135,7 +141,8 @@ class RankingService
      */
     Integer updatePlayerRank(Version game)
     {
-        List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
+        List players = Player.where {results.tournament.game == game}.list()
+        players = players.sort {a, b -> b.score(game) <=> a.score(game)}
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update rank")
             def previous = 0
@@ -150,6 +157,24 @@ class RankingService
                 p.applyRank(game, rank)
                 previous = p.score(game)
                 log.info("Updated rank of player $p, setting previous as $previous")
+            }
+        }
+        players = players.sort {a, b -> b.cptScore <=> a.cptScore }
+        if (game == Version.USF4) {
+            configurationService.withUniqueSession {
+                log.info("Found ${players.size()} to update CPT rank")
+                def previous = 0
+                def currentRank = 0
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Updating CPT $game rank of player $p")
+                    if (p.cptScore != previous) {
+                        currentRank = idx + 1
+                    }
+                    def rank = currentRank
+                    p.cptRank = rank
+                    previous = p.cptScore
+                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                }
             }
         }
         return players.size()

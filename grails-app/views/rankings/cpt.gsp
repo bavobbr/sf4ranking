@@ -35,13 +35,15 @@
             <th>Name</th>
             <th>Team</th>
             <th>Character</th>
-            <th>SRK Score</th>
             <th>CPT Score <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Score as granted by the Capcom Pro Tour 2015 ranking system">(?)</a></th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
-            <th>CPT Tournaments</th>
-            <th>CPT Prize<a href="#" data-toggle="tooltip" data-placement="top"
+            <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
+            <th>Rank diff</th>
+            <th>Tournaments</th>
+            <th>Fight Money<a href="#" data-toggle="tooltip" data-placement="top"
                             title="Prize money assigned by CPT budget">(?)</a></th>
             <th>Country</th>
         </tr>
@@ -50,13 +52,8 @@
         <g:each in="${players}" var="p" status="idx">
 
             <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
-                <td>
-                    <g:if test="${p.cptRank() <= 32}">
-                        <b>${p.cptRank()}</b>
-                    </g:if>
-                    <g:else>
-                        ${p.cptRank()}
-                    </g:else>
+                <td class="${p.cptRank <= 32? 'warning':''}">
+                        ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -80,7 +77,6 @@
                         </g:link>
                     </g:each>
                 </td>
-                <td>${p.score(game)}</td>
                 <td>${p.cptScore}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
@@ -93,15 +89,24 @@
                                            title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a></small>
                     </g:if>
                     <g:else>
-                        <g:if test="${p.cptRank() <= 32}">
+                        <g:if test="${p.cptRank <= 32}">
                             <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
                                                title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a></small>
                         </g:if>
                     </g:else>
                 </g:else></td>
-
-                <td>${p.numResults()}</td>
-                <td>${p.prize()}</td>
+                <td>+${p.cptScore-(p.prevCptScore?: 0)}</td>
+                <td class="${p.rankDiff() == 0?'':p.rankDiff()>0?'success' : 'danger'}">
+                    <g:if test="${p.rankDiff() > 0}">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                    </g:if>
+                    <g:elseif test="${p.rankDiff() < 0}">
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                    </g:elseif>
+                    ${Math.abs(p.rankDiff())}
+                </td>
+                <td>${p.cptTournaments}</td>
+                <td>$${p.cptPrize}</td>
                 <td>
                     <g:if test="${p.countryCode}">
                         <g:link controller="rankings" action="rank"
@@ -142,7 +147,7 @@
                 theme: "default",
                 striped: false,
                 sortable: true,
-                condensed: false})
+                condensed: true})
         })
     });
 </script>

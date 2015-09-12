@@ -5,6 +5,9 @@ import grails.converters.JSON
 import grails.plugin.searchable.SearchableService
 import org.apache.shiro.SecurityUtils
 
+import java.text.DecimalFormat
+import java.text.NumberFormat
+
 /**
  * The controller that is public to users and shows the stats of Player, Tournament as well as overall
  */
@@ -75,7 +78,8 @@ class RankingsController
         }
         log.info "returning ${players.size()} players for game $pgame"
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
-                total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain, updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
+         total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain,
+         updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
     }
 
     def cpt()
@@ -90,17 +94,19 @@ class RankingsController
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        def lastUpdate = Configuration.first().lastCptSnapshot
+        NumberFormat fmt = new DecimalFormat("+#;-#");
         if (players && !players.isEmpty())
         {
             players.eachWithIndex { Player p, Integer idx ->
-                def cptTournaments = p.results.findAll { it.tournament.cptTournament != null && it.tournament.cptTournament != CptTournament.NONE}
-                def numResults = cptTournaments.size()
-                def prize = cptTournaments.sum { Result r -> r.tournament.cptTournament.getPrize(r.place) }
-                def cptRank = idx+1
-                p.metaClass.numResults << { numResults }
+                if (p.prevCptRank == null) {
+                    p.prevCptRank = players.size()+1
+                }
                 p.metaClass.scoreQualified << { false }
-                p.metaClass.prize << { prize }
-                p.metaClass.cptRank << { cptRank }
+                p.metaClass.rankDiff << {
+                    p.prevCptRank-p.cptRank
+                }
+                p.metaClass.rankDiffValue << { fmt.format(p.prevCptRank-p.cptRank) }
             }
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
@@ -117,7 +123,8 @@ class RankingsController
         charnames.add(0, "any character")
         log.info "returning ${players.size()} players for game $pgame"
         [players: players,
-         total: playercount, updateMessage: lastUpdateMessage, game: pgame, countries: countrynames, chars: charnames]
+         total: playercount, updateMessage: lastUpdateMessage, game: pgame, countries: countrynames, chars: charnames,
+         lastUpdate: lastUpdate]
     }
 
     /**

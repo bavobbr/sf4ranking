@@ -16,7 +16,11 @@ class Player
         creator nullable: true
         realname nullable: true
         cptScore nullable: true
+        prevCptScore nullable: true
+        cptRank nullable: true
+        prevCptRank nullable: true
         cptQualified nullable: false
+        cptPrize nullable: false
     }
 
     static mapping = {
@@ -32,6 +36,11 @@ class Player
     String wikilink
     String twitter
     Integer cptScore
+    Integer prevCptScore
+    Integer cptRank
+    Integer prevCptRank
+    Integer cptTournaments
+    Integer cptPrize
     boolean cptQualified = false
     Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []
