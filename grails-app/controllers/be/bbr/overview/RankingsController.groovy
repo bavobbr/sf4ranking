@@ -95,18 +95,28 @@ class RankingsController
 
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def lastUpdate = Configuration.first().lastCptSnapshot
-        NumberFormat fmt = new DecimalFormat("+#;-#");
         if (players && !players.isEmpty())
         {
             players.eachWithIndex { Player p, Integer idx ->
-                if (p.prevCptRank == null) {
-                    p.prevCptRank = players.size()+1
-                }
                 p.metaClass.scoreQualified << { false }
                 p.metaClass.rankDiff << {
-                    p.prevCptRank-p.cptRank
+                    if (p.prevCptRank == null || p.prevCptRank == 0) {
+                        return null
+                    }
+                    else return p.prevCptRank-p.cptRank
                 }
-                p.metaClass.rankDiffValue << { fmt.format(p.prevCptRank-p.cptRank) }
+                p.metaClass.rankDiffClass << {
+                    if (p.prevCptRank == null || p.prevCptRank == 0) {
+                        return "warning"
+                    }
+                    else if (p.prevCptRank-p.cptRank == 0) {
+                        return ""
+                    }
+                    else if (p.prevCptRank-p.cptRank < 0) {
+                        return "danger"
+                    }
+                    else return "success"
+                }
             }
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }

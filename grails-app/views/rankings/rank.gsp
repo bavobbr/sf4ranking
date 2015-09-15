@@ -98,7 +98,24 @@
           </g:if>
         </td>
         <g:if test="${snapshot != null}">
-          <td>${p.diff(game)}</td>
+            <g:if test="${p.diffRank(game) == null}">
+                <td class="warning">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                </td>
+            </g:if>
+            <g:else>
+            <td class="${p.diffRank(game) == 0?'':p.diffRank(game)>0?'success' : 'danger'}">
+                <g:if test="${p.diffRank(game) > 0}">
+                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                </g:if>
+                <g:elseif test="${p.diffRank(game) < 0}">
+                    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                </g:elseif>
+                <g:if test="${p.diffRank(game) != 0 && p.diffRank(game)  != null}">
+                    ${Math.abs(p.diffRank(game))}
+                </g:if>
+            </td>
+            </g:else>
         </g:if>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td>

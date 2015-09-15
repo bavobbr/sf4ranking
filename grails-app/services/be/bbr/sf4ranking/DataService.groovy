@@ -370,6 +370,8 @@ class DataService
             player.prevCptRank = it.prevCptRank?: 0
             player.cptPrize = it.cptPrize?: 0
             player.cptQualified = it.cptQualified?: false
+            player.cptTournaments = it.cptTournaments?: 0
+            player.cptPrize = it.cptPrize?: 0
             player.teams = it.teams.collect {it.codename}
             def rankings = []
             it.rankings.each {

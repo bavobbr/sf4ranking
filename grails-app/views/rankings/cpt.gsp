@@ -7,20 +7,18 @@
 
 <body>
 <center>
-    <h2 class="title">${game.value} Capcom Pro Tour Rankings</h2><span class="glyphicon glyphicon-flash"></span>
-    <h4 class="subtitle">rank.shoryuken.com</h4>
+    <h2 class="title">${game.value} Capcom Pro Tour Rankings</h2>
 </center>
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">Capcom Pro Tour Ranking</h3>
+            <h3 class="panel-title">Rules</h3>
         </div>
-
         <div class="panel-body">
-            This ranking is derived from the <a
+            This ranking follows the <a
                 href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
-                href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. This ranking is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
-        <br/>The currently qualifying players by score are indicated in the blue area!
+                href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. The board is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
+        <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in the top32 region. Those that directly qualified are invited to the season finals in December, as well as the highest 15 scoring players.
         </div>
     </div>
 
@@ -41,10 +39,12 @@
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
                              title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
-            <th>Rank diff</th>
-            <th>Tournaments</th>
+            <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
+                            title="Diff against rank before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
+            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
             <th>Fight Money<a href="#" data-toggle="tooltip" data-placement="top"
-                            title="Prize money assigned by CPT budget">(?)</a></th>
+                            title="Estimated Prize money assigned by CPT budget">(?)</a></th>
             <th>Country</th>
         </tr>
         </thead>
@@ -80,8 +80,8 @@
                 <td>${p.cptScore}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="30"
-                             height="30"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                             height="25"/>
                     </g:if>
                 <g:else>
                     <g:if test="${p.scoreQualified()}">
@@ -96,14 +96,19 @@
                     </g:else>
                 </g:else></td>
                 <td>+${p.cptScore-(p.prevCptScore?: 0)}</td>
-                <td class="${p.rankDiff() == 0?'':p.rankDiff()>0?'success' : 'danger'}">
-                    <g:if test="${p.rankDiff() > 0}">
-                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                <td class="${p.rankDiffClass()}">
+                    <g:if test="${p.rankDiff() == null}">
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                     </g:if>
+                    <g:elseif test="${p.rankDiff() > 0}">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                    </g:elseif>
                     <g:elseif test="${p.rankDiff() < 0}">
                         <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
                     </g:elseif>
-                    ${Math.abs(p.rankDiff())}
+                    <g:if test="${p.rankDiff() != null && p.rankDiff() != 0}">
+                        ${Math.abs(p.rankDiff())}
+                    </g:if>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>$${p.cptPrize}</td>

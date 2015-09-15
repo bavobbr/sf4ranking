@@ -86,6 +86,14 @@ class Player
         return (diff > 0)? "+${diff}" : "${diff}"
     }
 
+    Integer diffRank(Version game) {
+        def ranking = findRanking(game)
+        def newRank = ranking?.rank
+        def oldRank = ranking?.oldRank
+        if (oldRank == null) return null
+        return oldRank - newRank
+    }
+
     Set<CharacterType> main(Version game) {
         return findRanking(game)?.mainCharacters?: []
     }
