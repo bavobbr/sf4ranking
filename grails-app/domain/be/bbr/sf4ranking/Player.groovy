@@ -39,8 +39,8 @@ class Player
     Integer prevCptScore
     Integer cptRank
     Integer prevCptRank
-    Integer cptTournaments
-    Integer cptPrize
+    Integer cptTournaments = 0
+    Integer cptPrize = 0
     boolean cptQualified = false
     Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []

@@ -140,6 +140,7 @@
 <div id="pagination">
   <g:paginate total="${total}" controller="rankings" action="rank" max="50" params="[country: params.country, pchar: params.pchar, id: game.name()]"/>
 </div>
+This is a list of the best ${game.value} tournament players world-wide. The ${game.name()} top player board is composed by looking at player weights, tournament difficulty and international appeal. For more info on the algorithm check out <g:link controller="about">The FAQ page</g:link>. This is a subjective list and is only meant to give an idea on who is making name and fame in the FGC. The ranking aims to provide a database of tournament results as well, open to the community.
 
 <div class="panel panel-info">
   <div class="panel-heading">

@@ -187,7 +187,7 @@
                         </ul>
                     </li>
                     <li><g:link action="index" controller="about">FAQ</g:link></li>
-                    <li><g:link action="cpt" controller="rankings">PRO TOUR</g:link></li>
+                    <li><g:link action="cpt" controller="rankings">CAPCOM PRO TOUR</g:link></li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

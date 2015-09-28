@@ -93,8 +93,9 @@ class RankingsController
         def playercount = players.size()
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
-        def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        def lastUpdate = Configuration.first().lastCptSnapshot
+        def config = Configuration.first()
+        def lastUpdateMessage = config.lastUpdateMessage
+        def lastUpdate = config.lastCptSnapshot
         if (players && !players.isEmpty())
         {
             players.eachWithIndex { Player p, Integer idx ->

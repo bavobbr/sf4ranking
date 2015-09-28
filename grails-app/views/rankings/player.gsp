@@ -7,7 +7,7 @@
 
 <body>
 <div style="text-align: center;">
-    <h6 class="player-heading">Fighting Game World Rankings</h6><span class="glyphicon glyphicon-flash"></span>
+    <h6 class="player-heading">Fighting Game World Ranking</h6><span class="glyphicon glyphicon-flash"></span>
     <h4 class="subtitle">rank.shoryuken.com</h4>
 
     <h1 class="player_name">${player.name}</h1>

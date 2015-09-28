@@ -108,7 +108,10 @@ class RankingService
                         if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE) {
                             cptScore += it.tournament.cptTournament.getScore(it.place)
                             cptCount++
-                            prize = prize + it.tournament.cptTournament.getPrize(it.place)
+                            def countryCode = it.tournament.countryCode
+                            if (countryCode != CountryCode.JP && countryCode != CountryCode.BR) {
+                                prize = prize + it.tournament.cptTournament.getPrize(it.place)
+                            }
                         }
                     }
                     p.cptScore = cptScore

@@ -61,7 +61,7 @@ class QueryService
             order("cptScore", "desc")
         }
         def players = Player.getAll(playerids)
-        players.retainAll { it.findRanking(Version.USF4) != null }
+        log.info "Returned all CPT players ${players.size()}"
         return players
     }
 
