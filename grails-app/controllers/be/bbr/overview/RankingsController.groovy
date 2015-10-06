@@ -138,6 +138,93 @@ class RankingsController
          lastUpdate: lastUpdate]
     }
 
+    def cptStats() {
+        def comingTournaments = Tournament.where {
+            game == Version.USF4
+            cptTournament != null
+            cptTournament != CptTournament.NONE
+            finished == false
+        }.list()
+        def maxTotal = comingTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
+
+        def directPlaces = comingTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO]  }
+        def pastTournaments = Tournament.where {
+            game == Version.USF4
+            cptTournament != null
+            cptTournament != CptTournament.NONE
+            finished == true
+        }.list()
+        def quals = []
+        pastTournaments.sort { it.date }.each { t ->
+            t.metaClass.qualified << {
+                if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO]) {
+                    return t.results.sort { it.place }.findResult {
+                        if (!quals.contains(it.player)) {
+                            quals << it.player
+                            return it.player.name
+                        } else return null
+                    }
+                }
+                else return ""
+            }
+        }
+        def pastMaxTotal = pastTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def pastDirectPlaces = pastTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO]  }
+
+        def players = queryService.findCptPlayers()
+        def players32 = players.take(32)
+        def playersQual = players.findAll { it.cptQualified }
+        def byCountry = players.groupBy { it.countryCode }
+        def byCountry32 = players32.groupBy { it.countryCode }
+        def byCountryQual = playersQual.groupBy { it.countryCode }
+
+        [coming: comingTournaments, played: pastTournaments, byCountry: byCountry, byCountry32: byCountry32, byCountryQual: byCountryQual, maxTotal: maxTotal, directPlaces: directPlaces, pastMaxTotal: pastMaxTotal, pastDirectPlaces: pastDirectPlaces]
+    }
+
+    def cptCharacterStats() {
+        def players = queryService.findCptPlayers()
+        def players32 = players.take(32)
+        def byMainCharacter32 = players32.groupBy { it.findRanking(Version.USF4).mainCharacters?.first() }
+        def secondarySeenTop32 = [:]
+        players32.each { def player ->
+            player.results.findAll { it.tournament.game == Version.USF4  && it.tournament.cptTournament != CptTournament.NONE }.each {
+                it.characterTeams.each {
+                    it.pchars.each {
+                        if (secondarySeenTop32.containsKey(it.characterType)) {
+                            secondarySeenTop32[it.characterType] << player
+                        } else secondarySeenTop32[it.characterType] = [player] as HashSet
+                    }
+                }
+            }
+        }
+        def pastTournaments = Tournament.where {
+            game == Version.USF4
+            cptTournament != null
+            cptTournament != CptTournament.NONE
+            finished == true
+        }.list()
+        def charList = []
+        pastTournaments.each {
+            it.results.each {
+                it.characterTeams.each {
+                    it.pchars.each {
+                        charList << it.characterType
+                    }
+                }
+            }
+        }
+        def charToCount = charList.countBy { it }
+        def notInTop32 = CharacterType.values().findAll {
+            it.game == Version.USF4 && !byMainCharacter32.keySet().contains(it)
+        }*.value
+        def notInTop32All = CharacterType.values().findAll {
+            it.game == Version.USF4 && !secondarySeenTop32.keySet().contains(it)
+        }*.value
+
+
+        [byMainCharacter32: byMainCharacter32, charToCount: charToCount, notIn: notInTop32, notInAll: notInTop32All, secondary32: secondarySeenTop32]
+    }
+
     /**
      * Look up a player and prepare data for the view
      */

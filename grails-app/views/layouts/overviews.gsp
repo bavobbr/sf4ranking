@@ -187,7 +187,15 @@
                         </ul>
                     </li>
                     <li><g:link action="index" controller="about">FAQ</g:link></li>
-                    <li><g:link action="cpt" controller="rankings">CAPCOM PRO TOUR</g:link></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><g:link action="cpt" controller="rankings">Standings</g:link></li>
+                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries</g:link></li>
+                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used</g:link></li>
+                        </ul>
+                    </li>
+
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

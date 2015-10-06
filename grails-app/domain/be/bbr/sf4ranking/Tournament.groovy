@@ -22,6 +22,7 @@ class Tournament
         coverage nullable: true
         creator nullable: true
         cptTournament nullable: true
+        finished nullable: false
     }
 
     static mapping = {
@@ -42,6 +43,7 @@ class Tournament
     CptTournament cptTournament = null
     String challonge
     Boolean ranked = true
+    Boolean finished = true
     String coverage = null
     String creator
 

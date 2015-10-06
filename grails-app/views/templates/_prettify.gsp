@@ -7,7 +7,7 @@
                                                                               theme: "default",
                                                                               striped: true,
                                                                               sortable: true,
-                                                                              condensed: false})
+                                                                              condensed: true})
                                                        })
                     });
   $(document).ready(function ()

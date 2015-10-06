@@ -21,5 +21,6 @@ class Result
     static hasMany = [characterTeams: GameTeam]
 
     Player player
+    Tournament tournament
     Integer place
 }

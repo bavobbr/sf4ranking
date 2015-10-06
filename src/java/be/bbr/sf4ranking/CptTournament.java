@@ -8,8 +8,9 @@ public enum CptTournament
     NONE("None"),
     RANKING("Ranking Tournament"),
     PREMIER("Premier Tournament"),
+    PREMIER_SCORELESS("Premier without points"),
     QUALIFIER("Qualifier Tournament"),
-    EVO("EVO tier"),
+    EVO("Evolution tier"),
     CC("Capcom Cup");
 
     private final String value;
@@ -37,8 +38,9 @@ public enum CptTournament
         switch (this) {
             case RANKING: return getRankingScore(place);
             case PREMIER: return getPremierScore(place);
+            case PREMIER_SCORELESS: return 0;
             case EVO: return getEvoScore(place);
-            case QUALIFIER: return 0;
+            case QUALIFIER: return getRankingScore(place);
             case NONE: return 0;
             default: return 0;
         }
@@ -48,6 +50,7 @@ public enum CptTournament
         switch (this) {
             case RANKING: return 0;
             case PREMIER: return getPremierPrize(place);
+            case PREMIER_SCORELESS: return getPremierPrize(place);
             case EVO: return getEvoPrize(place);
             case QUALIFIER: return 0;
             case NONE: return 0;

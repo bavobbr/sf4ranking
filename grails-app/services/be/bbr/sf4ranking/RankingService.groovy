@@ -63,7 +63,7 @@ class RankingService
             tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
             // AUTO weighting starts from premier 5
             tournaments.each {it.tournamentType = TournamentType.UNRANKED}
-            tournaments.removeAll {!it.ranked}
+            tournaments.removeAll {!it.ranked || !it.finished}
             double factor = Math.max(tournaments.size() / 100.0, 1.0)
             int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4, factor)
             end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, factor)
@@ -128,7 +128,7 @@ class RankingService
     private Integer getScore(List<Result> results, Closure scoringRule)
     {
         def scores = results.collect {
-            if (it.tournament.ranked)
+            if (it.tournament.ranked && it.tournament.finished)
             {
                 scoringRule(it)
             }

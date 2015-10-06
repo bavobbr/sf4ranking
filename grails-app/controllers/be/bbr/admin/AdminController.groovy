@@ -127,7 +127,7 @@ class AdminController
         String coverage = params.tcoverage
         List tvideos = params.tvideos.tokenize(" ")
         Boolean tranked = params.tranked?.toBoolean() ?: true
-        if (!tname || !tdate || !ttype || !tweight || !tgame || !results || tgame == Version.UNKNOWN) {
+        if (!tname || !tdate || !ttype || !tweight || !tgame || tgame == Version.UNKNOWN) {
             flash.message = "Name, date, tournament type, weighting type, results and game are mandatory"
             render view: "importer"
             return

@@ -25,6 +25,8 @@ class DataService
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
                                 List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament)
     {
+        def finished = true
+        if (!results) finished = false
         if (wtype == WeightingType.AUTO) type = null
         else if (wtype == WeightingType.FIXED && type == null) throw new RuntimeException("A tournament type needs to be given when setting weight to FIXED")
         if (format == TournamentFormat.EXHIBITION)
@@ -35,7 +37,7 @@ class DataService
         def fullname = "${tname} - ${game.name()}"
         Tournament tournament = new Tournament(name: fullname, countryCode: country, date: date, weight: 1, game: game, videos: videos,
                                     tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked,
-                                    coverage: coverage, cptTournament: cptTournament)
+                                    coverage: coverage, cptTournament: cptTournament, finished: finished)
         tournament.save(failOnError: true)
         addResultsToTournament(results, tournament)
         tournament.save(failOnError: true)
@@ -256,6 +258,9 @@ class DataService
                     log.info "Importing tournament $tjson.name at $tjson.date"
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
+                    if (Environment.current == Environment.DEVELOPMENT) {
+                        if (version != Version.USF4) return
+                    }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
                     WeightingType weightingType = WeightingType.fromString(tjson.wtype) ?: WeightingType.AUTO
@@ -265,10 +270,11 @@ class DataService
                     String challonge = tjson.challonge
                     String coverage = tjson.coverage
                     Boolean ranked = tjson.ranked?.toBoolean() ?: false
+                    Boolean finished = tjson.finished?.toBoolean() ?: true
                     Tournament tournament = new Tournament(name: tjson.name, countryCode: country, game: version, date: date, videos: tjson.videos,
                             weight: weight, tournamentFormat: format, tournamentType: type,
                             weightingType: weightingType, challonge: challonge, ranked: ranked,
-                            coverage: coverage, creator: tjson.creator, cptTournament: cptTournament)
+                            coverage: coverage, creator: tjson.creator, cptTournament: cptTournament, finished: finished)
                     tjson.players.each {
                         log.info "Processing ${it.player}"
                         Player p = Player.findByCodename(it.player.toUpperCase())
@@ -321,6 +327,7 @@ class DataService
             tournament.challonge = it.challonge
             tournament.coverage = it.coverage
             tournament.ranked = it.ranked
+            tournament.finished = it.finished
             tournament.creator = it.creator
             tournament.cptTournament = it.cptTournament?.name()
             def players = []
