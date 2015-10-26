@@ -50,7 +50,7 @@ class QueryService
     {
         log.info "Looking for all CPT players"
         def playerIdQuery = Player.createCriteria()
-        def playerids = playerIdQuery.list() {
+        def playerids = playerIdQuery.list(max: 150) {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
             projections {
                 distinct 'id'
