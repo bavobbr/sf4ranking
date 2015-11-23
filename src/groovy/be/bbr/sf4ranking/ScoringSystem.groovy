@@ -99,6 +99,14 @@ class ScoringSystem
         return typescores[rank - 1] as Integer
     }
 
+    public static Integer getLegacyScore(Integer rank, Long weight, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
+    {
+        Map formatscores = scores[tournamentFormat.name()]
+        List typescores = formatscores[TournamentType.GRAND_SLAM.name()] as List
+        def score = typescores[rank - 1] as Integer
+        return (score * weight / 1000) as Integer
+    }
+
     public static Integer getDecayedScore(Date date, Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
         double decayFactor = 0.0

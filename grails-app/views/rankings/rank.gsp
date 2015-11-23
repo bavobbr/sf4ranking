@@ -43,9 +43,10 @@
       <th>Name</th>
       <th>Team</th>
       <th>Character</th>
-      <th>Score</th>
-      <th>Base Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual score earned per tournament becomes progressively less over time. This value reflects the score without decay.">(?)</a></th>
-      <th>Tournaments</th>
+        <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual current score is calculated over a 1-year window. This reflects how well a pleyr has been doing over the last year.">(?)</a></th>
+        <th>Recent Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The amount of tournaments over last year adding to the actual score">(?)</a></th>
+        <th>Total Score <a href="#" data-toggle="tooltip" data-placement="top" title="The total score is the sum of scores for all tournaments in this game. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a></th>
+      <th>Total Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The total amount of tournaments contributing to total score">(?)</a></th>
       <th>Country</th>
       <g:if test="${snapshot != null}">
         <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
@@ -64,8 +65,11 @@
         <g:if test="${filtered}">
           <td>${idx + poffset + 1}</td>
         </g:if>
-        <td>${p.rank(game)}</td>
-        <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link></td>
+        <td>${p.rank(game)}
+
+        </td>
+        <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link>
+        </td>
         <td>
           <g:each in="${p.teams}" var="team">
             <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>
@@ -79,15 +83,19 @@
           </g:link>
           </g:each>
         </td>
-        <td>${p.score(game)}</td>
-        <td>${p.totalScore(game)}</td>
-        <td>${p.numResults()}
-          <g:if test="${p.cptQualified}">
-            <g:link controller="rankings" action="cpt">
-            <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                 height="25"/>
-            </g:link>
-          </g:if>
+          <td>${p.score(game)}
+              <g:if test="${p.cptQualified}">
+                  <g:link controller="rankings" action="cpt">
+                      <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="20"
+                           height="20"/>
+                  </g:link>
+              </g:if>
+          </td>
+          <td>${p.numResultsYear()}
+
+          <td>${p.totalScore(game)}</td>
+
+          <td>${p.numResults()}
         </td>
         <td>
           <g:if test="${p.countryCode}">
@@ -142,6 +150,8 @@
 </div>
 This is a list of the best ${game.value} tournament players world-wide. The ${game.name()} top player board is composed by looking at player weights, tournament difficulty and international appeal. For more info on the algorithm check out <g:link controller="about">The FAQ page</g:link>. This is a subjective list and is only meant to give an idea on who is making name and fame in the FGC. The ranking aims to provide a database of tournament results as well, open to the community.
 
+<div class="row">
+    <div class="col-md-6">
 <div class="panel panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">Filter</h3>
@@ -157,5 +167,13 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
     </g:form>
   </div>
 </div>
+        </div>
+    <div class="col-md-6">
+        <div class="panel panel-info">
+            <a href="http://www.jdoqocy.com/click-7926414-12312285-1440505557000" target="_top">
+                <img src="http://www.lduhtrp.net/image-7926414-12312285-1440505557000" width="392" height="72" alt="Tritton Gaming Headsets" border="0"/></a>
+            </div>
+    </div>
+    </div>
 </body>
 </html>

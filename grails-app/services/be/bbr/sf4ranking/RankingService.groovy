@@ -1,7 +1,6 @@
 package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
-
 /**
  * This service applies the ranking values (rank, score, weight, type) to all imported data
  * All the entries are evaluated together, rather than only the one that is added/updated
@@ -33,11 +32,11 @@ class RankingService
                     def countryBonus = 1
                     Set uniqueCountries = tournament.results.collect { Result r -> r.player.countryCode }
                     uniqueCountries.remove(null)
-                    if (uniqueCountries.size() > 1) {
+                    if (uniqueCountries.size() >= 3) {
                         countryBonus = 1.1
                         log.info "Countrybonus for ${tournament} set to $countryBonus as countries is $uniqueCountries"
                     }
-                    if (uniqueCountries.size() > 3) {
+                    if (uniqueCountries.size() >= 5) {
                         countryBonus = 1.2
                         log.info "Countrybonus for ${tournament} set to $countryBonus as countries is $uniqueCountries"
                     }
@@ -60,17 +59,26 @@ class RankingService
     {
         def tournaments = []
         configurationService.withUniqueSession {
-            tournaments = Tournament.findAllByWeightingTypeAndGame(WeightingType.AUTO, game).sort {a, b -> b.weight <=> a.weight}
+            tournaments = Tournament.findAllByGame(game).sort { a, b -> b.weight <=> a.weight }
             // AUTO weighting starts from premier 5
-            tournaments.each {it.tournamentType = TournamentType.UNRANKED}
-            tournaments.removeAll {!it.ranked || !it.finished}
-            double factor = Math.max(tournaments.size() / 100.0, 1.0)
-            int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4, factor)
-            end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, factor)
-            end = applyType(tournaments, TournamentType.PREMIER_12, end, 12, factor)
-            end = applyType(tournaments, TournamentType.INTERNATIONAL, end, 31, factor)
-            end = applyType(tournaments, TournamentType.SERIES, end, 50, factor)
-            end = applyType(tournaments, TournamentType.CIRCUIT, end, 200, factor)
+            def now = GregorianCalendar.instance
+            def yearAgo = GregorianCalendar.instance
+            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 1)
+            tournaments.findAll { it.weightingType == WeightingType.AUTO }.each { Tournament t ->
+                t.tournamentType = TournamentType.UNRANKED
+            }
+            tournaments.findAll { it.date.before(yearAgo.time)}.each { Tournament t ->
+                t.tournamentType = TournamentType.UNRANKED
+            }
+            tournaments.removeAll {
+                !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo.time)
+            }
+            int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4, 1)
+            end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, 1)
+            end = applyType(tournaments, TournamentType.PREMIER_12, end, 12, 1)
+            end = applyType(tournaments, TournamentType.INTERNATIONAL, end, 31, 1)
+            end = applyType(tournaments, TournamentType.SERIES, end, 50, 1)
+            end = applyType(tournaments, TournamentType.CIRCUIT, end, 200, 1)
             tournaments*.save(failOnError: true)
         }
         return tournaments.size()
@@ -91,13 +99,13 @@ class RankingService
                 }.list()
                 log.info "Found ${results.size()} results"
                 def playerScore = getScore(results) {Result r ->
-                    ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                    r.tournament.ranked? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }
                 p.applyScore(game, playerScore)
-                def decayedScore = getScore(results) {Result r ->
-                    ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                def actualScore = getScore(results) {Result r ->
+                    ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                 }
-                p.applyScore(game, decayedScore)
+                p.applyScore(game, actualScore)
                 p.applyTotalScore(game, playerScore)
                 // calculate CPT score
                 if (game == Version.USF4) {
@@ -134,7 +142,7 @@ class RankingService
             }
             else 0
         }.sort {a, b -> b <=> a}
-        def bestof = scores.take(16)
+        def bestof = scores.take(12)
         (bestof.sum() as Integer) ?: 0
     }
 

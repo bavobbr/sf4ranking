@@ -51,6 +51,9 @@
   </table>
 </div>
 
+<a href="http://www.jdoqocy.com/click-7926414-12312285-1440505557000" target="_top">
+    <img src="http://www.lduhtrp.net/image-7926414-12312285-1440505557000" width="392" height="72" alt="Tritton Gaming Headsets" border="0"/></a>
+
 <h2 class="tournament"><large>found ${details.size()} rankings</large></h2>
 
 <div class="table-responsive">

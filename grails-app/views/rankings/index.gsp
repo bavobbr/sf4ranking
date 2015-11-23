@@ -30,6 +30,32 @@
   </div>
 
 </div>
+<div class="row">
+    <div class="col-md-6">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Main page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:468px;height:15px"
+             data-ad-client="ca-pub-3108290198951174"
+             data-ad-slot="2151634440"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <div class="col-md-6">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Main page -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:468px;height:15px"
+             data-ad-client="ca-pub-3108290198951174"
+             data-ad-slot="2151634440"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+</div>
+
 &NonBreakingSpace;
 <div class="row">
   <div class="col-md-6">
@@ -67,10 +93,10 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Last added tournaments</h3>
+        <h3 class="panel-title">Latest Tournaments</h3>
       </div>
 
       <div class="panel-body">
@@ -82,20 +108,27 @@
     </div>
   </div>
 
-  <div class="col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Last added players</h3>
-      </div>
-
-      <div class="panel-body">
-        <ul>
-          <g:each in="${lastPlayers}" var="p">
-            <li><g:link controller="rankings" action="player" params="[id: p.id]">${p.name}</g:link></li>
-          </g:each>
-      </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+        <a href="http://www.jdoqocy.com/click-7926414-12359324-1443739020000" target="_top">
+            <img src="http://www.lduhtrp.net/image-7926414-12359324-1443739020000" width="300" height="250" alt="Mad Catz Xbox One FightStick" border="0"/></a>
     </div>
   </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Newest Players</h3>
+            </div>
+
+            <div class="panel-body">
+                <ul>
+                    <g:each in="${lastPlayers}" var="p">
+                        <li><g:link controller="rankings" action="player" params="[id: p.id]">${p.name}</g:link></li>
+                    </g:each>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

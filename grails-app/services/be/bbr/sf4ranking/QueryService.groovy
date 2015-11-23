@@ -105,6 +105,22 @@ class QueryService
         return rcount
     }
 
+    Integer countPlayerResultsAfter(Player player, Version game, Date date)
+    {
+        def resultCountQuery = Result.createCriteria()
+        def rcount = resultCountQuery.get() {
+            projections {
+                countDistinct 'id'
+            }
+            tournament {
+                eq("game", game)
+                gt("date", date)
+            }
+            eq("player", player)
+        }
+        return rcount
+    }
+
     List<String> getActiveCountryNames()
     {
         def countries = Player.createCriteria().list {

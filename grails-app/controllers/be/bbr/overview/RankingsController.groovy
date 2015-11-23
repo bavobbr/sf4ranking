@@ -68,12 +68,17 @@ class RankingsController
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def snapshot = null
+        def now = GregorianCalendar.instance
+        def yearAgo = GregorianCalendar.instance
+        yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR)-1)
         if (players && !players.isEmpty())
         {
             snapshot = players?.first()?.snapshot(pgame)
             players.each {
                 def numResults = queryService.countPlayerResults(it, pgame)
+                def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
                 it.metaClass.numResults << {numResults}
+                it.metaClass.numResultsYear << {numResultsYear}
             }
         }
         log.info "returning ${players.size()} players for game $pgame"
@@ -121,7 +126,7 @@ class RankingsController
             }
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
-        unqualifiedPlayers.take(15).each {
+        unqualifiedPlayers.take(16).each {
             it.metaClass.scoreQualified = {true}
         }
         if (pcountry) players.retainAll { it.countryCode == pcountry}
@@ -239,9 +244,9 @@ class RankingsController
             def tteams = it.characterTeams
             def tdate = it.tournament.date?.format("yyyy-MM-dd")
             def tscore = it.tournament.tournamentType ? ScoringSystem.
-                    getDecayedScore(it.tournament.date, it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+                    getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
             def tbasescore = it.tournament.tournamentType ?
-                             ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) : -1
+                             ScoringSystem.getLegacyScore(it.place, it.tournament.weight, it.tournament.tournamentFormat) : -1
             def tplace = it.place
             def tcpt = it.tournament.cptTournament.getScore(it.place)
             if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION)

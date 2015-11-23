@@ -18,88 +18,105 @@
     <span class="glyphicon glyphicon-flash"></span>
 </div>
 <center>
-    <dl class="dl-horizontal player_details">
-        <dt>Country</dt>
-        <dd>
 
-            <g:if test="${player.countryCode != null}">
-                <g:link controller="rankings" action="rank" params="[country: player.countryCode.name()]">
-                    ${player.countryCode?.name}
-                    <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}"
-                           alt="Find players from ${player.countryCode.name}"/>
-                </g:link>
-            </g:if>&NonBreakingSpace;
-        </dd>
-        <dt>Full name</dt>
-        <dd>
-            <g:if test="${player.realname}">
-                ${player.realname}
-            </g:if>
-            <g:else>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="If you want to add your name to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
-            </g:else>
-        </dd>
-        <dt>Teams(s)</dt>
-        <dd>
-            <g:if test="${player.teams}">
-                <g:each in="${player.teams}" var="team">
-                    <g:link mapping="teamByName" action="team" controller="rankings" params="[name: team.name]">${team.name}</g:link>
-                </g:each>
-            </g:if>
-            <g:else>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="You can add this player to a team by sharing this page on Twitter and mentioning the team">(?)</a>
-            </g:else>
-        </dd>
-        <dt>Follow</dt>
-        <dd>
-            <g:if test="${player.twitter}">
-                <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
-            </g:if>
-            <g:else>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="If you want to add your twitter handle to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
-            </g:else>
-        </dd>
-        <dt>Tweet results</dt>
-        <dd>
-        <g:render template="/templates/share"/>&NonBreakingSpace;
-        </dd>
-        <dt>Main Game</dt>
-        <dd>
-            <g:link controller="rankings" action="rank" params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
-        </dd>
-        <dt>CPT Score</dt>
-        <dd>
-            ${player.cptScore}
-        </dd>
-        <dt>CPT Qualified</dt>
-        <dd>
-            ${player.cptQualified? "Yes" : "No"}
-        </dd>
-    </dl>
+    <div class="row">
+        <div class="col-md-6">
+            <dl class="dl-horizontal player_details">
+                <dt>Country</dt>
+                <dd>
+
+                    <g:if test="${player.countryCode != null}">
+                        <g:link controller="rankings" action="rank" params="[country: player.countryCode.name()]">
+                            ${player.countryCode?.name}
+                            <g:img dir="images/countries" file="${player.countryCode.name().toLowerCase() + '.png'}"
+                                   alt="Find players from ${player.countryCode.name}"/>
+                        </g:link>
+                    </g:if>&NonBreakingSpace;
+                </dd>
+                <dt>Full name</dt>
+                <dd>
+                    <g:if test="${player.realname}">
+                        ${player.realname}
+                    </g:if>
+                    <g:else>
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="If you want to add your name to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+                    </g:else>
+                </dd>
+                <dt>Teams(s)</dt>
+                <dd>
+                    <g:if test="${player.teams}">
+                        <g:each in="${player.teams}" var="team">
+                            <g:link mapping="teamByName" action="team" controller="rankings"
+                                    params="[name: team.name]">${team.name}</g:link>
+                        </g:each>
+                    </g:if>
+                    <g:else>
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="You can add this player to a team by sharing this page on Twitter and mentioning the team">(?)</a>
+                    </g:else>
+                </dd>
+                <dt>Follow</dt>
+                <dd>
+                    <g:if test="${player.twitter}">
+                        <g:render template="/templates/follow" model="[twitter: player.twitter]"/>&NonBreakingSpace;
+                    </g:if>
+                    <g:else>
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="If you want to add your twitter handle to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+                    </g:else>
+                </dd>
+                <dt>Tweet results</dt>
+                <dd>
+                <g:render template="/templates/share"/>&NonBreakingSpace;
+                </dd>
+                <dt>Main Game</dt>
+                <dd>
+                    <g:link controller="rankings" action="rank"
+                            params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
+                </dd>
+                <dt>CPT Score</dt>
+                <dd>
+                    ${player.cptScore}
+                </dd>
+                <dt>CPT Qualified</dt>
+                <dd>
+                    ${player.cptQualified ? "Yes" : "No"}
+                </dd>
+            </dl>
+        </div>
+
+        <div class="col-md-6">
+            <a href="http://www.kqzyfj.com/click-7926414-12359324-1443739020000" target="_top">
+                <img src="http://www.ftjcfx.com/image-7926414-12359324-1443739020000" width="300" height="250" alt="Mad Catz Xbox One FightStick" border="0"/></a>
+            </div>
+    </div>
 
     <ul class="nav nav-tabs">
         <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
         <g:each in="${results}" var="ranking" status="index">
-            <li><a href="#${ranking.key.name()}" data-toggle="tab">${ranking.key.name()} <span class="badge">${ranking.value.size()}</span></a></li>
+            <li><a href="#${ranking.key.name()}" data-toggle="tab">${ranking.key.name()} <span
+                    class="badge">${ranking.value.size()}</span></a></li>
         </g:each>
-%{--
-        <li><a href="#videos" data-toggle="tab">Videos <span class="badge">${player.videos.size()}</span></a></li>
---}%
+    %{--
+            <li><a href="#videos" data-toggle="tab">Videos <span class="badge">${player.videos.size()}</span></a></li>
+    --}%
     </ul>
 
 
     <div id='content' class="tab-content">
         <div class="tab-pane active" id="overview">
-            <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for </small> ${player.name}
+            <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for</small> ${player.name}
             </h3>
+
             <div class="table-responsive">
                 <table class="tablehead" id="infotable">
                     <thead>
                     <tr class="stathead">
                         <th>Game</th>
                         <th>Rank</th>
-                        <th>Relative score</th>
-                        <th>Base Score</th>
+                        <th>Actual score</th>
+                        <th>Legacy Score</th>
                         <th>Main Team</th>
                         <th>Weight</th>
                         <th>Tournaments played</th>
@@ -120,11 +137,15 @@
                                 <td>${ranking.totalScore}</td>
                                 <td>
                                     <g:each in="${ranking.mainCharacters}" var="mainCharacter">
-                                        <g:link action="rank" controller="rankings" params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
+                                        <g:link action="rank" controller="rankings"
+                                                params="[pchar: mainCharacter.name(), id: ranking.game.name()]"
                                                 data-toggle="tooltip" data-placement="top"
                                                 title="Filter on ${mainCharacter.name()}">
-                                            <g:set var="prepend" value="${Version.generalize(ranking.game) == Version.USF4? "thumb_" : ""}"/>
-                                            <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}" file="${prepend+mainCharacter.name().toLowerCase() + '.png'}" height="50" class="charimg"/>
+                                            <g:set var="prepend"
+                                                   value="${Version.generalize(ranking.game) == Version.USF4 ? "thumb_" : ""}"/>
+                                            <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}"
+                                                   file="${prepend + mainCharacter.name().toLowerCase() + '.png'}"
+                                                   height="50" class="charimg"/>
                                         </g:link>
                                     </g:each>
 
@@ -161,7 +182,7 @@
                             <th>Relative Points</th>
                             <th>Base Points</th>
                             <g:if test="${ranking.key == Version.USF4}">
-                            <th>CPT Points</th>
+                                <th>CPT Points</th>
                             </g:if>
                             <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                                 <th>Edit</th>
@@ -170,7 +191,8 @@
                         </thead>
                         <g:each in="${ranking.value}" var="result">
                             <tr>
-                                <td><g:link mapping="tournamentByName" controller="rankings" action="tournament" params="[name: result.tname]"
+                                <td><g:link mapping="tournamentByName" controller="rankings" action="tournament"
+                                            params="[name: result.tname]"
                                             title="View tournament">${result.tname}</g:link></td>
                                 <td>${result.ttype}</td>
                                 <td>${result.tplace}</td>
@@ -178,14 +200,17 @@
                                 <td>
                                     <g:if test="${result.tteams}">
                                         <g:each in="${result.tteams}" var="tteam" status="rowidx">
-                                            <g:if test="${rowidx>0}">
+                                            <g:if test="${rowidx > 0}">
                                                 /
                                             </g:if>
                                             <g:each in="${tteam.pchars}" var="tchar">
-                                                <g:link action="rank" controller="rankings" params="[pchar: tchar.characterType.name(), id: ranking.key.name()]"
+                                                <g:link action="rank" controller="rankings"
+                                                        params="[pchar: tchar.characterType.name(), id: ranking.key.name()]"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Filter on ${tchar.characterType.name()}">
-                                                    <g:img dir="images/chars/${Version.generalize(ranking.key).name().toLowerCase()}" file="${tchar.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
+                                                    <g:img dir="images/chars/${Version.generalize(ranking.key).name().toLowerCase()}"
+                                                           file="${tchar.characterType.name().toLowerCase() + '.png'}"
+                                                           width="22" height="25"
                                                            class="charimg"/>
                                                 </g:link>
                                             </g:each>
@@ -198,7 +223,8 @@
                                     <td>${result.tcpt}</td>
                                 </g:if>
                                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">
-                                    <td><g:link controller="result" action="show" params="[id: result.resultid]">[Update result as admin]</g:link></td>
+                                    <td><g:link controller="result" action="show"
+                                                params="[id: result.resultid]">[Update result as admin]</g:link></td>
                                 </g:if>
                             </tr>
                         </g:each>
@@ -213,26 +239,27 @@
 
 
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
-            <g:link controller="admin" action="selectPlayerVideos" params="['id': player.id]">[Update videos as admin]</g:link>
+            <g:link controller="admin" action="selectPlayerVideos"
+                    params="['id': player.id]">[Update videos as admin]</g:link>
             <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
             <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
         </g:if>
 
-%{--        <div class="tab-pane" id="videos">
-            <g:if test="${player.videos}">
-                <h2>Player videos <small>found ${player.videos.size()} videos</small></h2>
+    %{--        <div class="tab-pane" id="videos">
+                <g:if test="${player.videos}">
+                    <h2>Player videos <small>found ${player.videos.size()} videos</small></h2>
 
-                <div class="row">
-                    <g:each in="${player.videos}" var="video">
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/${video}" frameborder="0"
-                                                                           allowfullscreen></iframe></div>
-                            </a>
-                        </div>
-                    </g:each>
-                </div>
-            </g:if></div>--}%
+                    <div class="row">
+                        <g:each in="${player.videos}" var="video">
+                            <div class="col-xs-6 col-md-3">
+                                <a href="#" class="thumbnail">
+                                    <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/${video}" frameborder="0"
+                                                                               allowfullscreen></iframe></div>
+                                </a>
+                            </div>
+                        </g:each>
+                    </div>
+                </g:if></div>--}%
 </center>
 <g:render template="/templates/prettify"/>
 </body>

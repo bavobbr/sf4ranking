@@ -16,7 +16,7 @@
           href="http://www.atpworldtour.com/">ATP and WTA</a>. Players earn points by placing in tournaments.
   Tournaments are ordered by importance and given a classification. The players in those tournaments are then assigned a score based on their place within a tournament, adjusted with the tournament weight.<br/>
   </p><p>
-    The goals is to rank the tournament performance of players in popular fighting games like Street Fighter 4 (vanilla, super, arcade edition amd AE2012), Marvel vs Capcom 3, Killer Instinct and Skullgirls.
+    The goals is to rank the tournament performance of players in popular fighting games like Street Fighter 4 (vanilla, super, arcade edition, AE2012 and Ultra), Marvel vs Capcom 3, Killer Instinct, Mortal Kombat X, Blazblue and Skullgirls.
 </p>
 </div>
 
@@ -172,9 +172,9 @@ For auto-weighted tournament types the following order is used:
   </tbody>
 </table>
 </div>
-These are distributed according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
+These are distributed over tournaments of the last year according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
 Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
-In order to scale out better the number of tournaments each class has scales above 120. This avoids too heavy contention for the highest classes for games that have been runnign for years (eg AE2012 and MVC3 will have 20% more PREMIER events).
+This forms the basis of the actual score, which considers tournaments of the last year in a sliding window. Next to that a player also gets a total score for every game. The total score is the sum of tournament scores times tournament weight. So the tournament weight is simply used as a modifier. All tournaments of the game are counted in the total score.
 
 <h3>Ranking system</h3>
 <g:img dir="images" file="rank_flow.png" class="charimg"/>
