@@ -90,7 +90,7 @@
 
 
 
-<h3 class="tournament"><small>Top32 listed players by country</small></h3>
+<h3 class="tournament"><small>Qualified listed players by country</small></h3>
 <div class="table-responsive">
     <table class="tablehead" id="datatable4">
         <thead>
@@ -110,25 +110,6 @@
     </table>
 </div>
 
-<h3 class="tournament"><small>Qualified players by country</small></h3>
-<div class="table-responsive">
-    <table class="tablehead" id="datatable5">
-        <thead>
-        <tr class="stathead">
-            <th>Country</th>
-            <th>Amount</th>
-            <th>Players</th>
-        </tr>
-        </thead>
-        <g:each in="${byCountryQual}" var="t">
-            <tr>
-                <td>${t.key}</td>
-                <td>${t.value.size()}</td>
-                <td>${t.value.collect { it.name }.join(", ")}</td>
-            </tr>
-        </g:each>
-    </table>
-</div>
 
 <h3 class="tournament"><small>Total listed players by country</small></h3>
 <div class="table-responsive">

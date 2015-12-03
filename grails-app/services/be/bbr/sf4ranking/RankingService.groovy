@@ -60,10 +60,16 @@ class RankingService
         def tournaments = []
         configurationService.withUniqueSession {
             tournaments = Tournament.findAllByGame(game).sort { a, b -> b.weight <=> a.weight }
+            if (!tournaments) return
             // AUTO weighting starts from premier 5
-            def now = GregorianCalendar.instance
-            def yearAgo = GregorianCalendar.instance
+            def lastTournament = tournaments.sort { Tournament t -> t.date }.last()
+            println "Using last tournament $lastTournament on ${lastTournament.date} as reference"
+            def now = lastTournament.date.toCalendar()
+            def yearAgo = lastTournament.date.toCalendar()
+
+            tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
             yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 1)
+            println "year ago is $yearAgo.time"
             tournaments.findAll { it.weightingType == WeightingType.AUTO }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
@@ -142,7 +148,7 @@ class RankingService
             }
             else 0
         }.sort {a, b -> b <=> a}
-        def bestof = scores.take(12)
+        def bestof = scores.take(10)
         (bestof.sum() as Integer) ?: 0
     }
 
@@ -188,6 +194,7 @@ class RankingService
                 }
             }
         }
+
         return players.size()
     }
 
@@ -252,6 +259,12 @@ class RankingService
                     log.info "Main game is $main"
                     player.mainGame = main
                 }
+                player.rankings.each {
+                    if (it.score == 0 && it.totalScore == 0) {
+                        player.deleteRanking(it.game)
+                    }
+                }
+
             }
         }
         return Player.count

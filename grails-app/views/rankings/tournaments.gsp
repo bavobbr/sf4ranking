@@ -23,6 +23,7 @@
       <th>Location</th>
       <th>Game</th>
       <th>Weight</th>
+      <th>Ranking type</th>
       <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
       <th>Pro Tour</th>
       </g:if>
@@ -44,6 +45,7 @@
         </td>
         <td>${t.game?.name()}</td>
         <td>${t.weight}</td>
+        <td>${t.weightingType}</td>
         <td>
           <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
             ${t.cptTournament?.value}

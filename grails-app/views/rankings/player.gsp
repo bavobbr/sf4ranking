@@ -83,6 +83,10 @@
                 <dd>
                     ${player.cptQualified ? "Yes" : "No"}
                 </dd>
+                <dt>Compare</dt>
+                <dd>
+                    <g:link controller="stats" action="compare" params="[p1: player.id]">versus</g:link>
+                </dd>
             </dl>
         </div>
 

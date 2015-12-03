@@ -4,6 +4,7 @@
 <head>
     <title><g:layoutTitle/></title>
     <r:layoutResources/>
+
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
@@ -12,13 +13,16 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
-    <link rel="stylesheet" href="${resource(dir: 'assets/css', file: 'tablecloth.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'assets/css', file: 'prettify.css')}" type="text/css">
+    <script src="${resource(dir: '/assets/js', file: 'jquery.metadata.js')}"></script>
+    <script src="${resource(dir: '/assets/js', file: 'jquery.tablesorter.min.js')}"></script>
+    <script src="${resource(dir: '/assets/js', file: 'jquery.tablecloth.js')}"></script>
+    <link rel="stylesheet" href="${resource(dir: '/assets/css', file: 'tablecloth.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: '/assets/css', file: 'prettify.css')}" type="text/css">
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_bootstrap.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
+
     <script>
         $(function ()
           {
@@ -77,9 +81,7 @@
 </head>
 
 <body>
-<script src="${resource(dir: 'assets/js', file: 'jquery.metadata.js')}"></script>
-<script src="${resource(dir: 'assets/js', file: 'jquery.tablesorter.min.js')}"></script>
-<script src="${resource(dir: 'assets/js', file: 'jquery.tablecloth.js')}"></script>
+
 
 <g:render template="/templates/facebook"/>
 
@@ -282,7 +284,6 @@
     </div>
 </div>
 
-<r:layoutResources/>
 
 <script>
     (function (i, s, o, g, r, a, m)
@@ -303,5 +304,6 @@
     ga('send', 'pageview');
 
 </script>
+
 </body>
 </html>

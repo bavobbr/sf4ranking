@@ -43,6 +43,7 @@ class RankingsController
     def rank()
     {
         def pgame = Version.fromString(params.id) ?: Version.AE2012
+        def palltime = params.alltime?.toBoolean()?: false
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
@@ -52,7 +53,7 @@ class RankingsController
         def filtered = pchar || pcountry
         log.info "Ranking for game $pgame offset $poffset max $pmax country $pcountry char $pchar filtered $filtered $pfiltermain"
 
-        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame)
+        def players = queryService.findPlayers(pchar, pcountry, pmax, poffset, pgame, palltime)
         if (pfiltermain)
         {
             players.retainAll {pchar in it.rankings.find {it.game == pgame}?.mainCharacters}
@@ -84,7 +85,7 @@ class RankingsController
         log.info "returning ${players.size()} players for game $pgame"
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
          total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain,
-         updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot]
+         updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot, alltime: palltime]
     }
 
     def cpt()
@@ -177,18 +178,21 @@ class RankingsController
         def pastDirectPlaces = pastTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO]  }
 
         def players = queryService.findCptPlayers()
-        def players32 = players.take(32)
-        def playersQual = players.findAll { it.cptQualified }
+        def qualifiedPlayers = players.findAll { it.cptQualified }
+        def unqualifiedPlayers = players.findAll { !it.cptQualified }
+        qualifiedPlayers.addAll(unqualifiedPlayers.take(16))
+        qualifiedPlayers.sort { it.cptScore }
         def byCountry = players.groupBy { it.countryCode }
-        def byCountry32 = players32.groupBy { it.countryCode }
-        def byCountryQual = playersQual.groupBy { it.countryCode }
+        def byCountry32 = qualifiedPlayers.groupBy { it.countryCode }
 
-        [coming: comingTournaments, played: pastTournaments, byCountry: byCountry, byCountry32: byCountry32, byCountryQual: byCountryQual, maxTotal: maxTotal, directPlaces: directPlaces, pastMaxTotal: pastMaxTotal, pastDirectPlaces: pastDirectPlaces]
+        [coming: comingTournaments, played: pastTournaments, byCountry: byCountry, byCountry32: byCountry32, maxTotal: maxTotal, directPlaces: directPlaces, pastMaxTotal: pastMaxTotal, pastDirectPlaces: pastDirectPlaces]
     }
 
     def cptCharacterStats() {
         def players = queryService.findCptPlayers()
-        def players32 = players.take(32)
+        def players32 = players.findAll { it.cptQualified }
+        def unqualifiedPlayers = players.findAll { !it.cptQualified }
+        players32.addAll(unqualifiedPlayers.take(16))
         def byMainCharacter32 = players32.groupBy { it.findRanking(Version.USF4).mainCharacters?.first() }
         def secondarySeenTop32 = [:]
         players32.each { def player ->

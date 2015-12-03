@@ -484,4 +484,117 @@ class StatsController
             stats?.player = v
         }
     }
+
+    def compare()
+    {
+        def p1 = params.p1? Player.get(params.p1) : null
+        def p2 = params.p2? Player.get(params.p2) : null
+        println "Setting up for compare of $p1 vs $p2"
+        [players: Player.list(order: "asc", sort: 'name'), p1: p1, p2: p2]
+    }
+
+    def compareResults()
+    {
+        def p1 = Player.findById(params.p1)
+        def p2 = Player.findById(params.p2)
+        List<Comparison> comparisons = []
+        Version.values().each { game ->
+            def p1Rank = p1.rankings.find { it.game == game }
+            def p2Rank = p2.rankings.find { it.game == game }
+            if (p1Rank && p2Rank) {
+                def p1Tournaments = p1.results.findAll { it.tournament.game == game}.collect { it.tournament }
+                def p2Tournaments = p2.results.findAll { it.tournament.game == game}.collect { it.tournament }
+
+                Comparison comparison = new Comparison(game: game.name())
+                comparison.listingsP1 = p1Tournaments.size()
+                comparison.listingsP2 = p2Tournaments.size()
+                comparison.listingsDiff = comparison.listingsP1 - comparison.listingsP2
+                comparison.listingsResult = comparison.calculate(comparison.listingsP1, comparison.listingsP2)
+
+                def commonTournaments = p1Tournaments.findAll { it.results.any { it.player.name == p2.name } }
+                comparison.outrankP1 = commonTournaments.count {
+                    def p1Result = it.results.find { it.player == p1 }
+                    def p2Result = it.results.find { it.player == p2 }
+                    return p1Result.place < p2Result.place
+                }
+                comparison.outrankP2 = commonTournaments.count {
+                    def p1Result = it.results.find { it.player == p1 }
+                    def p2Result = it.results.find { it.player == p2 }
+                    return p2Result.place < p1Result.place
+                }
+                comparison.outrankDiff = comparison.outrankP1 - comparison.outrankP2
+                comparison.outrankResult = comparison.calculate(comparison.outrankP1, comparison.outrankP2)
+
+                comparison.scoreP1 = p1Rank.score
+                comparison.scoreP2 = p2Rank.score
+                comparison.scoreDiff = comparison.scoreP1 - comparison.scoreP2
+                comparison.scoreResult = comparison.calculate(comparison.scoreP1, comparison.scoreP2)
+
+                comparison.totalscoreP1 = p1Rank.totalScore
+                comparison.totalscoreP2 = p2Rank.totalScore
+                comparison.totalscoreDiff = comparison.totalscoreP1 - comparison.totalscoreP2
+                comparison.totalscoreResult = comparison.calculate(comparison.totalscoreP1, comparison.totalscoreP2)
+
+                comparison.rankP1 = p1Rank.rank
+                comparison.rankP2 = p2Rank.rank
+                comparison.rankDiff = comparison.rankP2 - comparison.rankP1
+                comparison.rankResult = comparison.calculate(comparison.rankP2, comparison.rankP1)
+                comparisons << comparison
+            }
+        }
+        def p1Exclusive = p1.rankings.findAll { !(it.game in p2.rankings.game) }.collect { it.game }
+        def p2Exclusive = p2.rankings.findAll { !(it.game in p1.rankings.game) }.collect { it.game }
+
+        [p1: p1, p2: p2, games: comparisons, players: Player.list(order: "asc", sort: 'name'), p1Exclusive: p1Exclusive, p2Exclusive: p2Exclusive]
+    }
+
+
+    class Comparison {
+        enum ComparisonResult { WIN, LOSE, DRAW }
+
+        private ComparisonResult calculate(Integer p1, Integer p2) {
+            if (p1 > p2) return ComparisonResult.WIN
+            else  {
+                if (p1 < p2) return ComparisonResult.LOSE
+                else return ComparisonResult.DRAW
+            }
+        }
+
+        public String css(ComparisonResult result) {
+            switch (result) {
+                case ComparisonResult.WIN: return "success"
+                case ComparisonResult.LOSE: return "danger"
+                case ComparisonResult.DRAW: return "warning"
+                default: return ""
+            }
+        }
+
+        String game
+
+        Integer listingsP1
+        Integer listingsP2
+        Integer listingsDiff
+        ComparisonResult listingsResult
+
+        Integer outrankP1
+        Integer outrankP2
+        Integer outrankDiff
+        ComparisonResult outrankResult
+
+        Integer rankP1
+        Integer rankP2
+        Integer rankDiff
+        ComparisonResult rankResult
+
+        Integer scoreP1
+        Integer scoreP2
+        Integer scoreDiff
+        ComparisonResult scoreResult
+
+        Integer totalscoreP1
+        Integer totalscoreP2
+        Integer totalscoreDiff
+        ComparisonResult totalscoreResult
+
+    }
 }

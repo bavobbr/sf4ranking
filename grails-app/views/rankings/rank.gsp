@@ -2,18 +2,24 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - ${game.value}</title>
+    <g:if test="${alltime}">
+        <title>${game.value} All-time Rankings</title>
+    </g:if>
+    <g:else><title>${game.value} World Rankings</title>
+    </g:else>
+
 </head>
 
 <body>
 <g:if test="${filtered}">
-    <center><h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2><span class="glyphicon glyphicon-flash"></span>
-        <h4 class="subtitle">rank.shoryuken.com</h4></center>
+    <center><h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2></center>
 </g:if>
+<g:elseif test="${alltime}">
+    <center><h2 class="title-filtered">${game.value} World Rankings - All-time score ranking</h2></center>
+</g:elseif>
 <g:else>
     <center>
-        <h2 class="title">${game.value} World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
-        <h4 class="subtitle">rank.shoryuken.com</h4>
+        <h2 class="title">${game.value} World Rankings</h2>
     </center>
 </g:else>
 
@@ -30,16 +36,25 @@
 
   </div>
 </g:if>
-
+<div><p>
+    <g:if test="${alltime}">
+        This ranking is based on all tournaments results from ${game.name()}. If you would like to see how a player did
+over the last year of ${game.value} you can find a ranking on the <g:link controller="rankings" action="rank" params="[alltime:false, id: game.name()]">Actual Ranking</g:link> page.
+    </g:if>
+    <g:else>
+This ranking is based on tournaments results between now and one year ago using the official tournament scoring detailed on <g:link controller="about">FAQ</g:link>. The list is updated every week. If you would like to see how a player did
+over the lifespan of ${game.value} you can find an unlimited ranking based on pure tournament weight on the <g:link controller="rankings" action="rank" params="[alltime:true, id: game.name()]">All-time Ranking</g:link> page.
+    </g:else>
+</div></p>
 <div class="table-responsive">
 
   <table class="table table-striped table-hover table-condensed">
     <thead>
     <tr>
-      <g:if test="${filtered}">
+      <g:if test="${filtered || alltime}">
         <th>Index</th>
       </g:if>
-      <th>World Rank</th>
+      <th>Rank</th>
       <th>Name</th>
       <th>Team</th>
       <th>Character</th>
@@ -48,9 +63,12 @@
         <th>Total Score <a href="#" data-toggle="tooltip" data-placement="top" title="The total score is the sum of scores for all tournaments in this game. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a></th>
       <th>Total Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The total amount of tournaments contributing to total score">(?)</a></th>
       <th>Country</th>
-      <g:if test="${snapshot != null}">
+      <g:if test="${snapshot != null && !alltime}">
         <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
       </g:if>
+        <g:elseif test="${alltime}">
+            <th>Trend <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between alltime and actual ranking. This shows if a player is trending upwards or downwards">(?)</a></th>
+        </g:elseif>
     <g:if test="${SecurityUtils.subject.isPermitted("player")}">
         <th>Handle</th>
         <th>Twitter</th>
@@ -62,7 +80,7 @@
     <g:each in="${players}" var="p" status="idx">
 
       <tr>
-        <g:if test="${filtered}">
+        <g:if test="${filtered || alltime}">
           <td>${idx + poffset + 1}</td>
         </g:if>
         <td>${p.rank(game)}
@@ -105,7 +123,7 @@
             </g:link>
           </g:if>
         </td>
-        <g:if test="${snapshot != null}">
+        <g:if test="${snapshot != null && !alltime}">
             <g:if test="${p.diffRank(game) == null}">
                 <td class="warning">
                 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
@@ -125,6 +143,25 @@
             </td>
             </g:else>
         </g:if>
+          <g:elseif test="${alltime}">
+              <g:if test="${p.rank(game) == null}">
+                  <td class="warning">
+                      <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">d</span>
+                  </td>
+              </g:if>
+              <g:else>
+                  <td class="${idx + poffset + 1-p.rank(game)>=0?'success' : 'danger'}">
+                      <g:if test="${idx + poffset + 1-p.rank(game)>0}">
+                          <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                          ${Math.abs(idx + poffset + 1-p.rank(game))}
+                      </g:if>
+                      <g:elseif test="${idx + poffset + 1-p.rank(game) < 0}">
+                          <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                          ${Math.abs(idx + poffset + 1-p.rank(game))}
+                      </g:elseif>
+                  </td>
+              </g:else>
+          </g:elseif>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td>
             ${p.realname}
@@ -163,6 +200,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
       <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
       <g:checkBox name="filtermain" class="form-control" value="${ffiltermain}"/>
       <g:hiddenField name="id" value="${game.name()}"/> Only search on main char
+      <g:hiddenField name="alltime" value="${alltime}"/>
       <button type="submit" class="btn btn-primary">Submit</button>
     </g:form>
   </div>
