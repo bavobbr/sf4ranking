@@ -8,7 +8,13 @@
 
 <body>
 <h2 class="tournament"><small>${tournament.name}</small> Tournament details</h2>
+<g:if test="${updateMessage}">
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <g:message message="${updateMessage}"/>
 
+    </div>
+</g:if>
 <div class="table-responsive">
   <table class="table table-striped table-hover tdetails">
     <thead>
@@ -51,8 +57,7 @@
   </table>
 </div>
 
-<a href="http://www.jdoqocy.com/click-7926414-12312285-1440505557000" target="_top">
-    <img src="http://www.lduhtrp.net/image-7926414-12312285-1440505557000" width="392" height="72" alt="Tritton Gaming Headsets" border="0"/></a>
+<a rel="nofollow" href="http://www.amazon.com/gp/product/B01574SORE/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01574SORE&linkCode=as2&tag=fgwora-20&linkId=LAP6UPXZC2SJQCAF"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01574SORE&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=fgwora-20" ></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=fgwora-20&l=am2&o=1&a=B01574SORE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
 <h2 class="tournament"><large>found ${details.size()} rankings</large></h2>
 
@@ -111,7 +116,7 @@
           <td>${tournament.cptTournament.getScore(result.rplace)}</td>
         </g:if>
         <g:if test="${tournament.cptTournament in [be.bbr.sf4ranking.CptTournament.PREMIER, be.bbr.sf4ranking.CptTournament.EVO, be.bbr.sf4ranking.CptTournament.CC]}">
-          <td>${tournament.cptTournament.getPrize(result.rplace)}</td>
+          <td>${tournament.cptTournament.getPrize(result.rplace, tournament.countryCode)}</td>
         </g:if>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td><g:link controller="result" action="edit" params="['id': result.resultid]">[Update result]</g:link></td>

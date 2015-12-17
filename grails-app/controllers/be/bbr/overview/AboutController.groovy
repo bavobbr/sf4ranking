@@ -21,4 +21,6 @@ class AboutController
                 last: highest?.date? highest.date.first() : null
         ]
     }
+
+    def sf5() {}
 }

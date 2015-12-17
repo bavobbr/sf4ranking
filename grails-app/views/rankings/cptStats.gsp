@@ -79,7 +79,7 @@
                 </td>
                 <td>${t.qualified()}</td>
                 <td>${t.getCptTournament().getScore(1)}</td>
-                <td>${t.getCptTournament().getPrize(1)}</td>
+                <td>${t.getCptTournament().getPrize(1, t.countryCode)}</td>
             </tr>
         </g:each>
 

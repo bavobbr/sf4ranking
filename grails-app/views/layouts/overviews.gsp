@@ -189,6 +189,7 @@
                         </ul>
                     </li>
                     <li><g:link action="index" controller="about">FAQ</g:link></li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -197,7 +198,7 @@
                             <li><g:link action="cptCharacterStats" controller="rankings">Characters used</g:link></li>
                         </ul>
                     </li>
-
+                    <li><g:link controller="about" action="sf5">SF5 PRE-ORDER GUIDE</g:link></li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

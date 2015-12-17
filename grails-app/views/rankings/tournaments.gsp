@@ -12,7 +12,13 @@
 
 <body>
 <h2 class="tournament"><small>${tournaments.size()} Tournaments Registered</small></h2>
+<g:if test="${updateMessage}">
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <g:message message="${updateMessage}"/>
 
+    </div>
+</g:if>
 <div class="table-responsive">
   <table class="tablehead" id="datatable">
     <thead>

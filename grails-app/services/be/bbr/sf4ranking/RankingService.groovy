@@ -68,7 +68,7 @@ class RankingService
             def yearAgo = lastTournament.date.toCalendar()
 
             tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
-            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 1)
+            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 2)
             println "year ago is $yearAgo.time"
             tournaments.findAll { it.weightingType == WeightingType.AUTO }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
@@ -123,9 +123,7 @@ class RankingService
                             cptScore += it.tournament.cptTournament.getScore(it.place)
                             cptCount++
                             def countryCode = it.tournament.countryCode
-                            if (countryCode != CountryCode.JP && countryCode != CountryCode.BR) {
-                                prize = prize + it.tournament.cptTournament.getPrize(it.place)
-                            }
+                            prize = prize + it.tournament.cptTournament.getPrize(it.place, countryCode)
                         }
                     }
                     p.cptScore = cptScore
@@ -148,7 +146,7 @@ class RankingService
             }
             else 0
         }.sort {a, b -> b <=> a}
-        def bestof = scores.take(10)
+        def bestof = scores.take(12)
         (bestof.sum() as Integer) ?: 0
     }
 

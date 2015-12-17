@@ -21,6 +21,13 @@
         <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in the top32 region. Those that directly qualified are invited to the season finals in December, as well as the highest 15 scoring players.
         </div>
     </div>
+<g:if test="${updateMessage}">
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <g:message message="${updateMessage}"/>
+
+    </div>
+</g:if>
 
 <div class="table-responsive">
 

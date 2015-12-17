@@ -69,9 +69,11 @@ class RankingsController
         charnames.add(0, "any character")
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def snapshot = null
-        def now = GregorianCalendar.instance
+        def lastTournament = queryService.lastTournament(pgame)
+        println "Last tournament : $lastTournament"
+        def now = lastTournament.date.toCalendar()
         def yearAgo = GregorianCalendar.instance
-        yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR)-1)
+        yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR)-2)
         if (players && !players.isEmpty())
         {
             snapshot = players?.first()?.snapshot(pgame)
@@ -139,25 +141,26 @@ class RankingsController
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
         log.info "returning ${players.size()} players for game $pgame"
+
         [players: players,
          total: playercount, updateMessage: lastUpdateMessage, game: pgame, countries: countrynames, chars: charnames,
-         lastUpdate: lastUpdate]
+         lastUpdate: lastUpdate, ]
     }
 
     def cptStats() {
         def comingTournaments = Tournament.where {
-            game == Version.USF4
-            cptTournament != null
-            cptTournament != CptTournament.NONE
+            game == Version.USF4 &&
+            cptTournament != null &&
+            cptTournament != CptTournament.NONE &&
             finished == false
         }.list()
         def maxTotal = comingTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
 
         def directPlaces = comingTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO]  }
         def pastTournaments = Tournament.where {
-            game == Version.USF4
-            cptTournament != null
-            cptTournament != CptTournament.NONE
+            game == Version.USF4 &&
+            cptTournament != null &&
+            cptTournament != CptTournament.NONE &&
             finished == true
         }.list()
         def quals = []
@@ -196,8 +199,10 @@ class RankingsController
         def byMainCharacter32 = players32.groupBy { it.findRanking(Version.USF4).mainCharacters?.first() }
         def secondarySeenTop32 = [:]
         players32.each { def player ->
+            List<GameCharacter> characters = []
             player.results.findAll { it.tournament.game == Version.USF4  && it.tournament.cptTournament != CptTournament.NONE }.each {
                 it.characterTeams.each {
+                    characters.addAll(it.pchars)
                     it.pchars.each {
                         if (secondarySeenTop32.containsKey(it.characterType)) {
                             secondarySeenTop32[it.characterType] << player
@@ -205,6 +210,9 @@ class RankingsController
                     }
                 }
             }
+            Map<GameCharacter, Integer> byChar = characters.countBy { it.characterType }
+            def byCharSorted = byChar.sort { a,b -> b.value <=> a.value}
+            player.metaClass.usedCharacters << { byCharSorted }
         }
         def pastTournaments = Tournament.where {
             game == Version.USF4
@@ -229,9 +237,10 @@ class RankingsController
         def notInTop32All = CharacterType.values().findAll {
             it.game == Version.USF4 && !secondarySeenTop32.keySet().contains(it)
         }*.value
+        players32 = players32.sort { it.usedCharacters().size() }.reverse()
 
 
-        [byMainCharacter32: byMainCharacter32, charToCount: charToCount, notIn: notInTop32, notInAll: notInTop32All, secondary32: secondarySeenTop32]
+        [byMainCharacter32: byMainCharacter32, charToCount: charToCount, notIn: notInTop32, notInAll: notInTop32All, secondary32: secondarySeenTop32, players32: players32]
     }
 
     /**
@@ -304,7 +313,9 @@ class RankingsController
         versions.add(0, "any version")
         def types = TournamentType.values().collect {it.name()}
         types.add(0, "any type")
-        [tournaments: tournaments, countries: countries, versions: versions, types: types, game: fgame]
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+
+        [tournaments: tournaments, countries: countries, versions: versions, types: types, game: fgame, updateMessage: lastUpdateMessage]
     }
 
     /**
@@ -337,7 +348,9 @@ class RankingsController
             [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry,
                     rcountryname: rcountryname, resultid: it.id, pskill: pskill, prankingid: prankingid]
         }
-        render view: 'tournament', model: [tournament: tournament, details: details]
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+
+        render view: 'tournament', model: [tournament: tournament, details: details, updateMessage: lastUpdateMessage]
     }
 
     def tournamentByName()
@@ -359,7 +372,9 @@ class RankingsController
             team.metaClass.getTeamScore << {score}
             team.metaClass.getTeamSize << {players.size()}
         }
-        [teams: teams]
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+
+        [teams: teams, updateMessage: lastUpdateMessage]
     }
 
     /**

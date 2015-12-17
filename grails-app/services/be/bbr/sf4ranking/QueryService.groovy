@@ -146,4 +146,14 @@ class QueryService
         }
     }
 
+    Tournament lastTournament(Version game) {
+        def query = Tournament.createCriteria()
+        def last = query.list(max: 1) {
+            eq("game", game)
+            eq("finished", true)
+            order("date", "desc")
+        }
+        return last.size() > 0? last.first() : null
+    }
+
 }

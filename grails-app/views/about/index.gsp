@@ -172,9 +172,9 @@ For auto-weighted tournament types the following order is used:
   </tbody>
 </table>
 </div>
-These are distributed over tournaments of the last year according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
+These are distributed over tournaments of the last two years according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
 Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
-This forms the basis of the actual score, which considers tournaments of the last year in a sliding window. Next to that a player also gets a total score for every game. The total score is the sum of tournament scores times tournament weight. So the tournament weight is simply used as a modifier. All tournaments of the game are counted in the total score.
+This forms the basis of the actual score, which considers tournaments of the last 2 years in a sliding window. Next to that a player also gets a total score for every game. The total score is the sum of tournament scores times tournament weight. So the tournament weight is simply used as a modifier. All tournaments of the game are counted in the total score.
 
 <h3>Ranking system</h3>
 <g:img dir="images" file="rank_flow.png" class="charimg"/>

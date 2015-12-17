@@ -58,8 +58,8 @@ over the lifespan of ${game.value} you can find an unlimited ranking based on pu
       <th>Name</th>
       <th>Team</th>
       <th>Character</th>
-        <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual current score is calculated over a 1-year window. This reflects how well a pleyr has been doing over the last year.">(?)</a></th>
-        <th>Recent Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The amount of tournaments over last year adding to the actual score">(?)</a></th>
+        <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top" title="The actual current score is calculated over a 1-year window. This reflects how well a player has been doing over the last 2 years.">(?)</a></th>
+        <th>Recent Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The amount of tournaments over last 2 years adding to the actual score">(?)</a></th>
         <th>Total Score <a href="#" data-toggle="tooltip" data-placement="top" title="The total score is the sum of scores for all tournaments in this game. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a></th>
       <th>Total Tournaments <a href="#" data-toggle="tooltip" data-placement="top" title="The total amount of tournaments contributing to total score">(?)</a></th>
       <th>Country</th>
