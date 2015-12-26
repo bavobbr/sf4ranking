@@ -966,10 +966,14 @@ public enum CountryCode
     public static CountryCode fromString(String input) {
         if (input == null || input.length() == 0) return null;
         CountryCode[] countryCodes = CountryCode.values();
-        for (CountryCode cc : countryCodes)
+        for (CountryCode cc : countryCodes) {
             if (cc.name().toLowerCase().equals(input.toLowerCase())) {
                 return cc;
             }
+            else if (cc.name.toLowerCase().equals(input.toLowerCase())) {
+                return cc;
+            }
+        }
         return null;
     }
 }

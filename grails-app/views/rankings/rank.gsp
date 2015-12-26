@@ -188,7 +188,7 @@ over the lifespan of ${game.value} you can find an unlimited ranking based on pu
 This is a list of the best ${game.value} tournament players world-wide. The ${game.name()} top player board is composed by looking at player weights, tournament difficulty and international appeal. For more info on the algorithm check out <g:link controller="about">The FAQ page</g:link>. This is a subjective list and is only meant to give an idea on who is making name and fame in the FGC. The ranking aims to provide a database of tournament results as well, open to the community.
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-7">
 <div class="panel panel-info">
   <div class="panel-heading">
     <h3 class="panel-title">Filter</h3>
@@ -197,7 +197,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
   <div class="panel-body">
     <g:form name="filter" controller="rankings" action="rank" role="form" class="form-inline" method="get">
       <g:select name="country" from="${countries}" class="form-control" value="${fcountry}"/>
-      <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
+      <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}" />
       <g:checkBox name="filtermain" class="form-control" value="${ffiltermain}"/>
       <g:hiddenField name="id" value="${game.name()}"/> Only search on main char
       <g:hiddenField name="alltime" value="${alltime}"/>
@@ -206,7 +206,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
   </div>
 </div>
         </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="panel panel-info">
             <a href="http://www.jdoqocy.com/click-7926414-12312285-1440505557000" target="_top">
                 <img src="http://www.lduhtrp.net/image-7926414-12312285-1440505557000" width="392" height="72" alt="Tritton Gaming Headsets" border="0"/></a>

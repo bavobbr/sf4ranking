@@ -227,7 +227,24 @@ public enum CharacterType
     SUB_ZERO("SUB-ZERO", "Sub-Zero", Version.MKX),
     TAKEDA_TAKESHI("TAKEDA_TAKESHI", "Takeda", Version.MKX),
     TANYA("TANYA", "Tanya", Version.MKX),
-    TREMOR("TREMOR", "Tremor", Version.MKX);
+    TREMOR("TREMOR", "Tremor", Version.MKX),
+
+    SF5_BIRDIE("BIRDIE", "Birdie", Version.SF5),
+    SF5_CAMMY("CAMMY", "Cammy", Version.SF5),
+    SF5_CHUNLI("CHUN-LI", "Chun", Version.SF5),
+    SF5_DHALSIM("DHALSIM", "Dhalsim", Version.SF5),
+    SF5_KARIN("KARIN", "Karin", Version.SF5),
+    SF5_KEN("KEN", "Ken", Version.SF5),
+    SF5_LAURA("LAURA", "Laura", Version.SF5),
+    SF5_MBISON("M.BISON", "Bison", Version.SF5),
+    SF5_NASH("NASH", "Nash", Version.SF5),
+    SF5_NECALLI("NECALLI", "Necalli", Version.SF5),
+    SF5_RASHID("RASHID", "Rashid", Version.SF5),
+    SF5_RMIKA("R. MIKA", "Mika", Version.SF5),
+    SF5_RYU("RYU", "Ryu", Version.SF5),
+    SF5_VEGA("VEGA", "Vega", Version.SF5),
+    SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
+    SF5_FANG("F.A.N.G.", "FANG", Version.SF5);
 
 
     private final String value;

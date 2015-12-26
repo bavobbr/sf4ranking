@@ -25,8 +25,8 @@
     <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
   </div>
   <div class="col-md-6">
-    <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-    <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+    <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
+    <g:render template="/templates/top20" model="[game: Version.SF5, players: sf5players]"/>
   </div>
 
 </div>
@@ -62,10 +62,11 @@
     <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
     <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
   </div>
-  <div class="col-md-6">
-    <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
-    <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
-  </div>
+    <div class="col-md-6">
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+    </div>
+
 </div>
 &NonBreakingSpace;
 <div class="row">
@@ -91,6 +92,16 @@
   </div>
 
 </div>
+<div class="row">
+
+    <div class="col-md-6">
+        <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
+    </div>
+
+</div>
+
+
 
 <div class="row">
   <div class="col-md-4">

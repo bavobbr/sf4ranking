@@ -15,7 +15,8 @@ public enum Version
     KI("Killer Instinct"), SKULLGIRLS("Skullgirls"),
     BBCP("BlazBlue: Chronophantasma"),
     IGAU("Injustice"),
-    MKX("Mortal Kombat X");
+    MKX("Mortal Kombat X"),
+    SF5("Street Fighter 5");
 
     private String value;
 
@@ -63,6 +64,8 @@ public enum Version
                 return Version.BBCP;
             case MKX:
                 return Version.MKX;
+            case SF5:
+                return Version.SF5;
             default:
                 return Version.UNKNOWN;
         }

@@ -52,6 +52,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.24'
         runtime 'mysql:mysql-connector-java:5.1.24'
         runtime 'org.apache.commons:commons-math:2.2'
+        compile 'org.compass-project:compass:2.2.0'
     }
 
     plugins {
@@ -64,6 +65,7 @@ grails.project.dependency.resolution = {
 
         compile ":shiro:1.2.1"
         compile ":searchable:0.6.9"
+
 
         build ':tomcat:7.0.55.2'
         compile ':cache:1.1.8'

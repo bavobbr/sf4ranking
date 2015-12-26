@@ -259,7 +259,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (version != Version.USF4 && version != Version.AE2012) return
+                        //if (version != Version.USF4 && version != Version.AE2012) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN

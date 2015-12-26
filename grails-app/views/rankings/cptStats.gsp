@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - Capcom Pro Tour Stats</title>
+  <title>Capcom Pro Tour 2015 Stats</title>
 </head>
 
 <body>

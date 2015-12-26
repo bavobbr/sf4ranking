@@ -5,9 +5,6 @@ import grails.converters.JSON
 import grails.plugin.searchable.SearchableService
 import org.apache.shiro.SecurityUtils
 
-import java.text.DecimalFormat
-import java.text.NumberFormat
-
 /**
  * The controller that is public to users and shows the stats of Player, Tournament as well as overall
  */
@@ -34,10 +31,11 @@ class RankingsController
         def usf4players = queryService.findPlayers(null, null, 10, 0, Version.USF4)
         def bbcpplayers = queryService.findPlayers(null, null, 10, 0, Version.BBCP)
         def mkxplayers = queryService.findPlayers(null, null, 10, 0, Version.MKX)
+        def sf5players = queryService.findPlayers(null, null, 10, 0, Version.SF5)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = Tournament.list(order: "desc", sort: "date", max: 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
-        [players: players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
+        [players: players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
     }
 
     def rank()
@@ -62,8 +60,10 @@ class RankingsController
         log.info "getAll gave ${players.size()} players out of ${playercount}"
 
         def countrynames = queryService.getActiveCountryNames()
+        countrynames.sort(true)
         // list all characters for the filter box
-        def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.name()}
+        def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.value}
+        charnames.sort(true)
         // add a search all for each type
         countrynames.add(0, "any country")
         charnames.add(0, "any character")
@@ -71,17 +71,18 @@ class RankingsController
         def snapshot = null
         def lastTournament = queryService.lastTournament(pgame)
         println "Last tournament : $lastTournament"
-        def now = lastTournament.date.toCalendar()
-        def yearAgo = GregorianCalendar.instance
-        yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR)-2)
-        if (players && !players.isEmpty())
-        {
-            snapshot = players?.first()?.snapshot(pgame)
-            players.each {
-                def numResults = queryService.countPlayerResults(it, pgame)
-                def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
-                it.metaClass.numResults << {numResults}
-                it.metaClass.numResultsYear << {numResultsYear}
+        if (lastTournament) {
+            def now = lastTournament?.date?.toCalendar()
+            def yearAgo = GregorianCalendar.instance
+            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 2)
+            if (players && !players.isEmpty()) {
+                snapshot = players?.first()?.snapshot(pgame)
+                players.each {
+                    def numResults = queryService.countPlayerResults(it, pgame)
+                    def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
+                    it.metaClass.numResults << { numResults }
+                    it.metaClass.numResultsYear << { numResultsYear }
+                }
             }
         }
         log.info "returning ${players.size()} players for game $pgame"

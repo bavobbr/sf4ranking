@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta name="layout" content="overviews"/>
-    <title>Capcom Pro Tour Rankings - ${game.value}</title>
+    <title>Capcom Pro Tour Rankings 2015 - ${game.value}</title>
 </head>
 
 <body>
 <center>
-    <h2 class="title">${game.value} Capcom Pro Tour Rankings</h2>
+    <h2 class="title">${game.value} Capcom Pro Tour Rankings 2015</h2>
 </center>
 
     <div class="panel panel-primary">

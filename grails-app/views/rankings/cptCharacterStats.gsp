@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - Capcom Pro Tour Character Stats</title>
+  <title>Capcom Pro Tour 2015 Character Stats</title>
 </head>
 
 <body>
-<h2>Character Statistics in Capcom Pro Tour</h2>
+<h2>Character Statistics in Capcom Pro Tour 2015</h2>
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
 
 

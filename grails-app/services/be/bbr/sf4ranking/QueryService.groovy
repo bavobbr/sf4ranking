@@ -135,7 +135,7 @@ class QueryService
                 distinct "countryCode"
             }
         }
-        return countries.findResults() {it?.name()}
+        return countries.findResults() {it?.name}
     }
 
     List<Player> findOrphanedPlayers()

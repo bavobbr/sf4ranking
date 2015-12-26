@@ -125,6 +125,8 @@
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.USF4.name()]">World Rankings Ultra SF4</g:link></li>
                             <li><g:link action="rank" controller="rankings"
+                                        params="['id': Version.SF5.name()]">World Rankings Street Fighter 5</g:link></li>
+                            <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
@@ -156,6 +158,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.USF4.name()]">USF4</g:link></li>
+                            <li><g:link action="tournaments" controller="rankings" params="['id': Version.SF5.name()]">Street Fighter 5</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
@@ -193,9 +196,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><g:link action="cpt" controller="rankings">Standings</g:link></li>
-                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries</g:link></li>
-                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used</g:link></li>
+                            <li><g:link action="cpt" controller="rankings">Standings 2015</g:link></li>
+                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries 2015</g:link></li>
+                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
                     <li><g:link controller="about" action="sf5">SF5 PRE-ORDER GUIDE</g:link></li>
