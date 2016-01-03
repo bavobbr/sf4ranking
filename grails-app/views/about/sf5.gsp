@@ -50,54 +50,68 @@ For those that want to order directly (from Madcatz) this is also included when 
          <td><a href="http://amzn.to/1Q6JJoI">Buy in US for $59.96</a></td>
          <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B00ZEYZNHW/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ZEYZNHW&linkCode=as2&tag=srwora-21">£42.00</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B00ZEYZNHW" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
          </td>
-         <td><a href="http://amzn.to/1N2QrZn">EUR 69,90</a></td>
+         <td><a href="http://amzn.to/1N2QrZn">EUR 64,95</a></td>
          <td><a href="http://amzn.to/1NxjAgD">EUR 69,99</a></td>
          <td><a href="http://amzn.to/1N2R4C3">EUR 56,90</a></td>
         </tr>
     <tr>
-    <tr>
         <td>SF5 game PC/SF4</td>
         <td>Game in physical or digital form</td>
-        <td><a href="http://amzn.to/1Papa9P">$59.99 (PS4 digital)</a></td>
+        <td><a href="http://amzn.to/1Papa9P">$59.96 (PS4 digital)</a></td>
         <td><a href="http://amzn.to/1N2QaWc">£39.99 (PC)</a></td>
-        <td><a href="http://amzn.to/1T3rdvz">EUR 49,90 (PC)</a></td>
+        <td><a href="http://amzn.to/1T3rdvz">EUR 39,90 (PC)</a></td>
         <td><a href="http://amzn.to/1NxjHsH">EUR 49,99 (PC)</a></td>
         <td><a href="http://amzn.to/1N2R98W">EUR 42,49  (PC)</a></td>
     </tr>
     <tr>
         <td>Playstation 4</td>
         <td>Console</td>
-        <td><a href="http://amzn.to/1OF6xuE">Buy in US for $354.99</a></td>
-        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B013ULMFEE/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B013ULMFEE&linkCode=as2&tag=srwora-21">£278.49</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B013ULMFEE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+        <td><a href="http://amzn.to/1OF6xuE">Buy in US for $344.00</a></td>
+        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B013ULMFEE/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B013ULMFEE&linkCode=as2&tag=srwora-21">£269.00 </a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B013ULMFEE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
         </td>
-        <td><a href="http://amzn.to/1T3rvmk">EUR 299,00</a></td>
-        <td><a href="http://amzn.to/1N2N8Bw">EUR 299,00</a></td>
-        <td><a href="http://amzn.to/1N2ReJT">EUR 339,00</a></td>
-    </tr>
-    <tr>
-        <td>Playstation 4</td>
-        <td>Console - Uncharted bundle</td>
-        <td><a href="http://amzn.to/1PaqNoa">Buy in US for $339.88</a></td>
-        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B015IT6D1C/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B015IT6D1C&linkCode=as2&tag=srwora-21">£276.50</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B015IT6D1C" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-        </td>
-        <td><a href="http://amzn.to/1Nxnp5D">EUR 379,99</a></td>
-        <td><a href="http://amzn.to/1T3sjHJ">EUR 348,00</a></td>
-        <td><a href="http://amzn.to/1OMws1u">EUR 434,99</a></td>
-    </tr>
-    <tr>
-        <td>Playstation 4</td>
-        <td>Console - Star Wars bundle</td>
-        <td><a href="http://amzn.to/1lEaWCo">Buy in US for $299.00</a></td>
-        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B015MSRABQ/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B015MSRABQ&linkCode=as2&tag=srwora-21">£268.85</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B015MSRABQ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-        </td>
-        <td><a href="http://amzn.to/1Nxnk1C">NA</a></td>
-        <td><a href="http://amzn.to/1N2S60S">NA</a></td>
-        <td><a href="http://amzn.to/1OMwoyU">EUR 459,95 (1TB)</a></td>
+        <td><a href="http://amzn.to/1T3rvmk">EUR 339,99</a></td>
+        <td><a href="http://amzn.to/1N2N8Bw">EUR 354,99</a></td>
+        <td><a href="http://amzn.to/1N2ReJT">EUR 330,00</a></td>
     </tr>
     </tbody>
   </table>
 
 </div>
+
+    Advised Playstation4 bundles
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
+            <tr>
+                <td>Item</td>
+                <td>US Store</td>
+                <td>UK Store</td>
+                <td>FR Store</td>
+                <td>DE Store</td>
+                <td>ES Store</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Bundle</td>
+                <td><a href="http://amzn.to/1JnusOt">Call Of Duty ($349.99)</a></td>
+                <td><a href="http://amzn.to/1mYriGM">Star Wars / 1TB (£321.99)</a></td>
+                <td><a href="http://amzn.to/1VzmO5k">GTA5/Uncharted 1TB (EUR 419.90)</a></td>
+                <td><a href="http://amzn.to/1Vzno30">Two dualshock controllers / 1TB (EUR 399.00)</a></td>
+                <td><a href="http://amzn.to/1VznF5O">CoD, Assasins Creed (EUR 399.99)</a></td>
+            </tr>
+            <tr>
+                <td>Bundle</td>
+                <td><a href="http://amzn.to/1VzbC8E">Uncharted ($342.99)</a></td>
+                <td><a href="http://amzn.to/1mYr9mE">Call Of Duty / 1TB (£329.99)</a></td>
+                <td><a href=""></a></td>
+                <td><a href="http://amzn.to/1N2S60S">Star Wars / 1TB (EUR 445.49)</a></td>
+                <td><a href="http://amzn.to/1VzbC8E">Two dualshock controllers (EUR 399.99)</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
 
 <h3>Optional items</h3>
 Fighting games are most often played on arcade sticks or custom pads that have better directional controls and button layouts. Mad Catz launched an dedicated range of products for Street Fighter 5.
@@ -146,9 +160,9 @@ As you can use all 5 fingers of one hand, no combination is hard to do.</p>
             <td><a href="http://amzn.to/1Na30js">Buy in US for $229.99</a></td>
             <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B00ZPLE84S/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00ZPLE84S&linkCode=as2&tag=srwora-21">£234.17</a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B00ZPLE84S" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
             </td>
-            <td><a href="http://amzn.to/1OagyRR">EUR 299,00</a></td>
-            <td><a href="http://amzn.to/1QuHtrJ">EUR 299,00</a></td>
-            <td><a href="http://amzn.to/1N2RrNc">EUR 210,70</a>
+            <td><a href="http://amzn.to/1OagyRR">NA</a></td>
+            <td><a href="http://amzn.to/1QuHtrJ">NA</a></td>
+            <td><a href="http://amzn.to/1N2RrNc">EUR 220,64 </a>
         </tr>
         </tbody>
     </table>
@@ -175,7 +189,7 @@ With the right amount of dedication all moves can be learnt to be done on pads a
         <tr>
             <td>Mad Catz FightPad PRO</td>
             <td>Pad for PS3 and PS4</td>
-            <td><a href="http://amzn.to/1OF7CCL">Buy in US for $59.99</a></td>
+            <td><a href="http://amzn.to/1OF7CCL">Buy in US for $51.71</a></td>
             <td>UK Store</td>
             <td>FR Store</td>
             <td>DE Store</td>
@@ -197,11 +211,11 @@ With the right amount of dedication all moves can be learnt to be done on pads a
             <td><a href="http://amzn.to/1NxmvWD">£37.99</a></td>
             <td><a href="http://amzn.to/1NxnCFW">EUR 51,95</a></td>
             <td><a href="http://amzn.to/1N2PBMd">EUR 56,99</a></td>
-            <td><a href="http://amzn.to/1N2RmZT">EUR 60,60</a></td>
+            <td><a href="http://amzn.to/1N2RmZT">EUR 52,99</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-    <small>Updated 17th of December</small>
+    <small>Updated 2nd of January</small>
 </body>
 </html>

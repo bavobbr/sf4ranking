@@ -485,6 +485,16 @@ class AdminController
         }
     }
 
+    def reindex()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            dataService.reindexDatabase()
+            flash.message = "Reindexed Compass"
+        }
+        render view: "index"
+    }
+
     def snapshot()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))

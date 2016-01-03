@@ -99,7 +99,7 @@ class DataService
     Set<Player> findAlikes(String original) {
         log.info "Finding match for $original"
         Set<Player> alts = []
-        def searchResult = searchableService.search(max: 5) {
+        def searchResult = Player.search(max: 5) {
             fuzzy("name", original, 0.4)
             fuzzy("twitter", original, 0.7)
             fuzzy("realname", original, 0.7)
@@ -107,25 +107,25 @@ class DataService
         alts = searchResult.results.collect {
             Player.read(it.id)
         }
-        def withoutSpaces = original.replaceAll(" ","")
-        if (withoutSpaces != original) {
-            searchResult = searchableService.search(max: 5) {
-                fuzzy("withoutSpaces", withoutSpaces, 0.4)
-                fuzzy("twitter", withoutSpaces, 0.7)
-                fuzzy("realname", withoutSpaces, 0.7)
-            }
-            alts.addAll(searchResult.results.collect {
-                Player.read(it.id)
-            })
+        def withoutSpecial = original.replaceAll(Player.pattern, "").toLowerCase()
+        println "looking for $withoutSpecial"
+        searchResult = Player.search(max: 5) {
+            fuzzy("simplified", withoutSpecial)
         }
+        println "got $searchResult"
+        alts.addAll(searchResult.results.collect {
+            def p = Player.read(it.id)
+            println "found $p"
+            return p
+        })
         log.info "Found ${alts.size()} matches"
         return alts
     }
 
     @Transactional
-    Player findAlike(String original) {
+    List<Player> findAlike(String original, Integer max) {
         def alikes = findAlikes(original)
-        return alikes? alikes.toList().first() : null
+        return alikes? alikes.toList().take(max) : null
     }
 
     @Transactional
@@ -152,9 +152,9 @@ class DataService
             {
                 Player p = Player.findByCodename(pname.toUpperCase())
                 if (!p) {
-                    def suggestion = findAlike(pname)
-                    if (suggestion) {
-                        feedback << "Player [$pname] not found, did you mean [${suggestion.name}]?"
+                    def suggestions = findAlike(pname, 3)
+                    if (suggestions) {
+                        feedback << "Not found [$pname]. Suggest: ${suggestions.name.join(", ")}"
                     }
                     else {
                         feedback << "Player with name [$pname] will be created new."
@@ -259,7 +259,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        //if (version != Version.USF4 && version != Version.AE2012) return
+                        if (version != Version.USF4 && version != Version.UMVC3) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -482,5 +482,11 @@ class DataService
             }
         }
         return rankings.size()
+    }
+
+    public void reindexDatabase() {
+        log.info "Reindexing..."
+        searchableService.reindex()
+        log.info "Reindexed compass"
     }
 }

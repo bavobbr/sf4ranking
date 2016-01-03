@@ -2,13 +2,13 @@ package be.bbr.sf4ranking
 
 import org.apache.shiro.SecurityUtils
 
-
 class Player
 {
     static constraints = {
         name nullable: false, unique: true
         countryCode nullable: true
         codename nullable: true, unique: true
+        simplified nullable: true, unique: false
         videos nullable: true, unique: false
         wikilink nullable: true
         twitter nullable: true
@@ -27,11 +27,12 @@ class Player
         codename index: 'Name_Idx'
     }
 
-    static searchable = [only: ['name', 'twitter', 'realname']]
+    static searchable = [only: ['name', 'twitter', 'realname', 'simplified']]
 
     String name
     String codename
     String realname
+    String simplified
     CountryCode countryCode
     String wikilink
     String twitter
@@ -47,13 +48,17 @@ class Player
     String creator
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
+    static String pattern = /[^\dA-Za-z]/
+
     def beforeInsert() {
         codename = name.toUpperCase()
+        simplified = codename.replaceAll(pattern, "")
         if (!creator) creator = SecurityUtils.subject?.principal?.toString()
     }
 
     def beforeUpdate() {
         codename = name.toUpperCase()
+        simplified = codename.replaceAll(pattern, "")
     }
 
     Integer skill(Version game) {

@@ -122,14 +122,25 @@ class CleanupService
         }
     }
 
+    /**
+     * Does a first run in setting player skills. This is meant to be manually altered after depending on circmunstances
+     * Eg how moes does he play and how many tournaments are reported from his region
+     * The GOD status of skill 10 is always done manually
+     */
     def autofillSkill(Version game)
     {
         List<PlayerRanking> rankings = PlayerRanking.findAllByGame(game)
-        rankings.sort {a, b -> a.score <=> b.score}
+        def byTotal = rankings.sort {a, b -> a.totalScore <=> b.totalScore}
+        def byActual = rankings.sort {a, b -> a.score <=> b.score}
         def count = rankings.size()
+        rankings.each {
+            it.skill = -1 // RESET
+            it.save()
+        }
         if (count > 0)
         {
             double factor = count / 100
+            log.info("Checking with alltime ranking")
             1.upto(9) {Integer skillLevel ->
                 def lowerBound = Math.log10(skillLevel)
                 def upperBound = Math.log10(skillLevel + 1)
@@ -137,20 +148,54 @@ class CleanupService
                 def intervalStart = lowerBound * factor * 100 as Integer
                 def intervalEnd = upperBound * factor * 100 as Integer
                 log.info "This is from range $intervalStart to $intervalEnd applied from $count rankings using factor $factor"
-                rankings[intervalStart..intervalEnd - 1].each {
-                    if (it.skill < skillLevel)
+                byTotal[intervalStart..intervalEnd - 1].each {
+                    def adjustedSkill = skillLevel
+                    if (!(it.player.countryCode in [CountryCode.US, CountryCode.JP])) {
+                        adjustedSkill++ // auto-compensate for lesser coverage
+                        log.info "alltime - Adding 1 due to country $it.player.countryCode"
+                    }
+                    if (it.skill < adjustedSkill)
                     {
-                        log.info "Applying skill $skillLevel to ${it.player}"
-                        it.skill = skillLevel
+                        log.info "alltime - Promoting player ${it.player} with ${it.skill} to ${adjustedSkill}"
+                        it.skill = adjustedSkill
                         it.save()
                     }
-                    else if (it.skill == skillLevel)
+                    else if (it.skill > adjustedSkill)
                     {
-                        //log.info "Player ${it.player} has a higher skill level of ${it.skill}"
+                        log.info "alltime - Demoting player ${it.player} with ${it.skill} to ${adjustedSkill}"
+                        it.skill = adjustedSkill
+                        it.save()
+                    }
+                }
+
+            }
+            log.info("Checking with actual ranking")
+            1.upto(9) {Integer skillLevel ->
+                def lowerBound = Math.log10(skillLevel)
+                def upperBound = Math.log10(skillLevel + 1)
+                log.info "Level $skillLevel has lowerBound $lowerBound and upperBound $upperBound"
+                def intervalStart = lowerBound * factor * 100 as Integer
+                def intervalEnd = upperBound * factor * 100 as Integer
+                log.info "This is from range $intervalStart to $intervalEnd applied from $count rankings using factor $factor"
+                byActual[intervalStart..intervalEnd - 1].each {
+                    def adjustedSkill = skillLevel
+                    if (!(it.player.countryCode in [CountryCode.US, CountryCode.JP])) {
+                        adjustedSkill++ // auto-compensate for lesser coverage
+                        log.info "actual - adding 1 due to country $it.player.countryCode"
+                    }
+                    if (it.skill < adjustedSkill)
+                    {
+                        log.info "actual - Promoting player for actual score ${it.player} with ${it.skill} to ${adjustedSkill}"
+                        it.skill = adjustedSkill
+                        it.save()
+                    }
+                    else if (it.skill == adjustedSkill)
+                    {
+                        log.info "actual - Leaving player ${it.player} with ${it.skill} as is"
                     }
                     else
                     {
-                        log.info "Player ${it.player} has a higher skill level of ${it.skill}"
+                        log.info "Total skill was higher for player ${it.player} with ${it.skill}, not adjusting to ${adjustedSkill}"
                     }
                 }
             }
@@ -161,7 +206,7 @@ class CleanupService
     {
         List<PlayerRanking> rankings = PlayerRanking.findAllByGame(game)
         def output = ["DIFF FOR GAME $game"]
-        rankings.sort {a, b -> a.score <=> b.score}
+        rankings.sort {a, b -> a.totalScore <=> b.totalScore}
         def count = rankings.size()
         if (count > 0)
         {
@@ -172,10 +217,14 @@ class CleanupService
                 def intervalStart = lowerBound * factor * 100 as Integer
                 def intervalEnd = upperBound * factor * 100 as Integer
                 rankings[intervalStart..intervalEnd - 1].each {
-                    if (it.skill > skillLevel + 1)
+                    def adjustedSkill = skillLevel
+                    if (!(it.player.countryCode in [CountryCode.US, CountryCode.JP])) {
+                        adjustedSkill++ // auto-compensate for lesser coverage
+                    }
+                    if (it.skill > adjustedSkill + 1)
                     {
-                        log.info "Player ${it.player.name}  skill [${it.skill}] autoskill [${skillLevel}]"
-                        output << "Player ${it.player.name}  skill [${it.skill}] autoskill [${skillLevel}]"
+                        log.info "Player ${it.player.name}  skill [${it.skill}] autoskill [${adjustedSkill}]"
+                        output << "Player ${it.player.name}  skill [${it.skill}] autoskill [${adjustedSkill}]"
                     }
                 }
             }
@@ -234,22 +283,5 @@ class CleanupService
         players.each {log.info "dropping player $it"}
         return players.size()
     }
-
-/*    def notchDates() {
-        def tournaments = Tournament.where {
-            id >= 94
-        }
-        tournaments.each {
-            log.info "need to fix tournament ${it.name} at ${it.date}"
-            def date = it.date
-            Calendar cal = date.toCalendar()
-            def oldMonth = cal.get(Calendar.MONTH)
-            cal.set(Calendar.MONTH, oldMonth-1)
-            def newdate = cal.getTime()
-            log.info "new date would be $newdate"
-            it.date = newdate
-            it.save()
-        }
-    }*/
 
 }

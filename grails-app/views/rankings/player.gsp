@@ -118,8 +118,8 @@
                     <tr class="stathead">
                         <th>Game</th>
                         <th>Rank</th>
-                        <th>Actual score</th>
-                        <th>Legacy Score</th>
+                        <th>Current score</th>
+                        <th>Lifetime Score</th>
                         <th>Main Team</th>
                         <th>Weight</th>
                         <th>Tournaments played</th>
