@@ -61,17 +61,17 @@ For those that want to order directly (from Madcatz) this is also included when 
         <td><a href="http://amzn.to/1N2QaWc">£39.99 (PC)</a></td>
         <td><a href="http://amzn.to/1T3rdvz">EUR 39,90 (PC)</a></td>
         <td><a href="http://amzn.to/1NxjHsH">EUR 49,99 (PC)</a></td>
-        <td><a href="http://amzn.to/1N2R98W">EUR 42,49  (PC)</a></td>
+        <td><a href="http://amzn.to/1N2R98W">EUR 42,49 (PC)</a></td>
     </tr>
     <tr>
         <td>Playstation 4</td>
         <td>Console</td>
-        <td><a href="http://amzn.to/1OF6xuE">Buy in US for $344.00</a></td>
-        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B013ULMFEE/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B013ULMFEE&linkCode=as2&tag=srwora-21">£269.00 </a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B013ULMFEE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+        <td><a href="http://amzn.to/1OF6xuE">Buy in US for $339.00 </a></td>
+        <td><a rel="nofollow" href="http://www.amazon.co.uk/gp/product/B013ULMFEE/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B013ULMFEE&linkCode=as2&tag=srwora-21">£274.99 </a><img src="http://ir-uk.amazon-adsystem.com/e/ir?t=srwora-21&l=as2&o=2&a=B013ULMFEE" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
         </td>
-        <td><a href="http://amzn.to/1T3rvmk">EUR 339,99</a></td>
-        <td><a href="http://amzn.to/1N2N8Bw">EUR 354,99</a></td>
-        <td><a href="http://amzn.to/1N2ReJT">EUR 330,00</a></td>
+        <td><a href="http://amzn.to/1T3rvmk">EUR 349,00</a></td>
+        <td><a href="http://amzn.to/1N2N8Bw">EUR 349,00</a></td>
+        <td><a href="http://amzn.to/1N2ReJT">EUR 339,99 </a></td>
     </tr>
     </tbody>
   </table>
@@ -95,15 +95,15 @@ For those that want to order directly (from Madcatz) this is also included when 
             <tr>
                 <td>Bundle</td>
                 <td><a href="http://amzn.to/1JnusOt">Call Of Duty ($349.99)</a></td>
-                <td><a href="http://amzn.to/1mYriGM">Star Wars / 1TB (£321.99)</a></td>
+                <td><a href="http://amzn.to/1mYriGM">Star Wars / 1TB (£323.14)</a></td>
                 <td><a href="http://amzn.to/1VzmO5k">GTA5/Uncharted 1TB (EUR 419.90)</a></td>
                 <td><a href="http://amzn.to/1Vzno30">Two dualshock controllers / 1TB (EUR 399.00)</a></td>
                 <td><a href="http://amzn.to/1VznF5O">CoD, Assasins Creed (EUR 399.99)</a></td>
             </tr>
             <tr>
                 <td>Bundle</td>
-                <td><a href="http://amzn.to/1VzbC8E">Uncharted ($342.99)</a></td>
-                <td><a href="http://amzn.to/1mYr9mE">Call Of Duty / 1TB (£329.99)</a></td>
+                <td><a href="http://amzn.to/1VzbC8E">Uncharted ($339.99)</a></td>
+                <td><a href="http://amzn.to/1mYr9mE">Call Of Duty / 1TB (£379.00)</a></td>
                 <td><a href=""></a></td>
                 <td><a href="http://amzn.to/1N2S60S">Star Wars / 1TB (EUR 445.49)</a></td>
                 <td><a href="http://amzn.to/1VzbC8E">Two dualshock controllers (EUR 399.99)</a></td>
@@ -190,10 +190,10 @@ With the right amount of dedication all moves can be learnt to be done on pads a
             <td>Mad Catz FightPad PRO</td>
             <td>Pad for PS3 and PS4</td>
             <td><a href="http://amzn.to/1OF7CCL">Buy in US for $51.71</a></td>
-            <td>UK Store</td>
-            <td>FR Store</td>
-            <td>DE Store</td>
-            <td>ES Store</td>
+            <td><a href="http://amzn.to/1ViK0DS">Buy in UK for £49.99</a></td>
+            <td><a href="http://amzn.to/1ZX37dF">Buy in FR for ?</a></td>
+            <td><a href="http://amzn.to/1ZX2X5N">Buy in DE for EUR 69,99</a></td>
+            <td><a href="http://amzn.to/1ViKxG7">Buy in ES for EUR 57,95</a></td>
         </tr>
         <tr>
             <td>Mad Catz Arcade FightStick Alpha</td>
