@@ -23,4 +23,5 @@ class AboutController
     }
 
     def sf5() {}
+    def usstore() {}
 }
