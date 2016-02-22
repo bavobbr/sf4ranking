@@ -216,7 +216,7 @@
                             <li><g:link action="cptCharacterStats" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
-                    <li><g:link controller="about" action="sf5">SF5 PRE-ORDER GUIDE</g:link></li>
+                    <li><g:link controller="about" action="sf5">SF5 ORDER GUIDE</g:link></li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

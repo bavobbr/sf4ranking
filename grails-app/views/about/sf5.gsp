@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>SF5 pre-order guide</title>
+  <title>SF5 order guide</title>
 </head>
 
 <body>
@@ -14,14 +14,13 @@
 </div>
     <div class="col-md-9">
         <div class="jumbotron">
-  <h2>Street Fighter 5 is finally coming!</h2>
-    <p>
-      Expected launch is <b>February 16, 2016</b> and will be on Playstation 4. You can now already pre-order Street Fighter 5 to make sure you get it at day 0, as well as
-      arcade sticks directly made for Street Fighter 5 and PS4, just like those for SF4 a few years ago.<br/>
-      This guide helps you locate the products in the Amazon stores* in United Sates and Europe.
-  </p>
-    <i>*Amazon guarantees lowest prices. By ordering via provided links below you support the hosting costs of this site</i>
-</div>
+            <h2>Street Fighter 5 is there!</h2>
+            <p>Launch is <b>February 16, 2016</b> on Playstation 4. Order
+            arcade sticks directly made for Street Fighter 5 and PS4, just like those for SF4 a few years ago.<br/>
+                This guide helps you locate the products in the Amazon stores* in United Sates and Europe.
+            </p>
+            <i>*Amazon guarantees lowest prices. By ordering via provided links below you support the hosting costs of this site</i>
+        </div>
 </div>
 
 <h3>United States Store</h3>
@@ -50,40 +49,40 @@
             <tr>
                 <td>SF5 game PS4</td>
                 <td>Game in physical or digital form</td>
-                <td><a href="http://amzn.to/1nMUi4Y">$59.96</a></td>
-                <td><a href="http://amzn.to/1RU5wAW">£42.00</a></td>
-                <td><a href="http://amzn.to/1N2QrZn">EUR 64,95</a></td>
-                <td><a href="http://amzn.to/1NxjAgD">EUR 69,99</a></td>
-                <td><a href="http://amzn.to/1N2R4C3">EUR 56,90</a></td>
+                <td><a href="http://amzn.to/1nMUi4Y">$59.88</a></td>
+                <td><a href="http://amzn.to/1RU5wAW">£38.61</a></td>
+                <td><a href="http://amzn.to/1N2QrZn">EUR 55,99</a></td>
+                <td><a href="http://amzn.to/1NxjAgD">EUR 58,24</a></td>
+                <td><a href="http://amzn.to/1N2R4C3">EUR 60,95</a></td>
             </tr>
             <tr>
                 <td>SF5 game PC</td>
                 <td>Game in physical or digital form</td>
-                <td>-</td>
-                <td><a href="http://amzn.to/1N2QaWc">£37.85</a></td>
+                <td><a href="http://amzn.to/1QVge4V">$59.99</a></td>
+                <td><a href="http://amzn.to/1N2QaWc">£25.97</a></td>
                 <td><a href="http://amzn.to/1T3rdvz">EUR 39,90</a></td>
-                <td><a href="http://amzn.to/1NxjHsH">EUR 49,99</a></td>
-                <td><a href="http://amzn.to/1N2R98W">EUR 42,49</a></td>
+                <td><a href="http://amzn.to/1NxjHsH">EUR 44,51</a></td>
+                <td><a href="http://amzn.to/1N2R98W">EUR 42,90</a></td>
             </tr>
             <tr>
                 <td>Playstation 4</td>
                 <td>Console</td>
-                <td>-</td>
-                <td><a href="http://amzn.to/1RU5qcI">£294.99</a></td>
-                <td><a href="http://amzn.to/1RU6i0Y">EUR 339,99</a></td>
+                <td></td>
+                <td><a href="http://amzn.to/1RU5qcI">£274.75</a></td>
+                <td><a href="http://amzn.to/1RU6i0Y">EUR 349,00</a></td>
                 <td><a href="http://amzn.to/1N2N8Bw">EUR 349,00</a></td>
-                <td><a href="http://amzn.to/1N2ReJT">EUR 369,99</a></td>
+                <td><a href="http://amzn.to/21kVomM">EUR 348,00</a></td>
             </tr>
             <tr>
                 <td>Playstation 4 SF5 bundle</td>
                 <td>Console</td>
                 <td>    <a href="http://blog.eu.playstation.com/2016/01/21/street-fighter-v-ps4-bundle-available-announced/">Expected soon</a></td>
-                <td>    <a href="http://blog.eu.playstation.com/2016/01/21/street-fighter-v-ps4-bundle-available-announced/">Expected soon</a></td>
-                <td>    <a href="http://blog.eu.playstation.com/2016/01/21/street-fighter-v-ps4-bundle-available-announced/">Expected soon</a>
+                <td>    <a href="http://amzn.to/1QbR6uh">£329.99</a></td>
+                <td>    <a href="http://amzn.to/1QbQqoQ">EUR 399</a>
                 </td>
                 <td>    <a href="http://blog.eu.playstation.com/2016/01/21/street-fighter-v-ps4-bundle-available-announced/">Expected soon</a>
                 </td>
-                <td>    <a href="http://blog.eu.playstation.com/2016/01/21/street-fighter-v-ps4-bundle-available-announced/">Expected soon</a>
+                <td>    <a href="http://amzn.to/1QbQTY6">EUR 395,95</a>
                 </td>
             </tr>
             </tbody>
@@ -130,7 +129,7 @@
                 <td><a href="http://amzn.to/1nMUGjY">$229.99</a></td>
                 <td><a href="http://amzn.to/20gkhTI">£199.99</a></td>
                 <td><a href="http://amzn.to/20glBpw">EUR 249,99</a></td>
-                <td><a href="http://amzn.to/20gl5ba">TBD</a></td>
+                <td><a href="http://amzn.to/20gl5ba">EUR 249,99</a></td>
                 <td><a href="http://amzn.to/20gmjmy">EUR 247,95</a></td>
             </tr>
             </tbody>
@@ -176,7 +175,7 @@
             <tr>
                 <td>Playstation 4 Pad</td>
                 <td>Additional dual-shock 4 pad</td>
-                <td><a href="http://amzn.to/20GBMcl">$47.97</a></td>
+                <td><a href="http://amzn.to/20GBMcl">$48.49</a></td>
                 <td><a href="http://amzn.to/1NxmvWD">£41.95</a></td>
                 <td><a href="http://amzn.to/1NxnCFW">EUR 51,95</a></td>
                 <td><a href="http://amzn.to/1N2PBMd">EUR 57,98</a></td>

@@ -233,18 +233,18 @@ class CleanupService
     }
 
     /**
-     * Use the AE2012 skill as default if the player is ranked for a version but has no skill set for that version
+     * Use the USF4 skill as default if the player is ranked for a version but has no skill set for that version
      * @return
      */
     def mergeSkills()
     {
         Player.list().each {Player p ->
-            if (p.hasRanking(Version.AE2012) && p.skill(Version.AE2012) > 0)
+            if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) > 0)
             {
-                def skill = p.skill(Version.AE2012);
-                if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) == 0)
+                def skill = p.skill(Version.USF4);
+                if (p.hasRanking(Version.AE2012) && p.skill(Version.AE2012) == 0)
                 {
-                    p.applySkill(Version.USF4, skill)
+                    p.applySkill(Version.AE2012, skill)
                 }
                 if (p.hasRanking(Version.AE) && p.skill(Version.AE) == 0)
                 {
@@ -258,17 +258,9 @@ class CleanupService
                 {
                     p.applySkill(Version.VANILLA, skill)
                 }
-                if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) == 0)
+                if (p.hasRanking(Version.SF5) && p.skill(Version.SF5) == 0)
                 {
-                    p.applySkill(Version.USF4, skill)
-                }
-            }
-            else if (p.hasRanking(Version.AE2012) && p.skill(Version.AE2012) == 0) {
-                if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) > 0)
-                {
-                    def skill = p.skill(Version.USF4)
-                    log.info "Merging USF4 skill to AE2012 for $p"
-                    p.applySkill(Version.AE2012, skill)
+                    p.applySkill(Version.SF5, skill)
                 }
             }
         }

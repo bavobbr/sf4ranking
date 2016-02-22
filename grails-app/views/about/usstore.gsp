@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>SF5 pre-order guide</title>
+  <title>SF5 order guide</title>
 </head>
 
 <body>
@@ -14,9 +14,8 @@
 </div>
     <div class="col-md-9">
         <div class="jumbotron">
-  <h2>Street Fighter 5 is finally coming!</h2>
-    <p>
-      Expected launch is <b>February 16, 2016</b> and will be on Playstation 4. You can now already pre-order Street Fighter 5 to make sure you get it at day 0, as well as
+  <h2>Street Fighter 5 is there!</h2>
+    <p>Launch is <b>February 16, 2016</b> on Playstation 4. Order
       arcade sticks directly made for Street Fighter 5 and PS4, just like those for SF4 a few years ago.<br/>
       This guide helps you locate the products in the Amazon stores* in United Sates and Europe.
   </p>
