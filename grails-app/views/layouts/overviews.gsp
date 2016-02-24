@@ -13,11 +13,11 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script src="${resource(dir: '/assets/js', file: 'jquery.metadata.js')}"></script>
-    <script src="${resource(dir: '/assets/js', file: 'jquery.tablesorter.min.js')}"></script>
-    <script src="${resource(dir: '/assets/js', file: 'jquery.tablecloth.js')}"></script>
-    <link rel="stylesheet" href="${resource(dir: '/assets/css', file: 'tablecloth.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: '/assets/css', file: 'prettify.css')}" type="text/css">
+    <script src="${resource(dir: 'js', file: 'jquery.metadata.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'jquery.tablesorter.min.js')}"></script>
+    <script src="${resource(dir: 'js', file: 'jquery.tablecloth.js')}"></script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'tablecloth.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'prettify.css')}" type="text/css">
 
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_bootstrap.css')}" type="text/css">
@@ -197,13 +197,15 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PARTICIPATE <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUBMIT <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li>
+                            <g:link controller="submit" action="index">Submit new tournament</g:link></li>
+                            <li>
+                            <g:link controller="submit" action="list">List submitted tournaments</g:link></li>
+                            <li class="divider"></li>
                             <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a>
                             </li>
-                            <li class="divider"></li>
-                            <li><a href="http://www.shoryuken.com/contact-us/">Contact Us</a></li>
-                            <li><a href="http://www.shoryuken.com">Shoryuken.com</a></li>
                         </ul>
                     </li>
                     <li><g:link action="index" controller="about">FAQ</g:link></li>
@@ -243,6 +245,7 @@
                                 <li><g:link action="index" controller="player">[Players]</g:link></li>
                                 <li><g:link action="index" controller="result">[Results]</g:link></li>
                                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
+                                <li><g:link action="index" controller="tournamentReview">[Reviews]</g:link></li>
                                 <li><g:link action="signOut"
                                             controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>
                             </ul>

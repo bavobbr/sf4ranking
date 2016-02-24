@@ -5,14 +5,14 @@
   cursor:pointer;
 }
 .table th.headerSortDown {
-  background-image: url('../img/asc.gif');
+  background-image: url('../images/asc.gif');
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;
   padding-right:16px !important;
 }
 .table th.headerSortUp {
-  background-image: url('../img/desc.gif');
+  background-image: url('../images/desc.gif');
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;
@@ -65,7 +65,7 @@
 .table-dark th.headerSortDown,
 .table-dark th.headerSortUp {
   background-color:#000;
-  background-image: url('../img/asc_light.gif');
+  background-image: url('../images/asc_light.gif');
   background-repeat: no-repeat;
   background-position: center right;
 }
@@ -242,13 +242,13 @@
 .table-stats th.headerSortUp { background-color:#CCC; }
 .table-stats thead tr:nth-child(1) th.headerSortDown {
   background-color:#333;
-  background-image: url('../img/asc_light.gif');
+  background-image: url('../images/asc_light.gif');
   background-repeat: no-repeat;
   background-position: center right;
 }
 .table-stats thead tr:nth-child(1) th.headerSortUp {
   background-color:#333;
-  background-image: url('../img/desc_light.gif');
+  background-image: url('../images/desc_light.gif');
   background-repeat: no-repeat;
   background-position: center right;
 }

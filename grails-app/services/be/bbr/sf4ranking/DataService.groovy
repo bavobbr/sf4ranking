@@ -23,7 +23,7 @@ class DataService
      */
     @Transactional
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament)
+                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament, String creator)
     {
         def finished = true
         if (!results) finished = false
@@ -37,7 +37,7 @@ class DataService
         def fullname = "${tname} - ${game.name()}"
         Tournament tournament = new Tournament(name: fullname, countryCode: country, date: date, weight: 1, game: game, videos: videos,
                                     tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked,
-                                    coverage: coverage, cptTournament: cptTournament, finished: finished)
+                                    coverage: coverage, cptTournament: cptTournament, finished: finished, creator: creator)
         tournament.save(failOnError: true)
         addResultsToTournament(results, tournament)
         tournament.save(failOnError: true)

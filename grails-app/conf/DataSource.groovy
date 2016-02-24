@@ -35,8 +35,8 @@ environments {
         dataSource {
             dialect = 'org.hibernate.dialect.MySQL5InnoDBDialect'
             pooled = true
-            //dbCreate = "create-drop"
-            dbCreate = "update"
+            dbCreate = "create-drop"
+            //dbCreate = "update"
             url = ""
             driverClassName = "com.mysql.jdbc.Driver"
             username = ""

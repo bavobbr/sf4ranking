@@ -101,6 +101,10 @@ class AdminController
         def suggestedDate
         def suggestedSource
         def suggestedCountry
+        def suggestedContent
+        def suggestedFormat = TournamentFormat.DOUBLE_BRACKET
+        def suggestedCreator
+        def suggestedGame
         if (source) {
             log.info "Importer called from tournament id ${source}"
             Tournament base = Tournament.get(source)
@@ -110,7 +114,62 @@ class AdminController
             suggestedName = base.name.split("-")?.first()?.trim()
         }
         def example = "player1 (char1/char2,char1/char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
-        return [hint: example, suggestedName: suggestedName, suggestedDate: suggestedDate, suggestedSource: suggestedSource, suggestedCountry: suggestedCountry]
+        return [hint: example,
+                suggestedName: suggestedName,
+                suggestedDate: suggestedDate,
+                suggestedSource: suggestedSource,
+                suggestedCountry: suggestedCountry,
+                suggestedContent: suggestedContent,
+                suggestedFormat: suggestedFormat,
+                suggestedCreator: suggestedCreator,
+                suggestedGame: suggestedGame]
+    }
+
+    /**
+     * Manual data import and manipulation
+     */
+    def review()
+    {
+        def source = params.id
+        def suggestedName
+        def suggestedDate
+        def suggestedSource
+        def suggestedCountry
+        def suggestedContent
+        def suggestedFormat
+        def suggestedCreator
+        def suggestedGame
+        if (source) {
+            log.info "Importer called from tournament id ${source}"
+            TournamentReview base = TournamentReview.get(source)
+            suggestedSource = base.coverage
+            suggestedDate = base.date
+            suggestedCountry =  base.countryCode
+            suggestedName = base.name
+            suggestedContent = base.content
+            suggestedFormat = base.tournamentFormat
+            suggestedCreator = base.creator
+            suggestedGame = base.game
+        }
+        def example = "player1 (char1/char2,char1/char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
+        render view: "importer", model: [hint: example,
+                suggestedName: suggestedName,
+                suggestedDate: suggestedDate,
+                suggestedSource: suggestedSource,
+                suggestedCountry: suggestedCountry,
+                suggestedContent: suggestedContent,
+                suggestedFormat: suggestedFormat,
+                suggestedCreator: suggestedCreator,
+                suggestedGame: suggestedGame
+        ]
+    }
+
+    def clear() {
+        def source = params.id
+        TournamentReview review = TournamentReview.get(source)
+        review.reviewed = true
+        review.save()
+        redirect(action: "list", controller: 'submit')
     }
 
     def importTournament()
@@ -125,6 +184,7 @@ class AdminController
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
         String coverage = params.tcoverage
+        String creator = params.creator
         List tvideos = params.tvideos.tokenize(" ")
         Boolean tranked = params.tranked?.toBoolean() ?: true
         if (!tname || !tdate || !ttype || !tweight || !tgame || tgame == Version.UNKNOWN) {
@@ -132,7 +192,7 @@ class AdminController
             render view: "importer"
             return
         }
-        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype)
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype, creator)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 

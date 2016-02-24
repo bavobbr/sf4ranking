@@ -26,7 +26,7 @@ class Tournament
     }
 
     static mapping = {
-        game index: 'game_idx'
+        game index: 'game_idx_t'
         countryCode index: 'country_idx'
         codename index: 'codename_t_index'
     }

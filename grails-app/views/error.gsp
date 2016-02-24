@@ -4,7 +4,6 @@
 <head>
   <title><g:if env="development">Grails Runtime Exception</g:if><g:else>Error</g:else></title>
   <meta name="layout" content="overviews">
-  <r:require modules="bootstrap"/>
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'errors.css')}" type="text/css">
 </head>
 
@@ -20,6 +19,7 @@
     <li>KO. You lose!</li>
     <li>You might want to talk to support @SRKRanking</li>
   </ul>
+  Issue reported is: ${exception?.className} ${exception?.message}
 </g:else>
 </body>
 </html>
