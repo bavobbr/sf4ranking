@@ -203,6 +203,7 @@
                             <g:link controller="submit" action="index">Submit new tournament</g:link></li>
                             <li>
                             <g:link controller="submit" action="list">List submitted tournaments</g:link></li>
+                            <li><g:link controller="api" action="index">REST/JSON API</g:link></li>
                             <li class="divider"></li>
                             <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a>
                             </li>

@@ -410,7 +410,7 @@ class RankingsController
             players.each {
                 log.info "match: ${it}"
             }
-            def sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+            def sorted = players.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a)}
             def content = sorted.collect {[id: it.id, label: it.toString(), value: it.name]}
             render(content as JSON)
         }
@@ -436,8 +436,7 @@ class RankingsController
             def query = player?.trim()
             log.info "Processing query $query"
             def players = dataService.findMatches(query)
-
-            sorted = players.sort {a, b -> b.results.size() <=> a.results.size()}
+            sorted = players.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
             alikes = dataService.findAlikes(player)
         }
         else
