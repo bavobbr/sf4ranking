@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Ranking -FAQ</title>
+  <title>Fighting Games World Ranking - FAQ</title>
 </head>
 
 <body>

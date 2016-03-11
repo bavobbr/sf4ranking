@@ -115,7 +115,7 @@ class RankingService
                 p.applyScore(game, actualScore)
                 p.applyTotalScore(game, playerScore)
                 // calculate CPT score
-                if (game == Version.USF4) {
+                if (game == Version.SF5) {
                     def cptScore = 0
                     def cptCount = 0
                     def prize = 0
@@ -178,7 +178,7 @@ class RankingService
             }
         }
         players = players.sort {a, b -> b.cptScore <=> a.cptScore }
-        if (game == Version.USF4) {
+        if (game == Version.SF5) {
             configurationService.withUniqueSession {
                 log.info("Found ${players.size()} to update CPT rank")
                 def previous = 0

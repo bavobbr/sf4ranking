@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Capcom Pro Tour 2015 Stats</title>
+  <title>Capcom Pro Tour 2016 Stats</title>
 </head>
 
 <body>

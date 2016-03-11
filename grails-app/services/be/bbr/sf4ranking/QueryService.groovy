@@ -62,7 +62,7 @@ class QueryService
             projections {
                 distinct 'id'
             }
-            eq("rankAlias.game", Version.USF4)
+            eq("rankAlias.game", Version.SF5)
             property("cptScore")
             gt("cptScore", 0)
             order("cptScore", "desc")

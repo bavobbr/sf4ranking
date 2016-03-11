@@ -14,7 +14,7 @@
 </div>
     <div class="col-md-9">
         <div class="jumbotron">
-            <h2>Street Fighter 5 is there!</h2>
+            <h2>Street Fighter 5 is here!</h2>
             <p>Launch is <b>February 16, 2016</b> on Playstation 4. Order
             arcade sticks directly made for Street Fighter 5 and PS4, just like those for SF4 a few years ago.<br/>
                 This guide helps you locate the products in the Amazon stores* in United Sates and Europe.

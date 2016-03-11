@@ -29,8 +29,9 @@
       <th>Location</th>
       <th>Game</th>
       <th>Weight</th>
+      <th>Creator</th>
       <th>Ranking type</th>
-      <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
+      <g:if test="${game == be.bbr.sf4ranking.Version.SF5}">
       <th>Pro Tour</th>
       </g:if>
     </tr>
@@ -51,9 +52,10 @@
         </td>
         <td>${t.game?.name()}</td>
         <td>${t.weight}</td>
+        <td>${t.creator}</td>
         <td>${t.weightingType}</td>
         <td>
-          <g:if test="${game == be.bbr.sf4ranking.Version.USF4}">
+          <g:if test="${game == be.bbr.sf4ranking.Version.SF5}">
             ${t.cptTournament?.value}
           </g:if>
         </td>

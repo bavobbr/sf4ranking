@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta name="layout" content="overviews"/>
-    <title>Capcom Pro Tour Rankings 2015 - ${game.value}</title>
+    <title>Capcom Pro Tour Rankings 2016 - ${game.value}</title>
 </head>
 
 <body>
 <center>
-    <h2 class="title">${game.value} Capcom Pro Tour Rankings 2015</h2>
+    <h2 class="title">${game.value} Capcom Pro Tour Rankings 2016</h2>
 </center>
 
     <div class="panel panel-primary">
@@ -41,7 +41,7 @@
             <th>Team</th>
             <th>Character</th>
             <th>CPT Score <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Score as granted by the Capcom Pro Tour 2015 ranking system">(?)</a></th>
+                             title="Score as granted by the Capcom Pro Tour 2016 ranking system">(?)</a></th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"

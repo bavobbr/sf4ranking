@@ -213,9 +213,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><g:link action="cpt" controller="rankings">Standings 2015</g:link></li>
-                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries 2015</g:link></li>
-                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used 2015</g:link></li>
+                            <li><g:link action="cpt" controller="rankings">Standings 2016</g:link></li>
+                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries 2016</g:link></li>
+                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used 2016</g:link></li>
+                            <li class="divider"></li>
+                            <li><g:link action="cpt_2015" controller="rankings">Standings 2015</g:link></li>
+                            <li><g:link action="cptStats_2015" controller="rankings">Tournaments and countries 2015</g:link></li>
+                            <li><g:link action="cptCharacterStats_2015" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
                     <li><g:link controller="about" action="sf5">SF5 ORDER GUIDE</g:link></li>

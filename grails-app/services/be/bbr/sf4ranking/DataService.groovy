@@ -54,6 +54,12 @@ class DataService
             def namematcher = (line =~ /^[^(]*/)
             String pname = namematcher[0].trim()
             Player p = Player.findByCodename(pname.toUpperCase())
+            if (!p) {
+                if (pname.contains("|")) {
+                    pname = pname.tokenize("|").last().trim()
+                }
+                p = Player.findByCodename(pname.toUpperCase())
+            }
             if (!p)
             {
                 p = new Player(name: pname, cptPrize: 0, cptTournaments: 0)
@@ -151,6 +157,12 @@ class DataService
             if (type == "players")
             {
                 Player p = Player.findByCodename(pname.toUpperCase())
+                if (!p) {
+                    if (pname.contains("|")) {
+                        pname = pname.tokenize("|").last().trim()
+                    }
+                    p = Player.findByCodename(pname.toUpperCase())
+                }
                 if (!p) {
                     def suggestions = findAlike(pname, 3)
                     if (suggestions) {
@@ -259,7 +271,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (version != Version.USF4 && version != Version.UMVC3) return
+                        if (version != Version.USF4 && version != Version.SF5) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -471,7 +483,7 @@ class DataService
                 it.oldRank = it.rank
             }
         }
-        if (game == Version.USF4) {
+        if (game == Version.SF5) {
             Configuration configuration = Configuration.first()
             configuration.lastCptSnapshot = new Date()
             configuration.save()

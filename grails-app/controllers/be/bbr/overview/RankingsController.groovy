@@ -91,9 +91,13 @@ class RankingsController
          updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot, alltime: palltime]
     }
 
+    def cpt_2015() {}
+    def cptStats_2015() {}
+    def cptCharacterStats_2015() {}
+
     def cpt()
     {
-        def pgame = Version.USF4
+        def pgame = Version.SF5
         log.info "CPT Ranking for game $pgame $params.pcountry $params.pchar"
         def pcountry = (!params.pcountry || params.pcountry =~ "any") ? null : CountryCode.fromString(params.pcountry as String)
         def pchar = (!params.pchar || params.pchar =~ "any") ? null :
@@ -134,7 +138,7 @@ class RankingsController
             it.metaClass.scoreQualified = {true}
         }
         if (pcountry) players.retainAll { it.countryCode == pcountry}
-        if (pchar) players.retainAll { it.main(Version.USF4).contains(pchar)}
+        if (pchar) players.retainAll { it.main(Version.SF5).contains(pchar)}
         def countrynames = queryService.getActiveCountryNames()
         // list all characters for the filter box
         def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.name()}
@@ -150,7 +154,7 @@ class RankingsController
 
     def cptStats() {
         def comingTournaments = Tournament.where {
-            game == Version.USF4 &&
+            game == Version.SF5 &&
             cptTournament != null &&
             cptTournament != CptTournament.NONE &&
             finished == false
@@ -159,7 +163,7 @@ class RankingsController
 
         def directPlaces = comingTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO]  }
         def pastTournaments = Tournament.where {
-            game == Version.USF4 &&
+            game == Version.SF5 &&
             cptTournament != null &&
             cptTournament != CptTournament.NONE &&
             finished == true
@@ -197,11 +201,11 @@ class RankingsController
         def players32 = players.findAll { it.cptQualified }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
         players32.addAll(unqualifiedPlayers.take(16))
-        def byMainCharacter32 = players32.groupBy { it.findRanking(Version.USF4).mainCharacters?.first() }
+        def byMainCharacter32 = players32.groupBy { it.findRanking(Version.SF5).mainCharacters?.first() }
         def secondarySeenTop32 = [:]
         players32.each { def player ->
             List<GameCharacter> characters = []
-            player.results.findAll { it.tournament.game == Version.USF4  && it.tournament.cptTournament != CptTournament.NONE }.each {
+            player.results.findAll { it.tournament.game == Version.SF5  && it.tournament.cptTournament != CptTournament.NONE }.each {
                 it.characterTeams.each {
                     characters.addAll(it.pchars)
                     it.pchars.each {
@@ -216,7 +220,7 @@ class RankingsController
             player.metaClass.usedCharacters << { byCharSorted }
         }
         def pastTournaments = Tournament.where {
-            game == Version.USF4
+            game == Version.SF5
             cptTournament != null
             cptTournament != CptTournament.NONE
             finished == true
@@ -233,10 +237,10 @@ class RankingsController
         }
         def charToCount = charList.countBy { it }
         def notInTop32 = CharacterType.values().findAll {
-            it.game == Version.USF4 && !byMainCharacter32.keySet().contains(it)
+            it.game == Version.SF5 && !byMainCharacter32.keySet().contains(it)
         }*.value
         def notInTop32All = CharacterType.values().findAll {
-            it.game == Version.USF4 && !secondarySeenTop32.keySet().contains(it)
+            it.game == Version.SF5 && !secondarySeenTop32.keySet().contains(it)
         }*.value
         players32 = players32.sort { it.usedCharacters().size() }.reverse()
 
@@ -262,7 +266,7 @@ class RankingsController
             def tbasescore = it.tournament.tournamentType ?
                              ScoringSystem.getLegacyScore(it.place, it.tournament.weight, it.tournament.tournamentFormat) : -1
             def tplace = it.place
-            def tcpt = it.tournament.cptTournament.getScore(it.place)
+            def tcpt = it.tournament.cptTournament?.getScore(it.place)?: 0
             if (it.tournament.tournamentFormat == TournamentFormat.EXHIBITION)
             {
                 tplace = it.place == 1 ? "Win" : "Lose"

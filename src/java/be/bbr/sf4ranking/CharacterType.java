@@ -58,9 +58,9 @@ public enum CharacterType
     AKUMA_MVC3("AKUMA", "Akuma", Version.UMVC3),
     AMATERASU("AMATERASU", "Amaterasu", Version.UMVC3),
     ARTHUR("ARTHUR", "Arthur", Version.UMVC3),
-    VIPER_MVC3("VIPER", "C. Viper", Version.UMVC3),
+    VIPER_MVC3("VIPER", "C.Viper", Version.UMVC3),
     CHRIS("CHRIS", "Chris", Version.UMVC3),
-    CHUN_LI("CHUN", "Chun Li", Version.UMVC3),
+    CHUN_LI("CHUN", "Chun-Li", Version.UMVC3),
     DANTE("DANTE", "Dante", Version.UMVC3),
     FELICIA("FELICIA", "Felicia", Version.UMVC3),
     FIREBRAND("FIREBRAND", "Firebrand", Version.UMVC3),
@@ -82,7 +82,7 @@ public enum CharacterType
     ZERO("ZERO", "Zero", Version.UMVC3),
     CAPTAIN_AMERICA("CAPTAIN", "Captain America", Version.UMVC3),
     DEADPOOL("DEADPOOL", "Deadpool", Version.UMVC3),
-    DOCTOR_DOOM("DRDOOM", "Doctor Doom", Version.UMVC3),
+    DOCTOR_DOOM("DR. DOOM", "Doctor Doom", Version.UMVC3),
     DOCTOR_STRANGE("DRSTRANGE", "Doctor Strange", Version.UMVC3),
     DORMAMMU("DORMAMMU", "Dormammu", Version.UMVC3),
     GHOST_RIDER("GHOSTRIDER", "Ghost Rider", Version.UMVC3),
@@ -236,7 +236,7 @@ public enum CharacterType
     SF5_KARIN("KARIN", "Karin", Version.SF5),
     SF5_KEN("KEN", "Ken", Version.SF5),
     SF5_LAURA("LAURA", "Laura", Version.SF5),
-    SF5_MBISON("M.BISON", "Bison", Version.SF5),
+    SF5_MBISON("M. BISON", "Bison", Version.SF5),
     SF5_NASH("NASH", "Nash", Version.SF5),
     SF5_NECALLI("NECALLI", "Necalli", Version.SF5),
     SF5_RASHID("RASHID", "Rashid", Version.SF5),
@@ -244,7 +244,7 @@ public enum CharacterType
     SF5_RYU("RYU", "Ryu", Version.SF5),
     SF5_VEGA("VEGA", "Vega", Version.SF5),
     SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
-    SF5_FANG("F.A.N.G.", "FANG", Version.SF5);
+    SF5_FANG("F.A.N.G", "FANG", Version.SF5);
 
 
     private final String value;

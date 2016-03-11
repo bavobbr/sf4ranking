@@ -22,8 +22,6 @@ class Team
     String logo
     String codename
 
-    //static hasMany = [players: Player]
-
     def beforeInsert() {
         codename = name.toUpperCase()
     }

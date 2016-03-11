@@ -91,7 +91,7 @@
         </div>
 
         <div class="col-md-6">
-            <a rel="nofollow" href="http://www.amazon.com/gp/product/B00QXJFE08/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00QXJFE08&linkCode=as2&tag=fgwora-20&linkId=GIQ7YOZUFMJY33SI"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00QXJFE08&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=fgwora-20" ></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=fgwora-20&l=as2&o=1&a=B00QXJFE08" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+            <g:link controller="about" action="sf5"> <g:img dir="images" file="sf5_amazon.jpg" class="img-responsive" width="50%"/></g:link>
         </div>
     </div>
 
@@ -184,7 +184,7 @@
                             <th>Team</th>
                             <th>Relative Points</th>
                             <th>Base Points</th>
-                            <g:if test="${ranking.key == Version.USF4}">
+                            <g:if test="${ranking.key == Version.SF5}">
                                 <th>CPT Points</th>
                             </g:if>
                             <g:if test="${SecurityUtils.subject.isPermitted("player")}">
@@ -222,7 +222,7 @@
                                 </td>
                                 <td>${result.tscore}</td>
                                 <td>${result.tbasescore}</td>
-                                <g:if test="${ranking.key == Version.USF4}">
+                                <g:if test="${ranking.key == Version.SF5}">
                                     <td>${result.tcpt}</td>
                                 </g:if>
                                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">

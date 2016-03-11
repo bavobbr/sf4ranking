@@ -57,6 +57,26 @@ class AdminController
         render view: "index"
     }
 
+    def resetProTour() {
+        Tournament.list().each {
+            it.cptTournament = CptTournament.NONE
+            it.save()
+        }
+        Player.list().each {
+            it.cptPrize = 0
+            it.cptQualified = false
+            it.cptRank = 0
+            it.cptScore = 0
+            it.cptTournaments = 0
+            it.cptPrize = 0
+            it.prevCptRank = 0
+            it.prevCptScore = 0
+            it.save()
+        }
+        flash.message = "Removed CPT data"
+        render view: "index"
+    }
+
     def updatePlayerScores()
     {
         def sum = Version.values().inject(0) {result, game ->

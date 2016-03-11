@@ -27,7 +27,8 @@
       <th>Weight</th>
       <th>Share</th>
       <th>Coverage</th>
-      <g:if test="${tournament.game == Version.USF4}">
+      <th>Creator</th>
+      <g:if test="${tournament.game == Version.SF5}">
       <th>CPT</th>
       </g:if>
     </tr>
@@ -50,7 +51,8 @@
         </g:link>
         </g:if>
       </td>
-      <g:if test="${tournament.game == Version.USF4}">
+      <td>${tournament.creator}</td>
+      <g:if test="${tournament.game == Version.SF5}">
         <td>${tournament.cptTournament}</td>
       </g:if>
     </tr>
@@ -113,7 +115,7 @@
         </td>
         <td>${result.rscore}</td>
         <g:if test="${tournament.cptTournament != be.bbr.sf4ranking.CptTournament.NONE}">
-          <td>${tournament.cptTournament.getScore(result.rplace)}</td>
+          <td>${tournament.cptTournament?.getScore(result.rplace)?:0}</td>
         </g:if>
         <g:if test="${tournament.cptTournament in [be.bbr.sf4ranking.CptTournament.PREMIER, be.bbr.sf4ranking.CptTournament.EVO, be.bbr.sf4ranking.CptTournament.CC]}">
           <td>${tournament.cptTournament.getPrize(result.rplace, tournament.countryCode)}</td>

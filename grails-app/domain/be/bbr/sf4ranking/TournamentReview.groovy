@@ -12,7 +12,7 @@ class TournamentReview
         coverage nullable: true
         creator nullable: true
         reviewed nullable: false
-        content nullable: false, unique: true
+        content nullable: false
     }
 
     static mapping = {

@@ -33,6 +33,7 @@ This is for fine-grained maintenance, usually not required.
   <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
     <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>
     <li><g:link action="updateTournamentTypes">update Tournament types based on tournament weights</g:link></li>
+    <li><g:link action="resetProTour">Reset Pro Tour data</g:link></li>
     <li><g:link action="updatePlayerScores">calculate and update Player scores based on tournament performance</g:link></li>
     <li><g:link action="updatePlayerRank">calculate and update Player rank based on player score</g:link></li>
     <li><g:link action="updateMainCharacters">calculate and update Player main chars based on results</g:link></li>
