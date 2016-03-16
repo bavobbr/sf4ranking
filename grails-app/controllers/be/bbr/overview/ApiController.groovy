@@ -2,6 +2,7 @@ package be.bbr.overview
 
 import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
+import be.bbr.sf4ranking.Query
 import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.Tournament
 import grails.converters.JSON
@@ -27,6 +28,8 @@ class ApiController {
         if (!query) render("No query provided")
         if (query.size() >= 2)
         {
+            Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+            logQuery.save(failOnError: false)
             log.info "Processing search for type $type with query $query"
             if (type.equalsIgnoreCase("player")) {
                 def results
@@ -57,24 +60,32 @@ class ApiController {
     }
 
     def playerById() {
+        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+        logQuery.save(failOnError: false)
         def id = params.int("name")
         def player = Player.get(id)
         render (playerToMap(player) as JSON)
     }
 
     def playerByName() {
+        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+        logQuery.save(failOnError: false)
         String id = params.name
         def player = Player.findByCodename(id.toUpperCase())
         render (playerToMap(player) as JSON)
     }
 
     def tournamentById() {
+        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+        logQuery.save(failOnError: false)
         def id = params.int("name")
         def tournament = Tournament.get(id)
         render (tournamentToMap(tournament) as JSON)
     }
 
     def tournamentByName() {
+        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+        logQuery.save(failOnError: false)
         String id = params.name
         def tournament = Tournament.findByCodename(id.toUpperCase())
         render (tournamentToMap(tournament) as JSON)

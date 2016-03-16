@@ -21,10 +21,14 @@ class Player
         prevCptRank nullable: true
         cptQualified nullable: false
         cptPrize nullable: false
+        pictureUrl nullable: true
+        description nullable: true
+        pictureCopyright nullable: true
     }
 
     static mapping = {
         codename index: 'Name_Idx'
+        description type: 'text'
     }
 
     static searchable = [only: ['name', 'twitter', 'realname', 'simplified']]
@@ -46,6 +50,9 @@ class Player
     Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []
     String creator
+    String pictureUrl
+    String description
+    String pictureCopyright
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
     static String pattern = /[^\dA-Za-z]/

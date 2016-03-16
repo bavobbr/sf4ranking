@@ -141,7 +141,7 @@ class AdminController
                 suggestedCountry: suggestedCountry,
                 suggestedContent: suggestedContent,
                 suggestedFormat: suggestedFormat,
-                suggestedCreator: suggestedCreator,
+                suggestedCreator: suggestedCreator?: "",
                 suggestedGame: suggestedGame]
     }
 
@@ -347,6 +347,19 @@ class AdminController
             buffer.append "${it.player.name} ($chars)\n"
         }
         [results: buffer.toString(), tournament: tournament]
+    }
+
+
+    def batchSetCountry(Tournament tournament) {
+        println "batch set tournament $tournament.id to $tournament.countryCode"
+        def country = tournament.countryCode
+        tournament.results.each {
+            if (!it.player.countryCode) {
+                it.player.countryCode = country
+                it.player.save()
+            }
+        }
+        redirect(controller: "rankings", action: "tournament", params: [id: tournament.id])
     }
 
     def updateTournamentResults()

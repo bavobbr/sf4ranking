@@ -235,6 +235,8 @@
                                 <li><g:link action="index" controller="result">[Results]</g:link></li>
                                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
                                 <li><g:link action="index" controller="user">[User]</g:link></li>
+                                <li><g:link action="index" controller="tournamentReview">[Review]</g:link></li>
+                                <li><g:link action="index" controller="query">[Query]</g:link></li>
                                 <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
                                 <li><g:link action="signOut"
                                             controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>
@@ -251,6 +253,7 @@
                                 <li><g:link action="index" controller="result">[Results]</g:link></li>
                                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
                                 <li><g:link action="index" controller="tournamentReview">[Reviews]</g:link></li>
+                                <li><g:link action="index" controller="query">[Query]</g:link></li>
                                 <li><g:link action="signOut"
                                             controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>
                             </ul>

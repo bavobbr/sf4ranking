@@ -134,6 +134,7 @@
   <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament...] </g:link>
   <g:link controller="admin" action="importer" params="['source': tournament.id]">[Use as template...] </g:link>
   <g:link controller="admin" action="replaceResults" params="['id': tournament.id]">[Replace results...] </g:link>
+  <g:link controller="admin" action="batchSetCountry" params="['id': tournament.id]">[Batch apply ${tournament.countryCode.name()}] </g:link>
 </g:if>
 <g:if test="${org.apache.shiro.SecurityUtils.subject.hasRole("Administrator")}">
   <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos]</g:link>

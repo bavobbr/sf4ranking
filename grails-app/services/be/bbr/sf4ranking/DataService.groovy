@@ -233,6 +233,9 @@ class DataService
                     def cptTournaments = pjson.cptTournaments ? pjson.cptTournaments : 0
                     def cptPrize = pjson.cptPrize ? pjson.cptPrize : 0
                     def cptQualified = pjson.cptQualified ? (pjson.cptQualified as boolean) : false
+/*                    def pictureUrl = pjson.pictureUrl? pjson.pictureUrl : ""
+                    def pictureCopyright = pjson.pictureCopyright? pjson.pictureCopyright : ""
+                    def description = pjson.description? pjson.description : ""*/
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                             mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptScore: cptScore,
                             cptQualified: cptQualified, prevCptScore: prevCptScore, cptRank: cptRank,
@@ -281,12 +284,14 @@ class DataService
                     Integer weight = tjson.weight ?: 0
                     String challonge = tjson.challonge
                     String coverage = tjson.coverage
+                    String creator = tjson.creator
+                    if (creator.equalsIgnoreCase("null")) creator = "unknown"
                     Boolean ranked = tjson.ranked?.toBoolean() ?: false
                     Boolean finished = tjson.finished?.toBoolean() ?: true
                     Tournament tournament = new Tournament(name: tjson.name, countryCode: country, game: version, date: date, videos: tjson.videos,
                             weight: weight, tournamentFormat: format, tournamentType: type,
                             weightingType: weightingType, challonge: challonge, ranked: ranked,
-                            coverage: coverage, creator: tjson.creator, cptTournament: cptTournament, finished: finished)
+                            coverage: coverage, creator: creator, cptTournament: cptTournament, finished: finished)
                     tjson.players.each {
                         log.info "Processing ${it.player}"
                         Player p = Player.findByCodename(it.player.toUpperCase())
@@ -382,6 +387,9 @@ class DataService
             player.wikilink = it.wikilink
             player.twitter = it.twitter
             player.creator = it.creator
+            player.pictureUrl = it.pictureUrl
+            player.description = it.description
+            player.pictureCopyright = it.pictureCopyright
             player.mainGame = it.mainGame?.name()
             player.cptScore = it.cptScore?: 0
             player.prevCptScore = it.prevCptScore?: 0
