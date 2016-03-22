@@ -99,13 +99,9 @@ class RankingsController
     {
         def pgame = Version.SF5
         log.info "CPT Ranking for game $pgame $params.pcountry $params.pchar"
-        def pcountry = (!params.pcountry || params.pcountry =~ "any") ? null : CountryCode.fromString(params.pcountry as String)
-        def pchar = (!params.pchar || params.pchar =~ "any") ? null :
-                CharacterType.fromString(params.pchar as String, Version.generalize(pgame))
         def players = queryService.findCptPlayers()
         def playercount = players.size()
         log.info "getAll gave ${players.size()} players out of ${playercount}"
-
         def config = Configuration.first()
         def lastUpdateMessage = config.lastUpdateMessage
         def lastUpdate = config.lastCptSnapshot
@@ -113,6 +109,10 @@ class RankingsController
         {
             players.eachWithIndex { Player p, Integer idx ->
                 p.metaClass.scoreQualified << { false }
+                p.metaClass.scoreQualifiedNA << { false }
+                p.metaClass.scoreQualifiedAO << { false }
+                p.metaClass.scoreQualifiedLA << { false }
+                p.metaClass.scoreQualifiedEU << { false }
                 p.metaClass.rankDiff << {
                     if (p.prevCptRank == null || p.prevCptRank == 0) {
                         return null
@@ -134,22 +134,44 @@ class RankingsController
             }
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
-        unqualifiedPlayers.take(16).each {
+        unqualifiedPlayers.take(8).each {
             it.metaClass.scoreQualified = {true}
         }
-        if (pcountry) players.retainAll { it.countryCode == pcountry}
-        if (pchar) players.retainAll { it.main(Version.SF5).contains(pchar)}
-        def countrynames = queryService.getActiveCountryNames()
-        // list all characters for the filter box
-        def charnames = CharacterType.values().findAll {it.game == Version.generalize(pgame)}.collect {it.name()}
-        // add a search all for each type
-        countrynames.add(0, "any country")
-        charnames.add(0, "any character")
         log.info "returning ${players.size()} players for game $pgame"
 
+
+        def playersNA = queryService.findCptPlayers(Region.NA)
+        def unqualifiedPlayersNA = playersNA.findAll { !it.cptQualified }
+        unqualifiedPlayersNA.take(2).each {
+            it.metaClass.scoreQualifiedNA = {true}
+        }
+        def playersLA = queryService.findCptPlayers(Region.LA)
+        def unqualifiedPlayersLA = playersLA.findAll { !it.cptQualified }
+        unqualifiedPlayersLA.take(2).each {
+            it.metaClass.scoreQualifiedLA = {true}
+        }
+        def playersAO = queryService.findCptPlayers(Region.AO)
+        def unqualifiedPlayersAO = playersAO.findAll { !it.cptQualified }
+        unqualifiedPlayersAO.take(2).each {
+            it.metaClass.scoreQualifiedAO = {true}
+        }
+        def playersEU = queryService.findCptPlayers(Region.EU)
+        def unqualifiedPlayersEU = playersEU.findAll { !it.cptQualified }
+        unqualifiedPlayersEU.take(2).each {
+            println "setting $it as quLIFIED"
+            it.metaClass.scoreQualifiedEU = {true}
+        }
+
         [players: players,
-         total: playercount, updateMessage: lastUpdateMessage, game: pgame, countries: countrynames, chars: charnames,
-         lastUpdate: lastUpdate, ]
+         total: playercount,
+         updateMessage: lastUpdateMessage,
+         game: pgame,
+         lastUpdate: lastUpdate,
+         playersNA: playersNA,
+         playersLA: playersLA,
+         playersAO: playersAO,
+         playersEU: playersEU,
+        ]
     }
 
     def cptStats() {
@@ -188,7 +210,7 @@ class RankingsController
         def players = queryService.findCptPlayers()
         def qualifiedPlayers = players.findAll { it.cptQualified }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
-        qualifiedPlayers.addAll(unqualifiedPlayers.take(16))
+        qualifiedPlayers.addAll(unqualifiedPlayers.take(8))
         qualifiedPlayers.sort { it.cptScore }
         def byCountry = players.groupBy { it.countryCode }
         def byCountry32 = qualifiedPlayers.groupBy { it.countryCode }

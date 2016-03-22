@@ -1,13 +1,13 @@
 package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
+
 /**
  * This service applies the ranking values (rank, score, weight, type) to all imported data
  * All the entries are evaluated together, rather than only the one that is added/updated
  */
 @Transactional
-class RankingService
-{
+class RankingService {
 
     ConfigurationService configurationService
 
@@ -15,18 +15,16 @@ class RankingService
      * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
      * Only applied when weighting is set as AUTO, otherwise the weight is static per supplied tournament type
      */
-    Integer updateWeights(Version game)
-    {
+    Integer updateWeights(Version game) {
         def tournaments = []
         configurationService.withUniqueSession {
             tournaments = Tournament.findAllByGame(game)
-            tournaments.each {tournament ->
+            tournaments.each { tournament ->
                 log.info "Updating tournament $tournament"
                 def weight = 0
-                def topresults = tournament.results.sort {a, b -> b.player.skill(game) <=> a.player.skill(game)}.take(8)
-                if (topresults)
-                {
-                    Integer skillScore = topresults.sum {Result r -> Math.pow(r.player.skill(game),2)}
+                def topresults = tournament.results.sort { a, b -> b.player.skill(game) <=> a.player.skill(game) }.take(8)
+                if (topresults) {
+                    Integer skillScore = topresults.sum { Result r -> Math.pow(r.player.skill(game), 2) }
                     def entries = Math.max(topresults.size(), 8)
                     weight = (skillScore as Double) / entries * 10
                     def countryBonus = 1
@@ -55,8 +53,7 @@ class RankingService
      * Distribute the types for the tournaments that use AUTO weighting
      * Based on the tournament weight
      */
-    Integer updateTypes(Version game)
-    {
+    Integer updateTypes(Version game) {
         def tournaments = []
         configurationService.withUniqueSession {
             tournaments = Tournament.findAllByGame(game).sort { a, b -> b.weight <=> a.weight }
@@ -73,7 +70,7 @@ class RankingService
             tournaments.findAll { it.weightingType == WeightingType.AUTO }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
-            tournaments.findAll { it.date.before(yearAgo.time)}.each { Tournament t ->
+            tournaments.findAll { it.date.before(yearAgo.time) }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
             tournaments.removeAll {
@@ -93,41 +90,57 @@ class RankingService
     /**
      * The player score is the sum of his best 16 tournaments in AE
      */
-    Integer updatePlayerScores(Version game)
-    {
+    Integer updatePlayerScores(Version game) {
         List players = Player.list()
         configurationService.withUniqueSession {
-            players.each {Player p ->
+            players.each { Player p ->
                 log.info("Evaluating for $game player $p, looking for results")
                 def results = Result.where {
                     player == p
                     tournament.game == game
                 }.list()
                 log.info "Found ${results.size()} results, evaluating legacy score"
-                def playerScore = getScore(results) {Result r ->
-                    r.tournament.ranked? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
+                def playerScore = getScore(results) { Result r ->
+                    r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }
                 log.info "Found ${results.size()} results, evaluating actual score"
                 p.applyScore(game, playerScore)
-                def actualScore = getScore(results) {Result r ->
-                    r.tournament.ranked? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
+                def actualScore = getScore(results) { Result r ->
+                    r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
                 }
                 p.applyScore(game, actualScore)
                 p.applyTotalScore(game, playerScore)
                 // calculate CPT score
                 if (game == Version.SF5) {
                     def cptScore = 0
+                    def cptScoreAO = 0
+                    def cptScoreLA = 0
+                    def cptScoreNA = 0
+                    def cptScoreEU = 0
                     def cptCount = 0
                     def prize = 0
                     results.each {
                         if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE) {
-                            cptScore += it.tournament.cptTournament.getScore(it.place)
+                            def score = it.tournament.cptTournament.getScore(it.place)
+                            cptScore += score
+                            if (it.tournament.cptTournament == CptTournament.RANKING) {
+                                switch (it.tournament.region) {
+                                    case Region.AO: cptScoreAO += score; break;
+                                    case Region.LA: cptScoreLA += score; break;
+                                    case Region.NA: cptScoreNA += score; break;
+                                    case Region.EU: cptScoreEU += score; break;
+                                }
+                            }
                             cptCount++
                             def countryCode = it.tournament.countryCode
                             prize = prize + it.tournament.cptTournament.getPrize(it.place, countryCode)
                         }
                     }
                     p.cptScore = cptScore
+                    p.cptScoreAO = cptScoreAO
+                    p.cptScoreNA = cptScoreNA
+                    p.cptScoreLA = cptScoreLA
+                    p.cptScoreEU = cptScoreEU
                     p.cptTournaments = cptCount
                     p.cptPrize = prize
                 }
@@ -138,15 +151,12 @@ class RankingService
         return players.size()
     }
 
-    private Integer getScore(List<Result> results, Closure scoringRule)
-    {
+    private Integer getScore(List<Result> results, Closure scoringRule) {
         def scores = results.collect {
-            if (it.tournament.ranked && it.tournament.finished)
-            {
+            if (it.tournament.ranked && it.tournament.finished) {
                 scoringRule(it)
-            }
-            else 0
-        }.sort {a, b -> b <=> a}
+            } else 0
+        }.sort { a, b -> b <=> a }
         def bestof = scores.take(12)
         log.info "Considering best scores (${bestof.size()}): $bestof out of a total ${results.size()} results"
         log.info "Unlimited score: ${scores.sum()} vs limited: ${bestof.sum()}"
@@ -157,18 +167,16 @@ class RankingService
      * The player rank is based on how he positions by score
      * If a score is equal to another player the rank is not incremented but kept equal
      */
-    Integer updatePlayerRank(Version game)
-    {
-        List players = Player.where {results.tournament.game == game}.list()
-        players = players.sort {a, b -> b.score(game) <=> a.score(game)}
+    Integer updatePlayerRank(Version game) {
+        List players = Player.where { results.tournament.game == game }.list()
+        players = players.sort { a, b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update rank")
             def previous = 0
             def currentRank = 0
-            players.eachWithIndex {Player p, Integer idx ->
+            players.eachWithIndex { Player p, Integer idx ->
                 log.info("Updating $game rank of player $p")
-                if (p.score(game) != previous)
-                {
+                if (p.score(game) != previous) {
                     currentRank = idx + 1
                 }
                 def rank = currentRank
@@ -177,8 +185,8 @@ class RankingService
                 log.info("Updated rank of player $p, setting previous as $previous")
             }
         }
-        players = players.sort {a, b -> b.cptScore <=> a.cptScore }
         if (game == Version.SF5) {
+            players = players.sort { Player a, Player b -> b.cptScore <=> a.cptScore }
             configurationService.withUniqueSession {
                 log.info("Found ${players.size()} to update CPT rank")
                 def previous = 0
@@ -194,38 +202,99 @@ class RankingService
                     log.info("Updated CPT rank of player $p, setting previous as $previous")
                 }
             }
-        }
 
+            players = players.sort { Player a, Player b -> b.cptScoreAO <=> a.cptScoreAO }
+            configurationService.withUniqueSession {
+                log.info("Found ${players.size()} to update CPT AO rank")
+                def previous = 0
+                def currentRank = 0
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Updating CPT $game AO rank of player $p")
+                    if (p.cptScoreAO != previous) {
+                        currentRank = idx + 1
+                    }
+                    def rank = currentRank
+                    p.cptRankAO = rank
+                    previous = p.cptScoreAO
+                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                }
+            }
+            players = players.sort { Player a, Player b -> b.cptScoreLA <=> a.cptScoreLA }
+            configurationService.withUniqueSession {
+                log.info("Found ${players.size()} to update CPT LA rank")
+                def previous = 0
+                def currentRank = 0
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Updating CPT $game LA rank of player $p")
+                    if (p.cptScoreLA != previous) {
+                        currentRank = idx + 1
+                    }
+                    def rank = currentRank
+                    p.cptRankLA = rank
+                    previous = p.cptScoreLA
+                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                }
+            }
+            players = players.sort { Player a, Player b -> b.cptScoreNA <=> a.cptScoreNA }
+            configurationService.withUniqueSession {
+                log.info("Found ${players.size()} to update CPT NA rank")
+                def previous = 0
+                def currentRank = 0
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Updating CPT $game NA rank of player $p")
+                    if (p.cptScoreNA != previous) {
+                        currentRank = idx + 1
+                    }
+                    def rank = currentRank
+                    p.cptRankNA = rank
+                    previous = p.cptScoreNA
+                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                }
+            }
+            players = players.sort { Player a, Player b -> b.cptScoreEU <=> a.cptScoreEU }
+            configurationService.withUniqueSession {
+                log.info("Found ${players.size()} to update CPT EU rank")
+                def previous = 0
+                def currentRank = 0
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Updating CPT $game EU rank of player $p")
+                    if (p.cptScoreEU != previous) {
+                        currentRank = idx + 1
+                    }
+                    def rank = currentRank
+                    p.cptRankEU = rank
+                    previous = p.cptScoreEU
+                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                }
+            }
+        }
         return players.size()
     }
 
     /**
      */
-    Integer updateMainTeams(Version game)
-    {
-        List players = Player.where {results.tournament.game == game}.list().sort {a, b -> b.score(game) <=> a.score(game)}
+    Integer updateMainTeams(Version game) {
+        List players = Player.where {
+            results.tournament.game == game
+        }.list().sort { a, b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update main")
-            players.each {Player p ->
-                PlayerRanking ranking = p.rankings.find {it.game == game}
-                if (ranking)
-                {
+            players.each { Player p ->
+                PlayerRanking ranking = p.rankings.find { it.game == game }
+                if (ranking) {
                     ranking.mainCharacters.clear()
-                    def filteredResults = p.results.findAll {it.tournament.game == game}
-                    def teams = filteredResults.collect {Result r -> r.characterTeams.collect {it}}.flatten()
-                    teams.removeAll {it.hasUnknown()}
-                    def countedGroup = teams.countBy {GameTeam team -> team}
-                    def sortedGroup = countedGroup.sort {a, b -> b.value <=> a.value}
-                    if (sortedGroup)
-                    {
+                    def filteredResults = p.results.findAll { it.tournament.game == game }
+                    def teams = filteredResults.collect { Result r -> r.characterTeams.collect { it } }.flatten()
+                    teams.removeAll { it.hasUnknown() }
+                    def countedGroup = teams.countBy { GameTeam team -> team }
+                    def sortedGroup = countedGroup.sort { a, b -> b.value <=> a.value }
+                    if (sortedGroup) {
                         def main = sortedGroup.keySet().first()
                         log.info "applying main team $main"
-                        main.pchars.each {GameCharacter gameCharacter ->
+                        main.pchars.each { GameCharacter gameCharacter ->
                             ranking.mainCharacters.add(gameCharacter.characterType)
                         }
-                    }
-                    else
-                    {
+                    } else {
                         log.info "applying unknown main team to ${p.name}"
                         ranking.mainCharacters.add(CharacterType.UNKNOWN)
                     }
@@ -238,10 +307,9 @@ class RankingService
         return players.size()
     }
 
-    Integer updateMainGames()
-    {
+    Integer updateMainGames() {
         configurationService.withUniqueSession {
-            Player.list().each {Player player ->
+            Player.list().each { Player player ->
                 log.info "Updating main game of $player.name"
                 def c = Result.createCriteria()
                 def results = c {
@@ -253,9 +321,8 @@ class RankingService
                     eq("player", player)
                 }
                 log.info "Counts is $results"
-                def sorted = results.sort {a, b -> b[1] <=> a[1]}
-                if (sorted)
-                {
+                def sorted = results.sort { a, b -> b[1] <=> a[1] }
+                if (sorted) {
                     def main = sorted.first()[0]
                     log.info "Main game is $main"
                     player.mainGame = main
@@ -271,8 +338,7 @@ class RankingService
         return Player.count
     }
 
-    private int applyType(List tournaments, TournamentType type, int start, int amount, double factor)
-    {
+    private int applyType(List tournaments, TournamentType type, int start, int amount, double factor) {
         int factoredAmount = (int) (amount * factor)
         log.info "Applying type $type to $amount tournaments from $start with factor $factor"
         log.info "Translated to type $type times $factoredAmount tournaments from $start"
@@ -284,19 +350,16 @@ class RankingService
     }
 
 
-    private List playerScoresAt(Date date)
-    {
+    private List playerScoresAt(Date date) {
         List playerScores = []
         List players = Player.list(readOnly: true)
-        players.each {Player p ->
+        players.each { Player p ->
             def results = Result.findAllByPlayer(p, [readOnly: true])
             def scores = results.collect {
-                if (it.tournament.ranked && it.tournament.date.before(date))
-                {
+                if (it.tournament.ranked && it.tournament.date.before(date)) {
                     ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat)
-                }
-                else 0
-            }.sort {a, b -> b <=> a}
+                } else 0
+            }.sort { a, b -> b <=> a }
             def bestof = scores.take(16)
             def sum = bestof.sum() as Integer
             Expando holder = new Expando()
@@ -309,14 +372,12 @@ class RankingService
         return playerScores
     }
 
-    List playerRanksAt(Date date)
-    {
-        def sortedPlayers = playerScoresAt(date).sort {a, b -> b.score <=> a.score}
+    List playerRanksAt(Date date) {
+        def sortedPlayers = playerScoresAt(date).sort { a, b -> b.score <=> a.score }
         def previous = 0
         def currentRank = 0
-        sortedPlayers.eachWithIndex {p, Integer idx ->
-            if (p.score != previous)
-            {
+        sortedPlayers.eachWithIndex { p, Integer idx ->
+            if (p.score != previous) {
                 currentRank = idx + 1
             }
             p.rank = currentRank

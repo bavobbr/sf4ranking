@@ -110,6 +110,11 @@
         <g:select name="tcountry" from="${be.bbr.sf4ranking.CountryCode.values()}" class="form-control"
                   value="${suggestedCountry ?: be.bbr.sf4ranking.CountryCode.US}"/>
     </div>
+    <div class="form-group">
+        <label for="tregion">Region (optional)</label>
+        <g:select name="tregion" from="${be.bbr.sf4ranking.Region.values()}" class="form-control"
+                  value="${suggestedRegion ?: be.bbr.sf4ranking.Region.NA}"/>
+    </div>
 
     <div class="form-group">
         <label for="tvideos">Videos (seperated with a space)</label>

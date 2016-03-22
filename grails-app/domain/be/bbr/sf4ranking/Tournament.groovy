@@ -23,6 +23,7 @@ class Tournament
         creator nullable: true
         cptTournament nullable: true
         finished nullable: false
+        region nullable: true
     }
 
     static mapping = {
@@ -46,6 +47,7 @@ class Tournament
     Boolean finished = true
     String coverage = null
     String creator
+    Region region = Region.UNKNOWN
 
     static hasMany = [videos: String, results: Result]
 

@@ -23,7 +23,7 @@ class DataService
      */
     @Transactional
     Tournament importTournament(String tname, String results, Date date, TournamentFormat format, CountryCode country, Version game,
-                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament, String creator)
+                                List videos, WeightingType wtype, TournamentType type, Boolean ranked, String coverage, CptTournament cptTournament, String creator, Region region)
     {
         def finished = true
         if (!results) finished = false
@@ -37,7 +37,7 @@ class DataService
         def fullname = "${tname} - ${game.name()}"
         Tournament tournament = new Tournament(name: fullname, countryCode: country, date: date, weight: 1, game: game, videos: videos,
                                     tournamentFormat: format, weightingType: wtype, tournamentType: type, ranked: ranked,
-                                    coverage: coverage, cptTournament: cptTournament, finished: finished, creator: creator)
+                                    coverage: coverage, cptTournament: cptTournament, finished: finished, creator: creator, region: region)
         tournament.save(failOnError: true)
         addResultsToTournament(results, tournament)
         tournament.save(failOnError: true)
@@ -233,13 +233,14 @@ class DataService
                     def cptTournaments = pjson.cptTournaments ? pjson.cptTournaments : 0
                     def cptPrize = pjson.cptPrize ? pjson.cptPrize : 0
                     def cptQualified = pjson.cptQualified ? (pjson.cptQualified as boolean) : false
-/*                    def pictureUrl = pjson.pictureUrl? pjson.pictureUrl : ""
+                    def pictureUrl = pjson.pictureUrl? pjson.pictureUrl : ""
                     def pictureCopyright = pjson.pictureCopyright? pjson.pictureCopyright : ""
-                    def description = pjson.description? pjson.description : ""*/
+                    def description = pjson.description? pjson.description : ""
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                             mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptScore: cptScore,
                             cptQualified: cptQualified, prevCptScore: prevCptScore, cptRank: cptRank,
-                            prevCptRank: prevCptRank, cptTournaments: cptTournaments, cptPrize: cptPrize)
+                            prevCptRank: prevCptRank, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
+                            pictureUrl: pictureUrl, description: description)
                     pjson.rankings.each {
                         def game = Version.fromString(it.game)
                         List mainCharacters = []
@@ -280,6 +281,7 @@ class DataService
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
                     WeightingType weightingType = WeightingType.fromString(tjson.wtype) ?: WeightingType.AUTO
                     CptTournament cptTournament = CptTournament.fromString(tjson.cptTournament) ?: CptTournament.NONE
+                    Region region = Region.fromString(tjson.region) ?: Region.UNKNOWN
                     TournamentType type = TournamentType.fromString(tjson.type)
                     Integer weight = tjson.weight ?: 0
                     String challonge = tjson.challonge
@@ -291,7 +293,7 @@ class DataService
                     Tournament tournament = new Tournament(name: tjson.name, countryCode: country, game: version, date: date, videos: tjson.videos,
                             weight: weight, tournamentFormat: format, tournamentType: type,
                             weightingType: weightingType, challonge: challonge, ranked: ranked,
-                            coverage: coverage, creator: creator, cptTournament: cptTournament, finished: finished)
+                            coverage: coverage, creator: creator, cptTournament: cptTournament, finished: finished, region: region)
                     tjson.players.each {
                         log.info "Processing ${it.player}"
                         Player p = Player.findByCodename(it.player.toUpperCase())
@@ -347,6 +349,7 @@ class DataService
             tournament.finished = it.finished
             tournament.creator = it.creator
             tournament.cptTournament = it.cptTournament?.name()
+            tournament.region = it.region?.name()
             def players = []
             it.results.sort {a, b -> a.place <=> b.place}.each {
                 def player = [:]

@@ -67,6 +67,14 @@ class AdminController
             it.cptQualified = false
             it.cptRank = 0
             it.cptScore = 0
+            it.cptRankAO = 0
+            it.cptRankLA = 0
+            it.cptRankNA = 0
+            it.cptRankEU = 0
+            it.cptScoreAO = 0
+            it.cptScoreLA = 0
+            it.cptScoreNA = 0
+            it.cptScoreEU = 0
             it.cptTournaments = 0
             it.cptPrize = 0
             it.prevCptRank = 0
@@ -125,6 +133,7 @@ class AdminController
         def suggestedFormat = TournamentFormat.DOUBLE_BRACKET
         def suggestedCreator
         def suggestedGame
+        def suggestedRegion
         if (source) {
             log.info "Importer called from tournament id ${source}"
             Tournament base = Tournament.get(source)
@@ -132,6 +141,7 @@ class AdminController
             suggestedDate = base.date
             suggestedCountry =  base.countryCode
             suggestedName = base.name.split("-")?.first()?.trim()
+            suggestedRegion = base.region
         }
         def example = "player1 (char1/char2,char1/char3)\nplayer2 (char1,char2)\nplayer3 (char1/char2)\nplayer4"
         return [hint: example,
@@ -142,7 +152,8 @@ class AdminController
                 suggestedContent: suggestedContent,
                 suggestedFormat: suggestedFormat,
                 suggestedCreator: suggestedCreator?: "",
-                suggestedGame: suggestedGame]
+                suggestedGame: suggestedGame,
+                suggestedRegion: suggestedRegion]
     }
 
     /**
@@ -159,6 +170,7 @@ class AdminController
         def suggestedFormat
         def suggestedCreator
         def suggestedGame
+        def suggestedRegion
         if (source) {
             log.info "Importer called from tournament id ${source}"
             TournamentReview base = TournamentReview.get(source)
@@ -180,7 +192,8 @@ class AdminController
                 suggestedContent: suggestedContent,
                 suggestedFormat: suggestedFormat,
                 suggestedCreator: suggestedCreator,
-                suggestedGame: suggestedGame
+                suggestedGame: suggestedGame,
+                suggestedRegion: suggestedRegion
         ]
     }
 
@@ -201,6 +214,7 @@ class AdminController
         WeightingType tweight = WeightingType.fromString(params.tweight)
         CptTournament cpttype = CptTournament.fromString(params.cpttype)
         CountryCode tcountry = CountryCode.fromString(params.tcountry)
+        Region tregion = Region.fromString(params.tregion)
         Version tgame = Version.fromString(params.tgame)
         String results = params.tresults
         String coverage = params.tcoverage
@@ -212,7 +226,7 @@ class AdminController
             render view: "importer"
             return
         }
-        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype, creator)
+        def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype, creator, tregion)
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 

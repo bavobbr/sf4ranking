@@ -18,7 +18,7 @@
             This ranking follows the <a
                 href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
                 href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. The board is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
-        <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in the top32 region. Those that directly qualified are invited to the season finals in December, as well as the highest 15 scoring players.
+        <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in qualifying region. Those that directly qualified are invited to the season finals in December, together with 8 global scoring players and 4 times 2 highest scoring per region.
         </div>
     </div>
 <g:if test="${updateMessage}">
@@ -28,7 +28,7 @@
 
     </div>
 </g:if>
-
+<h3>Global leader board</h3>
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable">
@@ -59,7 +59,7 @@
         <g:each in="${players}" var="p" status="idx">
 
             <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
-                <td class="${p.cptRank <= 32? 'warning':''}">
+                <td class="${p.cptRank <= 20? 'warning':''}">
                         ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -96,7 +96,7 @@
                                            title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a></small>
                     </g:if>
                     <g:else>
-                        <g:if test="${p.cptRank <= 32}">
+                        <g:if test="${p.cptRank <= 20}">
                             <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
                                                title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a></small>
                         </g:if>
@@ -136,30 +136,273 @@
 
     </table></div>
 
+<h3>North America Regional Board</h3>
+<div class="table-responsive">
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">Filter</h3>
-    </div>
+    <table class="tablehead" id="datatable2">
 
-    <div class="panel-body">
-        <g:form name="filter" controller="rankings" action="cpt" role="form" class="form-inline" method="get">
-            <g:select name="pcountry" from="${countries}" class="form-control" />
-            <g:select name="pchar" from="${chars}" class="form-control"/>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </g:form>
-    </div>
-</div>
+        <thead>
+        <tr class="stathead">
+            <th>CPT Rank</th>
+            <th>World Rank</th>
+            <th>Name</th>
+            <th>Character</th>
+            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
+            <th>Country</th>
+        </tr>
+        </thead>
+
+        <g:each in="${playersNA}" var="p" status="idx">
+
+            <tr class="${p.scoreQualifiedNA() ? 'qual' : 'unqual'}">
+                <td class="${idx <= 2? 'warning':''}">
+                    ${p.cptRank}
+                </td>
+                <td>${p.rank(game)}</td>
+                <td>
+                    <g:link controller="rankings" mapping="playerByName" action="player"
+                            params="[name: p.name]">${p.name}</g:link>
+                </td>
+                <td>
+                    <g:each in="${p.main(game)}" var="mainChar">
+                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
+                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
+                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
+                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${mainChar.value}"
+                                   class="charimg"/>
+                        </g:link>
+                    </g:each>
+                </td>
+                <td>${p.cptScoreNA}</td>
+                <td>
+                    <g:if test="${p.cptQualified}">
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                             height="25"/>
+                    </g:if>
+                </td>
+                <td>${p.cptTournaments}</td>
+                <td>
+                    <g:if test="${p.countryCode}">
+                            <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
+                                   class="countryflag"/>
+                            ${p.countryCode.name}
+                    </g:if>
+                </td>
+            </tr>
+        </g:each>
+
+    </table></div>
+
+
+<h3>Latin America Regional Board</h3>
+<div class="table-responsive">
+
+    <table class="tablehead" id="datatable3">
+
+        <thead>
+        <tr class="stathead">
+            <th>CPT Rank</th>
+            <th>World Rank</th>
+            <th>Name</th>
+            <th>Character</th>
+            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
+            <th>Country</th>
+        </tr>
+        </thead>
+
+        <g:each in="${playersLA}" var="p" status="idx">
+
+            <tr class="${p.scoreQualifiedLA() ? 'qual' : 'unqual'}">
+                <td class="${idx <= 2? 'warning':''}">
+                    ${p.cptRank}
+                </td>
+                <td>${p.rank(game)}</td>
+                <td>
+                    <g:link controller="rankings" mapping="playerByName" action="player"
+                            params="[name: p.name]">${p.name}</g:link>
+                </td>
+                <td>
+                    <g:each in="${p.main(game)}" var="mainChar">
+                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
+                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
+                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
+                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${mainChar.value}"
+                                   class="charimg"/>
+                        </g:link>
+                    </g:each>
+                </td>
+                <td>${p.cptScoreLA}</td>
+                <td>
+                    <g:if test="${p.cptQualified}">
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                             height="25"/>
+                    </g:if>
+                </td>
+                <td>${p.cptTournaments}</td>
+                <td>
+                    <g:if test="${p.countryCode}">
+                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
+                               class="countryflag"/>
+                        ${p.countryCode.name}
+                    </g:if>
+                </td>
+            </tr>
+        </g:each>
+
+    </table></div>
+
+<h3>Asia/Oceania Regional Board</h3>
+<div class="table-responsive">
+
+    <table class="tablehead" id="datatable4">
+
+        <thead>
+        <tr class="stathead">
+            <th>CPT Rank</th>
+            <th>World Rank</th>
+            <th>Name</th>
+            <th>Character</th>
+            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
+            <th>Country</th>
+        </tr>
+        </thead>
+
+        <g:each in="${playersAO}" var="p" status="idx">
+
+            <tr class="${p.scoreQualifiedAO() ? 'qual' : 'unqual'}">
+                <td class="${idx <= 2? 'warning':''}">
+                    ${p.cptRank}
+                </td>
+                <td>${p.rank(game)}</td>
+                <td>
+                    <g:link controller="rankings" mapping="playerByName" action="player"
+                            params="[name: p.name]">${p.name}</g:link>
+                </td>
+                <td>
+                    <g:each in="${p.main(game)}" var="mainChar">
+                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
+                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
+                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
+                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${mainChar.value}"
+                                   class="charimg"/>
+                        </g:link>
+                    </g:each>
+                </td>
+                <td>${p.cptScoreAO}</td>
+                <td>
+                    <g:if test="${p.cptQualified}">
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                             height="25"/>
+                    </g:if>
+                </td>
+                <td>${p.cptTournaments}</td>
+                <td>
+                    <g:if test="${p.countryCode}">
+                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
+                               class="countryflag"/>
+                        ${p.countryCode.name}
+                    </g:if>
+                </td>
+            </tr>
+        </g:each>
+
+    </table></div>
+
+<h3>Europe Regional Board</h3>
+<div class="table-responsive">
+
+    <table class="tablehead" id="datatable5">
+
+        <thead>
+        <tr class="stathead">
+            <th>CPT Rank</th>
+            <th>World Rank</th>
+            <th>Name</th>
+            <th>Character</th>
+            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
+            <th>Country</th>
+        </tr>
+        </thead>
+
+        <g:each in="${playersEU}" var="p" status="idx">
+
+            <tr class="${p.scoreQualifiedEU() ? 'qual' : 'unqual'}">
+                <td class="${idx <= 2? 'warning':''}">
+                    ${p.cptRank}
+                </td>
+                <td>${p.rank(game)}</td>
+                <td>
+                    <g:link controller="rankings" mapping="playerByName" action="player"
+                            params="[name: p.name]">${p.name}</g:link>
+                </td>
+                <td>
+                    <g:each in="${p.main(game)}" var="mainChar">
+                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
+                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
+                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
+                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${mainChar.value}"
+                                   class="charimg"/>
+                        </g:link>
+                    </g:each>
+                </td>
+                <td>${p.cptScoreEU}</td>
+                <td>
+                    <g:if test="${p.cptQualified}">
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
+                             height="25"/>
+                    </g:if>
+                </td>
+                <td>${p.cptTournaments}</td>
+                <td>
+                    <g:if test="${p.countryCode}">
+                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
+                               class="countryflag"/>
+                        ${p.countryCode.name}
+                    </g:if>
+                </td>
+            </tr>
+        </g:each>
+
+    </table></div>
+
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function ()
     {
         $('table[id^="datatable"]').each(function (index)
         {
-            $(this).tablecloth({
-                theme: "default",
-                striped: false,
-                sortable: true,
-                condensed: true})
+            try {
+                $(this).tablecloth({
+                    theme: "default",
+                    striped: false,
+                    sortable: true,
+                    condensed: true
+                })
+            }
+            catch (err) { }
         })
     });
 </script>

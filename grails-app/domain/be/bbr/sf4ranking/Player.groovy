@@ -16,8 +16,16 @@ class Player
         creator nullable: true
         realname nullable: true
         cptScore nullable: true
+        cptScoreLA nullable: true
+        cptScoreNA nullable: true
+        cptScoreAO nullable: true
+        cptScoreEU nullable: true
         prevCptScore nullable: true
         cptRank nullable: true
+        cptRankLA nullable: true
+        cptRankNA nullable: true
+        cptRankAO nullable: true
+        cptRankEU nullable: true
         prevCptRank nullable: true
         cptQualified nullable: false
         cptPrize nullable: false
@@ -44,6 +52,14 @@ class Player
     Integer prevCptScore
     Integer cptRank
     Integer prevCptRank
+    Integer cptScoreNA
+    Integer cptScoreLA
+    Integer cptScoreAO
+    Integer cptScoreEU
+    Integer cptRankNA
+    Integer cptRankLA
+    Integer cptRankAO
+    Integer cptRankEU
     Integer cptTournaments = 0
     Integer cptPrize = 0
     boolean cptQualified = false
