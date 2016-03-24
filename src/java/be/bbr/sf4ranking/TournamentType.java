@@ -10,7 +10,7 @@ public enum TournamentType
     PREMIER_12("Premier 12",160),
     INTERNATIONAL("International",150),
     SERIES("Series",140),
-    CIRCUIT("Circuit",130),
+    CIRCUIT("Local",130),
     TOURNAMENT_CHAMPIONS("Tournament Of Champions",60),
     UNRANKED("Unranked", 0);
 
