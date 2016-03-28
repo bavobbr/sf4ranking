@@ -223,7 +223,13 @@
                             <li><g:link action="cptCharacterStats_2015" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
-                    <li><g:link controller="about" action="sf5">SF5 ORDER GUIDE</g:link></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="about" action="sf5">SF5 Order Guide</g:link></li>
+                    <li><g:link controller="gear" action="index">Sticks and Controllers</g:link></li>
+                </ul>
+            </li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">
@@ -236,6 +242,7 @@
                                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
                                 <li><g:link action="index" controller="user">[User]</g:link></li>
                                 <li><g:link action="index" controller="tournamentReview">[Review]</g:link></li>
+                                <li><g:link action="index" controller="hardware">[Hardware]</g:link></li>
                                 <li><g:link action="index" controller="query">[Query]</g:link></li>
                                 <li><g:link action="index" controller="configuration">[Configuration]</g:link></li>
                                 <li><g:link action="signOut"
@@ -253,6 +260,7 @@
                                 <li><g:link action="index" controller="result">[Results]</g:link></li>
                                 <li><g:link action="index" controller="team">[Teams]</g:link></li>
                                 <li><g:link action="index" controller="tournamentReview">[Reviews]</g:link></li>
+                                <li><g:link action="index" controller="gear">[Hardware]</g:link></li>
                                 <li><g:link action="index" controller="query">[Query]</g:link></li>
                                 <li><g:link action="signOut"
                                             controller="auth">[Sign out ${org.apache.shiro.SecurityUtils.subject.principal}]</g:link></li>

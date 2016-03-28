@@ -32,6 +32,7 @@ class Player
         pictureUrl nullable: true
         description nullable: true
         pictureCopyright nullable: true
+        hardware nullable: true
     }
 
     static mapping = {
@@ -69,6 +70,7 @@ class Player
     String pictureUrl
     String description
     String pictureCopyright
+    Hardware hardware
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
     static String pattern = /[^\dA-Za-z]/

@@ -60,6 +60,7 @@ This is for fine-grained maintenance, usually not required.
   <li><g:link action="exportTournaments">Export Tournaments and Results as JSON data...</g:link></li>
   <li><g:link action="exportPlayers">Export Players as JSON data...</g:link></li>
   <li><g:link action="exportTeams">Export Teams as JSON data...</g:link></li>
+  <li><g:link action="exportHardware">Export Hardware as JSON data...</g:link></li>
 <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
   <li><g:link action="listOrphanedPlayers">manage all orphaned Players in the DB</g:link></li>
   <li><g:link action="listAlikes">manage possible duplicate players</g:link></li>

@@ -8,7 +8,6 @@
 <body>
 <div style="text-align: center;">
     <h6 class="player-heading">Fighting Game World Ranking</h6><span class="glyphicon glyphicon-flash"></span>
-    <h4 class="subtitle">rank.shoryuken.com</h4>
 
     <h1 class="player_name">${player.name}</h1>
 
@@ -20,11 +19,10 @@
 <center>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <dl class="dl-horizontal player_details">
                 <dt>Country</dt>
                 <dd>
-
                     <g:if test="${player.countryCode != null}">
                         <g:link controller="rankings" action="rank" params="[country: player.countryCode.name()]">
                             ${player.countryCode?.name}
@@ -41,6 +39,18 @@
                     <g:else>
                         <a href="#" data-toggle="tooltip" data-placement="top"
                            title="If you want to add your name to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+                    </g:else>
+                </dd>
+                <dt>Controller</dt>
+                <dd>
+                    <g:if test="${player.hardware}">
+                        <g:link controller="gear" action="show" params="[id: player.hardware.id]">
+                            ${player.hardware.name}
+                        </g:link>
+                    </g:if>
+                    <g:else>
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="Know the controller ${player.name} uses? Tweet it to us using page tweet!">(?)</a>
                     </g:else>
                 </dd>
                 <dt>Teams(s)</dt>
@@ -66,32 +76,51 @@
                            title="If you want to add your twitter handle to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
                     </g:else>
                 </dd>
-                <dt>Tweet results</dt>
-                <dd>
-                <g:render template="/templates/share"/>&NonBreakingSpace;
-                </dd>
                 <dt>Main Game</dt>
                 <dd>
                     <g:link controller="rankings" action="rank"
                             params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
                 </dd>
-                <dt>CPT Score</dt>
-                <dd>
-                    ${player.cptScore}
-                </dd>
-                <dt>CPT Qualified</dt>
-                <dd>
-                    ${player.cptQualified ? "Yes" : "No"}
-                </dd>
+                <g:if test="${player.hasRanking(Version.SF5)}">
+                    <dt>CPT Score</dt>
+                    <dd>
+                        ${player.cptScore}
+                    </dd>
+                    <dt>CPT Qualified</dt>
+                    <dd>
+                        ${player.cptQualified ? "Yes" : "No"}
+                    </dd>
+                </g:if>
                 <dt>Compare</dt>
                 <dd>
                     <g:link controller="stats" action="compare" params="[p1: player.id]">versus</g:link>
                 </dd>
+                <dt>Tweet results</dt>
+                <dd>
+                <g:render template="/templates/share"/>&NonBreakingSpace;
+                </dd>
             </dl>
         </div>
 
-        <div class="col-md-6">
-            <g:link controller="about" action="sf5"> <g:img dir="images" file="sf5_amazon.jpg" class="img-responsive" width="50%"/></g:link>
+        <div class="col-md-4">
+            <g:if test="${player.pictureUrl}">
+                <img src="${player.pictureUrl}" class="img-responsive"/>
+                <g:if test="${player.pictureCopyright}">
+                    (c) ${player.pictureCopyright}
+                </g:if>
+                <g:else>
+                    <p class="text-muted"><small>
+                        (no copyright known, tweet this page with your claim)
+                    </small>
+                    </p>
+                </g:else>
+            </g:if>
+            <g:else>
+                <p class="text-muted">
+                    <small>
+                        (No image found yet, if you have one please tweet this page with URL to image)</small>
+                </p>
+            </g:else>
         </div>
     </div>
 

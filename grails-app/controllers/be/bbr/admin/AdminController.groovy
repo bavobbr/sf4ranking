@@ -340,6 +340,12 @@ class AdminController
         render(teams as JSON)
     }
 
+    def exportHardware()
+    {
+        def hardware = dataService.exportHardware()
+        render(hardware as JSON)
+    }
+
     /**
      * Quick editing of certain properties that are not editable in scaffold
      */

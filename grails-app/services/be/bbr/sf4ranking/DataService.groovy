@@ -219,7 +219,23 @@ class DataService
                 log.info "saved team $team.id"
             }
 
-            def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
+        def hardwareFile = new File(DataService.class.getResource("/data/hardware.json").toURI())
+        def hardwaredata = new JsonSlurper().parseText(hardwareFile.text)
+        hardwaredata.each {
+            log.info "Saving hw $it.name"
+            Hardware hardware = new Hardware(name: it.name)
+            hardware.description = it.description
+            hardware.website = it.website
+            hardware.buy = it.buy
+            hardware.buyDE = it.buyDE
+            hardware.buyFR = it.buyFR
+            hardware.buyUK = it.buyUK
+            hardware.image = it.image
+            hardware.save(failOnError: true)
+            log.info "saved hw $hardware.id"
+        }
+
+        def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
             def pdata = new JsonSlurper().parseText(playerFile.text)
             pdata.each { pjson ->
                 Player.withTransaction {
@@ -261,6 +277,10 @@ class DataService
                         Team team = Team.findByCodename(it.toUpperCase())
                         if (team) p.addToTeams(team)
                     }
+                    if (pjson.hardware) {
+                        Hardware hardware = Hardware.findByName(pjson.hardware)
+                        p.hardware = hardware
+                    }
                     p.save(failOnError: true, flush: true)
                 }
             }
@@ -275,7 +295,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (version != Version.USF4 && version != Version.SF5) return
+                        if (version != Version.SF5) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -403,6 +423,7 @@ class DataService
             player.cptTournaments = it.cptTournaments?: 0
             player.cptPrize = it.cptPrize?: 0
             player.teams = it.teams.collect {it.codename}
+            player.hardware = it.hardware?.name
             def rankings = []
             it.rankings.each {
                 def ranking = [:]
@@ -446,6 +467,30 @@ class DataService
             teams << team
         }
         return teams
+    }
+
+
+    /**
+     * Exports all Team data as JSON
+     */
+    @Transactional
+    List<Team> exportHardware()
+    {
+        def list = Hardware.list()
+        def hardwares = []
+        list.each {
+            def hardware = [:]
+            hardware.name = it.name
+            hardware.description = it.description
+            hardware.website = it.website
+            hardware.image = it.image
+            hardware.buy = it.buy
+            hardware.buyUK = it.buyUK
+            hardware.buyFR = it.buyFR
+            hardware.buyDE = it.buyDE
+            hardwares << hardware
+        }
+        return hardwares
     }
 
     /**

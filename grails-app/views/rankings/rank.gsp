@@ -71,9 +71,11 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
             <th>Trend <a href="#" data-toggle="tooltip" data-placement="top" title="Rank difference between alltime and actual ranking. This shows if a player is trending upwards or downwards">(?)</a></th>
         </g:elseif>
     <g:if test="${SecurityUtils.subject.isPermitted("player")}">
-        <th>Handle</th>
-        <th>Twitter</th>
-        <th>Skill</th>
+        <th>real</th>
+        <th>@</th>
+        <th>Pic</th>
+        <th>HW</th>
+        <th>Edit</th>
     </g:if>
     </tr>
     </thead>
@@ -165,15 +167,22 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
           </g:elseif>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td>
-            ${p.realname}
+            ${p.realname? "Y": "N"}
           </td>
           <td>
-            ${p.twitter}
+              ${p.twitter? "Y": "N"}
           </td>
+            <td>
+                ${p.pictureUrl? "Y": "N"}
+            </td>
+            <td>
+                ${p.hardware? "Y": "N"}
+            </td>
         </g:if>
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
           <td>
-            <g:link controller="playerRanking" action="edit" params="[id:p.findRanking(game).id]">${p.skill(game)}</g:link>
+            <g:link controller="playerRanking" action="edit" params="[id:p.findRanking(game).id]" target="_blank">[skill ${p.skill(game)}]</g:link>
+            <g:link controller="player" action="edit" params="[id:p.id]" target="_blank">[edit]</g:link>
           </td>
         </g:if>
 
