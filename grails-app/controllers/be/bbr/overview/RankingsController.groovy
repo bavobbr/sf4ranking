@@ -327,7 +327,7 @@ class RankingsController
             if (fgame) game == fgame
             if (params.type && !(params.type =~ "any")) tournamentType == params.type as TournamentType
         }
-        List tournaments = query.list(order: "desc", sort: 'weight')
+        List tournaments = query.list(order: "desc", sort: 'date')
         def c = Tournament.createCriteria()
         def countries = c.list {
             projections {

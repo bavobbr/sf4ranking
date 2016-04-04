@@ -7,28 +7,44 @@
 
 <body>
 <center>
-    <h2 class="title">${game.value} Capcom Pro Tour Rankings 2016</h2>
+    <h2 class="title">${game.name()} Capcom Pro Tour Rankings 2016</h2>
 </center>
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Rules</h3>
-        </div>
-        <div class="panel-body">
-            This ranking follows the <a
-                href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
-                href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. The board is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
-        <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in qualifying region. Those that directly qualified are invited to the season finals in December, together with 8 global scoring players and 4 times 2 highest scoring per region.
-        </div>
-    </div>
-<g:if test="${updateMessage}">
-    <div class="alert alert-info alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <g:message message="${updateMessage}"/>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Rules</h3>
+            </div>
 
+            <div class="panel-body">
+                This ${game.value} ranking reflects the <a
+                    href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
+                    href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. The board is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
+                <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in qualifying region. Those that directly qualified are invited to the season finals in December, together with 8 global scoring players and 4 times 2 highest scoring per region.
+            </div>
+        </div>
     </div>
-</g:if>
+
+    <div class="col-md-6">
+
+        <g:if test="${updateMessage}">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Updates</h3>
+                </div>
+                <div class="panel-body">
+                    <g:message message="${updateMessage}"/>
+
+                </div>
+            </div>
+        </g:if>
+    </div>
+</div>
+
 <h3>Global leader board</h3>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable">
@@ -45,13 +61,14 @@
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
+                             title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a>
+            </th>
             <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
                             title="Diff against rank before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                               title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
             <th>Fight Money<a href="#" data-toggle="tooltip" data-placement="top"
-                            title="Estimated Prize money assigned by CPT budget">(?)</a></th>
+                              title="Estimated Prize money assigned by CPT budget">(?)</a></th>
             <th>Country</th>
         </tr>
         </thead>
@@ -59,8 +76,8 @@
         <g:each in="${players}" var="p" status="idx">
 
             <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
-                <td class="${p.cptRank <= 20? 'warning':''}">
-                        ${p.cptRank}
+                <td class="${p.cptRank <= 20 ? 'warning' : ''}">
+                    ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -90,19 +107,21 @@
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
                              height="25"/>
                     </g:if>
-                <g:else>
-                    <g:if test="${p.scoreQualified()}">
-                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a></small>
-                    </g:if>
                     <g:else>
-                        <g:if test="${p.cptRank <= 20}">
-                            <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
-                                               title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a></small>
+                        <g:if test="${p.scoreQualified()}">
+                            <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                                title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
+                            </small>
                         </g:if>
-                    </g:else>
-                </g:else></td>
-                <td>+${p.cptScore-(p.prevCptScore?: 0)}</td>
+                        <g:else>
+                            <g:if test="${p.cptRank <= 20}">
+                                <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
+                                                    title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a>
+                                </small>
+                            </g:if>
+                        </g:else>
+                    </g:else></td>
+                <td>+${p.cptScore - (p.prevCptScore ?: 0)}</td>
                 <td class="${p.rankDiffClass()}">
                     <g:if test="${p.rankDiff() == null}">
                         <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
@@ -137,6 +156,7 @@
     </table></div>
 
 <h3>North America Regional Board</h3>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable2">
@@ -148,7 +168,8 @@
             <th>Name</th>
             <th>Character</th>
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
+            </th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
@@ -160,7 +181,7 @@
         <g:each in="${playersNA}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedNA() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2? 'warning':''}">
+                <td class="${idx <= 2 ? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -189,9 +210,9 @@
                 <td>${p.cptTournaments}</td>
                 <td>
                     <g:if test="${p.countryCode}">
-                            <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
-                                   class="countryflag"/>
-                            ${p.countryCode.name}
+                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
+                               class="countryflag"/>
+                        ${p.countryCode.name}
                     </g:if>
                 </td>
             </tr>
@@ -201,6 +222,7 @@
 
 
 <h3>Latin America Regional Board</h3>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable3">
@@ -212,7 +234,8 @@
             <th>Name</th>
             <th>Character</th>
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
+            </th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
@@ -224,7 +247,7 @@
         <g:each in="${playersLA}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedLA() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2? 'warning':''}">
+                <td class="${idx <= 2 ? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -264,6 +287,7 @@
     </table></div>
 
 <h3>Asia/Oceania Regional Board</h3>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable4">
@@ -275,7 +299,8 @@
             <th>Name</th>
             <th>Character</th>
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
+            </th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
@@ -287,7 +312,7 @@
         <g:each in="${playersAO}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedAO() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2? 'warning':''}">
+                <td class="${idx <= 2 ? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -327,6 +352,7 @@
     </table></div>
 
 <h3>Europe Regional Board</h3>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable5">
@@ -338,7 +364,8 @@
             <th>Name</th>
             <th>Character</th>
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a></th>
+                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
+            </th>
             <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
@@ -350,7 +377,7 @@
         <g:each in="${playersEU}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedEU() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2? 'warning':''}">
+                <td class="${idx <= 2 ? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -390,10 +417,8 @@
     </table></div>
 
 <script type="text/javascript" charset="utf-8">
-    $(document).ready(function ()
-    {
-        $('table[id^="datatable"]').each(function (index)
-        {
+    $(document).ready(function () {
+        $('table[id^="datatable"]').each(function (index) {
             try {
                 $(this).tablecloth({
                     theme: "default",
@@ -402,7 +427,8 @@
                     condensed: true
                 })
             }
-            catch (err) { }
+            catch (err) {
+            }
         })
     });
 </script>

@@ -16,7 +16,7 @@ class StatsController
     {
         Version game = Version.fromString(params.game)
         log.info "got stats request for game $game"
-        if (!game) game = Version.USF4
+        if (!game) game = Version.SF5
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
@@ -116,7 +116,9 @@ class StatsController
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
         def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
-        def bestSecondaryplayers = best ? best.findAll {!(charType in it.main(game))} : null
+        def bestSecondaryplayers = best ? best.findAll {
+            !(charType in it.main(game))
+        } : null
         def best5m = bestMainplayers.take(5)
         def best5s = bestSecondaryplayers.take(5)
         def others = CharacterStats.findAllByGame(game)

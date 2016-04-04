@@ -224,7 +224,7 @@
                         </ul>
                     </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SHOP <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTROLLERS <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><g:link controller="about" action="sf5">SF5 Order Guide</g:link></li>
                     <li><g:link controller="gear" action="index">Sticks and Controllers</g:link></li>

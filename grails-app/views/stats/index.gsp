@@ -9,15 +9,17 @@
 
 <h2>Character statistics for ${game}</h2>
 
-<h3>Character usage details</h3>
-
-<div class="alert alert-info alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <ul>
-    <li>You can sort on the columns by clicking the header</li>
-    <li>You can get character details by clicking the character name</li>
-    </ul>
-</div>
+  <div class="panel panel-primary lowtoppanel">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tips</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li>You can sort on the columns by clicking the header</li>
+        <li>You can get character details by clicking the character name</li>
+      </ul>
+    </div>
+  </div>
 <ul class="nav nav-pills">
   <g:each in="${Version.values().findAll{ it != Version.UNKNOWN}}" var="g">
     <li class="${game == g ? 'active' : 'passive'}"><g:link controller="stats" action="index" params="[game: g.name()]">${g.
