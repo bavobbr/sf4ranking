@@ -45,7 +45,7 @@
                 <dd>
                     <g:if test="${player.hardware}">
                         <g:link controller="gear" action="show" params="[id: player.hardware.id]">
-                            ${player.hardware.name}
+                            ${player.hardware.shortname}
                         </g:link>
                     </g:if>
                     <g:else>

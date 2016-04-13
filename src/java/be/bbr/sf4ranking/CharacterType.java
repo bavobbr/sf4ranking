@@ -124,6 +124,12 @@ public enum CharacterType
     AGANOS("AGANOS", "Aganos", Version.KI),
     HISAKO("HISAKO", "Hisako", Version.KI),
     ARIA("ARIA", "Aria", Version.KI),
+    RASH("RASH", "Rash", Version.KI),
+    KIMWU("KIM-WU", "Kim Wu", Version.KI),
+    ARBITER("ARBITER", "Arbiter", Version.KI),
+    TUSK("TUSK", "Tusk", Version.KI),
+    MIRA("MIRA", "Mira", Version.KI),
+    GARGOS("GARGOS", "Gargos", Version.KI),
 
     BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
     CEREBELLA("CEREBELLA", "Cerebella", Version.SKULLGIRLS),
@@ -203,16 +209,16 @@ public enum CharacterType
     DVORAH("DVORAH", "D'Vorah", Version.MKX),
     ERMAC("ERMAC", "Ermac", Version.MKX),
     ERRON_BLACK("ERRON_BLACK", "Erron Black", Version.MKX),
-    FERRA_TORR("FERRA_TORR", "Ferra Torr", Version.MKX),
+    FERRA_TORR("FERRA-TORR", "Ferra Torr", Version.MKX),
     GORO("GORO", "Goro", Version.MKX),
-    JACQUELINE_BRIGGS("JACQUELINE_BRIGGS", "Jacqueline Briggs", Version.MKX),
+    JACQUELINE_BRIGGS("JACQUI BRIGGS", "Jacqueline Briggs", Version.MKX),
     JASON_VOORHEES("JASON_VOORHEES", "Jason", Version.MKX),
-    JAX_BRIGGS("JAX_BRIGGS", "Jax Briggs", Version.MKX),
+    JAX_BRIGGS("JAX", "Jax Briggs", Version.MKX),
     JOHNNY_CAGE("JOHNNY_CAGE", "Johnny Cage", Version.MKX),
     KANO("KANO", "Kano", Version.MKX),
     KENSHI("KENSHI", "Kenshi", Version.MKX),
     KITANA("KITANA", "Kitana", Version.MKX),
-    KOTAL_KAHN("KOTAL_KAHN", "Kotal Kahn", Version.MKX),
+    KOTAL_KAHN("KOTAL KHAN", "Kotal Kahn", Version.MKX),
     KUNG_LAO("KUNG_LAO", "Kung Lao", Version.MKX),
     KUNG_JIN("KUNG_JIN", "Kung Jin", Version.MKX),
     LIU_KANG("LIU_KANG", "Liu Kang", Version.MKX),
@@ -228,6 +234,10 @@ public enum CharacterType
     TAKEDA_TAKESHI("TAKEDA_TAKESHI", "Takeda", Version.MKX),
     TANYA("TANYA", "Tanya", Version.MKX),
     TREMOR("TREMOR", "Tremor", Version.MKX),
+    ALIEN("ALIEN", "Alien", Version.MKX),
+    BORAICHO("BO RAI CHO", "Bo Rai Cho", Version.MKX),
+    LEATHERFACE("LEATHERFACE", "Leatherface", Version.MKX),
+    TRIBORG("TRIBORG", "Triborg", Version.MKX),
 
     SF5_BIRDIE("BIRDIE", "Birdie", Version.SF5),
     SF5_CAMMY("CAMMY", "Cammy", Version.SF5),
@@ -244,7 +254,8 @@ public enum CharacterType
     SF5_RYU("RYU", "Ryu", Version.SF5),
     SF5_VEGA("VEGA", "Vega", Version.SF5),
     SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
-    SF5_FANG("F.A.N.G", "FANG", Version.SF5);
+    SF5_FANG("F.A.N.G", "FANG", Version.SF5),
+    SF5_ALEX("ALEX", "Alex", Version.SF5);
 
 
     private final String value;

@@ -231,6 +231,7 @@ class DataService
             hardware.buyFR = it.buyFR
             hardware.buyUK = it.buyUK
             hardware.image = it.image
+            hardware.shortname = it.shortname
             hardware.save(failOnError: true)
             log.info "saved hw $hardware.id"
         }
@@ -295,7 +296,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (version != Version.SF5) return
+                        if (!(version in [Version.SF5, Version.MKX])) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -488,6 +489,7 @@ class DataService
             hardware.buyUK = it.buyUK
             hardware.buyFR = it.buyFR
             hardware.buyDE = it.buyDE
+            hardware.shortname = it.shortname
             hardwares << hardware
         }
         return hardwares

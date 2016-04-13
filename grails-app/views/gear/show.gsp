@@ -14,6 +14,10 @@
                 <thead><tr></tr></thead>
                 <tbody>
                 <tr>
+                    <td>Short Name</td>
+                    <td>${controller.shortname}</td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>${controller.name}</td>
                 </tr>
@@ -47,25 +51,26 @@
 </center>
 
 <h3>Prices of ${controller.name}</h3>
-
+These Amazon stores offer ${controller.shortname} directly. Click on the image to go to Amazon for more info and related products.
+<p>
 <div class="row">
     <g:if test="${controller.buy}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             Amazon United States
         </div>
     </g:if>
     <g:if test="${controller.buyUK}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             Amazon United Kingdom
         </div>
     </g:if>
     <g:if test="${controller.buyFR}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             Amazon France
         </div>
     </g:if>
     <g:if test="${controller.buyDE}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             Amazon Germany
         </div>
     </g:if>
@@ -73,26 +78,27 @@
 
 <div class="row">
     <g:if test="${controller.buy}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             ${raw(controller.buy)}
         </div>
     </g:if>
     <g:if test="${controller.buyUK}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             ${raw(controller.buyUK)}
         </div>
     </g:if>
     <g:if test="${controller.buyFR}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             ${raw(controller.buyFR)}
         </div>
     </g:if>
     <g:if test="${controller.buyDE}">
-        <div class="col-md-3">
+        <div class="col-md-2">
             ${raw(controller.buyDE)}
         </div>
     </g:if>
 </div>
+</p>
 <g:render template="/templates/prettify"/>
 </center>
 </body>

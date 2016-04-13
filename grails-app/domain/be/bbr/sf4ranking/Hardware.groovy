@@ -12,6 +12,7 @@ class Hardware
         buyUK nullable: true
         buyFR nullable: true
         buyDE nullable: true
+        shortname nullable: true
     }
 
     static mapping = {
@@ -33,6 +34,8 @@ class Hardware
     String buyUK
     String buyFR
     String buyDE
+
+    String shortname = "N/A"
 
     public String toString() {
         return "${name}"
