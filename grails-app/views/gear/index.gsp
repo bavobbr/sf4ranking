@@ -31,16 +31,14 @@
         <tr class="stathead">
             <th>Name</th>
             <th>Vendor</th>
-            <th>Players</th>
-            <th>Shop</th>
+            <th>Known Players</th>
+            <th>Pricing</th>
         </tr>
         </thead>
         <g:each in="${controllers}" var="controller">
             <tr>
                 <td>
-                    <g:link action="show" params="[id: controller.id]">
-                        ${controller.name}
-                    </g:link>
+                    ${controller.name}
                 </td>
                 <td>
                     ${controller.website}
@@ -50,7 +48,7 @@
                 </td>
                 <td>
                     <g:link action="show" params="[id: controller.id]">
-                        Buy ${controller.name}
+                        Prices of ${controller.name}
                     </g:link>
                 </td>
             </tr>
