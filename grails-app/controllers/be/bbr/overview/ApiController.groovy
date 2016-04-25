@@ -116,6 +116,7 @@ class ApiController {
                         [tournament    : it.tournament.id,
                          tournamentname: it.tournament.name,
                          place         : it.place,
+                         date          : it.tournament.date,
                          characters    : it.characterTeams.collect {
                              it.pchars.collect {
                                  it.characterType.name()

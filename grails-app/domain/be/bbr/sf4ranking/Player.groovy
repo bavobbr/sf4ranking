@@ -7,32 +7,36 @@ class Player
     static constraints = {
         name nullable: false, unique: true
         countryCode nullable: true
-        codename nullable: true, unique: true
-        simplified nullable: true, unique: false
         videos nullable: true, unique: false
         wikilink nullable: true
         twitter nullable: true
         rankings nullable: false
-        creator nullable: true
         realname nullable: true
-        cptScore nullable: true
-        cptScoreLA nullable: true
-        cptScoreNA nullable: true
-        cptScoreAO nullable: true
-        cptScoreEU nullable: true
-        prevCptScore nullable: true
-        cptRank nullable: true
-        cptRankLA nullable: true
-        cptRankNA nullable: true
-        cptRankAO nullable: true
-        cptRankEU nullable: true
-        prevCptRank nullable: true
         cptQualified nullable: false
-        cptPrize nullable: false
+        cptRegionalQualified nullable: false
         pictureUrl nullable: true
-        description nullable: true
+        description nullable: true, widget: 'textarea'
         pictureCopyright nullable: true
         hardware nullable: true
+        maxoplataId nullable: true
+
+        creator nullable: true, editable: false
+        cptScore nullable: true, editable: false
+        cptScoreLA nullable: true, editable: false
+        cptScoreNA nullable: true, editable: false
+        cptScoreAO nullable: true, editable: false
+        cptScoreEU nullable: true, editable: false
+        prevCptScore nullable: true, editable: false
+        cptRank nullable: true, editable: false
+        cptRankLA nullable: true, editable: false
+        cptRankNA nullable: true, editable: false
+        cptRankAO nullable: true, editable: false
+        cptRankEU nullable: true, editable: false
+        prevCptRank nullable: true, editable: false
+        cptPrize nullable: false, editable: false
+
+        codename nullable: true, unique: true, editable: false
+        simplified nullable: true, unique: false, editable: false
     }
 
     static mapping = {
@@ -71,6 +75,8 @@ class Player
     String description
     String pictureCopyright
     Hardware hardware
+    String maxoplataId
+    boolean cptRegionalQualified = false
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 
     static String pattern = /[^\dA-Za-z]/

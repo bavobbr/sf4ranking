@@ -88,7 +88,17 @@
                     </dd>
                     <dt>CPT Qualified</dt>
                     <dd>
-                        ${player.cptQualified ? "Yes" : "No"}
+                        ${player.cptQualified ? "Qualified" : "Not qualified"}
+                    </dd>
+                </g:if>
+                <g:if test="${player.hasRanking(Version.SF5)}">
+                    <dt>CPT Score AO/EU/LA/NA</dt>
+                    <dd>
+                        ${player.cptScoreAO}/${player.cptScoreEU}/${player.cptScoreLA}/${player.cptScoreNA}
+                    </dd>
+                    <dt>CPT Regional Finals</dt>
+                    <dd>
+                        ${player.cptRegionalQualified ? "Qualified" : "Not qualified"}
                     </dd>
                 </g:if>
                 <dt>Compare</dt>

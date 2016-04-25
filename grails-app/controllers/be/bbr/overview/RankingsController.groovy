@@ -141,26 +141,28 @@ class RankingsController
 
 
         def playersNA = queryService.findCptPlayers(Region.NA)
-        def unqualifiedPlayersNA = playersNA.findAll { !it.cptQualified }
+        def unqualifiedPlayersNA = playersNA.findAll { !it.cptRegionalQualified }
         unqualifiedPlayersNA.take(2).each {
             it.metaClass.scoreQualifiedNA = {true}
         }
         def playersLA = queryService.findCptPlayers(Region.LA)
-        def unqualifiedPlayersLA = playersLA.findAll { !it.cptQualified }
+        def unqualifiedPlayersLA = playersLA.findAll { !it.cptRegionalQualified }
         unqualifiedPlayersLA.take(2).each {
             it.metaClass.scoreQualifiedLA = {true}
         }
         def playersAO = queryService.findCptPlayers(Region.AO)
-        def unqualifiedPlayersAO = playersAO.findAll { !it.cptQualified }
+        def unqualifiedPlayersAO = playersAO.findAll { !it.cptRegionalQualified }
         unqualifiedPlayersAO.take(2).each {
             it.metaClass.scoreQualifiedAO = {true}
         }
         def playersEU = queryService.findCptPlayers(Region.EU)
-        def unqualifiedPlayersEU = playersEU.findAll { !it.cptQualified }
+        def unqualifiedPlayersEU = playersEU.findAll { !it.cptRegionalQualified }
         unqualifiedPlayersEU.take(2).each {
-            println "setting $it as quLIFIED"
+            println "setting $it as qualified"
             it.metaClass.scoreQualifiedEU = {true}
         }
+
+        def openSpots = 8 + players.count { it.cptQualified }
 
         [players: players,
          total: playercount,
@@ -171,6 +173,7 @@ class RankingsController
          playersLA: playersLA,
          playersAO: playersAO,
          playersEU: playersEU,
+         openSpots: openSpots
         ]
     }
 

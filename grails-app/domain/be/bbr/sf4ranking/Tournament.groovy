@@ -8,14 +8,14 @@ class Tournament
 
     static constraints = {
         name nullable: false, unique: true
-        weight range: 0..9999
+        weight range: 0..9999, editable: false
         date nullable: false
         countryCode nullable: true
         tournamentType nullable: true
         tournamentFormat nullable: false
         weightingType nullable: false
         game nullable: false
-        codename nullable: true, unique: true
+        codename nullable: true, unique: true, editable: false
         videos nullable: true, unique: false
         challonge nullable: true
         ranked nullable: false

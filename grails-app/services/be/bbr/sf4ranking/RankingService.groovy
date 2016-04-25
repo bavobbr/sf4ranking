@@ -99,11 +99,9 @@ class RankingService {
                     player == p
                     tournament.game == game
                 }.list()
-                log.info "Found ${results.size()} results, evaluating legacy score"
                 def playerScore = getScore(results) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }
-                log.info "Found ${results.size()} results, evaluating actual score"
                 p.applyScore(game, playerScore)
                 def actualScore = getScore(results) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
@@ -112,6 +110,7 @@ class RankingService {
                 p.applyTotalScore(game, playerScore)
                 // calculate CPT score
                 if (game == Version.SF5) {
+                    log.info("Calculating CPT for $p.name")
                     def cptScore = 0
                     def cptScoreAO = 0
                     def cptScoreLA = 0
@@ -144,7 +143,9 @@ class RankingService {
                     p.cptTournaments = cptCount
                     p.cptPrize = prize
                 }
+                log.info("Saving player $p.name")
                 p.save(failOnError: true)
+                log.info("Saved player $p.name")
             }
             log.info "Updated ${players.size()} scores"
         }
@@ -152,14 +153,14 @@ class RankingService {
     }
 
     private Integer getScore(List<Result> results, Closure scoringRule) {
+        log.info "Considering best scores of ${results.size}"
         def scores = results.collect {
             if (it.tournament.ranked && it.tournament.finished) {
                 scoringRule(it)
             } else 0
         }.sort { a, b -> b <=> a }
         def bestof = scores.take(12)
-        log.info "Considering best scores (${bestof.size()}): $bestof out of a total ${results.size()} results"
-        log.info "Unlimited score: ${scores.sum()} vs limited: ${bestof.sum()}"
+        log.info "Considered best scores: $bestof out of a total ${results.size()} results"
         (bestof.sum() as Integer) ?: 0
     }
 

@@ -18,10 +18,14 @@
             </div>
 
             <div class="panel-body">
-                This ${game.value} ranking reflects the <a
-                    href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>. Check out the offical site at <a
-                    href="http://capcomprotour.com/standings/">http://capcomprotour.com/standings/</a>. The board is auto-updated as soon as the tournament results are added at Shoryuken World Rankings.
-                <br/>Currently qualifying players by score are indicated in the blue area, those in yellow area are currently in qualifying region. Those that directly qualified are invited to the season finals in December, together with 8 global scoring players and 4 times 2 highest scoring per region.
+                This ${game.value} ranking follows the <a
+                    href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>
+                <ul>
+                    <li>12 qualify via Global Premier Events</li>
+                    <li>4 qualify via Regional Finals, 1 player from each event</li>
+                    <li>8 qualify via regional point leaderboards, top 2 from each region</li>
+                    <li>8 qualify via the global point leaderboards.</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -76,7 +80,7 @@
         <g:each in="${players}" var="p" status="idx">
 
             <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
-                <td class="${p.cptRank <= 20 ? 'warning' : ''}">
+                <td class="${p.cptRank <= openSpots? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>${p.rank(game)}</td>
@@ -104,21 +108,21 @@
                 <td>${p.cptScore}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                             height="25"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
+                             height="24"/>
                     </g:if>
+                    <g:elseif test="${p.cptRegionalQualified}">
+                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
+                                            title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
                     <g:else>
                         <g:if test="${p.scoreQualified()}">
                             <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Currently player is in the top15 spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
+                                                title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                             </small>
                         </g:if>
                         <g:else>
-                            <g:if test="${p.cptRank <= 20}">
-                                <small>candidate <a href="#" data-toggle="tooltip" data-placement="top"
-                                                    title="Player can still qualify when players who currently qualify by points get a direct qualifying spot at a Premier event">(?)</a>
-                                </small>
-                            </g:if>
                         </g:else>
                     </g:else></td>
                 <td>+${p.cptScore - (p.prevCptScore ?: 0)}</td>
@@ -181,8 +185,8 @@
         <g:each in="${playersNA}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedNA() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2 ? 'warning' : ''}">
-                    ${p.cptRank}
+                <td>
+                    ${p.cptRankNA}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -203,9 +207,14 @@
                 <td>${p.cptScoreNA}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                             height="25"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
+                             height="24"/>
                     </g:if>
+                    <g:elseif test="${p.cptRegionalQualified}">
+                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
+                                           title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -247,8 +256,8 @@
         <g:each in="${playersLA}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedLA() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2 ? 'warning' : ''}">
-                    ${p.cptRank}
+                <td>
+                    ${p.cptRankLA}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -269,9 +278,14 @@
                 <td>${p.cptScoreLA}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                             height="25"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
+                             height="24"/>
                     </g:if>
+                    <g:elseif test="${p.cptRegionalQualified}">
+                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
+                                           title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -312,8 +326,8 @@
         <g:each in="${playersAO}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedAO() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2 ? 'warning' : ''}">
-                    ${p.cptRank}
+                <td>
+                    ${p.cptRankAO}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -334,9 +348,14 @@
                 <td>${p.cptScoreAO}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                             height="25"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
+                             height="24"/>
                     </g:if>
+                    <g:elseif test="${p.cptRegionalQualified}">
+                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
+                                           title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -377,8 +396,8 @@
         <g:each in="${playersEU}" var="p" status="idx">
 
             <tr class="${p.scoreQualifiedEU() ? 'qual' : 'unqual'}">
-                <td class="${idx <= 2 ? 'warning' : ''}">
-                    ${p.cptRank}
+                <td>
+                    ${p.cptRankEU}
                 </td>
                 <td>${p.rank(game)}</td>
                 <td>
@@ -399,9 +418,14 @@
                 <td>${p.cptScoreEU}</td>
                 <td>
                     <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="25"
-                             height="25"/>
+                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
+                             height="24"/>
                     </g:if>
+                    <g:elseif test="${p.cptRegionalQualified}">
+                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
+                                           title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>

@@ -5,13 +5,13 @@ class Hardware
 {
     static constraints = {
         name nullable: false, unique: true
-        description nullable: true
+        description nullable: true, widget: 'textarea'
         website nullable: true
-        buy nullable: true
+        buy nullable: true, widget: 'textarea'
         image nullable: true
-        buyUK nullable: true
-        buyFR nullable: true
-        buyDE nullable: true
+        buyUK nullable: true, widget: 'textarea'
+        buyFR nullable: true, widget: 'textarea'
+        buyDE nullable: true, widget: 'textarea'
         shortname nullable: true
     }
 

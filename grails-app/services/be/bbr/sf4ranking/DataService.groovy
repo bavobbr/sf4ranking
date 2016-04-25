@@ -239,7 +239,7 @@ class DataService
         def playerFile = new File(DataService.class.getResource("/data/players.json").toURI())
             def pdata = new JsonSlurper().parseText(playerFile.text)
             pdata.each { pjson ->
-                Player.withTransaction {
+                //Player.withTransaction {
                     log.info "Saving player $pjson.name"
                     def cc = pjson.countryCode as CountryCode
                     def mainGame = Version.fromString(pjson.mainGame) ?: Version.UNKNOWN
@@ -282,8 +282,8 @@ class DataService
                         Hardware hardware = Hardware.findByName(pjson.hardware)
                         p.hardware = hardware
                     }
-                    p.save(failOnError: true, flush: true)
-                }
+                    p.save(failOnError: true)
+                //}
             }
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
             def tdata = new JsonSlurper().parseText(tournamentFile.text)
@@ -291,12 +291,11 @@ class DataService
                 //tdata = tdata.take(300)
             }
             tdata.each { tjson ->
-                Tournament.withTransaction {
                     log.info "Importing tournament $tjson.name at $tjson.date"
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (!(version in [Version.SF5, Version.MKX])) return
+                        if (!(version in [Version.SF5])) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -338,7 +337,7 @@ class DataService
                     }
                     tournament.save(failOnError: true, flush: true)
                 }
-            }
+
             log.info "All ${tdata.size()} tournaments imported"
 
         log.info "Import service completed"
