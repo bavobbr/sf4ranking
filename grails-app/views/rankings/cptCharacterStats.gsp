@@ -11,7 +11,7 @@ Statistics drawn from past Capcom Pro Tour tournaments. They reflect the charact
 
 
 <g:if test="${byMainCharacter32}">
-    <h3 class="tournament">Main character usage of top32</h3>
+    <h3 class="tournament">Main character usage of current qualifying 32</h3>
     <div class="table-responsive">
         <table class="tablehead" id="datatable2">
             <thead>
@@ -30,12 +30,12 @@ Statistics drawn from past Capcom Pro Tour tournaments. They reflect the charact
             </g:each>
         </table>
     </div>
-    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current best 32 CPT players.  <br/>
+    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current qualifying 32 CPT players<br/>
     Characters not used as main are: <b>${notIn.join(", ")}</b>
 </g:if>
 
 <g:if test="${secondary32}">
-    <h3 class="tournament">All character usages of top32</h3>
+    <h3 class="tournament">All character usages of current qualifying players</h3>
     <div class="table-responsive">
         <table class="tablehead" id="datatable5">
             <thead>
@@ -60,7 +60,7 @@ Statistics drawn from past Capcom Pro Tour tournaments. They reflect the charact
 
 
 <g:if test="${players32}">
-    <h3 class="tournament">Characters used by top 32 players</h3>
+    <h3 class="tournament">Characters used by current qualifying players</h3>
     <div class="table-responsive">
         <table class="tablehead" id="datatable4">
             <thead>
@@ -99,7 +99,7 @@ Statistics drawn from past Capcom Pro Tour tournaments. They reflect the charact
             </g:each>
         </table>
     </div>
-    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour tournament players.
+    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour 2016 tournament players.
 </g:if>
 
 

@@ -95,10 +95,9 @@ class RankingService {
         configurationService.withUniqueSession {
             players.each { Player p ->
                 log.info("Evaluating for $game player $p, looking for results")
-                def results = Result.where {
-                    player == p
-                    tournament.game == game
-                }.list()
+                def results = Result.findAll {
+                    player == p && tournament.game == game
+                }
                 def playerScore = getScore(results) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }
@@ -153,7 +152,7 @@ class RankingService {
     }
 
     private Integer getScore(List<Result> results, Closure scoringRule) {
-        log.info "Considering best scores of ${results.size}"
+        log.info "Considering best scores of ${results.size()}"
         def scores = results.collect {
             if (it.tournament.ranked && it.tournament.finished) {
                 scoringRule(it)
@@ -169,7 +168,7 @@ class RankingService {
      * If a score is equal to another player the rank is not incremented but kept equal
      */
     Integer updatePlayerRank(Version game) {
-        List players = Player.where { results.tournament.game == game }.list()
+        List players = Player.findAll { results.tournament.game == game }
         players = players.sort { a, b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update rank")
@@ -275,9 +274,9 @@ class RankingService {
     /**
      */
     Integer updateMainTeams(Version game) {
-        List players = Player.where {
+        List players = Player.findAll {
             results.tournament.game == game
-        }.list().sort { a, b -> b.score(game) <=> a.score(game) }
+        }.sort { a, b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update main")
             players.each { Player p ->

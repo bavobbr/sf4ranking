@@ -160,7 +160,7 @@
     </table></div>
 
 <h3>North America Regional Board</h3>
-
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable2">
@@ -215,6 +215,11 @@
                                            title="Player is currently qualified for regionals">(?)</a>
                         </small>
                     </g:elseif>
+                    <g:elseif test="${p.scoreQualifiedNA()}">
+                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -231,6 +236,7 @@
 
 
 <h3>Latin America Regional Board</h3>
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
 
 <div class="table-responsive">
 
@@ -286,6 +292,11 @@
                                            title="Player is currently qualified for regionals">(?)</a>
                         </small>
                     </g:elseif>
+                    <g:elseif test="${p.scoreQualifiedLA()}">
+                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -301,6 +312,7 @@
     </table></div>
 
 <h3>Asia/Oceania Regional Board</h3>
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
 
 <div class="table-responsive">
 
@@ -356,6 +368,11 @@
                                            title="Player is currently qualified for regionals">(?)</a>
                         </small>
                     </g:elseif>
+                    <g:elseif test="${p.scoreQualifiedAO()}">
+                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
+                        </small>
+                    </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>
@@ -371,6 +388,7 @@
     </table></div>
 
 <h3>Europe Regional Board</h3>
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
 
 <div class="table-responsive">
 
@@ -424,6 +442,11 @@
                     <g:elseif test="${p.cptRegionalQualified}">
                         <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Player is currently qualified for regionals">(?)</a>
+                        </small>
+                    </g:elseif>
+                    <g:elseif test="${p.scoreQualifiedEU()}">
+                        <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
+                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
                     </g:elseif>
                 </td>

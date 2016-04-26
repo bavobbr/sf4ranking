@@ -3,6 +3,7 @@ package be.bbr.sf4ranking;
 /**
  * User: bbr Date: 2/5/14
  */
+@SuppressWarnings("Duplicates")
 public enum CptTournament
 {
     NONE("None"),
@@ -11,7 +12,9 @@ public enum CptTournament
     PREMIER_SCORELESS("Premier without points"),
     QUALIFIER("Qualifier Tournament"),
     EVO("Evolution tier"),
-    CC("Capcom Cup");
+    CC("Capcom Cup"),
+    REGIONAL_FINAL("Regional Final"),
+    ONLINE_EVENT("Online Event");
 
     private final String value;
 
