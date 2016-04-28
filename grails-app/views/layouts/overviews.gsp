@@ -196,6 +196,7 @@
                             <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
                         </ul>
                     </li>
+                    <li><g:link controller="gear" action="index">CONTROLLERS</g:link></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUBMIT <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -209,7 +210,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li><g:link action="index" controller="about">FAQ</g:link></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
@@ -223,13 +223,7 @@
                             <li><g:link action="cptCharacterStats_2015" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTROLLERS <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><g:link controller="about" action="sf5">SF5 Order Guide</g:link></li>
-                    <li><g:link controller="gear" action="index">Sticks and Controllers</g:link></li>
-                </ul>
-            </li>
+                    <li><g:link action="index" controller="about">FAQ</g:link></li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

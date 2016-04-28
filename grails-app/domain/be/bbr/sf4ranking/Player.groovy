@@ -19,6 +19,8 @@ class Player
         pictureCopyright nullable: true
         hardware nullable: true
         maxoplataId nullable: true
+        onlineId nullable: true
+        twitch nullable: true
 
         creator nullable: true, editable: false
         cptScore nullable: true, editable: false
@@ -76,6 +78,8 @@ class Player
     String pictureCopyright
     Hardware hardware
     String maxoplataId
+    String onlineId
+    String twitch
     boolean cptRegionalQualified = false
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
 

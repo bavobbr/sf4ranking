@@ -182,16 +182,21 @@ This forms the basis of the actual score, which considers tournaments of the las
 <h3>How much data is being tracked?</h3>
 A total of ${players} players seen in ${tournaments} tournaments producing ${results} tournament rankings from ${first?.format("MM-yyyy")} until ${last?.format("MM-yyyy")}.
 
+<h3>Moderators</h3>
+Currently the data is maintained by
+<ul>
+  <li><a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> (site admin)</li>
+  <li><a href="https://twitter.com/tomakh">Tomakh</a> (moderator)</li>
+</ul>
+... and everyone who is submitting new data and providing input via Twitter!
 
 <h3>What about other games</h3>
-There is a moderator feature in development to allow the community to add data for new games. When a game is added some code need to be adapted (eg character types need to be defined, new hyperlinks will be added) and images need to be cut (to display the characters etc). Afterwards it is a matter of finding results and inputting them in a consistent way that does not cause duplicates. Any help is appreciated.
+There is a moderator feature to allow the community to add data for new games. When a game is added some code need to be adapted (eg character types need to be defined, new hyperlinks will be added) and images need to be cut (to display the characters etc). Afterwards it is a matter of finding results and inputting them in a consistent way that does not cause duplicates. Any help is appreciated.
 
-<h3>What else is coming?</h3>
-Besides ranking per version, it would also be nice to show some character statistics. The data is there so one could score characters instead of players and see what characters score best in tournaments. And of course the site will be updated whenever a new tournament is over. The ranking for AE 2012 is not final. We would also like to add in more foreign tournaments as US and JP are over represented. This is only possible if event sites report on these tournaments, and it will only be weighted correctly if one can rank the skill of the competing players.
-<strong>This is how you can help!</strong>If you want a tournament listed or player data changed, then tweet @SRKRanking or go to the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>. If you disagree with a player skill or country, then chances may be we did not know the player. So update me and we will update the data.
 
 <h3>How can I provide feedbacks/comments?</h3>
-Please also join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>, where a full discussion of this site is available. 
+Please join the <a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread on the SRK forums</a>, where a full discussion of this site is available.
+You can also tweet to <a href="https://twitter.com/srkranking">@SRKRanking</a> for fast feedback.
 
 <h3>What technology is being used?</h3>
 Glad you ask! This is a <a

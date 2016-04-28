@@ -175,21 +175,25 @@ h4.subtitle {
 
 .player_details {
 	margin: 10px 0;
-	width: 320px;
+	width: 400px;
 	text-transform: uppercase;
 }
 
 .player_details dt {
-	width: 120px;
-
+	width: 180px;
 }
 
 .controller_details dt {
-	width: 120px;
+	width: 150px;
 }
 
 .player_details dd {
 	margin: 0 0 0 10px;
+}
+
+.player_details dd small{
+	margin: 0 0 0 10px;
+	text-transform: lowercase;
 }
 
 .controller_details dd {

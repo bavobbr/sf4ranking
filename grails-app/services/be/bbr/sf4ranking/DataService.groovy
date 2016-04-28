@@ -253,11 +253,14 @@ class DataService
                     def pictureUrl = pjson.pictureUrl? pjson.pictureUrl : ""
                     def pictureCopyright = pjson.pictureCopyright? pjson.pictureCopyright : ""
                     def description = pjson.description? pjson.description : ""
+                    def maxoplataId = pjson.maxoplataId?: ""
+                    def onlineId = pjson.onlineId?: ""
+                    def twitch = pjson.twitch?: ""
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                             mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptScore: cptScore,
                             cptQualified: cptQualified, prevCptScore: prevCptScore, cptRank: cptRank,
                             prevCptRank: prevCptRank, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
-                            pictureUrl: pictureUrl, description: description)
+                            pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId, twitch: twitch)
                     pjson.rankings.each {
                         def game = Version.fromString(it.game)
                         List mainCharacters = []
@@ -424,6 +427,9 @@ class DataService
             player.cptPrize = it.cptPrize?: 0
             player.teams = it.teams.collect {it.codename}
             player.hardware = it.hardware?.name
+            player.maxoplataId = it.maxoplataId
+            player.onlineId = it.onlineId
+            player.twitch = it.twitch
             def rankings = []
             it.rankings.each {
                 def ranking = [:]

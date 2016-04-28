@@ -7,8 +7,6 @@
 
 <body>
 <div style="text-align: center;">
-    <h6 class="player-heading">Fighting Game World Ranking</h6><span class="glyphicon glyphicon-flash"></span>
-
     <h1 class="player_name">${player.name}</h1>
 
     <h3 class="world_rank">${player.rank(player.mainGame)}</h3>
@@ -82,21 +80,28 @@
                             params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
                 </dd>
                 <g:if test="${player.hasRanking(Version.SF5)}">
-                    <dt>CPT Score</dt>
+                    <dt>CPT Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                     title="Global CPT score">(?)</a></dt>
                     <dd>
+                        <g:link action="cpt" controller="rankings">
                         ${player.cptScore}
+                        </g:link>
                     </dd>
-                    <dt>CPT Qualified</dt>
+                    <dt>CPT Qualified <a href="#" data-toggle="tooltip" data-placement="top"
+                                        title="Directly qualified for CPT">(?)</a></dt>
                     <dd>
                         ${player.cptQualified ? "Qualified" : "Not qualified"}
                     </dd>
                 </g:if>
                 <g:if test="${player.hasRanking(Version.SF5)}">
-                    <dt>CPT Score AO/EU/LA/NA</dt>
+                    <dt>CPT Region scores <a href="#" data-toggle="tooltip" data-placement="top"
+                                    title="Scores for regions Asia / Europe / Latain America / North America">(?)</a>
+                    </dt>
                     <dd>
                         ${player.cptScoreAO}/${player.cptScoreEU}/${player.cptScoreLA}/${player.cptScoreNA}
                     </dd>
-                    <dt>CPT Regional Finals</dt>
+                    <dt>CPT RF <a href="#" data-toggle="tooltip" data-placement="top"
+                                          title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
                     <dd>
                         ${player.cptRegionalQualified ? "Qualified" : "Not qualified"}
                     </dd>
@@ -109,6 +114,22 @@
                 <dd>
                 <g:render template="/templates/share"/>&NonBreakingSpace;
                 </dd>
+                <g:if test="${player.maxoplataId}">
+                <dt>Maxoplata</dt>
+                <dd>
+                <a href="http://www.maxoplata.net/player/${player.maxoplataId}" target="_blank">match data</a>
+                </dd>
+                </g:if>
+                    <dt>PSN/PC stats</dt>
+                <g:if test="${player.onlineId}">
+                    <dd>
+                        <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">match data</a>
+                    </dd>
+                </g:if>
+                <g:else>
+                    <dd><small>(Tweet us the player id)</small></dd>
+                </g:else>
+
             </dl>
         </div>
 
@@ -120,7 +141,8 @@
                 </g:if>
                 <g:else>
                     <p class="text-muted"><small>
-                        (no copyright known, tweet this page with your claim)
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="(no copyright known, tweet this page with your claim)">(copyright)</a>
                     </small>
                     </p>
                 </g:else>
