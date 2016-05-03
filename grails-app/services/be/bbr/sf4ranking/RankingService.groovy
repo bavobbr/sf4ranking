@@ -308,7 +308,6 @@ class RankingService {
     }
 
     Integer updateMainGames() {
-        configurationService.withUniqueSession {
             Player.list().each { Player player ->
                 log.info "Updating main game of $player.name"
                 def c = Result.createCriteria()
@@ -334,7 +333,6 @@ class RankingService {
                 }
 
             }
-        }
         return Player.count
     }
 

@@ -2,6 +2,7 @@ package be.bbr.sf4ranking
 
 import grails.transaction.Transactional
 import grails.util.Holders
+import org.apache.shiro.SecurityUtils
 
 
 @Transactional
@@ -12,6 +13,8 @@ class ConfigurationService
         def grailsApplication = Holders.getGrailsApplication()
         if (!grailsApplication.config.global.isUpdating) {
             grailsApplication.config.global.isUpdating = true
+            def creator = SecurityUtils.subject?.principal?.toString()
+            grailsApplication.config.global.isUpdatingBy = creator
             try {
                 log.info "Executing in unique session"
                 c()
@@ -19,12 +22,13 @@ class ConfigurationService
             finally
             {
                 grailsApplication.config.global.isUpdating = false
+                grailsApplication.config.global.isUpdatingBy = null
                 log.info "Unique session is freed"
             }
         }
         else {
-            log.warn "Skipped update as another one is already running"
-            throw new ConcurrentModificationException("A data update was already running, try again later")
+            log.warn "Skipped update as another one is already running by user ${grailsApplication.config.global.isUpdatingBy}"
+            throw new ConcurrentModificationException("A data update was already running by ${grailsApplication.config.global.isUpdatingBy}, try again later")
         }
     }
 

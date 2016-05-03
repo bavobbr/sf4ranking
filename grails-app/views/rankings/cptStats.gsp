@@ -90,7 +90,7 @@
 
 
 
-<h3 class="tournament"><small>Qualified listed players by country</small></h3>
+<h3 class="tournament"><small>Qualifying listed players by country</small></h3>
 <div class="table-responsive">
     <table class="tablehead" id="datatable4">
         <thead>
@@ -109,6 +109,8 @@
         </g:each>
     </table>
 </div>
+
+See the <g:link action="cptCharacterStats">CPT character stats </g:link> page for more info on qualifying players.
 
 
 <h3 class="tournament"><small>Total listed players by country</small></h3>

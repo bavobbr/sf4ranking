@@ -30,6 +30,9 @@ The updateAll should be triggered every time a new tournament has been imported,
 This is for fine-grained maintenance, usually not required.
 <ul>
   <li><g:link action="merge">merge specified Players...</g:link></li>
+  <g:each in="${Version.values()}" var="value">
+    <li><g:link action="bulkedit" params="[game: value.name()]">bulk edit Players of ${value}</g:link></li>
+  </g:each>
   <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
     <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>
     <li><g:link action="updateTournamentTypes">update Tournament types based on tournament weights</g:link></li>

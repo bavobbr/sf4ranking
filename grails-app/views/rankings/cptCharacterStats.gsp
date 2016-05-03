@@ -8,8 +8,14 @@
 <body>
 <h2>Character Statistics in Capcom Pro Tour 2016</h2>
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
-
-
+<h3 class="tournament">Players in qualifying zones</h3>
+<ul>
+<li>Players qualified by score: <i>${qualified.collect { it.name}.join(", ")}</i></li>
+    <li>Players qualifying by global score: <i>${qualifiedGlobal.collect { it.name}.join(", ")}</i></li>
+    <li>Players qualifying by regional score: <i>${qualifiedRegional.collect { it.name}.join(", ")}</i></li>
+    <li>Players qualified for regional finals: <i>${qualifiedPlayersRegionalFinal.collect { it.name}.join(", ")}</i></li>
+</ul>
+Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify.
 <g:if test="${byMainCharacter32}">
     <h3 class="tournament">Main character usage of current qualifying 32</h3>
     <div class="table-responsive">

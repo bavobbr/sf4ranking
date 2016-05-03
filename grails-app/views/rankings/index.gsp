@@ -7,15 +7,13 @@
 
 <body>
 <center>
-    <h2 class="title">Fighting Games World Rankings</h2><span class="glyphicon glyphicon-flash"></span>
-    <h4 class="subtitle">rank.shoryuken.com</h4>
+    <h2 class="title">Fighting Games World Rankings</h2>
 </center>
 
 <g:if test="${updateMessage}">
-    <div class="alert alert-info alert-dismissable">
+    <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <g:message message="${updateMessage}"/>
-
     </div>
 </g:if>
 

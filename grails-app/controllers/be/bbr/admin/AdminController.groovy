@@ -248,7 +248,7 @@ class AdminController
     }
 
     def renderCharacterNames() {
-        def game = Version.fromString(params.game);
+        def game = Version.fromString(params.game)
         def names = CharacterType.values().findAll { it.game == Version.generalize(game) }
         log.info "rendering $game"
         render(contentType: "text/html") {
@@ -275,6 +275,38 @@ class AdminController
     def merge()
     {
         [players: Player.list(order: "asc", sort: 'name')]
+    }
+
+    def bulkedit() {
+        def game = Version.fromString(params.game)
+        def top100 = queryService.findPlayers(null, null, 100, 0, game, false)
+        return [players: top100, game: game]
+    }
+
+    def bulksubmit() {
+        params.each { k, v ->
+            if (k.startsWith("name_")) {
+                def pid = k - "name_" as Integer
+                def player = Player.load(pid)
+                println "Found player $player"
+                def realname = v[0]
+                def twitter = v[1]
+                def twitch = v[2]
+                def maxoplataId = v[3]
+                def onlineId = v[4]
+                def pictureUrl = v[5]
+                player.realname = realname
+                player.twitter = twitter
+                player.twitch = twitch
+                player.maxoplataId = maxoplataId
+                player.onlineId = onlineId
+                player.pictureUrl = pictureUrl
+                player.save(failOnError: true)
+                println "Saved player $player"
+            }
+        }
+        flash.message = "Updated bulk of players"
+        render view: "index"
     }
 
     def split(Player p)

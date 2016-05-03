@@ -126,3 +126,4 @@ log4j = {
 }
 
 global.isUpdating = false
+global.isUpdatingBy = null

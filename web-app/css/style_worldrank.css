@@ -112,7 +112,7 @@ thead tr td {
 }
 
 .alert {
-	background-color: #ffff99;
+	background-color: #f9f9f9;
 	color: #000;
 	border: none;
 	font-size: 13px;
@@ -285,7 +285,10 @@ thead, table {
 }
 
 a.step {
-	padding-right: 5px;
+	padding-left: 5px;
+}
+a.nextLink {
+	padding-left: 5px;
 }
 
 .borderless {

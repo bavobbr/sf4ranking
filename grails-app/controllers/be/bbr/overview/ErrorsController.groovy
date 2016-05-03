@@ -10,6 +10,6 @@ class ErrorsController
 
     def concurrent() {
         log.info "Rendering concurrent modification error view"
-        render("Another user was updating the database, please try again later")
+        render("Another user was updating the database: ${grailsApplication.config.global.isUpdatingBy} please try again later")
     }
 }

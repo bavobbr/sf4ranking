@@ -71,7 +71,17 @@
                     </g:if>
                     <g:else>
                         <a href="#" data-toggle="tooltip" data-placement="top"
-                           title="If you want to add your twitter handle to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+                           title="If you want to add your twitter handle to this page, share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
+                    </g:else>
+                </dd>
+                <dt>Twitch Stream</dt>
+                <dd>
+                    <g:if test="${player.twitch}">
+                        <a href="https://www.twitch.tv/${player.twitch}" target="_blank">${player.twitch}</a>
+                    </g:if>
+                    <g:else>
+                        <a href="#" data-toggle="tooltip" data-placement="top"
+                           title="If you want to add your Twitch handle to this page, share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
                     </g:else>
                 </dd>
                 <dt>Main Game</dt>
@@ -95,10 +105,16 @@
                 </g:if>
                 <g:if test="${player.hasRanking(Version.SF5)}">
                     <dt>CPT Region scores <a href="#" data-toggle="tooltip" data-placement="top"
-                                    title="Scores for regions Asia / Europe / Latain America / North America">(?)</a>
+                                    title="Scores for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.cptScoreAO}/${player.cptScoreEU}/${player.cptScoreLA}/${player.cptScoreNA}
+                        ${player.cptScoreAO?:"-"} / ${player.cptScoreEU?:"-"} / ${player.cptScoreLA?:"-"} / ${player.cptScoreNA?:"-"}
+                    </dd>
+                    <dt>CPT Region ranks <a href="#" data-toggle="tooltip" data-placement="top"
+                                             title="Ranks for regions Asia / Europe / Latin America / North America">(?)</a>
+                    </dt>
+                    <dd>
+                        ${player.cptRankAO?:"-"} / ${player.cptRankEU?:"-"} / ${player.cptRankLA?:"-"} / ${player.cptRankNA?:"-"}
                     </dd>
                     <dt>CPT RF <a href="#" data-toggle="tooltip" data-placement="top"
                                           title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
@@ -115,12 +131,14 @@
                 <g:render template="/templates/share"/>&NonBreakingSpace;
                 </dd>
                 <g:if test="${player.maxoplataId}">
-                <dt>Maxoplata</dt>
+                <dt>Maxoplata <a href="#" data-toggle="tooltip" data-placement="top"
+                                title="Link to the player profile on maxoplata.net to find more data on player matches and brackets">(?)</a></dt>
                 <dd>
                 <a href="http://www.maxoplata.net/player/${player.maxoplataId}" target="_blank">match data</a>
                 </dd>
                 </g:if>
-                    <dt>PSN/PC stats</dt>
+                    <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
+                                        title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a></dt>
                 <g:if test="${player.onlineId}">
                     <dd>
                         <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">match data</a>

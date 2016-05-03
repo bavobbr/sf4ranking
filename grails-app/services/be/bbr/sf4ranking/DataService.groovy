@@ -58,6 +58,14 @@ class DataService
                 if (pname.contains("|")) {
                     pname = pname.tokenize("|").last().trim()
                 }
+                def rankMatcher = (pname =~ /(\d*\.)(.*)/)
+                if (rankMatcher) {
+                    println rankMatcher
+                    def rankMatched = rankMatcher[0][1]
+                    println "removed rank match $rankMatched"
+                    pname = pname - rankMatched
+                    pname = pname.trim()
+                }
                 p = Player.findByCodename(pname.toUpperCase())
             }
             if (!p)
@@ -161,7 +169,15 @@ class DataService
                     if (pname.contains("|")) {
                         pname = pname.tokenize("|").last().trim()
                     }
-                    p = Player.findByCodename(pname.toUpperCase())
+                    def rankMatcher = (pname =~ /(\d*\.)(.*)/)
+                    if (rankMatcher) {
+                        println rankMatcher
+                        def rankMatched = rankMatcher[0][1]
+                        println "removed rank match $rankMatched"
+                        pname = pname - rankMatched
+                        pname = pname.trim()
+                    }
+                    p = Player.findByCodename(pname.trim().toUpperCase())
                 }
                 if (!p) {
                     def suggestions = findAlike(pname, 3)
@@ -256,11 +272,13 @@ class DataService
                     def maxoplataId = pjson.maxoplataId?: ""
                     def onlineId = pjson.onlineId?: ""
                     def twitch = pjson.twitch?: ""
+                    def cptRegionalQualified = pjson.cptRegionalQualified?: false
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                             mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptScore: cptScore,
                             cptQualified: cptQualified, prevCptScore: prevCptScore, cptRank: cptRank,
                             prevCptRank: prevCptRank, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
-                            pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId, twitch: twitch)
+                            pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId,
+                            twitch: twitch, cptRegionalQualified: cptRegionalQualified)
                     pjson.rankings.each {
                         def game = Version.fromString(it.game)
                         List mainCharacters = []
@@ -430,6 +448,7 @@ class DataService
             player.maxoplataId = it.maxoplataId
             player.onlineId = it.onlineId
             player.twitch = it.twitch
+            player.cptRegionalQualified = it.cptRegionalQualified
             def rankings = []
             it.rankings.each {
                 def ranking = [:]
