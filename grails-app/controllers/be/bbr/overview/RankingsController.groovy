@@ -207,13 +207,19 @@ class RankingsController
             cptTournament != CptTournament.NONE &&
             finished == true
         }.list()
+        def regionalQualifyingHistory = []
         pastTournaments.sort { it.date }.each { t ->
             t.metaClass.qualified << {
                 if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
                     return t.results?.sort { it.place }?.first()?.player?.name
                 }
                 else if (t.cptTournament == CptTournament.RANKING) {
-                    def qp = t.results?.sort { it.place }?.first()?.player?.name
+                    def qp = t.results.sort { it.place }.findResult {
+                        if (!regionalQualifyingHistory.contains(it.player)) {
+                            regionalQualifyingHistory << it.player
+                            return it.player.name
+                        } else return null
+                    }
                     return qp + " (RF)"
                 }
                 else return ""

@@ -24,8 +24,8 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
     </div>
 
 </div>
@@ -65,10 +65,9 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+        <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
     </div>
-
 </div>
 &NonBreakingSpace;
 <div class="row">

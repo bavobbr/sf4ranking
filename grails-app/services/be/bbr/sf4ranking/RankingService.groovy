@@ -308,6 +308,7 @@ class RankingService {
     }
 
     Integer updateMainGames() {
+        configurationService.withUniqueSession {
             Player.list().each { Player player ->
                 log.info "Updating main game of $player.name"
                 def c = Result.createCriteria()
@@ -326,14 +327,16 @@ class RankingService {
                     log.info "Main game is $main"
                     player.mainGame = main
                 }
-                player.rankings.each {
-                    if (it.score == 0 && it.totalScore == 0) {
-                        player.deleteRanking(it.game)
-                    }
+                def rankingsToDelete = player.rankings.findAll { it.score == 0 && it.totalScore == 0 }.collect {
+                    it.game
                 }
-
+                rankingsToDelete.each {
+                    player.deleteRanking(it)
+                }
             }
+        }
         return Player.count
+
     }
 
     private int applyType(List tournaments, TournamentType type, int start, int amount, double factor) {

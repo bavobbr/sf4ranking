@@ -43,5 +43,5 @@
       </tr>
     </g:each>
   </table></div>
-View <g:link action="rank" controller="rankings" params="['id': game.name()]" class="toplink">actual ${game.value} </g:link> /
+View <g:link action="rank" controller="rankings" params="['id': game.name()]" class="toplink">current ${game.value} </g:link> /
 <g:link action="rank" controller="rankings" params="['id': game.name(), alltime: true]" class="toplink">all-time ${game.value} </g:link> World Rankings

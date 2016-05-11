@@ -28,7 +28,7 @@ class ConfigurationService
         }
         else {
             log.warn "Skipped update as another one is already running by user ${grailsApplication.config.global.isUpdatingBy}"
-            throw new ConcurrentModificationException("A data update was already running by ${grailsApplication.config.global.isUpdatingBy}, try again later")
+            throw new IllegalAccessException("A data update was already running by ${grailsApplication.config.global.isUpdatingBy}, try again later")
         }
     }
 

@@ -255,8 +255,8 @@ public enum CharacterType
     SF5_VEGA("VEGA", "Vega", Version.SF5),
     SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
     SF5_FANG("F.A.N.G", "FANG", Version.SF5),
-    SF5_ALEX("ALEX", "Alex", Version.SF5);
-
+    SF5_ALEX("ALEX", "Alex", Version.SF5),
+    SF5_GUILE("GUILE", "Guile", Version.SF5);
 
     private final String value;
     private final Version game;

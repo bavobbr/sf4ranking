@@ -27,7 +27,7 @@ class UrlMappings {
             }
         }
         "500"(controller: "errors", action: "concurrent",
-              exception: ConcurrentModificationException)
+              exception: IllegalAccessException)
         "500"(view: "/error")
         "/"(controller: "/rankings")
 	}
