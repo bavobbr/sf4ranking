@@ -260,7 +260,20 @@ class RankingsController
         def players = queryService.findCptPlayers()
         def qualifiedPlayers = players.findAll { it.cptQualified }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
-        def qualifiedByScore = unqualifiedPlayers.take(8)
+
+        def premiers = Tournament.findAllByCptTournament(CptTournament.PREMIER)
+        def premiersScoreLess = Tournament.findAllByCptTournament(CptTournament.PREMIER_SCORELESS)
+        def regionalFinals = Tournament.findAllByCptTournament(CptTournament.REGIONAL_FINAL)
+        def evos = Tournament.findAllByCptTournament(CptTournament.EVO)
+        def winnersPremiers = premiers.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersScoreless = premiersScoreLess.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersRegionalFinals = regionalFinals.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersEvos = evos.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def allWinners = winnersPremiers+winnersScoreless+winnersRegionalFinals+winnersEvos
+        def dups = allWinners.countBy { it }
+        def extraspots = dups.values().count { it > 1 }
+
+        def qualifiedByScore = unqualifiedPlayers.take(8+extraspots)
         qualifiedPlayers.addAll(qualifiedByScore)
 
         def regions = [Region.AO, Region.EU, Region.LA, Region.NA]
@@ -284,7 +297,20 @@ class RankingsController
         def qualifiedPlayers = players.findAll { it.cptQualified }
         def qualifiedPlayersRegionalFinal = players.findAll { it.cptRegionalQualified }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
-        def qualifiedByScore = unqualifiedPlayers.take(8)
+
+        def premiers = Tournament.findAllByCptTournament(CptTournament.PREMIER)
+        def premiersScoreLess = Tournament.findAllByCptTournament(CptTournament.PREMIER_SCORELESS)
+        def regionalFinals = Tournament.findAllByCptTournament(CptTournament.REGIONAL_FINAL)
+        def evos = Tournament.findAllByCptTournament(CptTournament.EVO)
+        def winnersPremiers = premiers.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersScoreless = premiersScoreLess.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersRegionalFinals = regionalFinals.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersEvos = evos.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def allWinners = winnersPremiers+winnersScoreless+winnersRegionalFinals+winnersEvos
+        def dups = allWinners.countBy { it }
+        def extraspots = dups.values().count { it > 1 }
+
+        def qualifiedByScore = unqualifiedPlayers.take(8+extraspots)
         List<Player> players32 = []
         players32.addAll(qualifiedByScore)
 
