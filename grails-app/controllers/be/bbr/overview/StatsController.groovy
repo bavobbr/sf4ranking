@@ -297,21 +297,19 @@ class StatsController
         HitMap<CharacterType> charhitstop16 = new HitMap<>()
         characters.each {GameCharacter gc ->
             Result r = gc.gameTeam.result
-            if (r.place == 1)
-            {
-                charhitstop1.addHit(gc.characterType)
-            }
-            if (r.place <= 3)
-            {
-                charhitstop3.addHit(gc.characterType)
-            }
-            if (r.place <= 8)
-            {
-                charhitstop8.addHit(gc.characterType)
-            }
-            if (r.place <= 16)
-            {
-                charhitstop16.addHit(gc.characterType)
+            if (r.tournament.weightingType != WeightingType.FIXED && r.tournament.tournamentType != TournamentType.CIRCUIT) {
+                if (r.place == 1) {
+                    charhitstop1.addHit(gc.characterType)
+                }
+                if (r.place <= 3) {
+                    charhitstop3.addHit(gc.characterType)
+                }
+                if (r.place <= 8) {
+                    charhitstop8.addHit(gc.characterType)
+                }
+                if (r.place <= 16) {
+                    charhitstop16.addHit(gc.characterType)
+                }
             }
         }
         charhitstop1.each {k, v ->

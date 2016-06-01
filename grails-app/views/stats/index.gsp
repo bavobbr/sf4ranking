@@ -47,9 +47,9 @@
                           title="Number of top 100 players who use this character as main">(?)</a></th>
       <th>Main total <a href="#" data-toggle="tooltip" data-placement="top" title="Number of players who use this character as main">(?)</a>
       </th>
-      <th>Std Dev Usg<a href="#" data-toggle="tooltip" data-placement="top" title="Standard Deviation on times used by top 5">(?)</a>
+      <th>Top 1<a href="#" data-toggle="tooltip" data-placement="top" title="Number of times this character won a non-local tournaments">(?)</a>
       </th>
-      <th>Std Dev Score<a href="#" data-toggle="tooltip" data-placement="top" title="Standard Deviation on score made by top 5">(?)</a>
+      <th>Top 3<a href="#" data-toggle="tooltip" data-placement="top" title="Number of times this character laned in top3 of non-local tournaments">(?)</a>
       </th>
       <th>Best player <a href="#" data-toggle="tooltip" data-placement="top"
                          title="Highest ranked player who uses this char as main">(?)</a></th>
@@ -78,8 +78,8 @@
       <td>${cstat.asMainInTop50}</td>
       <td>${cstat.asMainInTop100}</td>
       <td>${cstat.asMain}</td>
-      <td>${cstat.standardDeviationTop5Usage?.round(1)}</td>
-      <td>${cstat.standardDeviationTop5Score?.round(1)}</td>
+      <td>${cstat.top1finishes}</td>
+      <td>${cstat.top3finishes}</td>
       <td>
         <g:if test="${cstat.player}">
           <g:link controller="rankings" mapping="playerByName" action="player"

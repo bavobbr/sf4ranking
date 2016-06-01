@@ -135,7 +135,22 @@ class RankingsController
         }
         def unqualifiedPlayers = players.findAll { !it.cptQualified }
         def qualifiedByScore = []
-        unqualifiedPlayers.take(8).each {
+        def premiers = Tournament.findAllByCptTournament(CptTournament.PREMIER)
+        def premiersScoreLess = Tournament.findAllByCptTournament(CptTournament.PREMIER_SCORELESS)
+        def regionalFinals = Tournament.findAllByCptTournament(CptTournament.REGIONAL_FINAL)
+        def evos = Tournament.findAllByCptTournament(CptTournament.EVO)
+        def winnersPremiers = premiers.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersScoreless = premiersScoreLess.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersRegionalFinals = regionalFinals.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def winnersEvos = evos.collectMany { it.results.findAll { it.place == 1 }.collect { it.player?.name } }
+        def allWinners = winnersPremiers+winnersScoreless+winnersRegionalFinals+winnersEvos
+        def dups = allWinners.countBy { it }
+        println "Grouped: $dups"
+        def extraspots = dups.values().count { it > 1 }
+        println "extra spots: $extraspots"
+        println "unqualifiedPlayers: $unqualifiedPlayers"
+
+        unqualifiedPlayers.take(8+extraspots).each {
             it.metaClass.scoreQualified = {true}
             qualifiedByScore << it
         }
@@ -143,40 +158,52 @@ class RankingsController
 
 
         def playersNA = queryService.findCptPlayers(Region.NA)
-        playersNA.each { it.metaClass.scoreQualifiedNA = {false} }
+        playersNA.each { p ->
+            p.metaClass.scoreQualifiedNA = {false}
+            p.metaClass.scoreQualified = { p.name in qualifiedByScore.name }
+        }
         def unqualifiedPlayersNA = playersNA.findAll {  p ->
-            return !p.cptRegionalQualified && !qualifiedByScore.any { it.name == p.name }
+            return !p.cptQualified && !qualifiedByScore.any { it.name == p.name }
         }
         unqualifiedPlayersNA.take(2).each {
             it.metaClass.scoreQualifiedNA = {true}
         }
         def playersLA = queryService.findCptPlayers(Region.LA)
-        playersLA.each { it.metaClass.scoreQualifiedLA = {false} }
+        playersLA.each { p ->
+            p.metaClass.scoreQualifiedLA = {false}
+            p.metaClass.scoreQualified = { p.name in qualifiedByScore.name }
+        }
         def unqualifiedPlayersLA = playersLA.findAll {  p ->
-            return !p.cptRegionalQualified && !qualifiedByScore.any { it.name == p.name }
+            return !p.cptQualified && !qualifiedByScore.any { it.name == p.name }
         }
         unqualifiedPlayersLA.take(2).each {
             it.metaClass.scoreQualifiedLA = {true}
         }
         def playersAO = queryService.findCptPlayers(Region.AO)
-        playersAO.each { it.metaClass.scoreQualifiedAO = {false} }
+        playersAO.each { p->
+            p.metaClass.scoreQualifiedAO = {false}
+            p.metaClass.scoreQualified = { p.name in qualifiedByScore.name }
+        }
         def unqualifiedPlayersAO = playersAO.findAll {  p ->
-            return !p.cptRegionalQualified && !qualifiedByScore.any { it.name == p.name }
+            return !p.cptQualified && !qualifiedByScore.any { it.name == p.name }
         }
         unqualifiedPlayersAO.take(2).each {
             it.metaClass.scoreQualifiedAO = {true}
         }
         def playersEU = queryService.findCptPlayers(Region.EU)
-        playersEU.each { it.metaClass.scoreQualifiedEU = {false} }
+        playersEU.each { p ->
+            p.metaClass.scoreQualifiedEU = {false}
+            p.metaClass.scoreQualified = { p.name in qualifiedByScore.name }
+        }
         def unqualifiedPlayersEU = playersEU.findAll {  p ->
-            return !p.cptRegionalQualified && !qualifiedByScore.any { it.name == p.name }
+            return !p.cptQualified && !qualifiedByScore.any { it.name == p.name }
         }
         unqualifiedPlayersEU.take(2).each {
             println "setting $it as qualified"
             it.metaClass.scoreQualifiedEU = {true}
         }
-
-        def openSpots = 8 + players.count { it.cptQualified }
+        def directSpots = players.count { it.cptQualified }
+        def openSpots = 8 + directSpots + extraspots
 
         [players: players.take(50),
          total: playercount,
@@ -187,7 +214,9 @@ class RankingsController
          playersLA: playersLA.take(30),
          playersAO: playersAO.take(30),
          playersEU: playersEU.take(30),
-         openSpots: openSpots
+         openSpots: openSpots,
+         extraSpots: extraspots,
+         directSpots: directSpots
         ]
     }
 
