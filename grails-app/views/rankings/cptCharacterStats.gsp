@@ -9,11 +9,15 @@
 <h2>Character Statistics in Capcom Pro Tour 2016</h2>
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
 <h3 class="tournament">Players in qualifying zones</h3>
+These players will qualify if tournament started today:
 <ul>
-<li>Players qualified by score: <i>${qualified.collect { it.name}.join(", ")}</i></li>
+<li>Players qualified directly: <i>${qualified.collect { it.name}.join(", ")}</i></li>
     <li>Players qualifying by global score: <i>${qualifiedGlobal.collect { it.name}.join(", ")}</i></li>
     <li>Players qualifying by regional score: <i>${qualifiedRegional.collect { it.name}.join(", ")}</i></li>
-    <li>Players qualified for regional finals: <i>${qualifiedPlayersRegionalFinal.collect { it.name}.join(", ")}</i></li>
+</ul>
+Players that may still win a direct spot:
+<ul>
+<li>qualified for regional finals: <i>${qualifiedPlayersRegionalFinal.collect { it.name}.join(", ")}</i></li>
 </ul>
 Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify.
 <g:if test="${byMainCharacter32}">
@@ -36,7 +40,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
             </g:each>
         </table>
     </div>
-    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current qualifying 32 CPT players<br/>
+    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current qualifying ${players32.size()} CPT players<br/>
     Characters not used as main are: <b>${notIn.join(", ")}</b>
 </g:if>
 
@@ -60,7 +64,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
             </g:each>
         </table>
     </div>
-    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current best 32 CPT players. <br/>
+    A total of <b>${byMainCharacter32.size()} </b>have been used as main by the current best ${players32.size()} CPT players. <br/>
     Characters not used at all are: <b>${notInAll.join(", ")}</b>
 </g:if>
 

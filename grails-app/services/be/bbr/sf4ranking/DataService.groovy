@@ -72,7 +72,7 @@ class DataService
             {
                 p = new Player(name: pname, cptPrize: 0, cptTournaments: 0)
                 log.info "Creating player $p"
-                p.save(failOnError: true)
+                p.save(failOnError: true, flush: true)
             }
             if (!p.rankings.any {it.game == tournament.game})
             {
@@ -104,7 +104,7 @@ class DataService
                 r.addToCharacterTeams(team)
                 log.warn "no chars found, assigned empty team"
             }
-            r.save(failOnError: true)
+            r.save(failOnError: true, flush: true)
             tournament.addToResults(r)
         }
     }

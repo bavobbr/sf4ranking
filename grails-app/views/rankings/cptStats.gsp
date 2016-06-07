@@ -110,7 +110,7 @@
     </table>
 </div>
 
-See the <g:link action="cptCharacterStats">CPT character stats </g:link> page for more info on qualifying players.
+See the <g:link action="cptCharacterStats">CPT character stats </g:link> page for more info on qualifying players. Currently ${unknownTotal} spots are not known yet.
 
 
 <h3 class="tournament"><small>Total listed players by country</small></h3>

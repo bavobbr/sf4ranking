@@ -78,7 +78,7 @@
 
         <g:each in="${players}" var="p" status="idx">
 
-            <tr class="${p.scoreQualified() ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualified ? 'qual' : 'unqual'}">
                 <td class="${p.cptRank <= openSpots? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
@@ -120,7 +120,7 @@
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified()}">
+                    <g:elseif test="${p.scoreQualified}">
                             <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
                                                 title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                             </small>
@@ -132,18 +132,18 @@
                     </g:elseif>
                 </td>
                 <td>+${p.cptScore - (p.prevCptScore ?: 0)}</td>
-                <td class="${p.rankDiffClass()}">
-                    <g:if test="${p.rankDiff() == null}">
+                <td class="${p.rankDiffClass}">
+                    <g:if test="${p.rankDiff == null}">
                         <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                     </g:if>
-                    <g:elseif test="${p.rankDiff() > 0}">
+                    <g:elseif test="${p.rankDiff > 0}">
                         <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
                     </g:elseif>
-                    <g:elseif test="${p.rankDiff() < 0}">
+                    <g:elseif test="${p.rankDiff < 0}">
                         <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
                     </g:elseif>
-                    <g:if test="${p.rankDiff() != null && p.rankDiff() != 0}">
-                        ${Math.abs(p.rankDiff())}
+                    <g:if test="${p.rankDiff != null && p.rankDiff != 0}">
+                        ${Math.abs(p.rankDiff)}
                     </g:if>
                 </td>
                 <td>${p.cptTournaments}</td>
@@ -182,7 +182,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersNA}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedNA() ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedNA ? 'qual' : 'unqual'}">
                 <td>
                     ${p.cptRankNA}
                 </td>
@@ -208,7 +208,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified()}">
+                    <g:elseif test="${p.scoreQualified}">
                         <small>global <a href="#" data-toggle="tooltip" data-placement="top"
                                          title="Player is currently qualified by global points">(?)</a>
                         </small>
@@ -218,7 +218,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                                            title="Player is currently qualified for regional finals">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedNA()}">
+                    <g:elseif test="${p.scoreQualifiedNA}">
                         <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
                                             title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
@@ -264,7 +264,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersLA}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedLA() ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedLA ? 'qual' : 'unqual'}">
                 <td>
                     ${p.cptRankLA}
                 </td>
@@ -290,7 +290,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified()}">
+                    <g:elseif test="${p.scoreQualified}">
                         <small>global <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Player is currently qualified by global points">(?)</a>
                         </small>
@@ -300,7 +300,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                                            title="Player is currently qualified for regional finals">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedLA()}">
+                    <g:elseif test="${p.scoreQualifiedLA}">
                         <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
                                             title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
@@ -345,7 +345,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersAO}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedAO() ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedAO ? 'qual' : 'unqual'}">
                 <td>
                     ${p.cptRankAO}
                 </td>
@@ -371,7 +371,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified()}">
+                    <g:elseif test="${p.scoreQualified}">
                         <small>global <a href="#" data-toggle="tooltip" data-placement="top"
                                          title="Player is currently qualified by global points">(?)</a>
                         </small>
@@ -381,7 +381,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                                            title="Player is currently qualified for regional finals">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedAO()}">
+                    <g:elseif test="${p.scoreQualifiedAO}">
                         <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
                                             title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
@@ -426,7 +426,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersEU}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedEU() ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedEU ? 'qual' : 'unqual'}">
                 <td>
                     ${p.cptRankEU}
                 </td>
@@ -452,7 +452,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified()}">
+                    <g:elseif test="${p.scoreQualified}">
                         <small>global <a href="#" data-toggle="tooltip" data-placement="top"
                                          title="Player is currently qualified by global points">(?)</a>
                         </small>
@@ -462,7 +462,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
                                            title="Player is currently qualified for regional finals">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedEU()}">
+                    <g:elseif test="${p.scoreQualifiedEU}">
                         <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
                                             title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
