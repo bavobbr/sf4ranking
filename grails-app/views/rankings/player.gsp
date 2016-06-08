@@ -227,7 +227,7 @@
                                                    value="${Version.generalize(ranking.game) == Version.USF4 ? "thumb_" : ""}"/>
                                             <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}"
                                                    file="${prepend + mainCharacter.name().toLowerCase() + '.png'}"
-                                                   height="50" class="charimg"/>
+                                                   height="30" class="charimg"/>
                                         </g:link>
                                     </g:each>
 

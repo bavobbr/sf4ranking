@@ -178,6 +178,18 @@ class QueryService
         return last.size() > 0? last.first() : null
     }
 
+    List<Tournament> lastTournaments(Version game, Integer number) {
+        def query = Tournament.createCriteria()
+        def last = query.list(max: number) {
+            if (game) {
+                eq("game", game)
+            }
+            eq("finished", true)
+            order("date", "desc")
+        }
+        return last
+    }
+
     List<Tournament> getQualifyingTournaments() {
         def premiers = Tournament.findAllByCptTournament(CptTournament.PREMIER)
         def premiersScoreLess = Tournament.findAllByCptTournament(CptTournament.PREMIER_SCORELESS)

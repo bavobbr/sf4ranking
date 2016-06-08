@@ -33,7 +33,7 @@ class RankingsController
         def mkxplayers = queryService.findPlayers(null, null, 10, 0, Version.MKX)
         def sf5players = queryService.findPlayers(null, null, 10, 0, Version.SF5)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        def last10Tournaments = Tournament.list(order: "desc", sort: "date", max: 10)
+        def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
         [players: players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
     }
@@ -473,7 +473,7 @@ class RankingsController
     }
 
     private List<Player> getRegionPlayers(Region region) {
-        def players = queryService.findCptPlayers(Region.NA)
+        def players = queryService.findCptPlayers(region)
         players.each { p ->
             p.metaClass."getScoreQualified${region.name()}" = { false }
         }
