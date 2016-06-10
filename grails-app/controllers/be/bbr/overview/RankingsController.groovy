@@ -80,8 +80,8 @@ class RankingsController
                 players.each {
                     def numResults = queryService.countPlayerResults(it, pgame)
                     def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
-                    it.metaClass.numResults << { numResults }
-                    it.metaClass.numResultsYear << { numResultsYear }
+                    it.metaClass.numResults << { Math.max(numResults,12) }
+                    it.metaClass.numResultsYear << { Math.max(numResultsYear,12) }
                 }
             }
         }
