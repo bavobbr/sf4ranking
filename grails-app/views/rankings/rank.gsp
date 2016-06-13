@@ -64,7 +64,7 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
             <th>Team</th>
             <th>Character</th>
             <th>Current Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                 title="The actual current score is calculated over a 2-year window. This reflects how well a player has been doing over the last 2 years.">(?)</a>
+                                 title="The actual current score is calculated over a 2-year window. This reflects how well a player has been doing over the last 2 years. His best 12 scores are used for the total.">(?)</a>
             </th>
             <th>Actual Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
                                       title="The amount of best 12 results in tournaments over last 2 years adding to the actual score">(?)</a>
@@ -73,7 +73,7 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
                                   title="The lifetime score is the sum of best 12 tournaments in this game without decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
             </th>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
-                                     title="The total amount of tournaments contributing to total score">(?)</a></th>
+                                     title="The total amount of tournaments contributing to lifetime best of score">(?)</a></th>
             <th>Country</th>
             <g:if test="${snapshot != null && !alltime}">
                 <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top"

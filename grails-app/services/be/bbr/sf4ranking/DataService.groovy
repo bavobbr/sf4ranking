@@ -45,32 +45,36 @@ class DataService
         return tournament
     }
 
+    private String filterPlayerHandle(String line) {
+        def namematcher = (line =~ /^[^(]*/)
+        String pname = namematcher[0].trim()
+        Player p = Player.findByCodename(pname.toUpperCase())
+        if (!p) {
+            if (pname.contains("|")) {
+                pname = pname.tokenize("|").last().trim()
+            }
+            def rankMatcher = (pname =~ /(\d*\.)(.*)/)
+            if (rankMatcher) {
+                println rankMatcher
+                def rankMatched = rankMatcher[0][1]
+                pname = pname - rankMatched
+                pname = pname.trim()
+            }
+        }
+        return pname
+    }
+
     @Transactional
     public void addResultsToTournament(String input, Tournament tournament)
     {
         input.trim().eachLine {def line, index ->
             def rank = ScoringSystem.getRank(index + 1, tournament.tournamentFormat)
             log.info "processing $line"
-            def namematcher = (line =~ /^[^(]*/)
-            String pname = namematcher[0].trim()
-            Player p = Player.findByCodename(pname.toUpperCase())
-            if (!p) {
-                if (pname.contains("|")) {
-                    pname = pname.tokenize("|").last().trim()
-                }
-                def rankMatcher = (pname =~ /(\d*\.)(.*)/)
-                if (rankMatcher) {
-                    println rankMatcher
-                    def rankMatched = rankMatcher[0][1]
-                    println "removed rank match $rankMatched"
-                    pname = pname - rankMatched
-                    pname = pname.trim()
-                }
-                p = Player.findByCodename(pname.toUpperCase())
-            }
+            def handle = filterPlayerHandle(line)
+            Player p = Player.findByCodename(handle.toUpperCase())
             if (!p)
             {
-                p = new Player(name: pname, cptPrize: 0, cptTournaments: 0)
+                p = new Player(name: handle, cptPrize: 0, cptTournaments: 0)
                 log.info "Creating player $p"
                 p.save(failOnError: true, flush: true)
             }
@@ -121,15 +125,27 @@ class DataService
         alts = searchResult.results.collect {
             Player.read(it.id)
         }
+        println "got $searchResult"
+        alts.addAll(searchResult.results.collect {
+            def p = Player.read(it.id)
+            return p
+        })
+        log.info "Found ${alts.size()} matches"
+        return alts
+    }
+
+    @Transactional
+    Set<Player> findAlikesByFilterSpecial(String original) {
+        log.info "Finding match for $original"
+        Set<Player> alts = []
         def withoutSpecial = original.replaceAll(Player.pattern, "").toLowerCase()
         println "looking for $withoutSpecial"
-        searchResult = Player.search(max: 5) {
+        def searchResult = Player.search(max: 5) {
             fuzzy("simplified", withoutSpecial)
         }
         println "got $searchResult"
         alts.addAll(searchResult.results.collect {
             def p = Player.read(it.id)
-            println "found $p"
             return p
         })
         log.info "Found ${alts.size()} matches"
@@ -138,8 +154,11 @@ class DataService
 
     @Transactional
     List<Player> findAlike(String original, Integer max) {
-        def alikes = findAlikes(original)
-        return alikes? alikes.toList().take(max) : null
+        Integer half = Math.min((max/2) as Integer,1) as Integer
+        def alikes = findAlikes(original).toList().take(half)
+        def alikesFiltered = findAlikesByFilterSpecial(original).toList().take(half)
+        def all = (alikes + alikesFiltered) as Set
+        return all? all.toList().take(max) : null
     }
 
     @Transactional
@@ -160,32 +179,17 @@ class DataService
         List<String> feedback = []
         if (game == Version.UNKNOWN || game == null) feedback << "Game version given is recognized as $game"
         input.trim().eachLine {def line, index ->
-            def namematcher = (line =~ /^[^(]*/)
-            String pname = namematcher[0].trim()
+            String handle = filterPlayerHandle(line)
             if (type == "players")
             {
-                Player p = Player.findByCodename(pname.toUpperCase())
+                Player p = Player.findByCodename(handle.toUpperCase())
                 if (!p) {
-                    if (pname.contains("|")) {
-                        pname = pname.tokenize("|").last().trim()
-                    }
-                    def rankMatcher = (pname =~ /(\d*\.)(.*)/)
-                    if (rankMatcher) {
-                        println rankMatcher
-                        def rankMatched = rankMatcher[0][1]
-                        println "removed rank match $rankMatched"
-                        pname = pname - rankMatched
-                        pname = pname.trim()
-                    }
-                    p = Player.findByCodename(pname.trim().toUpperCase())
-                }
-                if (!p) {
-                    def suggestions = findAlike(pname, 3)
+                    def suggestions = findAlike(handle, 4)
                     if (suggestions) {
-                        feedback << "Not found [$pname]. Suggest: ${suggestions.name.join(", ")}"
+                        feedback << "$handle is unknown. Sounds like: ${suggestions.name.join(", ")}"
                     }
                     else {
-                        feedback << "Player with name [$pname] will be created new."
+                        feedback << "$handle is unknown. No matching players found"
                     }
                 }
             }
@@ -202,14 +206,14 @@ class DataService
                                                   CharacterType.UNKNOWN
                             if (ctype == CharacterType.UNKNOWN) {
                                 feedback <<
-                                "Player [$pname] will have UNKNOWN character in team [$team] due to [$it]"
+                                "Player [$handle] will have UNKNOWN character in team [$team] due to [$it]"
                             }
                         }
                     }
                 }
                 else
                 {
-                    feedback << "Player [$pname] will have completely UNKNOWN team"
+                    feedback << "Player [$handle] will have completely UNKNOWN team"
                 }
             }
         }

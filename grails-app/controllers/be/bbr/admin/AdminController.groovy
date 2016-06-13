@@ -601,7 +601,7 @@ class AdminController
         def map = [:]
         players.each { Player p ->
             log.info "Finding matches for ${p.name}"
-            def alts = dataService.findAlikes(p.name)
+            def alts = dataService.findAlikes(p.name, 10)
             alts.removeAll { it.name == p.name }
             if (alts && alts.size() >= 1) map[p] = alts
             log.info "Counting results for ${p.name}"

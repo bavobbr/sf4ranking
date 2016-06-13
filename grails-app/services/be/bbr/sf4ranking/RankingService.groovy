@@ -98,6 +98,7 @@ class RankingService {
                 def results = Result.findAll {
                     player == p && tournament.game == game
                 }
+                log.info("Found ${results.size()} results")
                 def playerScore = getScore(results) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }

@@ -80,8 +80,8 @@ class RankingsController
                 players.each {
                     def numResults = queryService.countPlayerResults(it, pgame)
                     def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
-                    it.metaClass.numResults << { Math.max(numResults,12) }
-                    it.metaClass.numResultsYear << { Math.max(numResultsYear,12) }
+                    it.metaClass.numResults << { Math.min(numResults,12) }
+                    it.metaClass.numResultsYear << { Math.min(numResultsYear,12) }
                 }
             }
         }
@@ -463,7 +463,7 @@ class RankingsController
             log.info "Processing query $query"
             def players = dataService.findMatches(query)
             sorted = players.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
-            alikes = dataService.findAlikes(player)
+            alikes = dataService.findAlike(player, 10)
         }
         else
         {

@@ -39,7 +39,7 @@ class ApiController {
                 else {
                     log.info "Processing fuzzy query $query"
                     def players = dataService.findMatches(query)
-                    def alikes = dataService.findAlikes(query)
+                    def alikes = dataService.findAlikes(query, 10)
                     results = players+alikes
                 }
                 def content = results.collect {

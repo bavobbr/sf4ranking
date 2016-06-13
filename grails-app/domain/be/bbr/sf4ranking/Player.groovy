@@ -188,7 +188,7 @@ class Player
     }
 
     Integer overallScore() {
-        return Version.values().inject(0) { result, item -> result + score(item) }
+        return Version.values().inject(0) { result, item -> result + totalScore(item) }
     }
 
     public String toString() {
