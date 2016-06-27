@@ -18,7 +18,7 @@
                                                                               theme: "default",
                                                                               striped: true,
                                                                               sortable: true,
-                                                                              condensed: false})
+                                                                              condensed: true})
                                                        })
                     });
 

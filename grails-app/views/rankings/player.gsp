@@ -8,11 +8,6 @@
 <body>
 <div style="text-align: center;">
     <h1 class="player_name">${player.name}</h1>
-
-    <h3 class="world_rank">${player.rank(player.mainGame)}</h3>
-    <span class="glyphicon glyphicon-flash"></span>
-    <span class="world_rank_title">${player.mainGame.value} World Rank</span>
-    <span class="glyphicon glyphicon-flash"></span>
 </div>
 <center>
 
@@ -64,6 +59,24 @@
                            title="You can add this player to a team by sharing this page on Twitter and mentioning the team">(?)</a>
                     </g:else>
                 </dd>
+                <dt>Known for</dt>
+                <dd>
+                    <g:if test="${allGames}">
+                        <g:each in="${allGames}" var="knowngame">
+                            <g:link action="rank" controller="rankings"
+                                    params="[id: knowngame.name()]">${knowngame.name()}</g:link>
+                        </g:each>
+                    </g:if>
+                </dd>
+                <dt>Top player in</dt>
+                <dd>
+                    <g:if test="${topGames}">
+                        <g:each in="${topGames}" var="topgame">
+                            <g:link action="rank" controller="rankings"
+                                    params="[id: topgame.name()]">${topgame.name()}</g:link>
+                        </g:each>
+                    </g:if>
+                </dd>
                 <dt>Follow</dt>
                 <dd>
                     <g:if test="${player.twitter}">
@@ -84,17 +97,12 @@
                            title="If you want to add your Twitch handle to this page, share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
                     </g:else>
                 </dd>
-                <dt>Main Game</dt>
-                <dd>
-                    <g:link controller="rankings" action="rank"
-                            params="[id: player.mainGame.name()]">${player.mainGame}</g:link>
-                </dd>
                 <g:if test="${player.hasRanking(Version.SF5)}">
-                    <dt>CPT Score <a href="#" data-toggle="tooltip" data-placement="top"
+                    <dt>CPT score (rank) <a href="#" data-toggle="tooltip" data-placement="top"
                                      title="Global CPT score">(?)</a></dt>
                     <dd>
                         <g:link action="cpt" controller="rankings">
-                        ${player.cptScore}
+                        ${player.cptScore} (${player.cptRank})
                         </g:link>
                     </dd>
                     <dt>CPT Qualified <a href="#" data-toggle="tooltip" data-placement="top"
@@ -131,17 +139,17 @@
                 <g:render template="/templates/share"/>&NonBreakingSpace;
                 </dd>
                 <g:if test="${player.maxoplataId}">
-                <dt>Maxoplata <a href="#" data-toggle="tooltip" data-placement="top"
+                <dt>Match details <a href="#" data-toggle="tooltip" data-placement="top"
                                 title="Link to the player profile on maxoplata.net to find more data on player matches and brackets">(?)</a></dt>
                 <dd>
-                <a href="http://www.maxoplata.net/player/${player.maxoplataId}" target="_blank">match data</a>
+                <a href="http://www.maxoplata.net/player/${player.maxoplataId}" target="_blank">maxoplata.net</a>
                 </dd>
                 </g:if>
                     <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
                                         title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a></dt>
                 <g:if test="${player.onlineId}">
                     <dd>
-                        <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">match data</a>
+                        <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">v-league.pro</a>
                     </dd>
                 </g:if>
                 <g:else>

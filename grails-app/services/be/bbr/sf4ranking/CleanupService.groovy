@@ -170,7 +170,7 @@ class CleanupService
 
             }
             log.info("Checking with actual ranking")
-            1.upto(9) {Integer skillLevel ->
+            1.upto(99) {Integer skillLevel ->
                 def lowerBound = Math.log10(skillLevel)
                 def upperBound = Math.log10(skillLevel + 1)
                 log.info "Level $skillLevel has lowerBound $lowerBound and upperBound $upperBound"
@@ -211,7 +211,7 @@ class CleanupService
         if (count > 0)
         {
             double factor = count / 100
-            1.upto(9) {Integer skillLevel ->
+            1.upto(99) {Integer skillLevel ->
                 def lowerBound = Math.log10(skillLevel)
                 def upperBound = Math.log10(skillLevel + 1)
                 def intervalStart = lowerBound * factor * 100 as Integer
@@ -274,6 +274,15 @@ class CleanupService
         def players = Player.withCriteria {isEmpty("results")}
         players.each {log.info "dropping player $it"}
         return players.size()
+    }
+
+    def correctSkill()
+    {
+        def rankings = PlayerRanking.list()
+        rankings.each {
+            it.skill = it.skill*10
+            it.save(flush: true)
+        }
     }
 
 }

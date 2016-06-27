@@ -8,7 +8,7 @@ class PlayerRanking
 
     static constraints = {
         game nullable: false
-        skill range: 0..10
+        skill range: 0..100
         mainCharacters nullable: false, editable: false
         score nullable: false, editable: false
         totalScore nullable: false, editable: false

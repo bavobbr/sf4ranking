@@ -43,7 +43,7 @@
 		<g:message code="playerRanking.skill.label" default="Skill" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="skill" from="${0..10}" class="range" required="" value="${fieldValue(bean: playerRankingInstance, field: 'skill')}"/>
+	<g:select name="skill" from="${0..100}" class="range" required="" value="${fieldValue(bean: playerRankingInstance, field: 'skill')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playerRankingInstance, field: 'mainCharacters', 'error')} required">

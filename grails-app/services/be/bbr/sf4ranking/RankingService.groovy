@@ -210,14 +210,19 @@ class RankingService {
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
-                    log.info("Updating CPT $game AO rank of player $p")
-                    if (p.cptScoreAO != previous) {
-                        currentRank = idx + 1
+                    if (p.cptScoreAO) {
+                        log.info("Updating CPT $game AO rank of player $p")
+                        if (p.cptScoreAO != previous) {
+                            currentRank = idx + 1
+                        }
+                        def rank = currentRank
+                        p.cptRankAO = rank
+                        previous = p.cptScoreAO
+                        log.info("Updated CPT rank of player $p, setting previous as $previous")
                     }
-                    def rank = currentRank
-                    p.cptRankAO = rank
-                    previous = p.cptScoreAO
-                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                    else {
+                        p.cptRankAO = null
+                    }
                 }
             }
             players = players.sort { Player a, Player b -> b.cptScoreLA <=> a.cptScoreLA }
@@ -226,14 +231,19 @@ class RankingService {
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
-                    log.info("Updating CPT $game LA rank of player $p")
-                    if (p.cptScoreLA != previous) {
-                        currentRank = idx + 1
+                    if (p.cptScoreLA) {
+                        log.info("Updating CPT $game LA rank of player $p")
+                        if (p.cptScoreLA != previous) {
+                            currentRank = idx + 1
+                        }
+                        def rank = currentRank
+                        p.cptRankLA = rank
+                        previous = p.cptScoreLA
+                        log.info("Updated CPT rank of player $p, setting previous as $previous")
                     }
-                    def rank = currentRank
-                    p.cptRankLA = rank
-                    previous = p.cptScoreLA
-                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                    else {
+                        p.cptRankLA = null
+                    }
                 }
             }
             players = players.sort { Player a, Player b -> b.cptScoreNA <=> a.cptScoreNA }
@@ -242,14 +252,19 @@ class RankingService {
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
-                    log.info("Updating CPT $game NA rank of player $p")
-                    if (p.cptScoreNA != previous) {
-                        currentRank = idx + 1
+                    if (p.cptScoreNA) {
+                        log.info("Updating CPT $game NA rank of player $p")
+                        if (p.cptScoreNA != previous) {
+                            currentRank = idx + 1
+                        }
+                        def rank = currentRank
+                        p.cptRankNA = rank
+                        previous = p.cptScoreNA
+                        log.info("Updated CPT rank of player $p, setting previous as $previous")
                     }
-                    def rank = currentRank
-                    p.cptRankNA = rank
-                    previous = p.cptScoreNA
-                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                    else {
+                        p.cptRankNA = null
+                    }
                 }
             }
             players = players.sort { Player a, Player b -> b.cptScoreEU <=> a.cptScoreEU }
@@ -258,14 +273,19 @@ class RankingService {
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
-                    log.info("Updating CPT $game EU rank of player $p")
-                    if (p.cptScoreEU != previous) {
-                        currentRank = idx + 1
+                    if (p.cptScoreEU) {
+                        log.info("Updating CPT $game EU rank of player $p")
+                        if (p.cptScoreEU != previous) {
+                            currentRank = idx + 1
+                        }
+                        def rank = currentRank
+                        p.cptRankEU = rank
+                        previous = p.cptScoreEU
+                        log.info("Updated CPT rank of player $p, setting previous as $previous")
                     }
-                    def rank = currentRank
-                    p.cptRankEU = rank
-                    previous = p.cptScoreEU
-                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                    else {
+                        p.cptRankEU = null
+                    }
                 }
             }
         }
@@ -334,6 +354,7 @@ class RankingService {
                 rankingsToDelete.each {
                     player.deleteRanking(it)
                 }
+                player.save(flush: true)
             }
         }
         return Player.count

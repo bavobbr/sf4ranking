@@ -125,7 +125,7 @@ h1.player_name {
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: -2px;
-	margin: 15px 0 0 0;
+	margin: 15px 0 30px 0;
 	color: #000;
 }
 
@@ -175,7 +175,7 @@ h4.subtitle {
 
 .player_details {
 	margin: 10px 0;
-	width: 400px;
+	width: 500px;
 	text-transform: uppercase;
 }
 
@@ -298,4 +298,8 @@ a.nextLink {
 
 .lowtoppanel  {
 	margin-top: 10px;
+}
+
+table tfoot tr td {
+	padding: 4px;
 }

@@ -8,7 +8,7 @@ class Tournament
 
     static constraints = {
         name nullable: false, unique: true
-        weight range: 0..9999, editable: false
+        weight editable: false
         date nullable: false
         countryCode nullable: true
         tournamentType nullable: true

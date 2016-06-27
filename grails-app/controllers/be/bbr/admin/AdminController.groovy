@@ -524,6 +524,16 @@ class AdminController
         render view: "index"
     }
 
+    def correctSkill()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.correctSkill()
+        }
+        flash.message = "Corrected skill levels of all players"
+        render view: "index"
+    }
+
     def findSkillDeviations()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))
@@ -595,6 +605,8 @@ class AdminController
         def players = queryService.findOrphanedPlayers()
         [players: players]
     }
+
+
 
     def listAlikes() {
         def players = Player.list()

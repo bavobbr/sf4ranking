@@ -306,8 +306,10 @@ class RankingsController
         }
         log.info "Rendering player ${player}"
         rankings = rankings.findAll {k, v -> v.size() > 0}
+        def topGames = player.rankings.findAll { it.score > 0 && it.rank < 100 }.collect { it.game }
+        def allGames = player.rankings.findAll { it.score > 0 && it.rank < 500 }.collect { it.game }
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        render view: "player", model: [player: player, results: rankings, chars: chars, updateMessage: lastUpdateMessage]
+        render view: "player", model: [player: player, results: rankings, chars: chars, updateMessage: lastUpdateMessage, topGames: topGames, allGames: allGames]
     }
 
     def playerByName()
