@@ -2,6 +2,7 @@ package be.bbr.overview
 
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
+import grails.plugin.cache.Cacheable
 import grails.plugin.searchable.SearchableService
 import org.apache.shiro.SecurityUtils
 
@@ -21,6 +22,7 @@ class RankingsController
      * At the end we also fill the filter boxes with data relevant for that type of query
      * @return
      */
+    @Cacheable("index")
     def index()
     {
         def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
@@ -95,6 +97,7 @@ class RankingsController
     def cptStats_2015() {}
     def cptCharacterStats_2015() {}
 
+    @Cacheable('cpt')
     def cpt()
     {
         def pgame = Version.SF5
@@ -144,6 +147,7 @@ class RankingsController
         ]
     }
 
+    @Cacheable('cptStats')
     def cptStats() {
         def comingTournaments = queryService.upcomingCptTournaments()
         def maxTotal = comingTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
@@ -208,6 +212,7 @@ class RankingsController
          pastDirectPlaces: pastDirectPlaces]
     }
 
+    @Cacheable('cptChars')
     def cptCharacterStats() {
         def players = queryService.findCptPlayers()
         def qualifiedPlayers = players.findAll { it.cptQualified }

@@ -45,6 +45,17 @@ grails.views.default.codec = "html"
 // If unspecified, controllers are prototype scoped.
 grails.controllers.defaultScope = 'singleton'
 
+grails.cache.config = {
+    cache {
+        maxCapacity = 1000
+        name 'top'
+    }
+    cache {
+        maxCapacity = 1000
+        name 'cpt'
+    }
+}
+
 // GSP settings
 grails {
     views {

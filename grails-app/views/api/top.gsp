@@ -1,4 +1,3 @@
-<body>
 <table cellspacing='0'>
     <thead>
     <tr>
@@ -17,4 +16,3 @@
     </g:each>
     </tbody>
 </table>
-</body>

@@ -24,6 +24,8 @@ The updateAll should be triggered every time a new tournament has been imported,
   <g:each in="${Version.values()}" var="game">
     <li><g:link action="updateAll" params="[game: game]">update all data for ${game}</g:link></li>
   </g:each>
+  <li><g:link action="clearCache">Clear caches (use after updating stuff)</g:link></li>
+
 </ul>
 
 <h3>Update parts of database</h3>

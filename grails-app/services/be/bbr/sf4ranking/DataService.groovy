@@ -1,5 +1,6 @@
 package be.bbr.sf4ranking
 
+import grails.plugin.cache.GrailsCacheManager
 import grails.plugin.searchable.SearchableService
 import grails.transaction.Transactional
 import grails.util.Environment
@@ -16,6 +17,7 @@ class DataService
     ConfigurationService configurationService
     SearchableService searchableService
     QueryService queryService
+    GrailsCacheManager grailsCacheManager
     /**
      * Takes in rich tournament data from the controller and saves it as tournament
      * Will also auto-create unknown players
@@ -366,6 +368,8 @@ class DataService
             log.info "All ${tdata.size()} tournaments imported"
 
         log.info "Import service completed"
+        grailsCacheManager.destroyCache('top')
+        grailsCacheManager.destroyCache('cpt')
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
 
@@ -586,5 +590,14 @@ class DataService
         log.info "Reindexing..."
         searchableService.reindex()
         log.info "Reindexed compass"
+    }
+
+    public void clearCache() {
+        log.info("Clearing cache...")
+        grailsCacheManager.getCache('index').clear()
+        grailsCacheManager.getCache('top').clear()
+        grailsCacheManager.getCache('cpt').clear()
+        grailsCacheManager.getCache('cptStats').clear()
+        grailsCacheManager.getCache('cptChars').clear()
     }
 }

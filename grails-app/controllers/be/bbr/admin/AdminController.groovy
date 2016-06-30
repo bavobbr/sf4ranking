@@ -2,6 +2,7 @@ package be.bbr.admin
 
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
+import grails.plugin.cache.GrailsCacheManager
 import org.apache.shiro.SecurityUtils
 
 import static be.bbr.sf4ranking.Version.AE2012
@@ -21,6 +22,12 @@ class AdminController
 
     def index() {}
 
+    def clearCache() {
+        dataService.clearCache()
+        flash.message = "Cleared controller caches"
+        render view: "index"
+    }
+
     /**
      * Update methods that need to be triggered after entering data
      */
@@ -36,6 +43,7 @@ class AdminController
             rankingService.updateMainTeams(game)
             flash.message = "Updated weight, type of tournament and score, rank of all players in $game"
         }
+        dataService.clearCache()
         render view: "index"
     }
 
@@ -227,6 +235,7 @@ class AdminController
             return
         }
         def t = dataService.importTournament(tname, results, tdate, tformat, tcountry, tgame, tvideos, tweight, ttype, tranked, coverage, cpttype, creator, tregion)
+        dataService.clearCache()
         redirect(controller: "rankings", action: "tournament", params: [id: t.id])
     }
 
@@ -269,6 +278,7 @@ class AdminController
             flash.message = status
         }
         log.info "Import ready, returning to index"
+        dataService.clearCache()
         render view: "index"
     }
 

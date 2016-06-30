@@ -9,6 +9,7 @@ import be.bbr.sf4ranking.Tournament
 import be.bbr.sf4ranking.Version
 import grails.converters.JSON
 import grails.converters.XML
+import grails.plugin.cache.Cacheable
 
 /**
  */
@@ -96,7 +97,9 @@ class ApiController {
         render (tournamentToMap(tournament) as JSON)
     }
 
+    @Cacheable('top')
     def top() {
+        println "Rendering top with params $params"
         Version game = Version.fromString(params.game)?:  Version.SF5
         Integer size = params.getInt("size", 10)
         def players = queryService.findPlayers(null, null, size, 0, game, false)

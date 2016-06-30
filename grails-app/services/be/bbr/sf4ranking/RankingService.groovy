@@ -289,6 +289,7 @@ class RankingService {
                 }
             }
         }
+
         return players.size()
     }
 
