@@ -3,15 +3,20 @@ package be.bbr.overview
 import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.Query
+import be.bbr.sf4ranking.QueryService
 import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.Tournament
+import be.bbr.sf4ranking.Version
 import grails.converters.JSON
+import grails.converters.XML
 
 /**
  */
 class ApiController {
 
     DataService dataService
+    QueryService queryService
+
 
     /**
      * Manual data import and manipulation
@@ -89,6 +94,20 @@ class ApiController {
         String id = params.name
         def tournament = Tournament.findByCodename(id.toUpperCase())
         render (tournamentToMap(tournament) as JSON)
+    }
+
+    def top() {
+        Version game = Version.fromString(params.game)?:  Version.SF5
+        Integer size = params.getInt("size", 10)
+        def players = queryService.findPlayers(null, null, size, 0, game, false)
+        def topplayers = players.collect { p ->
+            [name: p.name, country: p.countryCode?.name()?.toLowerCase(), rank: p.rank(game)]
+        }
+        withFormat {
+            html(players: topplayers, game: game)
+            json { render topplayers as JSON }
+            xml { render topplayers as XML }
+        }
     }
 
     private Map playerToMap(Player player) {
