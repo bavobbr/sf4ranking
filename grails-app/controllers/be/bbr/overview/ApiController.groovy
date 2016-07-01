@@ -45,7 +45,7 @@ class ApiController {
                 else {
                     log.info "Processing fuzzy query $query"
                     def players = dataService.findMatches(query)
-                    def alikes = dataService.findAlikes(query, 10)
+                    def alikes = dataService.findAlike(query, 10)
                     results = players+alikes
                 }
                 def content = results.collect {
@@ -100,11 +100,26 @@ class ApiController {
     @Cacheable('top')
     def top() {
         println "Rendering top with params $params"
-        Version game = Version.fromString(params.game)?:  Version.SF5
-        Integer size = params.getInt("size", 10)
-        def players = queryService.findPlayers(null, null, size, 0, game, false)
+        Version game = Version.fromString(params.game)?: Version.SF5
+        Integer size = params.getInt("size", 10) > 100? 100 : params.getInt("size", 10)
+        Integer offset = params.getInt("offset", 0)
+        boolean isCpt = params.getBoolean("cpt", false)
+        def players = []
+        if (!isCpt) {
+            players = queryService.findPlayers(null, null, size, offset, game, false)
+        }
+        else {
+            players = queryService.findCptPlayers().take(size)
+        }
         def topplayers = players.collect { p ->
-            [name: p.name, country: p.countryCode?.name()?.toLowerCase(), rank: p.rank(game)]
+            [name: p.name,
+             country: p.countryCode?.name()?.toLowerCase(),
+             rank: p.rank(game),
+             id: p.id,
+             score: p.score(game),
+             totalscore: p.totalScore(game),
+             character: p.main(game)?.collect { it.name() }
+            ]
         }
         withFormat {
             html(players: topplayers, game: game)

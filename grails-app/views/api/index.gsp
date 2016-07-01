@@ -51,7 +51,19 @@ You can fetch data either by id or by name. By ID is advised for scripts that cr
     <li><g:link controller="api" action="playerByName" params="[name: 'Sako']" mapping="apiPlayerByName">/api/player/name/sako</g:link></li>
     <li><g:link controller="api" action="tournamentById" params="[name: '10']" mapping="apiTournamentById">/api/tournament/id/10</g:link></li>
     <li><g:link controller="api" action="tournamentByName" params="[name: 'EVOLUTION 2014 - USF4']" mapping="apiTournamentByName">/api/tournament/name/EVOLUTION 2014 - USF4</g:link></li>
+</ul>
 
+<h3>Rankings API and Widget</h3>
+
+You can get a top player ranking per game and in multiple formats. Default is HTML for SF5. There is JSON and XML as well.
+The JSON and XML formats give you some high-level details on the player, but also the ID which you can use to get more info using for example <i>/api/player/id/{id}</i>
+<ul>
+    <li><g:link controller="api" action="top" params="[game: 'SF5']">/api/top?game=SF5</g:link></li>
+    <li><g:link controller="api" action="top" params="[game: 'SF5', format: 'xml']">/api/top?game=SF5&format=xml</g:link></li>
+    <li><g:link controller="api" action="top" params="[game: 'MKX', size: '20']">/api/top?game=MKX&size=20</g:link></li>
+    <li><g:link controller="api" action="top" params="[game: 'MKX', size: '10', offset: '50']">/api/top?game=MKX&size=20&offset=50</g:link></li>
+    <li><g:link controller="api" action="top" params="[game: 'UMVC3', size: '20', format: 'json']">/api/top?game=UMVC3&size=20&format=json</g:link></li>
+    <li><g:link controller="api" action="top" params="[cpt: '', size: '20', format: 'json']">/api/top?cpt&size=20&format=json</g:link></li>
 </ul>
 
 Do not use the API as a remote database for clients such as mobile apps or websites. If you create clients that directly use this API, make sure it is efficient.
