@@ -150,7 +150,7 @@ class DataService
             def p = Player.read(it.id)
             return p
         })
-        log.info "Found ${alts.size()} matches"
+        log.info "Found ${alts?.size()} matches"
         return alts
     }
 

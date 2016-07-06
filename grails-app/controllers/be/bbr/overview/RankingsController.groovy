@@ -461,16 +461,26 @@ class RankingsController
 
     def search()
     {
-        def player = params.player
+        String player = params.player
         def alikes = []
         def sorted = []
         if (player?.size() > 1)
         {
             def query = player?.trim()
-            log.info "Processing query $query"
-            def players = dataService.findMatches(query)
-            sorted = players.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
-            alikes = dataService.findAlike(player, 10)
+            query = query.tokenize("|").last()
+            query = query.tokenize("'").last()
+            query = query.tokenize("-").last()
+            query = query.tokenize(".").last()
+            query = query.tokenize("_").last()
+            if (query.size() <= 1) {
+                flash.message = "Query string too short"
+            }
+            else {
+                log.info "Processing query $query"
+                def players = dataService.findMatches(query)
+                sorted = players.sort { a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
+                alikes = dataService.findAlike(player, 10)
+            }
         }
         else
         {

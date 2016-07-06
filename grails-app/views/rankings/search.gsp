@@ -11,7 +11,7 @@
 </g:if>
 
 <g:if test="${!(players.isEmpty())}">
-<h2>${players.size()} Players matching ${query}</h2>
+<h2>${players? players.size() : "0"} Players matching ${query}</h2>
 <div class="table-responsive">
   <table class="tablehead" id="datatable1">
     <thead>
@@ -41,7 +41,7 @@
 
 
 
-<h2>${alikes.size()} Players which may sound alike ${query}</h2>
+<h2>${alikes? alikes.size() : "0"} Players which may sound alike ${query}</h2>
 
 <div class="table-responsive">
   <table class="tablehead" id="datatable2">

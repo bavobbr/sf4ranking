@@ -277,11 +277,11 @@
 
                 <div class="footer">
                     <div class="row">
-                        <div class="col-md-4">
-                            <p class="large">Street Fighter World Rankings &copy; 2014 Bavo Bruylandt</p>
+                        <div class="col-md-6">
+                            <p class="large">Street Fighter World Rankings &copy; 2013-2016 Bavo Bruylandt</p>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <a href="https://twitter.com/share" class="twitter-share-button" data-via="SRKRanking">Tweet</a>
                             <script>!function (d, s, id)
                             {
@@ -296,18 +296,19 @@
                             }(document, 'script', 'twitter-wjs');</script>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-2">
+                            <div class="fb-like" data-href="https://www.facebook.com/fgcworldranking" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                        </div>
+                        <div class="col-md-2">
                             <div class="fb-share-button" data-href="http://rank.shoryuken.com/" data-type="button_count"></div>
                         </div>
                     </div>
 
 
-                    <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted by <a
+                    <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted on <a
                             href="http://www.shoryuken.com">Shoryuken</a>  &middot;
                         Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot; Twitter at <a
-                            href="https://twitter.com/SRKRanking">@SRK Ranking</a> &middot; For more info, visit <a
-                            href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">official thread</a>.
-                    </p>
+                            href="https://twitter.com/SRKRanking">@SRK Ranking</a></p>
 
                 </div>
             </div>
