@@ -113,6 +113,7 @@ class ApiController {
         }
         def topplayers = players.collect { p ->
             [name: p.name,
+             fullname: p.realname,
              country: p.countryCode?.name()?.toLowerCase(),
              rank: p.rank(game),
              id: p.id,
