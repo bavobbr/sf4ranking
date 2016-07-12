@@ -256,7 +256,11 @@ public enum CharacterType
     SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
     SF5_FANG("F.A.N.G", "FANG", Version.SF5),
     SF5_ALEX("ALEX", "Alex", Version.SF5),
-    SF5_GUILE("GUILE", "Guile", Version.SF5);
+    SF5_GUILE("GUILE", "Guile", Version.SF5),
+    SF5_IBUKI("IBUKI", "Ibuki", Version.SF5),
+    SF5_BALROG("BALROG", "Balrog", Version.SF5),
+    SF5_URIEN("URIEN", "Urien", Version.SF5),
+    SF5_JURI("JURI", "Huri", Version.SF5);
 
     private final String value;
     private final Version game;
