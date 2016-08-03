@@ -122,7 +122,7 @@ class RankingService {
                         if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE) {
                             def score = it.tournament.cptTournament.getScore(it.place)
                             cptScore += score
-                            if (it.tournament.cptTournament == CptTournament.RANKING) {
+                            if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
                                 switch (it.tournament.region) {
                                     case Region.AO: cptScoreAO += score; break;
                                     case Region.LA: cptScoreLA += score; break;

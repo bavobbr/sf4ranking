@@ -116,7 +116,7 @@ public enum CharacterType
     SPINAL("SPINAL", "Spinal", Version.KI),
     THUNDER("THUNDER", "Thunder", Version.KI),
     TJCOMBO("TJCOMBO", "TJ Combo", Version.KI),
-    MAYA("TJCOMBO", "TJ Combo", Version.KI),
+    MAYA("MAYA", "Maya", Version.KI),
     KANRA("KANRA", "Kan-ra", Version.KI),
     RIPTOR("RIPTOR", "Riptor", Version.KI),
     CINDER("CINDER", "Cinder", Version.KI),

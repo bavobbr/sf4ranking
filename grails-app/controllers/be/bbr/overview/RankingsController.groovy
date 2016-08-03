@@ -163,7 +163,7 @@ class RankingsController
                 if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
                     return t.results?.sort { it.place }?.first()?.player?.name + " (Global)"
                 }
-                else if (t.cptTournament == CptTournament.RANKING) {
+                else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT) {
                     def qp = t.results.sort { it.place }.findResult {
                         if (!regionalQualifyingHistories[t.region].contains(it.player)) {
                             regionalQualifyingHistories[t.region] << it.player
@@ -224,6 +224,7 @@ class RankingsController
         def qualifiedByScore = unqualifiedPlayers.take(8+extraspots)
         List<Player> players32 = []
         players32.addAll(qualifiedByScore)
+        players32.addAll(qualifiedPlayers)
 
         def qualifiedRegionally = findAllRegionalQualifyingByScore(qualifiedByScore)
         players32.addAll(qualifiedRegionally)
@@ -550,7 +551,7 @@ class RankingsController
     private Integer countDuplicateQualifiers() {
         def allWinners = queryService.getQualifiedSpotWinners().collect { it.name }
         def dups = allWinners.countBy { it }
-        return dups.values().count { it > 1 }
+        return dups.values().sum() - dups.keySet().size()
     }
 
     private List<Player> findAllRegionalQualifyingByScore(List<Player> globalQualifyingByScore) {

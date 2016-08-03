@@ -49,6 +49,9 @@
 
 <h3>Global leader board</h3>
 
+Green means directly qualified, blue means will qualify by points in the open global spots. When a player directly qualifed or double-qualifies extra blue spots are opened. This means players on the edge can still get in by extension of blue zone.
+
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable">
@@ -78,7 +81,7 @@
 
         <g:each in="${players}" var="p" status="idx">
 
-            <tr class="${p.scoreQualified ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualified ? 'qual' : 'unqual'} ${p.cptQualified ? 'direct' : 'unqual'}">
                 <td class="${p.cptRank <= openSpots? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
@@ -158,7 +161,9 @@ The global board has ${directSpots} direct qualified players, ${extraSpots} spot
 
 
 <h3>North America Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
+Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable2">
@@ -182,7 +187,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersNA}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedNA ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedNA ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
                 <td>
                     ${p.cptRankNA}
                 </td>
@@ -239,8 +244,9 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
 
 <h3>Latin America Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
-
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
+Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable3">
@@ -264,7 +270,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersLA}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedLA ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedLA ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
                 <td>
                     ${p.cptRankLA}
                 </td>
@@ -320,8 +326,9 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
     </table></div>
 
 <h3>Asia/Oceania Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
-
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
+Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable4">
@@ -345,7 +352,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersAO}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedAO ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedAO ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
                 <td>
                     ${p.cptRankAO}
                 </td>
@@ -401,8 +408,9 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
     </table></div>
 
 <h3>Europe Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by points globally are also excluded for direct qualifaction.
-
+The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
+Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable5">
@@ -426,7 +434,7 @@ The first two non-qualified players will directly qualify for Capcom Cup. Global
 
         <g:each in="${playersEU}" var="p" status="idx">
 
-            <tr class="${p.scoreQualifiedEU ? 'qual' : 'unqual'}">
+            <tr class="${p.scoreQualifiedEU ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
                 <td>
                     ${p.cptRankEU}
                 </td>

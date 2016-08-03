@@ -40,6 +40,7 @@ public enum CptTournament
     public Integer getScore(Integer place) {
         switch (this) {
             case RANKING: return getRankingScore(place);
+            case ONLINE_EVENT: return getRankingScore(place);
             case PREMIER: return getPremierScore(place);
             case PREMIER_SCORELESS: return 0;
             case EVO: return getEvoScore(place);
@@ -50,15 +51,25 @@ public enum CptTournament
     }
 
     public Integer getPrize(Integer place) {
-            switch (this) {
-            case RANKING: return 0;
-            case PREMIER: return getPremierPrize(place);
-            case PREMIER_SCORELESS: return getPremierPrize(place);
-            case EVO: return getEvoPrize(place);
-            case QUALIFIER: return 0;
-            case NONE: return 0;
-            case CC: getCapcomCupPrize(place);
-            default: return 0;
+        switch (this) {
+            case RANKING:
+                return 0;
+            case ONLINE_EVENT:
+                return 0;
+            case PREMIER:
+                return getPremierPrize(place);
+            case PREMIER_SCORELESS:
+                return getPremierPrize(place);
+            case EVO:
+                return getEvoPrize(place);
+            case QUALIFIER:
+                return 0;
+            case NONE:
+                return 0;
+            case CC:
+                getCapcomCupPrize(place);
+            default:
+                return 0;
         }
     }
 
@@ -66,6 +77,7 @@ public enum CptTournament
         if (code == CountryCode.JP || code == CountryCode.BR) return 0;
         switch (this) {
             case RANKING: return 0;
+            case ONLINE_EVENT: return 0;
             case PREMIER: return getPremierPrize(place);
             case PREMIER_SCORELESS: return getPremierPrize(place);
             case EVO: return getEvoPrize(place);
