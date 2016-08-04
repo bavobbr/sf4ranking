@@ -253,7 +253,7 @@ public enum CharacterType
     SF5_RMIKA("R. MIKA", "Mika", Version.SF5),
     SF5_RYU("RYU", "Ryu", Version.SF5),
     SF5_VEGA("VEGA", "Vega", Version.SF5),
-    SF5_ZANGIEF("ZANGIEF", "gief", Version.SF5),
+    SF5_ZANGIEF("ZANGIEF", "Gief", Version.SF5),
     SF5_FANG("F.A.N.G", "FANG", Version.SF5),
     SF5_ALEX("ALEX", "Alex", Version.SF5),
     SF5_GUILE("GUILE", "Guile", Version.SF5),

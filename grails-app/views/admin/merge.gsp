@@ -23,14 +23,41 @@ This will delete player 1 after copying the results to player 2. Make sure playe
     <label for="p1">
       <g:message message="Merge player"/>
     </label>
-    <g:select name="p1" from="${players}" optionKey="id" optionValue="name" class="form-control"/>
+    <div class="form-group">
+      <input id="p1" class="form-control" placeholder="Find a Player" name="p1">
+    </div>
     <label for="p2">
       <g:message message="into" />
     </label>
-    <g:select name="p2" from="${players}" optionKey="id" optionValue="name" class="form-control"/>
+    <div class="form-group">
+      <input id="p2" class="form-control" placeholder="Find a Player" name="p2">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </g:form>
 </fieldset>
 <br/>
+<script>
+  $(function () {
+    $("#p1").autocomplete({
+      source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
+      minLength: 3,
+      select: function (event, ui) {
+        if (ui.item) $("#p1").val(ui.item.value);
+
+      }
+    });
+  });
+</script>
+<script>
+  $(function () {
+    $("#p2").autocomplete({
+      source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
+      minLength: 3,
+      select: function (event, ui) {
+        if (ui.item) $("#p2").val(ui.item.value);
+      }
+    });
+  });
+</script>
 </body>
 </html>

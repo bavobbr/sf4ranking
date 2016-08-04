@@ -284,7 +284,6 @@ class AdminController
 
     def merge()
     {
-        [players: Player.list(order: "asc", sort: 'name')]
     }
 
     def bulkedit() {
@@ -330,8 +329,8 @@ class AdminController
 
     def mergePlayers()
     {
-        def p1 = Player.findById(params.p1)
-        def p2 = Player.findById(params.p2)
+        def p1 = Player.findByCodename(params.p1.toUpperCase())
+        def p2 = Player.findByCodename(params.p2.toUpperCase())
         dataService.merge(p1, p2)
         redirect(controller: "rankings", action: "player", params: [id: p2.id])
     }

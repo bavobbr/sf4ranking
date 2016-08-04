@@ -30,6 +30,13 @@
                 <td class="${comparison.css(comparison.listingsResult)}">${comparison.listingsResult}</td>
             </tr>
             <tr>
+                <td>Tournament Wins</td>
+                <td>${comparison.tournamentWinsP1}</td>
+                <td>${comparison.tournamentWinsP2}</td>
+                <td>${comparison.tournamentWinsDiff}</td>
+                <td class="${comparison.css(comparison.tournamentWinsResults)}">${comparison.tournamentWinsResults}</td>
+            </tr>
+            <tr>
                 <td>Beat other player</td>
                 <td>${comparison.outrankP1}</td>
                 <td>${comparison.outrankP2}</td>
@@ -60,8 +67,6 @@
         </table>
     </div>
 
-
-
 </g:each>
 
 <h3>
@@ -79,11 +84,17 @@
         <label for="p1">
             <g:message message="Compare player"/>
         </label>
-        <g:select name="p1" from="${players}" optionKey="id" optionValue="name" class="form-control" value="${p1.id}"/>
+
+        <div class="form-group">
+            <input id="p1" class="form-control" placeholder="Find a Player" name="p1" value="${p1?.name}">
+        </div>
         <label for="p2">
             <g:message message="to"/>
         </label>
-        <g:select name="p2" from="${players}" optionKey="id" optionValue="name" class="form-control" value="${p2.id}"/>
+
+        <div class="form-group">
+            <input id="p2" class="form-control" placeholder="Find a Player" name="p2" value="${p2?.name}">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </g:form>
 </fieldset>
@@ -92,18 +103,42 @@
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {
         $('table[id^="datatable"]').each(function (index) {
-            console.log("test "+index);
+            console.log("test " + index);
             try {
-            $(this).tablecloth({
-                theme: "default",
-                striped: true,
-                condensed: true
-            });
+                $(this).tablecloth({
+                    theme: "default",
+                    striped: true,
+                    condensed: true
+                });
             }
-            catch (err) {}
-            console.log("test done "+index);
+            catch (err) {
+            }
+            console.log("test done " + index);
             //$(this).tablesorter({sortList: [[1,1]]})
         })
+    });
+</script>
+<script>
+    $(function () {
+        $("#p1").autocomplete({
+            source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
+            minLength: 3,
+            select: function (event, ui) {
+                if (ui.item) $("#p1").val(ui.item.value);
+
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $("#p2").autocomplete({
+            source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
+            minLength: 3,
+            select: function (event, ui) {
+                if (ui.item) $("#p2").val(ui.item.value);
+            }
+        });
     });
 </script>
 </body>

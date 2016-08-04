@@ -490,13 +490,13 @@ class StatsController
         def p1 = params.p1? Player.get(params.p1) : null
         def p2 = params.p2? Player.get(params.p2) : null
         println "Setting up for compare of $p1 vs $p2"
-        [players: Player.list(order: "asc", sort: 'name'), p1: p1, p2: p2]
+        [p1: p1, p2: p2]
     }
 
     def compareResults()
     {
-        def p1 = Player.findById(params.p1)
-        def p2 = Player.findById(params.p2)
+        def p1 = Player.findByCodename(params.p1.toUpperCase())
+        def p2 = Player.findByCodename(params.p2.toUpperCase())
         List<Comparison> comparisons = []
         Version.values().each { game ->
             def p1Rank = p1.rankings.find { it.game == game }
@@ -539,13 +539,23 @@ class StatsController
                 comparison.rankP2 = p2Rank.rank
                 comparison.rankDiff = comparison.rankP2 - comparison.rankP1
                 comparison.rankResult = comparison.calculate(comparison.rankP2, comparison.rankP1)
+
+                comparison.tournamentWinsP1 = p1Tournaments
+                        .findAll { it.tournamentType != TournamentType.CIRCUIT }
+                        .count { it.results.first().player == p1 }
+                comparison.tournamentWinsP2 = p2Tournaments
+                        .findAll { it.tournamentType != TournamentType.CIRCUIT }
+                        .count { it.results.first().player == p2 }
+                comparison.tournamentWinsDiff = comparison.tournamentWinsP1 - comparison.tournamentWinsP2
+                comparison.tournamentWinsResults = comparison.calculate(comparison.tournamentWinsP1, comparison.tournamentWinsP2)
+
                 comparisons << comparison
             }
         }
         def p1Exclusive = p1.rankings.findAll { !(it.game in p2.rankings.game) }.collect { it.game }
         def p2Exclusive = p2.rankings.findAll { !(it.game in p1.rankings.game) }.collect { it.game }
 
-        [p1: p1, p2: p2, games: comparisons, players: Player.list(order: "asc", sort: 'name'), p1Exclusive: p1Exclusive, p2Exclusive: p2Exclusive]
+        [p1: p1, p2: p2, games: comparisons, p1Exclusive: p1Exclusive, p2Exclusive: p2Exclusive]
     }
 
 
@@ -595,6 +605,11 @@ class StatsController
         Integer totalscoreP2
         Integer totalscoreDiff
         ComparisonResult totalscoreResult
+
+        Integer tournamentWinsP1
+        Integer tournamentWinsP2
+        Integer tournamentWinsDiff
+        ComparisonResult tournamentWinsResults
 
     }
 }
