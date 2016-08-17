@@ -541,11 +541,19 @@ class StatsController
                 comparison.rankResult = comparison.calculate(comparison.rankP2, comparison.rankP1)
 
                 comparison.tournamentWinsP1 = p1Tournaments
-                        .findAll { it.tournamentType != TournamentType.CIRCUIT }
-                        .count { it.results.first().player == p1 }
+                        .findAll { it.tournamentType != TournamentType.CIRCUIT  && it.finished }
+                        .count {
+                            it.results
+                            .sort { a,b -> a.place <=> b.place }
+                            .first().player == p1
+                        }
                 comparison.tournamentWinsP2 = p2Tournaments
-                        .findAll { it.tournamentType != TournamentType.CIRCUIT }
-                        .count { it.results.first().player == p2 }
+                        .findAll { it.tournamentType != TournamentType.CIRCUIT && it.finished }
+                        .count {
+                                    it.results
+                                    .sort { a,b -> a.place <=> b.place }
+                                    .first().player == p2
+                        }
                 comparison.tournamentWinsDiff = comparison.tournamentWinsP1 - comparison.tournamentWinsP2
                 comparison.tournamentWinsResults = comparison.calculate(comparison.tournamentWinsP1, comparison.tournamentWinsP2)
 

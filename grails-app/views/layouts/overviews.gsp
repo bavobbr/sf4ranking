@@ -196,15 +196,15 @@
                             <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
                         </ul>
                     </li>
-                    <li><g:link controller="gear" action="index">CONTROLLERS</g:link></li>
+                    <li><g:link controller="gear">CONTROLLERS</g:link></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUBMIT <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                            <g:link controller="submit" action="index">Submit new tournament</g:link></li>
+                            <g:link controller="submit">Submit new tournament</g:link></li>
                             <li>
                             <g:link controller="submit" action="list">List submitted tournaments</g:link></li>
-                            <li><g:link controller="api" action="index">REST/JSON API</g:link></li>
+                            <li><g:link controller="api">REST/JSON API</g:link></li>
                             <li class="divider"></li>
                             <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a>
                             </li>
@@ -223,7 +223,7 @@
                             <li><g:link action="cptCharacterStats_2015" controller="rankings">Characters used 2015</g:link></li>
                         </ul>
                     </li>
-                    <li><g:link action="index" controller="about">FAQ</g:link></li>
+                    <li><g:link controller="about">FAQ</g:link></li>
 
                     <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
                         <li class="dropdown">

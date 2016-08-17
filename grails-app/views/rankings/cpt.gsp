@@ -49,8 +49,8 @@
 
 <h3>Global leader board</h3>
 
-Green means directly qualified, blue means will qualify by points in the open global spots. When a player directly qualifed or double-qualifies extra blue spots are opened. This means players on the edge can still get in by extension of blue zone.
-
+Green means directly qualified, blue means will qualify by points in the open global spots. When a player directly qualifed or double-qualifies (via global points, direct and/or regional finals) extra blue spots are opened. This means players on the edge can still get in by extension of blue zone.
+Any global point spots above top 8 are granted due to shifting caused by direct qualifiers and double qualifiers.
 
 <div class="table-responsive">
 
@@ -82,7 +82,7 @@ Green means directly qualified, blue means will qualify by points in the open gl
         <g:each in="${players}" var="p" status="idx">
 
             <tr class="${p.scoreQualified ? 'qual' : 'unqual'} ${p.cptQualified ? 'direct' : 'unqual'}">
-                <td class="${p.cptRank <= openSpots? 'warning' : ''}">
+                <td class="${p.cptRank <= 24? 'warning' : ''}">
                     ${p.cptRank}
                 </td>
                 <td>
@@ -156,14 +156,16 @@ Green means directly qualified, blue means will qualify by points in the open gl
         </g:each>
 
     </table>
-The global board has ${directSpots} direct qualified players, ${extraSpots} spots opened by double qualification amounting to ${openSpots} spots of qualification
+The global board has ${directSpots} direct qualified players, 8 global points spots and ${extraSpots} spots opened by double qualification amounting to ${openSpots} qualified players out of a possible 24.
 </div>
 
 
 <h3>North America Regional Board</h3>
 The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
 Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
+<strong>Curent qualifying players:</strong> ${playersNA.findAll {it.scoreQualifiedNA}.collect { it.name }.join(" and ")}
+<p>&nbsp;</p>
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable2">
@@ -246,7 +248,10 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
 <h3>Latin America Regional Board</h3>
 The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
 Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
+<strong>Curent qualifying players:</strong> ${playersLA.findAll {it.scoreQualifiedLA}.collect { it.name }.join(" and ")}
+<p>&nbsp;</p>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable3">
@@ -328,7 +333,10 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
 <h3>Asia/Oceania Regional Board</h3>
 The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
 Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
+<strong>Curent qualifying players:</strong> ${playersAO.findAll {it.scoreQualifiedAO}.collect { it.name }.join(" and ")}
+<p>&nbsp;</p>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable4">
@@ -410,7 +418,10 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
 <h3>Europe Regional Board</h3>
 The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
 Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.
+Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
+<strong>Curent qualifying players:</strong> ${playersEU.findAll {it.scoreQualifiedEU}.collect { it.name }.join(" and ")}
+<p>&nbsp;</p>
+
 <div class="table-responsive">
 
     <table class="tablehead" id="datatable5">
