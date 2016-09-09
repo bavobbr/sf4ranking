@@ -605,7 +605,7 @@ class AdminController
             tournamentSizes[it] = numresults
         }
         def listing = tournamentSizes.collect {
-            Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked}"
+            Tournament k, def v -> "${k.name}, $v, ${k.tournamentFormat}, ${k.tournamentType}, ${k.weightingType}, ${k.ranked} ${k.finished}"
         }.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }

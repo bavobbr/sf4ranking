@@ -15,7 +15,7 @@
       <th>Name</th>
       <th>Date</th>
       <th>Location</th>
-      <th>Weight</th>
+      <th>Region</th>
       <th>Pro Tour</th>
       <th>Max Points</th>
       <th>Max Prize</th>
@@ -33,17 +33,23 @@
             </g:link>
           </g:if>
         </td>
-        <td>${t.weight}</td>
+        <td>${t.region?.value}</td>
         <td>
             ${t.cptTournament?.value}
         </td>
           <td>${t.getCptTournament().getScore(1)}</td>
-          <td>${t.getCptTournament().getPrize(1)}</td>
+          <td>${t.getCptTournament().getPrize(1, t.countryCode)}</td>
       </tr>
     </g:each>
   </table>
 </div>
-    A total of ${maxTotal} points can be scored and ${directPlaces} direct places are still open
+    A total of <strong>${maxTotal} global points</strong> can be scored at <strong>${pointCount} tournaments</strong> providing points, of which <strong>${rankingCount} ranking </strong>tournaments. <strong>${directPlaces} direct places </strong>are still open to qualify without points.
+<ul>
+    <li>Points available in <strong>North America: ${maxTotalNA}</strong> (of which ${maxRegionTotalNA} regional)</li>
+    <li>Points available in <strong>Latin America: ${maxTotalLA}</strong> (of which ${maxRegionTotalLA} regional)</li>
+    <li>Points available in <strong>Asia/Oceania: ${maxTotalAO}</strong> (of which ${maxRegionTotalAO} regional)</li>
+    <li>Points available in <strong>Europe: ${maxTotalEU}</strong> (of which ${maxRegionTotalEU} regional)</li>
+</ul>
 </g:if>
 
 <h3 class="tournament"><small>${played.size()} Tournaments played</small></h3>
@@ -84,7 +90,7 @@
         </g:each>
 
     </table>
-    A total of ${pastMaxTotal} points could be scored and ${pastDirectPlaces} direct places were granted
+    A total of <strong>${pastMaxTotal} points </strong>could be scored and <strong>${pastDirectPlaces} direct places </strong>were granted
 
 </div>
 

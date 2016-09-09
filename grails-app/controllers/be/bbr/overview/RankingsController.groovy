@@ -151,15 +151,32 @@ class RankingsController
     def cptStats() {
         def comingTournaments = queryService.upcomingCptTournaments()
         def maxTotal = comingTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxTotalNA = comingTournaments.findAll { it.region == Region.NA}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxTotalLA = comingTournaments.findAll { it.region == Region.LA}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxTotalEU = comingTournaments.findAll { it.region == Region.EU}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxTotalAO = comingTournaments.findAll { it.region == Region.AO}.sum { Tournament t -> t.cptTournament.getScore(1) }
+
+        def regional = comingTournaments.findAll { it.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT] }
+        def maxRegionTotalNA = regional.findAll { it.region == Region.NA}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxRegionTotalLA = regional.findAll { it.region == Region.LA}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxRegionTotalEU = regional.findAll { it.region == Region.EU}.sum { Tournament t -> t.cptTournament.getScore(1) }
+        def maxRegionTotalAO = regional.findAll { it.region == Region.AO}.sum { Tournament t -> t.cptTournament.getScore(1) }
 
         def directPlaces = comingTournaments.count { Tournament t ->
             t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO, CptTournament.REGIONAL_FINAL]
+        }
+        def rankingTournaments = comingTournaments.count { Tournament t ->
+            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT]
+        }
+        def pointTournaments = comingTournaments.count { Tournament t ->
+            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT, CptTournament.EVO, CptTournament.PREMIER]
         }
         def pastTournaments = queryService.pastCptTournaments()
         Map<Region, List<Player>> regionalQualifyingHistories = [:]
         Region.values().each { regionalQualifyingHistories[it] = [] }
         pastTournaments.sort { it.date }.each { t ->
             t.metaClass.qualified << {
+                log.info("... CPT stats on tournament ${t.name} with state ${t.finished} and results ${t.results.size()}")
                 if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
                     return t.results?.sort { it.place }?.first()?.player?.name + " (Global)"
                 }
@@ -209,7 +226,18 @@ class RankingsController
          unknownTotal: unknownTotal,
          directPlaces: directPlaces,
          pastMaxTotal: pastMaxTotal,
-         pastDirectPlaces: pastDirectPlaces]
+         pastDirectPlaces: pastDirectPlaces,
+         rankingCount: rankingTournaments,
+         pointCount: pointTournaments,
+         maxTotalLA: maxTotalLA,
+         maxTotalNA: maxTotalNA,
+         maxTotalAO: maxTotalAO,
+         maxTotalEU: maxTotalEU,
+         maxRegionTotalLA: maxRegionTotalLA,
+         maxRegionTotalNA: maxRegionTotalNA,
+         maxRegionTotalAO: maxRegionTotalAO,
+         maxRegionTotalEU: maxRegionTotalEU,
+        ]
     }
 
     @Cacheable('cptChars')
@@ -334,12 +362,14 @@ class RankingsController
     def tournaments()
     {
         def fgame = Version.fromString(params.id)
+        log.info("Listing all tournaments of $fgame")
         def query = Tournament.where {
             if (params.country && !(params.country =~ "any")) countryCode == CountryCode.fromString(params.country)
             if (fgame) game == fgame
             if (params.type && !(params.type =~ "any")) tournamentType == params.type as TournamentType
         }
         List tournaments = query.list(order: "desc", sort: 'date')
+        log.info("Found ${tournaments.size()} tournaments of $fgame")
         def c = Tournament.createCriteria()
         def countries = c.list {
             projections {
@@ -365,6 +395,7 @@ class RankingsController
         def details = []
         tournament.results.sort {a, b -> a.place <=> b.place}.each {
             def rplayer = it.player.name
+            def rlabel = it.player.labelFor(tournament.game)
             def rplayerid = it.player.id
             def rplace = it.place
             if (tournament.tournamentFormat == TournamentFormat.EXHIBITION)
@@ -384,7 +415,7 @@ class RankingsController
                 prankingid = it.player.rankings.find {it.game == tournament.game}?.id
             }
             details <<
-            [rplayer: rplayer, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry,
+            [rplayer: rplayer, rlabel: rlabel, rplace: rplace, rscore: rscore, rplayerid: rplayerid, tteams: tteams, rcountry: rcountry,
                     rcountryname: rcountryname, resultid: it.id, pskill: pskill, prankingid: prankingid]
         }
         def lastUpdateMessage = Configuration.first().lastUpdateMessage

@@ -335,8 +335,8 @@ class DataService
                     String coverage = tjson.coverage
                     String creator = tjson.creator
                     if (creator.equalsIgnoreCase("null")) creator = "unknown"
-                    Boolean ranked = tjson.ranked?.toBoolean() ?: false
-                    Boolean finished = tjson.finished?.toBoolean() ?: true
+                    Boolean ranked = tjson.ranked.toBoolean()
+                    Boolean finished = tjson.finished.toBoolean()
                     Tournament tournament = new Tournament(name: tjson.name, countryCode: country, game: version, date: date, videos: tjson.videos,
                             weight: weight, tournamentFormat: format, tournamentType: type,
                             weightingType: weightingType, challonge: challonge, ranked: ranked,

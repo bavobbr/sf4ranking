@@ -9,8 +9,21 @@ public List<String> getTop250Players(Version game) {
     def top250      = top100 + slice200 + slice250
     return top250
 }
+public Map<String, String> getPlayer(String name) {
+    JsonSlurper slurper = new JsonSlurper()
+    def player      = slurper.parse("http://rank.shoryuken.com/api/player/name/${name}".toURL())
+    String main = player.rankings.SF5.main[0] - "SF5_"
+    return [name: name, rank: player.rankings.SF5.rank, country: player.country, main: main.toLowerCase()]
+}
+
 def top250 = getTop250Players(Version.USF4)
 def top250ae = getTop250Players(Version.AE2012)
-def top50 = getTop250Players(Version.SF5).take(50)
+def top50 = getTop250Players(Version.SF5).take(100)
 
-println top50.findAll { !(it in top250) && !(it in top250ae) }
+def upcoming = top50.findAll { !(it in top250) && !(it in top250ae) }
+def stats = upcoming.collect { getPlayer(it) }
+stats.each {
+    println "${it.rank}. ${it.name} (${it.country}) ${it.main}"
+}
+println stats.countBy { it.main }.sort { a, b -> b.value <=> a.value }
+println stats.countBy { it.country }.sort { a, b -> b.value <=> a.value }

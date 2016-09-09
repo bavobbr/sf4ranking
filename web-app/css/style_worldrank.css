@@ -311,3 +311,42 @@ a.nextLink {
 table tfoot tr td {
 	padding: 4px;
 }
+
+div.top10 {
+	border-radius: 33px 33px 33px 33px;
+	-moz-border-radius: 33px 33px 33px 33px;
+	-webkit-border-radius: 33px 33px 33px 33px;
+	border: 2px dotted #cc0000;
+	font-size: 10px;
+	text-align:center;
+	vertical-align:middle;
+}
+div.top20 {
+	border-radius: 33px 33px 33px 33px;
+	-moz-border-radius: 33px 33px 33px 33px;
+	-webkit-border-radius: 33px 33px 33px 33px;
+	border: 2px dotted #f90;
+	font-size: 10px;
+	text-align:center;
+	vertical-align:middle;
+}
+div.top50 {
+	border-radius: 33px 33px 33px 33px;
+	-moz-border-radius: 33px 33px 33px 33px;
+	-webkit-border-radius: 33px 33px 33px 33px;
+	border: 2px dotted #006dba;
+	font-size: 10px;
+	text-align:center;
+	vertical-align:middle;
+}
+div.top100 {
+	border-radius: 33px 33px 33px 33px;
+	-moz-border-radius: 33px 33px 33px 33px;
+	-webkit-border-radius: 33px 33px 33px 33px;
+	border: 2px dotted #b2d1ff;
+	font-size: 10px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+

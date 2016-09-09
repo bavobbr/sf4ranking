@@ -66,7 +66,6 @@ grails.project.dependency.resolution = {
         compile ":shiro:1.2.1"
         compile ":searchable:0.6.9"
 
-
         build ':tomcat:7.0.55.2'
         compile ':cache:1.1.8'
         compile ':scaffolding:2.1.2'

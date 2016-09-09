@@ -191,6 +191,21 @@ class Player
         return Version.values().inject(0) { result, item -> result + totalScore(item) }
     }
 
+    PlayerLabel labelFor(Version game) {
+        def ranking = findRanking(game)
+        if (ranking == null) return PlayerLabel.NONE
+        else {
+            switch (ranking.rank) {
+                case { it <= 10 }: return PlayerLabel.TOP10
+                case { it <= 20 }: return PlayerLabel.TOP20
+                case { it <= 50 }: return PlayerLabel.TOP50
+                case { it <= 100 }: return PlayerLabel.TOP100
+                case { it <= 250 }: return PlayerLabel.TOP250
+                default: return PlayerLabel.UPCOMING
+            }
+        }
+    }
+
     public String toString() {
         def props = []
         if (realname) props << realname

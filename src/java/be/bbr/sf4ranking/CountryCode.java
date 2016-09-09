@@ -808,6 +808,8 @@ public enum CountryCode
 
     /** <a href="http://en.wikipedia.org/wiki/Zimbabwe">Zimbabwe</a> */
     ZW("Zimbabwe", "ZWE", 716),
+
+    NONE("Not Applicable", "NONE", -1)
     ;
     // @formatter:on
 

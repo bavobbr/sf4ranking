@@ -85,6 +85,7 @@
         <tr class="stathead">
             <th>Place</th>
             <th>Player</th>
+            <th>Top</th>
             <th>Team(s)</th>
             <th>Country</th>
             <th>Score</th>
@@ -106,6 +107,11 @@
                 <td>${result.rplace}</td>
                 <td><g:link mapping="playerByName" controller="rankings" action="player"
                             params="[name: result.rplayer]">${result.rplayer}</g:link></td>
+                <td>
+                    <div class="${result.rlabel.cssClass}">
+                    ${result.rlabel.displayValue}
+                    </div>
+                </td>
                 <td>
                     <g:if test="${result.tteams}">
                         <g:each in="${result.tteams}" var="tteam" status="rowidx">
