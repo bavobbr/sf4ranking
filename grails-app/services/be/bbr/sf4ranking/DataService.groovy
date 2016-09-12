@@ -370,6 +370,9 @@ class DataService
         log.info "Import service completed"
         grailsCacheManager.destroyCache('top')
         grailsCacheManager.destroyCache('cpt')
+        grailsCacheManager.destroyCache('cptStats')
+        grailsCacheManager.destroyCache('cptChars')
+        grailsCacheManager.destroyCache('charstats')
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
 
@@ -599,5 +602,6 @@ class DataService
         grailsCacheManager.getCache('cpt').clear()
         grailsCacheManager.getCache('cptStats').clear()
         grailsCacheManager.getCache('cptChars').clear()
+        grailsCacheManager.getCache('charstats').clear()
     }
 }

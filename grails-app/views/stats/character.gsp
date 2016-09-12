@@ -2,20 +2,17 @@
 <html>
 <head>
     <meta name="layout" content="overviews"/>
-    <title>Character statistics for ${stats?.characterType}</title>
+    <title>${stats?.characterType?.shortname} Character statistics and tournament results</title>
 </head>
 
 <body>
 
-<h2>Character statistics</h2>
-This list character usage and performance statistics for ${stats?.characterType} in ${stats?.game}
-<div class="alert alert-info alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    You can sort on the columns by clicking the header!
-</div>
-This character is ranked against ${total} other characters
+<h2>Character statistics and tournament results</h2>
+This list character usage and tournament performance statistics for ${stats?.characterType?.shortname} in ${stats?.game}
+
+This character is ranked against ${total} other characters in ${stats?.game?.value}
 <div class="table-responsive">
-    <table class="tablehead" id="datatable">
+    <table class="tablehead" id="datatable4">
         <thead>
         <tr class="stathead">
             <th>Statistic</th>
@@ -26,125 +23,125 @@ This character is ranked against ${total} other characters
         </tr>
         </thead>
         <tr>
-            <td>totalTimesUsed</td>
+            <td>Total times used</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.totalTimesUsed}</td>
             </g:each>
             <td>${relativeStats.totalTimesUsed}</td>
         </tr>
         <tr>
-            <td>totalUsagePercentage</td>
+            <td>Total Uage Percentage</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.totalUsagePercentage?.round(1)}</td>
             </g:each>
             <td>${relativeStats.totalUsagePercentage}</td>
         </tr>
         <tr>
-            <td>asMain</td>
+            <td>Used by players use as main</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.asMain}</td>
             </g:each>
             <td>${relativeStats.asMain}</td>
         </tr>
         <tr>
-            <td>asSecondary</td>
+            <td>Used by players as secondary</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.asSecondary}</td>
             </g:each>
             <td>${relativeStats.asSecondary}</td>
         </tr>
         <tr>
-            <td>asMainInTop100</td>
+            <td>Main players in top 100</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.asMainInTop100}</td></g:each>
             <td>${relativeStats.asMainInTop100}</td>
         </tr>
         <tr>
-            <td>asMainInTop50</td>
+            <td>Main players in top 50</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.asMainInTop50}</td></g:each>
             <td>${relativeStats.asMainInTop50}</td>
         </tr>
         <tr>
-            <td>scoreAccumulated</td>
+            <td>Accumulated score</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.scoreAccumulated}</td></g:each>
             <td>${relativeStats.scoreAccumulated}</td>
         </tr>
         <tr>
-            <td>decayedScoreAccumulated</td>
+            <td>Decayed accumulated score</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.decayedScoreAccumulated}</td></g:each>
             <td>${relativeStats.decayedScoreAccumulated}</td>
         </tr>
         <tr>
-            <td>scoreAccumulatedByTop100</td>
+            <td>Accumulated score by top 100 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.scoreAccumulatedByTop100}</td></g:each>
             <td>${relativeStats.scoreAccumulatedByTop100}</td>
         </tr>
         <tr>
-            <td>decayedScoreAccumulatedByTop100</td>
+            <td>Decayed accumulated score by top 100 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.decayedScoreAccumulatedByTop100}</td></g:each>
             <td>${relativeStats.decayedScoreAccumulatedByTop100}</td>
         </tr>
         <tr>
-            <td>top1finishes</td>
+            <td>Tournament wins</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.top1finishes}</td></g:each>
             <td>${relativeStats.top1finishes}</td>
         </tr>
         <tr>
-            <td>top3finishes</td>
+            <td>Tournament top3 finishes</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.top3finishes}</td></g:each>
             <td>${relativeStats.top3finishes}</td>
         </tr>
         <tr>
-            <td>top8finishes</td>
+            <td>Tournament top8 finishes</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.top8finishes}</td></g:each>
             <td>${relativeStats.top8finishes}</td>
         </tr>
         <tr>
-            <td>top16finishes</td>
+            <td>Tournament top16 finishes</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.top16finishes}</td></g:each>
             <td>${relativeStats.top16finishes}</td>
         </tr>
         <tr>
-            <td>spreadTop5Score</td>
+            <td>Statistical spread best 5 player score</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.spreadTop5Score}</td></g:each>
             <td>${relativeStats.spreadTop5Score}</td>
         </tr>
         <tr>
-            <td>meanTop5Score</td>
+            <td>Statistical mean of best 5 player score</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.meanTop5Score?.round(1)}</td></g:each>
             <td>${relativeStats.meanTop5Score}</td>
         </tr>
         <tr>
-            <td>standardDeviationTop5Score</td>
+            <td>Statistical deviation of best 5 player score</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.standardDeviationTop5Score?.round(1)}</td></g:each>
             <td>${relativeStats.standardDeviationTop5Score}</td>
         </tr>
         <tr>
-            <td>spreadTop5Usage</td>
+            <td>Statistical spread of usage by top 5 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.spreadTop5Usage}</td></g:each>
             <td>${relativeStats.spreadTop5Usage}</td>
         </tr>
         <tr>
-            <td>meanTop5Usage</td>
+            <td>Statistical mean of usage by top 5 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.meanTop5Usage?.round(1)}</td></g:each>
             <td>${relativeStats.meanTop5Usage}</td>
         </tr>
         <tr>
-            <td>standardDeviationTop5Usage</td>
+            <td>Statistical deviation of usage by top 5 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.standardDeviationTop5Usage?.round(1)}</td></g:each>
             <td>${relativeStats.standardDeviationTop5Usage}</td>
@@ -152,22 +149,158 @@ This character is ranked against ${total} other characters
     </table>
 </div>
 
+(Note that local tournaments are excluded)<br/>
+<p>
 Top players using character as main:
 <ol>
     <g:each in="${best5}" var="p">
         <li>
-            <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> ${p.
-                rank(stats.game)}</li>
+            <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> (rank: ${p.
+                rank(stats.game)})</li>
     </g:each>
 </ol>
 Top players using character as secondary:
 <ol>
     <g:each in="${best5secondaries}" var="p">
         <li>
-            <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> ${p.
-                rank(stats.game)}</li>
+            <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> (rank: ${p.
+                rank(stats.game)})</li>
     </g:each>
 </ol>
+</p>
+
+<h2>Character Tournament Performance</h2>
+This list character usage and performance statistics for ${characterType.value} in ${game} (local tournaments included)
+
+<div class="table-responsive">
+    <table class="tablehead" id="datatable">
+        <thead>
+        <tr class="stathead">
+            <th>Statistic</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>Top16 finishes</td>
+            <td>${top16}</td>
+        </tr>
+        <tr>
+            <td>Top8 finishes</td>
+            <td>${top8}</td>
+        </tr>
+        <tr>
+            <td>Top3 finishes</td>
+            <td>${top3}</td>
+        </tr>
+        <tr>
+            <td>Tournament wins</td>
+            <td>${top1}</td>
+        </tr>
+        <tr>
+            <td>Total times listed</td>
+            <td>${totalResults}</td>
+        </tr>
+        <tr>
+            <td>Total tournaments used</td>
+            <td>${totalTournamentsUsed}</td>
+        </tr>
+        <tr>
+            <td>Relative occurence in results</td>
+            <td>${usedPercentage}%</td>
+        </tr>
+    </table>
+</div>
+
+<h2>Tournament Wins</h2>
+These are all the ${tournamentWins.size()} non-local circuits where ${characterType.shortname} won
+
+
+<div class="table-responsive">
+    <table class="tablehead" id="datatable2">
+        <thead>
+        <tr class="stathead">
+            <th>Tournament</th>
+            <th>Place</th>
+            <th>Country</th>
+            <th>Score</th>
+            <th>Weight</th>
+            <th>Class</th>
+            <th>CPT</th>
+            <th>Player</th>
+        </tr>
+        </thead>
+        <tbody>
+        <g:each in="${tournamentWins}" var="result">
+            <tr>
+                <td>
+                    <g:link controller="rankings" action="tournament" params="[id: result.tournament.id]">
+                        ${result.tournament.name}
+                    </g:link>
+                </td>
+                <td>${result.place}</td>
+
+                <td>${result.tournament.countryCode}</td>
+                <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
+                <td>${result.tournament.weight}</td>
+                <td>${result.tournament.tournamentType.value}</td>
+                <td>${result.tournament.cptTournament.value}</td>
+
+                <td>
+                    <g:link controller="rankings" action="player" params="[id: result.player.id]">
+                        ${result.player.name}
+                    </g:link>
+                </td>
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+</div>
+
+<h2>Tournament results</h2>
+These are all the ${tournamentAll.size()} non-local circuits where ${characterType.shortname} was listed in the top results:
+
+<div class="table-responsive">
+    <table class="tablehead" id="datatable3">
+        <thead>
+        <tr class="stathead">
+            <th>Tournament</th>
+            <th>Place</th>
+            <th>Country</th>
+            <th>Score</th>
+            <th>Weight</th>
+            <th>Class</th>
+            <th>CPT</th>
+            <th>Player</th>
+        </tr>
+        </thead>
+        <tbody>
+        <g:each in="${tournamentAll}" var="result">
+            <tr>
+                <td>
+                    <g:link controller="rankings" action="tournament" params="[id: result.tournament.id]">
+                        ${result.tournament.name}
+                    </g:link>
+                </td>
+                <td>${result.place}</td>
+
+                <td>${result.tournament.countryCode}</td>
+                <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
+                <td>${result.tournament.weight}</td>
+                <td>${result.tournament.tournamentType.value}</td>
+                <td>${result.tournament.cptTournament.value}</td>
+
+                <td>
+                    <g:link controller="rankings" action="player" params="[id: result.player.id]">
+                        ${result.player.name}
+                    </g:link>
+                </td>
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+</div>
+
+Other character results at <g:link action="index" params="[game: stats.game]">Character Statistics</g:link> page.
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function ()
                       {

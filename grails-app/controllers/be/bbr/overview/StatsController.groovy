@@ -1,6 +1,8 @@
 package be.bbr.overview
 
 import be.bbr.sf4ranking.*
+import grails.converters.JSON
+import grails.plugin.cache.Cacheable
 import org.apache.commons.math.stat.descriptive.SummaryStatistics
 import org.apache.shiro.SecurityUtils
 
@@ -98,6 +100,7 @@ class StatsController
         return [results: cstats, game: game, gamestats: statsmap]
     }
 
+    @Cacheable("charstats")
     def character()
     {
         Version game = Version.fromString(params.game)
@@ -136,7 +139,46 @@ class StatsController
             def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-        return [stats: games[game.value], best5: best5m, best5secondaries: best5s, relativeStats: relativeStats, total: others.size(), games: games]
+
+        def characters = GameCharacter.findAllByCharacterType(charType)
+        println "Found ${characters.size()} GameCharacters for $charType"
+        def teams = characters.collect { it.gameTeam }
+        println "Found ${teams.size()} GameTeam for $charType"
+        def results = teams.collect { it.result }
+        println "Found ${results.size()} Result for $charType"
+
+        def top1 = results.count { it.place <= 1 }
+        def top3 = results.count { it.place <= 3 }
+        def top8 = results.count { it.place <= 8 }
+        def top16 = results.count { it.place <= 16 }
+        def total = results.size()
+        println "total is ${results.size()}"
+        def totalTournamentsUsed = results.unique(false) { it.tournamentId }.size()
+        println "total is ${results.size()}"
+
+        def totalTournaments = Tournament.countByGame(game)
+        Integer usedPercentage = totalTournamentsUsed / totalTournaments * 100
+
+        def tournamentWins = results.findAll { it.place == 1 && it.tournament.tournamentType != TournamentType.CIRCUIT}
+        tournamentWins.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
+        def tournamentAll = results.findAll { it.tournament.tournamentType != TournamentType.CIRCUIT}
+        tournamentAll.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
+
+        return [stats: games[game.value],
+                best5: best5m,
+                best5secondaries: best5s,
+                relativeStats: relativeStats,
+                total: others.size(),
+                games: games,
+                top1: top1, top3: top3, top8: top8, top16: top16,
+                totalResults: total,
+                totalTournamentsUsed: totalTournamentsUsed,
+                usedPercentage: usedPercentage,
+                tournamentWins: tournamentWins,
+                tournamentAll: tournamentAll,
+                characterType: charType,
+                game: game
+        ]
     }
 
     def analyze()
@@ -297,7 +339,7 @@ class StatsController
         HitMap<CharacterType> charhitstop16 = new HitMap<>()
         characters.each {GameCharacter gc ->
             Result r = gc.gameTeam.result
-            if (r.tournament.weightingType != WeightingType.FIXED && r.tournament.tournamentType != TournamentType.CIRCUIT) {
+            if (r.tournament.tournamentType != TournamentType.CIRCUIT) {
                 if (r.place == 1) {
                     charhitstop1.addHit(gc.characterType)
                 }
@@ -620,4 +662,5 @@ class StatsController
         ComparisonResult tournamentWinsResults
 
     }
+
 }

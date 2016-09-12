@@ -47,11 +47,11 @@ grails.controllers.defaultScope = 'singleton'
 
 grails.cache.config = {
     cache {
-        maxCapacity = 1000
+        maxCapacity = 100
         name 'top'
     }
     cache {
-        maxCapacity = 1000
+        maxCapacity = 100
         name 'cpt'
     }
 }

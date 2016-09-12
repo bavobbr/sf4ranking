@@ -3,6 +3,7 @@ package be.bbr.admin
 import be.bbr.sf4ranking.*
 import grails.converters.JSON
 import grails.plugin.cache.GrailsCacheManager
+import grails.util.Holders
 import org.apache.shiro.SecurityUtils
 
 import static be.bbr.sf4ranking.Version.AE2012
@@ -20,7 +21,12 @@ class AdminController
     CleanupService cleanupService
     QueryService queryService
 
-    def index() {}
+    def index() {
+        def grailsApplication = Holders.getGrailsApplication()
+        def isUpdating = grailsApplication.config.global.isUpdating
+        def isUpdatingBy = grailsApplication.config.global.isUpdatingBy
+        [isUpdating: isUpdating, isUpdatingBy: isUpdatingBy]
+    }
 
     def clearCache() {
         dataService.clearCache()

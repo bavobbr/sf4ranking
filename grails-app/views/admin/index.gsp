@@ -17,6 +17,9 @@
 <g:if test="${flash.message}">
   <div class="alert alert-warning">${flash.message}</div>
 </g:if>
+<g:if test="${isUpdating}">
+  <div class="alert alert-warning">The rankings are currently being updated by ${isUpdatingBy}! Please wait to edit data</div>
+</g:if>
 <h3>Update database</h3>
 The updateAll should be triggered every time a new tournament has been imported, as the tournament needs to be weighted and players scores need to be updated.
 <ul>

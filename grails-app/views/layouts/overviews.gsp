@@ -136,6 +136,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><g:link action="index" controller="rankings">Overview</g:link></li>
+                            <li><g:link action="teams" controller="rankings">Player Teams</g:link></li>
+                            <li><g:link action="index" controller="stats">Character Balance and Tiers</g:link></li>
                             <li class="divider"></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.SF5.name()]">World Rankings Street Fighter 5</g:link></li>
@@ -162,11 +164,6 @@
                                         params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
-                            <li class="divider"></li>
-                            <li><g:link action="teams" controller="rankings">View All Player Teams</g:link></li>
-                            <li class="divider"></li>
-                            <li><g:link action="index" controller="stats">Character Usage Statistics</g:link></li>
-
                         </ul>
                     </li>
                     <li class="dropdown">
