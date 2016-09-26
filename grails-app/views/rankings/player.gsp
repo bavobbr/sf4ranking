@@ -1,4 +1,4 @@
-<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="overviews"/>
@@ -102,13 +102,13 @@
                                      title="Global CPT score">(?)</a></dt>
                     <dd>
                         <g:link action="cpt" controller="rankings">
-                        ${player.cptScore} (${player.cptRank})
+                        ${player.cptScore()} (${player.findCptRanking(Region.GLOBAL).rank})
                         </g:link>
                     </dd>
                     <dt>CPT Qualified <a href="#" data-toggle="tooltip" data-placement="top"
                                         title="Directly qualified for CPT">(?)</a></dt>
                     <dd>
-                        ${player.cptQualified ? "Qualified" : "Not qualified"}
+                        ${player.cptGlobal()?.qualified ? "Qualified" : "Not qualified"}
                     </dd>
                 </g:if>
                 <g:if test="${player.hasRanking(Version.SF5)}">
@@ -116,18 +116,18 @@
                                     title="Scores for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.cptScoreAO?:"-"} / ${player.cptScoreEU?:"-"} / ${player.cptScoreLA?:"-"} / ${player.cptScoreNA?:"-"}
+                        ${player.findCptRanking(Region.AO)?.score?:"-"} / ${player.findCptRanking(Region.EU)?.score?:"-"} / ${player.findCptRanking(Region.LA)?.score?:"-"} / ${player.findCptRanking(Region.NA)?.score?:"-"}
                     </dd>
                     <dt>CPT Region ranks <a href="#" data-toggle="tooltip" data-placement="top"
                                              title="Ranks for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.cptRankAO?:"-"} / ${player.cptRankEU?:"-"} / ${player.cptRankLA?:"-"} / ${player.cptRankNA?:"-"}
+                        ${player.findCptRanking(Region.AO)?.rank?:"-"} / ${player.findCptRanking(Region.EU)?.rank?:"-"} / ${player.findCptRanking(Region.LA)?.score?:"-"} / ${player.findCptRanking(Region.NA)?.score?:"-"}
                     </dd>
                     <dt>CPT RF <a href="#" data-toggle="tooltip" data-placement="top"
                                           title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
                     <dd>
-                        ${player.cptRegionalQualified ? "Qualified" : "Not qualified"}
+                        ${player.findCptRanking(Region.AO)?.qualified?"AO" : "-"} / ${player.findCptRanking(Region.EU)?.qualified?"EU" : "-"} / ${player.findCptRanking(Region.LA)?.qualified?"LA":"-"} / ${player.findCptRanking(Region.NA)?.qualified?"NA" : "-"}
                     </dd>
                 </g:if>
                 <dt>Compare</dt>

@@ -10,6 +10,7 @@ import grails.transaction.Transactional
 class RankingService {
 
     ConfigurationService configurationService
+    QueryService queryService
 
     /**
      * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
@@ -88,7 +89,7 @@ class RankingService {
     }
 
     /**
-     * The player score is the sum of his best 16 tournaments in AE
+     * The player score is the sum of his best 12 tournaments
      */
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
@@ -96,7 +97,7 @@ class RankingService {
             players.each { Player p ->
                 log.info("Evaluating for $game player $p, looking for results")
                 def results = Result.findAll {
-                    player == p && tournament.game == game
+                    player == p && tournament.game == game && tournament.finished == true
                 }
                 log.info("Found ${results.size()} results")
                 def playerScore = getScore(results) { Result r ->
@@ -119,7 +120,7 @@ class RankingService {
                     def cptCount = 0
                     def prize = 0
                     results.each {
-                        if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE) {
+                        if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE && it.tournament.finished) {
                             def score = it.tournament.cptTournament.getScore(it.place)
                             cptScore += score
                             if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
@@ -135,11 +136,36 @@ class RankingService {
                             prize = prize + it.tournament.cptTournament.getPrize(it.place, countryCode)
                         }
                     }
-                    p.cptScore = cptScore
-                    p.cptScoreAO = cptScoreAO
-                    p.cptScoreNA = cptScoreNA
-                    p.cptScoreLA = cptScoreLA
-                    p.cptScoreEU = cptScoreEU
+                    if (cptScore) {
+                        p.findOrCreateCptRanking(Region.GLOBAL).score = cptScore
+                    }
+                    else {
+                        if (p.findCptRanking(Region.GLOBAL)) p.deleteCptRanking(Region.GLOBAL)
+                    }
+                    if (cptScoreAO) {
+                        p.findOrCreateCptRanking(Region.AO).score = cptScoreAO
+                    }
+                    else {
+                        if (p.findCptRanking(Region.AO)) p.deleteCptRanking(Region.AO)
+                    }
+                    if (cptScoreLA) {
+                        p.findOrCreateCptRanking(Region.LA).score = cptScoreLA
+                    }
+                    else {
+                        if (p.findCptRanking(Region.LA)) p.deleteCptRanking(Region.LA)
+                    }
+                    if (cptScoreNA) {
+                        p.findOrCreateCptRanking(Region.NA).score = cptScoreNA
+                    }
+                    else {
+                        if (p.findCptRanking(Region.NA)) p.deleteCptRanking(Region.NA)
+                    }
+                    if (cptScoreEU) {
+                        p.findOrCreateCptRanking(Region.EU).score = cptScoreEU
+                    }
+                    else {
+                        if (p.findCptRanking(Region.EU)) p.deleteCptRanking(Region.EU)
+                    }
                     p.cptTournaments = cptCount
                     p.cptPrize = prize
                 }
@@ -187,109 +213,46 @@ class RankingService {
             }
         }
         if (game == Version.SF5) {
-            players = players.sort { Player a, Player b -> b.cptScore <=> a.cptScore }
+            players = players.sort { Player a, Player b -> b.cptScore() <=> a.cptScore() }
             configurationService.withUniqueSession {
                 log.info("Found ${players.size()} to update CPT rank")
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
                     log.info("Updating CPT $game rank of player $p")
-                    if (p.cptScore != previous) {
+                    if (p.cptScore() != previous) {
                         currentRank = idx + 1
                     }
                     def rank = currentRank
-                    p.cptRank = rank
-                    previous = p.cptScore
+                    p.findOrCreateCptRanking(Region.GLOBAL).rank = rank
+                    previous = p.cptScore()
                     log.info("Updated CPT rank of player $p, setting previous as $previous")
                 }
             }
 
-            players = players.sort { Player a, Player b -> b.cptScoreAO <=> a.cptScoreAO }
-            configurationService.withUniqueSession {
-                log.info("Found ${players.size()} to update CPT AO rank")
-                def previous = 0
-                def currentRank = 0
-                players.eachWithIndex { Player p, Integer idx ->
-                    if (p.cptScoreAO) {
-                        log.info("Updating CPT $game AO rank of player $p")
-                        if (p.cptScoreAO != previous) {
-                            currentRank = idx + 1
+            Region.locals().each { region ->
+                players = players.sort { Player a, Player b -> b.cptScore(region) <=> a.cptScore(region) }
+                configurationService.withUniqueSession {
+                    log.info("Found ${players.size()} to update CPT $region rank")
+                    def previous = 0
+                    def currentRank = 0
+                    players.eachWithIndex { Player p, Integer idx ->
+                        if (p.cptScore(region)) {
+                            log.info("Updating CPT $game $region rank of player $p")
+                            if (p.cptScore(region) != previous) {
+                                currentRank = idx + 1
+                            }
+                            def rank = currentRank
+                            p.findOrCreateCptRanking(region).rank = rank
+                            previous = p.cptScore(region)
+                            log.info("Updated CPT rank of player $p, setting previous as $previous")
+                        } else {
+                            p.deleteCptRanking(region)
                         }
-                        def rank = currentRank
-                        p.cptRankAO = rank
-                        previous = p.cptScoreAO
-                        log.info("Updated CPT rank of player $p, setting previous as $previous")
-                    }
-                    else {
-                        p.cptRankAO = null
-                    }
-                }
-            }
-            players = players.sort { Player a, Player b -> b.cptScoreLA <=> a.cptScoreLA }
-            configurationService.withUniqueSession {
-                log.info("Found ${players.size()} to update CPT LA rank")
-                def previous = 0
-                def currentRank = 0
-                players.eachWithIndex { Player p, Integer idx ->
-                    if (p.cptScoreLA) {
-                        log.info("Updating CPT $game LA rank of player $p")
-                        if (p.cptScoreLA != previous) {
-                            currentRank = idx + 1
-                        }
-                        def rank = currentRank
-                        p.cptRankLA = rank
-                        previous = p.cptScoreLA
-                        log.info("Updated CPT rank of player $p, setting previous as $previous")
-                    }
-                    else {
-                        p.cptRankLA = null
-                    }
-                }
-            }
-            players = players.sort { Player a, Player b -> b.cptScoreNA <=> a.cptScoreNA }
-            configurationService.withUniqueSession {
-                log.info("Found ${players.size()} to update CPT NA rank")
-                def previous = 0
-                def currentRank = 0
-                players.eachWithIndex { Player p, Integer idx ->
-                    if (p.cptScoreNA) {
-                        log.info("Updating CPT $game NA rank of player $p")
-                        if (p.cptScoreNA != previous) {
-                            currentRank = idx + 1
-                        }
-                        def rank = currentRank
-                        p.cptRankNA = rank
-                        previous = p.cptScoreNA
-                        log.info("Updated CPT rank of player $p, setting previous as $previous")
-                    }
-                    else {
-                        p.cptRankNA = null
-                    }
-                }
-            }
-            players = players.sort { Player a, Player b -> b.cptScoreEU <=> a.cptScoreEU }
-            configurationService.withUniqueSession {
-                log.info("Found ${players.size()} to update CPT EU rank")
-                def previous = 0
-                def currentRank = 0
-                players.eachWithIndex { Player p, Integer idx ->
-                    if (p.cptScoreEU) {
-                        log.info("Updating CPT $game EU rank of player $p")
-                        if (p.cptScoreEU != previous) {
-                            currentRank = idx + 1
-                        }
-                        def rank = currentRank
-                        p.cptRankEU = rank
-                        previous = p.cptScoreEU
-                        log.info("Updated CPT rank of player $p, setting previous as $previous")
-                    }
-                    else {
-                        p.cptRankEU = null
                     }
                 }
             }
         }
-
         return players.size()
     }
 
@@ -408,6 +371,95 @@ class RankingService {
             previous = p.score
         }
         return sortedPlayers
+    }
+
+    public void updateProTour(Version game) {
+        if (game == Version.SF5) {
+            def extraspots = countDuplicateQualifiers()
+            def totalPointSpots = 8 + extraspots
+            def players = queryService.findCptPlayers(Region.GLOBAL)
+            log.info "returning ${players.size()} players for CPT game $game"
+            def playersNA = queryService.findCptPlayers(Region.NA)
+            def playersLA = queryService.findCptPlayers(Region.LA)
+            def playersAO = queryService.findCptPlayers(Region.AO)
+            def playersEU = queryService.findCptPlayers(Region.EU)
+            applyDirectQualifiers()
+            applyQualifiedByScore(players, totalPointSpots)
+            applyTwoRegionalInvites(Region.NA, playersNA)
+            applyTwoRegionalInvites(Region.LA, playersLA)
+            applyTwoRegionalInvites(Region.AO, playersAO)
+            applyTwoRegionalInvites(Region.EU, playersEU)
+        }
+    }
+
+    private void applyDirectQualifiers() {
+        def pastTournaments = queryService.pastCptTournaments()
+        Map<Region, List<Player>> regionalQualifyingHistories = [:]
+        Region.values().each { regionalQualifyingHistories[it] = [] }
+        pastTournaments.sort { it.date }.each { updateDirectQualifiedPlayer(it, regionalQualifyingHistories) }
+    }
+
+    private void updateDirectQualifiedPlayer(Tournament t, Map<Region, List<Player>> regionalQualifyingHistories) {
+        log.info("... CPT stats on tournament ${t.name} with state ${t.finished} and results ${t.results.size()}")
+        if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
+            def firstPlayer = t.results?.sort { it.place }?.first()?.player?.findOrCreateCptRanking(Region.GLOBAL)
+            if (firstPlayer) firstPlayer.qualified = true
+        } else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT) {
+            Player qp = t.results.sort { it.place }.findResult {
+                if (!regionalQualifyingHistories[t.region].contains(it.player)) {
+                    regionalQualifyingHistories[t.region] << it.player
+                    return it.player
+                } else return null
+            }
+            if (qp) {
+                qp.findOrCreateCptRanking(t.region).qualified = true
+            }
+        }
+    }
+
+    private List<Player> applyQualifiedByScore(List<Player> players, Integer spots) {
+        players.each {
+            if (it.findCptRanking(Region.GLOBAL)) {
+                it.findCptRanking(Region.GLOBAL).qualifiedByScore = false // reset
+            }
+        }
+        return players.findAll { !it.cptGlobal().qualified }.take(spots).collect {
+            it.findOrCreateCptRanking(Region.GLOBAL).qualifiedByScore = true
+            return it
+        }
+    }
+
+    private void applyTwoRegionalInvites(Region region, List<Player> regionalPlayers) {
+        regionalPlayers.each {
+            if (it.findCptRanking(region)) {
+                it.findCptRanking(region).qualifiedByScore = false // reset
+            }
+        }
+        def unqualifiedPlayers = regionalPlayers.findAll { p ->
+            return !p.cptGlobal().qualified && !p.cptGlobal().qualifiedByScore
+        }
+        unqualifiedPlayers.take(2).each {
+            it.findOrCreateCptRanking(region).qualifiedByScore = true
+        }
+    }
+
+    public Integer countDuplicateQualifiers() {
+        def allWinners = queryService.getQualifiedSpotWinners().collect { it.name }
+        def dups = allWinners.countBy { it }
+        return dups.values().sum() - dups.keySet().size()
+    }
+
+    private List<Player> findAllRegionalQualifyingByScore(List<Player> globalQualifyingByScore) {
+        def regions = [Region.AO, Region.EU, Region.LA, Region.NA]
+        def qualifiedRegionally = []
+        regions.each { region ->
+            def regionalPlayers = queryService.findCptPlayers(region)
+            def unqualifiedPlayersRegional = regionalPlayers.findAll { p ->
+                return !globalQualifyingByScore.any { it.name == p.name } && !p.cptGlobal().qualified
+            }
+            qualifiedRegionally.addAll(unqualifiedPlayersRegional.take(2))
+        }
+        return qualifiedRegionally
     }
 
 }

@@ -47,8 +47,15 @@ class AdminController
             rankingService.updatePlayerScores(game)
             rankingService.updatePlayerRank(game)
             rankingService.updateMainTeams(game)
+            rankingService.updateProTour(game)
             flash.message = "Updated weight, type of tournament and score, rank of all players in $game"
         }
+        dataService.clearCache()
+        render view: "index"
+    }
+
+    def updateProTour() {
+        rankingService.updateProTour(Version.SF5)
         dataService.clearCache()
         render view: "index"
     }
@@ -77,22 +84,7 @@ class AdminController
             it.save()
         }
         Player.list().each {
-            it.cptPrize = 0
-            it.cptQualified = false
-            it.cptRank = 0
-            it.cptScore = 0
-            it.cptRankAO = 0
-            it.cptRankLA = 0
-            it.cptRankNA = 0
-            it.cptRankEU = 0
-            it.cptScoreAO = 0
-            it.cptScoreLA = 0
-            it.cptScoreNA = 0
-            it.cptScoreEU = 0
-            it.cptTournaments = 0
-            it.cptPrize = 0
-            it.prevCptRank = 0
-            it.prevCptScore = 0
+            it.cptRankings = []
             it.save()
         }
         flash.message = "Removed CPT data"

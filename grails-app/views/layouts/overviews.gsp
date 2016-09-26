@@ -64,6 +64,9 @@
                {
                    $("a").tooltip()
                });
+        jQuery(function () {
+            $('[data-toggle="popover"]').popover()
+        });
     </script>
     <script>
         $(document).ready(function ()
@@ -211,9 +214,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><g:link action="cpt" controller="rankings">Standings 2016</g:link></li>
-                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries 2016</g:link></li>
-                            <li><g:link action="cptCharacterStats" controller="rankings">Characters used 2016</g:link></li>
+                            <li><g:link action="cpt" controller="rankings">Standings</g:link></li>
+                            <li><g:link action="cptStats" controller="rankings">Tournaments and countries</g:link></li>
+                            <li><g:link action="cptCharacterStats" controller="rankings">Players and Characters</g:link></li>
                             <li class="divider"></li>
                             <li><g:link action="cpt_2015" controller="rankings">Standings 2015</g:link></li>
                             <li><g:link action="cptStats_2015" controller="rankings">Tournaments and countries 2015</g:link></li>

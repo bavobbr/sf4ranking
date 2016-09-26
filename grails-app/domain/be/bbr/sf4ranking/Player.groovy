@@ -12,8 +12,6 @@ class Player
         twitter nullable: true
         rankings nullable: false
         realname nullable: true
-        cptQualified nullable: false
-        cptRegionalQualified nullable: false
         pictureUrl nullable: true
         description nullable: true, widget: 'textarea'
         pictureCopyright nullable: true
@@ -21,22 +19,8 @@ class Player
         maxoplataId nullable: true
         onlineId nullable: true
         twitch nullable: true
-
         creator nullable: true, editable: false
-        cptScore nullable: true, editable: false
-        cptScoreLA nullable: true, editable: false
-        cptScoreNA nullable: true, editable: false
-        cptScoreAO nullable: true, editable: false
-        cptScoreEU nullable: true, editable: false
-        prevCptScore nullable: true, editable: false
-        cptRank nullable: true, editable: false
-        cptRankLA nullable: true, editable: false
-        cptRankNA nullable: true, editable: false
-        cptRankAO nullable: true, editable: false
-        cptRankEU nullable: true, editable: false
-        prevCptRank nullable: true, editable: false
         cptPrize nullable: false, editable: false
-
         codename nullable: true, unique: true, editable: false
         simplified nullable: true, unique: false, editable: false
     }
@@ -55,23 +39,11 @@ class Player
     CountryCode countryCode
     String wikilink
     String twitter
-    Integer cptScore
-    Integer prevCptScore
-    Integer cptRank
-    Integer prevCptRank
-    Integer cptScoreNA
-    Integer cptScoreLA
-    Integer cptScoreAO
-    Integer cptScoreEU
-    Integer cptRankNA
-    Integer cptRankLA
-    Integer cptRankAO
-    Integer cptRankEU
     Integer cptTournaments = 0
     Integer cptPrize = 0
-    boolean cptQualified = false
     Version mainGame = Version.UNKNOWN
     List<PlayerRanking> rankings = []
+    List<CptRanking> cptRankings = []
     String creator
     String pictureUrl
     String description
@@ -80,8 +52,7 @@ class Player
     String maxoplataId
     String onlineId
     String twitch
-    boolean cptRegionalQualified = false
-    static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking]
+    static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking, cptRankings: CptRanking]
 
     static String pattern = /[^\dA-Za-z]/
 
@@ -108,6 +79,14 @@ class Player
         return findRanking(game)?.score?: 0
     }
 
+    Integer cptScore() {
+        return findCptRanking(Region.GLOBAL)?.score?: 0
+    }
+
+    Integer cptScore(Region region) {
+        return findCptRanking(region)?.score?: 0
+    }
+
     Integer totalScore(Version game) {
         return findRanking(game)?.totalScore?: 0
     }
@@ -118,10 +97,10 @@ class Player
 
     String diff(Version game) {
         def ranking = findRanking(game)
-        def newRank = ranking?.rank
-        def oldRank = ranking?.oldRank
-        if (oldRank == null) return "-"
-        Integer diff = oldRank - newRank
+        def newScore = ranking?.score
+        def oldScore = ranking?.oldScore
+        if (oldScore == null) return "-"
+        Integer diff =  newScore - oldScore
         if (diff == 0) return ""
         return (diff > 0)? "+${diff}" : "${diff}"
     }
@@ -133,6 +112,25 @@ class Player
         if (oldRank == null) return null
         return oldRank - newRank
     }
+
+    String diffCpt(Region region) {
+        def ranking = findCptRanking(region)
+        def newScore = ranking?.score
+        def oldScore = ranking?.prevScore
+        if (oldScore == null) return "+${newScore}"
+        Integer diff =  newScore - oldScore
+        if (diff == 0) return "+0"
+        return (diff > 0)? "+${diff}" : "${diff}"
+    }
+
+    Integer diffCptRank(Region region) {
+        def ranking = findCptRanking(region)
+        def newRank = ranking?.rank
+        def oldRank = ranking?.prevRank
+        if (oldRank == null) return null
+        return oldRank - newRank
+    }
+
 
     Set<CharacterType> main(Version game) {
         return findRanking(game)?.mainCharacters?: []
@@ -172,10 +170,26 @@ class Player
         return ranking
     }
 
+    CptRanking findOrCreateCptRanking(Region region) {
+        def ranking = findCptRanking(region)
+        if (!ranking) {
+            ranking = new CptRanking(region: region)
+            this.addToCptRankings(ranking)
+        }
+        return ranking
+    }
+
     void deleteRanking(Version game) {
         def ranking = findRanking(game)
         if (ranking) {
             this.removeFromRankings(ranking)
+        }
+    }
+
+    void deleteCptRanking(Region region) {
+        def ranking = findCptRanking(region)
+        if (ranking) {
+            this.removeFromCptRankings(ranking)
         }
     }
 
@@ -185,6 +199,14 @@ class Player
 
     PlayerRanking findRanking(Version game) {
         return rankings.find { it.game == game }
+    }
+
+    CptRanking findCptRanking(Region region) {
+        return cptRankings.find { it.region == region }
+    }
+
+    CptRanking cptGlobal() {
+        return cptRankings.find { it.region == Region.GLOBAL }
     }
 
     Integer overallScore() {

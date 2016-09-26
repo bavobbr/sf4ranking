@@ -350,3 +350,7 @@ div.top100 {
 }
 
 
+.popover {
+	max-width: none;
+	white-space: pre;
+}

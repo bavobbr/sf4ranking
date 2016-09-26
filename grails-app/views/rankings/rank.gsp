@@ -117,7 +117,7 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
                     </g:each>
                 </td>
                 <td>${p.score(game)}
-                    <g:if test="${p.cptQualified}">
+                    <g:if test="${p.cptGlobal()?.qualified}">
                         <g:link controller="rankings" action="cpt">
                             <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="20"
                                  height="20"/>

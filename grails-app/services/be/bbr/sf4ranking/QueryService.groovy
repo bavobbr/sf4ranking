@@ -53,41 +53,21 @@ class QueryService
 
     }
 
-    List<Player> findCptPlayers(Region region = Region.UNKNOWN)
+    List<Player> findCptPlayers(Region region = Region.GLOBAL)
     {
         log.info "Looking for all CPT players"
         def playerIdQuery = Player.createCriteria()
-        def playerids = playerIdQuery.list(max: 100) {
+        def playerids = playerIdQuery.list(max: 200) {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
+            createAlias("cptRankings", "cptAlias", CriteriaSpecification.LEFT_JOIN)
             projections {
                 distinct 'id'
             }
             eq("rankAlias.game", Version.SF5)
-            if (region == Region.UNKNOWN) {
-                property("cptScore")
-                gt("cptScore", 0)
-                order("cptScore", "desc")
-            }
-            else if (region == Region.LA) {
-                property("cptScoreLA")
-                gt("cptScoreLA", 0)
-                order("cptScoreLA", "desc")
-            }
-            else if (region == Region.NA) {
-                property("cptScoreNA")
-                gt("cptScoreNA", 0)
-                order("cptScoreNA", "desc")
-            }
-            else if (region == Region.EU) {
-                property("cptScoreEU")
-                gt("cptScoreEU", 0)
-                order("cptScoreEU", "desc")
-            }
-            else if (region == Region.AO) {
-                property("cptScoreAO")
-                gt("cptScoreAO", 0)
-                order("cptScoreAO", "desc")
-            }
+            eq("cptAlias.region", region)
+            property("cptAlias.score")
+            gt("cptAlias.score", 0)
+            order("cptAlias.score", "desc")
         }
         def players = Player.getAll(playerids)
         log.info "Returned all CPT players ${players.size()}"

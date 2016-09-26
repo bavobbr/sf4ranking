@@ -278,13 +278,14 @@ class DataService
                     def maxoplataId = pjson.maxoplataId?: ""
                     def onlineId = pjson.onlineId?: ""
                     def twitch = pjson.twitch?: ""
-                    def cptRegionalQualified = pjson.cptRegionalQualified?: false
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
-                            mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptScore: cptScore,
-                            cptQualified: cptQualified, prevCptScore: prevCptScore, cptRank: cptRank,
-                            prevCptRank: prevCptRank, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
+                            mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
                             pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId,
-                            twitch: twitch, cptRegionalQualified: cptRegionalQualified)
+                            twitch: twitch)
+                    if (cptRank) {
+                        CptRanking cptRanking = new CptRanking(qualified: cptQualified, score: cptScore, prevScore: prevCptScore, rank: cptRank, prevRank: prevCptRank, region: Region.GLOBAL)
+                        p.addToCptRankings(cptRanking)
+                    }
                     pjson.rankings.each {
                         def game = Version.fromString(it.game)
                         List mainCharacters = []
@@ -310,6 +311,7 @@ class DataService
                         p.hardware = hardware
                     }
                     p.save(failOnError: true)
+                    log.info("Saved player $p")
                 //}
             }
             def tournamentFile = new File(DataService.class.getResource("/data/tournaments.json").toURI())
@@ -342,7 +344,7 @@ class DataService
                             weightingType: weightingType, challonge: challonge, ranked: ranked,
                             coverage: coverage, creator: creator, cptTournament: cptTournament, finished: finished, region: region)
                     tjson.players.each {
-                        log.info "Processing ${it.player}"
+                        log.info "${tjson.name} - Processing ${it.player}"
                         Player p = Player.findByCodename(it.player.toUpperCase())
                         if (!p) {
                             log.warn("Creating player ad hoc $it")
@@ -446,12 +448,7 @@ class DataService
             player.description = it.description
             player.pictureCopyright = it.pictureCopyright
             player.mainGame = it.mainGame?.name()
-            player.cptScore = it.cptScore?: 0
-            player.prevCptScore = it.prevCptScore?: 0
-            player.cptRank = it.cptRank?: 0
-            player.prevCptRank = it.prevCptRank?: 0
             player.cptPrize = it.cptPrize?: 0
-            player.cptQualified = it.cptQualified?: false
             player.cptTournaments = it.cptTournaments?: 0
             player.cptPrize = it.cptPrize?: 0
             player.teams = it.teams.collect {it.codename}
@@ -459,7 +456,6 @@ class DataService
             player.maxoplataId = it.maxoplataId
             player.onlineId = it.onlineId
             player.twitch = it.twitch
-            player.cptRegionalQualified = it.cptRegionalQualified
             def rankings = []
             it.rankings.each {
                 def ranking = [:]
@@ -582,8 +578,7 @@ class DataService
             configuration.save()
             def players = queryService.findCptPlayers()
             players.each {
-                it.prevCptScore = it.cptScore
-                it.prevCptRank = it.cptRank
+                it.cptRankings*.snapshot()
             }
         }
         return rankings.size()

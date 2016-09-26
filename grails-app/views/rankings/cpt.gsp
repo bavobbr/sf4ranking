@@ -1,4 +1,4 @@
-<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="overviews"/>
@@ -79,11 +79,11 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
         </tr>
         </thead>
 
-        <g:each in="${players}" var="p" status="idx">
+        <g:each in="${players}" var="p">
 
-            <tr class="${p.scoreQualified ? 'qual' : 'unqual'} ${p.cptQualified ? 'direct' : 'unqual'}">
-                <td class="${p.cptRank <= 24? 'warning' : ''}">
-                    ${p.cptRank}
+            <tr class="${p.cptGlobal().qualifiedByScore ? 'qual' : 'unqual'} ${p.cptGlobal()?.qualified ? 'direct' : 'unqual'}">
+                <td class="${p.cptGlobal().rank <= 24? 'warning' : ''}">
+                    ${p.cptGlobal().rank}
                 </td>
                 <td>
                     <g:if test="${p.countryCode}">
@@ -117,41 +117,46 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
                         </g:link>
                     </g:each>
                 </td>
-                <td>${p.cptScore}</td>
+                <td>${p.findCptRanking(Region.GLOBAL)?.score}
+                </td></td>
                 <td>
-                    <g:if test="${p.cptQualified}">
+                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                            data-content="${raw(be.bbr.overview.RankingsController.cptSummary(p))}"
+                            data-html="true" data-trigger="focus">
+                        info
+                    </button>
+                    <g:if test="${p.cptGlobal()?.qualified}">
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified}">
+                    <g:elseif test="${p.cptGlobal()?.qualifiedByScore}">
                             <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
                                                 title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                             </small>
                     </g:elseif>
-                    <g:elseif test="${p.cptRegionalQualified}">
+                    <g:elseif test="${p.cptRankings.any { it.qualified && it.region in Region.locals()}}">
                         <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Player is currently qualified for regional finals and may win a direct spot">(?)</a>
                         </small>
                     </g:elseif>
                 </td>
-                <td>+${p.cptScore - (p.prevCptScore ?: 0)}</td>
-                <td class="${p.rankDiffClass}">
-                    <g:if test="${p.rankDiff == null}">
+                <td>${p.diffCpt(be.bbr.sf4ranking.Region.GLOBAL)}</td>
+                <td class="${p.findCptRanking(Region.GLOBAL)?.rankDiffClass()}">
+                    <g:if test="${p.diffCptRank(Region.GLOBAL) == null}">
                         <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                     </g:if>
-                    <g:elseif test="${p.rankDiff > 0}">
+                    <g:elseif test="${p.diffCptRank(Region.GLOBAL) > 0}">
                         <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
                     </g:elseif>
-                    <g:elseif test="${p.rankDiff < 0}">
+                    <g:elseif test="${p.diffCptRank(Region.GLOBAL) < 0}">
                         <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
                     </g:elseif>
-                    <g:if test="${p.rankDiff != null && p.rankDiff != 0}">
-                        ${Math.abs(p.rankDiff)}
+                    <g:if test="${p.diffCptRank(Region.GLOBAL) != null && p.diffCptRank(Region.GLOBAL) != 0}">
+                        ${Math.abs(p.diffCptRank(Region.GLOBAL))}
                     </g:if>
                 </td>
                 <td>${p.cptTournaments}</td>
                 <td>$${p.cptPrize}</td>
-
             </tr>
         </g:each>
 
@@ -159,21 +164,22 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
 The global board has ${directSpots} direct qualified players, 8 global points spots and ${extraSpots} spots opened by double qualification amounting to ${openSpots} qualified players out of a possible 24.
 </div>
 
+<g:each in="${regionalPlayers.keySet()}" var="region" status="ridx">
 
-<h3>North America Regional Board</h3>
+<h3>${region} Regional Board</h3>
 The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
 Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
 Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
-<strong>Curent qualifying players:</strong> ${playersNA.findAll {it.scoreQualifiedNA}.collect { it.name }.join(" and ")}
+<strong>Curent qualifying players:</strong>
+    ${regionalPlayers[region].findAll {it.findCptRanking(region)?.qualifiedByScore}.collect { it.name }.join(" and ")}
 <p>&nbsp;</p>
 <div class="table-responsive">
 
-    <table class="tablehead" id="datatable2">
+    <table class="tablehead" id="datatable${ridx+2}">
 
         <thead>
         <tr class="stathead">
             <th>CPT Rank</th>
-            <th>World Rank</th>
             <th>Name</th>
             <th>Character</th>
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
@@ -183,17 +189,21 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
                              title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                               title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
+            <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a>
+            </th>
+            <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
+                            title="Diff against rank before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a></th>
             <th>Country</th>
         </tr>
         </thead>
 
-        <g:each in="${playersNA}" var="p" status="idx">
+        <g:each in="${regionalPlayers[region]}" var="p" status="pidx">
 
-            <tr class="${p.scoreQualifiedNA ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
+            <tr class="${p.findCptRanking(region)?.qualifiedByScore ? 'qual' : 'unqual'} ${p.findCptRanking(Region.GLOBAL)?.qualifiedByScore ? 'global' : ''} ${p.findCptRanking(Region.GLOBAL)?.qualified ? 'direct' : ''}">
                 <td>
-                    ${p.cptRankNA}
+                    ${p.findCptRanking(region)?.rank}
                 </td>
-                <td>${p.rank(game)}</td>
                 <td>
                     <g:link controller="rankings" mapping="playerByName" action="player"
                             params="[name: p.name]">${p.name}</g:link>
@@ -209,29 +219,53 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
                         </g:link>
                     </g:each>
                 </td>
-                <td>${p.cptScoreNA}</td>
+                <td>${p.findCptRanking(region)?.score}
+                    </td>
                 <td>
-                    <g:if test="${p.cptQualified}">
+                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                            data-content="${raw(be.bbr.overview.RankingsController.cptSummary(p))}"
+                            data-html="true" data-trigger="focus">
+                        info
+                    </button>
+                    <g:if test="${p.cptGlobal()?.qualified}">
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.scoreQualified}">
+                    <g:elseif test="${p.cptGlobal()?.qualifiedByScore}">
                         <small>global <a href="#" data-toggle="tooltip" data-placement="top"
                                          title="Player is currently qualified by global points">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.cptRegionalQualified}">
+                    <g:elseif test="${p.findCptRanking(region)?.qualified}">
                         <small>regional finals <a href="#" data-toggle="tooltip" data-placement="top"
                                            title="Player is currently qualified for regional finals">(?)</a>
                         </small>
                     </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedNA}">
+                    <g:elseif test="${p.findCptRanking(region)?.qualifiedByScore}">
                         <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
                                             title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
                         </small>
                     </g:elseif>
                 </td>
                 <td>${p.cptTournaments}</td>
+
+                <td>${p.diffCpt(region)}</td>
+                <td class="${p.findCptRanking(region)?.rankDiffClass()}">
+                    <g:if test="${p.diffCptRank(region) == null}">
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                    </g:if>
+                    <g:elseif test="${p.diffCptRank(region) > 0}">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                    </g:elseif>
+                    <g:elseif test="${p.diffCptRank(region) < 0}">
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                    </g:elseif>
+                    <g:if test="${p.diffCptRank(region) != null && p.diffCptRank(region) != 0}">
+                        ${Math.abs(p.diffCptRank(region))}
+                    </g:if>
+                </td>
+
+
                 <td>
                     <g:if test="${p.countryCode}">
                         <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
@@ -242,263 +276,10 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
             </tr>
         </g:each>
 
-    </table></div>
+    </table>
+</div>
 
-
-<h3>Latin America Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
-Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
-<strong>Curent qualifying players:</strong> ${playersLA.findAll {it.scoreQualifiedLA}.collect { it.name }.join(" and ")}
-<p>&nbsp;</p>
-
-<div class="table-responsive">
-
-    <table class="tablehead" id="datatable3">
-
-        <thead>
-        <tr class="stathead">
-            <th>CPT Rank</th>
-            <th>World Rank</th>
-            <th>Name</th>
-            <th>Character</th>
-            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
-            </th>
-            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
-            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
-                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
-            <th>Country</th>
-        </tr>
-        </thead>
-
-        <g:each in="${playersLA}" var="p" status="idx">
-
-            <tr class="${p.scoreQualifiedLA ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
-                <td>
-                    ${p.cptRankLA}
-                </td>
-                <td>${p.rank(game)}</td>
-                <td>
-                    <g:link controller="rankings" mapping="playerByName" action="player"
-                            params="[name: p.name]">${p.name}</g:link>
-                </td>
-                <td>
-                    <g:each in="${p.main(game)}" var="mainChar">
-                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
-                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
-                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
-                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
-                                   alt="${mainChar.value}"
-                                   class="charimg"/>
-                        </g:link>
-                    </g:each>
-                </td>
-                <td>${p.cptScoreLA}</td>
-                <td>
-                    <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
-                             height="24"/>
-                    </g:if>
-                    <g:elseif test="${p.scoreQualified}">
-                        <small>global <a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified by global points">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.cptRegionalQualified}">
-                        <small>regional finals<a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified for regional finals">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedLA}">
-                        <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
-                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
-                        </small>
-                    </g:elseif>
-                </td>
-                <td>${p.cptTournaments}</td>
-                <td>
-                    <g:if test="${p.countryCode}">
-                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
-                               class="countryflag"/>
-                        ${p.countryCode.name}
-                    </g:if>
-                </td>
-            </tr>
-        </g:each>
-
-    </table></div>
-
-<h3>Asia/Oceania Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
-Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
-<strong>Curent qualifying players:</strong> ${playersAO.findAll {it.scoreQualifiedAO}.collect { it.name }.join(" and ")}
-<p>&nbsp;</p>
-
-<div class="table-responsive">
-
-    <table class="tablehead" id="datatable4">
-
-        <thead>
-        <tr class="stathead">
-            <th>CPT Rank</th>
-            <th>World Rank</th>
-            <th>Name</th>
-            <th>Character</th>
-            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
-            </th>
-            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
-            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
-                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
-            <th>Country</th>
-        </tr>
-        </thead>
-
-        <g:each in="${playersAO}" var="p" status="idx">
-
-            <tr class="${p.scoreQualifiedAO ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
-                <td>
-                    ${p.cptRankAO}
-                </td>
-                <td>${p.rank(game)}</td>
-                <td>
-                    <g:link controller="rankings" mapping="playerByName" action="player"
-                            params="[name: p.name]">${p.name}</g:link>
-                </td>
-                <td>
-                    <g:each in="${p.main(game)}" var="mainChar">
-                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
-                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
-                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
-                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
-                                   alt="${mainChar.value}"
-                                   class="charimg"/>
-                        </g:link>
-                    </g:each>
-                </td>
-                <td>${p.cptScoreAO}</td>
-                <td>
-                    <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
-                             height="24"/>
-                    </g:if>
-                    <g:elseif test="${p.scoreQualified}">
-                        <small>global <a href="#" data-toggle="tooltip" data-placement="top"
-                                         title="Player is currently qualified by global points">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.cptRegionalQualified}">
-                        <small>regional finals<a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified for regional finals">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedAO}">
-                        <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
-                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
-                        </small>
-                    </g:elseif>
-                </td>
-                <td>${p.cptTournaments}</td>
-                <td>
-                    <g:if test="${p.countryCode}">
-                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
-                               class="countryflag"/>
-                        ${p.countryCode.name}
-                    </g:if>
-                </td>
-            </tr>
-        </g:each>
-
-    </table></div>
-
-<h3>Europe Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
-Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
-<strong>Curent qualifying players:</strong> ${playersEU.findAll {it.scoreQualifiedEU}.collect { it.name }.join(" and ")}
-<p>&nbsp;</p>
-
-<div class="table-responsive">
-
-    <table class="tablehead" id="datatable5">
-
-        <thead>
-        <tr class="stathead">
-            <th>CPT Rank</th>
-            <th>World Rank</th>
-            <th>Name</th>
-            <th>Character</th>
-            <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
-            </th>
-            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
-            <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
-                              title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
-            <th>Country</th>
-        </tr>
-        </thead>
-
-        <g:each in="${playersEU}" var="p" status="idx">
-
-            <tr class="${p.scoreQualifiedEU ? 'qual' : 'unqual'} ${p.scoreQualified ? 'global' : ''} ${p.cptQualified ? 'direct' : ''}">
-                <td>
-                    ${p.cptRankEU}
-                </td>
-                <td>${p.rank(game)}</td>
-                <td>
-                    <g:link controller="rankings" mapping="playerByName" action="player"
-                            params="[name: p.name]">${p.name}</g:link>
-                </td>
-                <td>
-                    <g:each in="${p.main(game)}" var="mainChar">
-                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
-                                data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
-                            <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
-                                   file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
-                                   alt="${mainChar.value}"
-                                   class="charimg"/>
-                        </g:link>
-                    </g:each>
-                </td>
-                <td>${p.cptScoreEU}</td>
-                <td>
-                    <g:if test="${p.cptQualified}">
-                        <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
-                             height="24"/>
-                    </g:if>
-                    <g:elseif test="${p.scoreQualified}">
-                        <small>global <a href="#" data-toggle="tooltip" data-placement="top"
-                                         title="Player is currently qualified by global points">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.cptRegionalQualified}">
-                        <small>regional finals<a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified for regional finals">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.scoreQualifiedEU}">
-                        <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
-                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
-                        </small>
-                    </g:elseif>
-                </td>
-                <td>${p.cptTournaments}</td>
-                <td>
-                    <g:if test="${p.countryCode}">
-                        <g:img dir="images/countries" file="${p.countryCode.name().toLowerCase() + '.png'}"
-                               class="countryflag"/>
-                        ${p.countryCode.name}
-                    </g:if>
-                </td>
-            </tr>
-        </g:each>
-
-    </table></div>
+</g:each>
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {
