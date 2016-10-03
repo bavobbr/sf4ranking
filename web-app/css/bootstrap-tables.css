@@ -7,6 +7,7 @@ table {
 .table {
   width: 100%;
   margin-bottom: 18px;
+  padding: 5px;
 }
 .table th,
 .table td {
@@ -48,6 +49,7 @@ table {
 .table-condensed th,
 .table-condensed td {
   padding: 3px 3px;
+  font-size: 12px;
 }
 .table-bordered {
   border: 1px solid #dddddd;

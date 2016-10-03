@@ -21,12 +21,13 @@ class RankingService {
         configurationService.withUniqueSession {
             tournaments = Tournament.findAllByGame(game)
             tournaments.each { tournament ->
+                def sampleSize = tournament.game == Version.SF5? 16 : 8
                 log.info "Updating tournament $tournament"
-                def weight = 0
-                def topresults = tournament.results.sort { a, b -> b.player.skill(game) <=> a.player.skill(game) }.take(8)
+                Integer weight = 0
+                def topresults = tournament.results.sort { a, b -> b.player.skill(game) <=> a.player.skill(game) }.take(sampleSize)
                 if (topresults) {
                     Integer skillScore = topresults.sum { Result r -> Math.pow(r.player.skill(game), 2) }
-                    def entries = Math.max(topresults.size(), 8)
+                    def entries = Math.max(topresults.size(), sampleSize)
                     weight = (skillScore as Double) / entries * 10
                     def countryBonus = 1
                     Set uniqueCountries = tournament.results.collect { Result r -> r.player.countryCode }
@@ -39,7 +40,7 @@ class RankingService {
                         countryBonus = 1.2
                         log.info "Countrybonus for ${tournament} set to $countryBonus as countries is $uniqueCountries"
                     }
-                    weight = weight * countryBonus
+                    weight = weight * countryBonus / 10
                 }
 
                 tournament.weight = weight

@@ -14,7 +14,9 @@
     <g:each in="${players}" var="p" status="idx">
       <tr class="top10table">
         <td>${p.rank(game)}</td>
-        <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link></td>
+        <td><g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">
+          <div class="top10table">${p.name}</div>
+        </g:link></td>
         <td>
           <g:each in="${p.teams}" var="team">
             <g:link controller="rankings" mapping="teamByName" action="team" params="[name: team.name]">${team.shortname}</g:link>

@@ -11,7 +11,8 @@
 </head>
 
 <body>
-<h2 class="tournament"><small>${tournaments.size()} Tournaments Registered</small></h2>
+<h2 class="tournament">${game.value} Tournaments</h2>
+${tournaments.size()} Tournaments Registered in results database.
 <g:if test="${updateMessage}">
     <div class="alert alert-info alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -20,7 +21,7 @@
     </div>
 </g:if>
 <div class="table-responsive">
-  <table class="tablehead" id="datatable">
+  <table class="tablehead table-condensed" id="datatable">
     <thead>
     <tr class="stathead">
       <th>Name</th>
