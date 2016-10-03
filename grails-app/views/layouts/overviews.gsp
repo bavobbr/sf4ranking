@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'responsive-video.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_bootstrap.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'style_worldrank.css')}" type="text/css">
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-tables.css')}" type="text/css">
 
     <script>
         $(function ()

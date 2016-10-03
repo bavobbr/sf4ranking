@@ -183,10 +183,11 @@ This forms the basis of the actual score, which considers tournaments of the las
 A total of ${players} players seen in ${tournaments} tournaments producing ${results} tournament rankings from ${first?.format("MM-yyyy")} until ${last?.format("MM-yyyy")}.
 
 <h3>Moderators</h3>
-Currently the data is maintained by
+Data input and correctness is maintained by
 <ul>
   <li><a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> (site admin)</li>
   <li><a href="https://twitter.com/tomakh">Tomakh</a> (moderator)</li>
+  <li><a href="https://twitter.com/TerranceElC">TLC</a> (moderator)</li>
 </ul>
 ... and everyone who is submitting new data and providing input via Twitter!
 

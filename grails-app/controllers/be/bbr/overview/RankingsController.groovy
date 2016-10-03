@@ -143,7 +143,7 @@ class RankingsController
 
     @Cacheable('cptStats')
     def cptStats() {
-        def comingTournaments = queryService.upcomingCptTournaments()
+        def comingTournaments = queryService.upcomingCptTournaments().sort { it.date }
         def maxTotal = comingTournaments.sum { Tournament t -> t.cptTournament.getScore(1) }
         def maxTotalNA = comingTournaments.findAll { it.region == Region.NA}.sum { Tournament t -> t.cptTournament.getScore(1) }
         def maxTotalLA = comingTournaments.findAll { it.region == Region.LA}.sum { Tournament t -> t.cptTournament.getScore(1) }

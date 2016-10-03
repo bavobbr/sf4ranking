@@ -94,10 +94,11 @@ class RankingService {
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
         configurationService.withUniqueSession {
-            players.each { Player p ->
-                log.info("Evaluating for $game player $p, looking for results")
-                def results = Result.findAll {
-                    player == p && tournament.game == game && tournament.finished == true
+            players.eachWithIndex { Player p, Integer idx ->
+                log.info("Evaluating for $game player $p, looking for results [${idx+1} / ${players.size()}]")
+                def results = Result.findAllByPlayer(p)
+                results = results.findAll {
+                    it.tournament.game == game && it.tournament.finished
                 }
                 log.info("Found ${results.size()} results")
                 def playerScore = getScore(results) { Result r ->
@@ -169,9 +170,8 @@ class RankingService {
                     p.cptTournaments = cptCount
                     p.cptPrize = prize
                 }
-                log.info("Saving player $p.name")
                 p.save(failOnError: true)
-                log.info("Saved player $p.name")
+                log.info("Saved player $p.name [${idx+1} / ${players.size()}]")
             }
             log.info "Updated ${players.size()} scores"
         }
@@ -186,7 +186,9 @@ class RankingService {
             } else 0
         }.sort { a, b -> b <=> a }
         def bestof = scores.take(12)
-        log.info "Considered best scores: $bestof out of a total ${results.size()} results"
+        if (!bestof.isEmpty()) {
+            log.info "Considered best scores: $bestof out of a total ${results.size()} results"
+        }
         (bestof.sum() as Integer) ?: 0
     }
 
@@ -202,7 +204,7 @@ class RankingService {
             def previous = 0
             def currentRank = 0
             players.eachWithIndex { Player p, Integer idx ->
-                log.info("Updating $game rank of player $p")
+                log.info("Updating $game rank of player $p [${idx+1} / ${players.size()}]")
                 if (p.score(game) != previous) {
                     currentRank = idx + 1
                 }
@@ -264,7 +266,7 @@ class RankingService {
         }.sort { a, b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update main")
-            players.each { Player p ->
+            players.eachWithIndex { Player p, Integer idx ->
                 PlayerRanking ranking = p.rankings.find { it.game == game }
                 if (ranking) {
                     ranking.mainCharacters.clear()
@@ -275,7 +277,7 @@ class RankingService {
                     def sortedGroup = countedGroup.sort { a, b -> b.value <=> a.value }
                     if (sortedGroup) {
                         def main = sortedGroup.keySet().first()
-                        log.info "applying main team $main"
+                        log.info "applying main team $main [${idx+1} / ${players.size()}]"
                         main.pchars.each { GameCharacter gameCharacter ->
                             ranking.mainCharacters.add(gameCharacter.characterType)
                         }

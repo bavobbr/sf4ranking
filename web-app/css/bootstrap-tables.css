@@ -19,6 +19,10 @@ table {
 .table th {
   font-weight: bold;
 }
+.top10table {
+  font-size: 14px;
+}
+
 .table thead th {
   vertical-align: bottom;
 }
@@ -36,9 +40,14 @@ table {
 .table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
+
+.table-condensed  {
+  padding: 3px 3px;
+}
+
 .table-condensed th,
 .table-condensed td {
-  padding: 4px 4px;
+  padding: 3px 3px;
 }
 .table-bordered {
   border: 1px solid #dddddd;

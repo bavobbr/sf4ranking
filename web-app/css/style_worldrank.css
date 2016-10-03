@@ -1,6 +1,7 @@
 body {
 	background: #eee url(http://shoryuken.com/wp-content/themes/srk/styles/boxed/bg.png) repeat center top;
 	font-family: 'Lato', sans-serif;
+	font-size: 12px;
 }
 
 .navbar-brand {
@@ -23,7 +24,7 @@ body {
 	background-color: #000;
 	border: none;
 	font-family: 'Lato', sans-serif;
-	font-size: 13px;
+	font-size: 12px;
 	font-weight: 700;
 	color: #444;
 	border-bottom-left-radius: 0;	border-top-left-radius: 0;
@@ -87,7 +88,7 @@ h2 {
 }
 
 thead tr td { 
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -99,7 +100,7 @@ thead tr td {
 
 .footer p { 
 	padding: 7px 0 0;
-	font-size: 13px;
+	font-size: 12px;
 	margin: 2px 0 0;
 }
 
@@ -121,7 +122,7 @@ thead tr td {
 
 h1.player_name {
 	font-family: 'Oswald', sans-serif;
-	font-size: 84px;
+	font-size: 74px;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: -2px;
@@ -131,7 +132,7 @@ h1.player_name {
 
 h3.world_rank {
 	font-family: 'Righteous', cursive;
-	font-size: 130px;
+	font-size: 120px;
 	font-weight: 400;
 	letter-spacing: -2px;
 	color: #00ccff;
@@ -147,7 +148,7 @@ h3.world_rank small {
 }
 
 h4.subtitle {
-	font-size: 18px;
+	font-size: 16px;
 	color: #999;
 	font-weight: 700;
 	margin: 5px 0 10px 0;
@@ -203,7 +204,7 @@ h4.subtitle {
 
 h3.tournaments {
 	font-family: 'Lato', sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 	color: #000;
 	margin: 40px 0;
@@ -212,12 +213,12 @@ h3.tournaments {
 
 h3.tournaments small {
 	color: #999;
-	font-size: 16px;
+	font-size: 14px;
 }
 	
 h2.title { 
 	font-family: 'Oswald', sans-serif;
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: -2px;
@@ -237,7 +238,7 @@ h2.title-filtered {
 
 h2.tournament { 
 	font-family: 'Oswald', sans-serif;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 0px;
@@ -247,12 +248,12 @@ h2.tournament {
 
 h2.tournament small {
 	color: #000;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 h2.tournament large {
 	color: #111;
-	font-size: 30px;
+	font-size: 25px;
 	padding: 0 10px 0 0;
 }
 
@@ -260,7 +261,7 @@ h2.tournament large {
 
 h6.player-heading { 
 	font-family: 'Oswald', sans-serif;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: -1px;

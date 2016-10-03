@@ -108,7 +108,7 @@
 
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Latest Tournaments</h3>
@@ -124,18 +124,9 @@
         </div>
     </div>
 
-    <div class="col-md-4">
-        <div class="panel panel-primary borderless">
 
-            <center>
-                <g:link controller="gear" action="index">
-                    <g:img dir="images" file="sf5_amazon.jpg" class="img-responsive" width="50%"/>
-                </g:link>
-            </center>
-        </div>
-    </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Newest Players</h3>
