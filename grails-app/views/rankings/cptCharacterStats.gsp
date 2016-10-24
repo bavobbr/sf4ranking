@@ -27,6 +27,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 <g:if test="${byMainCharacter32}">
     <h3 class="tournament">Main character usage of current qualifying 32</h3>
+    These are the characters that will be played at highest level. Competitors are advised to learn these matchups thoroughly.
     <div class="table-responsive">
         <table class="tablehead" id="datatable2">
             <thead>
@@ -51,6 +52,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 <g:if test="${secondary32}">
     <h3 class="tournament">All character usages of current qualifying players</h3>
+    These are the characters that may be played. Most as main charac ter, some as secondary characters. Secondaries are often used to counter bad matchups.
     <div class="table-responsive">
         <table class="tablehead" id="datatable5">
             <thead>
@@ -76,6 +78,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 <g:if test="${players32}">
     <h3 class="tournament">Characters used by current qualifying players</h3>
+    This shows how diverse certain players can be. Players with a lot of characters are less prone to bad match-ups.
     <div class="table-responsive">
         <table class="tablehead" id="datatable4">
             <thead>
@@ -98,6 +101,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 <g:if test="${charToCount}">
     <h3 class="tournament">Characters in all CPT tournaments by all players</h3>
+    This is an overall statistics on the characters used in CPT tournaments.
     <div class="table-responsive">
         <table class="tablehead" id="datatable3">
             <thead>

@@ -1,5 +1,8 @@
 package be.bbr.sf4ranking;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * User: bbr Date: 2/5/14
  */
@@ -26,6 +29,23 @@ public enum CptTournament
     public String getValue() {
         return value;
     }
+
+    public static List<CptTournament> premiers() {
+        List<CptTournament> premiers = new ArrayList<CptTournament>();
+        premiers.add(PREMIER);
+        premiers.add(PREMIER_SCORELESS);
+        premiers.add(EVO);
+        premiers.add(REGIONAL_FINAL);
+        return premiers;
+    }
+
+    public static List<CptTournament> regionals() {
+        List<CptTournament> premiers = new ArrayList<CptTournament>();
+        premiers.add(RANKING);
+        premiers.add(ONLINE_EVENT);
+        return premiers;
+    }
+
 
     public static CptTournament fromString(String input) {
         if (input == null || input.length() == 0) return null;

@@ -122,7 +122,7 @@
                                              title="Ranks for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.findCptRanking(Region.AO)?.rank?:"-"} / ${player.findCptRanking(Region.EU)?.rank?:"-"} / ${player.findCptRanking(Region.LA)?.score?:"-"} / ${player.findCptRanking(Region.NA)?.score?:"-"}
+                        ${player.findCptRanking(Region.AO)?.rank?:"-"} / ${player.findCptRanking(Region.EU)?.rank?:"-"} / ${player.findCptRanking(Region.LA)?.rank?:"-"} / ${player.findCptRanking(Region.NA)?.rank?:"-"}
                     </dd>
                     <dt>CPT RF <a href="#" data-toggle="tooltip" data-placement="top"
                                           title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
@@ -196,9 +196,8 @@
 
     <div id='content' class="tab-content">
         <div class="tab-pane active" id="overview">
-            <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for</small> ${player.name}
+            <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for</small> ${player.name} <small>in ${totalResults} results</small>
             </h3>
-
             <div class="table-responsive">
                 <table class="tablehead" id="infotable">
                     <thead>
@@ -242,8 +241,9 @@
                                 </td>
                                 <td>${ranking.skill}</td>
                                 <td>
-                                    <a href="#${ranking.game.name()}" data-toggle="tab">
-                                        ${results[ranking.game]?.size()}
+                                    <g:link action="player" controller="rankings" params="[id: player.id]" fragment="${ranking.game.name()}" data-toggle="tab">
+                                        ${results[ranking.game]?.size()} (see results)
+                                    </g:link>
                                     </a>
                                 </td>
                             </tr>
@@ -352,5 +352,18 @@
                 </g:if></div>--}%
 </center>
 <g:render template="/templates/prettify"/>
+
+<script>
+    // Javascript to enable link to tab
+    var url = document.location.toString();
+    if (url.match('#')) {
+        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+    }
+
+    // Change hash for page-reload
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        window.location.hash = e.target.hash;
+    })
+</script>
 </body>
 </html>

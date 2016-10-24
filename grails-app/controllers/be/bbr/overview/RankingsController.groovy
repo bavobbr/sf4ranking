@@ -224,10 +224,10 @@ class RankingsController
          maxTotalNA: maxTotalNA,
          maxTotalAO: maxTotalAO,
          maxTotalEU: maxTotalEU,
-         maxRegionTotalLA: maxRegionTotalLA,
-         maxRegionTotalNA: maxRegionTotalNA,
-         maxRegionTotalAO: maxRegionTotalAO,
-         maxRegionTotalEU: maxRegionTotalEU,
+         maxRegionTotalLA: maxRegionTotalLA?: 0,
+         maxRegionTotalNA: maxRegionTotalNA?: 0,
+         maxRegionTotalAO: maxRegionTotalAO?: 0,
+         maxRegionTotalEU: maxRegionTotalEU?: 0,
         ]
     }
 
@@ -311,7 +311,9 @@ class RankingsController
     {
         Map rankings = Version.values().collectEntries([:]) {[it, []]}
         Set chars = [] as Set
+        Integer totalResults = 0
         Result.findAllByPlayer(player).sort {a, b -> b.tournament.date <=> a.tournament.date}.each {
+            totalResults++
             def tid = it.tournament.id
             def tname = it.tournament.name
             def ttype = it.tournament.tournamentType?.value
@@ -339,7 +341,7 @@ class RankingsController
         def topGames = player.rankings.findAll { it.score > 0 && it.rank < 100 }.collect { it.game }
         def allGames = player.rankings.findAll { it.score > 0 && it.rank < 500 }.collect { it.game }
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        render view: "player", model: [player: player, results: rankings, chars: chars, updateMessage: lastUpdateMessage, topGames: topGames, allGames: allGames]
+        render view: "player", model: [player: player, results: rankings, chars: chars, updateMessage: lastUpdateMessage, topGames: topGames, allGames: allGames, totalResults: totalResults]
     }
 
     def playerByName()
@@ -524,7 +526,16 @@ class RankingsController
         def ao = p.findCptRanking(Region.AO)
         def eu = p.findCptRanking(Region.EU)
         StringBuffer result = new StringBuffer("Qualifications: <ul>")
-        if (global?.qualified) result.append("<li>Qualified directly in global board")
+        if (global?.qualified) {
+            result.append("<li>Qualified directly in global board")
+            def directs = p.results.findAll { it.place == 1}.findAll { it.tournament.cptTournament in CptTournament.premiers() }
+            directs.each {
+                result.append("<br/>via ${it.tournament.name}")
+            }
+            if (directs.size() > 1) {
+                result.append("<br/>opened ${directs.size() - 1} extra spots")
+            }
+        }
         if (global?.qualifiedByScore) result.append("<li>Qualified by score in global board: ${global.score} pts / rank: ${global.rank}")
         if (la?.qualified) result.append("<li>Qualified for regionals in LA region")
         if (la?.qualifiedByScore) result.append("<li>Qualified by score in LA board: ${la.score} pts / rank: ${la.rank}")
@@ -544,6 +555,33 @@ class RankingsController
         if (eu?.score > 0) result.append("<li>EU rank is ${eu.rank} and score is ${eu.score} pts")
         result.append("</ul>")
         return result.toString()
+    }
+
+    public static String cptLabel(Player p, Region region) {
+        def labels = []
+        if (p.cptGlobal().qualified) {
+            labels << "direct"
+        }
+        if (p.cptGlobal().qualifiedByScore) {
+            labels << "global pts"
+        }
+        if (region != Region.GLOBAL) {
+            if (p.findCptRanking(region).qualified) {
+                labels << "RF"
+            }
+            if (p.findCptRanking(region).qualifiedByScore) {
+                labels << "regional pts"
+            }
+        }
+        else {
+            if (Region.locals().any { p.findCptRanking(it)?.qualified} ) {
+                labels << "RF"
+            }
+            if (Region.locals().any { p.findCptRanking(it)?.qualifiedByScore}) {
+                labels << "regional pts"
+            }
+        }
+        return labels.join(" | ")
     }
 
 

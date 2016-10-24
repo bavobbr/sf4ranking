@@ -12,14 +12,14 @@
 
 <body>
 <g:if test="${filtered}">
-    <center><h2 class="title-filtered">${game.value} World Rankings - Filtered on ${fcountry} ${fchar}</h2></center>
+    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Filtered on ${fcountry} ${fchar}</h2></center>
 </g:if>
 <g:elseif test="${alltime}">
-    <center><h2 class="title-filtered">${game.value} World Rankings - All-time score ranking</h2></center>
+    <center><h2 class="title-filtered">${game.value} Tournament Rankings - All-time score ranking</h2></center>
 </g:elseif>
 <g:else>
     <center>
-        <h2 class="title">${game.value} World Rankings</h2>
+        <h2 class="title">${game.value} Tournament Rankings</h2>
     </center>
 </g:else>
 

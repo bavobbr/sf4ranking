@@ -65,8 +65,8 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
             <th>Character</th>
             <th>CPT Score <a href="#" data-toggle="tooltip" data-placement="top"
                              title="Score as granted by the Capcom Pro Tour 2016 ranking system">(?)</a></th>
-            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Qualifications <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Qualifications for the Capcom Cup Finals">(?)</a></th>
             <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
                              title="Diff against score before update at ${lastUpdate?.format("yyyy-MM-dd")}">(?)</a>
             </th>
@@ -129,16 +129,7 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.cptGlobal()?.qualifiedByScore}">
-                            <small>by points <a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
-                            </small>
-                    </g:elseif>
-                    <g:elseif test="${p.cptRankings.any { it.qualified && it.region in Region.locals()}}">
-                        <small>regional <a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified for regional finals and may win a direct spot">(?)</a>
-                        </small>
-                    </g:elseif>
+                    <small>${raw(be.bbr.overview.RankingsController.cptLabel(p, Region.GLOBAL))}</small>
                 </td>
                 <td>${p.diffCpt(be.bbr.sf4ranking.Region.GLOBAL)}</td>
                 <td class="${p.findCptRanking(Region.GLOBAL)?.rankDiffClass()}">
@@ -185,8 +176,8 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
             <th>Regional Score <a href="#" data-toggle="tooltip" data-placement="top"
                                   title="Score as granted by the Capcom Pro Tour 2016 ranking system for region">(?)</a>
             </th>
-            <th>Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Directly qualified for the Capcom Cup Finals">(?)</a></th>
+            <th>Qualifications <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Qualifications for Pro Tour">(?)</a></th>
             <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                               title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
             <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
@@ -231,21 +222,7 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
                         <img src="http://capcomprotour.com/wp-content/uploads/2014/03/logo-qualified.jpg" width="24"
                              height="24"/>
                     </g:if>
-                    <g:elseif test="${p.cptGlobal()?.qualifiedByScore}">
-                        <small>global <a href="#" data-toggle="tooltip" data-placement="top"
-                                         title="Player is currently qualified by global points">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.findCptRanking(region)?.qualified}">
-                        <small>regional finals <a href="#" data-toggle="tooltip" data-placement="top"
-                                           title="Player is currently qualified for regional finals">(?)</a>
-                        </small>
-                    </g:elseif>
-                    <g:elseif test="${p.findCptRanking(region)?.qualifiedByScore}">
-                        <small>by regional points <a href="#" data-toggle="tooltip" data-placement="top"
-                                            title="Currently player is in the qualifying spots that are assigned to the highest scoring but not directly qualified players">(?)</a>
-                        </small>
-                    </g:elseif>
+                    <small>${raw(be.bbr.overview.RankingsController.cptLabel(p, region))}</small>
                 </td>
                 <td>${p.cptTournaments}</td>
 
