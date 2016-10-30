@@ -22,6 +22,9 @@ class UrlMappings {
         name apiTournamentByName: "/$controller/tournament/name/$name"{
             action = "tournamentByName"
         }
+        name apiTournamentByGame: "/$controller/tournament/game/$game"{
+            action = "tournamentByGame"
+        }
         "/$controller/$action?/$id?(.${format})?"{
             constraints {
             }

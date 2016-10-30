@@ -5,6 +5,7 @@ import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.Query
 import be.bbr.sf4ranking.QueryService
 import be.bbr.sf4ranking.Result
+import be.bbr.sf4ranking.ScoringSystem
 import be.bbr.sf4ranking.Tournament
 import be.bbr.sf4ranking.Version
 import grails.converters.JSON
@@ -86,7 +87,7 @@ class ApiController {
         logQuery.save(failOnError: false)
         def id = params.int("name")
         def tournament = Tournament.get(id)
-        render (tournamentToMap(tournament) as JSON)
+        render (tournamentToMap(tournament, true) as JSON)
     }
 
     def tournamentByName() {
@@ -94,7 +95,20 @@ class ApiController {
         logQuery.save(failOnError: false)
         String id = params.name
         def tournament = Tournament.findByCodename(id.toUpperCase())
-        render (tournamentToMap(tournament) as JSON)
+        render (tournamentToMap(tournament, true) as JSON)
+    }
+
+    def tournamentByGame() {
+        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
+        logQuery.save(failOnError: false)
+        String id = params.game
+        Version game = Version.fromString(id)
+        if (!game) render "invalid game: $id"
+        else {
+            def tournaments = Tournament.findAllByGame(id.toUpperCase()).sort { it.weight }.reverse()
+            def tourneys = tournaments.collect { tournamentToMap(it, false) }
+            render(tourneys as JSON)
+        }
     }
 
     @Cacheable('top')
@@ -153,8 +167,11 @@ class ApiController {
                     results : player.results.collect {
                         [tournament    : it.tournament.id,
                          tournamentname: it.tournament.name,
+                         game          : it.tournament.game.name(),
                          place         : it.place,
+                         score         : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
                          date          : it.tournament.date,
+                         type          : it.tournament.tournamentType.name(),
                          characters    : it.characterTeams.collect {
                              it.pchars.collect {
                                  it.characterType.name()
@@ -166,10 +183,10 @@ class ApiController {
         }
     }
 
-    private Map tournamentToMap(Tournament tournament) {
+    private Map tournamentToMap(Tournament tournament, boolean results) {
         if (!tournament) return [:]
         else {
-            return [
+            def tournamentMap = [
                     id        : tournament.id,
                     name      : tournament.name,
                     date      : tournament.date,
@@ -181,18 +198,24 @@ class ApiController {
                     weighting : tournament.weightingType.name(),
                     classifier: tournament.tournamentType.name(),
                     bracket   : tournament.tournamentFormat.name(),
-                    results   : tournament.results.collect {
-                        [player    : it.player.id,
-                         playername: it.player.name,
-                         place     : it.place,
-                         characters: it.characterTeams.collect {
-                             it.pchars.collect {
-                                 it.characterType.name()
-                             }
-                         }
-                        ]
-                    }
+                    weight    : tournament.weight,
             ]
+            if (results) {
+                tournamentMap[results] = tournament.results.collect {
+                    [player     : it.player.id,
+                     playername : it.player.name,
+                     place      : it.place,
+                     score      : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
+                     rank       : it.player.rank(it.tournament.game),
+                     characters : it.characterTeams.collect {
+                         it.pchars.collect {
+                             it.characterType.name()
+                         }
+                     }
+                    ]
+                }
+            }
+            return tournamentMap
         }
     }
 }
