@@ -68,7 +68,7 @@
             <g:link action="character" controller="stats"
                     params="[charname: cstat.characterType.name(), game: game.name()]"
                     data-toggle="tooltip" data-placement="top"
-                    title="Filter on ${cstat.characterType.value}">
+                    title="Details on ${cstat.characterType.value}">
                 <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
                        file="${cstat.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
                        alt="${cstat.characterType.value}"

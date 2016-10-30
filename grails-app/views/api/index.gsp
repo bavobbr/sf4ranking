@@ -51,6 +51,7 @@ You can fetch data either by id or by name. By ID is advised for scripts that cr
     <li><g:link controller="api" action="playerByName" params="[name: 'Sako']" mapping="apiPlayerByName">/api/player/name/sako</g:link></li>
     <li><g:link controller="api" action="tournamentById" params="[name: '10']" mapping="apiTournamentById">/api/tournament/id/10</g:link></li>
     <li><g:link controller="api" action="tournamentByName" params="[name: 'EVOLUTION 2014 - USF4']" mapping="apiTournamentByName">/api/tournament/name/EVOLUTION 2014 - USF4</g:link></li>
+    <li><g:link controller="api" action="tournamentByGame" params="[game: 'SF5']" mapping="apiTournamentByGame">/api/tournament/game/SF5</g:link></li>
 </ul>
 
 <h3>Rankings API and Widget</h3>

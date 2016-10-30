@@ -7,10 +7,9 @@
 
 <body>
 
-<h2>Character statistics and tournament results</h2>
-This list character usage and tournament performance statistics for ${stats?.characterType?.shortname} in ${stats?.game}
-
-This character is ranked against ${total} other characters in ${stats?.game?.value}
+<h2>${stats?.game?.name()} ${stats?.characterType?.shortname} statistics and tournament results</h2>
+This list character usage and tournament performance statistics for ${stats?.characterType?.shortname} in ${stats?.game}.
+This character is compared versus ${total} other characters in ${stats?.game?.value} (1 means best).
 <div class="table-responsive">
     <table class="tablehead" id="datatable4">
         <thead>
@@ -150,8 +149,9 @@ This character is ranked against ${total} other characters in ${stats?.game?.val
 </div>
 
 (Note that local tournaments are excluded)<br/>
-<p>
-Top players using character as main:
+<h3>Top players</h3>
+
+Top players using character as main
 <ol>
     <g:each in="${best5}" var="p">
         <li>
@@ -159,7 +159,7 @@ Top players using character as main:
                 rank(stats.game)})</li>
     </g:each>
 </ol>
-Top players using character as secondary:
+Top players that used character as secondary at least once
 <ol>
     <g:each in="${best5secondaries}" var="p">
         <li>
@@ -169,7 +169,7 @@ Top players using character as secondary:
 </ol>
 </p>
 
-<h2>Character Tournament Performance</h2>
+<h3>Character Tournament Performance</h3>
 This list character usage and performance statistics for ${characterType.value} in ${game} (local tournaments included)
 
 <div class="table-responsive">
@@ -211,7 +211,7 @@ This list character usage and performance statistics for ${characterType.value} 
     </table>
 </div>
 
-<h2>Tournament Wins</h2>
+<h3>Tournament Wins</h3>
 These are all the ${tournamentWins.size()} non-local circuits where ${characterType.shortname} won
 
 
@@ -256,7 +256,7 @@ These are all the ${tournamentWins.size()} non-local circuits where ${characterT
     </table>
 </div>
 
-<h2>Tournament results</h2>
+<h3>Tournament results</h3>
 These are all the ${tournamentAll.size()} non-local circuits where ${characterType.shortname} was listed in the top results:
 
 <div class="table-responsive">

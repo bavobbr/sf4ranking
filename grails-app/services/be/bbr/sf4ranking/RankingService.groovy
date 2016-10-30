@@ -78,12 +78,12 @@ class RankingService {
             tournaments.removeAll {
                 !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo.time)
             }
-            int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 4, 1)
+            int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 5, 1)
             end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, 1)
             end = applyType(tournaments, TournamentType.PREMIER_12, end, 12, 1)
             end = applyType(tournaments, TournamentType.INTERNATIONAL, end, 31, 1)
             end = applyType(tournaments, TournamentType.SERIES, end, 50, 1)
-            end = applyType(tournaments, TournamentType.CIRCUIT, end, 200, 1)
+            end = applyType(tournaments, TournamentType.CIRCUIT, end, 400, 1)
             tournaments*.save(failOnError: true)
         }
         return tournaments.size()

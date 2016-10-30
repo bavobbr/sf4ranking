@@ -59,25 +59,7 @@
     </table>
 </div>
 
-<div class="row" align="center">
-    <g:link controller="gear" action="index">
-        <div class="col-md-5">
-            <img src="https://s3.amazonaws.com/srkranking/controllers/madcatz_family_small.jpeg" class="img-responsive"
-                 alt="Mad catz controller prices" data-toggle="tooltip" data-placement="top"
-                 title="Mad catz arcade stick and controller prices"/>
-        </div>
-
-        <div class="col-md-5">
-
-            <img src="https://s3.amazonaws.com/srkranking/controllers/hori_rap5_small.jpeg" class="img-responsive"
-                 alt="Hori controller prices" data-toggle="tooltip" data-placement="top"
-                 title="Hori arcade stick controller prices"/>
-        </div>
-    </g:link>
-
-</div>
-
-<h2 class="tournament"><large>found ${details.size()} rankings</large></h2>
+<h2 class="tournament"><large>Registered ${details.size()} rankings</large></h2>
 
 <div class="table-responsive">
     <table class="tablehead" id="datatable">

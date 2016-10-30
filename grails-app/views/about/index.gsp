@@ -16,7 +16,7 @@
           href="http://www.atpworldtour.com/">ATP and WTA</a>. Players earn points by placing in tournaments.
   Tournaments are ordered by importance and given a classification. The players in those tournaments are then assigned a score based on their place within a tournament, adjusted with the tournament weight.<br/>
   </p><p>
-    The goals is to rank the tournament performance of players in popular fighting games like Street Fighter 4 (vanilla, super, arcade edition, AE2012 and Ultra), Marvel vs Capcom 3, Killer Instinct, Mortal Kombat X, Blazblue and Skullgirls.
+    The goals is to rank the tournament performance of players in popular fighting games like SF5, Street Fighter 4 (vanilla, super, arcade edition, AE2012 and Ultra), Marvel vs Capcom 3, Killer Instinct, Mortal Kombat X, Injustice, Blazblue and Skullgirls.
 </p>
 </div>
 
@@ -35,7 +35,6 @@ The tournament ranking is done by sorting on tournament weight and then ditribut
     <thead>
     <tr>
       <td>Type</td>
-      <td>Amount</td>
       <td>1st</td>
       <td>2nd</td>
       <td>3rd</td>
@@ -55,10 +54,9 @@ The tournament ranking is done by sorting on tournament weight and then ditribut
     </tr>
     </thead>
     <tbody>
-    <g:each in="${[TournamentType.GRAND_SLAM, TournamentType.PREMIER_MANDATORY, TournamentType.PREMIER_5, TournamentType.PREMIER_12, TournamentType.INTERNATIONAL, TournamentType.SERIES, TournamentType.CIRCUIT]}" var="type">
+    <g:each in="${[TournamentType.GRAND_SLAM, TournamentType.PREMIER_MANDATORY, TournamentType.PREMIER_5, TournamentType.PREMIER_12, TournamentType.INTERNATIONAL, TournamentType.SERIES, TournamentType.CIRCUIT, TournamentType.LOCAL]}" var="type">
       <tr>
         <td>${type.value}</td>
-        <td>1</td>
         <td>${ScoringSystem.getScore(1, type)}</td>
         <td>${ScoringSystem.getScore(2, type)}</td>
         <td>${ScoringSystem.getScore(3, type)}</td>
@@ -133,7 +131,7 @@ Tournaments in <strong>league</strong> format that are not auto-weighted score a
     </tbody>
   </table>
 </div>
-A tournament can be a <strong>fixed</strong> type (the <i>Grand Slam</i>, <i>Championship</i> and <i>Tournament of Champions</i> types) or auto-weighted. Usually auto-weighting is used (based on player skills entering), but fixed types ccan be used for events that are considered Grand Slam unanimously (EVO class) or events that are very frequent but have a very local nature (like weeklies).
+A tournament can be a <strong>fixed</strong> type (the <i>Grand Slam</i>, <i>Championship</i> and <i>Tournament of Champions</i> types) or auto-weighted. As a standard auto-weighting is used (based on player skills entering), but fixed types ccan be used for events that are considered Grand Slam unanimously (EVO class) or events that are very frequent and have a very local nature (like weeklies). The latter are classified as FIXED type on LOCAL.
 For auto-weighted tournament types the following order is used:
 <div class="table-responsive">
 
@@ -173,7 +171,7 @@ For auto-weighted tournament types the following order is used:
 </table>
 </div>
 These are distributed over tournaments of the last two years according to tournament weight, which is the sum of the best 8 players that entered the top 64. Tournament organizers take note: providing result lists above top 8 results in better ranking results.
-Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i>i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
+Championship and Tournament of Champions is reserved for leagues, with <i>Championship</i> being top-level and <i>Tournament of Champions</i> being lower-level. <i>Grand Slam</i> is assigned to large open international events that had qualifiers or seedings upfront.
 This forms the basis of the actual score, which considers tournaments of the last 2 years in a sliding window. Next to that a player also gets a total score for every game. The total score is the sum of tournament scores times tournament weight. So the tournament weight is simply used as a modifier. All tournaments of the game are counted in the total score.
 
 <h3>Ranking system</h3>
@@ -189,7 +187,7 @@ Data input and correctness is maintained by
   <li><a href="https://twitter.com/tomakh">Tomakh</a> (moderator)</li>
   <li><a href="https://twitter.com/TerranceElC">TLC</a> (moderator)</li>
 </ul>
-... and everyone who is submitting new data and providing input via Twitter!
+... and everyone who is submitting new data on the site and providing input via Twitter!
 
 <h3>What about other games</h3>
 There is a moderator feature to allow the community to add data for new games. When a game is added some code need to be adapted (eg character types need to be defined, new hyperlinks will be added) and images need to be cut (to display the characters etc). Afterwards it is a matter of finding results and inputting them in a consistent way that does not cause duplicates. Any help is appreciated.

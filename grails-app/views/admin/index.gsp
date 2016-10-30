@@ -86,8 +86,6 @@ This is for fine-grained maintenance, usually not required.
     <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
     <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
     <li><g:link action="mergeSkills">Merge USF4 skill ratings into other SF4 games</g:link></li>
-    <li><g:link action="autoWeighAll">Put all tournaments to AUTO weighting</g:link></li>
-    <li><g:link action="rankAll">Put all tournaments as ranked</g:link></li>
       <g:each in="${Version.values()}" var="value">
         <li><g:link action="autoFillSkill" params="[game: value.name()]">Autofill skill of ${value.name()}</g:link></li>
       </g:each>

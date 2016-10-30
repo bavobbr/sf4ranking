@@ -467,6 +467,15 @@ class AdminController
         render view: "index"
     }
 
+    def fixLocalTournaments()
+    {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.fixLocalTournaments()
+        }
+        render view: "index"
+    }
+
     def fixPlayerRankings()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))

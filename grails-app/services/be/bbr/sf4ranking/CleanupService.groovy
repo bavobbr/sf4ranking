@@ -33,6 +33,23 @@ class CleanupService
     }
 
     /**
+     * Assumes that almost all tournaments are double-bracket except for some known tournaments
+     * Should not be needed if tournaments are filled in correctly with format
+     */
+    def fixLocalTournaments()
+    {
+        Tournament.list().each {
+            if (it.weightingType == WeightingType.FIXED) {
+                if (it.tournamentType == TournamentType.CIRCUIT) {
+                    println "Setting as local: $it.name"
+                    it.tournamentType = TournamentType.LOCAL
+                    it.save()
+                }
+            }
+        }
+    }
+
+    /**
      * Fixes rank in tournaments for players on equal spots
      * Should not be needed if tournaments are entered with correct format
      */
