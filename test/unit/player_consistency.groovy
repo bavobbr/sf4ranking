@@ -12,16 +12,22 @@ public Map getPlayer(Integer id) {
     return player
 }
 
-def game = Version.UMVC3
-def count = 50
+def game = Version.SKULLGIRLS
+def count = 32
+def totalResults = 0
 
 def top100 = getTopPlayers(game.name(), count)
 List<PlayerStatistics> pstats = top100.collect {
     def player = getPlayer(it.id)
-    def results = player.results.findAll { it.game == game.name() && it.place <= 32  && it.type != "LOCAL"}
+    def results = player.results.findAll { it.game == game.name() && it.place <= 16  && it.type != "LOCAL" && it.type != "GRAND_SLAM"}
+    totalResults+=results.size()
     PlayerStatistics pstats = new PlayerStatistics(name: player.name, places: results*.place)
     pstats.calculate()
     return pstats
+}
+
+public Integer rand() {
+    return Math.random()*15+1
 }
 
 pstats.sort { it.variance }.eachWithIndex { p, i ->
@@ -34,7 +40,11 @@ pstats.sort { it.variance }.eachWithIndex { p, i ->
 
 SummaryStatistics gamestats = new SummaryStatistics()
 pstats.each { gamestats.addValue(it.variance) }
-println "Total mean: $gamestats.mean"
+println "Total avg: $gamestats.mean"
+def mean = pstats.collect { it.variance }.sort().get((int)(pstats.size() / 2))
+println "Total mean: $mean"
+println "Out of $totalResults"
+
 
 
 class PlayerStatistics {

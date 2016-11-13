@@ -14,7 +14,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def factor = 1.35
+def factor = 1.2
 
 def top250sf5 = getTop200Players(Version.SF5)
 def stats = top250sf5.collect {  p ->

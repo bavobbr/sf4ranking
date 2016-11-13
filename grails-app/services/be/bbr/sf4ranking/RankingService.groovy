@@ -426,7 +426,7 @@ class RankingService {
                 it.findCptRanking(Region.GLOBAL).qualifiedByScore = false // reset
             }
         }
-        return players.findAll { !it.cptGlobal().qualified }.take(spots).collect {
+        return players.findAll { !it.cptGlobal()?.qualified }.take(spots).collect {
             it.findOrCreateCptRanking(Region.GLOBAL).qualifiedByScore = true
             return it
         }
@@ -439,7 +439,7 @@ class RankingService {
             }
         }
         def unqualifiedPlayers = regionalPlayers.findAll { p ->
-            return !p.cptGlobal().qualified && !p.cptGlobal().qualifiedByScore
+            return !p.cptGlobal()?.qualified && !p.cptGlobal()?.qualifiedByScore
         }
         unqualifiedPlayers.take(2).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
@@ -458,7 +458,7 @@ class RankingService {
         regions.each { region ->
             def regionalPlayers = queryService.findCptPlayers(region)
             def unqualifiedPlayersRegional = regionalPlayers.findAll { p ->
-                return !globalQualifyingByScore.any { it.name == p.name } && !p.cptGlobal().qualified
+                return !globalQualifyingByScore.any { it.name == p.name } && !p.cptGlobal()?.qualified
             }
             qualifiedRegionally.addAll(unqualifiedPlayersRegional.take(2))
         }

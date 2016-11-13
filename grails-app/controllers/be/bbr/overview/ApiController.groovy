@@ -201,7 +201,7 @@ class ApiController {
                     weight    : tournament.weight,
             ]
             if (results) {
-                tournamentMap[results] = tournament.results.collect {
+                tournamentMap["results"] = tournament.results.collect {
                     [player     : it.player.id,
                      playername : it.player.name,
                      place      : it.place,
