@@ -141,6 +141,12 @@
     </table>
 </div>
 
+<div class="row" align="center">
+    <div class="col-md-12" align="center">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+    </div>
+</div>
+
 <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">
     <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament...]</g:link>
     <g:link controller="admin" action="importer" params="['source': tournament.id]">[Use as template...]</g:link>

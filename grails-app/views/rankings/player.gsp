@@ -335,6 +335,12 @@
             <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
         </g:if>
 
+        <div class="row" align="center">
+            <div class="col-md-12" align="center">
+                <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+            </div>
+        </div>
+
     %{--        <div class="tab-pane" id="videos">
                 <g:if test="${player.videos}">
                     <h2>Player videos <small>found ${player.videos.size()} videos</small></h2>

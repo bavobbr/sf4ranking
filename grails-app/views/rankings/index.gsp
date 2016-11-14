@@ -30,33 +30,6 @@
 
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Main page -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:468px;height:15px"
-             data-ad-client="ca-pub-3108290198951174"
-             data-ad-slot="2151634440"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <div class="col-md-6">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Main page -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:468px;height:15px"
-             data-ad-client="ca-pub-3108290198951174"
-             data-ad-slot="2151634440"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-</div>
-
 &NonBreakingSpace;
 <div class="row">
     <div class="col-md-6">
@@ -103,6 +76,11 @@
         <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
     </div>
+
+    <div class="col-md-6">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+    </div>
+
 
 </div>
 

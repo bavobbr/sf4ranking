@@ -155,6 +155,13 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
 The global board has ${directSpots} direct qualified players, 8 global points spots and ${extraSpots} spots opened by double qualification amounting to ${openSpots} qualified players out of a possible 24.
 </div>
 
+<div class="row" align="center">
+    <div class="col-md-12" align="center">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+    </div>
+</div>
+
+
 <g:each in="${regionalPlayers.keySet()}" var="region" status="ridx">
 
 <h3>${region} Regional Board</h3>
@@ -257,6 +264,12 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
 </div>
 
 </g:each>
+
+<div class="row" align="center">
+    <div class="col-md-12" align="center">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+</div>
+    </div>
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {

@@ -235,14 +235,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
     </div>
 
     <div class="col-md-5">
-        <div class="panel panel-info">
-            <g:link controller="gear" action="index">
-                <img src="https://s3.amazonaws.com/srkranking/controllers/madcatz_family_small.jpeg"
-                     class="img-responsive"
-                     alt="Mad catz controller prices" data-toggle="tooltip" data-placement="top"
-                     title="Mad catz arcade stick and controller prices"/>
-            </g:link>
-        </div>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
     </div>
 </div>
 </body>
