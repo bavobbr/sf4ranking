@@ -5,7 +5,7 @@ import groovy.json.JsonSlurper
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
-def sf5tournaments = new JsonSlurper().parse("http://localhost:8080/sf4ranking/api/tournament/game/SF5".toURL())
+def sf5tournaments = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/game/SF5".toURL())
 def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect { it.name() }
 def months = []
 
@@ -20,7 +20,7 @@ def months = []
 
     def winners = { tournaments ->
         tournaments.findResults {
-            def tournament = new JsonSlurper().parse("http://localhost:8080/sf4ranking/api/tournament/id/$it.id".toURL())
+            def tournament = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/id/$it.id".toURL())
             def scores = [:]
             tournament.results.each { result ->
                 result.characters.each {
