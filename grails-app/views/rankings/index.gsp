@@ -78,10 +78,8 @@
     </div>
 
     <div class="col-md-6">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=75e1af7e-b0d4-4de2-82e0-cf6960b76b72&storeId=fgwora-20"></script>
     </div>
-
-
 </div>
 
 
