@@ -13,6 +13,7 @@ class Hardware
         buyFR nullable: true, widget: 'textarea'
         buyDE nullable: true, widget: 'textarea'
         shortname nullable: true
+        directLink nullable: true
     }
 
     static mapping = {
@@ -36,6 +37,8 @@ class Hardware
     String buyDE
 
     String shortname = "N/A"
+
+    String directLink
 
     public String toString() {
         return "${name}"

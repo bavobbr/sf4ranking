@@ -254,11 +254,15 @@ class RankingsController
         def byMainCharacter32 = players32.groupBy { it.findRanking(Version.SF5).mainCharacters?.first() }
         def secondarySeenTop32 = [:]
         players32.each { def player ->
+            println "processing player $player.name"
             List<GameCharacter> characters = []
             player.results.findAll { it.tournament.game == Version.SF5  && it.tournament.cptTournament != CptTournament.NONE }.each {
+                println "   processing result $it.tournament.name"
                 it.characterTeams.each {
                     characters.addAll(it.pchars)
+                    println "      added characters: $it.pchars"
                     it.pchars.each {
+                        println "         added $player for $it.characterType"
                         if (secondarySeenTop32.containsKey(it.characterType)) {
                             secondarySeenTop32[it.characterType] << player
                         } else secondarySeenTop32[it.characterType] = [player] as HashSet

@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
+<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="overviews"/>
@@ -99,6 +99,13 @@ These Amazon stores offer ${controller.shortname} directly. Click on the image t
     </g:if>
 </div>
 </p>
+
+
+<g:if test="${org.apache.shiro.SecurityUtils.subject.isPermitted("admin")}">
+    <g:link controller="hardware" action="edit"
+            params="['id': controller.id]">[Update hardware as admin]</g:link>
+</g:if>
+
 <g:render template="/templates/prettify"/>
 </center>
 </body>

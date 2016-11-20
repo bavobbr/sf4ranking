@@ -37,9 +37,9 @@
                 <dt>Controller</dt>
                 <dd>
                     <g:if test="${player.hardware}">
-                        <g:link controller="gear" action="show" params="[id: player.hardware.id]">
+                        <a href="${player.hardware.directLink}" target="_blank">
                             ${player.hardware.shortname}
-                        </g:link>
+                        </a>
                     </g:if>
                     <g:else>
                         <a href="#" data-toggle="tooltip" data-placement="top"
@@ -102,7 +102,7 @@
                                      title="Global CPT score">(?)</a></dt>
                     <dd>
                         <g:link action="cpt" controller="rankings">
-                        ${player.cptScore()} (${player.findCptRanking(Region.GLOBAL).rank})
+                        ${player.cptScore()} (${player.findCptRanking(Region.GLOBAL)?.rank})
                         </g:link>
                     </dd>
                     <dt>CPT Qualified <a href="#" data-toggle="tooltip" data-placement="top"
