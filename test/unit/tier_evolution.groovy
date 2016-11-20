@@ -14,7 +14,7 @@ def months = []
     def enddate = refdate.plus(90)
     def inWindow = sf5tournaments.findAll {
         Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(it.date)
-        return date.before(enddate) && date.after(refdate)
+        return date.before(enddate) && date.after(refdate) && it.cpt != "NONE"
     }
     println "Discovered ${inWindow.size()} tournaments in window $refdate to $enddate"
 
@@ -25,7 +25,7 @@ def months = []
             tournament.results.each { result ->
                 result.characters.each {
                     def character = it.first()
-                    def score = result.score
+                    def score = result.cptScore
                     if (!scores[character]) scores[character] = []
                     scores[character] << score
                 }

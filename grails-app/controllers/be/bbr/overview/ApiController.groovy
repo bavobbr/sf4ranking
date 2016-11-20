@@ -206,6 +206,7 @@ class ApiController {
                      playername : it.player.name,
                      place      : it.place,
                      score      : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
+                     cptScore   : it.tournament.cptTournament?.getScore(it.place)?: 0,
                      rank       : it.player.rank(it.tournament.game),
                      characters : it.characterTeams.collect {
                          it.pchars.collect {
