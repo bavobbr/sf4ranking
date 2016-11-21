@@ -254,6 +254,7 @@ class DataService
             hardware.buyUK = it.buyUK
             hardware.image = it.image
             hardware.shortname = it.shortname
+            hardware.directLink = it.directLink
             hardware.save(failOnError: true)
             log.info "saved hw $hardware.id"
         }
@@ -516,6 +517,7 @@ class DataService
             hardware.description = it.description
             hardware.website = it.website
             hardware.image = it.image
+            hardware.directLink = it.directLink
             hardware.buy = it.buy
             hardware.buyUK = it.buyUK
             hardware.buyFR = it.buyFR

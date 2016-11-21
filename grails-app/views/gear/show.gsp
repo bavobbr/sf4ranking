@@ -26,6 +26,12 @@
                     <td>${controller.website}</td>
                 </tr>
                 <tr>
+                    <td>Shop</td>
+                    <td>
+                        <a href="${controller.directLink}" target="_blank">Buy at Amazon</a>
+                    </td>
+                </tr>
+                <tr>
                     <td>Details</td>
                     <td>${raw(controller.description)}</td>
                 </tr>
