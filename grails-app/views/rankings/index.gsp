@@ -24,8 +24,34 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+        <g:img dir="images/banners" file="banner_general.png" class="img-responsive"/>
+        <h4>Top stuff</h4>
+
+        <table class="table table-striped table-hover table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>Items</th>
+            </tr>
+            </thead>
+            <tr>
+                <td class="amazon_row">
+                    <script type="text/javascript">
+                        amzn_assoc_placement = "adunit0";
+                        amzn_assoc_search_bar = "false";
+                        amzn_assoc_tracking_id = "fgwora-20";
+                        amzn_assoc_ad_mode = "manual";
+                        amzn_assoc_ad_type = "smart";
+                        amzn_assoc_marketplace = "amazon";
+                        amzn_assoc_region = "US";
+                        amzn_assoc_title = "";
+                        amzn_assoc_size = "550x350";
+                        amzn_assoc_linkid = "4c46233c4e6948e48d28f85976393dbc";
+                        amzn_assoc_asins = "B00DQLXE30,B00NKX9OSI,B00SKGV3OI,B00NKX9ONS";
+                    </script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+                </td>
+            </tr>
+        </table>
     </div>
 
 </div>
@@ -38,8 +64,8 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
     </div>
 </div>
 &NonBreakingSpace;
@@ -78,7 +104,26 @@
     </div>
 
     <div class="col-md-6">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+        <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_search_bar = "false";
+            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_ad_mode = "manual";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_title = "Christmas sweaters";
+            amzn_assoc_linkid = "6030d62ec82b660eaa686b9d498d0446";
+            amzn_assoc_asins = "B016BM3CGO,B016BKQENY,B016C3Y3YC,B016BI9AE6,B016BPNIIS";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
 </div>
 
@@ -99,7 +144,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div class="col-md-5">

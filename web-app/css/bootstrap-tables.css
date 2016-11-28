@@ -99,6 +99,10 @@ table {
     padding: 3px;
 }
 
+.amazon_row {
+  padding: 30px;
+}
+
 
 .table tbody tr:hover td,
 .table tbody tr:hover th {

@@ -355,3 +355,9 @@ div.top100 {
 	max-width: none;
 	white-space: pre;
 }
+
+.vcenter {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}

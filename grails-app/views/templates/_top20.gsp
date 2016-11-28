@@ -1,7 +1,7 @@
 <%@ page import="be.bbr.sf4ranking.Version" %>
 <h4>${game.value} Top 10</h4>
-<div class="table-responsive">
-  <table class="table table-striped table-hover table-condensed">
+<div>
+  <table class="table table-striped table-hover table-condensed table-responsive">
     <thead>
     <tr>
       <th>Rank</th>
