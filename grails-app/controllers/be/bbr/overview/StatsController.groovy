@@ -1,7 +1,6 @@
 package be.bbr.overview
 
 import be.bbr.sf4ranking.*
-import grails.converters.JSON
 import grails.plugin.cache.Cacheable
 import org.apache.commons.math.stat.descriptive.SummaryStatistics
 import org.apache.shiro.SecurityUtils
@@ -13,6 +12,7 @@ class StatsController
 {
 
     QueryService queryService
+    MaxoplataService maxoplataService
 
     def index()
     {
@@ -539,15 +539,25 @@ class StatsController
     {
         def p1 = Player.findByCodename(params.p1.toUpperCase())
         def p2 = Player.findByCodename(params.p2.toUpperCase())
+        if (!p1 || !p2) {
+            render(text: "Player data not found for parmeter data $params", contentType: "text/plain", encoding: "UTF-8")
+            return null
+        }
         List<Comparison> comparisons = []
+        def head2headTable = [:]
+        if (p1.maxoplataId && p2.maxoplataId) {
+            head2headTable = maxoplataService.comparePlayers(p1, p2)
+            print head2headTable
+        }
         Version.values().each { game ->
             def p1Rank = p1.rankings.find { it.game == game }
             def p2Rank = p2.rankings.find { it.game == game }
             if (p1Rank && p2Rank) {
+                println "comparing between ranks $p1Rank and $p2Rank"
                 def p1Tournaments = p1.results.findAll { it.tournament.game == game}.collect { it.tournament }
                 def p2Tournaments = p2.results.findAll { it.tournament.game == game}.collect { it.tournament }
 
-                Comparison comparison = new Comparison(game: game.name())
+                Comparison comparison = new Comparison(game: game.value)
                 comparison.listingsP1 = p1Tournaments.size()
                 comparison.listingsP2 = p2Tournaments.size()
                 comparison.listingsDiff = comparison.listingsP1 - comparison.listingsP2
@@ -566,6 +576,15 @@ class StatsController
                 }
                 comparison.outrankDiff = comparison.outrankP1 - comparison.outrankP2
                 comparison.outrankResult = comparison.calculate(comparison.outrankP1, comparison.outrankP2)
+
+                def gameresults = head2headTable[game]
+                if (!gameresults) {
+                    gameresults = [p1: 0, p2: 0]
+                }
+                comparison.head2headP1 = gameresults.p1
+                comparison.head2headP2 = gameresults.p2
+                comparison.head2headDiff = comparison.head2headP1 - comparison.head2headP2
+                comparison.head2headResult = comparison.calculate(comparison.head2headP1, comparison.head2headP2)
 
                 comparison.scoreP1 = p1Rank.score
                 comparison.scoreP2 = p2Rank.score
@@ -640,6 +659,11 @@ class StatsController
         Integer outrankP2
         Integer outrankDiff
         ComparisonResult outrankResult
+
+        Integer head2headP1
+        Integer head2headP2
+        Integer head2headDiff
+        ComparisonResult head2headResult
 
         Integer rankP1
         Integer rankP2

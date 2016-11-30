@@ -376,6 +376,8 @@ class DataService
         grailsCacheManager.destroyCache('cptStats')
         grailsCacheManager.destroyCache('cptChars')
         grailsCacheManager.destroyCache('charstats')
+        grailsCacheManager.destroyCache('maxoplataCompare')
+        grailsCacheManager.destroyCache('maxoplataCompareUrl')
         return "Created ${Tournament.count()} tournaments, ${Result.count()} rankings, ${Team.count} teams and ${Player.count()} players"
     }
 
@@ -594,11 +596,13 @@ class DataService
 
     public void clearCache() {
         log.info("Clearing cache...")
-        grailsCacheManager.getCache('index').clear()
-        grailsCacheManager.getCache('top').clear()
-        grailsCacheManager.getCache('cpt').clear()
-        grailsCacheManager.getCache('cptStats').clear()
-        grailsCacheManager.getCache('cptChars').clear()
-        grailsCacheManager.getCache('charstats').clear()
+        grailsCacheManager.getCache('index')?.clear()
+        grailsCacheManager.getCache('top')?.clear()
+        grailsCacheManager.getCache('cpt')?.clear()
+        grailsCacheManager.getCache('cptStats')?.clear()
+        grailsCacheManager.getCache('cptChars')?.clear()
+        grailsCacheManager.getCache('charstats')?.clear()
+        grailsCacheManager.getCache('maxoplataCompare')?.clear()
+        grailsCacheManager.getCache('maxoplataCompareUrl')?.clear()
     }
 }

@@ -54,6 +54,14 @@ grails.cache.config = {
         maxCapacity = 100
         name 'cpt'
     }
+    cache {
+        maxCapacity = 100
+        name 'maxoplataCompare'
+    }
+    cache {
+        maxCapacity = 100
+        name 'maxoplataCompareUrl'
+    }
 }
 
 // GSP settings

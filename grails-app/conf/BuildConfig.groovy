@@ -53,6 +53,7 @@ grails.project.dependency.resolution = {
         runtime 'mysql:mysql-connector-java:5.1.24'
         runtime 'org.apache.commons:commons-math:2.2'
         compile 'org.compass-project:compass:2.2.0'
+        compile group: 'net.sourceforge.htmlcleaner', name: 'htmlcleaner', version: '2.18'
     }
 
     plugins {

@@ -7,7 +7,27 @@
 
 <body>
 
-<h2>Player statistics of ${p1.name} versus ${p2.name}</h2>
+<h2>Tournament result comparison of ${p1.name} versus ${p2.name}</h2>
+This compares players based on their tournament performance and results in games that they both have registered rankings in. Outranked means a player finished higher than another in the same tournament, beaten means they faced head 2 head. <br/>
+You can click on the <a href="http://www.maxoplata.net" target="_blank">Maxoplata links</a> to get detailed head to head results and videos of those players.
+<div class="col-xs-12" style="height:50px;"></div>
+
+<center>
+<g:if test="${p1.pictureUrl && p2.pictureUrl}">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <img src="${p1.pictureUrl}" class="img-responsive"/>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <img src="${p2.pictureUrl}" class="img-responsive"/>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</g:if>
+</center>
+
 <g:each in="${games}" var="comparison" status="i">
     <h3>${comparison.game}</h3>
 
@@ -37,11 +57,18 @@
                 <td class="${comparison.css(comparison.tournamentWinsResults)}">${comparison.tournamentWinsResults}</td>
             </tr>
             <tr>
-                <td>Beat other player</td>
+                <td>Outranked other player</td>
                 <td>${comparison.outrankP1}</td>
                 <td>${comparison.outrankP2}</td>
                 <td>${comparison.outrankDiff}</td>
                 <td class="${comparison.css(comparison.outrankResult)}">${comparison.outrankResult}</td>
+            </tr>
+            <tr>
+                <td><a href="http://www.maxoplata.net/compare/${p1?.maxoplataId}/${p2?.maxoplataId}" target="_blank">Beat other player</a></td>
+                <td>${comparison.head2headP1}</td>
+                <td>${comparison.head2headP2}</td>
+                <td>${comparison.head2headDiff}</td>
+                <td class="${comparison.css(comparison.head2headResult)}">${comparison.head2headResult}</td>
             </tr>
             <tr>
                 <td>Actual Score</td>
@@ -68,15 +95,16 @@
     </div>
 
 </g:each>
-
+<g:if test="${p1Exclusive || p2Exclusive}">
 <h3>
     Non matching listings
 </h3>
+</g:if>
 <g:if test="${p1Exclusive}">
-    ${p1.name} has exclusive rankings in ${p1Exclusive.value.join(", ")}<br/>
+    ${p1.name} has rankings in ${p1Exclusive.value.join(", ")} while ${p2.name} has not<br/>
 </g:if>
 <g:if test="${p2Exclusive}">
-    ${p2.name} has exclusive rankings in ${p2Exclusive.value.join(", ")}<br/>
+    ${p2.name} has rankings in ${p2Exclusive.value.join(", ")} while ${p1.name} has not<br/>
 </g:if>
 <h3>Compare versus other</h3>
 <fieldset class="form">
