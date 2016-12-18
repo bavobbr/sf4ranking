@@ -12,6 +12,7 @@ class Player
         twitter nullable: true
         rankings nullable: false
         realname nullable: true
+        alias nullable: true, unique: false, editable: true
         pictureUrl nullable: true
         description nullable: true, widget: 'textarea'
         pictureCopyright nullable: true
@@ -30,7 +31,7 @@ class Player
         description type: 'text'
     }
 
-    static searchable = [only: ['name', 'twitter', 'realname', 'simplified']]
+    static searchable = [only: ['name', 'twitter', 'realname', 'simplified', 'alias']]
 
     String name
     String codename
@@ -52,6 +53,7 @@ class Player
     String maxoplataId
     String onlineId
     String twitch
+    String alias
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking, cptRankings: CptRanking]
 
     static String pattern = /[^\dA-Za-z]/

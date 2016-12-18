@@ -35,20 +35,7 @@
             </thead>
             <tr>
                 <td class="amazon_row">
-                    <script type="text/javascript">
-                        amzn_assoc_placement = "adunit0";
-                        amzn_assoc_search_bar = "false";
-                        amzn_assoc_tracking_id = "fgwora-20";
-                        amzn_assoc_ad_mode = "manual";
-                        amzn_assoc_ad_type = "smart";
-                        amzn_assoc_marketplace = "amazon";
-                        amzn_assoc_region = "US";
-                        amzn_assoc_title = "";
-                        amzn_assoc_size = "550x350";
-                        amzn_assoc_linkid = "4c46233c4e6948e48d28f85976393dbc";
-                        amzn_assoc_asins = "B00DQLXE30,B00NKX9OSI,B00SKGV3OI,B00NKX9ONS";
-                    </script>
-                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
                 </td>
             </tr>
         </table>
@@ -111,19 +98,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "fgwora-20";
-            amzn_assoc_ad_mode = "manual";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Christmas sweaters";
-            amzn_assoc_linkid = "6030d62ec82b660eaa686b9d498d0446";
-            amzn_assoc_asins = "B016BM3CGO,B016BKQENY,B016C3Y3YC,B016BI9AE6,B016BPNIIS";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
     </div>
 </div>
 

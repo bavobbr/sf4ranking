@@ -12,7 +12,7 @@ public Map getPlayer(Integer id) {
     return player
 }
 
-def game = Version.SKULLGIRLS
+def game = Version.MKX
 def count = 32
 def totalResults = 0
 

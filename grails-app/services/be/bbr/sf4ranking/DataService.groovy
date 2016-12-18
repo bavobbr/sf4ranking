@@ -123,6 +123,7 @@ class DataService
             fuzzy("name", original, 0.4)
             fuzzy("twitter", original, 0.7)
             fuzzy("realname", original, 0.7)
+            fuzzy("alias", original, 0.7)
         }
         alts = searchResult.results.collect {
             Player.read(it.id)
@@ -171,6 +172,7 @@ class DataService
         matches.addAll(Player.findAllByCodenameIlike(wildcardedQuery))
         matches.addAll(Player.findAllByTwitterIlike(wildcardedQuery))
         matches.addAll(Player.findAllByRealnameIlike(wildcardedQuery))
+        matches.addAll(Player.findAllByAliasIlike(wildcardedQuery))
         log.info "Found ${matches.size()} matches"
         return matches
     }
@@ -279,10 +281,11 @@ class DataService
                     def maxoplataId = pjson.maxoplataId?: ""
                     def onlineId = pjson.onlineId?: ""
                     def twitch = pjson.twitch?: ""
+                    def alias = pjson.alias?: ""
                     Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                             mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
                             pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId,
-                            twitch: twitch)
+                            twitch: twitch, alias: alias)
                     if (cptRank) {
                         CptRanking cptRanking = new CptRanking(qualified: cptQualified, score: cptScore, prevScore: prevCptScore, rank: cptRank, prevRank: prevCptRank, region: Region.GLOBAL)
                         p.addToCptRankings(cptRanking)
@@ -441,6 +444,7 @@ class DataService
             def player = [:]
             player.name = it.name
             player.realname = it.realname
+            player.alias = it.alias
             player.countryCode = it.countryCode?.name()
             player.videos = it.videos
             player.codename = it.codename

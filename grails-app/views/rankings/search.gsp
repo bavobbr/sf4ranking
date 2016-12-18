@@ -18,6 +18,7 @@
     <tr class="stathead">
       <th>Name</th>
       <th>Twitter</th>
+      <th>Real name</th>
       <th>Known as</th>
       <th>Country</th>
       <th>Main Game</th>
@@ -30,6 +31,7 @@
                     params="[name: player.name]">${player.name}</g:link></td>
         <td>${player.twitter}</td>
         <td>${player.realname}</td>
+        <td>${player.alias}</td>
         <td>${player.countryCode}</td>
         <td>${player.mainGame}</td>
       </tr>
@@ -49,6 +51,7 @@
     <tr class="stathead">
       <th>Name</th>
       <th>Twitter</th>
+      <th>Real name</th>
       <th>Known as</th>
       <th>Country</th>
       <th>Main Game</th>
@@ -61,6 +64,7 @@
                     params="[name: player.name]">${player.name}</g:link></td>
         <td>${player.twitter}</td>
         <td>${player.realname}</td>
+        <td>${player.alias}</td>
         <td>${player.countryCode}</td>
         <td>${player.mainGame}</td>
       </tr>
