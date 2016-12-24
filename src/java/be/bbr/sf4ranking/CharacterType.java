@@ -260,7 +260,8 @@ public enum CharacterType
     SF5_IBUKI("IBUKI", "Ibuki", Version.SF5),
     SF5_BALROG("BALROG", "Balrog", Version.SF5),
     SF5_URIEN("URIEN", "Urien", Version.SF5),
-    SF5_JURI("JURI", "Juri", Version.SF5);
+    SF5_JURI("JURI", "Juri", Version.SF5),
+    SF5_AKUMA("AKUMA", "Akuma", Version.SF5);
 
     private final String value;
     private final Version game;

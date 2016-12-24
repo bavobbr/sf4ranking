@@ -17,8 +17,8 @@ def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect
 
 def premierwinners = winners(premiers)
 def rankingwinners = winners(rankings)
-println "Premier winners: " + premierwinners.countBy { it }
-println "Ranking winners: " + rankingwinners.countBy { it }
+println "Premier winners: " + premierwinners.countBy { it }.sort { e -> e.value.toInteger()}
+println "Ranking winners: " + rankingwinners.countBy { it }.sort { e -> e.value.toInteger()}
 
 println "Never won premier: " + sf5chars.findAll { !premierwinners.contains(it) }
 println "Never won ranking: " + sf5chars.findAll { !rankingwinners.contains(it) }
