@@ -159,9 +159,9 @@ class StatsController
         def totalTournaments = Tournament.countByGame(game)
         Integer usedPercentage = totalTournamentsUsed / totalTournaments * 100
 
-        def tournamentWins = results.findAll { it.place == 1 && it.tournament.tournamentType != TournamentType.CIRCUIT}
+        def tournamentWins = results.findAll { it.place == 1 && it.tournament.tournamentType != TournamentType.LOCAL}
         tournamentWins.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
-        def tournamentAll = results.findAll { it.tournament.tournamentType != TournamentType.CIRCUIT}
+        def tournamentAll = results.findAll { it.tournament.tournamentType != TournamentType.LOCAL}
         tournamentAll.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
 
         return [stats: games[game.value],
@@ -339,7 +339,7 @@ class StatsController
         HitMap<CharacterType> charhitstop16 = new HitMap<>()
         characters.each {GameCharacter gc ->
             Result r = gc.gameTeam.result
-            if (r.tournament.tournamentType != TournamentType.CIRCUIT) {
+            if (r.tournament.tournamentType != TournamentType.LOCAL) {
                 if (r.place == 1) {
                     charhitstop1.addHit(gc.characterType)
                 }
@@ -602,14 +602,14 @@ class StatsController
                 comparison.rankResult = comparison.calculate(comparison.rankP2, comparison.rankP1)
 
                 comparison.tournamentWinsP1 = p1Tournaments
-                        .findAll { it.tournamentType != TournamentType.CIRCUIT  && it.finished }
+                        .findAll { it.tournamentType != TournamentType.LOCAL  && it.finished }
                         .count {
                             it.results
                             .sort { a,b -> a.place <=> b.place }
                             .first().player == p1
                         }
                 comparison.tournamentWinsP2 = p2Tournaments
-                        .findAll { it.tournamentType != TournamentType.CIRCUIT && it.finished }
+                        .findAll { it.tournamentType != TournamentType.LOCAL && it.finished }
                         .count {
                                     it.results
                                     .sort { a,b -> a.place <=> b.place }

@@ -9,7 +9,9 @@ def rankings = sf5tournaments.findAll { it.cpt == "RANKING" || it.cpt == "ONLINE
 def winners = { tournaments ->
     tournaments.findResults {
         def tournament = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/id/$it.id".toURL())
-        return tournament.results.find { it.place == 1}?.characters?.flatten()
+        def wchar = tournament.results.find { it.place == 1}?.characters?.flatten()
+        println "$tournament.name won by $wchar"
+        return wchar
     }.flatten()
 }
 
@@ -23,3 +25,5 @@ println "Ranking winners: " + rankingwinners.countBy { it }.sort { e -> e.value.
 println "Never won premier: " + sf5chars.findAll { !premierwinners.contains(it) }
 println "Never won ranking: " + sf5chars.findAll { !rankingwinners.contains(it) }
 
+rankingwinners.addAll(premierwinners)
+println "All winners: " + rankingwinners.countBy { it }.sort { e -> e.value.toInteger()}
