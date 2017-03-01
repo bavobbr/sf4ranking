@@ -141,12 +141,6 @@
     </table>
 </div>
 
-<div class="row" align="center">
-    <div class="col-md-12" align="center">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
-    </div>
-</div>
-
 <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">
     <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament...]</g:link>
     <g:link controller="admin" action="importer" params="['source': tournament.id]">[Use as template...]</g:link>
@@ -154,14 +148,22 @@
     <g:link controller="admin" action="batchSetCountry"
             params="['id': tournament.id]">[Batch apply ${tournament.countryCode.name()}]</g:link>
 </g:if>
-<g:if test="${org.apache.shiro.SecurityUtils.subject.hasRole("Administrator")}">
+
+<div class="row" align="center">
+    <div class="col-md-12" align="center">
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+    </div>
+</div>
+
+
+%{--<g:if test="${org.apache.shiro.SecurityUtils.subject.hasRole("Administrator")}">
     <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos]</g:link>
     <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>
     <g:link controller="admin" action="playerRanksBefore"
             params="['id': tournament.id]">[Scores before tournament]</g:link>
     <g:link controller="admin" action="playerRanksAfter"
             params="['id': tournament.id]">[Scores after tournament]</g:link>
-</g:if>
+</g:if>--}%
 
 
 %{--<g:if test="${tournament.videos}">

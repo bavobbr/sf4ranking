@@ -1,14 +1,16 @@
 package be.bbr.sf4ranking
 
+import grails.transaction.NotTransactional
 import grails.transaction.Transactional
 import grails.util.Holders
 import org.apache.shiro.SecurityUtils
 
 
-@Transactional
 class ConfigurationService
 {
+    static transactional = false
 
+    @NotTransactional
     void withUniqueSession(Closure c) {
         def grailsApplication = Holders.getGrailsApplication()
         if (!grailsApplication.config.global.isUpdating) {

@@ -1,13 +1,15 @@
 package be.bbr.sf4ranking
 
+import grails.transaction.NotTransactional
 import grails.transaction.Transactional
 
 /**
  * This service applies the ranking values (rank, score, weight, type) to all imported data
  * All the entries are evaluated together, rather than only the one that is added/updated
  */
-@Transactional
 class RankingService {
+
+    static transactional = false
 
     ConfigurationService configurationService
     QueryService queryService
@@ -16,6 +18,7 @@ class RankingService {
      * Take the 8 best players from a tournament and calculate a skill average, this becomes the tournament weight
      * Only applied when weighting is set as AUTO, otherwise the weight is static per supplied tournament type
      */
+    @Transactional
     Integer updateWeights(Version game) {
         def tournaments = []
         configurationService.withUniqueSession {
@@ -55,6 +58,7 @@ class RankingService {
      * Distribute the types for the tournaments that use AUTO weighting
      * Based on the tournament weight
      */
+    @Transactional
     Integer updateTypes(Version game) {
         def tournaments = []
         configurationService.withUniqueSession {
@@ -92,6 +96,7 @@ class RankingService {
     /**
      * The player score is the sum of his best 12 tournaments
      */
+    @NotTransactional
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
         configurationService.withUniqueSession {
@@ -113,7 +118,6 @@ class RankingService {
                 p.applyTotalScore(game, playerScore)
                 // calculate CPT score
                 if (game == Version.SF5) {
-                    log.info("Calculating CPT for $p.name")
                     def cptScore = 0
                     def cptScoreAO = 0
                     def cptScoreLA = 0
@@ -176,20 +180,19 @@ class RankingService {
             }
             log.info "Updated ${players.size()} scores"
         }
+        log.info("Flushing player score session...")
+        Player.withSession { session -> session.flush() }
+        log.info("Flushing player score session DONE")
         return players.size()
     }
 
     private Integer getScore(List<Result> results, Closure scoringRule) {
-        log.info "Considering best scores of ${results.size()}"
         def scores = results.collect {
             if (it.tournament.ranked && it.tournament.finished) {
                 scoringRule(it)
             } else 0
         }.sort { a, b -> b <=> a }
         def bestof = scores.take(12)
-        if (!bestof.isEmpty()) {
-            log.info "Considered best scores: $bestof out of a total ${results.size()} results"
-        }
         (bestof.sum() as Integer) ?: 0
     }
 
@@ -197,6 +200,7 @@ class RankingService {
      * The player rank is based on how he positions by score
      * If a score is equal to another player the rank is not incremented but kept equal
      */
+    @NotTransactional
     Integer updatePlayerRank(Version game) {
         List players = Player.findAll { results.tournament.game == game }
         players = players.sort { a, b -> b.score(game) <=> a.score(game) }
@@ -205,14 +209,13 @@ class RankingService {
             def previous = 0
             def currentRank = 0
             players.eachWithIndex { Player p, Integer idx ->
-                log.info("Updating $game rank of player $p [${idx+1} / ${players.size()}]")
                 if (p.score(game) != previous) {
                     currentRank = idx + 1
                 }
                 def rank = currentRank
                 p.applyRank(game, rank)
                 previous = p.score(game)
-                log.info("Updated rank of player $p, setting previous as $previous")
+                log.info("Updated rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
             }
         }
         if (game == Version.SF5) {
@@ -222,14 +225,13 @@ class RankingService {
                 def previous = 0
                 def currentRank = 0
                 players.eachWithIndex { Player p, Integer idx ->
-                    log.info("Updating CPT $game rank of player $p")
                     if (p.cptScore() != previous) {
                         currentRank = idx + 1
                     }
                     def rank = currentRank
                     p.findOrCreateCptRanking(Region.GLOBAL).rank = rank
                     previous = p.cptScore()
-                    log.info("Updated CPT rank of player $p, setting previous as $previous")
+                    log.info("Updated CPT rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
                 }
             }
 
@@ -241,7 +243,6 @@ class RankingService {
                     def currentRank = 0
                     players.eachWithIndex { Player p, Integer idx ->
                         if (p.cptScore(region)) {
-                            log.info("Updating CPT $game $region rank of player $p")
                             if (p.cptScore(region) != previous) {
                                 currentRank = idx + 1
                             }
@@ -256,11 +257,15 @@ class RankingService {
                 }
             }
         }
+        log.info("Flushing player score session...")
+        Player.withSession { session -> session.flush() }
+        log.info("Flushing player score session DONE")
         return players.size()
     }
 
     /**
      */
+    @NotTransactional
     Integer updateMainTeams(Version game) {
         List players = Player.findAll {
             results.tournament.game == game
@@ -272,7 +277,8 @@ class RankingService {
                 if (ranking) {
                     ranking.mainCharacters.clear()
                     def filteredResults = p.results.findAll { it.tournament.game == game }
-                    def teams = filteredResults.collect { Result r -> r.characterTeams.collect { it } }.flatten()
+                    def last5 = filteredResults.sort { it.tournament.date }.reverse().take(5)
+                    def teams = last5.collect { Result r -> r.characterTeams.collect { it } }.flatten()
                     teams.removeAll { it.hasUnknown() }
                     def countedGroup = teams.countBy { GameTeam team -> team }
                     def sortedGroup = countedGroup.sort { a, b -> b.value <=> a.value }
@@ -292,12 +298,17 @@ class RankingService {
 
             }
         }
+        log.info("Flushing player score session...")
+        Player.withSession { session -> session.flush() }
+        log.info("Flushing player score session DONE")
         return players.size()
     }
 
+    @NotTransactional
     Integer updateMainGames() {
         configurationService.withUniqueSession {
-            Player.list().each { Player player ->
+            def players = Player.list()
+            players.each { Player player ->
                 log.info "Updating main game of $player.name"
                 def c = Result.createCriteria()
                 def results = c {
@@ -323,6 +334,9 @@ class RankingService {
                 }
                 player.save(flush: true)
             }
+            log.info("Flushing player score session...")
+            Player.withSession { session -> session.flush() }
+            log.info("Flushing player score session DONE")
         }
         return Player.count
 
@@ -376,6 +390,7 @@ class RankingService {
         return sortedPlayers
     }
 
+    @Transactional
     public void updateProTour(Version game) {
         if (game == Version.SF5) {
             def extraspots = countDuplicateQualifiers()

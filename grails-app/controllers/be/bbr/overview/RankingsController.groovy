@@ -363,7 +363,7 @@ class RankingsController
      */
     def tournaments()
     {
-        def fgame = Version.fromString(params.id)
+        def fgame = Version.fromString(params.id)?: Version.SF5
         log.info("Listing all tournaments of $fgame")
         def query = Tournament.where {
             if (params.country && !(params.country =~ "any")) countryCode == CountryCode.fromString(params.country)

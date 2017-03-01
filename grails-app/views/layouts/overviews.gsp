@@ -193,8 +193,6 @@
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE.name()]">SF4:AE</g:link></li>
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.SUPER.name()]">SSF4</g:link></li>
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.VANILLA.name()]">SF4</g:link></li>
-                            <li class="divider"></li>
-                            <li><g:link action="tournaments" controller="rankings">View All Tournaments</g:link></li>
                         </ul>
                     </li>
                     <li><g:link controller="gear">CONTROLLERS</g:link></li>

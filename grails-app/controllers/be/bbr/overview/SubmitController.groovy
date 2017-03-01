@@ -33,7 +33,7 @@ class SubmitController {
     }
 
     def review() {
-        if (!params.answer.trim().equalsIgnoreCase("ken")) {
+        if (!params.answer.trim().equalsIgnoreCase("ryu")) {
             render "Please answer the captcha correctly. Use browser BACK button to retry"
         }
         String tname = params.tname

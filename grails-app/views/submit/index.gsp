@@ -137,7 +137,7 @@ to use the 'validate' buttons before submitting, and to use the 'Help' buttons t
 
   </div>
     <div class="form-group">
-        <label for="answer">(*) Who is Ryu's best friend, hidden in Hadoken?</label>
+        <label for="answer">(*) Who is Ken's best friend, the one who likes to hadoken?</label>
         <g:textField name="answer" class="form-control" placeholder="" value=""/><br/>
     </div>
     <div class="form-group">
