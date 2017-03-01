@@ -30,7 +30,7 @@ public Integer rand() {
     return Math.random()*15+1
 }
 
-pstats.sort { it.variance }.eachWithIndex { p, i ->
+pstats.sort { it.deviation }.eachWithIndex { p, i ->
     print "${i+1} [$p.name] ".padRight(25)
     print "mean: $p.mean".padRight(10)
     print "deviation: ${p.deviation.round(2)}".padRight(20)

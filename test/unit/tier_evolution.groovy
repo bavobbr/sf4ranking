@@ -9,12 +9,12 @@ def sf5tournaments = new JsonSlurper().parse("http://rank.shoryuken.com/api/tour
 def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect { it.name() }
 def months = []
 
-8.times { int idx ->
+12.times { int idx ->
     def refdate = new Date(116, idx+1, 1)
     def enddate = refdate.plus(90)
     def inWindow = sf5tournaments.findAll {
         Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(it.date)
-        return date.before(enddate) && date.after(refdate) && it.cpt != "NONE"
+        return date.before(enddate) && date.after(refdate)
     }
     println "Discovered ${inWindow.size()} tournaments in window $refdate to $enddate"
 
@@ -25,7 +25,7 @@ def months = []
             tournament.results.each { result ->
                 result.characters.each {
                     def character = it.first()
-                    def score = result.cptScore
+                    def score = result.score
                     if (!scores[character]) scores[character] = []
                     scores[character] << score
                 }
@@ -51,7 +51,7 @@ labels.add(0, "")
 println labels.join(",")
 
 sf5chars.each { name ->
-    print name+","
+    print name-"SF5_"+","
     def ranks = months.collect {
         def charResults = it.values()[0]
         def sortedResult = charResults.sort { a, b -> b.value <=> a.value }

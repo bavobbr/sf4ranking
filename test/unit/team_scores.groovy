@@ -1,6 +1,6 @@
 import groovy.json.JsonSlurper
 
-def sf5tournaments = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/game/SF5".toURL())
+def sf5tournaments = new JsonSlurper().parse("http://localhost:8080/sf4ranking/api/tournament/game/SF5".toURL())
 def teams = [:]
 
 def players = [:]
@@ -8,11 +8,11 @@ def players = [:]
 
 sf5tournaments.each { tournament ->
     println "pollling $tournament.name"
-    def tournamentdata = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/id/$tournament.id".toURL())
+    def tournamentdata = new JsonSlurper().parse("http://localhost:8080/sf4ranking/api/tournament/id/$tournament.id".toURL())
     tournamentdata.results.each { result ->
         player = players[result.player]
         if (!player) {
-            player = new JsonSlurper().parse("http://rank.shoryuken.com/api/player/id/$result.player".toURL())
+            player = new JsonSlurper().parse("http://localhost:8080/sf4ranking/api/player/id/$result.player".toURL())
             println "created player $result.playername"
             players[result.player] = player
         }
