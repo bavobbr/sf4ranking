@@ -34,20 +34,18 @@ evo.each { process(it.id, scores_evo) }
 premiers.each { process(it.id, scores_premier) }
 rankings.each { process(it.id, scores_ranking) }
 
-def cpt_players = new JsonSlurper().parse("http://rank.shoryuken.com/api/top?cpt=&size=512&format=json".toURL())
+def cpt_players = new JsonSlurper().parse("http://rank.shoryuken.com/api/top?cpt=true&size=512&format=json".toURL())
 def iter = 0
 
 def results = playerToScore.sort { a, b -> b.value <=> a.value }.take(128).collect { e ->
     iter++
-    def player = cpt_players.find { it.id == e.key }
-    if (!player) {
-        player = new JsonSlurper().parse("http://rank.shoryuken.com/api/player/id/${e.key}".toURL())
-    }
+    def playerIndex = cpt_players.findIndexOf { it.id == e.key }+1
+    def player = new JsonSlurper().parse("http://rank.shoryuken.com/api/player/id/${e.key}".toURL())
     def diff = 999
-    if (player.rank) {
-        diff = player.rank - iter
+    if (playerIndex) {
+        diff = playerIndex - iter
     }
-    [iter+"", player.name, e.value+"", player.rank+"", diff+""]
+    [iter+"", player.name, e.value+"", playerIndex+"", diff+""]
 }
 
 println "rank".padRight(5) + "name".padRight(16) + "score".padRight(6) + "2016".padRight(6) + "diff"
