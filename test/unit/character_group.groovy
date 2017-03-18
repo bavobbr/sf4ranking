@@ -1,6 +1,6 @@
 import groovy.json.JsonSlurper
 
-def tid = 1287
+def tid = 1448
 def url = "http://rank.shoryuken.com/api/tournament/id/$tid"
 
 def tdata = new JsonSlurper().parse(url.toURL())

@@ -217,9 +217,13 @@
                             <li><g:link action="cptStats" controller="rankings">Tournaments and countries</g:link></li>
                             <li><g:link action="cptCharacterStats" controller="rankings">Players and Characters</g:link></li>
                             <li class="divider"></li>
-                            <li><g:link action="cpt_2015" controller="rankings">Standings 2015</g:link></li>
-                            <li><g:link action="cptStats_2015" controller="rankings">Tournaments and countries 2015</g:link></li>
-                            <li><g:link action="cptCharacterStats_2015" controller="rankings">Characters used 2015</g:link></li>
+                            <li><g:link action="cpt_2015" controller="rankings">Archived Standings 2015</g:link></li>
+                            <li><g:link action="cptStats_2015" controller="rankings">Archived Tournaments and countries 2015</g:link></li>
+                            <li><g:link action="cptCharacterStats_2015" controller="rankings">Archived Characters used 2015</g:link></li>
+                            <li class="divider"></li>
+                            <li><g:link action="cpt_2016" controller="rankings">Archived Standings 2016</g:link></li>
+                            <li><g:link action="cptStats_2016" controller="rankings">Archived Tournaments and countries 2016</g:link></li>
+                            <li><g:link action="cptCharacterStats_2016" controller="rankings">Archived Characters used 2016</g:link></li>
                         </ul>
                     </li>
                     <li><g:link controller="about">FAQ</g:link></li>

@@ -411,29 +411,10 @@ class RankingService {
     }
 
     private void applyDirectQualifiers() {
-        def pastTournaments = queryService.pastCptTournaments()
-        Map<Region, List<Player>> regionalQualifyingHistories = [:]
-        Region.values().each { regionalQualifyingHistories[it] = [] }
-        pastTournaments.sort { it.date }.each { updateDirectQualifiedPlayer(it, regionalQualifyingHistories) }
+        def player = Player.findByName("Nuckledu")
+        player.findOrCreateCptRanking(Region.GLOBAL).qualified = true
     }
 
-    private void updateDirectQualifiedPlayer(Tournament t, Map<Region, List<Player>> regionalQualifyingHistories) {
-        log.info("... CPT stats on tournament ${t.name} with state ${t.finished} and results ${t.results.size()}")
-        if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
-            def firstPlayer = t.results?.sort { it.place }?.first()?.player?.findOrCreateCptRanking(Region.GLOBAL)
-            if (firstPlayer) firstPlayer.qualified = true
-        } else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT) {
-            Player qp = t.results.sort { it.place }.findResult {
-                if (!regionalQualifyingHistories[t.region].contains(it.player)) {
-                    regionalQualifyingHistories[t.region] << it.player
-                    return it.player
-                } else return null
-            }
-            if (qp) {
-                qp.findOrCreateCptRanking(t.region).qualified = true
-            }
-        }
-    }
 
     private List<Player> applyQualifiedByScore(List<Player> players, Integer spots) {
         players.each {
@@ -447,7 +428,7 @@ class RankingService {
         }
     }
 
-    private void applyTwoRegionalInvites(Region region, List<Player> regionalPlayers) {
+    private void applyRegionalInvites(Region region, List<Player> regionalPlayers) {
         regionalPlayers.each {
             if (it.findCptRanking(region)) {
                 it.findCptRanking(region).qualifiedByScore = false // reset
@@ -456,7 +437,7 @@ class RankingService {
         def unqualifiedPlayers = regionalPlayers.findAll { p ->
             return !p.cptGlobal()?.qualified && !p.cptGlobal()?.qualifiedByScore
         }
-        unqualifiedPlayers.take(2).each {
+        unqualifiedPlayers.take(8).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
         }
     }

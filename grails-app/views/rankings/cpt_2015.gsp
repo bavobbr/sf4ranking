@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Capcom Pro Tour Rankings 2015 - Street Fighter 4</title>
+    <title>Capcom Pro Tour 2015 Stats</title>
 
 
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/static/css/responsive-video.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style_bootstrap.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style_worldrank.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/bootstrap-tables.css" type="text/css">
 
     <script>
         $(function ()
@@ -64,6 +65,9 @@
         jQuery(function ($)
         {
             $("a").tooltip()
+        });
+        jQuery(function () {
+            $('[data-toggle="popover"]').popover()
         });
     </script>
     <script>
@@ -146,8 +150,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/rankings/index">Overview</a></li>
+                            <li><a href="/rankings/teams">Player Teams</a></li>
+                            <li><a href="/stats/index">Character Balance and Tiers</a></li>
                             <li class="divider"></li>
-                            <li><a href="/rankings/rank/USF4">World Rankings Ultra SF4</a></li>
                             <li><a href="/rankings/rank/SF5">World Rankings Street Fighter 5</a></li>
                             <li><a href="/rankings/rank/MKX">World Rankings Mortal Kombat X</a></li>
                             <li><a href="/rankings/rank/UMVC3">World Rankings Marvel vs Capcom 3</a></li>
@@ -156,21 +161,16 @@
                             <li><a href="/rankings/rank/IGAU">World Rankings Injustice</a></li>
                             <li><a href="/rankings/rank/BBCP">World Rankings Blazblue CP</a></li>
                             <li class="divider"></li>
+                            <li><a href="/rankings/rank/USF4">World Rankings Ultra SF4</a></li>
                             <li><a href="/rankings/rank/AE2012">World Rankings SF4:AE 2012</a></li>
                             <li><a href="/rankings/rank/AE">World Rankings SF4:AE</a></li>
                             <li><a href="/rankings/rank/SUPER">World Rankings SSF4</a></li>
                             <li><a href="/rankings/rank/VANILLA">World Rankings SF4</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/rankings/teams">View All Player Teams</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/stats/index">Character Usage Statistics</a></li>
-
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/rankings/tournaments/USF4">USF4</a></li>
                             <li><a href="/rankings/tournaments/SF5">Street Fighter 5</a></li>
                             <li><a href="/rankings/tournaments/MKX">Mortal Kombat X</a></li>
                             <li><a href="/rankings/tournaments/UMVC3">Marvel vs Capcom 3</a></li>
@@ -179,14 +179,14 @@
                             <li><a href="/rankings/tournaments/IGAU">Injustice</a></li>
                             <li><a href="/rankings/tournaments/BBCP">Blazblue CP</a></li>
                             <li class="divider"></li>
+                            <li><a href="/rankings/tournaments/USF4">USF4</a></li>
                             <li><a href="/rankings/tournaments/AE2012">SF4:AE 2012</a></li>
                             <li><a href="/rankings/tournaments/AE">SF4:AE</a></li>
                             <li><a href="/rankings/tournaments/SUPER">SSF4</a></li>
                             <li><a href="/rankings/tournaments/VANILLA">SF4</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/rankings/tournaments">View All Tournaments</a></li>
                         </ul>
                     </li>
+                    <li><a href="/gear/index">CONTROLLERS</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUBMIT <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -200,27 +200,20 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="/about/index">FAQ</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/rankings/cpt">Standings 2016</a></li>
-                            <li><a href="/rankings/cptStats">Tournaments and countries 2016</a></li>
-                            <li><a href="/rankings/cptCharacterStats">Characters used 2016</a></li>
+                            <li><a href="/rankings/cpt">Standings</a></li>
+                            <li><a href="/rankings/cptStats">Tournaments and countries</a></li>
+                            <li><a href="/rankings/cptCharacterStats">Players and Characters</a></li>
                             <li class="divider"></li>
                             <li><a href="/rankings/cpt_2015">Standings 2015</a></li>
                             <li><a href="/rankings/cptStats_2015">Tournaments and countries 2015</a></li>
                             <li><a href="/rankings/cptCharacterStats_2015">Characters used 2015</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTROLLERS <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/about/sf5">SF5 Order Guide</a></li>
-                            <li><a href="/gear/index">Sticks and Controllers</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="/about/index">FAQ</a></li>
 
 
                 </ul>

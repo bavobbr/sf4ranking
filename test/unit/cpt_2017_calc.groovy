@@ -45,7 +45,8 @@ def results = playerToScore.sort { a, b -> b.value <=> a.value }.take(128).colle
     if (playerIndex) {
         diff = playerIndex - iter
     }
-    [iter+"", player.name, e.value+"", playerIndex+"", diff+""]
+    diff = diff<0? ""+diff : "+"+diff
+    [iter+"", player.name, e.value+"", playerIndex? playerIndex+"": "-", diff == "+999"? "": diff]
 }
 
 println "rank".padRight(5) + "name".padRight(16) + "score".padRight(6) + "2016".padRight(6) + "diff"

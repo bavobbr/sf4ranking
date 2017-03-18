@@ -6,7 +6,7 @@ package be.bbr.sf4ranking.shiro
  */
 class SecurityFilters {
     def filters = {
-        all(controller: 'admin|player|result|tournament|user|configuration|team|role|playerRanking|gameCharacter|gameTeam') {
+        all(controller: 'admin|player|result|tournament|user|configuration|team|role|playerRanking|gameCharacter|gameTeam|hardware|query|tournamentReview') {
             before = {
                 // Ignore direct views (e.g. the default main index page).
                 if (!controllerName) return true

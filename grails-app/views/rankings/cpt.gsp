@@ -271,15 +271,16 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
             amzn_assoc_placement = "adunit0";
             amzn_assoc_search_bar = "false";
             amzn_assoc_tracking_id = "fgwora-20";
-            amzn_assoc_ad_mode = "manual";
+            amzn_assoc_ad_mode = "search";
             amzn_assoc_ad_type = "smart";
             amzn_assoc_marketplace = "amazon";
             amzn_assoc_region = "US";
-            amzn_assoc_title = "Christmas sweaters";
-            amzn_assoc_linkid = "6030d62ec82b660eaa686b9d498d0446";
-            amzn_assoc_asins = "B016BM3CGO,B016BKQENY,B016C3Y3YC,B016BI9AE6,B016BPNIIS";
+            amzn_assoc_title = "Shop Related Products";
+            amzn_assoc_default_search_phrase = "nintendo switch";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "919899be79cdf14ca1b81c0b22f6c130";
         </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script></div>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
 
 <script type="text/javascript" charset="utf-8">

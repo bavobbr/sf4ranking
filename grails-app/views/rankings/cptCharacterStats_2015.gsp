@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Capcom Pro Tour 2015 Character Stats</title>
-    
+    <title>Capcom Pro Tour 2015 Stats</title>
+
 
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
@@ -22,61 +22,65 @@
     <link rel="stylesheet" href="/static/css/responsive-video.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style_bootstrap.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style_worldrank.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/bootstrap-tables.css" type="text/css">
 
     <script>
         $(function ()
-          {
-              function search(uid)
-              {
-                  window.location = "/rankings/player/byname/" + uid
-              }
+        {
+            function search(uid)
+            {
+                window.location = "/rankings/player/byname/" + uid
+            }
 
-              $("#playerSearch").autocomplete({
-                                                  source: "/rankings/autocompletePlayer",
-                                                  minLength: 3,
-                                                  select: function (event, ui)
-                                                  {
-                                                      if (ui.item) search(ui.item.value);
-                                                  }
-                                              });
-          });
+            $("#playerSearch").autocomplete({
+                source: "/rankings/autocompletePlayer",
+                minLength: 3,
+                select: function (event, ui)
+                {
+                    if (ui.item) search(ui.item.value);
+                }
+            });
+        });
     </script>
     <script>
         $(function ()
-          {
-              function searchTournament(uid)
-              {
-                  window.location = "/rankings/tournament/byname/" + uid
-              }
+        {
+            function searchTournament(uid)
+            {
+                window.location = "/rankings/tournament/byname/" + uid
+            }
 
-              $("#tournamentSearch").autocomplete({
-                                                      source: "/rankings/autocompleteTournament",
-                                                      minLength: 2,
-                                                      select: function (event, ui)
-                                                      {
-                                                          if (ui.item) searchTournament(ui.item.value);
-                                                      }
-                                                  });
-          });
+            $("#tournamentSearch").autocomplete({
+                source: "/rankings/autocompleteTournament",
+                minLength: 2,
+                select: function (event, ui)
+                {
+                    if (ui.item) searchTournament(ui.item.value);
+                }
+            });
+        });
     </script>
     <script>
         jQuery(function ($)
-               {
-                   $("a").tooltip()
-               });
+        {
+            $("a").tooltip()
+        });
+        jQuery(function () {
+            $('[data-toggle="popover"]').popover()
+        });
     </script>
     <script>
         $(document).ready(function ()
-                          {
-                              $('#playerSearch').keypress(function (e)
-                                                          {
-                                                              if (e.which == 13)
-                                                              {
-                                                                  $('#searchForm').submit();
-                                                                  return false;    //<---- Add this line
-                                                              }
-                                                          });
-                          })
+        {
+            $('#playerSearch').keypress(function (e)
+            {
+                if (e.which == 13)
+                {
+                    $('#searchForm').submit();
+                    return false;    //<---- Add this line
+                }
+            });
+        })
     </script>
 
     <!-- Facebook Pixel Code -->
@@ -145,8 +149,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">RANKINGS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/rankings/index">Overview</a></li>
+                            <li><a href="/rankings/teams">Player Teams</a></li>
+                            <li><a href="/stats/index">Character Balance and Tiers</a></li>
                             <li class="divider"></li>
-                            <li><a href="/rankings/rank/USF4">World Rankings Ultra SF4</a></li>
                             <li><a href="/rankings/rank/SF5">World Rankings Street Fighter 5</a></li>
                             <li><a href="/rankings/rank/MKX">World Rankings Mortal Kombat X</a></li>
                             <li><a href="/rankings/rank/UMVC3">World Rankings Marvel vs Capcom 3</a></li>
@@ -155,21 +160,16 @@
                             <li><a href="/rankings/rank/IGAU">World Rankings Injustice</a></li>
                             <li><a href="/rankings/rank/BBCP">World Rankings Blazblue CP</a></li>
                             <li class="divider"></li>
+                            <li><a href="/rankings/rank/USF4">World Rankings Ultra SF4</a></li>
                             <li><a href="/rankings/rank/AE2012">World Rankings SF4:AE 2012</a></li>
                             <li><a href="/rankings/rank/AE">World Rankings SF4:AE</a></li>
                             <li><a href="/rankings/rank/SUPER">World Rankings SSF4</a></li>
                             <li><a href="/rankings/rank/VANILLA">World Rankings SF4</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/rankings/teams">View All Player Teams</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/stats/index">Character Usage Statistics</a></li>
-
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/rankings/tournaments/USF4">USF4</a></li>
                             <li><a href="/rankings/tournaments/SF5">Street Fighter 5</a></li>
                             <li><a href="/rankings/tournaments/MKX">Mortal Kombat X</a></li>
                             <li><a href="/rankings/tournaments/UMVC3">Marvel vs Capcom 3</a></li>
@@ -178,53 +178,44 @@
                             <li><a href="/rankings/tournaments/IGAU">Injustice</a></li>
                             <li><a href="/rankings/tournaments/BBCP">Blazblue CP</a></li>
                             <li class="divider"></li>
+                            <li><a href="/rankings/tournaments/USF4">USF4</a></li>
                             <li><a href="/rankings/tournaments/AE2012">SF4:AE 2012</a></li>
                             <li><a href="/rankings/tournaments/AE">SF4:AE</a></li>
                             <li><a href="/rankings/tournaments/SUPER">SSF4</a></li>
                             <li><a href="/rankings/tournaments/VANILLA">SF4</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/rankings/tournaments">View All Tournaments</a></li>
                         </ul>
                     </li>
+                    <li><a href="/gear/index">CONTROLLERS</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUBMIT <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                            <a href="/submit/index">Submit new tournament</a></li>
+                                <a href="/submit/index">Submit new tournament</a></li>
                             <li>
-                            <a href="/submit/list">List submitted tournaments</a></li>
+                                <a href="/submit/list">List submitted tournaments</a></li>
+                            <li><a href="/api/index">REST/JSON API</a></li>
                             <li class="divider"></li>
                             <li><a href="http://forums.shoryuken.com/discussion/187561/sf4-ae-world-ranking-site-has-been-beta-released">Join Rank Discussion</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="/about/index">FAQ</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">CAPCOM PRO TOUR <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/rankings/cpt">Standings 2015</a></li>
-                            <li><a href="/rankings/cptStats">Tournaments and countries 2015</a></li>
-                            <li><a href="/rankings/cptCharacterStats">Characters used 2015</a></li>
+                            <li><a href="/rankings/cpt">Standings</a></li>
+                            <li><a href="/rankings/cptStats">Tournaments and countries</a></li>
+                            <li><a href="/rankings/cptCharacterStats">Players and Characters</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/rankings/cpt_2015">Standings 2015</a></li>
+                            <li><a href="/rankings/cptStats_2015">Tournaments and countries 2015</a></li>
+                            <li><a href="/rankings/cptCharacterStats_2015">Characters used 2015</a></li>
                         </ul>
                     </li>
-                    <li><a href="/about/sf5">SF5 ORDER GUIDE</a></li>
+                    <li><a href="/about/index">FAQ</a></li>
 
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/admin/index">[Actions]</a></li>
-                                <li><a href="/tournament/index">[Tournaments]</a></li>
-                                <li><a href="/player/index">[Players]</a></li>
-                                <li><a href="/result/index">[Results]</a></li>
-                                <li><a href="/team/index">[Teams]</a></li>
-                                <li><a href="/user/index">[User]</a></li>
-                                <li><a href="/configuration/index">[Configuration]</a></li>
-                                <li><a href="/auth/signOut">[Sign out init]</a></li>
-                            </ul>
-                        </li>
-                    
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

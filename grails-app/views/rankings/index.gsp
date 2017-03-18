@@ -35,8 +35,19 @@
             </thead>
             <tr>
                 <td class="amazon_row">
-                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
-                </td>
+                    <script type="text/javascript">
+                        amzn_assoc_placement = "adunit0";
+                        amzn_assoc_search_bar = "true";
+                        amzn_assoc_tracking_id = "fgwora-20";
+                        amzn_assoc_ad_mode = "manual";
+                        amzn_assoc_ad_type = "smart";
+                        amzn_assoc_marketplace = "amazon";
+                        amzn_assoc_region = "US";
+                        amzn_assoc_title = "Nintendo Switch";
+                        amzn_assoc_linkid = "e2723780834234c0270581a9505a991d";
+                        amzn_assoc_asins = "B01LTHP2ZK,B01MS6MO77,B01N1037CV,B01N9RAP7M";
+                    </script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>                </td>
             </tr>
         </table>
     </div>
@@ -98,7 +109,20 @@
 
 <div class="row">
     <div class="col-md-12">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+        <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_search_bar = "false";
+            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_title = "Shop Related Products";
+            amzn_assoc_default_search_phrase = "nintendo switch";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "919899be79cdf14ca1b81c0b22f6c130";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
 </div>
 
