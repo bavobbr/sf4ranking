@@ -329,10 +329,13 @@
 
 
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
+            <div class="alert alert-info">
+
             <g:link controller="admin" action="selectPlayerVideos"
                     params="['id': player.id]">[Update videos as admin]</g:link>
             <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
             <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
+            </div>
         </g:if>
 
         <div class="row" align="center">

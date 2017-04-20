@@ -170,18 +170,6 @@ class QueryService
         return last
     }
 
-    List<Tournament> getQualifyingTournaments() {
-        def premiers = Tournament.findAllByCptTournament(CptTournament.PREMIER)
-        def premiersScoreLess = Tournament.findAllByCptTournament(CptTournament.PREMIER_SCORELESS)
-        def regionalFinals = Tournament.findAllByCptTournament(CptTournament.REGIONAL_FINAL)
-        def evos = Tournament.findAllByCptTournament(CptTournament.EVO)
-        return premiers+premiersScoreLess+regionalFinals+evos
-    }
-
-    List<Player> getQualifiedSpotWinners()
-    {
-        return getQualifyingTournaments().collectMany { it.results.findAll { it.place == 1 }.player }
-    }
 
     List<Tournament> upcomingCptTournaments() {
         return Tournament.where {

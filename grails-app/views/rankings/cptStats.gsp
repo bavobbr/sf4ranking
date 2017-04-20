@@ -2,10 +2,25 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Capcom Pro Tour 2016 Stats</title>
+  <title>Capcom Pro Tour 2017 Stats</title>
 </head>
 
 <body>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Work in progress</h3>
+            </div>
+
+            <div class="panel-body">
+                This page is being updated with 2017 ruleset! Release soon
+            </div>
+        </div>
+    </div>
+</div>
+
 <g:if test="${coming}">
 <h3 class="tournament"><small>${coming.size()} Tournaments Upcoming</small></h3>
 <div class="table-responsive">

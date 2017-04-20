@@ -38,7 +38,13 @@ class RankingsController
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
-        [players: players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players]
+
+        def cstats = CharacterStats.findAllByGame(Version.SF5)
+        log.info "returning ${cstats.size()} char stats"
+        cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
+        cstats = cstats.sort {a, b -> b.decayedScoreAccumulated <=> a.decayedScoreAccumulated}.take(10)
+
+        [players: players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()
@@ -75,16 +81,14 @@ class RankingsController
         def lastTournament = queryService.lastTournament(pgame)
         println "Last tournament : $lastTournament"
         if (lastTournament) {
-            def now = lastTournament?.date?.toCalendar()
-            def yearAgo = GregorianCalendar.instance
-            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 2)
+            def yearAgo = lastTournament?.date?.minus(365+182)
             if (players && !players.isEmpty()) {
                 snapshot = players?.first()?.snapshot(pgame)
                 players.each {
                     def numResults = queryService.countPlayerResults(it, pgame)
-                    def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo.time)
+                    def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo)
                     it.metaClass.numResults << { Math.min(numResults,12) }
-                    it.metaClass.numResultsYear << { Math.min(numResultsYear,12) }
+                    it.metaClass.numResultsYear << { numResultsYear }
                 }
             }
         }
@@ -98,6 +102,10 @@ class RankingsController
     def cptStats_2015() {}
     def cptCharacterStats_2015() {}
 
+    def cpt_2016() {}
+    def cptStats_2016() {}
+    def cptCharacterStats_2016() {}
+
     @Cacheable('cpt')
     def cpt()
     {
@@ -107,8 +115,6 @@ class RankingsController
         def config = Configuration.first()
         def lastUpdateMessage = config.lastUpdateMessage
         def lastUpdate = config.lastCptSnapshot
-        def extraspots = rankingService.countDuplicateQualifiers()
-        def totalPointSpots = 8+extraspots
 
         def players = queryService.findCptPlayers()
         def playercount = players.size()
@@ -119,9 +125,6 @@ class RankingsController
         def playersLA = queryService.findCptPlayers(Region.LA)
         def playersAO = queryService.findCptPlayers(Region.AO)
         def playersEU = queryService.findCptPlayers(Region.EU)
-
-        def directSpots = players.count { it.cptGlobal().qualified }
-        def openSpots = directSpots + totalPointSpots
 
         Map<Region, List<Player>> regionalPlayers = [:]
         regionalPlayers[Region.AO] = playersAO.take(30)
@@ -135,9 +138,6 @@ class RankingsController
          game: pgame,
          lastUpdate: lastUpdate,
          regionalPlayers: regionalPlayers,
-         openSpots: openSpots,
-         extraSpots: extraspots,
-         directSpots: directSpots
         ]
     }
 
@@ -532,24 +532,12 @@ class RankingsController
         StringBuffer result = new StringBuffer("Qualifications: <ul>")
         if (global?.qualified) {
             result.append("<li>Qualified directly in global board")
-            def directs = p.results.findAll { it.place == 1}.findAll { it.tournament.cptTournament in CptTournament.premiers() }
-            directs.each {
-                result.append("<br/>via ${it.tournament.name}")
-            }
-            if (directs.size() > 1) {
-                result.append("<br/>opened ${directs.size() - 1} extra spots")
-            }
         }
         if (global?.qualifiedByScore) result.append("<li>Qualified by score in global board: ${global.score} pts / rank: ${global.rank}")
-        if (la?.qualified) result.append("<li>Qualified for regionals in LA region")
-        if (la?.qualifiedByScore) result.append("<li>Qualified by score in LA board: ${la.score} pts / rank: ${la.rank}")
-        if (na?.qualified) result.append("<li>Qualified for regionals in NA region")
-        if (na?.qualifiedByScore) result.append("<li>Qualified by score in NA board: ${na.score} pts / rank: ${na.rank}")
-        if (ao?.qualified) result.append("<li>Qualified for regionals in AO region")
-        if (ao?.qualifiedByScore) result.append("<li>Qualified by score in AO board: ${ao.score} pts / rank: ${ao.rank}")
-        if (eu?.qualified) result.append("<li>Qualified for regionals in EU region")
-        if (eu?.qualifiedByScore) result.append("<li>Qualified by score in EU board: ${eu.score} pts / rank: ${eu.rank}")
-        if (global && global?.rank <= 24 && !global.qualified) result.append("<li>Currently in global top24 so likely to qualify by points")
+        if (la?.qualifiedByScore) result.append("<li>Qualified for regionals in LA region")
+        if (na?.qualifiedByScore) result.append("<li>Qualified for regionals in NA region")
+        if (ao?.qualifiedByScore) result.append("<li>Qualified for regionals in AO region")
+        if (eu?.qualifiedByScore) result.append("<li>Qualified for regionals in EU region")
         result.append("</ul>")
         result.append("<ul>")
         if (global?.score > 0) result.append("<li>Global rank is ${global.rank} and score is ${global.score} pts")
@@ -564,25 +552,20 @@ class RankingsController
     public static String cptLabel(Player p, Region region) {
         def labels = []
         if (p.cptGlobal().qualified) {
-            labels << "direct"
+            labels << "Direct"
         }
         if (p.cptGlobal().qualifiedByScore) {
-            labels << "global pts"
+            labels << "Global"
         }
         if (region != Region.GLOBAL) {
-            if (p.findCptRanking(region).qualified) {
-                labels << "RF"
-            }
+            println "Looking up cpt rank of $p in region $region"
             if (p.findCptRanking(region).qualifiedByScore) {
-                labels << "regional pts"
+                labels << "Regional"
             }
         }
         else {
-            if (Region.locals().any { p.findCptRanking(it)?.qualified} ) {
-                labels << "RF"
-            }
-            if (Region.locals().any { p.findCptRanking(it)?.qualifiedByScore}) {
-                labels << "regional pts"
+            if (Region.locals().any { p.findCptRanking(it)?.qualifiedByScore} ) {
+                labels << "Regional"
             }
         }
         return labels.join(" | ")

@@ -9,7 +9,7 @@ def sf5tournaments = new JsonSlurper().parse("http://rank.shoryuken.com/api/tour
 def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect { it.name() }
 def months = []
 
-12.times { int idx ->
+13.times { int idx ->
     def refdate = new Date(116, idx+1, 1)
     def enddate = refdate.plus(90)
     def inWindow = sf5tournaments.findAll {

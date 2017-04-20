@@ -67,27 +67,25 @@ class RankingService {
             // AUTO weighting starts from premier 5
             def lastTournament = tournaments.sort { Tournament t -> t.date }.last()
             println "Using last tournament $lastTournament on ${lastTournament.date} as reference"
-            def now = lastTournament.date.toCalendar()
-            def yearAgo = lastTournament.date.toCalendar()
+            def yearAgo = lastTournament.date.minus(365+182)
 
             tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
-            yearAgo.set(GregorianCalendar.YEAR, now.get(GregorianCalendar.YEAR) - 2)
-            println "year ago is $yearAgo.time"
+            println "year ago is $yearAgo"
             tournaments.findAll { it.weightingType == WeightingType.AUTO }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
-            tournaments.findAll { it.date.before(yearAgo.time) }.each { Tournament t ->
+            tournaments.findAll { it.date.before(yearAgo) }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
             tournaments.removeAll {
-                !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo.time)
+                !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo)
             }
             int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 5, 1)
             end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, 1)
             end = applyType(tournaments, TournamentType.PREMIER_12, end, 12, 1)
             end = applyType(tournaments, TournamentType.INTERNATIONAL, end, 31, 1)
             end = applyType(tournaments, TournamentType.SERIES, end, 50, 1)
-            end = applyType(tournaments, TournamentType.CIRCUIT, end, 400, 1)
+            end = applyType(tournaments, TournamentType.CIRCUIT, end, 500, 1)
             tournaments*.save(failOnError: true)
         }
         return tournaments.size()
@@ -107,11 +105,11 @@ class RankingService {
                     it.tournament.game == game && it.tournament.finished
                 }
                 log.info("Found ${results.size()} results")
-                def playerScore = getScore(results) { Result r ->
+                def playerScore = getScore(results, 18) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                 }
                 p.applyScore(game, playerScore)
-                def actualScore = getScore(results) { Result r ->
+                def actualScore = getScore(results, 12) { Result r ->
                     r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
                 }
                 p.applyScore(game, actualScore)
@@ -186,13 +184,13 @@ class RankingService {
         return players.size()
     }
 
-    private Integer getScore(List<Result> results, Closure scoringRule) {
+    private Integer getScore(List<Result> results, Integer maxResults, Closure scoringRule) {
         def scores = results.collect {
             if (it.tournament.ranked && it.tournament.finished) {
                 scoringRule(it)
             } else 0
         }.sort { a, b -> b <=> a }
-        def bestof = scores.take(12)
+        def bestof = scores.take(maxResults)
         (bestof.sum() as Integer) ?: 0
     }
 
@@ -393,8 +391,8 @@ class RankingService {
     @Transactional
     public void updateProTour(Version game) {
         if (game == Version.SF5) {
-            def extraspots = countDuplicateQualifiers()
-            def totalPointSpots = 8 + extraspots
+            def extraspots = 0
+            def totalPointSpots = 30 + extraspots
             def players = queryService.findCptPlayers(Region.GLOBAL)
             log.info "returning ${players.size()} players for CPT game $game"
             def playersNA = queryService.findCptPlayers(Region.NA)
@@ -403,15 +401,15 @@ class RankingService {
             def playersEU = queryService.findCptPlayers(Region.EU)
             applyDirectQualifiers()
             applyQualifiedByScore(players, totalPointSpots)
-            applyTwoRegionalInvites(Region.NA, playersNA)
-            applyTwoRegionalInvites(Region.LA, playersLA)
-            applyTwoRegionalInvites(Region.AO, playersAO)
-            applyTwoRegionalInvites(Region.EU, playersEU)
+            applyRegionalInvites(Region.NA, playersNA)
+            applyRegionalInvites(Region.LA, playersLA)
+            applyRegionalInvites(Region.AO, playersAO)
+            applyRegionalInvites(Region.EU, playersEU)
         }
     }
 
     private void applyDirectQualifiers() {
-        def player = Player.findByName("Nuckledu")
+        def player = Player.findByName("NuckleDu")
         player.findOrCreateCptRanking(Region.GLOBAL).qualified = true
     }
 
@@ -431,34 +429,12 @@ class RankingService {
     private void applyRegionalInvites(Region region, List<Player> regionalPlayers) {
         regionalPlayers.each {
             if (it.findCptRanking(region)) {
-                it.findCptRanking(region).qualifiedByScore = false // reset
+                it.findCptRanking(region).qualified = false // reset
             }
         }
-        def unqualifiedPlayers = regionalPlayers.findAll { p ->
-            return !p.cptGlobal()?.qualified && !p.cptGlobal()?.qualifiedByScore
-        }
-        unqualifiedPlayers.take(8).each {
+        regionalPlayers.findAll { it.countryCode.region == region}.sort { it.cptScore(region) }.reverse().take(7).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
         }
-    }
-
-    public Integer countDuplicateQualifiers() {
-        def allWinners = queryService.getQualifiedSpotWinners().collect { it.name }
-        def dups = allWinners.countBy { it }
-        return dups.values().sum() - dups.keySet().size()
-    }
-
-    private List<Player> findAllRegionalQualifyingByScore(List<Player> globalQualifyingByScore) {
-        def regions = [Region.AO, Region.EU, Region.LA, Region.NA]
-        def qualifiedRegionally = []
-        regions.each { region ->
-            def regionalPlayers = queryService.findCptPlayers(region)
-            def unqualifiedPlayersRegional = regionalPlayers.findAll { p ->
-                return !globalQualifyingByScore.any { it.name == p.name } && !p.cptGlobal()?.qualified
-            }
-            qualifiedRegionally.addAll(unqualifiedPlayersRegional.take(2))
-        }
-        return qualifiedRegionally
     }
 
 }

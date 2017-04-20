@@ -81,11 +81,17 @@ class AdminController
     def resetProTour() {
         Tournament.list().each {
             it.cptTournament = CptTournament.NONE
-            it.save()
+            it.save(failOnError: true, flush: true)
         }
-        Player.list().each {
-            it.cptRankings = []
-            it.save()
+        Player.list().each { p ->
+            println "dropping rankings of player $p.name"
+            p.cptPrize = 0
+            p.cptTournaments = 0
+            p.save(failOnError: true)
+        }
+        CptRanking.list().each {
+            println "dropping $it"
+            it.delete()
         }
         flash.message = "Removed CPT data"
         render view: "index"

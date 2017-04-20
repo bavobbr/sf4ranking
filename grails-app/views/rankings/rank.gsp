@@ -38,15 +38,14 @@
 </g:if>
 <div><p>
     <g:if test="${alltime}">
-        This ranking is based on all tournaments results from ${game.name()}. The best 12 results of these are summed to form the lifetime score.
-        The importance of tournaments is sorted by weight, not class.
-        If you would like to see how a player did the last two years of ${game.value} you can find a ranking on the <g:link
+        This ranking is based on all tournaments results from ${game.name()}. The best 18 results of these are summed to form the lifetime score.
+        The importance of tournaments is sorted by weight only, based on player skill attending.
+        If you would like to see how a player did the last 18 months of ${game.value} you can find a ranking on the <g:link
             controller="rankings" action="rank" params="[alltime: false, id: game.name()]">Actual Ranking</g:link> page.
     </g:if>
     <g:else>
-        This ranking is based on tournaments results between now and one year ago using the official tournament scoring detailed on <g:link
-            controller="about">FAQ</g:link>. The list is updated every week. If you would like to see how a player did
-over the lifespan of ${game.value}. The tournaments are judged by class, in a sliding window of the last two years (following Tennis rules). You can find an unlimited ranking based on pure tournament weight on the <g:link
+        This ranking is based on tournaments results of the latest 18 months using the official tournament scoring detailed on <g:link
+            controller="about">FAQ</g:link>. The list is updated every week. The tournaments are judged by class, in a sliding window of the last 18 months. You can find an unlimited ranking based on pure tournament weight on the <g:link
             controller="rankings" action="rank"
             params="[alltime: true, id: game.name()]">All-time Ranking</g:link> page.
     </g:else>
@@ -64,16 +63,11 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
             <th>Team</th>
             <th>Character</th>
             <th>Current Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                 title="The actual current score is calculated over a 2-year window. This reflects how well a player has been doing over the last 2 years. His best 12 scores are used for the total.">(?)</a>
-            </th>
-            <th>Actual Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
-                                      title="The amount of best 12 results in tournaments over last 2 years adding to the actual score">(?)</a>
-            </th>
-            <th>Lifetime Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="The lifetime score is the sum of best 12 tournaments in this game without decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
+                                 title="The actual current score is calculated over an 18 month window. This reflects how well a player has been doing over the last 2 years. His best 12 scores are used for the total.">(?)</a>
             </th>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
-                                     title="The total amount of tournaments contributing to lifetime best of score">(?)</a></th>
+                                      title="The amount of results in tournaments over last 18 months adding to the actual score, capped at 12">(?)</a>
+            </th>
             <th>Country</th>
             <g:if test="${snapshot != null && !alltime}">
                 <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top"
@@ -84,6 +78,12 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
                              title="Rank difference between alltime and actual ranking. This shows if a player is trending upwards or downwards">(?)</a>
                 </th>
             </g:elseif>
+            <th>Lifetime Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="The lifetime score is the sum of best 18 tournaments in this game without decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
+            </th>
+            <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
+                               title="The total amount of tournaments eligible for lifetime best of score (of which only 18 count)">(?)</a></th>
+
         </tr>
         </thead>
 
@@ -124,12 +124,8 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
                         </g:link>
                     </g:if>
                 </td>
-                <td>${p.numResultsYear()}
-
-                <td>${p.totalScore(game)}</td>
-
                 <td>${p.numResults()}
-                </td>
+
                 <td>
                     <g:if test="${p.countryCode}">
                         <g:link controller="rankings" action="rank"
@@ -180,6 +176,10 @@ over the lifespan of ${game.value}. The tournaments are judged by class, in a sl
                         </td>
                     </g:else>
                 </g:elseif>
+                <td>${p.totalScore(game)}</td>
+
+                <td>${p.numResultsYear()}
+                </td>
                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                     <td>
                         <g:link controller="player" action="edit" params="[id: p.id]" target="_blank">[edit]</g:link><g:link controller="playerRanking" action="edit" params="[id: p.findRanking(game).id]"

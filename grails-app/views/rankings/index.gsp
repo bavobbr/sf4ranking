@@ -24,6 +24,52 @@
     </div>
 
     <div class="col-md-6">
+        <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
+        <h4>SF5 Top 10 characters</h4>
+
+        <div>
+            <table class="table table-striped table-hover table-condensed table-responsive">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Total Score</th>
+                    <th>Top player</th>
+                    <th>Character Wins</th>
+                </tr>
+                </thead>
+                <g:each in="${topsf5chars}" var="c" status="idx">
+                    <tr class="top10table">
+                        <td>${idx + 1}</td>
+                        <td><g:link controller="stats" action="character"
+                                    params="[charname: c.characterType.name(), game: Version.SF5.name()]">
+                            <g:img dir="images/chars/${Version.generalize(Version.SF5).name().toLowerCase()}" file="${c.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${c.characterType.value}"
+                                   class="charimg"/>
+                        </g:link>
+                        </td>
+                        <td>
+                            ${c.scoreAccumulated}
+                        </td>
+                        <td>
+                            ${c.player.name}
+                        </td>
+                        <td>
+                            ${c.top1finishes}
+                        </td>
+                    </tr>
+                </g:each>
+            </table></div>
+        View <g:link action="index" controller="stats" params="['id': Version.SF5.name()]"
+                     class="toplink"> all character rankings</g:link>
+    </div>
+
+</div>
+
+&NonBreakingSpace;
+<div class="row">
+
+    <div class="col-md-6">
         <g:img dir="images/banners" file="banner_general.png" class="img-responsive"/>
         <h4>Top stuff</h4>
 
@@ -47,18 +93,9 @@
                         amzn_assoc_linkid = "e2723780834234c0270581a9505a991d";
                         amzn_assoc_asins = "B01LTHP2ZK,B01MS6MO77,B01N1037CV,B01N9RAP7M";
                     </script>
-                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>                </td>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script></td>
             </tr>
         </table>
-    </div>
-
-</div>
-
-&NonBreakingSpace;
-<div class="row">
-    <div class="col-md-6">
-        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
     </div>
 
     <div class="col-md-6">
@@ -75,9 +112,10 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
     </div>
+
 </div>
 
 <div class="row">
@@ -106,6 +144,16 @@
         <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
     </div>
 </div>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+    </div>
+
+</div>
+
 
 <div class="row">
     <div class="col-md-12">
@@ -154,7 +202,8 @@
             <div class="panel-body">
                 <ul>
                     <g:each in="${lastPlayers}" var="p">
-                        <li><g:link controller="rankings" action="player" params="[id: p.id]">${p.name}</g:link></li>
+                        <li><g:link controller="rankings" action="player"
+                                    params="[id: p.id]">${p.name}</g:link></li>
                     </g:each>
             </div>
         </div>

@@ -106,7 +106,7 @@ class CleanupService
         log.info "Putting all non league/grandslams on AUTO"
         def tournaments = Tournament.list()
         def normalTypes = TournamentType.values() - TournamentType.GRAND_SLAM - TournamentType.CHAMPIONSHIP -
-                          TournamentType.TOURNAMENT_CHAMPIONS - TournamentType.CIRCUIT
+                          TournamentType.TOURNAMENT_CHAMPIONS - TournamentType.CIRCUIT - TournamentType.ROUND_ROBIN_GROUP_STAGE
         tournaments.each {
             if (it.tournamentType in normalTypes)
             {
@@ -158,19 +158,15 @@ class CleanupService
         {
             double factor = count / 100
             log.info("Checking with alltime ranking")
-            1.upto(9) {Integer skillLevel ->
-                def lowerBound = Math.log10(skillLevel)
-                def upperBound = Math.log10(skillLevel + 1)
+            1.upto(99) {Integer skillLevel ->
+                def lowerBound = Math.log(skillLevel) / Math.log(100)
+                def upperBound = Math.log(skillLevel+1) / Math.log(100)
                 log.info "Level $skillLevel has lowerBound $lowerBound and upperBound $upperBound"
                 def intervalStart = lowerBound * factor * 100 as Integer
                 def intervalEnd = upperBound * factor * 100 as Integer
                 log.info "This is from range $intervalStart to $intervalEnd applied from $count rankings using factor $factor"
                 byTotal[intervalStart..intervalEnd - 1].each {
                     def adjustedSkill = skillLevel
-                    if (!(it.player.countryCode in [CountryCode.US, CountryCode.JP])) {
-                        adjustedSkill++ // auto-compensate for lesser coverage
-                        log.info "alltime - Adding 1 due to country $it.player.countryCode"
-                    }
                     if (it.skill < adjustedSkill)
                     {
                         log.info "alltime - Promoting player ${it.player} with ${it.skill} to ${adjustedSkill}"
@@ -188,18 +184,14 @@ class CleanupService
             }
             log.info("Checking with actual ranking")
             1.upto(99) {Integer skillLevel ->
-                def lowerBound = Math.log10(skillLevel)
-                def upperBound = Math.log10(skillLevel + 1)
+                def lowerBound = Math.log(skillLevel) / Math.log(100)
+                def upperBound = Math.log(skillLevel+1) / Math.log(100)
                 log.info "Level $skillLevel has lowerBound $lowerBound and upperBound $upperBound"
                 def intervalStart = lowerBound * factor * 100 as Integer
                 def intervalEnd = upperBound * factor * 100 as Integer
                 log.info "This is from range $intervalStart to $intervalEnd applied from $count rankings using factor $factor"
                 byActual[intervalStart..intervalEnd - 1].each {
                     def adjustedSkill = skillLevel
-                    if (!(it.player.countryCode in [CountryCode.US, CountryCode.JP])) {
-                        adjustedSkill++ // auto-compensate for lesser coverage
-                        log.info "actual - adding 1 due to country $it.player.countryCode"
-                    }
                     if (it.skill < adjustedSkill)
                     {
                         log.info "actual - Promoting player for actual score ${it.player} with ${it.skill} to ${adjustedSkill}"

@@ -18,6 +18,8 @@ package be.bbr.sf4ranking;/*
 import java.util.HashMap;
 import java.util.Map;
 
+import static be.bbr.sf4ranking.Region.EU;
+
 
 /**
  * <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a>
@@ -60,103 +62,103 @@ public enum CountryCode
 {
     // @formatter:off
     /** <a href="http://en.wikipedia.org/wiki/Andorra">Andorra</a> */
-    AD("Andorra", "AND", 16),
+    AD("Andorra", "AND", 16, EU),
 
     /** <a href="http://en.wikipedia.org/wiki/United_Arab_Emirates">United Arab Emirates</a> */
-    AE("United Arab Emirates", "ARE", 784),
+    AE("United Arab Emirates", "ARE", 784, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Afghanistan">Afghanistan</a> */
-    AF("Afghanistan", "AFG", 4),
+    AF("Afghanistan", "AFG", 4, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Antigua_and_Barbuda">Antigua and Barbuda</a> */
-    AG("Antigua and Barbuda", "ATG", 28),
+    AG("Antigua and Barbuda", "ATG", 28, Region.NA),
 
     /** <a href="http://en.wikipedia.org/wiki/Anguilla">Anguilla</a> */
-    AI("Anguilla", "AIA", 660),
+    AI("Anguilla", "AIA", 660, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Albania">Albania</a> */
-    AL("Albania", "ALB", 8),
+    AL("Albania", "ALB", 8, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Armenia">Armenia</a> */
-    AM("Armenia", "ARM", 51),
+    AM("Armenia", "ARM", 51, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Netherlands_Antilles">Netherlands Antilles</a> */
-    AN("Netherlands Antilles", "ANT", 530),
+    AN("Netherlands Antilles", "ANT", 530, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Angola">Angola</a> */
-    AO("Angola", "AGO", 24),
+    AO("Angola", "AGO", 24, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Antarctica">Antarctica</a> */
-    AQ("Antarctica", "ATA", 10),
+    AQ("Antarctica", "ATA", 10, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Argentina">Argentina</a> */
-    AR("Argentina", "ARG", 32),
+    AR("Argentina", "ARG", 32, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/American_Samoa">American Samoa</a> */
-    AS("American Samoa", "ASM", 16),
+    AS("American Samoa", "ASM", 16, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Austria">Austria</a> */
-    AT("Austria", "AUT", 40),
+    AT("Austria", "AUT", 40, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Australia">Australia</a> */
-    AU("Australia", "AUS", 36),
+    AU("Australia", "AUS", 36, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Aruba">Aruba</a> */
-    AW("Aruba", "ABW", 533),
+    AW("Aruba", "ABW", 533, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/%C3%85land_Islands">&Aring;land Islands</a> */
-    AX("\u212Bland Islands", "ALA", 248),
+    AX("Aland Islands", "ALA", 248, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Azerbaijan">Azerbaijan</a> */
-    AZ("Azerbaijan", "AZE", 31),
+    AZ("Azerbaijan", "AZE", 31, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Bosnia_and_Herzegovina">Bosnia and Herzegovina</a> */
-    BA("Bosnia and Herzegovina", "BIH", 70),
+    BA("Bosnia and Herzegovina", "BIH", 70, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Barbados">Barbados</a> */
-    BB("Barbados", "BRB", 52),
+    BB("Barbados", "BRB", 52, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Bangladesh">Bangladesh</a> */
-    BD("Bangladesh", "BGD", 50),
+    BD("Bangladesh", "BGD", 50, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Belgium">Belgium</a> */
-    BE("Belgium", "BEL", 56),
+    BE("Belgium", "BEL", 56, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Burkina_Faso">Burkina Faso</a> */
-    BF("Burkina Faso", "BFA", 854),
+    BF("Burkina Faso", "BFA", 854, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Bulgaria">Bulgaria</a> */
-    BG("Bulgaria", "BGR", 100),
+    BG("Bulgaria", "BGR", 100, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Bahrain">Bahrain</a> */
-    BH("Bahrain", "BHR", 48),
+    BH("Bahrain", "BHR", 48, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Burundi">Burundi</a> */
-    BI("Burundi", "BDI", 108),
+    BI("Burundi", "BDI", 108, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Benin">Benin</a> */
-    BJ("Benin", "BEN", 204),
+    BJ("Benin", "BEN", 204, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Saint_Barth%C3%A9lemy">Saint Barth&eacute;lemy</a> */
-    BL("Saint Barth\u00E9lemy", "BLM", 652),
+    BL("Saint Bartholemy", "BLM", 652, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Bermuda">Bermuda</a> */
-    BM("Bermuda", "BMU", 60),
+    BM("Bermuda", "BMU", 60, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Brunei">Brunei Darussalam</a> */
-    BN("Brunei Darussalam", "BRN", 96),
+    BN("Brunei Darussalam", "BRN", 96, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Bolivia">Plurinational State of Bolivia</a> */
-    BO("Plurinational State of Bolivia", "BOL", 68),
+    BO("Plurinational State of Bolivia", "BOL", 68, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Caribbean_Netherlands">Bonaire, Sint Eustatius and Saba</a> */
-    BQ("Bonaire, Sint Eustatius and Saba", "BES", 535),
+    BQ("Bonaire, Sint Eustatius and Saba", "BES", 535, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/Brazil">Brazil</a> */
-    BR("Brazil", "BRA", 76),
+    BR("Brazil", "BRA", 76, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/The_Bahamas">Bahamas</a> */
-    BS("Bahamas", "BHS", 44),
+    BS("Bahamas", "BHS", 44, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Bhutan">Bhutan</a> */
     BT("Bhutan", "BTN", 64),
@@ -174,7 +176,7 @@ public enum CountryCode
     BZ("Belize", "BLZ", 84),
 
     /** <a href="http://en.wikipedia.org/wiki/Canada">Canada</a> */
-    CA("Canada", "CAN", 124),
+    CA("Canada", "CAN", 124, Region.NA),
 
     /** <a href="http://en.wikipedia.org/wiki/Cocos_(Keeling)_Islands">Cocos (Keeling) Islands</a> */
     CC("Cocos Islands", "CCK", 166),
@@ -189,7 +191,7 @@ public enum CountryCode
     CG("Congo", "COG", 178),
 
     /** <a href="http://en.wikipedia.org/wiki/Switzerland">Switzerland</a> */
-    CH("Switzerland", "CHE", 756),
+    CH("Switzerland", "CHE", 756, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/C%C3%B4te_d%27Ivoire">C&ocirc;te d'Ivoire</a> */
     CI("C\u00F4te d'Ivoire", "CIV", 384),
@@ -198,22 +200,22 @@ public enum CountryCode
     CK("Cook Islands", "COK", 184),
 
     /** <a href="http://en.wikipedia.org/wiki/Chile">Chile</a> */
-    CL("Chile", "CHL", 152),
+    CL("Chile", "CHL", 152, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Cameroon">Cameroon</a> */
-    CM("Cameroon", "CMR", 120),
+    CM("Cameroon", "CMR", 120, Region.UNKNOWN),
 
     /** <a href="http://en.wikipedia.org/wiki/China">China</a> */
-    CN("China", "CHN", 156),
+    CN("China", "CHN", 156, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Colombia">Colombia</a> */
-    CO("Colombia", "COL", 170),
+    CO("Colombia", "COL", 170, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Costa_Rica">Costa Rica</a> */
-    CR("Costa Rica", "CRI", 188),
+    CR("Costa Rica", "CRI", 188, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Cuba">Cuba</a> */
-    CU("Cuba", "CUB", 192),
+    CU("Cuba", "CUB", 192, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Cape_Verde">Cape Verde</a> */
     CV("Cape Verde", "CPV", 132),
@@ -225,37 +227,37 @@ public enum CountryCode
     CX("Christmas Island", "CXR", 162),
 
     /** <a href="http://en.wikipedia.org/wiki/Cyprus">Cyprus</a> */
-    CY("Cyprus", "CYP", 196),
+    CY("Cyprus", "CYP", 196, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Czech_Republic">Czech Republic</a> */
-    CZ("Czech Republic", "CZE", 203),
+    CZ("Czech Republic", "CZE", 203, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Germany">Germany</a> */
-    DE("Germany", "DEU", 276),
+    DE("Germany", "DEU", 276, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Djibouti">Djibouti </a> */
     DJ("Djibouti", "DJI", 262),
 
     /** <a href="http://en.wikipedia.org/wiki/Denmark">Denmark</a> */
-    DK("Denmark", "DNK", 208),
+    DK("Denmark", "DNK", 208, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Dominica">Dominica</a> */
     DM("Dominica", "DMA", 212),
 
     /** <a href="http://en.wikipedia.org/wiki/Dominican_Republic">Dominican Republic</a> */
-    DO("Dominican Republic", "DOM", 214),
+    DO("Dominican Republic", "DOM", 214, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Algeria">Algeria</a> */
-    DZ("Algeria", "DZA", 12),
+    DZ("Algeria", "DZA", 12, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Ecuador">Ecuador</a> */
-    EC("Ecuador", "ECU", 218),
+    EC("Ecuador", "ECU", 218, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Estonia">Estonia</a> */
-    EE("Estonia", "EST", 233),
+    EE("Estonia", "EST", 233, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Egypt">Egypt</a> */
-    EG("Egypt", "EGY", 818),
+    EG("Egypt", "EGY", 818, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Western_Sahara">Western Sahara</a> */
     EH("Western Sahara", "ESH", 732),
@@ -264,13 +266,13 @@ public enum CountryCode
     ER("Eritrea", "ERI", 232),
 
     /** <a href="http://en.wikipedia.org/wiki/Spain">Spain</a> */
-    ES("Spain", "ESP", 724),
+    ES("Spain", "ESP", 724, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Ethiopia">Ethiopia</a> */
     ET("Ethiopia", "ETH", 231),
 
     /** <a href="http://en.wikipedia.org/wiki/Finland">Finland</a> */
-    FI("Finland", "FIN", 246),
+    FI("Finland", "FIN", 246, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Fiji">Fiji</a> */
     FJ("Fiji", "FJI", 242),
@@ -285,19 +287,19 @@ public enum CountryCode
     FO("Faroe Islands", "FRO", 234),
 
     /** <a href="http://en.wikipedia.org/wiki/France">France</a> */
-    FR("France", "FRA", 250),
+    FR("France", "FRA", 250, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Gabon">Gabon </a> */
     GA("Gabon", "GAB", 266),
 
     /** <a href="http://en.wikipedia.org/wiki/United_Kingdom">United Kingdom</a> */
-    GB("United Kingdom", "GBR", 826),
+    GB("United Kingdom", "GBR", 826, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Grenada">Grenada</a> */
     GD("Grenada", "GRD", 308),
 
     /** <a href="http://en.wikipedia.org/wiki/Georgia_(country)">Georgia</a> */
-    GE("Georgia", "GEO", 268),
+    GE("Georgia", "GEO", 268, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/French_Guiana">French Guiana</a> */
     GF("French Guiana", "GUF", 254),
@@ -327,7 +329,7 @@ public enum CountryCode
     GQ("Equatorial Guinea", "GNQ", 226),
 
     /** <a href="http://en.wikipedia.org/wiki/Greece">Greece</a> */
-    GR("Greece", "GRC", 300),
+    GR("Greece", "GRC", 300, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/South_Georgia_and_the_South_Sandwich_Islands">South Georgia and the South Sandwich Islands</a> */
     GS("South Georgia and the South Sandwich Islands", "SGS", 239),
@@ -345,7 +347,7 @@ public enum CountryCode
     GY("Guyana", "GUY", 328),
 
     /** <a href="http://en.wikipedia.org/wiki/Hong_Kong">Hong Kong</a> */
-    HK("Hong Kong", "HKG", 344),
+    HK("Hong Kong", "HKG", 344, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Heard_Island_and_McDonald_Islands">Heard Island and McDonald Islands</a> */
     HM("Heard Island and McDonald Islands", "HMD", 334),
@@ -354,55 +356,55 @@ public enum CountryCode
     HN("Honduras", "HND", 340),
 
     /** <a href="http://en.wikipedia.org/wiki/Croatia">Croatia</a> */
-    HR("Croatia", "HRV", 191),
+    HR("Croatia", "HRV", 191, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Haiti">Haiti</a> */
     HT("Haiti", "HTI", 332),
 
     /** <a href="http://en.wikipedia.org/wiki/Hungary">Hungary</a> */
-    HU("Hungary", "HUN", 348),
+    HU("Hungary", "HUN", 348, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Indonesia">Indonesia</a> */
-    ID("Indonesia", "IDN", 360),
+    ID("Indonesia", "IDN", 360, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Republic_of_Ireland">Ireland</a> */
-    IE("Ireland", "IRL", 372),
+    IE("Ireland", "IRL", 372, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Israel">Israel</a> */
-    IL("Israel", "ISR", 376),
+    IL("Israel", "ISR", 376, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Isle_of_Man">Isle of Man</a> */
     IM("Isle of Man", "IMN", 833),
 
     /** <a href="http://en.wikipedia.org/wiki/India">India</a> */
-    IN("India", "IND", 356),
+    IN("India", "IND", 356, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/British_Indian_Ocean_Territory">British Indian Ocean Territory</a> */
     IO("British Indian Ocean Territory", "IOT", 86),
 
     /** <a href="http://en.wikipedia.org/wiki/Iraq">Iraq</a> */
-    IQ("Iraq", "IRQ", 368),
+    IQ("Iraq", "IRQ", 368, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Iran">Islamic Republic of Iran</a> */
-    IR("Islamic Republic of Iran", "IRN", 364),
+    IR("Islamic Republic of Iran", "IRN", 364, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Iceland">Iceland</a> */
-    IS("Iceland", "ISL", 352),
+    IS("Iceland", "ISL", 352, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Italy">Italy</a> */
-    IT("Italy", "ITA", 380),
+    IT("Italy", "ITA", 380, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Jersey">Jersey</a> */
     JE("Jersey", "JEY", 832),
 
     /** <a href="http://en.wikipedia.org/wiki/Jamaica">Jamaica</a> */
-    JM("Jamaica", "JAM", 388),
+    JM("Jamaica", "JAM", 388, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Jordan">Jordan</a> */
     JO("Jordan", "JOR", 400),
 
     /** <a href="http://en.wikipedia.org/wiki/Japan">Japan</a> */
-    JP("Japan", "JPN", 392),
+    JP("Japan", "JPN", 392, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Kenya">Kenya</a> */
     KE("Kenya", "KEN", 404),
@@ -411,7 +413,7 @@ public enum CountryCode
     KG("Kyrgyzstan", "KGZ", 417),
 
     /** <a href="http://en.wikipedia.org/wiki/Cambodia">Cambodia</a> */
-    KH("Cambodia", "KHM", 116),
+    KH("Cambodia", "KHM", 116, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Kiribati">Kiribati</a> */
     KI("Kiribati", "KIR", 296),
@@ -423,13 +425,13 @@ public enum CountryCode
     KN("Saint Kitts and Nevis", "KNA", 659),
 
     /** <a href="http://en.wikipedia.org/wiki/North_Korea">Democratic People's Republic of Korea</a> */
-    KP("Democratic People's Republic of Korea", "PRK", 408),
+    KP("Democratic People's Republic of Korea", "PRK", 408, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/South_Korea">Republic of Korea</a> */
-    KR("Republic of Korea", "KOR", 410),
+    KR("Republic of Korea", "KOR", 410, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Kuwait">Kuwait</a> */
-    KW("Kuwait", "KWT", 414),
+    KW("Kuwait", "KWT", 414, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Cayman_Islands">Cayman Islands</a> */
     KY("Cayman Islands", "CYM", 136),
@@ -462,19 +464,19 @@ public enum CountryCode
     LT("Lithuania", "LTU", 440),
 
     /** <a href="http://en.wikipedia.org/wiki/Luxembourg">Luxembourg</a> */
-    LU("Luxembourg", "LUX", 442),
+    LU("Luxembourg", "LUX", 442, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Latvia">Latvia</a> */
-    LV("Latvia", "LVA", 428),
+    LV("Latvia", "LVA", 428, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Libya">Libya</a> */
     LY("Libya", "LBY", 434),
 
     /** <a href="http://en.wikipedia.org/wiki/Morocco">Morocco</a> */
-    MA("Morocco", "MAR", 504),
+    MA("Morocco", "MAR", 504, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Monaco">Monaco</a> */
-    MC("Monaco", "MCO", 492),
+    MC("Monaco", "MCO", 492, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Moldova">Republic of Moldova</a> */
     MD("Republic of Moldova", "MDA", 498),
@@ -519,7 +521,7 @@ public enum CountryCode
     MS("Montserrat", "MSR", 500),
 
     /** <a href="http://en.wikipedia.org/wiki/Malta">Malta</a> */
-    MT("Malta", "MLT", 470),
+    MT("Malta", "MLT", 470, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Mauritius">Mauritius</a> */
     MU("Mauritius", "MUS", 480),
@@ -531,10 +533,10 @@ public enum CountryCode
     MW("Malawi", "MWI", 454),
 
     /** <a href="http://en.wikipedia.org/wiki/Mexico">Mexico</a> */
-    MX("Mexico", "MEX", 484),
+    MX("Mexico", "MEX", 484, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Malaysia">Malaysia</a> */
-    MY("Malaysia", "MYS", 458),
+    MY("Malaysia", "MYS", 458, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Mozambique">Mozambique</a> */
     MZ("Mozambique", "MOZ", 508),
@@ -558,13 +560,13 @@ public enum CountryCode
     NI("Nicaragua", "NIC", 558),
 
     /** <a href="http://en.wikipedia.org/wiki/Netherlands">Netherlands</a> */
-    NL("Netherlands", "NLD", 528),
+    NL("Netherlands", "NLD", 528, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Norway">Norway</a> */
-    NO("Norway", "NOR", 578),
+    NO("Norway", "NOR", 578, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Nepal">Nepal</a> */
-    NP("Nepal", "NPL", 524),
+    NP("Nepal", "NPL", 524, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Nauru">Nauru</a> */
     NR("Nauru", "NRU", 520),
@@ -573,7 +575,7 @@ public enum CountryCode
     NU("Niue", "NIU", 570),
 
     /** <a href="http://en.wikipedia.org/wiki/New_Zealand">New Zealand</a> */
-    NZ("New Zealand", "NZL", 554),
+    NZ("New Zealand", "NZL", 554, Region.AO),
 
     /** <a href=http://en.wikipedia.org/wiki/Oman"">Oman</a> */
     OM("Oman", "OMN", 512),
@@ -582,7 +584,7 @@ public enum CountryCode
     PA("Panama", "PAN", 591),
 
     /** <a href="http://en.wikipedia.org/wiki/Peru">Peru</a> */
-    PE("Peru", "PER", 604),
+    PE("Peru", "PER", 604, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/French_Polynesia">French Polynesia</a> */
     PF("French Polynesia", "PYF", 258),
@@ -597,7 +599,7 @@ public enum CountryCode
     PK("Pakistan", "PAK", 586),
 
     /** <a href="http://en.wikipedia.org/wiki/Poland">Poland</a> */
-    PL("Poland", "POL", 616),
+    PL("Poland", "POL", 616, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Saint_Pierre_and_Miquelon">Saint Pierre and Miquelon</a> */
     PM("Saint Pierre and Miquelon", "SPM", 666),
@@ -606,40 +608,40 @@ public enum CountryCode
     PN("Pitcairn", "PCN", 612),
 
     /** <a href="http://en.wikipedia.org/wiki/Puerto_Rico">Puerto Rico</a> */
-    PR("Puerto Rico", "PRI", 630),
+    PR("Puerto Rico", "PRI", 630, Region.NA),
 
     /** <a href="http://en.wikipedia.org/wiki/Palestinian_territories">Occupied Palestinian Territory</a> */
     PS("Occupied Palestinian Territory", "PSE", 275),
 
     /** <a href="http://en.wikipedia.org/wiki/Portugal">Portugal</a> */
-    PT("Portugal", "PRT", 620),
+    PT("Portugal", "PRT", 620, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Palau">Palau</a> */
     PW("Palau", "PLW", 585),
 
     /** <a href="http://en.wikipedia.org/wiki/Paraguay">Paraguay</a> */
-    PY("Paraguay", "PRY", 600),
+    PY("Paraguay", "PRY", 600, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Qatar">Qatar</a> */
-    QA("Qatar", "QAT", 634),
+    QA("Qatar", "QAT", 634, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/R%C3%A9union">R&eacute;union</a> */
     RE("R\u00E9union", "REU", 638),
 
     /** <a href="http://en.wikipedia.org/wiki/Romania">Romania</a> */
-    RO("Romania", "ROU", 642),
+    RO("Romania", "ROU", 642, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Serbia">Serbia</a> */
-    RS("Serbia", "SRB", 688),
+    RS("Serbia", "SRB", 688, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Russia">Russian Federation</a> */
-    RU("Russian Federation", "RUS", 643),
+    RU("Russian Federation", "RUS", 643, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Rwanda">Rwanda</a> */
     RW("Rwanda", "RWA", 646),
 
     /** <a href="http://en.wikipedia.org/wiki/Saudi_Arabia">Saudi Arabia</a> */
-    SA("Saudi Arabia", "SAU", 682),
+    SA("Saudi Arabia", "SAU", 682, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Solomon_Islands">Solomon Islands</a> */
     SB("Solomon Islands", "SLB", 90),
@@ -651,22 +653,22 @@ public enum CountryCode
     SD("Sudan", "SDN", 729),
 
     /** <a href="http://en.wikipedia.org/wiki/Sweden">Sweden</a> */
-    SE("Sweden", "SWE", 752),
+    SE("Sweden", "SWE", 752, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Singapore">Singapore</a> */
-    SG("Singapore", "SGP", 702),
+    SG("Singapore", "SGP", 702, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Saint_Helena,_Ascension_and_Tristan_da_Cunha">Saint Helena, Ascension and Tristan da Cunha</a> */
     SH("Saint Helena, Ascension and Tristan da Cunha", "SHN", 654),
 
     /** <a href="http://en.wikipedia.org/wiki/Slovenia">Slovenia</a> */
-    SI("Slovenia", "SVN", 705),
+    SI("Slovenia", "SVN", 705, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Svalbard_and_Jan_Mayen">Svalbard and Jan Mayen</a> */
     SJ("Svalbard and Jan Mayen", "SJM", 744),
 
     /** <a href="http://en.wikipedia.org/wiki/Slovakia">Slovakia</a> */
-    SK("Slovakia", "SVK", 703),
+    SK("Slovakia", "SVK", 703, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Sierra_Leone">Sierra Leone</a> */
     SL("Sierra Leone", "SLE", 694),
@@ -714,7 +716,7 @@ public enum CountryCode
     TG("Togo", "TGO", 768),
 
     /** <a href="http://en.wikipedia.org/wiki/Thailand">Thailand</a> */
-    TH("Thailand", "THA", 764),
+    TH("Thailand", "THA", 764, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Tajikistan">Tajikistan</a> */
     TJ("Tajikistan", "TJK", 762),
@@ -735,7 +737,7 @@ public enum CountryCode
     TO("Tonga", "TON", 776),
 
     /** <a href="http://en.wikipedia.org/wiki/Turkey">Turkey</a> */
-    TR("Turkey", "TUR", 792),
+    TR("Turkey", "TUR", 792, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Trinidad_and_Tobago">Trinidad and Tobago</a> */
     TT("Trinidad and Tobago", "TTO", 780),
@@ -744,13 +746,13 @@ public enum CountryCode
     TV("Tuvalu", "TUV", 798),
 
     /** <a href="http://en.wikipedia.org/wiki/Taiwan">Taiwan, Province of China</a> */
-    TW("Taiwan", "TWN", 158),
+    TW("Taiwan", "TWN", 158, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Tanzania">United Republic of Tanzania</a> */
     TZ("United Republic of Tanzania", "TZA", 834),
 
     /** <a href="http://en.wikipedia.org/wiki/Ukraine">Ukraine</a> */
-    UA("Ukraine", "UKR", 804),
+    UA("Ukraine", "UKR", 804, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Uganda">Uganda</a> */
     UG("Uganda", "UGA", 800),
@@ -759,10 +761,10 @@ public enum CountryCode
     UM("United States Minor Outlying Islands", "UMI", 581),
 
     /** <a href="http://en.wikipedia.org/wiki/United_States">United States</a> */
-    US("United States", "USA", 840),
+    US("United States", "USA", 840, Region.NA),
 
     /** <a href="http://en.wikipedia.org/wiki/Uruguay">Uruguay</a> */
-    UY("Uruguay", "URY", 858),
+    UY("Uruguay", "URY", 858, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Uzbekistan">Uzbekistan</a> */
     UZ("Uzbekistan", "UZB", 860),
@@ -783,7 +785,7 @@ public enum CountryCode
     VI("Virgin Islands, U.S.", "VIR", 850),
 
     /** <a href="http://en.wikipedia.org/wiki/Vietnam">Viet Nam</a> */
-    VN("Viet Nam", "VNM", 704),
+    VN("Viet Nam", "VNM", 704, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Vanuatu">Vanuatu</a> */
     VU("Vanuatu", "VUT", 548),
@@ -831,6 +833,7 @@ public enum CountryCode
     private final String name;
     private final String alpha3;
     private final int numeric;
+    private Region region;
 
 
     private CountryCode(String name, String alpha3, int numeric)
@@ -838,6 +841,15 @@ public enum CountryCode
         this.name = name;
         this.alpha3 = alpha3;
         this.numeric = numeric;
+        this.region = Region.UNKNOWN;
+    }
+
+    private CountryCode(String name, String alpha3, int numeric, Region region)
+    {
+        this.name = name;
+        this.alpha3 = alpha3;
+        this.numeric = numeric;
+        this.region = region;
     }
 
 
@@ -878,6 +890,11 @@ public enum CountryCode
     public String getAlpha3()
     {
         return alpha3;
+    }
+
+    public Region getRegion()
+    {
+        return region;
     }
 
 

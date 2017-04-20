@@ -183,15 +183,23 @@ public enum CharacterType
     BANG("BANG", "Bang", Version.BBCP),
     BULLET("BULLET", "Bullet", Version.BBCP),
     CARL("CARL", "Carl", Version.BBCP),
+    CELICA("CCELICAARL", "Celica", Version.BBCP),
+    ES("ES", "Es", Version.BBCP),
+    HADES("HADES", "Hades", Version.BBCP),
     HAKUMEN("HAKU-MEN", "Hakumen", Version.BBCP),
     HAZAMA("HAZAMA", "Hazama", Version.BBCP),
+    HIBIKI("HIBIKI", "Hibiki", Version.BBCP),
     IZAYOI("IZAYOI", "Izayoi", Version.BBCP),
     JIN("JIN", "Jin", Version.BBCP),
     KAGURA("KAGURA", "Kagura", Version.BBCP),
     KOKONOE("KOKONOE", "Kokonoe", Version.BBCP),
+    KONOE("KONOE", "Kokonoe", Version.BBCP),
     LITCHI("LITCHI", "Litchi", Version.BBCP),
+    LAMBDA11("LAMBDA", "Lambda", Version.BBCP),
     MAKOTO_BBCP("MAKOTO", "Makoto", Version.BBCP),
+    MAI("MAI", "Mai", Version.BBCP),
     MU_12("MU-12", "Mu-12", Version.BBCP),
+    NAOTO("NAOTO", "Naoto", Version.BBCP),
     NOEL("NOEL", "Noel", Version.BBCP),
     NU_13("NU-13", "Nu-13", Version.BBCP),
     PLATINUM("PLATINUM", "Platinum", Version.BBCP),
@@ -199,6 +207,7 @@ public enum CharacterType
     RAGNA("RAGNA", "Ragna", Version.BBCP),
     RELIUS("RELIUS", "Relius", Version.BBCP),
     SHISHIGAMI("SHISHIGAMI", "Shishigami", Version.BBCP),
+    SUSANO("SUSANO", "Susano", Version.BBCP),
     TAGER("TAGER", "Tager", Version.BBCP),
     TAOKAKA("TAOKAKA", "Taokaka", Version.BBCP),
     TERUMI("TERUMI", "Terumi", Version.BBCP),
@@ -261,7 +270,8 @@ public enum CharacterType
     SF5_BALROG("BALROG", "Balrog", Version.SF5),
     SF5_URIEN("URIEN", "Urien", Version.SF5),
     SF5_JURI("JURI", "Juri", Version.SF5),
-    SF5_AKUMA("AKUMA", "Akuma", Version.SF5);
+    SF5_AKUMA("AKUMA", "Akuma", Version.SF5),
+    SF5_KOLIN("KOLIN", "Kolin", Version.SF5);
 
     private final String value;
     private final Version game;

@@ -2,11 +2,29 @@
 <html>
 <head>
   <meta name="layout" content="overviews"/>
-  <title>Capcom Pro Tour 2016 Player and Character Stats</title>
+  <title>Capcom Pro Tour 2017 Player and Character Stats</title>
 </head>
 
 <body>
-<h2>Player Statistics in Capcom Pro Tour 2016</h2>
+<h2>Player Statistics in Capcom Pro Tour 2017</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Work in progress</h3>
+            </div>
+
+            <div class="panel-body">
+                This page is being updated with 2017 ruleset! Release soon
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
 <h3 class="tournament">Players in qualifying zones</h3>
 These players will qualify if tournament started today:
@@ -23,7 +41,7 @@ Players that may still win a direct spot:
 </ul>
 Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify.
 
-<h2>Character Statistics in Capcom Pro Tour 2016</h2>
+<h2>Character Statistics in Capcom Pro Tour 2017</h2>
 
 <g:if test="${byMainCharacter32}">
     <h3 class="tournament">Main character usage of current qualifying 32</h3>

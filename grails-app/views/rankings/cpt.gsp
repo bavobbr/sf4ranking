@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta name="layout" content="overviews"/>
-    <title>Capcom Pro Tour Rankings 2016 - ${game.value}</title>
+    <title>Capcom Pro Tour Rankings 2017 - ${game.value}</title>
 </head>
 
 <body>
 <center>
-    <h2 class="title">${game.name()} Capcom Pro Tour Rankings 2016</h2>
+    <h2 class="title">${game.name()} Capcom Pro Tour Rankings 2017</h2>
 </center>
 
 <div class="row">
@@ -21,10 +21,10 @@
                 This ${game.value} ranking follows the <a
                     href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>
                 <ul>
-                    <li>12 qualify via Global Premier Events</li>
-                    <li>4 qualify via Regional Finals, 1 player from each event</li>
-                    <li>8 qualify via regional point leaderboards, top 2 from each region</li>
-                    <li>8 qualify via the global point leaderboards.</li>
+                    <li>30 players qualify via global points</li>
+                    <li>1 player auto-qualifies from previous year</li>
+                    <li>1 player qualifies via Capcom Cup Last Chance Event</li>
+                    <li>7 per region get invited into regional last chance premier</li>
                 </ul>
             </div>
         </div>
@@ -49,8 +49,7 @@
 
 <h3>Global leader board</h3>
 
-Green means directly qualified, blue means will qualify by points in the open global spots. When a player directly qualifed or double-qualifies (via global points, direct and/or regional finals) extra blue spots are opened. This means players on the edge can still get in by extension of blue zone.
-Any global point spots above top 8 are granted due to shifting caused by direct qualifiers and double qualifiers.
+Green means directly qualified, blue means qualification by points in the open global spots.
 
 <div class="table-responsive">
 
@@ -82,7 +81,7 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
         <g:each in="${players}" var="p">
 
             <tr class="${p.cptGlobal().qualifiedByScore ? 'qual' : 'unqual'} ${p.cptGlobal()?.qualified ? 'direct' : 'unqual'}">
-                <td class="${p.cptGlobal().rank <= 24? 'warning' : ''}">
+                <td class="${p.cptGlobal().rank <= 32? 'warning' : ''}">
                     ${p.cptGlobal().rank}
                 </td>
                 <td>
@@ -152,7 +151,7 @@ Any global point spots above top 8 are granted due to shifting caused by direct 
         </g:each>
 
     </table>
-The global board has ${directSpots} direct qualified players, 8 global points spots and ${extraSpots} spots opened by double qualification amounting to ${openSpots} qualified players out of a possible 24.
+The global board has 1 direct qualified player, 30 global points spots. One spot is open for Last Chance.
 </div>
 
 <div class="row" align="center">
@@ -165,11 +164,7 @@ The global board has ${directSpots} direct qualified players, 8 global points sp
 <g:each in="${regionalPlayers.keySet()}" var="region" status="ridx">
 
 <h3>${region} Regional Board</h3>
-The first two non-qualified players will directly qualify for Capcom Cup. Global board ranking has precedence, so players qualifying by global points are excluded for direct qualifaction in the region.
-Green means directly qualified, yellow means qualified via global. Blue players will qualify via their regional score.
-Note that 1 player in regional finals will qualify directly, so that may shift down the blue zone.<br/>
-<strong>Curent qualifying players:</strong>
-    ${regionalPlayers[region].findAll {it.findCptRanking(region)?.qualifiedByScore}.collect { it.name }.join(" and ")}
+The first 7 players from this region will be invited to a regional final that scores as a Premier event. 1 player will join by winning an open Last Chance Tournament before that event.
 <p>&nbsp;</p>
 <div class="table-responsive">
 
@@ -198,7 +193,7 @@ Note that 1 player in regional finals will qualify directly, so that may shift d
 
         <g:each in="${regionalPlayers[region]}" var="p" status="pidx">
 
-            <tr class="${p.findCptRanking(region)?.qualifiedByScore ? 'qual' : 'unqual'} ${p.findCptRanking(Region.GLOBAL)?.qualifiedByScore ? 'global' : ''} ${p.findCptRanking(Region.GLOBAL)?.qualified ? 'direct' : ''}">
+            <tr class="${p.findCptRanking(region)?.qualifiedByScore ? 'qual' : 'unqual'} ${p.findCptRanking(Region.GLOBAL)?.qualified ? 'direct' : ''}">
                 <td>
                     ${p.findCptRanking(region)?.rank}
                 </td>

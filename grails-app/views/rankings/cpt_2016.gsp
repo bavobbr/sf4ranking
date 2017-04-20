@@ -206,20 +206,22 @@
                             <li><a href="/rankings/cptStats">Tournaments and countries</a></li>
                             <li><a href="/rankings/cptCharacterStats">Players and Characters</a></li>
                             <li class="divider"></li>
-                            <li><a href="/rankings/cpt_2015">Standings 2015</a></li>
-                            <li><a href="/rankings/cptStats_2015">Tournaments and countries 2015</a></li>
-                            <li><a href="/rankings/cptCharacterStats_2015">Characters used 2015</a></li>
+                            <li><a href="/rankings/cpt_2015">Archived Standings 2015</a></li>
+                            <li><a href="/rankings/cptStats_2015">Archived Tournaments and countries 2015</a></li>
+                            <li><a href="/rankings/cptCharacterStats_2015">Archived Characters used 2015</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/rankings/cpt_2016">Archived Standings 2016</a></li>
+                            <li><a href="/rankings/cptStats_2016">Archived Tournaments and countries 2016</a></li>
+                            <li><a href="/rankings/cptCharacterStats_2016">Archived Characters used 2016</a></li>
                         </ul>
                     </li>
                     <li><a href="/about/index">FAQ</a></li>
-
 
 
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
     <div class="row">
 
         <div class="col-md-12">

@@ -57,6 +57,7 @@ class ScoringSystem
             "CIRCUIT": [70, 50, 30, 25, [15] * 2, [10] * 2, [8] * 8, [5] * 16, [3] * 16, [2]*16].flatten(),
             "LOCAL": [30, 20, 18, 12, [8] * 2, [6] * 2, [4] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
             "TOURNAMENT_CHAMPIONS": [100, 60, 35, 30, [20] * 2, [16] * 2, [7] * 8, [3] * 16, [5] * 16, [3]*16].flatten(),
+            "ROUND_ROBIN_GROUP_STAGE": [50, 30, 18, 15, [10] * 2, [8] * 2, [3] * 8, [2] * 16, [1] * 16, [1]*16].flatten(),
     ]
 
     /**
@@ -74,6 +75,7 @@ class ScoringSystem
             "CIRCUIT": [100, 60, [35] * 2, [20] * 4, [7] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
             "LOCAL": [30, 20, 18, 12, [8] * 2, [6] * 2, [4] * 8, [3] * 16, [2] * 16, [1]*16].flatten(),
             "TOURNAMENT_CHAMPIONS": [375, 255, 180, 155, 130, 105, 80, 55, 30, [5]*7, [3]*16, [2] * 16, [1]*16].flatten(),
+            "ROUND_ROBIN_GROUP_STAGE": [180, 125, 90, 75, 65, 50, 40, 25, 15, [3]*7, [2]*16, [1] * 16, [1]*16].flatten(),
     ]
 
     /**
@@ -116,25 +118,28 @@ class ScoringSystem
         double decayFactor = 0.0
         Integer monthsAgo = getMonthsDifference(date, new Date())
         switch (monthsAgo) {
-            case { monthsAgo > 24 }: decayFactor = 0.9; break
-            case { monthsAgo > 23 }: decayFactor = 0.8; break
-            case { monthsAgo > 22 }: decayFactor = 0.7; break
-            case { monthsAgo > 21 }: decayFactor = 0.65; break
-            case { monthsAgo > 20 }: decayFactor = 0.6; break
-            case { monthsAgo > 19 }: decayFactor = 0.55; break
-            case { monthsAgo > 18 }: decayFactor = 0.5; break
-            case { monthsAgo > 17 }: decayFactor = 0.45; break
-            case { monthsAgo > 16 }: decayFactor = 0.4; break
-            case { monthsAgo > 15 }: decayFactor = 0.35; break
-            case { monthsAgo > 14 }: decayFactor = 0.3; break
-            case { monthsAgo > 13 }: decayFactor = 0.25; break
-            case { monthsAgo > 12 }: decayFactor = 0.20; break
-            case { monthsAgo > 11 }: decayFactor = 0.15; break
-            case { monthsAgo > 10 }: decayFactor = 0.10; break
-            case { monthsAgo > 9 }: decayFactor = 0.08; break
-            case { monthsAgo > 8 }: decayFactor = 0.05; break
-            case { monthsAgo > 7 }: decayFactor = 0.02; break
-            case { monthsAgo > 6 }: decayFactor = 0.0; break
+            case { monthsAgo > 24 }: decayFactor = 0.98; break
+            case { monthsAgo > 23 }: decayFactor = 0.95; break
+            case { monthsAgo > 22 }: decayFactor = 0.92; break
+            case { monthsAgo > 21 }: decayFactor = 0.9; break
+            case { monthsAgo > 20 }: decayFactor = 0.8; break
+            case { monthsAgo > 19 }: decayFactor = 0.7; break
+            case { monthsAgo > 18 }: decayFactor = 0.65; break
+            case { monthsAgo > 17 }: decayFactor = 0.6; break
+            case { monthsAgo > 16 }: decayFactor = 0.55; break
+            case { monthsAgo > 15 }: decayFactor = 0.5; break
+            case { monthsAgo > 14 }: decayFactor = 0.45; break
+            case { monthsAgo > 13 }: decayFactor = 0.4; break
+            case { monthsAgo > 12 }: decayFactor = 0.35; break
+            case { monthsAgo > 11 }: decayFactor = 0.3; break
+            case { monthsAgo > 10 }: decayFactor = 0.25; break
+            case { monthsAgo > 9 }: decayFactor = 0.20; break
+            case { monthsAgo > 8 }: decayFactor = 0.15; break
+            case { monthsAgo > 7 }: decayFactor = 0.10; break
+            case { monthsAgo > 6 }: decayFactor = 0.08; break
+            case { monthsAgo > 5 }: decayFactor = 0.05; break
+            case { monthsAgo > 4 }: decayFactor = 0.02; break
+            case { monthsAgo > 3 }: decayFactor = 0.0; break
         }
         def normalScore = getScore(rank, tournamentType, tournamentFormat)
         Double decayedScore = normalScore * (1.0-decayFactor);

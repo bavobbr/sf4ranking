@@ -13,6 +13,7 @@ public enum TournamentType
     CIRCUIT("Circuit",130),
     LOCAL("Local",120),
     TOURNAMENT_CHAMPIONS("Tournament Of Champions",60),
+    ROUND_ROBIN_GROUP_STAGE("Round Robin Group Stage",30),
     UNRANKED("Unranked", 0);
 
     private final String value;

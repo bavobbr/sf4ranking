@@ -106,7 +106,7 @@ Tournaments in <strong>league</strong> format that are not auto-weighted score a
     </tr>
     </thead>
     <tbody>
-    <g:each in="${[TournamentType.CHAMPIONSHIP, TournamentType.TOURNAMENT_CHAMPIONS]}" var="type">
+    <g:each in="${[TournamentType.CHAMPIONSHIP, TournamentType.TOURNAMENT_CHAMPIONS, TournamentType.ROUND_ROBIN_GROUP_STAGE]}" var="type">
       <tr>
         <td>${type.value}</td>
         <td>1</td>
