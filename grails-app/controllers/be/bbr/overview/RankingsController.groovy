@@ -87,8 +87,8 @@ class RankingsController
                 players.each {
                     def numResults = queryService.countPlayerResults(it, pgame)
                     def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo)
-                    it.metaClass.numResults << { Math.min(numResults,12) }
-                    it.metaClass.numResultsYear << { numResultsYear }
+                    it.metaClass.numResults << { numResults }
+                    it.metaClass.numResultsYear << { Math.min(numResultsYear,12) }
                 }
             }
         }
@@ -474,11 +474,7 @@ class RankingsController
         {
             log.info "Processing query $params.term?"
             def players = dataService.findMatches(params.term?.trim())
-            players.each {
-                log.info "match: ${it}"
-            }
-            def sorted = players.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a)}
-            def content = sorted.collect {[id: it.id, label: it.toString(), value: it.name]}
+            def content = players.collect {[id: it.id, label: it.toString(), value: it.name]}
             render(content as JSON)
         }
     }
@@ -497,7 +493,7 @@ class RankingsController
     {
         String player = params.player
         def alikes = []
-        def sorted = []
+        def players = []
         if (player?.size() > 1)
         {
             def query = player?.trim()
@@ -511,8 +507,7 @@ class RankingsController
             }
             else {
                 log.info "Processing query $query"
-                def players = dataService.findMatches(query)
-                sorted = players.sort { a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
+                players = dataService.findMatches(query)
                 alikes = dataService.findAlike(player, 10)
             }
         }
@@ -520,7 +515,7 @@ class RankingsController
         {
             flash.message = "Query string too short"
         }
-        [players: sorted, alikes: alikes, query: player]
+        [players: players, alikes: alikes, query: player]
     }
 
     public static String cptSummary(Player p) {

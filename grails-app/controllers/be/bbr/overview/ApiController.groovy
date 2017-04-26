@@ -39,7 +39,7 @@ class ApiController {
             logQuery.save(failOnError: false)
             log.info "Processing search for type $type with query $query"
             if (type.equalsIgnoreCase("player")) {
-                def results
+                def results = []
                 if (!fuzzy) {
                     results = dataService.findMatches(query)
                 }
@@ -48,6 +48,8 @@ class ApiController {
                     def players = dataService.findMatches(query)
                     def alikes = dataService.findAlike(query, 10)
                     results = players+alikes
+                    results = results.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a)}
+
                 }
                 def content = results.collect {
                     def numResults = Result.countByPlayer(it)

@@ -147,17 +147,18 @@ class CleanupService
     def autofillSkill(Version game)
     {
         List<PlayerRanking> rankings = PlayerRanking.findAllByGame(game)
-        def byTotal = rankings.sort {a, b -> a.totalScore <=> b.totalScore}
-        def byActual = rankings.sort {a, b -> a.score <=> b.score}
-        def count = rankings.size()
         rankings.each {
-            it.skill = -1 // RESET
+            it.skill = 0 // RESET
             it.save()
         }
+        def count = Math.min(rankings.size(), 750)
         if (count > 0)
         {
             double factor = count / 100
             log.info("Checking with alltime ranking")
+            def byTotal = rankings.sort {a, b -> a.totalScore <=> b.totalScore}
+            byTotal = byTotal.reverse().take(750).reverse()
+            println byTotal*.player.name
             1.upto(99) {Integer skillLevel ->
                 def lowerBound = Math.log(skillLevel) / Math.log(100)
                 def upperBound = Math.log(skillLevel+1) / Math.log(100)
@@ -183,6 +184,9 @@ class CleanupService
 
             }
             log.info("Checking with actual ranking")
+            def byActual = rankings.sort {a, b -> a.score <=> b.score}
+            byActual = byActual.reverse().take(750).reverse()
+            println byActual*.player.name
             1.upto(99) {Integer skillLevel ->
                 def lowerBound = Math.log(skillLevel) / Math.log(100)
                 def upperBound = Math.log(skillLevel+1) / Math.log(100)
@@ -285,13 +289,15 @@ class CleanupService
         return players.size()
     }
 
-    def correctSkill()
+    def dropDeadRanks()
     {
         def rankings = PlayerRanking.list()
         rankings.each {
-            it.skill = it.skill*10
-            it.save(flush: true)
+            if (it.score == 0 && it.totalScore == 0) {
+                it.delete()
+            }
         }
     }
+
 
 }

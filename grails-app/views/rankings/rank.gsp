@@ -124,7 +124,7 @@
                         </g:link>
                     </g:if>
                 </td>
-                <td>${p.numResults()}
+                <td>${p.numResultsYear()}
 
                 <td>
                     <g:if test="${p.countryCode}">
@@ -178,7 +178,7 @@
                 </g:elseif>
                 <td>${p.totalScore(game)}</td>
 
-                <td>${p.numResultsYear()}
+                <td>${p.numResults()}
                 </td>
                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                     <td>

@@ -140,15 +140,12 @@ class Player
 
     void applyScore(Version game, Integer score)
     {
-        if (score > 0) findOrCreateRanking(game).score = score
-        else deleteRanking(game)
-
+        findOrCreateRanking(game).score = score
     }
 
     void applyTotalScore(Version game, Integer score)
     {
-        if (score > 0) findOrCreateRanking(game).totalScore = score
-        else deleteRanking(game)
+        findOrCreateRanking(game).totalScore = score
     }
 
     void applyRank(Version game, Integer rank)
@@ -175,6 +172,7 @@ class Player
     CptRanking findOrCreateCptRanking(Region region) {
         def ranking = findCptRanking(region)
         if (!ranking) {
+            log.info("DO not have CPT ranking for region $region and player $name, creating...")
             ranking = new CptRanking(region: region)
             this.addToCptRankings(ranking)
         }
@@ -191,24 +189,25 @@ class Player
     void deleteCptRanking(Region region) {
         def ranking = findCptRanking(region)
         if (ranking) {
+            log.info("Deleting CPT ranking for region $region and player $name")
             this.removeFromCptRankings(ranking)
         }
     }
 
     boolean hasRanking(Version game) {
-        return rankings.any { it.game == game }
+        return rankings.any { it?.game == game }
     }
 
     PlayerRanking findRanking(Version game) {
-        return rankings.find { it.game == game }
+        return rankings.find { it?.game == game }
     }
 
     CptRanking findCptRanking(Region region) {
-        return cptRankings.find { it.region == region }
+        return cptRankings.find { it?.region == region }
     }
 
     CptRanking cptGlobal() {
-        return cptRankings.find { it.region == Region.GLOBAL }
+        return cptRankings.find { it?.region == Region.GLOBAL }
     }
 
     Integer overallScore() {

@@ -546,11 +546,11 @@ class AdminController
         render view: "index"
     }
 
-    def correctSkill()
+    def dropDeadRanks()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))
         {
-            cleanupService.correctSkill()
+            cleanupService.dropDeadRanks()
         }
         flash.message = "Corrected skill levels of all players"
         render view: "index"

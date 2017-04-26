@@ -129,29 +129,25 @@ class DataService
             Player.read(it.id)
         }
         println "got $searchResult"
-        alts.addAll(searchResult.results.collect {
-            def p = Player.read(it.id)
-            return p
-        })
         log.info "Found ${alts.size()} matches"
         return alts
     }
 
     @Transactional
     Set<Player> findAlikesByFilterSpecial(String original) {
-        log.info "Finding match for $original"
+        log.info "Finding filtered match for $original"
         Set<Player> alts = []
         def withoutSpecial = original.replaceAll(Player.pattern, "").toLowerCase()
-        println "looking for $withoutSpecial"
+        println "looking for filtered name $withoutSpecial"
         def searchResult = Player.search(max: 5) {
             fuzzy("simplified", withoutSpecial)
         }
-        println "got $searchResult"
+        println "got filtered $searchResult"
         alts.addAll(searchResult.results.collect {
             def p = Player.read(it.id)
             return p
         })
-        log.info "Found ${alts?.size()} matches"
+        log.info "Found filtered ${alts?.size()} matches"
         return alts
     }
 
@@ -161,7 +157,8 @@ class DataService
         def alikes = findAlikes(original).toList().take(half)
         def alikesFiltered = findAlikesByFilterSpecial(original).toList().take(half)
         def all = (alikes + alikesFiltered) as Set
-        return all? all.toList().take(max) : null
+        def sorted = all.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a)}
+        return all? sorted.take(max) : null
     }
 
     @Transactional
@@ -173,8 +170,9 @@ class DataService
         matches.addAll(Player.findAllByTwitterIlike(wildcardedQuery))
         matches.addAll(Player.findAllByRealnameIlike(wildcardedQuery))
         matches.addAll(Player.findAllByAliasIlike(wildcardedQuery))
+        def sorted = matches.sort {a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a)}
         log.info "Found ${matches.size()} matches"
-        return matches
+        return sorted
     }
 
     @Transactional
@@ -188,12 +186,21 @@ class DataService
             {
                 Player p = Player.findByCodename(handle.toUpperCase())
                 if (!p) {
-                    def suggestions = findAlike(handle, 4)
-                    if (suggestions) {
-                        feedback << "$handle is unknown. Sounds like: ${suggestions.name.join(", ")}"
+                    if (handle.length() > 2) {
+                        def suggestions = findAlike(handle, 4)
+                        findMatches(handle).take(3).each {
+                            if (!suggestions.contains(it)) {
+                                suggestions.add(it)
+                            }
+                        }
+                        if (suggestions) {
+                            feedback << "$handle is unknown. Sounds like: ${suggestions.name.join(", ")}"
+                        } else {
+                            feedback << "$handle is unknown. No matching players found"
+                        }
                     }
                     else {
-                        feedback << "$handle is unknown. No matching players found"
+                        feedback << "$handle is too short. No matching players found"
                     }
                 }
             }
@@ -328,7 +335,7 @@ class DataService
                     CountryCode country = tjson.country as CountryCode
                     Version version = tjson.version as Version
                     if (Environment.current == Environment.DEVELOPMENT) {
-                        if (!(version in [Version.SF5])) return
+                        if (!(version in [Version.SF5, Version.UMVC3])) return
                     }
                     Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
                     TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
