@@ -42,7 +42,7 @@ class RankingsController
         def cstats = CharacterStats.findAllByGame(Version.SF5)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
-        cstats = cstats.sort {a, b -> b.decayedScoreAccumulated <=> a.decayedScoreAccumulated}.take(10)
+        cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
         [players: players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
@@ -50,7 +50,7 @@ class RankingsController
     def rank()
     {
         def pgame = Version.fromString(params.id) ?: Version.AE2012
-        def palltime = params.alltime?.toBoolean()?: false
+        def palltime = RankingType.fromString(params.rankingType) ?: RankingType.ACTUAL
         def poffset = params.offset?.toInteger() ?: 0
         def pmax = params.max?.toInteger() ?: 50
         def pcountry = (!params.country || params.country =~ "any") ? null : CountryCode.fromString(params.country as String)
@@ -95,7 +95,7 @@ class RankingsController
         log.info "returning ${players.size()} players for game $pgame"
         [players: players, countries: countrynames, charnames: charnames, filtered: filtered,
          total: playercount, poffset: poffset, fchar: pchar, fcountry: pcountry, ffiltermain: pfiltermain,
-         updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot, alltime: palltime]
+         updateMessage: lastUpdateMessage, game: pgame, snapshot: snapshot, rankingType: palltime]
     }
 
     def cpt_2015() {}

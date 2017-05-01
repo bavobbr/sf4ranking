@@ -25,7 +25,7 @@
 
     <div class="col-md-6">
         <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
-        <h4>SF5 Top 10 characters</h4>
+        <h4>SF5 Top 10 trending characters</h4>
 
         <div>
             <table class="table table-striped table-hover table-condensed table-responsive">
@@ -33,9 +33,9 @@
                 <tr>
                     <th>Rank</th>
                     <th>Name</th>
-                    <th>Total Score</th>
-                    <th>Top player</th>
-                    <th>Character Wins</th>
+                    <th>Trending score</th>
+                    <th>Top trending player</th>
+                    <th>Character wins</th>
                 </tr>
                 </thead>
                 <g:each in="${topsf5chars}" var="c" status="idx">
@@ -49,10 +49,10 @@
                         </g:link>
                         </td>
                         <td>
-                            ${c.scoreAccumulated}
+                            ${c.trendingScoreAccumulated}
                         </td>
                         <td>
-                            ${c.player.name}
+                            ${c.trendingPlayer.name}
                         </td>
                         <td>
                             ${c.top1finishes}
@@ -61,7 +61,7 @@
                 </g:each>
             </table></div>
         View <g:link action="index" controller="stats" params="['id': Version.SF5.name()]"
-                     class="toplink"> all character rankings</g:link>
+                     class="toplink"> all character rankings (alltime, current and trending)</g:link>
     </div>
 
 </div>

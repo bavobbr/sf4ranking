@@ -77,6 +77,14 @@ class Player
         return findRanking(game)?.rank?: 0
     }
 
+    Integer totalRank(Version game) {
+        return findRanking(game)?.totalRank?: 0
+    }
+
+    Integer trendingRank(Version game) {
+        return findRanking(game)?.trendingRank?: 0
+    }
+
     Integer score(Version game) {
         return findRanking(game)?.score?: 0
     }
@@ -91,6 +99,10 @@ class Player
 
     Integer totalScore(Version game) {
         return findRanking(game)?.totalScore?: 0
+    }
+
+    Integer trendingScore(Version game) {
+        return findRanking(game)?.trendingScore?: 0
     }
 
     Date snapshot(Version game) {
@@ -112,6 +124,22 @@ class Player
         def newRank = ranking?.rank
         def oldRank = ranking?.oldRank
         if (oldRank == null) return null
+        return oldRank - newRank
+    }
+
+    Integer diffTotalRank(Version game) {
+        def ranking = findRanking(game)
+        def newRank = ranking?.totalRank
+        def oldRank = ranking?.rank
+        if (oldRank == null || newRank == null) return null
+        return oldRank - newRank
+    }
+
+    Integer diffTrendRank(Version game) {
+        def ranking = findRanking(game)
+        def newRank = ranking?.trendingRank
+        def oldRank = ranking?.rank
+        if (oldRank == null || newRank == null) return null
         return oldRank - newRank
     }
 
@@ -148,9 +176,26 @@ class Player
         findOrCreateRanking(game).totalScore = score
     }
 
+    void applyTrendingScore(Version game, Integer score)
+    {
+        findOrCreateRanking(game).trendingScore = score
+    }
+
     void applyRank(Version game, Integer rank)
     {
         if (rank > 0) findOrCreateRanking(game).rank = rank
+        else deleteRanking(game)
+    }
+
+    void applyTotalRank(Version game, Integer rank)
+    {
+        if (rank > 0) findOrCreateRanking(game).totalRank = rank
+        else deleteRanking(game)
+    }
+
+    void applyTrendingRank(Version game, Integer rank)
+    {
+        if (rank > 0) findOrCreateRanking(game).trendingRank = rank
         else deleteRanking(game)
     }
 
@@ -182,6 +227,7 @@ class Player
     void deleteRanking(Version game) {
         def ranking = findRanking(game)
         if (ranking) {
+            log.info("Deleting ranking for game $game and player $name")
             this.removeFromRankings(ranking)
         }
     }

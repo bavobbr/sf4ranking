@@ -1,11 +1,14 @@
-<%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.RankingType; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="overviews"/>
-    <g:if test="${alltime}">
-        <title>${game.value} All-time Rankings</title>
+    <g:if test="${rankingType == be.bbr.sf4ranking.RankingType.ALLTIME}">
+        <title>${game.value} All-time player rankings</title>
     </g:if>
-    <g:else><title>${game.value} World Rankings</title>
+    <g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.TRENDING}">
+        <title>${game.value} Trending player rankings</title>
+    </g:elseif>
+    <g:else><title>${game.value} Player World Rankings</title>
     </g:else>
 
 </head>
@@ -14,8 +17,11 @@
 <g:if test="${filtered}">
     <center><h2 class="title-filtered">${game.value} Tournament Rankings - Filtered on ${fcountry} ${fchar}</h2></center>
 </g:if>
-<g:elseif test="${alltime}">
-    <center><h2 class="title-filtered">${game.value} Tournament Rankings - All-time score ranking</h2></center>
+<g:elseif test="${be.bbr.sf4ranking.RankingType.ALLTIME}">
+    <center><h2 class="title-filtered">${game.value} Tournament Rankings - All-time player score ranking</h2></center>
+</g:elseif>
+<g:elseif test="${be.bbr.sf4ranking.RankingType.TRENDING}">
+    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Trending player score ranking</h2></center>
 </g:elseif>
 <g:else>
     <center>
@@ -37,25 +43,31 @@
     </div>
 </g:if>
 <div><p>
-    <g:if test="${alltime}">
+    <g:if test="${rankingType == be.bbr.sf4ranking.RankingType.ALLTIME}">
         This ranking is based on all tournaments results from ${game.name()}. The best 18 results of these are summed to form the lifetime score.
         The importance of tournaments is sorted by weight only, based on player skill attending.
         If you would like to see how a player did the last 18 months of ${game.value} you can find a ranking on the <g:link
-            controller="rankings" action="rank" params="[alltime: false, id: game.name()]">Actual Ranking</g:link> page.
+            controller="rankings" action="rank" params="[rankingType: RankingType.ACTUAL.name(), id: game.name()]">Actual Ranking</g:link> page.
     </g:if>
+    <g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.TRENDING}">
+        This ranking is based on only recent tournaments results from ${game.name()}. The best 12 results of the last 6 months are summed to form the trending score.
+        The importance of tournaments is qualified by class, based on player skill attending.
+        If you would like to see how a player did the last 18 months of ${game.value} you can find a ranking on the <g:link
+            controller="rankings" action="rank" params="[rankingType: RankingType.ACTUAL.name(), id: game.name()]">Actual Ranking</g:link> page.
+    </g:elseif>
     <g:else>
         This ranking is based on tournaments results of the latest 18 months using the official tournament scoring detailed on <g:link
-            controller="about">FAQ</g:link>. The list is updated every week. The tournaments are judged by class, in a sliding window of the last 18 months. You can find an unlimited ranking based on pure tournament weight on the <g:link
-            controller="rankings" action="rank"
-            params="[alltime: true, id: game.name()]">All-time Ranking</g:link> page.
+            controller="about">FAQ</g:link>. The list is updated every week. The tournaments are judged by class, in a sliding window of the last 18 months. You can find an unlimited ranking based on pure tournament weight on the
+        <g:link controller="rankings" action="rank" params="[rankingType: RankingType.ALLTIME.name(), id: game.name()]">All-time Ranking</g:link> page, and a short-time trend via the <g:link controller="rankings" action="rank" params="[rankingType: RankingType.TRENDING.name(), id: game.name()]">trending </g:link>page.
     </g:else>
-</div></p>
+</p>
+</div>
 <div class="table-responsive">
 
     <table class="table table-striped table-hover table-condensed">
         <thead>
         <tr>
-            <g:if test="${filtered || alltime}">
+            <g:if test="${filtered}">
                 <th>Index</th>
             </g:if>
             <th>Rank</th>
@@ -69,17 +81,25 @@
                                       title="The amount of results in tournaments over last 18 months adding to the actual score, capped at 12">(?)</a>
             </th>
             <th>Country</th>
-            <g:if test="${snapshot != null && !alltime}">
+            <g:if test="${snapshot != null && rankingType == RankingType.ACTUAL}">
                 <th>Rank Diff <a href="#" data-toggle="tooltip" data-placement="top"
                                  title="Rank difference between now and ${snapshot?.format("yyyy-MM-dd")}">(?)</a></th>
             </g:if>
-            <g:elseif test="${alltime}">
+            <g:elseif test="${rankingType == RankingType.ALLTIME}">
                 <th>Trend <a href="#" data-toggle="tooltip" data-placement="top"
-                             title="Rank difference between alltime and actual ranking. This shows if a player is trending upwards or downwards">(?)</a>
+                             title="Rank difference between all-time and actual ranking. This shows if a player is trending upwards or downwards over all time">(?)</a>
+                </th>
+            </g:elseif>
+            <g:elseif test="${rankingType == RankingType.TRENDING}">
+                <th>Trend <a href="#" data-toggle="tooltip" data-placement="top"
+                             title="Rank difference between trending and actual ranking. This shows if a player is trending upwards or downwards in recent time">(?)</a>
                 </th>
             </g:elseif>
             <th>Lifetime Score <a href="#" data-toggle="tooltip" data-placement="top"
                                   title="The lifetime score is the sum of best 18 tournaments in this game without decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
+            </th>
+            <th>Trending Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="The trending score is the sum of best 12 tournaments in this game without in last 6 months. This gives an idea on the short-term player dominance">(?)</a>
             </th>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
                                title="The total amount of tournaments eligible for lifetime best of score (of which only 18 count)">(?)</a></th>
@@ -90,12 +110,18 @@
         <g:each in="${players}" var="p" status="idx">
 
             <tr>
-                <g:if test="${filtered || alltime}">
+                <g:if test="${filtered}">
                     <td>${idx + poffset + 1}</td>
                 </g:if>
-                <td>${p.rank(game)}
-
-                </td>
+                <g:if test="${rankingType == rankingType.ACTUAL}">
+                    <td>${p.rank(game)}</td>
+                </g:if>
+                <g:elseif test="${rankingType == rankingType.ALLTIME}">
+                    <td>${p.totalRank(game)}</td>
+                </g:elseif>
+                <g:elseif test="${rankingType == rankingType.TRENDING}">
+                    <td>${p.trendingRank(game)}</td>
+                </g:elseif>
                 <td><g:link controller="rankings" mapping="playerByName" action="player"
                             params="[name: p.name]">${p.name}</g:link>
                 </td>
@@ -137,7 +163,7 @@
                         </g:link>
                     </g:if>
                 </td>
-                <g:if test="${snapshot != null && !alltime}">
+                <g:if test="${snapshot != null && rankingType == RankingType.ACTUAL}">
                     <g:if test="${p.diffRank(game) == null}">
                         <td class="warning">
                             <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
@@ -157,26 +183,48 @@
                         </td>
                     </g:else>
                 </g:if>
-                <g:elseif test="${alltime}">
-                    <g:if test="${p.rank(game) == null}">
+                <g:elseif test="${rankingType == RankingType.ALLTIME}">
+                    <g:if test="${p.diffTotalRank(game) == null}">
                         <td class="warning">
-                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true">d</span>
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                         </td>
                     </g:if>
                     <g:else>
-                        <td class="${idx + poffset + 1 - p.rank(game) >= 0 ? 'success' : 'danger'}">
-                            <g:if test="${idx + poffset + 1 - p.rank(game) > 0}">
+                        <td class="${p.diffTotalRank(game) == 0 ? '' : p.diffTotalRank(game) > 0 ? 'success' : 'danger'}">
+                            <g:if test="${p.diffTotalRank(game) > 0}">
                                 <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                                ${Math.abs(idx + poffset + 1 - p.rank(game))}
                             </g:if>
-                            <g:elseif test="${idx + poffset + 1 - p.rank(game) < 0}">
+                            <g:elseif test="${p.diffTotalRank(game) < 0}">
                                 <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-                                ${Math.abs(idx + poffset + 1 - p.rank(game))}
                             </g:elseif>
+                            <g:if test="${p.diffTotalRank(game) != 0 && p.diffTotalRank(game) != null}">
+                                ${Math.abs(p.diffTotalRank(game))}
+                            </g:if>
+                        </td>
+                    </g:else>
+                </g:elseif>
+                <g:elseif test="${rankingType == RankingType.TRENDING}">
+                    <g:if test="${p.diffTrendRank(game) == null}">
+                        <td class="warning">
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                        </td>
+                    </g:if>
+                    <g:else>
+                        <td class="${p.diffTrendRank(game) == 0 ? '' : p.diffTrendRank(game) > 0 ? 'success' : 'danger'}">
+                            <g:if test="${p.diffTrendRank(game) > 0}">
+                                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                            </g:if>
+                            <g:elseif test="${p.diffTrendRank(game) < 0}">
+                                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                            </g:elseif>
+                            <g:if test="${p.diffTrendRank(game) != 0 && p.diffTrendRank(game) != null}">
+                                ${Math.abs(p.diffTrendRank(game))}
+                            </g:if>
                         </td>
                     </g:else>
                 </g:elseif>
                 <td>${p.totalScore(game)}</td>
+                <td>${p.trendingScore(game)}</td>
 
                 <td>${p.numResults()}
                 </td>
@@ -217,7 +265,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
                             <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
                         </div>
                         <div class="col-md-4">
-                            <g:hiddenField name="alltime" value="${alltime}"/>
+                            <g:hiddenField name="rankingType" value="${rankingType.name()}"/>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>

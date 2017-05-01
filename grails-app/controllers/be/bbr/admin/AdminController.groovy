@@ -292,7 +292,7 @@ class AdminController
 
     def bulkedit() {
         def game = Version.fromString(params.game)
-        def top100 = queryService.findPlayers(null, null, 100, 0, game, false)
+        def top100 = queryService.findPlayers(null, null, 100, 0, game, RankingType.ACTUAL)
         return [players: top100, game: game]
     }
 

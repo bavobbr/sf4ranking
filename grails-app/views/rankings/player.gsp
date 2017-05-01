@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.RankingType; be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta name="layout" content="overviews"/>
@@ -204,8 +204,11 @@
                     <tr class="stathead">
                         <th>Game</th>
                         <th>Rank</th>
+                        <th>Lifetime rank</th>
+                        <th>Trending rank</th>
                         <th>Current score</th>
-                        <th>Lifetime Score</th>
+                        <th>Lifetime score</th>
+                        <th>Trending score</th>
                         <th>Main Team</th>
                         <th>Weight</th>
                         <th>Tournaments played</th>
@@ -216,14 +219,26 @@
                             <tr>
 
                                 <td>
-                                    <g:link controller="rankings" action="rank" params="[id: ranking.game.name()]">
-                                        ${ranking.game.value}
+                                    ${ranking.game.value}
+                                </td>
+                                <td>
+                                    <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.ACTUAL.name()]">
+                                        ${ranking.rank}
                                     </g:link>
                                 </td>
-
-                                <td>${ranking.rank}</td>
+                                <td>
+                                <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.ALLTIME.name()]">
+                                    ${ranking.totalRank}
+                                </g:link>
+                                </td>
+                                <td>
+                                    <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.TRENDING.name()]">
+                                    ${ranking.trendingRank}
+                                    </g:link>
+                                </td>
                                 <td>${ranking.score}</td>
                                 <td>${ranking.totalScore}</td>
+                                <td>${ranking.trendingScore}</td>
                                 <td>
                                     <g:each in="${ranking.mainCharacters}" var="mainCharacter">
                                         <g:link action="rank" controller="rankings"

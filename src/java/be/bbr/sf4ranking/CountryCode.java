@@ -593,7 +593,7 @@ public enum CountryCode
     PG("Papua New Guinea", "PNG", 598),
 
     /** <a href="http://en.wikipedia.org/wiki/Philippines">Philippines</a> */
-    PH("Philippines", "PHL", 608),
+    PH("Philippines", "PHL", 608, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Pakistan">Pakistan</a> */
     PK("Pakistan", "PAK", 586),
@@ -608,7 +608,7 @@ public enum CountryCode
     PN("Pitcairn", "PCN", 612),
 
     /** <a href="http://en.wikipedia.org/wiki/Puerto_Rico">Puerto Rico</a> */
-    PR("Puerto Rico", "PRI", 630, Region.NA),
+    PR("Puerto Rico", "PRI", 630, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Palestinian_territories">Occupied Palestinian Territory</a> */
     PS("Occupied Palestinian Territory", "PSE", 275),

@@ -74,6 +74,12 @@ This character is compared versus ${total} other characters in ${stats?.game?.va
             <td>${relativeStats.decayedScoreAccumulated}</td>
         </tr>
         <tr>
+            <td>Trending score</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.trendingScoreAccumulated}</td></g:each>
+            <td>${relativeStats.trendingScoreAccumulated}</td>
+        </tr>
+        <tr>
             <td>Accumulated score by top 100 players</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.scoreAccumulatedByTop100}</td></g:each>
@@ -84,6 +90,12 @@ This character is compared versus ${total} other characters in ${stats?.game?.va
             <g:each in="${games}" var="game">
                 <td>${game.value?.decayedScoreAccumulatedByTop100}</td></g:each>
             <td>${relativeStats.decayedScoreAccumulatedByTop100}</td>
+        </tr>
+        <tr>
+            <td>Trending accumulated score by top 100 players</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.trendingScoreAccumulatedByTop100}</td></g:each>
+            <td>${relativeStats.trendingScoreAccumulatedByTop100}</td>
         </tr>
         <tr>
             <td>Tournament wins</td>
@@ -159,6 +171,16 @@ Top players using character as main
                 rank(stats.game)})</li>
     </g:each>
 </ol>
+
+Top trending players using character as main in last 6 months
+<ol>
+    <g:each in="${best5trending}" var="p">
+        <li>
+            <g:link controller="rankings" mapping="playerByName" action="player" params="[name: p.name]">${p.name}</g:link> (rank: ${p.
+                    rank(stats.game)})</li>
+    </g:each>
+</ol>
+
 Top players that used character as secondary at least once
 <ol>
     <g:each in="${best5secondaries}" var="p">

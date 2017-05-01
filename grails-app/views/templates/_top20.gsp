@@ -1,4 +1,4 @@
-<%@ page import="be.bbr.sf4ranking.Version" %>
+<%@ page import="be.bbr.sf4ranking.RankingType; be.bbr.sf4ranking.Version" %>
 <h4>${game.value} Top 10</h4>
 <div>
   <table class="table table-striped table-hover table-condensed table-responsive">
@@ -45,5 +45,7 @@
       </tr>
     </g:each>
   </table></div>
-View <g:link action="rank" controller="rankings" params="['id': game.name()]" class="toplink">current ${game.value} </g:link> /
-<g:link action="rank" controller="rankings" params="['id': game.name(), alltime: true]" class="toplink">all-time ${game.value} </g:link> World Rankings
+<g:link action="rank" controller="rankings" params="['id': game.name(), rankingType: RankingType.ACTUAL.name()]" class="toplink">current ${game.name()} </g:link> /
+<g:link action="rank" controller="rankings" params="['id': game.name(), rankingType: RankingType.ALLTIME.name()]" class="toplink">all-time ${game.name()} </g:link> /
+<g:link action="rank" controller="rankings" params="['id': game.name(), rankingType: RankingType.TRENDING.name()]" class="toplink">trending ${game.name()} </g:link>
+World Rankings

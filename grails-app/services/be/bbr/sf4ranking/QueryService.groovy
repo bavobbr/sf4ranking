@@ -13,10 +13,10 @@ class QueryService
     /**
      * Search for players using parameters and paging
      */
-    List<Player> findPlayers(CharacterType ctype, CountryCode countryCode, Integer max, Integer offset, Version game, boolean alltime = false)
+    List<Player> findPlayers(CharacterType ctype, CountryCode countryCode, Integer max, Integer offset, Version game, RankingType rankingType = RankingType.ACTUAL)
     {
-        log.info "Looking for $max players of ctype ${ctype} from country ${countryCode} starting from $offset in game $game"
-        def rankType = alltime? "totalScore" : "rank"
+        log.info "Looking for $max players of ctype ${ctype} from country ${countryCode} starting from $offset in game $game with type $rankingType"
+        def rankField = rankingType.field
         def playerIdQuery = Player.createCriteria()
         def playerids = playerIdQuery.list(max: max, offset: offset) {
             createAlias("rankings", "rankAlias", CriteriaSpecification.LEFT_JOIN)
@@ -24,14 +24,9 @@ class QueryService
                 distinct 'id'
             }
             eq("rankAlias.game", game)
-            property("rankAlias.${rankType}")
-            gt("rankAlias.${rankType}", 0)
-            if (alltime) {
-                order("rankAlias.${rankType}", "desc")
-            }
-            else {
-                order("rankAlias.rank", "asc")
-            }
+            property("rankAlias.${rankField}")
+            gt("rankAlias.${rankField}", 0)
+            order("rankAlias.${rankField}", "asc")
 
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)

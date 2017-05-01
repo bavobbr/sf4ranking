@@ -11,6 +11,7 @@ class CharacterStats
 {
     static constraints = {
         player nullable: true
+        trendingPlayer nullable: true
     }
 
     Version game = Version.UNKNOWN
@@ -20,6 +21,8 @@ class CharacterStats
     Integer scoreAccumulatedByTop100 = 0
     Integer decayedScoreAccumulated = 0
     Integer decayedScoreAccumulatedByTop100 = 0
+    Integer trendingScoreAccumulated = 0
+    Integer trendingScoreAccumulatedByTop100 = 0
     Integer rankAccumulated = 0
     Double totalUsagePercentage = 0.0
     Integer asMainInTop100 = 0
@@ -39,6 +42,7 @@ class CharacterStats
 
 
     Player player
+    Player trendingPlayer
 
     def beforeInsert() { convertNaN() }
 

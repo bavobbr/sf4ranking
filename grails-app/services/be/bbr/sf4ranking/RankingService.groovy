@@ -2,6 +2,7 @@ package be.bbr.sf4ranking
 
 import grails.transaction.NotTransactional
 import grails.transaction.Transactional
+import org.joda.time.DateTime
 
 /**
  * This service applies the ranking values (rank, score, weight, type) to all imported data
@@ -97,6 +98,8 @@ class RankingService {
     @NotTransactional
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
+        def lastTournament = queryService.lastTournament(game)
+        def window = new DateTime(lastTournament.date.time).minusMonths(6)
         configurationService.withUniqueSession {
             players.eachWithIndex { Player p, Integer idx ->
                 log.info("Evaluating for $game player $p, looking for results [${idx+1} / ${players.size()}]")
@@ -106,15 +109,20 @@ class RankingService {
                 }
                 if (results) {
                     log.info("Found ${results.size()} results")
-                    def playerScore = getScore(results, 18) { Result r ->
+                    def totalScore = getScore(results, 18) { Result r ->
                         r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
                     }
-                    p.applyScore(game, playerScore)
                     def actualScore = getScore(results, 12) { Result r ->
                         r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
                     }
+                    def trendingScore = getScore(results, 12) { Result r ->
+                        if (window.isBefore(r.tournament.date.time)) {
+                            return r.tournament.ranked ? ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
+                        } else return 0
+                    }
                     p.applyScore(game, actualScore)
-                    p.applyTotalScore(game, playerScore)
+                    p.applyTotalScore(game, totalScore)
+                    p.applyTrendingScore(game, trendingScore)
                     // calculate CPT score
                     if (game == Version.SF5) {
                         def cptScore = 0
@@ -217,9 +225,9 @@ class RankingService {
     @NotTransactional
     Integer updatePlayerRank(Version game) {
         List players = Player.findAll { results.tournament.game == game }
-        players = players.sort { a, b -> b.score(game) <=> a.score(game) }
+        players = players.sort { Player a, Player b -> b.score(game) <=> a.score(game) }
         configurationService.withUniqueSession {
-            log.info("Found ${players.size()} to update rank")
+            log.info("Found ${players.size()} to update actual rank")
             def previous = 0
             def currentRank = 0
             players.eachWithIndex { Player p, Integer idx ->
@@ -229,7 +237,37 @@ class RankingService {
                 def rank = currentRank
                 p.applyRank(game, rank)
                 previous = p.score(game)
-                log.info("Updated rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
+                log.info("Updated actual rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
+            }
+        }
+        players = players.sort { Player a, Player b -> b.totalScore(game) <=> a.totalScore(game) }
+        configurationService.withUniqueSession {
+            log.info("Found ${players.size()} to update alltime rank")
+            def previous = 0
+            def currentRank = 0
+            players.eachWithIndex { Player p, Integer idx ->
+                if (p.totalScore(game) != previous) {
+                    currentRank = idx + 1
+                }
+                def rank = currentRank
+                p.applyTotalRank(game, rank)
+                previous = p.totalScore(game)
+                log.info("Updated alltime rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
+            }
+        }
+        players = players.sort { Player a, Player b -> b.trendingScore(game) <=> a.trendingScore(game) }
+        configurationService.withUniqueSession {
+            log.info("Found trending ${players.size()} to update rank")
+            def previous = 0
+            def currentRank = 0
+            players.eachWithIndex { Player p, Integer idx ->
+                if (p.trendingScore(game) != previous) {
+                    currentRank = idx + 1
+                }
+                def rank = currentRank
+                p.applyTrendingRank(game, rank)
+                previous = p.trendingScore(game)
+                log.info("Updated trending rank of player $p, setting previous as $previous [${idx+1} / ${players.size()}]")
             }
         }
         if (game == Version.SF5) {
@@ -285,7 +323,7 @@ class RankingService {
         configurationService.withUniqueSession {
             log.info("Found ${players.size()} to update main")
             players.eachWithIndex { Player p, Integer idx ->
-                PlayerRanking ranking = p.rankings.find { it.game == game }
+                PlayerRanking ranking = p.rankings.find { it?.game == game }
                 if (ranking) {
                     ranking.mainCharacters.clear()
                     def filteredResults = p.results.findAll { it.tournament.game == game }

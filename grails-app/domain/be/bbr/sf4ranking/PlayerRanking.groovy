@@ -12,7 +12,10 @@ class PlayerRanking
         mainCharacters nullable: false, editable: false
         score nullable: false, editable: false
         totalScore nullable: false, editable: false
+        trendingScore nullable: false, editable: false
         rank nullable: false, editable: false
+        totalRank nullable: false, editable: false
+        trendingRank nullable: false, editable: false
         oldRank nullable: true, editable: false
         oldScore nullable: true, editable: false
         snapshot nullable: true, editable: false
@@ -27,7 +30,10 @@ class PlayerRanking
     Integer skill = 0
     Integer score = 0
     Integer totalScore = 0
+    Integer trendingScore = 0
     Integer rank = 0
+    Integer totalRank = 0
+    Integer trendingRank = 0
     Integer oldScore = null
     Integer oldRank = null
     Date snapshot = null

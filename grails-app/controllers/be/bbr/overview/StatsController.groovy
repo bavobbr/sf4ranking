@@ -4,6 +4,7 @@ import be.bbr.sf4ranking.*
 import grails.plugin.cache.Cacheable
 import org.apache.commons.math.stat.descriptive.SummaryStatistics
 import org.apache.shiro.SecurityUtils
+import org.joda.time.DateTime
 
 /**
  * Do some datamining
@@ -22,7 +23,7 @@ class StatsController
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
-        cstats = cstats.sort {a, b -> b.scoreAccumulated <=> a.scoreAccumulated}
+        cstats = cstats.sort {a, b -> b.decayedScoreAccumulated <=> a.decayedScoreAccumulated}
         Map<Version, GameStats> statsmap = [:]
         if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012, Version.USF4]) {
             def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)
@@ -118,16 +119,19 @@ class StatsController
         }
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
+        def bestTrending = queryService.findPlayers(charType, null, 100, 0, game, RankingType.TRENDING)
         def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
+        def bestTrendingplayers = bestTrending ? bestTrending.findAll {charType in it.main(game)} : null
         def bestSecondaryplayers = best ? best.findAll {
             !(charType in it.main(game))
         } : null
         def best5m = bestMainplayers.take(5)
+        def best5t = bestTrendingplayers.take(5)
         def best5s = bestSecondaryplayers.take(5)
         def others = CharacterStats.findAllByGame(game)
         others.removeAll {it.characterType == CharacterType.UNKNOWN}
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
-                "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
+                "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "trendingScoreAccumulated", "trendingScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
                 "top1finishes", "top3finishes", "top8finishes", "top16finishes", "meanTop5Score", "meanTop5Usage"]
         def relativeStats = [:]
         statnames.each {String stat ->
@@ -166,6 +170,7 @@ class StatsController
 
         return [stats: games[game.value],
                 best5: best5m,
+                best5trending: best5t,
                 best5secondaries: best5s,
                 relativeStats: relativeStats,
                 total: others.size(),
@@ -206,9 +211,12 @@ class StatsController
         mainUsage(game, statsmap)
         secondaryUsage(game, statsmap)
         findBestPlayers(game, statsmap)
+        findBestTrendingPlayers(game, statsmap)
         scoreByTop100(game, statsmap)
         decayedScore(characters, statsmap)
         decayedScoreByTop100(game, statsmap)
+        trendingScore(characters, statsmap, game)
+        trendingScoreByTop100(game, statsmap)
         topfinishes(characters, statsmap)
         statsmap.values().each {
             log.info "Saving stats for ${it.characterType}: ${it}"
@@ -376,12 +384,27 @@ class StatsController
     private void decayedScore(List<CharacterStats> characters, Map statsmap)
     {
         log.info "Calculating scores"
-        characters.each {GameCharacter gc ->
+        characters.each { GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
             def score = ScoringSystem.
                     getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
             stats.decayedScoreAccumulated += score
+        }
+    }
+
+    private void trendingScore(List<CharacterStats> characters, Map statsmap, Version game)
+    {
+        log.info "Calculating trending scores"
+        def last = queryService.lastTournament(game)
+        DateTime window = new DateTime(last.date.time).minusMonths(6)
+        characters.each { GameCharacter gc ->
+            CharacterStats stats = statsmap[gc.characterType]
+            Result r = gc.gameTeam.result
+            if (window.isBefore(r.tournament.date.time)) {
+                def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                stats.trendingScoreAccumulated += score
+            }
         }
     }
 
@@ -466,6 +489,26 @@ class StatsController
         }
     }
 
+    private void trendingScoreByTop100(Version game, Map statsmap)
+    {
+        DateTime window = new DateTime(queryService.lastTournament(game).date.time).minusMonths(6)
+        log.info "Checking top 100 decayed scores"
+        def top100 = queryService.findPlayers(null, null, 100, 0, game)
+        top100.each {Player p ->
+            p.results.findAll {it.tournament.game == game}.each {Result r ->
+                if (window.isBefore(r.tournament.date.time)) {
+                    def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                    r.characterTeams.each {
+                        it.pchars.each {
+                            CharacterStats cstats = statsmap[it.characterType]
+                            cstats.trendingScoreAccumulatedByTop100 += score
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private def mainUsagetop50(Version game, Map statsmap)
     {
         log.info "Checking top 50 usage"
@@ -524,6 +567,22 @@ class StatsController
             CharacterStats stats = statsmap[k]
             log.info "Assigning $v as best player for $k"
             stats?.player = v
+        }
+    }
+
+    private def findBestTrendingPlayers(Version game, Map statsmap)
+    {
+        log.info "Finding best trending players for game $game"
+        Map charToPlayer = [:]
+        CharacterType.values().findAll {it.game == Version.generalize(game)}.each {CharacterType ctype ->
+            def best = queryService.findPlayers(ctype, null, 100, 0, game, RankingType.TRENDING)
+            def bestplayer = best ? best.find {ctype in it.main(game)} : null
+            charToPlayer[ctype] = bestplayer
+        }
+        charToPlayer.each {k, v ->
+            CharacterStats stats = statsmap[k]
+            log.info "Assigning $v as best trending player for $k"
+            stats?.trendingPlayer = v
         }
     }
 
@@ -595,6 +654,11 @@ class StatsController
                 comparison.totalscoreP2 = p2Rank.totalScore
                 comparison.totalscoreDiff = comparison.totalscoreP1 - comparison.totalscoreP2
                 comparison.totalscoreResult = comparison.calculate(comparison.totalscoreP1, comparison.totalscoreP2)
+
+                comparison.trendingscoreP1 = p1Rank.trendingScore
+                comparison.trendingscoreP2 = p2Rank.trendingScore
+                comparison.trendingscoreDiff = comparison.trendingscoreP1 - comparison.trendingscoreP2
+                comparison.trendingscoreResult = comparison.calculate(comparison.trendingscoreP1, comparison.trendingscoreP2)
 
                 comparison.rankP1 = p1Rank.rank
                 comparison.rankP2 = p2Rank.rank
@@ -679,6 +743,11 @@ class StatsController
         Integer totalscoreP2
         Integer totalscoreDiff
         ComparisonResult totalscoreResult
+
+        Integer trendingscoreP1
+        Integer trendingscoreP2
+        Integer trendingscoreDiff
+        ComparisonResult trendingscoreResult
 
         Integer tournamentWinsP1
         Integer tournamentWinsP2

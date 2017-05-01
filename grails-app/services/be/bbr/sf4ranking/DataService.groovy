@@ -307,7 +307,7 @@ class DataService
                         if (game && it.rank && it.score) {
                             PlayerRanking pranking = new PlayerRanking(skill: it.skill, rank: it.rank, score: it.score,
                                     totalScore: it.totalScore ?: 0, game: game, oldRank: it.oldRank,
-                                    oldScore: it.oldScore, snapshot: it.snapshot)
+                                    oldScore: it.oldScore, snapshot: it.snapshot, totalRank: it.totalRank?: 0, trendingRank: it.trendingRank?: 0, trendingScore: it.trendingScore?: 0)
                             p.addToRankings(pranking)
                             mainCharacters.each { pranking.addToMainCharacters(it) }
                         }
@@ -474,8 +474,11 @@ class DataService
             it.rankings.each {
                 def ranking = [:]
                 ranking.rank = it.rank
+                ranking.totalRank = it.totalRank
+                ranking.trendingRank = it.trendingRank
                 ranking.score = it.score
                 ranking.totalScore = it.totalScore
+                ranking.trendingScore = it.trendingScore
                 ranking.skill = it.skill
                 ranking.oldRank = it.oldRank
                 ranking.oldScore = it.oldScore
@@ -551,6 +554,7 @@ class DataService
             Player.list().each {it.delete()}
             Tournament.list().each {it.delete()}
             Team.list().each {it.delete()}
+            Hardware.list().each {it.delete()}
         }
 
     }

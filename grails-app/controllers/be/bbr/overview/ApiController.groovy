@@ -4,6 +4,7 @@ import be.bbr.sf4ranking.DataService
 import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.Query
 import be.bbr.sf4ranking.QueryService
+import be.bbr.sf4ranking.RankingType
 import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.ScoringSystem
 import be.bbr.sf4ranking.Tournament
@@ -122,7 +123,7 @@ class ApiController {
         boolean isCpt = params.getBoolean("cpt", false)
         def players = []
         if (!isCpt) {
-            players = queryService.findPlayers(null, null, size, offset, game, false)
+            players = queryService.findPlayers(null, null, size, offset, game, RankingType.ACTUAL)
         }
         else {
             players = queryService.findCptPlayers().take(size)

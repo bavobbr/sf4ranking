@@ -35,13 +35,16 @@
         <thead>
         <tr class="stathead">
             <th>Character</th>
-            <th>Base Score <a href="#" data-toggle="tooltip" data-placement="top"
-                              title="Sum of scores earned by players who used this character in tournaments">(?)</a>
+            <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top"
+                              title="Sum of time-adjusted scores earned by players who used this character in tournaments">(?)</a>
             </th>
             <th>Times listed <a href="#" data-toggle="tooltip" data-placement="top"
                                 title="Number of times this character appeared in the tournament results">(?)</a></th>
-            <th>Score <a href="#" data-toggle="tooltip" data-placement="top"
-                         title="Sum of decayed scores earned by players who used this character in tournaments">(?)</a>
+            <th>Alltime Score <a href="#" data-toggle="tooltip" data-placement="top"
+                         title="Sum of scores earned by all players who used this character in all tournaments">(?)</a>
+            </th>
+            <th>Trending Score <a href="#" data-toggle="tooltip" data-placement="top"
+                         title="Trending score earned by players who used this character in recent tournaments">(?)</a>
             </th>
             <th>Main top 50 <a href="#" data-toggle="tooltip" data-placement="top"
                                title="Number of top 50 players who use this character as main">(?)</a></th>
@@ -76,9 +79,10 @@
                 ${cstat.characterType.value}
             </g:link>
             </td>
-            <td>${cstat.scoreAccumulated}</td>
-            <td>${cstat.totalTimesUsed}</td>
             <td>${cstat.decayedScoreAccumulated}</td>
+            <td>${cstat.totalTimesUsed}</td>
+            <td>${cstat.scoreAccumulated}</td>
+            <td>${cstat.trendingScoreAccumulated}</td>
             <td>${cstat.asMainInTop50}</td>
             <td>${cstat.asMainInTop100}</td>
             <td>${cstat.asMain}</td>
