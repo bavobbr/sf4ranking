@@ -23,7 +23,7 @@ class StatsController
         def cstats = CharacterStats.findAllByGame(game)
         log.info "returning ${cstats.size()} char stats"
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
-        cstats = cstats.sort {a, b -> b.decayedScoreAccumulated <=> a.decayedScoreAccumulated}
+        cstats = cstats.sort {a, b -> a.decayedRank <=> b.decayedRank}
         Map<Version, GameStats> statsmap = [:]
         if (game in [Version.VANILLA, Version.SUPER, Version.AE, Version.AE2012, Version.USF4]) {
             def vanillaStats = GameStats.findByGame(Version.VANILLA) ?: new GameStats(game: Version.VANILLA)
@@ -138,7 +138,7 @@ class StatsController
             def index = others.sort {a, b -> b."$stat" <=> a."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-        def reversestatnames = ["spreadTop5Score", "standardDeviationTop5Score", "spreadTop5Usage", "standardDeviationTop5Usage"]
+        def reversestatnames = ["spreadTop5Score", "standardDeviationTop5Score", "spreadTop5Usage", "standardDeviationTop5Usage", "trendingRank", "decayedRank", "alltimeRank"]
         reversestatnames.each {String stat ->
             def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
@@ -218,6 +218,7 @@ class StatsController
         trendingScore(characters, statsmap, game)
         trendingScoreByTop100(game, statsmap)
         topfinishes(characters, statsmap)
+        rankings(statsmap)
         statsmap.values().each {
             log.info "Saving stats for ${it.characterType}: ${it}"
             it.save(failOnError: true)
@@ -583,6 +584,18 @@ class StatsController
             CharacterStats stats = statsmap[k]
             log.info "Assigning $v as best trending player for $k"
             stats?.trendingPlayer = v
+        }
+    }
+
+    private void rankings(LinkedHashMap<CharacterType, CharacterStats> characterTypeCharacterStats) {
+        characterTypeCharacterStats.values().sort { it.scoreAccumulated }.reverse().eachWithIndex { def stat, def idx ->
+            stat.alltimeRank = idx+1
+        }
+        characterTypeCharacterStats.values().sort { it.decayedScoreAccumulated }.reverse().eachWithIndex { def stat, def idx ->
+            stat.decayedRank = idx+1
+        }
+        characterTypeCharacterStats.values().sort { it.trendingScoreAccumulated }.reverse().eachWithIndex { def stat, def idx ->
+            stat.trendingRank = idx+1
         }
     }
 

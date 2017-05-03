@@ -40,6 +40,10 @@ class CharacterStats
     Double meanTop5Usage = 0.0
     Double standardDeviationTop5Usage = 0.0
 
+    Integer decayedRank = 0
+    Integer trendingRank = 0
+    Integer alltimeRank = 0
+
 
     Player player
     Player trendingPlayer

@@ -22,6 +22,27 @@ This character is compared versus ${total} other characters in ${stats?.game?.va
         </tr>
         </thead>
         <tr>
+            <td>Total rank</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.alltimeRank}</td>
+            </g:each>
+            <td>${relativeStats.alltimeRank}</td>
+        </tr>
+        <tr>
+            <td>Actual decayed rank</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.decayedRank}</td>
+            </g:each>
+            <td>${relativeStats.decayedRank}</td>
+        </tr>
+        <tr>
+            <td>Trending rank</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.trendingRank}</td>
+            </g:each>
+            <td>${relativeStats.trendingRank}</td>
+        </tr>
+        <tr>
             <td>Total times used</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.totalTimesUsed}</td>
@@ -246,6 +267,7 @@ These are all the ${tournamentWins.size()} non-local circuits where ${characterT
             <th>Country</th>
             <th>Score</th>
             <th>Weight</th>
+            <th>Date</th>
             <th>Class</th>
             <th>CPT</th>
             <th>Player</th>
@@ -264,6 +286,7 @@ These are all the ${tournamentWins.size()} non-local circuits where ${characterT
                 <td>${result.tournament.countryCode}</td>
                 <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
                 <td>${result.tournament.weight}</td>
+                <td>${result.tournament.date}</td>
                 <td>${result.tournament.tournamentType.value}</td>
                 <td>${result.tournament.cptTournament.value}</td>
 
@@ -290,6 +313,7 @@ These are all the ${tournamentAll.size()} non-local circuits where ${characterTy
             <th>Country</th>
             <th>Score</th>
             <th>Weight</th>
+            <th>Date</th>
             <th>Class</th>
             <th>CPT</th>
             <th>Player</th>
@@ -308,6 +332,7 @@ These are all the ${tournamentAll.size()} non-local circuits where ${characterTy
                 <td>${result.tournament.countryCode}</td>
                 <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
                 <td>${result.tournament.weight}</td>
+                <td>${result.tournament.date}</td>
                 <td>${result.tournament.tournamentType.value}</td>
                 <td>${result.tournament.cptTournament.value}</td>
 
