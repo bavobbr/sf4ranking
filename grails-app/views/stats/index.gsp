@@ -46,6 +46,9 @@
             <th>Trending Score <a href="#" data-toggle="tooltip" data-placement="top"
                          title="Trending score earned by players who used this character in recent tournaments">(?)</a>
             </th>
+            <th>Trend <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="Short time trend compared to actual placing based on 18 months of data">(?)</a>
+            </th>
             <th>Main top 50 <a href="#" data-toggle="tooltip" data-placement="top"
                                title="Number of top 50 players who use this character as main">(?)</a></th>
             <th>Main top 100 <a href="#" data-toggle="tooltip" data-placement="top"
@@ -83,6 +86,17 @@
             <td>${cstat.totalTimesUsed}</td>
             <td>${cstat.scoreAccumulated}</td>
             <td>${cstat.trendingScoreAccumulated}</td>
+            <td class="${cstat?.diffTrendRank() == 0 ? '' : cstat?.diffTrendRank() > 0 ? 'success' : 'danger'}">
+                <g:if test="${cstat.diffTrendRank() > 0}">
+                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+                </g:if>
+                <g:elseif test="${cstat?.diffTrendRank() < 0}">
+                    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+                </g:elseif>
+                <g:if test="${cstat?.diffTrendRank() != 0 && cstat?.diffTrendRank() != null}">
+                    ${Math.abs(cstat?.diffTrendRank())}
+                </g:if>
+            </td>
             <td>${cstat.asMainInTop50}</td>
             <td>${cstat.asMainInTop100}</td>
             <td>${cstat.asMain}</td>

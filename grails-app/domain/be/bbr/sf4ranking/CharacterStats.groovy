@@ -52,6 +52,10 @@ class CharacterStats
 
     def beforeUpdate() { convertNaN() }
 
+    public Integer diffTrendRank() {
+        return decayedRank - trendingRank
+    }
+
     private void convertNaN() {
         if (spreadTop5Score == Double.NaN) spreadTop5Score = -1.0
         if (meanTop5Score == Double.NaN) meanTop5Score = -1.0
