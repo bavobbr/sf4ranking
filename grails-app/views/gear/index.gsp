@@ -65,7 +65,21 @@ This is a list if the most commonly used arcade sticks, controllers and converte
 
 <div class="row" align="center">
     <div class="col-md-12" align="center">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=fb3508f9-7bb3-47f4-b26b-d4cc060e591f"></script>
+        <script type="text/javascript">
+            amzn_assoc_placement = "adunit0";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_tracking_id = "topstuff0e-20";
+            amzn_assoc_search_bar_position = "bottom";
+            amzn_assoc_ad_mode = "search";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_title = "Arcade Controller";
+            amzn_assoc_default_search_phrase = "arcade controller";
+            amzn_assoc_default_category = "All";
+            amzn_assoc_linkid = "88b3499db3b10427f617b23a220cb13b";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 
            </div>
 </div>

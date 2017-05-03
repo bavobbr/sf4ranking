@@ -156,18 +156,20 @@
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_tracking_id = "topstuff0e-20";
+            amzn_assoc_search_bar_position = "bottom";
             amzn_assoc_ad_mode = "search";
             amzn_assoc_ad_type = "smart";
             amzn_assoc_marketplace = "amazon";
             amzn_assoc_region = "US";
-            amzn_assoc_title = "Shop Related Products";
+            amzn_assoc_title = "Nintendo Switch";
             amzn_assoc_default_search_phrase = "nintendo switch";
             amzn_assoc_default_category = "All";
-            amzn_assoc_linkid = "919899be79cdf14ca1b81c0b22f6c130";
+            amzn_assoc_linkid = "72a2884af2bc4117386d47345411320c";
         </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>    </div>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+    </div>
 </div>
 
 

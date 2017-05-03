@@ -156,7 +156,7 @@ The global board has 1 direct qualified player, 30 global points spots. One spot
 
 <div class="row" align="center">
     <div class="col-md-12" align="center">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=92a40fad-32f4-4e45-8e9c-ba21f4170ba9"></script>
     </div>
 </div>
 
@@ -264,16 +264,17 @@ The first 7 players from this region will be invited to a regional final that sc
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_search_bar = "true";
+            amzn_assoc_tracking_id = "topstuff0e-20";
+            amzn_assoc_search_bar_position = "bottom";
             amzn_assoc_ad_mode = "search";
             amzn_assoc_ad_type = "smart";
             amzn_assoc_marketplace = "amazon";
             amzn_assoc_region = "US";
-            amzn_assoc_title = "Shop Related Products";
+            amzn_assoc_title = "Nintendo Switch";
             amzn_assoc_default_search_phrase = "nintendo switch";
             amzn_assoc_default_category = "All";
-            amzn_assoc_linkid = "919899be79cdf14ca1b81c0b22f6c130";
+            amzn_assoc_linkid = "72a2884af2bc4117386d47345411320c";
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>

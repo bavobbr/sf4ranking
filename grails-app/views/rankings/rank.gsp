@@ -242,7 +242,7 @@
 
 <div id="pagination">
     <g:paginate total="${total}" controller="rankings" action="rank" max="50"
-                params="[country: params.country, pchar: params.pchar, id: game.name()]"/>
+                params="[country: params.country, pchar: params.pchar, id: game.name(), rankingType: rankingType.name()]"/>
 </div>
 This is a list of the best ${game.value} tournament players world-wide. The ${game.name()} top player board is composed by looking at player weights, tournament difficulty and international appeal. For more info on the algorithm check out <g:link
         controller="about">The FAQ page</g:link>. This is a subjective list and is only meant to give an idea on who is making name and fame in the FGC. The ranking aims to provide a database of tournament results as well, open to the community.
@@ -283,7 +283,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
     </div>
 
     <div class="col-md-5">
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=4999401e-3b6b-483e-855a-486935992318&storeId=fgwora-20"></script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=92a40fad-32f4-4e45-8e9c-ba21f4170ba9"></script>
     </div>
 </div>
 </body>
