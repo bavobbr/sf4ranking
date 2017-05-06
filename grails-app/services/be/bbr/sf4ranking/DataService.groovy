@@ -69,7 +69,7 @@ class DataService
     @Transactional
     public void addResultsToTournament(String input, Tournament tournament)
     {
-        input.trim().eachLine {def line, index ->
+        input.trim().readLines().findAll { it.trim().size() > 0 }.eachWithIndex { def line, index ->
             def rank = ScoringSystem.getRank(index + 1, tournament.tournamentFormat)
             log.info "processing $line"
             def handle = filterPlayerHandle(line)
@@ -180,7 +180,7 @@ class DataService
     {
         List<String> feedback = []
         if (game == Version.UNKNOWN || game == null) feedback << "Game version given is recognized as $game"
-        input.trim().eachLine {def line, index ->
+        input.trim().readLines().findAll { it.trim().size() > 0}.eachWithIndex { def line, index ->
             String handle = filterPlayerHandle(line)
             if (type == "players")
             {

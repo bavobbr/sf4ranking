@@ -108,8 +108,8 @@
 <div class="row">
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="killerinstinct.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
+        <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.T7, players: t7players]"/>
     </div>
 
     <div class="col-md-6">
@@ -133,6 +133,21 @@
 
 </div>
 
+
+<div class="row">
+
+    <div class="col-md-6">
+        <g:img dir="images/banners" file="killerinstinct.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
+    </div>
+
+    <div class="col-md-6">
+        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+    </div>
+
+</div>
+
 <div class="row">
 
     <div class="col-md-6">
@@ -144,15 +159,6 @@
         <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
     </div>
-</div>
-
-<div class="row">
-
-    <div class="col-md-6">
-        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
-    </div>
-
 </div>
 
 

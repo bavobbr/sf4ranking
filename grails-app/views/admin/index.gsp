@@ -20,19 +20,25 @@
 <g:if test="${isUpdating}">
   <div class="alert alert-warning">The rankings are currently being updated by ${isUpdatingBy}! Please wait to edit data</div>
 </g:if>
-<h3>Update database</h3>
+<h3>Data input</h3>
+<ul>
+<li><g:link action="importer">import a new Tournament...</g:link></li>
+<li><g:link action="clearCache">Clear caches (use after updating stuff)</g:link></li>
+  </ul>
+
+
+<h3>Weighting</h3>
 The updateAll should be triggered every time a new tournament has been imported, as the tournament needs to be weighted and players scores need to be updated.
 <ul>
-<li><g:link action="importer">import a new Tournament...</g:link>
   <g:each in="${Version.values()}" var="game">
     <li><g:link action="updateAll" params="[game: game]">update all data for ${game}</g:link></li>
   </g:each>
-  <li><g:link action="clearCache">Clear caches (use after updating stuff)</g:link></li>
 
 </ul>
 
 <h3>Update parts of database</h3>
 This is for fine-grained maintenance, usually not required.
+<br/>Bulk edit allows you to easily edit meta-data of the top100 players. These should be as complete as possible.
 <ul>
   <li><g:link action="merge">merge specified Players...</g:link></li>
   <g:each in="${Version.values()}" var="value">
@@ -49,6 +55,16 @@ This is for fine-grained maintenance, usually not required.
   </g:if>
   <li><g:link action="updateMainGames">calculate and update Player main games based on results</g:link></li>
 </ul>
+
+<h3>Auto-update player weights</h3>
+This will completely recalculcate player weights based on their current ranking.</br>
+This follows a logarythmic distribution and considers the highest of either actual rank or alltime rank for every player.
+<ul>
+  <g:each in="${Version.values()}" var="value">
+    <li><g:link action="autoFillSkill" params="[game: value.name()]">Autofill skill of ${value.name()}</g:link></li>
+  </g:each>
+</ul>
+
 
 <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
   <h3>Snapshots</h3>
@@ -86,9 +102,6 @@ This is for fine-grained maintenance, usually not required.
     <li><g:link action="deleteAll">Delete all DB data...</g:link></li>
     <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
     <li><g:link action="mergeSkills">Merge USF4 skill ratings into other SF4 games</g:link></li>
-      <g:each in="${Version.values()}" var="value">
-        <li><g:link action="autoFillSkill" params="[game: value.name()]">Autofill skill of ${value.name()}</g:link></li>
-      </g:each>
     <li><g:link action="findSkillDeviations">FindSkillDeviations</g:link></li>
   </ul>
   <br/>

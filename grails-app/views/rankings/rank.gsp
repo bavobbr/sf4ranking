@@ -15,7 +15,7 @@
 
 <body>
 <g:if test="${filtered}">
-    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Filtered on ${fcountry} ${fchar}</h2></center>
+    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Filtered on ${fcountry} ${fchar?.value}</h2></center>
 </g:if>
 <g:elseif test="${be.bbr.sf4ranking.RankingType.ALLTIME}">
     <center><h2 class="title-filtered">${game.value} Tournament Rankings - All-time player score ranking</h2></center>

@@ -99,108 +99,104 @@ class RankingService {
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
         def lastTournament = queryService.lastTournament(game)
-        def window = new DateTime(lastTournament.date.time).minusMonths(6)
-        configurationService.withUniqueSession {
-            players.eachWithIndex { Player p, Integer idx ->
-                log.info("Evaluating for $game player $p, looking for results [${idx+1} / ${players.size()}]")
-                def results = Result.findAllByPlayer(p)
-                results = results.findAll {
-                    it.tournament.game == game && it.tournament.finished
-                }
-                if (results) {
-                    log.info("Found ${results.size()} results")
-                    def totalScore = getScore(results, 18) { Result r ->
-                        r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
+        if (lastTournament) {
+            def window = new DateTime(lastTournament.date.time).minusMonths(6)
+            configurationService.withUniqueSession {
+                players.eachWithIndex { Player p, Integer idx ->
+                    log.info("Evaluating for $game player $p, looking for results [${idx + 1} / ${players.size()}]")
+                    def results = Result.findAllByPlayer(p)
+                    results = results.findAll {
+                        it.tournament.game == game && it.tournament.finished
                     }
-                    def actualScore = getScore(results, 12) { Result r ->
-                        r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
-                    }
-                    def trendingScore = getScore(results, 12) { Result r ->
-                        if (window.isBefore(r.tournament.date.time)) {
-                            return r.tournament.ranked ? ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
-                        } else return 0
-                    }
-                    p.applyScore(game, actualScore)
-                    p.applyTotalScore(game, totalScore)
-                    p.applyTrendingScore(game, trendingScore)
-                    // calculate CPT score
-                    if (game == Version.SF5) {
-                        def cptScore = 0
-                        def cptScoreAO = 0
-                        def cptScoreLA = 0
-                        def cptScoreNA = 0
-                        def cptScoreEU = 0
-                        def cptCount = 0
-                        def prize = 0
-                        results.each {
-                            if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE && it.tournament.finished) {
-                                def score = it.tournament.cptTournament.getScore(it.place)
-                                cptScore += score
-                                if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
-                                    switch (it.tournament.region) {
-                                        case Region.AO: cptScoreAO += score; break;
-                                        case Region.LA: cptScoreLA += score; break;
-                                        case Region.NA: cptScoreNA += score; break;
-                                        case Region.EU: cptScoreEU += score; break;
+                    if (results) {
+                        log.info("Found ${results.size()} results")
+                        def totalScore = getScore(results, 18) { Result r ->
+                            r.tournament.ranked ? ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat) : 0
+                        }
+                        def actualScore = getScore(results, 12) { Result r ->
+                            r.tournament.ranked ? ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
+                        }
+                        def trendingScore = getScore(results, 12) { Result r ->
+                            if (window.isBefore(r.tournament.date.time)) {
+                                return r.tournament.ranked ? ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
+                            } else return 0
+                        }
+                        p.applyScore(game, actualScore)
+                        p.applyTotalScore(game, totalScore)
+                        p.applyTrendingScore(game, trendingScore)
+                        // calculate CPT score
+                        if (game == Version.SF5) {
+                            def cptScore = 0
+                            def cptScoreAO = 0
+                            def cptScoreLA = 0
+                            def cptScoreNA = 0
+                            def cptScoreEU = 0
+                            def cptCount = 0
+                            def prize = 0
+                            results.each {
+                                if (it.tournament.cptTournament && it.tournament.cptTournament != CptTournament.NONE && it.tournament.finished) {
+                                    def score = it.tournament.cptTournament.getScore(it.place)
+                                    cptScore += score
+                                    if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
+                                        switch (it.tournament.region) {
+                                            case Region.AO: cptScoreAO += score; break;
+                                            case Region.LA: cptScoreLA += score; break;
+                                            case Region.NA: cptScoreNA += score; break;
+                                            case Region.EU: cptScoreEU += score; break;
+                                        }
                                     }
+                                    cptCount++
+                                    def countryCode = it.tournament.countryCode
+                                    prize = prize + it.tournament.cptTournament.getPrize(it.place, countryCode)
                                 }
-                                cptCount++
-                                def countryCode = it.tournament.countryCode
-                                prize = prize + it.tournament.cptTournament.getPrize(it.place, countryCode)
                             }
-                        }
-                        if (cptScore) {
-                            p.findOrCreateCptRanking(Region.GLOBAL).score = cptScore
-                        }
-                        else {
-                            if (p.findCptRanking(Region.GLOBAL)) {
-                                p.findCptRanking(Region.GLOBAL).score = 0
+                            if (cptScore) {
+                                p.findOrCreateCptRanking(Region.GLOBAL).score = cptScore
+                            } else {
+                                if (p.findCptRanking(Region.GLOBAL)) {
+                                    p.findCptRanking(Region.GLOBAL).score = 0
+                                }
                             }
-                        }
-                        if (cptScoreAO) {
-                            p.findOrCreateCptRanking(Region.AO).score = cptScoreAO
-                        }
-                        else {
-                            if (p.findCptRanking(Region.AO)) {
-                                p.findCptRanking(Region.AO).score = 0
+                            if (cptScoreAO) {
+                                p.findOrCreateCptRanking(Region.AO).score = cptScoreAO
+                            } else {
+                                if (p.findCptRanking(Region.AO)) {
+                                    p.findCptRanking(Region.AO).score = 0
+                                }
                             }
-                        }
-                        if (cptScoreLA) {
-                            p.findOrCreateCptRanking(Region.LA).score = cptScoreLA
-                        }
-                        else {
-                            if (p.findCptRanking(Region.LA)) {
-                                p.findCptRanking(Region.LA).score = 0
+                            if (cptScoreLA) {
+                                p.findOrCreateCptRanking(Region.LA).score = cptScoreLA
+                            } else {
+                                if (p.findCptRanking(Region.LA)) {
+                                    p.findCptRanking(Region.LA).score = 0
+                                }
                             }
-                        }
-                        if (cptScoreNA) {
-                            p.findOrCreateCptRanking(Region.NA).score = cptScoreNA
-                        }
-                        else {
-                            if (p.findCptRanking(Region.NA)) {
-                                p.findCptRanking(Region.NA).score = 0
+                            if (cptScoreNA) {
+                                p.findOrCreateCptRanking(Region.NA).score = cptScoreNA
+                            } else {
+                                if (p.findCptRanking(Region.NA)) {
+                                    p.findCptRanking(Region.NA).score = 0
+                                }
                             }
-                        }
-                        if (cptScoreEU) {
-                            p.findOrCreateCptRanking(Region.EU).score = cptScoreEU
-                        }
-                        else {
-                            if (p.findCptRanking(Region.EU)) {
-                                p.findCptRanking(Region.EU).score = 0
+                            if (cptScoreEU) {
+                                p.findOrCreateCptRanking(Region.EU).score = cptScoreEU
+                            } else {
+                                if (p.findCptRanking(Region.EU)) {
+                                    p.findCptRanking(Region.EU).score = 0
+                                }
                             }
+                            p.cptTournaments = cptCount
+                            p.cptPrize = prize
                         }
-                        p.cptTournaments = cptCount
-                        p.cptPrize = prize
+                    } else {
+                        log.info("No results for player $p.name - deleting ranking")
+                        p.deleteRanking(game)
                     }
+                    p.save(failOnError: true)
+                    log.info("Saved player $p.name [${idx + 1} / ${players.size()}]")
                 }
-                else {
-                    log.info("No results for player $p.name - deleting ranking")
-                    p.deleteRanking(game)
-                }
-                p.save(failOnError: true)
-                log.info("Saved player $p.name [${idx+1} / ${players.size()}]")
+                log.info "Updated ${players.size()} scores"
             }
-            log.info "Updated ${players.size()} scores"
         }
         log.info("Flushing player score session...")
         Player.withSession { session -> session.flush() }

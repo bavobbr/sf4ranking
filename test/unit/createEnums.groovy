@@ -3,27 +3,48 @@
  * Date: 3/11/14
  */
 def names = """
-Birdie
- Cammy
- Chun-Li
- Dhalsim
- Karin
- Ken
- Laura
- M. Bison
- Nash
- Necalli
- Rashid
- R. Mika
- Ryu
- Vega
- Zangief
- FANG
+Katarina Alves
+Claudio Serafino
+Lucky Chloe
+Shaheen
+Josie Rizal
+Gigas
+Jack-7
+Kazumi Mishima
+Akuma 
+Master Raven
+Alisa Bosconovitch
+Asuka Kazama
+Bob
+Bryan Fury
+Devil Jin
+Eddy Gordo
+Eliza
+Feng Wei
+Heihachi Mishima
+Hwoarang
+Jin Kazama
+Kazuya Mishima
+King
+Kuma
+Lars Alexandersson
+Lee Chaolan
+Leo
+Lili
+Ling Xiaoyu
+Marshall Law
+Miguel Caballero
+Nina Williams
+Panda
+Paul Phoenix
+Sergei Dragunov
+Steve Fox
+Yoshimitsu
 """
 
-names.eachLine { String line ->
+names.readLines().sort().each { String line ->
     line = line.trim()
     def enumName = line.replace(" ","_").replace(".","_").toUpperCase()
-    println "SF5_${enumName}(\"${enumName}\", \"$line\", Version.SF5),"
+    println "T7_${enumName}(\"${enumName}\", \"$line\", Version.SF5),"
 
 }

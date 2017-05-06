@@ -148,6 +148,8 @@
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
                             <li><g:link action="rank" controller="rankings"
+                                        params="['id': Version.T7.name()]">World Rankings Tekken 7</g:link></li>
+                            <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
@@ -156,7 +158,7 @@
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.IGAU.name()]">World Rankings Injustice</g:link></li>
                             <li><g:link action="rank" controller="rankings"
-                                        params="['id': Version.BBCP.name()]">World Rankings Blazblue CP</g:link></li>
+                                        params="['id': Version.BBCP.name()]">World Rankings Blazblue</g:link></li>
                             <li class="divider"></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.USF4.name()]">World Rankings Ultra SF4</g:link></li>
@@ -176,6 +178,8 @@
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.SF5.name()]">Street Fighter 5</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
+                            <li><g:link action="tournaments" controller="rankings"
+                                        params="['id': Version.T7.name()]">Tekken 7</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
@@ -281,7 +285,7 @@
                 <div class="footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="large">Street Fighter World Rankings &copy; 2013-2016 Bavo Bruylandt</p>
+                            <p class="large">FGC World Rankings &copy; 2013-2017 Bavo Bruylandt</p>
                         </div>
 
                         <div class="col-md-2">
@@ -311,7 +315,7 @@
                     <p>Developed by <a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> &middot; Hosted on <a
                             href="http://www.shoryuken.com">Shoryuken</a>  &middot;
                         Bootstrap mods by <a href="http://www.kineda.com">Kineda</a> &middot; Twitter at <a
-                            href="https://twitter.com/SRKRanking">@SRK Ranking</a></p>
+                            href="https://twitter.com/SRKRanking">@SRKranking</a></p>
 
                 </div>
             </div>

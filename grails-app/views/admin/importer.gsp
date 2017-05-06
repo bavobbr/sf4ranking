@@ -67,7 +67,7 @@
 </g:if>
 <g:form action="importTournament" controller="admin" name="importform" role="form">
     <div class="form-group">
-        <label for="tname">Name (required)</label>
+        <label for="tname">Name (required, system auto-appends the game)</label>
         <g:textField name="tname" class="form-control" placeholder="tournament name and year" value="${suggestedName}"/>
     </div>
 
@@ -78,7 +78,7 @@
     </div>
 
     <div class="form-group">
-        <label for="tgame">Game</label>
+        <label for="tgame">Game (required)</label>
         <g:select name="tgame" from="${be.bbr.sf4ranking.Version.values()}" class="form-control"
                   value="${suggestedGame}"/>
     </div>
@@ -90,18 +90,18 @@
     </div>
 
     <div class="form-group">
-        <label for="tweight">Weighting type (use AUTO to let the app decide the type)</label>
+        <label for="tweight">Weighting type (use AUTO to let the app decide the type, unless GRAND SLAM or LOCAL type)</label>
         <g:select name="tweight" from="${be.bbr.sf4ranking.WeightingType.values()}" class="form-control"
                   value="${be.bbr.sf4ranking.WeightingType.AUTO}"/>
     </div>
 
     <div class="form-group">
-        <label for="ttype">Tournament Type (only used if weighting is FIXED)</label>
+        <label for="ttype">Tournament Type (only needed if weighting is FIXED)</label>
         <g:select name="ttype" from="${be.bbr.sf4ranking.TournamentType.values()}" class="form-control"/>
     </div>
 
     <div class="form-group">
-        <label for="cpttype">CPT Type</label>
+        <label for="cpttype">CPT Type (only needed for SF5 CPT)</label>
         <g:select name="cpttype" from="${be.bbr.sf4ranking.CptTournament.values()}" class="form-control"/>
     </div>
 
@@ -111,23 +111,26 @@
                   value="${suggestedCountry ?: be.bbr.sf4ranking.CountryCode.US}"/>
     </div>
     <div class="form-group">
-        <label for="tregion">Region (optional)</label>
+        <label for="tregion">Region (optional, mandatory for CPT regional events to decide on region board)</label>
         <g:select name="tregion" from="${be.bbr.sf4ranking.Region.values()}" class="form-control"
                   value="${suggestedRegion ?: be.bbr.sf4ranking.Region.NA}"/>
     </div>
 
-    <div class="form-group">
+%{--    <div class="form-group">
         <label for="tvideos">Videos (seperated with a space)</label>
         <g:textField name="tvideos" class="form-control" placeholder="qJGSz-aQDO0 Go1vdkf-xvY"/>
-    </div>
+    </div>--}%
 
     <div class="form-group">
-        <label for="tcoverage">Link to SRK (full link)</label>
+        <label for="tcoverage">Link to source data (full link, preferably SRK page)</label>
         <g:textField name="tcoverage" class="form-control" placeholder="" value="${suggestedSource}"/>
     </div>
 
     <div class="form-group">
-        <label for="tresults">Results (1 up 64 max, mouse over for tips. Make sure the character name matches a known character type)</label>
+        <label for="tresults">Results (1 up 64 max, mouse over for tips. Use the validate buttons before submit to verify)<br/>
+        Ranking numbers and team names are stripped automatically if in format 'rank. team | playername'<br/>
+        Characters are defined by follwing player name with '(character)'
+        </label>
         <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                     title="${hint}" value="${suggestedContent}"/>
         <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>

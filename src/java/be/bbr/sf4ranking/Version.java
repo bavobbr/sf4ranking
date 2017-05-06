@@ -16,7 +16,8 @@ public enum Version
     BBCP("BlazBlue: Chronophantasma"),
     IGAU("Injustice"),
     MKX("Mortal Kombat X"),
-    SF5("Street Fighter 5");
+    SF5("Street Fighter 5"),
+    T7("Tekken 7");
 
     private String value;
 
@@ -66,6 +67,8 @@ public enum Version
                 return Version.MKX;
             case SF5:
                 return Version.SF5;
+            case T7:
+                return Version.T7;
             default:
                 return Version.UNKNOWN;
         }
