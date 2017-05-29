@@ -50,12 +50,22 @@
                   window.location = "${createLink(action: 'tournament', controller: 'rankings')}/byname/" + uid
               }
 
+              function searchEvent(uid)
+              {
+                  window.location = "${createLink(action: 'event', controller: 'rankings')}/byname/" + uid
+              }
+
               $("#tournamentSearch").autocomplete({
                                                       source: "${createLink(action: 'autocompleteTournament', controller: 'rankings')}",
                                                       minLength: 2,
                                                       select: function (event, ui)
                                                       {
-                                                          if (ui.item) searchTournament(ui.item.value);
+                                                          if (ui.item && ui.item.type === "tournament") {
+                                                              searchTournament(ui.item.value);
+                                                          }
+                                                          else if (ui.item && ui.item.type === "event") {
+                                                              searchEvent(ui.item.value);
+                                                          }
                                                       }
                                                   });
           });

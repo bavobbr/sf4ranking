@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
+        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
         <h4>SF5 Top 10 trending characters</h4>
 
         <div>
@@ -70,28 +70,21 @@
 <div class="row">
 
     <div class="col-md-6">
-        <g:img dir="images/banners" file="banner_general.png" class="img-responsive"/>
-        <h4>Top stuff</h4>
 
         <table class="table table-striped table-hover table-condensed table-responsive">
-            <thead>
-            <tr>
-                <th>Items</th>
-            </tr>
-            </thead>
             <tr>
                 <td class="amazon_row">
                     <script type="text/javascript">
                         amzn_assoc_placement = "adunit0";
-                        amzn_assoc_search_bar = "true";
-                        amzn_assoc_tracking_id = "topstuff0e-20";
+                        amzn_assoc_search_bar = "false";
+                        amzn_assoc_tracking_id = "fgwora-20";
                         amzn_assoc_ad_mode = "manual";
                         amzn_assoc_ad_type = "smart";
                         amzn_assoc_marketplace = "amazon";
                         amzn_assoc_region = "US";
-                        amzn_assoc_title = "";
-                        amzn_assoc_linkid = "effc15201ef3b8bfbc6d78d87839f3f7";
-                        amzn_assoc_asins = "B01NBTWOVC,B06XS5HPVC,B01ISNHNFA,B00SKGV3OI";
+                        amzn_assoc_title = "New releases";
+                        amzn_assoc_linkid = "a58b59c890d05176ff88241af44bb077";
+                        amzn_assoc_asins = "B06XS5HPVC,B01MS6WG9S,B06XP41Y6V,B01MR8JLZ1,B071RMNK78,B01N9FC76Q,B01N0OK8XH,B0716S3X98";
                     </script>
                     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                 </td>
@@ -163,7 +156,19 @@
 
 
 <div class="row">
-    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=92a40fad-32f4-4e45-8e9c-ba21f4170ba9"></script>
+    <script type="text/javascript">
+        amzn_assoc_placement = "adunit0";
+        amzn_assoc_search_bar = "true";
+        amzn_assoc_tracking_id = "fgwora-20";
+        amzn_assoc_ad_mode = "manual";
+        amzn_assoc_ad_type = "smart";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
+        amzn_assoc_title = "New releases";
+        amzn_assoc_linkid = "a58b59c890d05176ff88241af44bb077";
+        amzn_assoc_asins = "B06XS5HPVC,B01MS6WG9S,B06XP41Y6V,B01MR8JLZ1,B071RMNK78,B01N9FC76Q,B01N0OK8XH,B0716S3X98";
+    </script>
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
 
 

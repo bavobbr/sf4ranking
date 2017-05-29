@@ -231,7 +231,7 @@ class AdminController
         String results = params.tresults
         String coverage = params.tcoverage
         String creator = params.creator
-        List tvideos = params.tvideos.tokenize(" ")
+        List tvideos = params.videos? params.tvideos.tokenize(" ") : []
         Boolean tranked = params.tranked?.toBoolean() ?: true
         if (!tname || !tdate || !ttype || !tweight || !tgame || tgame == Version.UNKNOWN) {
             flash.message = "Name, date, tournament type, weighting type, results and game are mandatory"
@@ -556,6 +556,15 @@ class AdminController
         render view: "index"
     }
 
+    def rollupEvents() {
+        if (SecurityUtils.subject.hasRole("Administrator"))
+        {
+            cleanupService.rollupEvents()
+        }
+        flash.message = "Bundled all events"
+        render view: "index"
+    }
+
     def findSkillDeviations()
     {
         if (SecurityUtils.subject.hasRole("Administrator"))
@@ -585,6 +594,15 @@ class AdminController
         redirect controller: "rankings", action: "team", params: [id:t.id]
     }
 
+    def removeFromEvent() {
+        Tournament p = Tournament.get(params.tid)
+        Event t = Event.get(params.eid)
+        log.info("Removing $p from $t")
+        t.removeFromTournaments(p)
+        t.save()
+        redirect controller: "rankings", action: "event", params: [id:t.id]
+    }
+
 
     def printPlayers()
     {
@@ -607,6 +625,13 @@ class AdminController
     {
         List players = Player.list().sort {a, b -> b.overallScore() <=> a.overallScore()}
         def listing = players.collect {Player p -> "${p.rankings.size()}, ${p.name}, ${p.overallScore()}"}.join("\r\n")
+        render(text: listing, contentType: "text/plain", encoding: "UTF-8")
+    }
+
+    def printEvents()
+    {
+        List events = Event.list()
+        def listing = events.collect {Event p -> "$p.name $p.date $p.weight $p.countryCode $p.region$p.host $p.twitter $p.tournaments.name"}.join("\r\n")
         render(text: listing, contentType: "text/plain", encoding: "UTF-8")
     }
 
@@ -715,6 +740,15 @@ class AdminController
         }
         //def listing = playerRanks.collect { p -> "${p.name}, ${p.rank}, ${p.score}, ${p.rankAfter}, ${p.scoreAfter}"}.join("\r\n")
         [tournament: tournament, players: playerRanks]
+    }
+
+    def dropEvents() {
+        Tournament.list().each {
+            it.event = null
+            it.save()
+        }
+        Event.list().each { println it.delete() }
+
     }
 
 }

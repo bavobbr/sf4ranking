@@ -1,29 +1,21 @@
 import groovy.json.JsonSlurper
 
 def filedata = '''
-Problem X
+Mister Crimson
+Infexious
 Luffy
-Foxy Grampa
-Afzal
-Packz
-Imstilldadaddy
-Hurricane
-Gibbo
-Will2pac
-Big fool
-FairlySadPanda
-Tyrant_uk
-Afii
-Cobelcog
-Brickterium
-King jae
-Jester power
-VF Watson
-CCL
-Ryan Hart
-Takamura
+Phenom
+Tokido
+PR Balrog
+XYZZY
+Infiltration
+XiaoHai
+RB
+Daigo Umehara
+Bonchan
+Gachikun
+Nemo
 '''
-
 
 public Map<String, String> getPlayer(String name) {
     def game = "SF5"
@@ -37,11 +29,14 @@ public Map<String, String> getPlayer(String name) {
 }
 
 
-def top50 = filedata.readLines().collectMany { it.tokenize(",") }
+def top50 = filedata.readLines().collectMany { it.tokenize("/") }
 println top50
 
 def data = top50.findResults { p ->
-    try { return getPlayer(p.trim()) }
+    try {
+        def name = p.tokenize(/\(/)[0]
+        return getPlayer(name.trim())
+    }
     catch (e) { println "Couldnt find $p"}
 }.sort { it.rank }
 data.each { p ->

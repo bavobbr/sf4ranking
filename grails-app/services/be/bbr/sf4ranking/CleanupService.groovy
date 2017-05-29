@@ -300,4 +300,43 @@ class CleanupService
     }
 
 
+
+    def rollupEvents() {
+        def tournaments = Tournament.list()
+        log.info("Checking out ${tournaments.size()} tournaments")
+        def grouped = tournaments.groupBy {
+            if (it.name.contains("-")) {
+                def last = it.name.tokenize("-").last()
+                return (it.name - "-$last").trim()
+            } else return it.name.trim()
+
+        }
+        def sorted = grouped.sort { it.value.size() }
+        def findOrCreateEvent = { String name ->
+            def event = Event.findByCodename(name.toUpperCase())
+            if (!event) {
+                event = new Event(name: name)
+                event.weight = 0
+            }
+            return event
+        }
+        sorted.each { k, v ->
+            //println "$k: $v.game"
+            if (v.size() > 1) {
+                Event event = findOrCreateEvent(k)
+                v.each { t ->
+                    if (!event.tournaments.find { it.name == t.name}) {
+                        println "added $t.name to event $event.name"
+                        event.addToTournaments(t)
+                        event.date = t.date
+                        event.countryCode = t.countryCode
+                        event.weight += t.weight
+                        if (t.game == Version.SF5) event.region = t.region
+                        event.save(failOnError: true)
+                    }
+                }
+            }
+        }
+        log.info("Done rolling up ${tournaments.size()} tournaments into ${sorted.size()} events")
+    }
 }

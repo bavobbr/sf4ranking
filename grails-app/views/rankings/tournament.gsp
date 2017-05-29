@@ -15,6 +15,12 @@
 
     </div>
 </g:if>
+<g:if test="${tournament.event != null}">
+    <p>
+    This tournament was part of the <b><g:link action="event" params="[id: tournament.event.id]">${tournament.event.name}</g:link></b> event.
+    </p>
+</g:if>
+
 <div class="table-responsive">
     <table class="table table-striped table-hover tdetails">
         <thead>
@@ -59,7 +65,7 @@
     </table>
 </div>
 
-<h2 class="tournament"><large>Registered ${details.size()} rankings</large></h2>
+<h2 class="tournament"><large>${tournament.game.value} rankings</large></h2>
 
 <div class="table-responsive">
     <table class="tablehead" id="datatable">
@@ -157,16 +163,14 @@
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
             amzn_assoc_search_bar = "true";
-            amzn_assoc_tracking_id = "topstuff0e-20";
-            amzn_assoc_search_bar_position = "bottom";
-            amzn_assoc_ad_mode = "search";
+            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_ad_mode = "manual";
             amzn_assoc_ad_type = "smart";
             amzn_assoc_marketplace = "amazon";
             amzn_assoc_region = "US";
-            amzn_assoc_title = "Nintendo Switch";
-            amzn_assoc_default_search_phrase = "nintendo switch";
-            amzn_assoc_default_category = "All";
-            amzn_assoc_linkid = "72a2884af2bc4117386d47345411320c";
+            amzn_assoc_title = "New releases";
+            amzn_assoc_linkid = "a58b59c890d05176ff88241af44bb077";
+            amzn_assoc_asins = "B06XS5HPVC,B01MS6WG9S,B06XP41Y6V,B01MR8JLZ1,B071RMNK78,B01N9FC76Q,B01N0OK8XH,B0716S3X98";
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>

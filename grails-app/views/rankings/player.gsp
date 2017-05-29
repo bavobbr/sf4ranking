@@ -354,9 +354,21 @@
         </g:if>
 
         <div class="row" align="center">
-            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=92a40fad-32f4-4e45-8e9c-ba21f4170ba9"></script>
-            </div>
+            <script type="text/javascript">
+                amzn_assoc_placement = "adunit0";
+                amzn_assoc_search_bar = "true";
+                amzn_assoc_tracking_id = "fgwora-20";
+                amzn_assoc_ad_mode = "manual";
+                amzn_assoc_ad_type = "smart";
+                amzn_assoc_marketplace = "amazon";
+                amzn_assoc_region = "US";
+                amzn_assoc_title = "New releases";
+                amzn_assoc_linkid = "a58b59c890d05176ff88241af44bb077";
+                amzn_assoc_asins = "B06XS5HPVC,B01MS6WG9S,B06XP41Y6V,B01MR8JLZ1,B071RMNK78,B01N9FC76Q,B01N0OK8XH,B0716S3X98";
+            </script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
         </div>
+    </div>
 
     %{--        <div class="tab-pane" id="videos">
                 <g:if test="${player.videos}">

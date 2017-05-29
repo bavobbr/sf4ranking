@@ -482,6 +482,7 @@ class RankingService {
     private void applyRegionalInvites(Region region, List<Player> regionalPlayers) {
         regionalPlayers.each {
             if (it.findCptRanking(region)) {
+                it.findCptRanking(region).qualifiedByScore = false // reset
                 it.findCptRanking(region).qualified = false // reset
             }
         }

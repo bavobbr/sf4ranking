@@ -80,6 +80,7 @@ This follows a logarythmic distribution and considers the highest of either actu
 <ul>
   <li><g:link action="printPlayerRanks">print all players and their score</g:link></li>
   <li><g:link action="printTournamentSizes">print all Tournaments and player sizes</g:link></li>
+  <li><g:link action="printEvents">print all Events</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'true']">print all Players in the DB</g:link></li>
   <li><g:link action="printPlayers" params="[ranked: 'false']">print all unranked Players in the DB</g:link></li>
   <li><g:link action="exportTournaments">Export Tournaments and Results as JSON data...</g:link></li>
@@ -103,6 +104,7 @@ This follows a logarythmic distribution and considers the highest of either actu
     <li><g:link action="importServerSideData">Import server-side JSON data</g:link></li>
     <li><g:link action="mergeSkills">Merge USF4 skill ratings into other SF4 games</g:link></li>
     <li><g:link action="findSkillDeviations">FindSkillDeviations</g:link></li>
+    <li><g:link action="rollupEvents">rollupEvents</g:link></li>
   </ul>
   <br/>
 </g:if>

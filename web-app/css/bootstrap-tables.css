@@ -99,10 +99,15 @@ table {
     padding: 3px;
 }
 
-.amazon_row {
-  padding: 30px;
+
+
+.amzn-native-header{
+  display: none;
 }
 
+.amzn-native-brand-text{
+  display: none;
+}
 
 .table tbody tr:hover td,
 .table tbody tr:hover th {
@@ -227,4 +232,10 @@ table .span24 {
   float: none;
   width: 1884px;
   margin-left: 0;
+}
+
+.amazon_row {
+  padding: 30px;
+  border-top: 0;
+  background-color: white;
 }

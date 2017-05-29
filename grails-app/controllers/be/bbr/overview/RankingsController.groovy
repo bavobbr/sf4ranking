@@ -460,10 +460,22 @@ class RankingsController
         render view: 'team', model: [team: team, players: players]
     }
 
+    def event(Event event)
+    {
+        log.info "found ${event.name}"
+        render view: 'event', model: [event: event]
+    }
+
     def teamByName()
     {
         Team t = Team.findByCodename(params.name.toUpperCase())
         return team(t)
+    }
+
+    def eventByName()
+    {
+        Event t = Event.findByCodename(params.name.toUpperCase())
+        return event(t)
     }
 
     /**
@@ -486,7 +498,15 @@ class RankingsController
     def autocompleteTournament()
     {
         def tournaments = Tournament.findAllByCodenameLike("%${params.term.toUpperCase()}%")
-        def content = tournaments.collect {[id: it.id, label: it.toString(), value: it.name]}
+        def content = tournaments.collect {
+            if (it.event != null) {
+                [id: it.event.id, label: it.event.name+ " (${it.countryCode}) [event]", value: it.event.name, type: "event"]
+            }
+            else {
+                [id: it.id, label: it.name + " (${it.countryCode})", value: it.name, type: "tournament"]
+            }
+        }
+        content = content.unique { it["id"] }
         render(content as JSON)
     }
 
