@@ -64,7 +64,7 @@ The JSON and XML formats give you some high-level details on the player, but als
     <li><g:link controller="api" action="top" params="[game: 'MKX', size: '20']">/api/top?game=MKX&size=20</g:link></li>
     <li><g:link controller="api" action="top" params="[game: 'MKX', size: '10', offset: '50']">/api/top?game=MKX&size=20&offset=50</g:link></li>
     <li><g:link controller="api" action="top" params="[game: 'UMVC3', size: '20', format: 'json']">/api/top?game=UMVC3&size=20&format=json</g:link></li>
-    <li><g:link controller="api" action="top" params="[cpt: '', size: '20', format: 'json']">/api/top?cpt&size=20&format=json</g:link></li>
+    <li><g:link controller="api" action="top" params="[cpt: 'true', size: '20', format: 'json']">/api/top?cpt&size=20&format=json</g:link></li>
 </ul>
 
 Do not use the API as a remote database for clients such as mobile apps or websites. If you create clients that directly use this API, make sure it is efficient.

@@ -36,6 +36,7 @@ class RankingsController
         def mkxplayers = queryService.findPlayers(null, null, 10, 0, Version.MKX)
         def sf5players = queryService.findPlayers(null, null, 10, 0, Version.SF5)
         def t7players = queryService.findPlayers(null, null, 10, 0, Version.T7)
+        def inj2players = queryService.findPlayers(null, null, 10, 0, Version.INJUSTICE2)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
@@ -45,7 +46,7 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [players: players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        [players: players, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()
@@ -194,7 +195,7 @@ class RankingsController
         def qualifiedPlayers = players.findAll { it.cptGlobal().qualified }
 
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
-        qualifiedPlayers.addAll(qualifiedByScore)
+        //qualifiedPlayers.addAll(qualifiedByScore)
 
         def regions = [Region.AO, Region.EU, Region.LA, Region.NA]
         regions.each { region ->
@@ -241,10 +242,10 @@ class RankingsController
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
         List<Player> players32 = []
         players32.addAll(qualifiedByScore)
-        players32.addAll(qualifiedPlayers)
+        //players32.addAll(qualifiedPlayers)
 
         def qualifiedRegionally = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region in Region.locals()} }
-        players32.addAll(qualifiedRegionally)
+        //players32.addAll(qualifiedRegionally)
 
         Map<Region, List<Player>> regionalPlayers = [:]
         regionalPlayers[Region.AO] = players.findAll { it.cptRankings.any { it.qualified && it.region == Region.AO} }

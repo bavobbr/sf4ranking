@@ -160,16 +160,18 @@
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.T7.name()]">World Rankings Tekken 7</g:link></li>
                             <li><g:link action="rank" controller="rankings"
+                                        params="['id': Version.INJUSTICE2.name()]">World Rankings Injustice 2</g:link></li>
+                            <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
                             <li><g:link action="rank" controller="rankings"
-                                        params="['id': Version.IGAU.name()]">World Rankings Injustice</g:link></li>
-                            <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.BBCP.name()]">World Rankings Blazblue</g:link></li>
                             <li class="divider"></li>
+                            <li><g:link action="rank" controller="rankings"
+                                        params="['id': Version.IGAU.name()]">World Rankings Injustice</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.USF4.name()]">World Rankings Ultra SF4</g:link></li>
                             <li><g:link action="rank" controller="rankings"
@@ -189,6 +191,8 @@
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
+                                        params="['id': Version.INJUSTICE2.name()]">Injustice 2</g:link></li>
+                            <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.T7.name()]">Tekken 7</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
@@ -197,10 +201,10 @@
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
-                                        params="['id': Version.IGAU.name()]">Injustice</g:link></li>
-                            <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.BBCP.name()]">Blazblue CP</g:link></li>
                             <li class="divider"></li>
+                            <li><g:link action="tournaments" controller="rankings"
+                                        params="['id': Version.IGAU.name()]">Injustice</g:link></li>
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.USF4.name()]">USF4</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.AE2012.name()]">SF4:AE 2012</g:link></li>

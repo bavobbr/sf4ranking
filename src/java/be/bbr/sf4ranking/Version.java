@@ -12,12 +12,14 @@ public enum Version
     AE2012("SSF4:AE 2012"),
     USF4("Ultra SF4"),
     UMVC3("Ultimate Marvel vs Capcom 3"),
-    KI("Killer Instinct"), SKULLGIRLS("Skullgirls"),
-    BBCP("BlazBlue: Chronophantasma"),
+    KI("Killer Instinct"),
+    SKULLGIRLS("Skullgirls"),
+    BBCP("BlazBlue"),
     IGAU("Injustice"),
     MKX("Mortal Kombat X"),
     SF5("Street Fighter 5"),
-    T7("Tekken 7");
+    T7("Tekken 7"),
+    INJUSTICE2("Injustice 2");
 
     private String value;
 
@@ -69,6 +71,8 @@ public enum Version
                 return Version.SF5;
             case T7:
                 return Version.T7;
+            case INJUSTICE2:
+                return Version.INJUSTICE2;
             default:
                 return Version.UNKNOWN;
         }

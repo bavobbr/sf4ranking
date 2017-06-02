@@ -3,48 +3,40 @@
  * Date: 3/11/14
  */
 def names = """
-Katarina Alves
-Claudio Serafino
-Lucky Chloe
-Shaheen
-Josie Rizal
-Gigas
-Jack-7
-Kazumi Mishima
-Akuma 
-Master Raven
-Alisa Bosconovitch
-Asuka Kazama
-Bob
-Bryan Fury
-Devil Jin
-Eddy Gordo
-Eliza
-Feng Wei
-Heihachi Mishima
-Hwoarang
-Jin Kazama
-Kazuya Mishima
-King
-Kuma
-Lars Alexandersson
-Lee Chaolan
-Leo
-Lili
-Ling Xiaoyu
-Marshall Law
-Miguel Caballero
-Nina Williams
-Panda
-Paul Phoenix
-Sergei Dragunov
-Steve Fox
-Yoshimitsu
+Harley Quinn
+Supergirl
+Robin
+Black Canary
+Black Adam
+Scarecrow
+Green Arrow
+Atrocitus
+Joker
+Bane
+Batman
+Captain Cold
+Poison Ivy
+Flash
+Doctor Fate
+Deadshot
+Catwoman
+Green Lantern
+Wonder Woman
+Blue Beetle
+Gorilla Grodd
+Firestorm
+Swamp Thing
+Superman
+Cheetah
+Darkseid
+Brainiac
+Cyborg
+Aquaman
 """
 
 names.readLines().sort().each { String line ->
     line = line.trim()
     def enumName = line.replace(" ","_").replace(".","_").toUpperCase()
-    println "T7_${enumName}(\"${enumName}\", \"$line\", Version.SF5),"
+    println "INJ2_${enumName}(\"${enumName}\", \"$line\", Version.INJUSTICE2),"
 
 }

@@ -105,9 +105,10 @@
         <g:render template="/templates/top20" model="[game: Version.T7, players: t7players]"/>
     </div>
 
+
     <div class="col-md-6">
-        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
+        <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
     </div>
 
 </div>
@@ -115,14 +116,16 @@
 <div class="row">
 
     <div class="col-md-6">
+        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
+    </div>
+
+
+    <div class="col-md-6">
         <g:img dir="images/banners" file="bbcp.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.BBCP, players: bbcpplayers]"/>
     </div>
 
-    <div class="col-md-6">
-        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.AE2012, players: players]"/>
-    </div>
 
 </div>
 
@@ -152,6 +155,7 @@
         <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
     </div>
+
 </div>
 
 

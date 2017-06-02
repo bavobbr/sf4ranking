@@ -5,6 +5,7 @@ import be.bbr.sf4ranking.Player
 import be.bbr.sf4ranking.Query
 import be.bbr.sf4ranking.QueryService
 import be.bbr.sf4ranking.RankingType
+import be.bbr.sf4ranking.Region
 import be.bbr.sf4ranking.Result
 import be.bbr.sf4ranking.ScoringSystem
 import be.bbr.sf4ranking.Tournament
@@ -136,6 +137,12 @@ class ApiController {
              id: p.id,
              score: p.score(game),
              totalscore: p.totalScore(game),
+             trendingscore: p.trendingScore(game),
+             cptScore: p.cptScore(),
+             cptNaScore: p.cptScore(Region.NA),
+             cptLaScore: p.cptScore(Region.LA),
+             cptAoScore: p.cptScore(Region.AO),
+             cptEuScore: p.cptScore(Region.EU),
              character: p.main(game)?.collect { it.name() }
             ]
         }
@@ -155,14 +162,21 @@ class ApiController {
                     country : player.countryCode?.name(),
                     realname: player.realname,
                     twitter : player.twitter,
+                    alias   : player.alias,
                     mainGame: player.mainGame?.name(),
                     teams   : player.teams.collect { it.name },
+                    cptScore: player.cptScore(),
+                    cptNaScore: player.cptScore(Region.NA),
+                    cptLaScore: player.cptScore(Region.LA),
+                    cptAoScore: player.cptScore(Region.AO),
+                    cptEuScore: player.cptScore(Region.EU),
                     rankings: player.rankings.collectEntries {
                         [it.game?.name(),
                          [
                                  rank      : it.rank,
                                  score     : it.score,
                                  totalscore: it.totalScore,
+                                 trendingscore: it.trendingScore,
                                  main      : it.mainCharacters.collect { it.name() }
                          ]
                         ]
