@@ -1,24 +1,42 @@
 import groovy.json.JsonSlurper
 
 def filedata = '''
-Mister Crimson
-Infexious
-Luffy
-Phenom
-Tokido
-PR Balrog
-XYZZY
-Infiltration
-XiaoHai
-RB
-Daigo Umehara
-Bonchan
-Gachikun
-Nemo
+Forever King (Batman, Black Adam) 
+Whiteboi (Scarecrow)
+Slayer (Aquaman, Superman, Black Adam) vs. 
+Dragon (Aquaman, Poison Ivy)
+Theo (Superman) vs. 
+Iluusions (Batman, Green Arrow, Deadshot, Black Adam)
+Madzin (Atrocitus, Bane, Darkseid) vs. 
+SonicFox (Black Adam, Darkseid)
+Biohazard (Harley Quinn, Bane)
+Semiij (Catwoman)
+SylverRye (Batman, Aquaman)
+Hayatei (Robin)
+Burrito Voorhees (Black Adam, Bane)
+MenaRD (Black Adam)
+Tekken Master (Atrocitus, Black Adam)
+Coach Steve (Atrocitus, Gorilla Grodd)
+DR Gross (Green Lantern)
+DJT (Green Lantern, Atrocitus)
+Grr (Bane)
+Foxy Grampa (Deadshot, Catwoman)
+StarCharger (Catwoman)
+VIKING305 (Atrocitus)
+REO (Catwoman)
+Scar (Superman)
+Kitana Prime (Harley Quinn, Wonder Woman)
+Alucard (Aquaman)
+Lord Pnut (Dr. Fate)
+DEG (Harley Quinn)
+Rico Suave (Black Adam)
+KevoDaMan1105 (Black Adam, Superman)
+Buffalo (Superman)
+Mattix
 '''
 
 public Map<String, String> getPlayer(String name) {
-    def game = "SF5"
+    def game = "MKX"
     JsonSlurper slurper = new JsonSlurper()
     def ename = URLEncoder.encode(name, "UTF-8")
     def player = slurper.parse(("http://rank.shoryuken.com/api/player/name/"+ename).toURL())
@@ -34,11 +52,13 @@ println top50
 
 def data = top50.findResults { p ->
     try {
-        def name = p.tokenize(/\(/)[0]
+        def tokens = p.tokenize(/\(/)
+        def name = tokens[0]
         return getPlayer(name.trim())
     }
-    catch (e) { println "Couldnt find $p"}
+    catch (e) { println "Couldnt parse $p due to $e"; return null}
 }.sort { it.rank }
+/**
 data.each { p ->
     def out =  "**[${p.rank}. ${p.name}](http://rank.shoryuken.com/rankings/player/byname/${p.ename})** (${p.main.capitalize()} from ${p.country})"
     if (p.twitter) {
@@ -51,4 +71,11 @@ data.each { p ->
     }
     println " "
 }
+ **/
 
+def ps = data.collect { p ->
+    "(${p.rank}) ${p.name} /${p.main.capitalize()}/ [${p.country}]"
+}
+ps.collate(1).each {
+    println it.join(" | ")
+}

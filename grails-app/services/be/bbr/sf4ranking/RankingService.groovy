@@ -486,7 +486,7 @@ class RankingService {
                 it.findCptRanking(region).qualified = false // reset
             }
         }
-        regionalPlayers.findAll { it.countryCode.region == region}.sort { it.cptScore(region) }.reverse().take(7).each {
+        regionalPlayers.findAll { it.countryCode?.region == region}.sort { it.cptScore(region) }.reverse().take(7).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
         }
     }
