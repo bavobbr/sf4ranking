@@ -80,7 +80,7 @@ class MaxoplataService
 
     private GPathResult parsePage(String url) {
         def body = readPage(url)
-        CleanerProperties props = new CleanerProperties();
+        CleanerProperties props = new CleanerProperties()
         props.setTranslateSpecialEntities(true)
         props.setTransResCharsToNCR(true)
         props.setOmitComments(true)
