@@ -581,7 +581,7 @@ public enum CountryCode
     OM("Oman", "OMN", 512),
 
     /** <a href="http://en.wikipedia.org/wiki/Panama">Panama</a> */
-    PA("Panama", "PAN", 591),
+    PA("Panama", "PAN", 591, Region.LA),
 
     /** <a href="http://en.wikipedia.org/wiki/Peru">Peru</a> */
     PE("Peru", "PER", 604, Region.LA),

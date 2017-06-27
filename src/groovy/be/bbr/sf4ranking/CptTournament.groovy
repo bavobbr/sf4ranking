@@ -14,9 +14,9 @@ public enum CptTournament
     EVO("Evolution tier"),
     CC("Capcom Cup"),
     REGIONAL_FINAL("Regional Final"),
-    ONLINE_EVENT("Online Event");
+    ONLINE_EVENT("Online Event")
 
-    private final String value;
+    private final String value
 
     CptTournament(String value)
     {
@@ -59,6 +59,7 @@ public enum CptTournament
             case RANKING: return getRankingScore(place)
             case ONLINE_EVENT: return getRankingScore(place)
             case PREMIER: return getPremierScore(place)
+            case REGIONAL_FINAL: return getPremierScore(place)
             case PREMIER_SCORELESS: return 0
             case EVO: return getEvoScore(place)
             case QUALIFIER: return getRankingScore(place)
@@ -84,9 +85,9 @@ public enum CptTournament
             case NONE:
                 return 0
             case CC:
-                getCapcomCupPrize(place)
+                return getCapcomCupPrize(place)
             default:
-                return 0;
+                return 0
         }
     }
 
@@ -96,6 +97,7 @@ public enum CptTournament
             case RANKING: return 0
             case ONLINE_EVENT: return 0
             case PREMIER: return getPremierPrize(place)
+            case REGIONAL_FINAL: return getPremierPrize(place)
             case PREMIER_SCORELESS: return getPremierPrize(place)
             case EVO: return getEvoPrize(place)
             case QUALIFIER: return 0

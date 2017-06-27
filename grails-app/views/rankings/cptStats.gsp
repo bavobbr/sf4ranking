@@ -7,19 +7,6 @@
 
 <body>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Work in progress</h3>
-            </div>
-
-            <div class="panel-body">
-                This page is being updated with 2017 ruleset! Release soon
-            </div>
-        </div>
-    </div>
-</div>
 
 <g:if test="${coming}">
 <h3 class="tournament"><small>${coming.size()} Tournaments Upcoming</small></h3>
@@ -58,12 +45,12 @@
     </g:each>
   </table>
 </div>
-    A total of <strong>${maxTotal} global points</strong> can be scored at <strong>${pointCount} tournaments</strong> providing points, of which <strong>${rankingCount} ranking </strong>tournaments. <strong>${directPlaces} direct places </strong>are still open to qualify without points.
+    A total of <strong>${maxTotal} max global points</strong> can be scored at <strong>${pointCount} tournaments</strong> providing points, of which <strong>${rankingCount} offline ranking </strong>tournaments, <strong>${onlineTournament} online ranking </strong>tournaments<strong>, <strong>${evoTournament} EVO ranking </strong>tournaments and ${premierTournament} premiers </strong>are still open to score!
 <ul>
-    <li>Points available in <strong>North America: ${maxTotalNA}</strong> (of which ${maxRegionTotalNA} regional)</li>
-    <li>Points available in <strong>Latin America: ${maxTotalLA}</strong> (of which ${maxRegionTotalLA} regional)</li>
-    <li>Points available in <strong>Asia/Oceania: ${maxTotalAO}</strong> (of which ${maxRegionTotalAO} regional)</li>
-    <li>Points available in <strong>Europe: ${maxTotalEU}</strong> (of which ${maxRegionTotalEU} regional)</li>
+    <li>Points available in <strong>North America: ${maxTotalNA}</strong> (of which ${maxRegionTotalNA} regional ranking)</li>
+    <li>Points available in <strong>Latin America: ${maxTotalLA}</strong> (of which ${maxRegionTotalLA} regional ranking)</li>
+    <li>Points available in <strong>Asia/Oceania: ${maxTotalAO}</strong> (of which ${maxRegionTotalAO} regional ranking)</li>
+    <li>Points available in <strong>Europe: ${maxTotalEU}</strong> (of which ${maxRegionTotalEU} regional ranking)</li>
 </ul>
 </g:if>
 
@@ -77,7 +64,7 @@
             <th>Location</th>
             <th>Weight</th>
             <th>Pro Tour</th>
-            <th>Qualified</th>
+            <th>Win</th>
             <th>Max Points</th>
             <th>Max Prize</th>
         </tr>
@@ -105,7 +92,7 @@
         </g:each>
 
     </table>
-    A total of <strong>${pastMaxTotal} points </strong>could be scored and <strong>${pastDirectPlaces} direct places </strong>were granted
+    A total of <strong>${pastMaxTotal} points </strong>could be scored.
 
 </div>
 

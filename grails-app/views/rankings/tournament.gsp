@@ -163,43 +163,22 @@
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
             amzn_assoc_search_bar = "true";
-            amzn_assoc_tracking_id = "fgwora-20";
-            amzn_assoc_ad_mode = "manual";
+            amzn_assoc_tracking_id = "search_sticks-20";
+            amzn_assoc_search_bar_position = "bottom";
+            amzn_assoc_ad_mode = "search";
             amzn_assoc_ad_type = "smart";
             amzn_assoc_marketplace = "amazon";
             amzn_assoc_region = "US";
-            amzn_assoc_title = "New releases";
-            amzn_assoc_linkid = "a58b59c890d05176ff88241af44bb077";
-            amzn_assoc_asins = "B06XS5HPVC,B01MS6WG9S,B06XP41Y6V,B01MR8JLZ1,B071RMNK78,B01N9FC76Q,B01N0OK8XH,B0716S3X98";
+            amzn_assoc_title = "Arcade sticks";
+            amzn_assoc_default_search_phrase = "arcade stick";
+            amzn_assoc_default_category = "VideoGames";
+            amzn_assoc_linkid = "c2c81da42d0f20f02821f3c181733a91";
+            amzn_assoc_default_browse_node = "468642";
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
 </div>
 
-
-%{--<g:if test="${org.apache.shiro.SecurityUtils.subject.hasRole("Administrator")}">
-    <g:link controller="admin" action="selectTournamentVideos" params="['id': tournament.id]">[Update videos]</g:link>
-    <g:link controller="admin" action="playerDiffForTournament" params="['id': tournament.id]">[Diff page]</g:link>
-    <g:link controller="admin" action="playerRanksBefore"
-            params="['id': tournament.id]">[Scores before tournament]</g:link>
-    <g:link controller="admin" action="playerRanksAfter"
-            params="['id': tournament.id]">[Scores after tournament]</g:link>
-</g:if>--}%
-
-
-%{--<g:if test="${tournament.videos}">
-  <h2>Tournament videos <small>found ${tournament.videos.size()} videos</small></h2>
-  <div class="row">
-    <g:each in="${tournament.videos}" var="video">
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/${video}" frameborder="0"
-                                                     allowfullscreen></iframe></div>
-        </a>
-      </div>
-    </g:each>
-  </div>
-</g:if>--}%
 
 <g:render template="/templates/prettify"/>
 </body>

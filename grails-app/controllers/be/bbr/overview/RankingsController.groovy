@@ -158,14 +158,22 @@ class RankingsController
         def maxRegionTotalEU = regional.findAll { it.region == Region.EU}.sum { Tournament t -> t.cptTournament.getScore(1) }
         def maxRegionTotalAO = regional.findAll { it.region == Region.AO}.sum { Tournament t -> t.cptTournament.getScore(1) }
 
-        def directPlaces = comingTournaments.count { Tournament t ->
-            t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO, CptTournament.REGIONAL_FINAL]
+        def evoPlaces = comingTournaments.count { Tournament t ->
+            t.cptTournament in [CptTournament.EVO]
+        }
+
+        def onlinePlaces = comingTournaments.count { Tournament t ->
+            t.cptTournament in [CptTournament.ONLINE_EVENT]
+        }
+
+        def premierPlaces = comingTournaments.count { Tournament t ->
+            t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.REGIONAL_FINAL]
         }
         def rankingTournaments = comingTournaments.count { Tournament t ->
-            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT]
+            t.cptTournament in [CptTournament.RANKING]
         }
         def pointTournaments = comingTournaments.count { Tournament t ->
-            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT, CptTournament.EVO, CptTournament.PREMIER]
+            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT, CptTournament.EVO, CptTournament.PREMIER, CptTournament.REGIONAL_FINAL]
         }
         def pastTournaments = queryService.pastCptTournaments()
         Map<Region, List<Player>> regionalQualifyingHistories = [:]
@@ -174,16 +182,10 @@ class RankingsController
             t.metaClass.qualified << {
                 log.info("... CPT stats on tournament ${t.name} with state ${t.finished} and results ${t.results.size()}")
                 if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
-                    return t.results?.sort { it.place }?.first()?.player?.name + " (Global)"
+                    return t.results?.sort { it.place }?.first()?.player?.name
                 }
                 else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT) {
-                    def qp = t.results.sort { it.place }.findResult {
-                        if (!regionalQualifyingHistories[t.region].contains(it.player)) {
-                            regionalQualifyingHistories[t.region] << it.player
-                            return it.player.name
-                        } else return null
-                    }
-                    return qp + " (${t.region.value})"
+                    return t.results?.sort { it.place }?.first()?.player?.name
                 }
                 else return ""
             }
@@ -192,24 +194,16 @@ class RankingsController
         def pastDirectPlaces = pastTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO, CptTournament.REGIONAL_FINAL]  }
 
         def players = queryService.findCptPlayers()
-        def qualifiedPlayers = players.findAll { it.cptGlobal().qualified }
+        def directQualifiedPlayers = players.findAll { it.cptGlobal().qualified }
+        Set<Player> qualifiedPlayers = players.findAll { it.cptGlobal().qualified }.toSet()
 
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
-        //qualifiedPlayers.addAll(qualifiedByScore)
-
-        def regions = [Region.AO, Region.EU, Region.LA, Region.NA]
-        regions.each { region ->
-            def regionalPlayers = queryService.findCptPlayers(region)
-            def unqualifiedPlayersRegional = regionalPlayers.findAll { p ->
-                return !p.cptGlobal().qualified && !qualifiedByScore.any { it.name == p.name }
-            }
-            qualifiedPlayers.addAll(unqualifiedPlayersRegional.take(2))
-        }
+        qualifiedPlayers.addAll(qualifiedByScore)
 
         qualifiedPlayers.sort { it.cptGlobal()?.score }
         def byCountry = players.groupBy { it.countryCode }
         def byCountry32 = qualifiedPlayers.groupBy { it.countryCode }
-        def unknownTotal = 32 - qualifiedPlayers.size()
+        def unknownTotal = 32 - directQualifiedPlayers.size()
 
         [coming: comingTournaments,
          played: pastTournaments,
@@ -217,7 +211,9 @@ class RankingsController
          byCountry32: byCountry32,
          maxTotal: maxTotal,
          unknownTotal: unknownTotal,
-         directPlaces: directPlaces,
+         premierTournament: premierPlaces,
+         evoTournament: evoPlaces,
+         onlineTournament: onlinePlaces,
          pastMaxTotal: pastMaxTotal,
          pastDirectPlaces: pastDirectPlaces,
          rankingCount: rankingTournaments,
@@ -237,21 +233,18 @@ class RankingsController
     def cptCharacterStats() {
         def players = queryService.findCptPlayers()
         def qualifiedPlayers = players.findAll { it.cptGlobal().qualified }
-        def qualifiedPlayersRegionalFinal = players.findAll { it.cptRankings.any { it.region in Region.locals() && it.qualified } }
+        def qualifiedPlayersRegionalFinal = players.findAll { it.cptRankings.any { it.region in Region.locals() && it.qualifiedByScore } }
 
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
-        List<Player> players32 = []
+        Set<Player> players32 = []
         players32.addAll(qualifiedByScore)
-        //players32.addAll(qualifiedPlayers)
-
-        def qualifiedRegionally = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region in Region.locals()} }
-        //players32.addAll(qualifiedRegionally)
+        players32.addAll(qualifiedPlayers)
 
         Map<Region, List<Player>> regionalPlayers = [:]
-        regionalPlayers[Region.AO] = players.findAll { it.cptRankings.any { it.qualified && it.region == Region.AO} }
-        regionalPlayers[Region.LA] = players.findAll { it.cptRankings.any { it.qualified && it.region == Region.LA} }
-        regionalPlayers[Region.NA] = players.findAll { it.cptRankings.any { it.qualified && it.region == Region.NA} }
-        regionalPlayers[Region.EU] = players.findAll { it.cptRankings.any { it.qualified && it.region == Region.EU} }
+        regionalPlayers[Region.AO] = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region == Region.AO} }
+        regionalPlayers[Region.LA] = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region == Region.LA} }
+        regionalPlayers[Region.NA] = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region == Region.NA} }
+        regionalPlayers[Region.EU] = players.findAll { it.cptRankings.any { it.qualifiedByScore && it.region == Region.EU} }
 
         def byMainCharacter32 = players32.groupBy { it.findRanking(Version.SF5).mainCharacters?.first() }
         def secondarySeenTop32 = [:]
@@ -304,7 +297,6 @@ class RankingsController
          players32: players32,
          qualified: qualifiedPlayers,
          qualifiedGlobal: qualifiedByScore,
-         qualifiedRegional: qualifiedRegionally,
          qualifiedPlayersRegionalFinal: qualifiedPlayersRegionalFinal,
          regionalPlayers: regionalPlayers
         ]

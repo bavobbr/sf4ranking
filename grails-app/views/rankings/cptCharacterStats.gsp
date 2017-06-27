@@ -8,22 +8,6 @@
 <body>
 <h2>Player Statistics in Capcom Pro Tour 2017</h2>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Work in progress</h3>
-            </div>
-
-            <div class="panel-body">
-                This page is being updated with 2017 ruleset! Release soon
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
 
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
 <h3 class="tournament">Players in qualifying zones</h3>
@@ -31,20 +15,15 @@ These players will qualify if tournament started today:
 <ul>
 <li>Players qualified directly: <i>${qualified.collect { it.name}.join(", ")}</i></li>
     <li>Players qualifying by global score: <i>${qualifiedGlobal.collect { it.name}.join(", ")}</i></li>
-    <li>Players qualifying by regional score: <i>${qualifiedRegional.collect { it.name}.join(", ")}</i></li>
+    <li>Players qualifying for regional final: <i>${qualifiedPlayersRegionalFinal.collect { it.name}.join(", ")}</i></li>
 </ul>
-Players that may still win a direct spot:
-<ul>
-    <g:each in="${regionalPlayers.keySet()}" var="regional">
-        <li>qualified for regional finals ${regional.value}: <i>${regionalPlayers[regional].collect { it.name}.join(", ")}</i></li>
-    </g:each>
-</ul>
-Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify.
+
+Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify. 1 place is reserved for a last chance qualifier before the Capcom Cup.
 
 <h2>Character Statistics in Capcom Pro Tour 2017</h2>
 
 <g:if test="${byMainCharacter32}">
-    <h3 class="tournament">Main character usage of current qualifying 32</h3>
+    <h3 class="tournament">Main character usage of current qualifying players</h3>
     These are the characters that will be played at highest level. Competitors are advised to learn these matchups thoroughly.
     <div class="table-responsive">
         <table class="tablehead" id="datatable2">
@@ -70,7 +49,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 <g:if test="${secondary32}">
     <h3 class="tournament">All character usages of current qualifying players</h3>
-    These are the characters that may be played. Most as main charac ter, some as secondary characters. Secondaries are often used to counter bad matchups.
+    These are the characters that may be played. Most as main character, some as secondary characters. Secondaries are often used to counter bad matchups.
     <div class="table-responsive">
         <table class="tablehead" id="datatable5">
             <thead>
@@ -136,7 +115,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
             </g:each>
         </table>
     </div>
-    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour 2016 tournament players.
+    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour 2017 tournament players.
 </g:if>
 
 
