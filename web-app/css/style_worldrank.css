@@ -361,3 +361,7 @@ div.top100 {
 	vertical-align: middle;
 	float: none;
 }
+
+.top10box {
+	margin-top: 10px;
+}

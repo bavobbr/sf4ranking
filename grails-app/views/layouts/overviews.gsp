@@ -162,6 +162,8 @@
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.INJUSTICE2.name()]">World Rankings Injustice 2</g:link></li>
                             <li><g:link action="rank" controller="rankings"
+                                        params="['id': Version.GGXRD.name()]">World Rankings Guilty Gear</g:link></li>
+                            <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
                             <li><g:link action="rank" controller="rankings"
                                         params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
@@ -192,6 +194,8 @@
                                         params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.INJUSTICE2.name()]">Injustice 2</g:link></li>
+                            <li><g:link action="tournaments" controller="rankings"
+                                        params="['id': Version.GGXRD.name()]">Guilty Gear Xrd</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.T7.name()]">Tekken 7</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"

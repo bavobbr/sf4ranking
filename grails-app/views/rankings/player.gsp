@@ -344,7 +344,7 @@
 
 
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
-            <div class="alert alert-info">
+            <div class="alert alert-info top10box">
 
             <g:link controller="admin" action="selectPlayerVideos"
                     params="['id': player.id]">[Update videos as admin]</g:link>
@@ -353,7 +353,7 @@
             </div>
         </g:if>
 
-        <div class="row" align="center">
+        <div class="row top10box" align="center">
             <script type="text/javascript">
                 amzn_assoc_placement = "adunit0";
                 amzn_assoc_search_bar = "true";

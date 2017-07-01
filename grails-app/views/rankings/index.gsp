@@ -18,12 +18,12 @@
 </g:if>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.SF5, players: sf5players]"/>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
         <h4>SF5 Top 10 trending characters</h4>
 
@@ -95,7 +95,7 @@
         </table>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
     </div>
@@ -103,13 +103,13 @@
 &NonBreakingSpace;
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.T7, players: t7players]"/>
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
     </div>
@@ -118,13 +118,13 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="bbcp.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.BBCP, players: bbcpplayers]"/>
     </div>
@@ -135,12 +135,12 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="killerinstinct.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
     </div>
@@ -149,20 +149,34 @@
 
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.USF4, players: usf4players]"/>
     </div>
 
 </div>
 
-
 <div class="row">
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="ggxrd.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.GGXRD, players: ggplayers]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.AE2012, players: aeplayers]"/>
+    </div>
+
+</div>
+
+
+<div class="row top10box">
     <script type="text/javascript">
         amzn_assoc_placement = "adunit0";
         amzn_assoc_search_bar = "true";

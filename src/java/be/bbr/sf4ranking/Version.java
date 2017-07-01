@@ -19,7 +19,8 @@ public enum Version
     MKX("Mortal Kombat X"),
     SF5("Street Fighter 5"),
     T7("Tekken 7"),
-    INJUSTICE2("Injustice 2");
+    INJUSTICE2("Injustice 2"),
+    GGXRD("Guilty Gear Xrd");
 
     private String value;
 
@@ -73,6 +74,8 @@ public enum Version
                 return Version.T7;
             case INJUSTICE2:
                 return Version.INJUSTICE2;
+            case GGXRD:
+                return Version.GGXRD;
             default:
                 return Version.UNKNOWN;
         }

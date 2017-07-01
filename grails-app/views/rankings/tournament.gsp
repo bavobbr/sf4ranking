@@ -148,7 +148,7 @@
 </div>
 
 <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">
-    <div class="alert alert-info">
+    <div class="alert alert-info top10box">
     <g:link controller="tournament" action="show" params="['id': tournament.id]">[Update tournament...]</g:link>
     <g:link controller="admin" action="importer" params="['source': tournament.id]">[Use as template...]</g:link>
     <g:link controller="admin" action="replaceResults" params="['id': tournament.id]">[Replace results...]</g:link>
@@ -158,7 +158,7 @@
 
 </g:if>
 
-<div class="row" align="center">
+<div class="row top10box" align="center">
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";

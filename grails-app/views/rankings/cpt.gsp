@@ -260,7 +260,7 @@ The first 7 players from this region will be invited to a regional final that sc
 
 </g:each>
 
-<div class="row" align="center">
+<div class="row top10box" align="center">
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";

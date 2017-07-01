@@ -26,7 +26,7 @@ class RankingsController
     @Cacheable("index")
     def index()
     {
-        def players = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
+        def aeplayers = queryService.findPlayers(null, null, 10, 0, Version.AE2012)
         def umvc3players = queryService.findPlayers(null, null, 10, 0, Version.UMVC3)
         def kiplayers = queryService.findPlayers(null, null, 10, 0, Version.KI)
         def sgplayers = queryService.findPlayers(null, null, 10, 0, Version.SKULLGIRLS)
@@ -37,6 +37,7 @@ class RankingsController
         def sf5players = queryService.findPlayers(null, null, 10, 0, Version.SF5)
         def t7players = queryService.findPlayers(null, null, 10, 0, Version.T7)
         def inj2players = queryService.findPlayers(null, null, 10, 0, Version.INJUSTICE2)
+        def ggplayers = queryService.findPlayers(null, null, 10, 0, Version.GGXRD)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
@@ -46,7 +47,7 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [players: players, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        [aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()

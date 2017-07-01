@@ -342,7 +342,33 @@ public enum CharacterType
     INJ2_SUPERGIRL("SUPERGIRL", "Supergirl", Version.INJUSTICE2),
     INJ2_SUPERMAN("SUPERMAN", "Superman", Version.INJUSTICE2),
     INJ2_SWAMP_THING("SWAMP_THING", "Swamp Thing", Version.INJUSTICE2),
-    INJ2_WONDER_WOMAN("WONDER_WOMAN", "Wonder Woman", Version.INJUSTICE2);
+    INJ2_WONDER_WOMAN("WONDER_WOMAN", "Wonder Woman", Version.INJUSTICE2),
+
+    GG_ANSWER("ANSWER", "Answer", Version.GGXRD),
+    GG_AXL("AXL LOW", "Axl", Version.GGXRD),
+    GG_BAIKEN("Baiken", "Baiken", Version.GGXRD),
+    GG_BEDMAN("BEDMAN", "Bedman", Version.GGXRD),
+    GG_CHIPP("CHIPP", "Chipp Zanuff", Version.GGXRD),
+    GG_DIZZY("DIZZY", "Dizzy", Version.GGXRD),
+    GG_ELPHELT("ELPHELT", "Elphelt", Version.GGXRD),
+    GG_FAUST("FAUST", "Faust", Version.GGXRD),
+    GG_I_NO("I-NO", "INo", Version.GGXRD),
+    GG_JACK_O("JACK-O", "Jack", Version.GGXRD),
+    GG_JAM("JAM", "Jam", Version.GGXRD),
+    GG_JOHNNY("JOHNNY", "Johnny", Version.GGXRD),
+    GG_KUM("KUM", "Kum", Version.GGXRD),
+    GG_KY("KY KISKE", "Ky", Version.GGXRD),
+    GG_LEO("LEO WHITEFANG", "Leo", Version.GGXRD),
+    GG_MAY("MAY", "May", Version.GGXRD),
+    GG_MILLIA("MILLIA", "Millia Rage", Version.GGXRD),
+    GG_POTEMKIN("POTEMKIN", "Potemkin", Version.GGXRD),
+    GG_RAMLETHAL("RAMLETHAL", "Ramlethal", Version.GGXRD),
+    GG_RAVEN("RAVEN", "Raven", Version.GGXRD),
+    GG_SIN("SIN", "Sin Kiske", Version.GGXRD),
+    GG_SLAYER("SLAYER", "Slayer", Version.GGXRD),
+    GG_SOL("SOL", "Sol Badguy", Version.GGXRD),
+    GG_VENOM("VENOM", "Venom", Version.GGXRD),
+    GG_ZATO("ZATO-1", "Zato", Version.GGXRD);
 
 
     private final String value;
