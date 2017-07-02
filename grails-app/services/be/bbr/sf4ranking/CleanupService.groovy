@@ -246,34 +246,26 @@ class CleanupService
     }
 
     /**
-     * Use the USF4 skill as default if the player is ranked for a version but has no skill set for that version
+     * Use the IGAU/MKX skill as default if the player is ranked for a version but has no skill set for that version
      * @return
      */
     def mergeSkills()
     {
         Player.list().each {Player p ->
-            if (p.hasRanking(Version.USF4) && p.skill(Version.USF4) > 0)
+            if (p.hasRanking(Version.MKX) && p.skill(Version.MKX) > 0)
             {
-                def skill = p.skill(Version.USF4);
-                if (p.hasRanking(Version.AE2012) && p.skill(Version.AE2012) == 0)
+                def skill = p.skill(Version.MKX)
+                if (p.hasRanking(Version.INJUSTICE2) && p.skill(Version.INJUSTICE2) < skill)
                 {
-                    p.applySkill(Version.AE2012, skill)
+                    p.applySkill(Version.INJUSTICE2, skill)
                 }
-                if (p.hasRanking(Version.AE) && p.skill(Version.AE) == 0)
+            }
+            if (p.hasRanking(Version.IGAU) && p.skill(Version.IGAU) > 0)
+            {
+                def skill = p.skill(Version.IGAU)
+                if (p.hasRanking(Version.INJUSTICE2) && p.skill(Version.INJUSTICE2) < skill)
                 {
-                    p.applySkill(Version.AE, skill)
-                }
-                if (p.hasRanking(Version.SUPER) && p.skill(Version.SUPER) == 0)
-                {
-                    p.applySkill(Version.SUPER, skill)
-                }
-                if (p.hasRanking(Version.VANILLA) && p.skill(Version.VANILLA) == 0)
-                {
-                    p.applySkill(Version.VANILLA, skill)
-                }
-                if (p.hasRanking(Version.SF5) && p.skill(Version.SF5) == 0)
-                {
-                    p.applySkill(Version.SF5, skill)
+                    p.applySkill(Version.INJUSTICE2, skill)
                 }
             }
         }

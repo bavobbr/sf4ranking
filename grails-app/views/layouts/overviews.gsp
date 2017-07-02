@@ -189,6 +189,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOURNAMENTS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li><g:link action="events" controller="rankings">Events</g:link></li>
+                            <li class="divider"></li>
                             <li><g:link action="tournaments" controller="rankings" params="['id': Version.SF5.name()]">Street Fighter 5</g:link></li>
                             <li><g:link action="tournaments" controller="rankings"
                                         params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>

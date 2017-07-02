@@ -184,8 +184,11 @@ A total of ${players} players seen in ${tournaments} tournaments producing ${res
 Data input and correctness is maintained by
 <ul>
   <li><a href="https://twitter.com/bavobbr">Bavo Bruylandt</a> (site admin)</li>
-  <li><a href="https://twitter.com/tomakh">Tomakh</a> (moderator)</li>
+  <li><a href="https://twitter.com/FGCTomakh">Tomakh</a> (moderator)</li>
   <li><a href="https://twitter.com/TerranceElC">TLC</a> (moderator)</li>
+  <li><a href="https://twitter.com/tap2gg">タップニジジ</a> (moderator)</li>
+  <li><a href="https://twitter.com/Peet_SS">Sathaporn Sri-im</a> (moderator)</li>
+  <li><a href="https://twitter.com/GravediggerNALK">GDNALK</a> (moderator)</li>
 </ul>
 ... and everyone who is submitting new data on the site and providing input via Twitter!
 

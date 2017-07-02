@@ -74,11 +74,11 @@
             <th>Name</th>
             <th>Team</th>
             <th>Character</th>
-            <th>Current Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                 title="The actual current score is calculated over an 18 month window. This reflects how well a player has been doing over the last 2 years. His best 12 scores are used for the total.">(?)</a>
+            <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                 title="The actual current score is calculated over an 18 month window. His best 12 scores are used to calculate a total score, and a small decay is used over time.">(?)</a>
             </th>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
-                                      title="The amount of results in tournaments over last 18 months adding to the actual score, capped at 12">(?)</a>
+                                      title="The amount of valid results in tournaments over last 18 months adding to the actual score, capped at 12 maximum.">(?)</a>
             </th>
             <th>Country</th>
             <g:if test="${snapshot != null && rankingType == RankingType.ACTUAL}">
@@ -96,13 +96,13 @@
                 </th>
             </g:elseif>
             <th>Lifetime Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="The lifetime score is the sum of best 18 tournaments in this game without decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
-            </th>
-            <th>Trending Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="The trending score is the sum of best 12 tournaments in this game without in last 6 months. This gives an idea on the short-term player dominance">(?)</a>
-            </th>
+                                  title="The lifetime score is the sum of a player's best 18 tournaments in this game without any decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
                                title="The total amount of tournaments eligible for lifetime best of score (of which only 18 count)">(?)</a></th>
+            </th>
+            <th>Trending Score <a href="#" data-toggle="tooltip" data-placement="top"
+                                  title="The trending score is the sum of best 12 tournaments in this game within last 6 months. This gives an idea on the short-term player dominance">(?)</a>
+            </th>
 
         </tr>
         </thead>
@@ -133,7 +133,7 @@
                 </td>
                 <td>
                     <g:each in="${p.main(game)}" var="mainChar">
-                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name()]"
+                        <g:link action="rank" controller="rankings" params="[pchar: mainChar, id: game.name(), filtermain: 'on']"
                                 data-toggle="tooltip" data-placement="top" title="Filter on ${mainChar.value}">
                             <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}"
                                    file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"
@@ -224,16 +224,18 @@
                     </g:else>
                 </g:elseif>
                 <td>${p.totalScore(game)}</td>
-                <td>${p.trendingScore(game)}</td>
 
                 <td>${p.numResults()}
-                </td>
+            <td>${p.trendingScore(game)}</td>
+
+            </td>
                 <g:if test="${SecurityUtils.subject.isPermitted("player")}">
                     <td>
                         <g:link controller="player" action="edit" params="[id: p.id]" target="_blank">[edit]</g:link><g:link controller="playerRanking" action="edit" params="[id: p.findRanking(game).id]"
                                                                                                                              target="_blank">[${p.skill(game)}]</g:link>
                     </td>
                 </g:if>
+
 
             </tr>
         </g:each>
@@ -259,10 +261,10 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
                 <g:form name="filter" controller="rankings" action="rank" role="form" class="form-inline" method="get">
                     <div class="row">
                         <div class="col-md-4">
-                            <g:select name="country" from="${countries}" class="form-control" value="${fcountry}"/>
+                            <g:select name="country" from="${countries}" class="form-control" value="${fcountry?.name}"/>
                         </div>
                         <div class="col-md-4">
-                            <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar}"/>
+                            <g:select name="pchar" from="${charnames}" class="form-control" value="${fchar?.value}"/>
                         </div>
                         <div class="col-md-4">
                             <g:hiddenField name="rankingType" value="${rankingType.name()}"/>

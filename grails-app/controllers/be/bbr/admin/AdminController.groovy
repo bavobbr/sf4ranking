@@ -292,7 +292,7 @@ class AdminController
 
     def bulkedit() {
         def game = Version.fromString(params.game)
-        def top100 = queryService.findPlayers(null, null, 100, 0, game, RankingType.ACTUAL)
+        def top100 = queryService.findPlayers(null, null, 120, 0, game, RankingType.ACTUAL)
         return [players: top100, game: game]
     }
 
@@ -303,12 +303,14 @@ class AdminController
                 def player = Player.load(pid)
                 println "Found player $player"
                 def realname = v[0]
-                def twitter = v[1]
-                def twitch = v[2]
-                def maxoplataId = v[3]
-                def onlineId = v[4]
-                def pictureUrl = v[5]
+                def alias = v[1]
+                def twitter = v[2]
+                def twitch = v[3]
+                def maxoplataId = v[4]
+                def onlineId = v[5]
+                def pictureUrl = v[6]
                 player.realname = realname
+                player.alias = alias
                 player.twitter = twitter
                 player.twitch = twitch
                 player.maxoplataId = maxoplataId
@@ -389,6 +391,12 @@ class AdminController
     {
         def hardware = dataService.exportHardware()
         render(hardware as JSON)
+    }
+
+    def exportEvents()
+    {
+        def events = dataService.exportEvents()
+        render(events as JSON)
     }
 
     /**
@@ -751,4 +759,28 @@ class AdminController
 
     }
 
+    def autofillRegion() {
+        Tournament.list().each {
+            if (it.countryCode && it.countryCode != CountryCode.NONE) {
+                if (it.region == null || it.region == Region.UNKNOWN) {
+                    if (it.countryCode.region) {
+                        it.region = it.countryCode.region
+                        println "set region $it.region for tournament $it"
+                    }
+                }
+            }
+        }
+        Event.list().each {
+            if (it.countryCode && it.countryCode != CountryCode.NONE) {
+                if (it.region == null || it.region == Region.UNKNOWN || it.region == Region.GLOBAL) {
+                    if (it.countryCode.region) {
+                        it.region = it.countryCode.region
+                        println "set region $it.region for event $it"
+                    }
+                }
+            }
+        }
+        flash.message = "Updated region"
+        render view: "index"
+    }
 }

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="be.bbr.sf4ranking.CptTournament; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
+
 <html>
 <head>
   <meta name="layout" content="overviews"/>
@@ -31,7 +33,9 @@ ${tournaments.size()} Tournaments Registered in results database.
       <th>Game</th>
       <th>Weight</th>
       <th>Creator</th>
+      <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">
       <th>Ranking type</th>
+      </g:if>
       <g:if test="${game == be.bbr.sf4ranking.Version.SF5}">
       <th>Pro Tour</th>
       </g:if>
@@ -51,10 +55,16 @@ ${tournaments.size()} Tournaments Registered in results database.
             </g:link>
           </g:if>
         </td>
-        <td>${t.game?.name()}</td>
+        <td>
+      <g:if test="${t.event}">
+        <g:link mapping="eventByName" controller="rankings" action="event" params="[name: t.event.name]">${t.event.name.take(20)}</g:link>
+      </g:if>
+        </td>
         <td>${t.weight}</td>
         <td>${t.creator}</td>
+      <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">
         <td>${t.weightingType}</td>
+      </g:if>
         <td>
           <g:if test="${game == be.bbr.sf4ranking.Version.SF5}">
             ${t.cptTournament?.value}

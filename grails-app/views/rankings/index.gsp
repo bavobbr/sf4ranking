@@ -55,7 +55,7 @@
                             ${c.trendingPlayer.name}
                         </td>
                         <td>
-                            ${c.top1finishes}
+                            ${c.top1finishesTrending}
                         </td>
                     </tr>
                 </g:each>
@@ -95,13 +95,6 @@
         </table>
     </div>
 
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
-    </div>
-</div>
-&NonBreakingSpace;
-<div class="row">
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
@@ -109,9 +102,20 @@
     </div>
 
 
+</div>
+&NonBreakingSpace;
+<div class="row">
+
+
+
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="ggxrd.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.GGXRD, players: ggplayers]"/>
     </div>
 
 </div>
@@ -119,14 +123,13 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
     </div>
 
-
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="bbcp.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.BBCP, players: bbcpplayers]"/>
+        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
     </div>
 
 
@@ -140,6 +143,7 @@
         <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
     </div>
 
+
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
@@ -150,9 +154,11 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
+        <g:img dir="images/banners" file="bbcp.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.BBCP, players: bbcpplayers]"/>
     </div>
+
+
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="usf4.png" class="img-responsive"/>
@@ -164,8 +170,8 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="ggxrd.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.GGXRD, players: ggplayers]"/>
+        <g:img dir="images/banners" file="igau.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.IGAU, players: igauplayers]"/>
     </div>
 
     <div class="col-md-6 top10box">

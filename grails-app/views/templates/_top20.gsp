@@ -24,7 +24,7 @@
         </td>
         <td>
           <g:each in="${p.main(game)}" var="mainChar">
-          <g:link action="rank" controller="rankings" params="[pchar: mainChar.name(), id: game.name()]"
+          <g:link action="rank" controller="rankings" params="[pchar: mainChar.name(), id: game.name(), filtermain: 'on']"
                   data-toggle="tooltip" data-placement="top"
                   title="Filter on ${mainChar.value}">
             <g:img dir="images/chars/${Version.generalize(game).name().toLowerCase()}" file="${mainChar.name().toLowerCase() + '.png'}" width="22" height="25"

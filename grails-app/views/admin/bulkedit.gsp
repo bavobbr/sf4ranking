@@ -15,6 +15,7 @@
     <tr>
       <td>name</td>
       <td>realname</td>
+      <td>alias</td>
       <td>twitter</td>
       <td>twitch</td>
       <td>maxoplataId</td>
@@ -27,6 +28,7 @@
       <tr>
         <td><g:link controller="rankings" action="player" params="[id:player.id]" target="_blank">${player.name}</g:link> </td>
         <td><g:textField name="name_${player.id}" value="${player.realname}"/></td>
+        <td><g:textField name="name_${player.id}" value="${player.alias}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.twitter}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.twitch}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.maxoplataId}"/></td>

@@ -444,6 +444,13 @@ class RankingsController
         [teams: teams, updateMessage: lastUpdateMessage]
     }
 
+    def events() {
+        List events = Event.list(order: "desc", sort: "date")
+        def lastUpdateMessage = Configuration.first().lastUpdateMessage
+        [events: events, updateMessage: lastUpdateMessage]
+
+    }
+
     /**
      * Look up a Tournament and prepare data for the view
      */

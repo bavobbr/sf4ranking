@@ -34,6 +34,20 @@
                            title="If you want to add your name to this page just share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
                     </g:else>
                 </dd>
+
+                <dt>Top player in</dt>
+                <dd>
+                    <g:if test="${topGames}">
+                        <g:each in="${topGames}" var="topgame">
+                            <g:link action="rank" controller="rankings"
+                                    params="[id: topgame.name()]">${topgame.name()}</g:link>
+                        </g:each>
+                    </g:if>
+                </dd>
+
+                <dt>&nbsp;</dt><dd></dd>
+
+
                 <dt>Controller</dt>
                 <dd>
                     <g:if test="${player.hardware}">
@@ -68,15 +82,7 @@
                         </g:each>
                     </g:if>
                 </dd>
-                <dt>Top player in</dt>
-                <dd>
-                    <g:if test="${topGames}">
-                        <g:each in="${topGames}" var="topgame">
-                            <g:link action="rank" controller="rankings"
-                                    params="[id: topgame.name()]">${topgame.name()}</g:link>
-                        </g:each>
-                    </g:if>
-                </dd>
+
                 <dt>Follow</dt>
                 <dd>
                     <g:if test="${player.twitter}">
@@ -87,66 +93,61 @@
                            title="If you want to add your twitter handle to this page, share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
                     </g:else>
                 </dd>
-                <dt>Twitch Stream</dt>
-                <dd>
-                    <g:if test="${player.twitch}">
+                <g:if test="${player.twitch}">
+                    <dt>Twitch Stream</dt>
+                    <dd>
                         <a href="https://www.twitch.tv/${player.twitch}" target="_blank">${player.twitch}</a>
-                    </g:if>
-                    <g:else>
-                        <a href="#" data-toggle="tooltip" data-placement="top"
-                           title="If you want to add your Twitch handle to this page, share it on Twitter with the button below and we will favorite it when we linked it">(?)</a>
-                    </g:else>
-                </dd>
-                <g:if test="${player.hasRanking(Version.SF5)}">
+                    </dd>
+                </g:if>
+
+                <g:if test="${player.hasRanking(Version.SF5) && player.cptScore() > 0}">
                     <dt>CPT score (rank) <a href="#" data-toggle="tooltip" data-placement="top"
-                                     title="Global CPT score">(?)</a></dt>
+                                            title="Global CPT score">(?)</a></dt>
                     <dd>
                         <g:link action="cpt" controller="rankings">
-                        ${player.cptScore()} (${player.findCptRanking(Region.GLOBAL)?.rank})
+                            ${player.cptScore()} (${player.findCptRanking(Region.GLOBAL)?.rank})
                         </g:link>
                     </dd>
                     <dt>CPT Qualified <a href="#" data-toggle="tooltip" data-placement="top"
-                                        title="Directly qualified for CPT">(?)</a></dt>
+                                         title="Directly qualified for CPT">(?)</a></dt>
                     <dd>
                         ${player.cptGlobal()?.qualified ? "Qualified" : "Not qualified"}
                     </dd>
-                </g:if>
-                <g:if test="${player.hasRanking(Version.SF5)}">
                     <dt>CPT Region scores <a href="#" data-toggle="tooltip" data-placement="top"
-                                    title="Scores for regions Asia / Europe / Latin America / North America">(?)</a>
+                                             title="Scores for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.findCptRanking(Region.AO)?.score?:"-"} / ${player.findCptRanking(Region.EU)?.score?:"-"} / ${player.findCptRanking(Region.LA)?.score?:"-"} / ${player.findCptRanking(Region.NA)?.score?:"-"}
+                        ${player.findCptRanking(Region.AO)?.score ?: "-"} / ${player.findCptRanking(Region.EU)?.score ?: "-"} / ${player.findCptRanking(Region.LA)?.score ?: "-"} / ${player.findCptRanking(Region.NA)?.score ?: "-"}
                     </dd>
                     <dt>CPT Region ranks <a href="#" data-toggle="tooltip" data-placement="top"
-                                             title="Ranks for regions Asia / Europe / Latin America / North America">(?)</a>
+                                            title="Ranks for regions Asia / Europe / Latin America / North America">(?)</a>
                     </dt>
                     <dd>
-                        ${player.findCptRanking(Region.AO)?.rank?:"-"} / ${player.findCptRanking(Region.EU)?.rank?:"-"} / ${player.findCptRanking(Region.LA)?.rank?:"-"} / ${player.findCptRanking(Region.NA)?.rank?:"-"}
+                        ${player.findCptRanking(Region.AO)?.rank ?: "-"} / ${player.findCptRanking(Region.EU)?.rank ?: "-"} / ${player.findCptRanking(Region.LA)?.rank ?: "-"} / ${player.findCptRanking(Region.NA)?.rank ?: "-"}
                     </dd>
                     <dt>CPT RF <a href="#" data-toggle="tooltip" data-placement="top"
-                                          title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
+                                  title="Is this player qualified for the CPT Regional Finals?">(?)</a></dt>
                     <dd>
-                        ${player.findCptRanking(Region.AO)?.qualified?"AO" : "-"} / ${player.findCptRanking(Region.EU)?.qualified?"EU" : "-"} / ${player.findCptRanking(Region.LA)?.qualified?"LA":"-"} / ${player.findCptRanking(Region.NA)?.qualified?"NA" : "-"}
+                        ${player.findCptRanking(Region.AO)?.qualified ? "AO" : "-"} / ${player.findCptRanking(Region.EU)?.qualified ? "EU" : "-"} / ${player.findCptRanking(Region.LA)?.qualified ? "LA" : "-"} / ${player.findCptRanking(Region.NA)?.qualified ? "NA" : "-"}
                     </dd>
                 </g:if>
                 <dt>Compare</dt>
                 <dd>
                     <g:link controller="stats" action="compare" params="[p1: player.id]">versus</g:link>
                 </dd>
-                <dt>Tweet results</dt>
-                <dd>
-                <g:render template="/templates/share"/>&NonBreakingSpace;
-                </dd>
+
                 <g:if test="${player.maxoplataId}">
-                <dt>Match details <a href="#" data-toggle="tooltip" data-placement="top"
-                                title="Link to the player profile on maxoplata.net to find more data on player matches and brackets">(?)</a></dt>
-                <dd>
-                <a href="http://www.maxoplata.net/player/${player.maxoplataId}" target="_blank">maxoplata.net</a>
-                </dd>
+                    <dt>Match details <a href="#" data-toggle="tooltip" data-placement="top"
+                                         title="Link to the player profile on maxoplata.net to find more data on player matches and brackets">(?)</a>
+                    </dt>
+                    <dd>
+                        <a href="http://www.maxoplata.net/player/${player.maxoplataId}"
+                           target="_blank">maxoplata.net</a>
+                    </dd>
                 </g:if>
-                    <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
-                                        title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a></dt>
+                <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
+                                    title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a>
+                </dt>
                 <g:if test="${player.onlineId}">
                     <dd>
                         <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">v-league.pro</a>
@@ -155,6 +156,11 @@
                 <g:else>
                     <dd><small>(Tweet us the player id)</small></dd>
                 </g:else>
+
+                <dt>Share page</dt>
+                <dd>
+                    <g:render template="/templates/share"/>&NonBreakingSpace;
+                </dd>
 
             </dl>
         </div>
@@ -198,6 +204,7 @@
         <div class="tab-pane active" id="overview">
             <h3 class="tournaments">Tournament placings <small>found ${player.rankings.size()} games for</small> ${player.name} <small>in ${totalResults} results</small>
             </h3>
+
             <div class="table-responsive">
                 <table class="tablehead" id="infotable">
                     <thead>
@@ -222,18 +229,21 @@
                                     ${ranking.game.value}
                                 </td>
                                 <td>
-                                    <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.ACTUAL.name()]">
+                                    <g:link controller="rankings" action="rank"
+                                            params="[id: ranking.game.name(), rankingType: RankingType.ACTUAL.name()]">
                                         ${ranking.rank}
                                     </g:link>
                                 </td>
                                 <td>
-                                <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.ALLTIME.name()]">
-                                    ${ranking.totalRank}
-                                </g:link>
+                                    <g:link controller="rankings" action="rank"
+                                            params="[id: ranking.game.name(), rankingType: RankingType.ALLTIME.name()]">
+                                        ${ranking.totalRank}
+                                    </g:link>
                                 </td>
                                 <td>
-                                    <g:link controller="rankings" action="rank" params="[id: ranking.game.name(), rankingType: RankingType.TRENDING.name()]">
-                                    ${ranking.trendingRank}
+                                    <g:link controller="rankings" action="rank"
+                                            params="[id: ranking.game.name(), rankingType: RankingType.TRENDING.name()]">
+                                        ${ranking.trendingRank}
                                     </g:link>
                                 </td>
                                 <td>${ranking.score}</td>
@@ -249,17 +259,18 @@
                                                    value="${Version.generalize(ranking.game) == Version.USF4 ? "thumb_" : ""}"/>
                                             <g:img dir="images/chars/${Version.generalize(ranking.game).name().toLowerCase()}"
                                                    file="${prepend + mainCharacter.name().toLowerCase() + '.png'}"
-                                                   height="30" class="charimg"/>
+                                                   height="25" class="charimg"/>
                                         </g:link>
                                     </g:each>
 
                                 </td>
                                 <td>${ranking.skill}</td>
                                 <td>
-                                    <g:link action="player" controller="rankings" params="[id: player.id]" fragment="${ranking.game.name()}" data-toggle="tab">
+                                    <g:link action="player" controller="rankings" params="[id: player.id]"
+                                            fragment="${ranking.game.name()}" data-toggle="tab">
                                         ${results[ranking.game]?.size()} (see results)
                                     </g:link>
-                                    </a>
+                                </a>
                                 </td>
                             </tr>
                         </g:if>
@@ -310,12 +321,12 @@
                                             </g:if>
                                             <g:each in="${tteam.pchars}" var="tchar">
                                                 <g:link action="rank" controller="rankings"
-                                                        params="[pchar: tchar.characterType.name(), id: ranking.key.name()]"
+                                                        params="[pchar: tchar.characterType.name(), id: ranking.key.name(), pfiltermain: 'on']"
                                                         data-toggle="tooltip" data-placement="top"
                                                         title="Filter on ${tchar.characterType.name()}">
                                                     <g:img dir="images/chars/${Version.generalize(ranking.key).name().toLowerCase()}"
                                                            file="${tchar.characterType.name().toLowerCase() + '.png'}"
-                                                           width="22" height="25"
+                                                           width="18" height="20"
                                                            class="charimg"/>
                                                 </g:link>
                                             </g:each>
@@ -346,10 +357,10 @@
         <g:if test="${SecurityUtils.subject.isPermitted("player")}">
             <div class="alert alert-info top10box">
 
-            <g:link controller="admin" action="selectPlayerVideos"
-                    params="['id': player.id]">[Update videos as admin]</g:link>
-            <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
-            <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
+                <g:link controller="admin" action="selectPlayerVideos"
+                        params="['id': player.id]">[Update videos as admin]</g:link>
+                <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
+                <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
             </div>
         </g:if>
 

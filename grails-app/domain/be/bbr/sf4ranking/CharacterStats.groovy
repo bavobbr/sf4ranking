@@ -29,6 +29,7 @@ class CharacterStats
     Integer asMainInTop50 = 0
     Integer asMain = 0
     Integer asSecondary = 0
+    Integer top1finishesTrending = 0
     Integer top1finishes = 0
     Integer top3finishes = 0
     Integer top8finishes = 0

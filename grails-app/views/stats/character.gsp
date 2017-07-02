@@ -119,6 +119,13 @@ This character is compared versus ${total} other characters in ${stats?.game?.va
             <td>${relativeStats.trendingScoreAccumulatedByTop100}</td>
         </tr>
         <tr>
+            <td>Trending Tournament wins</td>
+            <g:each in="${games}" var="game">
+                <td>${game.value?.top1finishesTrending}</td></g:each>
+            <td>${relativeStats.top1finishesTrending}</td>
+        </tr>
+
+        <tr>
             <td>Tournament wins</td>
             <g:each in="${games}" var="game">
                 <td>${game.value?.top1finishes}</td></g:each>

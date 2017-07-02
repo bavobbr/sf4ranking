@@ -87,6 +87,7 @@ This follows a logarythmic distribution and considers the highest of either actu
   <li><g:link action="exportPlayers">Export Players as JSON data...</g:link></li>
   <li><g:link action="exportTeams">Export Teams as JSON data...</g:link></li>
   <li><g:link action="exportHardware">Export Hardware as JSON data...</g:link></li>
+  <li><g:link action="exportEvents">Export Events as JSON data...</g:link></li>
 <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
   <li><g:link action="listOrphanedPlayers">manage all orphaned Players in the DB</g:link></li>
   <li><g:link action="listAlikes">manage possible duplicate players</g:link></li>
@@ -105,6 +106,7 @@ This follows a logarythmic distribution and considers the highest of either actu
     <li><g:link action="mergeSkills">Merge USF4 skill ratings into other SF4 games</g:link></li>
     <li><g:link action="findSkillDeviations">FindSkillDeviations</g:link></li>
     <li><g:link action="rollupEvents">rollupEvents</g:link></li>
+    <li><g:link action="autofillRegion">autofillRegion</g:link></li>
   </ul>
   <br/>
 </g:if>

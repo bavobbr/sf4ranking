@@ -132,7 +132,7 @@ class StatsController
         others.removeAll {it.characterType == CharacterType.UNKNOWN}
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
                 "asMain", "asSecondary", "decayedScoreAccumulated", "decayedScoreAccumulatedByTop100", "trendingScoreAccumulated", "trendingScoreAccumulatedByTop100", "scoreAccumulatedByTop100",
-                "top1finishes", "top3finishes", "top8finishes", "top16finishes", "meanTop5Score", "meanTop5Usage"]
+                "top1finishesTrending", "top1finishes", "top3finishes", "top8finishes", "top16finishes", "meanTop5Score", "meanTop5Usage"]
         def relativeStats = [:]
         statnames.each {String stat ->
             def index = others.sort {a, b -> b."$stat" <=> a."$stat"}.findIndexOf {it.characterType == charType} + 1
@@ -342,15 +342,20 @@ class StatsController
     private void topfinishes(List<CharacterStats> characters, Map statsmap)
     {
         log.info "Top finishes"
+        HitMap<CharacterType> charhitstop1recent = new HitMap<>()
         HitMap<CharacterType> charhitstop1 = new HitMap<>()
         HitMap<CharacterType> charhitstop3 = new HitMap<>()
         HitMap<CharacterType> charhitstop8 = new HitMap<>()
         HitMap<CharacterType> charhitstop16 = new HitMap<>()
+        def window = new DateTime().minusMonths(6)
         characters.each {GameCharacter gc ->
             Result r = gc.gameTeam.result
             if (r.tournament.tournamentType != TournamentType.LOCAL) {
                 if (r.place == 1) {
                     charhitstop1.addHit(gc.characterType)
+                    if (r.tournament.date?.after(window.toDate())) {
+                        charhitstop1recent.addHit(gc.characterType)
+                    }
                 }
                 if (r.place <= 3) {
                     charhitstop3.addHit(gc.characterType)
@@ -362,6 +367,10 @@ class StatsController
                     charhitstop16.addHit(gc.characterType)
                 }
             }
+        }
+        charhitstop1recent.each {k, v ->
+            CharacterStats stats = statsmap[k]
+            stats?.top1finishesTrending = v
         }
         charhitstop1.each {k, v ->
             CharacterStats stats = statsmap[k]

@@ -24,7 +24,7 @@
     <tr>
       <td>${event.name}</td>
       <td>
-        ${event.date}
+        ${event.date?.format("MM-yyyy")}
       </td>
       <td>
         <g:if test="${event.twitter}">
@@ -39,7 +39,7 @@
   </table>
 </div>
 
-<h2 class="tournament"><large>found ${event.tournaments.size()} tournaments</large></h2>
+<h2 class="tournament"><large>Hosted ${event.tournaments.size()} tournaments</large></h2>
 
 <div class="table-responsive">
   <table class="tablehead" id="datatable">
