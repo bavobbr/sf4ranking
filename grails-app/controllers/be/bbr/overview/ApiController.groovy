@@ -71,41 +71,43 @@ class ApiController {
     }
 
     def playerById() {
-        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
-        logQuery.save(failOnError: false)
         def id = params.int("name")
+        log.info "API looking for player id $id"
         def player = Player.get(id)
         render (playerToMap(player) as JSON)
     }
 
     def playerByName() {
-        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
-        logQuery.save(failOnError: false)
         String id = params.name
+        log.info "API looking for player name id $id"
         def player = Player.findByCodename(id.toUpperCase())
         render (playerToMap(player) as JSON)
     }
 
+    def playerBySmashId() {
+        String id = params.smashId
+        log.info "API looking for player smash id $id"
+        def player = Player.findBySmashId(id)
+        render (playerToMap(player) as JSON)
+    }
+
     def tournamentById() {
-        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
-        logQuery.save(failOnError: false)
         def id = params.int("name")
+        log.info "API looking for tournament id $id"
         def tournament = Tournament.get(id)
         render (tournamentToMap(tournament, true) as JSON)
     }
 
     def tournamentByName() {
-        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
-        logQuery.save(failOnError: false)
         String id = params.name
+        log.info "API looking for tournament name $id"
         def tournament = Tournament.findByCodename(id.toUpperCase())
         render (tournamentToMap(tournament, true) as JSON)
     }
 
     def tournamentByGame() {
-        Query logQuery = new Query(date: new Date(), name: params.toQueryString(), source: request.getRemoteAddr())
-        logQuery.save(failOnError: false)
         String id = params.game
+        log.info "API looking for tournament game $id"
         Version game = Version.fromString(id)
         if (!game) render "invalid game: $id"
         else {
@@ -136,6 +138,10 @@ class ApiController {
              rank: p.rank(game),
              id: p.id,
              score: p.score(game),
+             twitter: p.twitter,
+             smashId: p.smashId,
+             maxoplataId: p.maxoplataId,
+             onlineId: p.onlineId,
              totalscore: p.totalScore(game),
              trendingscore: p.trendingScore(game),
              cptScore: p.cptScore(),
@@ -162,6 +168,9 @@ class ApiController {
                     country : player.countryCode?.name(),
                     realname: player.realname,
                     twitter : player.twitter,
+                    smashId : player.smashId,
+                    maxoplataId: player.maxoplataId,
+                    onlineId: player.onlineId,
                     alias   : player.alias,
                     mainGame: player.mainGame?.name(),
                     teams   : player.teams.collect { it.name },

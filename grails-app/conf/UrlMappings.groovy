@@ -19,6 +19,9 @@ class UrlMappings {
         name apiPlayerByName: "/$controller/player/name/$name"{
             action = "playerByName"
         }
+        name apiPlayerBySmashId: "/$controller/player/smash/$smashId"{
+            action = "playerBySmashId"
+        }
         name apiTournamentById: "/$controller/tournament/id/$name"{
             action = "tournamentById"
         }

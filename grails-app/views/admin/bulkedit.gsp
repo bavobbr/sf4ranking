@@ -18,9 +18,10 @@
       <td>alias</td>
       <td>twitter</td>
       <td>twitch</td>
-      <td>maxoplataId</td>
-      <td>onlineId</td>
-      <td>pictureUrl</td>
+      <td>maxoplata</td>
+      <td>smash</td>
+      <td>vleague</td>
+      <td>picture</td>
     </tr>
     </thead>
     <tbody>
@@ -32,6 +33,7 @@
         <td><g:textField name="name_${player.id}" value="${player.twitter}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.twitch}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.maxoplataId}"/></td>
+        <td><g:textField name="name_${player.id}" value="${player.smashId}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.onlineId}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.pictureUrl}"/></td>
       </tr>

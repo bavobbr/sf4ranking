@@ -145,6 +145,7 @@
                            target="_blank">maxoplata.net</a>
                     </dd>
                 </g:if>
+
                 <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
                                     title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a>
                 </dt>

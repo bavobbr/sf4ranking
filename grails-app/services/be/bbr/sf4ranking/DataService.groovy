@@ -292,12 +292,13 @@ class DataService {
             def pictureCopyright = pjson.pictureCopyright ? pjson.pictureCopyright : ""
             def description = pjson.description ? pjson.description : ""
             def maxoplataId = pjson.maxoplataId ?: ""
+            def smashId = pjson.smashId ?: ""
             def onlineId = pjson.onlineId ?: ""
             def twitch = pjson.twitch ?: ""
             def alias = pjson.alias ?: ""
             Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                     mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
-                    pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, onlineId: onlineId,
+                    pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, smashId: smashId, onlineId: onlineId,
                     twitch: twitch, alias: alias)
             if (cptRank) {
                 CptRanking cptRanking = new CptRanking(qualified: cptQualified, score: cptScore, prevScore: prevCptScore, rank: cptRank, prevRank: prevCptRank, region: Region.GLOBAL)
@@ -341,7 +342,7 @@ class DataService {
             CountryCode country = tjson.country as CountryCode
             Version version = tjson.version as Version
             if (Environment.current == Environment.DEVELOPMENT) {
-                //if (!(version in [Version.SF5])) return
+                if (!(version in [Version.SF5])) return
             }
             Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
             TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
@@ -477,6 +478,7 @@ class DataService {
             player.teams = it.teams.collect { it.codename }
             player.hardware = it.hardware?.name
             player.maxoplataId = it.maxoplataId
+            player.smashId = it.smashId
             player.onlineId = it.onlineId
             player.twitch = it.twitch
             def rankings = []

@@ -18,6 +18,7 @@ class Player
         pictureCopyright nullable: true
         hardware nullable: true
         maxoplataId nullable: true
+        smashId nullable: true
         onlineId nullable: true
         twitch nullable: true
         creator nullable: true, editable: false
@@ -51,6 +52,7 @@ class Player
     String pictureCopyright
     Hardware hardware
     String maxoplataId
+    String smashId
     String onlineId
     String twitch
     String alias

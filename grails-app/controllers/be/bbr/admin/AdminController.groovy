@@ -307,13 +307,15 @@ class AdminController
                 def twitter = v[2]
                 def twitch = v[3]
                 def maxoplataId = v[4]
-                def onlineId = v[5]
-                def pictureUrl = v[6]
+                def smashId = v[5]
+                def onlineId = v[6]
+                def pictureUrl = v[7]
                 player.realname = realname
                 player.alias = alias
                 player.twitter = twitter
                 player.twitch = twitch
                 player.maxoplataId = maxoplataId
+                player.smashId = smashId
                 player.onlineId = onlineId
                 player.pictureUrl = pictureUrl
                 player.save(failOnError: true)
