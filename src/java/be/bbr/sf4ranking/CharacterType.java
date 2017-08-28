@@ -274,6 +274,8 @@ public enum CharacterType
     SF5_JURI("JURI", "Juri", Version.SF5),
     SF5_AKUMA("AKUMA", "Akuma", Version.SF5),
     SF5_KOLIN("KOLIN", "Kolin", Version.SF5),
+    SF5_ED("ED", "ed", Version.SF5),
+    SF5_ABIGAIL("ABIGAIL", "Abigail", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),

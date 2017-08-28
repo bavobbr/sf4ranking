@@ -30,7 +30,7 @@ ${tournaments.size()} Tournaments Registered in results database.
       <th>Type</th>
       <th>Date</th>
       <th>Location</th>
-      <th>Game</th>
+      <th>Event</th>
       <th>Weight</th>
       <th>Creator</th>
       <g:if test="${SecurityUtils.subject.isPermitted("tournament")}">

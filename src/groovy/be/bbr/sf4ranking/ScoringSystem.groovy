@@ -16,7 +16,7 @@ class ScoringSystem
      * This should not be used
      */
     private static final Map zero_scores = [
-            "GRAND_SLAM": [0] * 64,
+            "GRAND_SLAM": [0] * 256,
             "CHAMPIONSHIP": [0] * 64,
             "PREMIER_MANDATORY": [0] * 64,
             "PREMIER_5": [0] * 64,
@@ -31,7 +31,7 @@ class ScoringSystem
      * But adding them in anyway helps robustness
      */
     private static final Map single_scores = [
-            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16, [70] * 16, [40]*16].flatten(),
+            "GRAND_SLAM": [2000, 1300, [780] * 2, [430] * 4, [240] * 8, [120] * 16, [70] * 16, [40]*16, [20]*32, [10]*32].flatten(),
             "CHAMPIONSHIP": [1500, 1050, [690] * 2, [320] * 4, [200] * 8, [100] * 16, [60] * 16, [35]*16].flatten(),
             "PREMIER_MANDATORY": [1000, 650, [390] * 2, [215] * 4, [120] * 8, [60] * 16, [40] * 16, [25]*16].flatten(),
             "PREMIER_5": [900, 585, [350] * 2, [190] * 4, [105] * 8, [50] * 16, [30] * 16, [20]*16].flatten(),
@@ -47,7 +47,7 @@ class ScoringSystem
      * But adding them in anyway helps robustness
      */
     private static final Map double_scores = [
-            "GRAND_SLAM": [2000, 1300, 780, 600, [430] * 2, [340] * 2, [240] * 8, [120] * 16, [70] * 16, [40]*16].flatten(),
+            "GRAND_SLAM": [2000, 1300, 780, 600, [430] * 2, [340] * 2, [240] * 8, [120] * 16, [70] * 16, [40]*16, [20]*32, [10]*32, [5]*64, [1]*256].flatten(),
             "CHAMPIONSHIP": [1500, 1050, 690, 500, [320] * 2, [280] * 2, [200] * 8, [100] * 16, [60] * 16, [35]*16].flatten(),
             "PREMIER_MANDATORY": [1000, 650, 390, 300, [215] * 2, [180] * 2, [120] * 8, [60] * 16, [40] * 16, [25]*16].flatten(),
             "PREMIER_5": [900, 585, 350, 250, [190] * 2, [150] * 2, [105] * 8, [50] * 16, [30] * 16, [20]*16].flatten(),
@@ -86,7 +86,7 @@ class ScoringSystem
             LEAGUE: 1..64,
             UNKNOWN: 1..64,
             SINGLE_BRACKET: [1, 2, [3] * 2, [5] * 4, [9] * 8, [17] * 16, [33] * 32].flatten(),
-            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8, [33] * 16, [49] * 16].flatten()
+            DOUBLE_BRACKET: [1, 2, 3, 4, [5] * 2, [7] * 2, [9] * 4, [13] * 4, [17] * 8, [25] * 8, [33] * 16, [49] * 16, [65] * 32, [129] * 64, [193] * 128].flatten()
     ]
 
     private static final Map scores = [

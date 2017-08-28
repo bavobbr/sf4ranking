@@ -80,7 +80,7 @@ Green means directly qualified, blue means qualification by points in the open g
 
         <g:each in="${players}" var="p">
 
-            <tr class="${p.cptGlobal().score >= 500 ? 'qual' : 'unqual'} ${p.cptGlobal()?.qualified ? 'direct' : 'unqual'}">
+            <tr class="${p.cptGlobal().score >= 564 ? 'qual' : 'unqual'} ${p.cptGlobal()?.qualified ? 'direct' : 'unqual'}">
                 <td class="${p.cptGlobal().rank <= 31? 'warning' : ''}">
                     ${p.cptGlobal().rank}
                 </td>

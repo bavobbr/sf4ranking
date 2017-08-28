@@ -97,7 +97,7 @@ public enum CptTournament
             case RANKING: return 0
             case ONLINE_EVENT: return 0
             case PREMIER: return getPremierPrize(place)
-            case REGIONAL_FINAL: return getPremierPrize(place)
+            case REGIONAL_FINAL: return getRegionalFinalPrize(place)
             case PREMIER_SCORELESS: return getPremierPrize(place)
             case EVO: return getEvoPrize(place)
             case QUALIFIER: return 0
@@ -122,6 +122,20 @@ public enum CptTournament
         return place <= scores_evo.size()? scores_evo[place-1] : 0
     }
 
+    public Integer getRegionalFinalPrize(Integer place) {
+        switch (place) {
+            case 1: return 12000;
+            case 2: return 6000;
+            case 3: return 4500;
+            case 4: return 3000;
+            case 5: return 1500;
+            case 6: return 1500;
+            case 7: return 750;
+            case 8: return 750;
+            default: return 0;
+        }
+    }
+
     public Integer getPremierPrize(Integer place) {
         switch (place) {
             case 1: return 7000;
@@ -144,8 +158,8 @@ public enum CptTournament
             case 4: return 5000;
             case 5: return 2500;
             case 6: return 2500;
-            case 7: return 1500;
-            case 8: return 1500;
+            case 7: return 1250;
+            case 8: return 1250;
             default: return 0;
         }
     }
@@ -153,13 +167,23 @@ public enum CptTournament
     public Integer getCapcomCupPrize(Integer place) {
         switch (place) {
             case 1: return 120000;
-            case 2: return 60000;
-            case 3: return 25000;
-            case 4: return 15000;
-            case 5: return 10000;
-            case 6: return 10000;
+            case 2: return 50000;
+            case 3: return 21500;
+            case 4: return 12500;
+            case 5: return 9000;
+            case 6: return 9000;
             case 7: return 5000;
             case 8: return 5000;
+            case 9: return 2000;
+            case 10: return 2000;
+            case 11: return 2000;
+            case 12: return 2000;
+            case 13: return 1000;
+            case 14: return 1000;
+            case 15: return 1000;
+            case 16: return 1000;
+            case [17..24]: return 500;
+            case [25..32]: return 250;
             default: return 0;
         }
     }

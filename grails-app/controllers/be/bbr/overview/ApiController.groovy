@@ -145,10 +145,15 @@ class ApiController {
              totalscore: p.totalScore(game),
              trendingscore: p.trendingScore(game),
              cptScore: p.cptScore(),
+             cptRank: p.cptGlobal()?.rank,
              cptNaScore: p.cptScore(Region.NA),
+             cptNaRank: p.findCptRanking(Region.NA)?.rank,
              cptLaScore: p.cptScore(Region.LA),
+             cptLaRank: p.findCptRanking(Region.LA)?.rank,
              cptAoScore: p.cptScore(Region.AO),
+             cptAoRank: p.findCptRanking(Region.AO)?.rank,
              cptEuScore: p.cptScore(Region.EU),
+             cptEuRank: p.findCptRanking(Region.EU)?.rank,
              character: p.main(game)?.collect { it.name() }
             ]
         }
@@ -175,14 +180,20 @@ class ApiController {
                     mainGame: player.mainGame?.name(),
                     teams   : player.teams.collect { it.name },
                     cptScore: player.cptScore(),
+                    cptRank : player.cptGlobal()?.rank,
                     cptNaScore: player.cptScore(Region.NA),
+                    cptNaRank: player.findCptRanking(Region.NA)?.rank,
                     cptLaScore: player.cptScore(Region.LA),
+                    cptLaRank: player.findCptRanking(Region.LA)?.rank,
                     cptAoScore: player.cptScore(Region.AO),
+                    cptAoRank: player.findCptRanking(Region.AO)?.rank,
                     cptEuScore: player.cptScore(Region.EU),
+                    cptEuRank: player.findCptRanking(Region.EU)?.rank,
                     rankings: player.rankings.collectEntries {
                         [it.game?.name(),
                          [
                                  rank      : it.rank,
+                                 weight    : it.skill,
                                  score     : it.score,
                                  totalscore: it.totalScore,
                                  trendingscore: it.trendingScore,

@@ -44,5 +44,6 @@
   </g:form>
 </fieldset>
 <br/>
+<g:link action="bulkedit" params="[game: game.name(), page: page+1]">[Go to bulk page ${page+1}]</g:link>
 </body>
 </html>

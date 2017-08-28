@@ -1,7 +1,8 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "canada-cup-2016"
+def tournament = "evo-2017"
+def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
 
@@ -11,6 +12,7 @@ class Attendee {
     String gamertag
     Integer id
     Integer attendeeId
+    Integer participantId
     String country
     String state
     String twitter
@@ -23,6 +25,7 @@ class Event {
     Integer id
     String name
     List<Pool> pools = []
+    Integer entrantId
 }
 
 @ToString
@@ -49,7 +52,12 @@ while (hasNext) {
         attendee.attendeeId = node.id
         attendee.twitter = node.player.twitterHandle
         attendee.tag = node.player.prefix
-        attendee.events = node.events.collect { new Event(name: it.name, id: it.id) }
+        attendee.events = node.events.collect {
+            def evt = new Event(name: it.name, id: it.id)
+            def entrant = node.entrants.find { it.eventId == evt.id }
+            evt.entrantId = entrant.id
+            return evt
+        }
         node.pools.each { poolnode ->
             def event = attendee.events.find { it.id == poolnode.eventId }
             event.pools << new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName)
@@ -127,12 +135,17 @@ groupByEventSize.each {
 
 println "[DETAIL DATA]"
 
-def file = new File("/Users/bbr/Desktop/cc2016_extended.csv")
+def file = new File("/Users/bbr/Desktop/$filename")
 file.delete()
 file.withPrintWriter { writer ->
     attendees.each { p ->
         p.events.each {
-            writer.print("$p.id, $p.attendeeId, $p.tag, $p.gamertag, $p.name, $p.country, $p.state, $p.twitter, $it.name, ${it.pools[0]?.id}, ${it.pools[0]?.name}, ${it.pools[0]?.group}\n")
+            def tokens = [p.id?: "", p.attendeeId?: "", p.tag?:"", p.gamertag?:"", p.name?:"", p.country?:"", p.state?:"", p.twitter?:"", it.name?:"", it.pools[0]?.id?:"", it.pools[0]?.name?:"", it.pools[0]?.group?:"", it.entrantId]
+            def clean = tokens.collect { it.toString().replace(",","-") }.collect { it.toString().replace("\"","'") }
+            def quoted = clean.collect { "\"$it\"" }
+            def line = quoted.join(",")
+            writer.println(line)
         }
     }
 }
+
