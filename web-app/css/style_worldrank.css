@@ -365,3 +365,22 @@ div.top100 {
 .top10box {
 	margin-top: 10px;
 }
+
+table {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.jsdragtable-contents {
+	background: #fff;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	box-shadow: 2px 2px 5px #aaa;
+	padding: 0;
+}
+
+.jsdragtable-contents table {
+	margin-bottom: 0;
+}

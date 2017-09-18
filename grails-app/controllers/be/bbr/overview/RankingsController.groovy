@@ -204,12 +204,14 @@ class RankingsController
         qualifiedPlayers.sort { it.cptGlobal()?.score }
         def byCountry = players.groupBy { it.countryCode }
         def byCountry32 = qualifiedPlayers.groupBy { it.countryCode }
+        def byRegion32 = qualifiedPlayers.groupBy { it.countryCode.region }
         def unknownTotal = 32 - directQualifiedPlayers.size()
 
         [coming: comingTournaments,
          played: pastTournaments,
          byCountry: byCountry,
          byCountry32: byCountry32,
+         byRegion32: byRegion32,
          maxTotal: maxTotal,
          unknownTotal: unknownTotal,
          premierTournament: premierPlaces,

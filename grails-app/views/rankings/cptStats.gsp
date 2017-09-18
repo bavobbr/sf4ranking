@@ -118,6 +118,26 @@
     </table>
 </div>
 
+<h3 class="tournament"><small>Qualifying listed players by region</small></h3>
+<div class="table-responsive">
+    <table class="tablehead" id="datatable40">
+        <thead>
+        <tr class="stathead">
+            <th>Region</th>
+            <th>Amount</th>
+            <th>Players</th>
+        </tr>
+        </thead>
+        <g:each in="${byRegion32}" var="t">
+            <tr>
+                <td>${t.key}</td>
+                <td>${t.value.size()}</td>
+                <td>${t.value.collect { it.name }.join(", ")}</td>
+            </tr>
+        </g:each>
+    </table>
+</div>
+
 See the <g:link action="cptCharacterStats">CPT character stats </g:link> page for more info on qualifying players. Currently ${unknownTotal} spots are not known yet.
 
 

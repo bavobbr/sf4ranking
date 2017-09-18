@@ -594,6 +594,16 @@ class DataService {
     @Transactional
     void merge(Player p1, Player p2) {
         configurationService.withUniqueSession {
+            CharacterStats.findAllByPlayer(p1).each {
+                println "Unlinking player $p1"
+                it.player = p2
+                it.save(flush: true)
+            }
+            CharacterStats.findAllByTrendingPlayer(p1).each {
+                println "Unlinking player $p1"
+                it.player = p2
+                it.save(flush: true)
+            }
             log.info("Merging $p1 into $p2")
             def resultsToMerge = Result.findAllByPlayer(p1)
             resultsToMerge.each {
