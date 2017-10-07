@@ -59,7 +59,7 @@ public enum CptTournament
             case RANKING: return getRankingScore(place)
             case ONLINE_EVENT: return getRankingScore(place)
             case PREMIER: return getPremierScore(place)
-            case REGIONAL_FINAL: return getPremierScore(place)
+            case REGIONAL_FINAL: return getRegionalFinalScore(place)
             case PREMIER_SCORELESS: return 0
             case EVO: return getEvoScore(place)
             case QUALIFIER: return getRankingScore(place)
@@ -80,6 +80,8 @@ public enum CptTournament
                 return getPremierPrize(place)
             case EVO:
                 return getEvoPrize(place)
+            case REGIONAL_FINAL:
+                return getRegionalFinalPrize(place)
             case QUALIFIER:
                 return 0
             case NONE:
@@ -115,6 +117,11 @@ public enum CptTournament
     public Integer getPremierScore(Integer place) {
         def scores_premier = [[400], [250], [200], [160], [130] * 2, [100] * 2, [70] * 4, [40] * 4, [20] * 8, [10] * 8, [5] * 16, [1] * 16].flatten()
         return place <= scores_premier.size()? scores_premier[place-1] : 0
+    }
+
+    public Integer getRegionalFinalScore(Integer place) {
+        if (place == 1) return 400
+        else return 0
     }
 
     public Integer getEvoScore(Integer place) {
