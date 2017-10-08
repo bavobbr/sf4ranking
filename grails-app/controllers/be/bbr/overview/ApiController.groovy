@@ -207,6 +207,7 @@ class ApiController {
                          game          : it.tournament.game.name(),
                          place         : it.place,
                          score         : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
+                         legacyScore   : ScoringSystem.getLegacyScore(it.place, it.tournament.weight, it.tournament.tournamentFormat),
                          date          : it.tournament.date,
                          type          : it.tournament.tournamentType.name(),
                          characters    : it.characterTeams.collect {
