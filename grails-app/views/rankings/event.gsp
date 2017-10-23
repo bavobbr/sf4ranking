@@ -1,12 +1,11 @@
 <%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - Event ${event.name}</title>
+  <meta name="layout" content="artificial"/>
+  <title>SRK data - Event ${event.name}</title>
 </head>
 
 <body>
-<h2 class="tournament"><small>${event.name}</small> details</h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover tdetails">
@@ -74,6 +73,5 @@
 </g:if>
 
 
-<g:render template="/templates/prettify"/>
 </body>
 </html>

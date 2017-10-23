@@ -1,7 +1,7 @@
 <%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial">
     <title>Hardware and controllers - ${controller.name}</title>
 </head>
 
@@ -112,7 +112,6 @@ These Amazon stores offer ${controller.shortname} directly. Click on the image t
             params="['id': controller.id]">[Update hardware as admin]</g:link>
 </g:if>
 
-<g:render template="/templates/prettify"/>
 </center>
 </body>
 </html>

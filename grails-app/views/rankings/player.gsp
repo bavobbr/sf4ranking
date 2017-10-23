@@ -1,15 +1,14 @@
 <%@ page import="be.bbr.sf4ranking.RankingType; be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
-    <title>Fighting Games World Rankings - ${player.name} results</title>
+    <meta name="layout" content="artificial"/>
+    <title>SRK data - ${player.name} results</title>
 </head>
 
 <body>
 <div style="text-align: center;">
     <h1 class="player_name">${player.name}</h1>
 </div>
-<center>
 
     <div class="row">
         <div class="col-md-8">
@@ -365,25 +364,27 @@
             </div>
         </g:if>
 
-        <div class="row top10box" align="center">
-            <script type="text/javascript">
-                amzn_assoc_placement = "adunit0";
-                amzn_assoc_search_bar = "true";
-                amzn_assoc_tracking_id = "hypegames02-20";
-                amzn_assoc_search_bar_position = "bottom";
-                amzn_assoc_ad_mode = "search";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_title = "";
-                amzn_assoc_default_search_phrase = "fighting games";
-                amzn_assoc_default_category = "VideoGames";
-                amzn_assoc_linkid = "e4ba9d5f5b3e64e95cacb82067683103";
-                amzn_assoc_default_browse_node = "468642";
-            </script>
-            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-        </div>
+
     </div>
+
+<div class="row top10box" align="center">
+    <script type="text/javascript">
+        amzn_assoc_placement = "adunit0";
+        amzn_assoc_search_bar = "true";
+        amzn_assoc_tracking_id = "hypegames02-20";
+        amzn_assoc_search_bar_position = "bottom";
+        amzn_assoc_ad_mode = "search";
+        amzn_assoc_ad_type = "smart";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
+        amzn_assoc_title = "";
+        amzn_assoc_default_search_phrase = "fighting games";
+        amzn_assoc_default_category = "VideoGames";
+        amzn_assoc_linkid = "e4ba9d5f5b3e64e95cacb82067683103";
+        amzn_assoc_default_browse_node = "468642";
+    </script>
+    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+</div>
 
     %{--        <div class="tab-pane" id="videos">
                 <g:if test="${player.videos}">
@@ -400,8 +401,6 @@
                         </g:each>
                     </div>
                 </g:if></div>--}%
-</center>
-<g:render template="/templates/prettify"/>
 
 <script>
     // Javascript to enable link to tab

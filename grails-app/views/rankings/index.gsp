@@ -1,14 +1,11 @@
 <%@ page import="be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
-    <title>Fighting Games World Rankings</title>
+    <meta name="layout" content="artificial"/>
+    <title>SRK data - FGC world rankings</title>
 </head>
 
 <body>
-<center>
-    <h2 class="title">Fighting Games World Rankings</h2>
-</center>
 
 <g:if test="${updateMessage}">
     <div class="alert alert-info">

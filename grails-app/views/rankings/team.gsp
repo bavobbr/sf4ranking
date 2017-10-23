@@ -1,12 +1,11 @@
 <%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - ${team.name} Team Details</title>
+  <meta name="layout" content="artificial"/>
+  <title>SRK data - ${team.name} Team Details</title>
 </head>
 
 <body>
-<h2 class="tournament"><small>${team.name}</small> Team details</h2>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover tdetails">
@@ -32,7 +31,6 @@
       </td>
       <td>${players.size()}</td>
       <td>
-        <g:render template="/templates/prettify"/>
       </td>
     </tr>
   </table>
@@ -80,6 +78,5 @@
 </g:if>
 
 
-<g:render template="/templates/prettify"/>
 </body>
 </html>

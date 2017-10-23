@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
+  <meta name="layout" content="artificial">
   <title>Street Fighter World Ranking - SSFIV:AE ver. 2012 - ${tournament.name} Tournament Diff Details</title>
 </head>
 

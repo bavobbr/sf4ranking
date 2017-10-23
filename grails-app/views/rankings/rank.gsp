@@ -1,34 +1,19 @@
 <%@ page import="be.bbr.sf4ranking.RankingType; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial"/>
     <g:if test="${rankingType == be.bbr.sf4ranking.RankingType.ALLTIME}">
-        <title>${game.value} All-time player rankings</title>
+        <title>SRK data - ${game.value} All-time player rankings</title>
     </g:if>
     <g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.TRENDING}">
-        <title>${game.value} Trending player rankings</title>
+        <title>SRK data - ${game.value} Trending player rankings</title>
     </g:elseif>
-    <g:else><title>${game.value} Player World Rankings</title>
+    <g:else><title>SRK data - ${game.value} World Rankings</title>
     </g:else>
 
 </head>
 
 <body>
-<g:if test="${filtered}">
-    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Filtered on ${fcountry} ${fchar?.value}</h2></center>
-</g:if>
-<g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.ALLTIME}">
-    <center><h2 class="title-filtered">${game.value} Tournament Rankings - All-time player score ranking</h2></center>
-</g:elseif>
-<g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.TRENDING}">
-    <center><h2 class="title-filtered">${game.value} Tournament Rankings - Trending player score ranking</h2></center>
-</g:elseif>
-<g:else>
-    <center>
-        <h2 class="title">${game.value} Tournament Rankings</h2>
-    </center>
-</g:else>
-
 
 <g:if test="${fchar && !ffiltermain}">
     <div class="alert alert-info">

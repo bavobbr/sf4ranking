@@ -1,8 +1,8 @@
 <%@ page import="be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Ranking - FAQ</title>
+  <meta name="layout" content="artificial">
+  <title>SRK data - FAQ</title>
 </head>
 
 <body>

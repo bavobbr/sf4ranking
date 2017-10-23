@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial"/>
   <title>Capcom Pro Tour 2017 Player and Character Stats</title>
 </head>
 
@@ -120,7 +120,6 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
 
 
 
-<g:render template="/templates/prettify"/>
 
 </body>
 </html>

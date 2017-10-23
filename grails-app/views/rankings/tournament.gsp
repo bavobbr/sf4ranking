@@ -1,13 +1,12 @@
 <%@ page import="be.bbr.sf4ranking.CptTournament; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
-    <title>Fighting Games World Rankings - ${tournament.game.value} - ${tournament.name} Tournament Details</title>
+    <meta name="layout" content="artificial"/>
+    <title>SRK data - ${tournament.game.value} - ${tournament.name} Tournament Details</title>
 
 </head>
 
 <body>
-<h2 class="tournament"><small>${tournament.name}</small> Tournament details</h2>
 <g:if test="${updateMessage}">
     <div class="alert alert-info alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -180,6 +179,5 @@
 </div>
 
 
-<g:render template="/templates/prettify"/>
 </body>
 </html>

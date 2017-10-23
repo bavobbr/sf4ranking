@@ -542,6 +542,35 @@ class RankingsController
         [players: players, alikes: alikes, query: player]
     }
 
+    def searchTournament()
+    {
+        String tournamentName = params.tournament
+        Set<Tournament> tournaments = []
+        Set<Event> events = []
+        if (tournamentName?.size() > 1)
+        {
+            def query = tournamentName?.trim()
+            query = query.tokenize("|").last()
+            query = query.tokenize("'").last()
+            query = query.tokenize("-").last()
+            query = query.tokenize(".").last()
+            query = query.tokenize("_").last()
+            if (query.size() <= 1) {
+                flash.message = "Query string too short"
+            }
+            else {
+                log.info "Processing query $query"
+                tournaments = dataService.findTournamentMatches(query)
+                events = dataService.findEventMatches(query)
+            }
+        }
+        else
+        {
+            flash.message = "Query string too short"
+        }
+        [tournaments: tournaments, events: events, query: tournamentName]
+    }
+
     public static String cptSummary(Player p) {
         def global = p.findCptRanking(Region.GLOBAL)
         def la = p.findCptRanking(Region.LA)

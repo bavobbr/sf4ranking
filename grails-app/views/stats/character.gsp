@@ -1,7 +1,7 @@
 <%@ page import="org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version; be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial">
     <title>${stats?.characterType?.shortname} Character statistics and tournament results</title>
 </head>
 

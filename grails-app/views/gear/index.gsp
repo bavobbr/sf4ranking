@@ -1,8 +1,8 @@
 <%@ page import="be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
-    <title>SRK Ranking - Hardware and controllers</title>
+    <meta name="layout" content="artificial">
+    <title>SRK data - Hardware and controllers</title>
 </head>
 
 <body>
@@ -59,7 +59,6 @@ This is a list if the most commonly used arcade sticks, controllers and converte
                 </td>
             </tr>
         </g:each>
-        <g:render template="/templates/prettify"/>
     </table>
 </div>
 

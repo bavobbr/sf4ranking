@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - Teams</title>
+  <meta name="layout" content="artificial"/>
+  <title>SRK data - Teams</title>
 </head>
 
 <body>
@@ -35,7 +35,6 @@
   </table>
 </div>
 
-<g:render template="/templates/prettify"/>
 
 </body>
 </html>

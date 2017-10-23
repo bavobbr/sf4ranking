@@ -1,14 +1,11 @@
 <%@ page import="be.bbr.sf4ranking.Region; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial"/>
     <title>Capcom Pro Tour Rankings 2017 - ${game.value}</title>
 </head>
 
 <body>
-<center>
-    <h2 class="title">${game.name()} Capcom Pro Tour Rankings 2017</h2>
-</center>
 
 <div class="row">
     <div class="col-md-6">

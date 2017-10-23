@@ -43,12 +43,12 @@ table {
 }
 
 .table-condensed  {
-  padding: 3px 3px;
+  padding: 2px 2px;
 }
 
 .table-condensed th,
 .table-condensed td {
-  padding: 3px 3px;
+  padding: 2px 2px;
   font-size: 12px;
 }
 .table-bordered {
@@ -96,10 +96,8 @@ table {
 
 
 .table-condensed tbody tr td {
-    padding: 3px;
+    padding: 2px;
 }
-
-
 
 .amzn-native-header{
   display: none;

@@ -3,12 +3,12 @@
 
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
+  <meta name="layout" content="artificial"/>
   <g:if test="${game}">
-  <title>Fighting Games World Rankings - ${game.value} Tournaments</title>
+  <title>SRK data - ${game.value} Tournaments</title>
   </g:if>
   <g:else>
-    <title>Fighting Games World Rankings - Tournaments</title>
+    <title>SRK data - Tournaments</title>
   </g:else>
 </head>
 
@@ -92,7 +92,6 @@ ${tournaments.size()} Tournaments Registered in results database.
 </div>
 
 
-<g:render template="/templates/prettify"/>
 
 </body>
 </html>

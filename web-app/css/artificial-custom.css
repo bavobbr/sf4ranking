@@ -1,0 +1,91 @@
+div.top10 {
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;
+    border: 2px dotted #cc0000;
+    font-size: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+div.top20 {
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;
+    border: 2px dotted #f90;
+    font-size: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+div.top50 {
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;
+    border: 2px dotted #006dba;
+    font-size: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+div.top100 {
+    border-radius: 33px 33px 33px 33px;
+    -moz-border-radius: 33px 33px 33px 33px;
+    -webkit-border-radius: 33px 33px 33px 33px;
+    border: 2px dotted #b2d1ff;
+    font-size: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+
+.popover {
+    max-width: none;
+    white-space: pre;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.top10box {
+    margin-top: 10px;
+}
+
+table {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.jsdragtable-contents {
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    box-shadow: 2px 2px 5px #aaa;
+    padding: 0;
+}
+
+.jsdragtable-contents table {
+    margin-bottom: 0;
+}
+
+.tdetails {
+    margin: 0 0 40px 0;
+}
+
+.countryflag, .charimg {
+    margin: 0 5px 0 2px;
+}
+
+.qual {
+    background: rgba(200, 240, 255, 0.51);
+}
+
+.global {
+    background: #fcf8e3;
+}
+
+.direct {
+    background: #f0fce3;
+}

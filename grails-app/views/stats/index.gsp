@@ -1,7 +1,7 @@
 <%@ page import="be.bbr.sf4ranking.CharacterType; org.apache.shiro.SecurityUtils; be.bbr.sf4ranking.Version; be.bbr.sf4ranking.TournamentFormat; be.bbr.sf4ranking.TournamentType; be.bbr.sf4ranking.ScoringSystem" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial">
     <title>${game?.value} Balance Statistics</title>
 </head>
 
@@ -9,18 +9,7 @@
 
 <h2>Character statistics</h2>
 
-<div class="panel panel-primary lowtoppanel">
-    <div class="panel-heading">
-        <h3 class="panel-title">Tips</h3>
-    </div>
 
-    <div class="panel-body">
-        <ul>
-            <li>You can sort on the columns by clicking the header</li>
-            <li>You can get character details by clicking the character name</li>
-        </ul>
-    </div>
-</div>
 <ul class="nav nav-pills">
     <g:each in="${Version.values().findAll { it != Version.UNKNOWN }}" var="g">
         <li class="${game == g ? 'active' : 'passive'}"><g:link controller="stats" action="index"

@@ -8,7 +8,7 @@
 <%@ page import="org.apache.shiro.SecurityUtils" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta name="layout" content="overviews">
+    <meta name="layout" content="artificial">
     <title>Tournaments placed for review</title>
 </head>
 

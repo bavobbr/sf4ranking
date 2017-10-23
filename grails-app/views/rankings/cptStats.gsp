@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
+    <meta name="layout" content="artificial"/>
   <title>Capcom Pro Tour 2017 Stats</title>
 </head>
 
@@ -158,7 +158,6 @@ See the <g:link action="cptCharacterStats">CPT character stats </g:link> page fo
         </g:each>
     </table>
 </div>
-<g:render template="/templates/prettify"/>
 
 </body>
 </html>

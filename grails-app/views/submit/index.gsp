@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta name="layout" content="overviews">
+    <meta name="layout" content="artificial">
   <title>Tournament Data Submit</title>
 </head>
 

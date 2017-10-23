@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Artificial Reason</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" />
+
+    <meta name="description" content="">
+
+    <!-- CSS -->
+    <link href="assets/css/preload.css" rel="stylesheet">
+
+    <!-- Compiled in vendors.js -->
+    <!--
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/slidebars.min.css" rel="stylesheet">
+    <link href="assets/css/lightbox.css" rel="stylesheet">
+    <link href="assets/css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="assets/css/buttons.css" rel="stylesheet">
+    -->
+
+    <link href="assets/css/vendors.css" rel="stylesheet">
+    <link href="assets/css/syntaxhighlighter/shCore.css" rel="stylesheet" >
+
+    <!-- RS5.0 Stylesheet -->
+    <!--<link rel="stylesheet" type="text/css" href="assets/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">-->
+
+    <link href="assets/css/style-blue.css" rel="stylesheet" title="default">
+    <link href="assets/css/width-full.css" rel="stylesheet" title="default">
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<body>
+
+<div class="sb-site-container">
+<div class="boxed">
+
+
+<nav class="navbar navbar-default navbar-dark yamm navbar-static-top" role="navigation" id="header">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </button>
+            <a id="ar-brand" class="navbar-brand" href="index.html">Artificial <span>Reason</span></a>
+        </div> <!-- navbar-header -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="pull-right">
+            <a href="javascript:void(0);" class="sb-icon-navbar sb-toggle-right"><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Home</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li><a href="index.html">New Default Home <span class="label label-success pull-right">New</span></a></li>
+                        <li><a href="index_old.html">Option 1: Old Home</a></li>
+                        <li><a href="home_services.html">Option 2: Services</a></li>
+                        <li><a href="home_full.html">Option 3: Full Intro</a></li>
+                        <li><a href="home_only_full.html">Option 4: Only Full Intro</a></li>
+                        <li><a href="home_news.html">Option 5: News</a></li>
+                        <li><a href="home_profile.html">Option 6: Professional Profile</a></li>
+                        <li><a href="home_plan.html">Option 7: Subscribe</a></li>
+                        <li role="presentation" class="dropdown-header">New Home Pages 1.4</li>
+                        <li><a href="home_polygon.html">Option 8: Product <span class="label label-success pull-right">New</span></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown yamm-fw">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">UI Elements</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-megamenu">
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-css3"></i> CSS</h4>
+                                            <ul>
+                                                <li><a href="css_typography.html"><i class="fa fa-font"></i> Typography</a></li>
+                                                <li><a href="css_headers.html"><i class="fa fa-header"></i> Headers</a></li>
+                                                <li><a href="css_dividers.html"><i class="fa fa-arrows-h"></i> Dividers</a></li>
+                                                <li><a href="css_blockquotes.html"><i class="fa fa-quote-right"></i> Blockquotes</a></li>
+                                                <li><a href="css_forms.html"><i class="fa fa-check-square-o"></i> Forms</a></li>
+                                                <li><a href="css_tables.html"><i class="fa fa-table"></i> Tables</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-hand-o-up"></i> Buttons</h4>
+                                            <ul>
+                                                <li><a href="btn_basic_buttons.html"><i class="fa fa-arrow-circle-right"></i> Basic Buttons</a></li>
+                                                <li><a href="btn_library_buttons.html"><i class="fa fa-arrow-circle-right"></i> Buttons Library <span class="label label-info pull-right">Update</span></a></li>
+                                                <li><a href="btn_social_buttons.html"><i class="fa fa-arrow-circle-right"></i> Social Buttons</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-megamenu">
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-hand-o-up"></i> Icons</h4>
+                                            <ul>
+                                                <li><a href="icons_artificial_reason.html"><i class="fa fa-font"></i> Artificial Reason Icons</a></li>
+                                                <li><a href="icons_glyph.html"><i class="fa fa-arrow-circle-right"></i> Glyphicons Icons</a></li>
+                                                <li><a href="icons_awesome.html"><i class="fa fa-flag"></i> Font Awesome</a></li>
+                                                <li><a href="icons_social.html"><i class="fa fa-twitter"></i> Social Icons</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-star"></i> New in 1.4</h4>
+                                            <ul>
+                                                <li><a href="components_cards.html"><i class="fa fa-user"></i> Profile Cards <span class="label label-success pull-right">New</span></a></li>
+                                                <li><a href="components_counters.html"><i class="fa fa-sort-numeric-asc"></i> Counters <span class="label label-success pull-right">New</span></a></li>
+                                                <li><a href="components_navtabs.html"><i class="fa fa-columns"></i> Navbar Tabs <span class="label label-success pull-right">New</span></a></li>
+                                                <li><a href="components_masonry.html"><i class="fa fa-th"></i> Masonry Layer <span class="label label-success pull-right">New</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-megamenu">
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-list-alt"></i> Components</h4>
+                                            <ul>
+                                                <li><a href="components_dropdowns.html"><i class="fa fa-arrow-circle-right"></i> Components Dropdowns</a></li>
+                                                <li><a href="components_panels.html"><i class="fa fa-columns"></i> Panels</a></li>
+                                                <li><a href="components_lists.html"><i class="fa fa-list-ul"></i> Lists</a></li>
+                                                <li><a href="components_paginations.html"><i class="fa fa-sort-numeric-asc"></i> Paginations</a></li>
+                                                <li><a href="components_labels_badges.html"><i class="fa fa-flag-o"></i> Labels and Badges</a></li>
+                                                <li><a href="components_alerts_wells.html"><i class="fa fa-info-circle"></i> Alerts and Wells</a></li>
+                                                <li><a href="components_thumbnails.html"><i class="fa fa-picture-o"></i> Thumbnails</a></li>
+                                                <li><a href="components_modals.html"><i class="fa fa-square"></i> Modals</a></li>
+                                                <li><a href="components_progress_bars.html"><i class="fa fa-bars"></i> Progress Bars</a></li>
+                                                <li><a href="components_tooltip_popover.html"><i class="fa fa-bullhorn"></i> Tooltip &amp; Popover</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-megamenu">
+                                        <div class="megamenu-block">
+                                            <h4 class="megamenu-block-title"><i class="fa fa-flag"></i> Extra Elements</h4>
+                                            <ul>
+                                                <li><a href="collapses_tabs.html"><i class="fa fa-tasks"></i> Collapses &amp; Tabs</a></li>
+                                                <li><a href="components_vertical_tabs.html"><i class="fa fa-tasks"></i> Vertical Tabs <span class="label label-success pull-right">New</span></a></li>
+                                                <li><a href="components_switch.html"><i class="fa fa-toggle-on"></i> Switch Controls <span class="label label-success pull-right">New</span></a></li>
+                                                <li><a href="content_box.html"><i class="fa fa-list-alt"></i> Contents Box</a></li>
+                                                <li><a href="carousels.html"><i class="fa fa-play-circle"></i> Carousels</a></li>
+                                                <li><a href="charts.html"><i class="fa fa-tachometer"></i> Charts &amp; CountDowns</a></li>
+                                                <li><a href="components_masonry.html"><i class="fa fa-th"></i> Masonry Layer <span class="label label-success pull-right">New</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Pages</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">About us &amp; Team</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_about.html">About us Option 1</a></li>
+                                <li><a href="page_about2.html">About us Option 2</a></li>
+                                <li><a href="page_about3.html">About us &amp; Team</a></li>
+                                <li class="divider"></li>
+                                <li><a href="page_team.html">Our Team Option 1</a></li>
+                                <li><a href="page_team2.html">Our Team Option 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Form</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_contact.html">Contact Option 1</a></li>
+                                <li><a href="page_contact2.html">Contact Option 2</a></li>
+                                <li class="divider"></li>
+                                <li><a href="page_login.html">Login Integrated</a></li>
+                                <li><a href="page_login_full.html">Login Full Page</a></li>
+                                <li class="divider"></li>
+                                <li><a href="page_login_register.html">Login and Register</a></li>
+                                <li><a href="page_register.html">Register Option 1</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Profiles</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_profile.html">User Profile Option 1</a></li>
+                                <li><a href="page_profile2.html">User Profile Option 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Error</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_404.html">Error 404 Full Page</a></li>
+                                <li><a href="page_404_2.html">Error 404 Integrated</a></li>
+                                <li><a href="page_500.html">Error 500 Full Page</a></li>
+                                <li><a href="page_500_2.html">Error 500 Integrated</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Bussiness &amp; Products</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_testimonial.html">Testimonials</a></li>
+                                <li><a href="page_clients.html">Our Clients</a></li>
+                                <li><a href="page_product.html">Products</a></li>
+                                <li><a href="page_services.html">Services</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Pricing</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_pricing.html">Pricing Box</a></li>
+                                <li><a href="page_pricing-mega.html">Pricing Mega Table</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">FAQ &amp; Support</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_support.html">Support Center</a></li>
+                                <li><a href="page_faq.html">FAQ Option 1</a></li>
+                                <li><a href="page_faq2.html">FAQ Option 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Coming Soon</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_coming.html">Coming Soon Option 1</a></li>
+                                <li><a href="page_coming2.html">Coming Soon Option 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                                <a href="javascript:void(0);" class="has_children">Timeline</a>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="page_timeline_left.html">Timeline Left</a></li>
+                                <li><a href="page_timeline.html">Timeline Center</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Blog</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li><a href="blog.html">Blog Right Sidebar</a></li>
+                        <li><a href="blog_left.html">Blog Left Sidebar</a></li>
+                        <li><a href="blog_full.html">Blog Full</a></li>
+                        <li><a href="blog_masonry.html">Blog Masonry <span class="label label-success pull-right">New</span></a></li>
+                        <li><a href="blog2.html">Other Option</a></li>
+                        <li class="divider"></li>
+                        <li><a href="single.html">Blog Item</a></li>
+                        <li><a href="single_full.html">Blog Item Full</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">E-commerce</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li><a href="e-commerce_home.html">E-commerce Home</a></li>
+                        <li><a href="e-commerce.html">E-commerce Filters</a></li>
+                        <li><a href="e-commerce_product.html">Product</a></li>
+                        <li><a href="e-commerce_cart.html">Cart</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Portfolio</a>
+                     <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
+                        <li><a href="portfolio_sidebar.html">Portfolio sidebar filters</a></li>
+                        <li><a href="portfolio_topbar.html">Portfolio topbar filters</a></li>
+                        <li><a href="portfolio_caption_hover.html">Portfolio with captions</a></li>
+                        <li class="divider"></li>
+                        <li><a href="portfolio_item.html">Portfolio item</a></li>
+                        <li><a href="portfolio_item_devices.html">Portfolio item device</a></li>
+                    </ul>
+                </li>
+             </ul>
+        </div><!-- navbar-collapse -->
+    </div><!-- container -->
+</nav>
+
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">About us Option 2</h1>
+
+        <ol class="breadcrumb pull-right">
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">About us & Team</a></li>
+            <li class="active">About us Option 2</li>
+        </ol>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="title-logo animated fadeInDown animation-delay-5">artificial<span>reason</span></div>
+        </div>
+        <div class="col-md-7">
+            <h2 class="right-line">About us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus hic dolor eaque quidem animi ullam quod veritatis magnam laborum, omnis quia placeat, aperiam voluptatibus, et! Praesentium cum iure quae voluptate ut? Praesentium id accusamus a fuga, quas quae non iusto, aspernatur saepe! Esse ratione eum suscipit, voluptatum omnis placeat vel.</p>
+            <p>Iusto harum est illum consequatur sint accusamus illo error beatae sit officiis quidem eius aliquid hic quisquam minima ducimus fugiat, qui nihil quis amet. Nemo unde accusantium ipsam inventore repudiandae excepturi molestias sapiente amet officia laboriosam facilis consectetur blanditiis, aut, cumque temporibus, quam beatae. Alias qui sint, numquam accusantium necessitatibus!</p>
+            <p>Nostrum nesciunt possimus rem dolorem, sapiente vero placeat, quaerat dolore voluptate esse nisi eveniet suscipit iure magnam illum ullam pariatur fugiat repellendus sunt, blanditiis recusandae assumenda quisquam! Doloremque provident laboriosam numquam fuga, asperiores, expedita nesciunt vero, hic voluptatum laborum cumque modi aut nemo deserunt ratione sequi iste. Nobis, quis, error.</p>
+        </div>
+        <div class="col-md-5">
+            <h2 class="right-line">Our Approach</h2>
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading panel-heading-link">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      <i class="fa fa-lightbulb-o"></i> Talent and creativity
+                    </a>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae id ipsum ipsa repudiandae. Voluptatum, molestias, quas magnam repellat quos facilis sequi. Ullam optio eius deleniti dolore.</p>
+                    <p>Dolores, corrupti, laborum, officia sit aliquam doloremque accusantium nemo expedita nesciunt vero sunt veniam est quasi doloribus ipsam incidunt perferendis.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading panel-heading-link">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                      <i class="fa fa-desktop"></i> Design and code
+                    </a>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae id ipsum ipsa repudiandae. Voluptatum, molestias, quas magnam repellat quos facilis sequi. Ullam optio eius deleniti dolore.</p>
+                    <p>Dolores, corrupti, laborum, officia sit aliquam doloremque accusantium nemo expedita nesciunt vero sunt veniam est quasi doloribus ipsam incidunt perferendis.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading panel-heading-link">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                      <i class="fa fa-user"></i> Quality and Support
+                    </a>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati molestiae id ipsum ipsa repudiandae. Voluptatum, molestias, quas magnam repellat quos facilis sequi. Ullam optio eius deleniti dolore.</p>
+                    <p>Dolores, corrupti, laborum, officia sit aliquam doloremque accusantium nemo expedita nesciunt vero sunt veniam est quasi doloribus ipsam incidunt perferendis.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div> <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="right-line">What do we do?</h2>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-cloud"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Cloud Computing</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-desktop"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Web Design and SEO</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-tablet"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Mobile and Tablet Apps</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-wordpress"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Wordpress Themes</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-graduation-cap"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Training and development</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="text-icon">
+                <span class="icon-ar icon-ar-lg"><i class="fa fa-paper-plane-o"></i></span>
+                <div class="text-icon-content">
+                    <h3 class="no-margin">Customer service</h3>
+                    <p>Praesentium cumque voluptate harum quae doloribus, atque error debitis, amet velit in similique, necessitatibus odit vero sunt.</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- row -->
+</div> <!-- container -->
+
+<aside id="footer-widgets">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="footer-widget-title">Sitemap</h3>
+                <ul class="list-unstyled three_cols">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio_sidebar.html">Portafolio</a></li>
+                    <li><a href="portfolio_topvar.html">Works</a></li>
+                    <li><a href="page_timeline_left.html">Timeline</a></li>
+                    <li><a href="page_pricing.html">Pricing</a></li>
+                    <li><a href="page_about2.html">About Us</a></li>
+                    <li><a href="page_team.html">Our Team</a></li>
+                    <li><a href="page_services.html">Services</a></li>
+                    <li><a href="page_support.html">FAQ</a></li>
+                    <li><a href="page_login_full.html">Login</a></li>
+                    <li><a href="page_contact.html">Contact</a></li>
+                </ul>
+                <h3 class="footer-widget-title">Subscribe</h3>
+                <p>Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.</p>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Email Adress">
+                    <span class="input-group-btn">
+                        <button class="btn btn-ar btn-primary" type="button">Subscribe</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+            <div class="col-md-4">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Recent Post</h3>
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" src="assets/img/demo/m2.jpg" width="75" height="75" alt="image"></a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">Lorem ipsum Duis quis occaecat minim lorem ipsum tempor officia labor</a></h4>
+                            <small>August 18, 2013</small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" src="assets/img/demo/m11.jpg" width="75" height="75" alt="image"></a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">Lorem ipsum dolor excepteur sunt in lorem ipsum cillum tempor</a></h4>
+                            <small>September 14, 2013</small>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <a class="pull-left" href="#"><img class="media-object" src="assets/img/demo/m4.jpg" width="75" height="75" alt="image"></a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="#">Lorem ipsum Dolor cupidatat minim adipisicing et fugiat</a></h4>
+                            <small>October 9, 2013</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Recent Works</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <a href="#" class="thumbnail"><img src="assets/img/demo/wf1.jpg" class="img-responsive" alt="Image"></a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <a href="#" class="thumbnail"><img src="assets/img/demo/wf2.jpg" class="img-responsive" alt="Image"></a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <a href="#" class="thumbnail"><img src="assets/img/demo/wf3.jpg" class="img-responsive" alt="Image"></a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <a href="#" class="thumbnail"><img src="assets/img/demo/wf4.jpg" class="img-responsive" alt="Image"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</aside> <!-- footer-widgets -->
+<footer id="footer">
+    <p>&copy; 2014 <a href="#">Artificial Reason</a>, inc. All rights reserved.</p>
+</footer>
+
+</div> <!-- boxed -->
+</div> <!-- sb-site -->
+
+<div class="sb-slidebar sb-right sb-style-overlay">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+        </span>
+    </div><!-- /input-group -->
+
+    <h2 class="slidebar-header no-margin-bottom">Navigation</h2>
+    <ul class="slidebar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio_topbar.html">Portfolio</a></li>
+        <li><a href="page_about3.html">About us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="page_contact.html">Contact</a></li>
+    </ul>
+
+    <h2 class="slidebar-header">Social Media</h2>
+    <div class="slidebar-social-icons">
+        <a href="#" class="social-icon-ar rss"><i class="fa fa-rss"></i></a>
+        <a href="#" class="social-icon-ar facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="social-icon-ar twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="social-icon-ar pinterest"><i class="fa fa-pinterest"></i></a>
+        <a href="#" class="social-icon-ar instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="social-icon-ar wordpress"><i class="fa fa-wordpress"></i></a>
+        <a href="#" class="social-icon-ar linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="social-icon-ar flickr"><i class="fa fa-flickr"></i></a>
+        <a href="#" class="social-icon-ar vine"><i class="fa fa-vine"></i></a>
+        <a href="#" class="social-icon-ar dribbble"><i class="fa fa-dribbble"></i></a>
+    </div>
+</div> <!-- sb-slidebar sb-right -->
+<div id="back-top">
+    <a href="#header"><i class="fa fa-chevron-up"></i></a>
+</div>
+
+<!-- Scripts -->
+<!-- Compiled in vendors.js -->
+<!--
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-switch.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/slidebars.min.js"></script>
+<script src="assets/js/jquery.bxslider.min.js"></script>
+<script src="assets/js/holder.js"></script>
+<script src="assets/js/buttons.js"></script>
+<script src="assets/js/jquery.mixitup.min.js"></script>
+<script src="assets/js/circles.min.js"></script>
+<script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/jquery.matchHeight-min.js"></script>
+-->
+
+<script src="assets/js/vendors.js"></script>
+
+<!--<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>-->
+
+
+<script src="assets/js/styleswitcher.js"></script>
+
+<!-- Syntaxhighlighter -->
+<script src="assets/js/syntaxhighlighter/shCore.js"></script>
+<script src="assets/js/syntaxhighlighter/shBrushXml.js"></script>
+<script src="assets/js/syntaxhighlighter/shBrushJScript.js"></script>
+
+<script src="assets/js/DropdownHover.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/holder.js"></script>
+
+</body>
+
+</html>

@@ -120,25 +120,20 @@ class DataService {
             Player.read(it.id)
         }
         println "got $searchResult"
-        log.info "Found ${alts.size()} matches"
         return alts
     }
 
     @Transactional
     Set<Player> findAlikesByFilterSpecial(String original) {
-        log.info "Finding filtered match for $original"
         Set<Player> alts = []
         def withoutSpecial = original.replaceAll(Player.pattern, "").toLowerCase()
-        println "looking for filtered name $withoutSpecial"
         def searchResult = Player.search(max: 5) {
             fuzzy("simplified", withoutSpecial)
         }
-        println "got filtered $searchResult"
         alts.addAll(searchResult.results.collect {
             def p = Player.read(it.id)
             return p
         })
-        log.info "Found filtered ${alts?.size()} matches"
         return alts
     }
 
@@ -155,13 +150,33 @@ class DataService {
     @Transactional
     Set<Player> findMatches(String query) {
         def wildcardedQuery = "%${query}%"
-        log.info "Finding exact match for $query"
         Set<Player> matches = []
         matches.addAll(Player.findAllByCodenameIlike(wildcardedQuery))
         matches.addAll(Player.findAllByTwitterIlike(wildcardedQuery))
         matches.addAll(Player.findAllByRealnameIlike(wildcardedQuery))
         matches.addAll(Player.findAllByAliasIlike(wildcardedQuery))
         def sorted = matches.sort { a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
+        return sorted
+    }
+
+    @Transactional
+    Set<Tournament> findTournamentMatches(String query) {
+        def wildcardedQuery = "%${query}%"
+        log.info "Finding exact match for $query"
+        Set<Tournament> matches = []
+        matches.addAll(Tournament.findAllByCodenameIlike(wildcardedQuery))
+        def sorted = matches.sort { a, b -> b.weight <=> a.weight }
+        log.info "Found ${matches.size()} matches"
+        return sorted
+    }
+
+    @Transactional
+    Set<Event> findEventMatches(String query) {
+        def wildcardedQuery = "%${query}%"
+        log.info "Finding exact match for $query"
+        Set<Event> matches = []
+        matches.addAll(Event.findAllByCodenameIlike(wildcardedQuery))
+        def sorted = matches.sort { a, b -> b.weight <=> a.weight }
         log.info "Found ${matches.size()} matches"
         return sorted
     }

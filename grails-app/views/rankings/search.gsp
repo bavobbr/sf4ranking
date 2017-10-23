@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <meta name="layout" content="overviews"/>
-  <title>Fighting Games World Rankings - Search</title>
+  <meta name="layout" content="artificial"/>
+  <title>SRK data - Player Search</title>
 </head>
 
 <body>
@@ -10,8 +10,8 @@
   <div class="alert alert-warning">${flash.message}</div>
 </g:if>
 
+<h2>${players? players.size() : "0"} players matching '${query}'</h2>
 <g:if test="${!(players.isEmpty())}">
-<h2>${players? players.size() : "0"} Players matching ${query}</h2>
 <div class="table-responsive">
   <table class="tablehead" id="datatable1">
     <thead>
@@ -43,7 +43,7 @@
 
 
 
-<h2>${alikes? alikes.size() : "0"} Players which may sound alike ${query}</h2>
+<h2>${alikes? alikes.size() : "0"} players who sound like '${query}'</h2>
 
 <div class="table-responsive">
   <table class="tablehead" id="datatable2">
@@ -72,8 +72,6 @@
 
   </table>
 </div>
-
-<g:render template="/templates/prettify"/>
 
 </body>
 </html>
