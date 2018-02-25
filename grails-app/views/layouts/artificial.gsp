@@ -112,6 +112,10 @@
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.SF5.name()]">World Rankings Street Fighter 5</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.MVCI.name()]">World Rankings Marvel Infinite</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.DBFZ.name()]">World Rankings Dragon Ball Fighterz</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.T7.name()]">World Rankings Tekken 7</g:link></li>
@@ -148,6 +152,10 @@
                                 <li><g:link action="events" controller="rankings">Events</g:link></li>
                                 <li class="divider"></li>
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.SF5.name()]">Street Fighter 5</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.MVCI.name()]">Marvel Infinite</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.DBFZ.name()]">Dragon Ball Fighterz</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"

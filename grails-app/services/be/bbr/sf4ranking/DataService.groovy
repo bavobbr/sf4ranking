@@ -144,7 +144,7 @@ class DataService {
         def alikesFiltered = findAlikesByFilterSpecial(original).toList().take(half)
         def all = (alikes + alikesFiltered) as Set
         def sorted = all.sort { a, b -> Result.countByPlayer(b) <=> Result.countByPlayer(a) }
-        return all ? sorted.take(max) : null
+        return all ? sorted.take(max) : []
     }
 
     @Transactional

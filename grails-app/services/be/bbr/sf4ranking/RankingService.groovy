@@ -68,7 +68,7 @@ class RankingService {
             // AUTO weighting starts from premier 5
             def lastTournament = tournaments.sort { Tournament t -> t.date }.last()
             println "Using last tournament $lastTournament on ${lastTournament.date} as reference"
-            def yearAgo = lastTournament.date.minus(365+182)
+            def yearAgo = lastTournament.date.minus(365)
 
             tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
             println "year ago is $yearAgo"
@@ -444,8 +444,6 @@ class RankingService {
     @Transactional
     public void updateProTour(Version game) {
         if (game == Version.SF5) {
-            def extraspots = 0
-            def totalPointSpots = 30 + extraspots
             def players = queryService.findCptPlayers(Region.GLOBAL)
             log.info "returning ${players.size()} players for CPT game $game"
             def playersNA = queryService.findCptPlayers(Region.NA)
@@ -453,11 +451,22 @@ class RankingService {
             def playersAO = queryService.findCptPlayers(Region.AO)
             def playersEU = queryService.findCptPlayers(Region.EU)
             applyDirectQualifiers()
-            applyQualifiedByScore(players, totalPointSpots)
             applyRegionalInvites(Region.NA, playersNA)
             applyRegionalInvites(Region.LA, playersLA)
             applyRegionalInvites(Region.AO, playersAO)
             applyRegionalInvites(Region.EU, playersEU)
+            boolean naDirect = applyRegionalWinners(Region.NA, playersNA)
+            boolean laDirect = applyRegionalWinners(Region.LA, playersLA)
+            boolean aoDirect = applyRegionalWinners(Region.AO, playersAO)
+            boolean euDirect = applyRegionalWinners(Region.EU, playersEU)
+            def extraspots = 4
+            if (naDirect) extraspots--
+            if (laDirect) extraspots--
+            if (aoDirect) extraspots--
+            if (euDirect) extraspots--
+            def totalPointSpots = 26 + extraspots
+            applyQualifiedByScore(players, totalPointSpots)
+
         }
     }
 
@@ -483,12 +492,31 @@ class RankingService {
         regionalPlayers.each {
             if (it.findCptRanking(region)) {
                 it.findCptRanking(region).qualifiedByScore = false // reset
-                it.findCptRanking(region).qualified = false // reset
             }
         }
         regionalPlayers.findAll { it.countryCode?.region == region}.sort { it.cptScore(region) }.reverse().take(7).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
         }
+    }
+
+    private boolean applyRegionalWinners(Region region, List<Player> regionalPlayers) {
+        println "MARKING REGIONAL FINAL WINNER $region"
+        boolean outsider = false
+        regionalPlayers.each {
+            if (it.findCptRanking(region)) {
+                it.findCptRanking(region).qualified = false // reset
+            }
+            def cptFinals = it.results.find { it.tournament.cptTournament == CptTournament.REGIONAL_FINAL && it.tournament.region == region}
+            if (cptFinals && cptFinals.place == 1) {
+                it.findCptRanking(region).qualified = true
+                println "MARKED REGIONAL FINAL WINNER $region $it"
+                if (it.cptGlobal().rank >= 27) {
+                    outsider = true
+                    println "WINNER IS AN OUTSIDER $it"
+                }
+            }
+        }
+        return outsider
     }
 
 }

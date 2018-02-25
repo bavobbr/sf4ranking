@@ -120,11 +120,11 @@ class StatsController
         log.info "Finding 5 best players for game $game"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
         def bestTrending = queryService.findPlayers(charType, null, 100, 0, game, RankingType.TRENDING)
-        def bestMainplayers = best ? best.findAll {charType in it.main(game)} : null
-        def bestTrendingplayers = bestTrending ? bestTrending.findAll {charType in it.main(game)} : null
+        def bestMainplayers = best ? best.findAll {charType in it.main(game)} : []
+        def bestTrendingplayers = bestTrending ? bestTrending.findAll {charType in it.main(game)} : []
         def bestSecondaryplayers = best ? best.findAll {
             !(charType in it.main(game))
-        } : null
+        } : []
         def best5m = bestMainplayers.take(5)
         def best5t = bestTrendingplayers.take(5)
         def best5s = bestSecondaryplayers.take(5)
@@ -249,7 +249,9 @@ class StatsController
             }
             return usedChars.size() < count
         }
-        log.info "Processed till ${processed?.last()} items ${processed.size()}"
+        if (processed) {
+            log.info "Processed till ${processed?.last()} items ${processed.size()}"
+        }
         return series
     }
 

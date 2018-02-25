@@ -7,7 +7,7 @@
 
 <body>
 
-<h2>${stats?.game?.name()} ${stats?.characterType?.shortname} statistics and tournament results</h2>
+<h2>${stats?.game?.value} ${stats?.characterType?.shortname} statistics and tournament results</h2>
 This list character usage and tournament performance statistics for ${stats?.characterType?.shortname} in ${stats?.game}.
 This character is compared versus ${total} other characters in ${stats?.game?.value} (1 means best).
 <div class="table-responsive">

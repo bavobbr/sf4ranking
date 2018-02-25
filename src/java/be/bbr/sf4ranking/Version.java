@@ -20,7 +20,9 @@ public enum Version
     SF5("Street Fighter 5"),
     T7("Tekken 7"),
     INJUSTICE2("Injustice 2"),
-    GGXRD("Guilty Gear Xrd");
+    GGXRD("Guilty Gear Xrd"),
+    MVCI("Marvel Infinite"),
+    DBFZ("Dragon Ball Fighterz");
 
     private String value;
 
@@ -76,6 +78,10 @@ public enum Version
                 return Version.INJUSTICE2;
             case GGXRD:
                 return Version.GGXRD;
+            case MVCI:
+                return Version.MVCI;
+            case DBFZ:
+                return Version.DBFZ;
             default:
                 return Version.UNKNOWN;
         }

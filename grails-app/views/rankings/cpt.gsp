@@ -190,7 +190,7 @@ The first 7 players from this region will be invited to a regional final that sc
 
         <g:each in="${regionalPlayers[region]}" var="p" status="pidx">
 
-            <tr class="${p.findCptRanking(region)?.qualifiedByScore ? 'qual' : 'unqual'} ${p.findCptRanking(Region.GLOBAL)?.qualified ? 'direct' : ''}">
+            <tr class="${p.findCptRanking(region)?.qualifiedByScore ? 'qual' : 'unqual'} ${p.cptRankings.any { it.qualified }? 'direct' : ''}">
                 <td>
                     ${p.findCptRanking(region)?.rank}
                 </td>

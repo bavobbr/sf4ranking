@@ -35,7 +35,7 @@
                          title="Trending score earned by players who used this character in recent tournaments">(?)</a>
             </th>
             <th>Trend <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="Short time trend compared to actual placing based on 18 months of data">(?)</a>
+                                  title="Short time trend compared to actual placing based on 12 months of data">(?)</a>
             </th>
             <th>Main top 50 <a href="#" data-toggle="tooltip" data-placement="top"
                                title="Number of top 50 players who use this character as main">(?)</a></th>

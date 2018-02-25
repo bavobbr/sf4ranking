@@ -38,6 +38,8 @@ class RankingsController
         def t7players = queryService.findPlayers(null, null, 10, 0, Version.T7)
         def inj2players = queryService.findPlayers(null, null, 10, 0, Version.INJUSTICE2)
         def ggplayers = queryService.findPlayers(null, null, 10, 0, Version.GGXRD)
+        def mvciplayers = queryService.findPlayers(null, null, 10, 0, Version.MVCI)
+        def dbfzplayers = queryService.findPlayers(null, null, 10, 0, Version.DBFZ)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
@@ -47,7 +49,7 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        [dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()
@@ -135,7 +137,7 @@ class RankingsController
         regionalPlayers[Region.EU] = playersEU.take(30)
         regionalPlayers[Region.NA] = playersNA.take(30)
 
-        [players: players.take(50),
+        [players: players.take(64),
          total: playercount,
          updateMessage: lastUpdateMessage,
          game: pgame,
@@ -195,8 +197,8 @@ class RankingsController
         def pastDirectPlaces = pastTournaments.count { Tournament t -> t.cptTournament in [CptTournament.PREMIER, CptTournament.PREMIER_SCORELESS, CptTournament.EVO, CptTournament.REGIONAL_FINAL]  }
 
         def players = queryService.findCptPlayers()
-        def directQualifiedPlayers = players.findAll { it.cptGlobal().qualified }
-        Set<Player> qualifiedPlayers = players.findAll { it.cptGlobal().qualified }.toSet()
+        def directQualifiedPlayers = players.findAll { it.cptRankings.any { it.qualified } }
+        Set<Player> qualifiedPlayers = players.findAll { it.cptRankings.any { it.qualified} }.toSet()
 
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
         qualifiedPlayers.addAll(qualifiedByScore)
@@ -205,7 +207,7 @@ class RankingsController
         def byCountry = players.groupBy { it.countryCode }
         def byCountry32 = qualifiedPlayers.groupBy { it.countryCode }
         def byRegion32 = qualifiedPlayers.groupBy { it.countryCode.region }
-        def unknownTotal = 32 - directQualifiedPlayers.size()
+        def unknownTotal = 1
 
         [coming: comingTournaments,
          played: pastTournaments,
@@ -235,7 +237,7 @@ class RankingsController
     @Cacheable('cptChars')
     def cptCharacterStats() {
         def players = queryService.findCptPlayers()
-        def qualifiedPlayers = players.findAll { it.cptGlobal().qualified }
+        def qualifiedPlayers = players.findAll { it.cptRankings.any { it.qualified } }
         def qualifiedPlayersRegionalFinal = players.findAll { it.cptRankings.any { it.region in Region.locals() && it.qualifiedByScore } }
 
         def qualifiedByScore = players.findAll { it.cptGlobal().qualifiedByScore }
@@ -586,6 +588,10 @@ class RankingsController
         if (na?.qualifiedByScore) result.append("<li>Qualified for regionals in NA region")
         if (ao?.qualifiedByScore) result.append("<li>Qualified for regionals in AO region")
         if (eu?.qualifiedByScore) result.append("<li>Qualified for regionals in EU region")
+        if (la?.qualified) result.append("<li>Qualified by regionals in LA region")
+        if (na?.qualified) result.append("<li>Qualified by regionals in NA region")
+        if (ao?.qualified) result.append("<li>Qualified by regionals in AO region")
+        if (eu?.qualified) result.append("<li>Qualified by regionals in EU region")
         result.append("</ul>")
         result.append("<ul>")
         if (global?.score > 0) result.append("<li>Global rank is ${global.rank} and score is ${global.score} pts")
@@ -602,8 +608,12 @@ class RankingsController
         if (p.cptGlobal().qualified) {
             labels << "Direct"
         }
+
         if (p.cptGlobal().qualifiedByScore) {
             labels << "Global"
+        }
+        if (Region.locals().any { p.findCptRanking(it)?.qualified} ) {
+            labels << "RF"
         }
         if (region != Region.GLOBAL) {
             println "Looking up cpt rank of $p in region $region"

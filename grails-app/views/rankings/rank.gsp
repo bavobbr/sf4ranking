@@ -31,18 +31,18 @@
     <g:if test="${rankingType == be.bbr.sf4ranking.RankingType.ALLTIME}">
         This ranking is based on all tournaments results from ${game.name()}. The best 18 results of these are summed to form the lifetime score.
         The importance of tournaments is sorted by weight only, based on player skill attending.
-        If you would like to see how a player did the last 18 months of ${game.value} you can find a ranking on the <g:link
+        If you would like to see how a player did the last 12 months of ${game.value} you can find a ranking on the <g:link
             controller="rankings" action="rank" params="[rankingType: RankingType.ACTUAL.name(), id: game.name()]">Actual Ranking</g:link> page.
     </g:if>
     <g:elseif test="${rankingType == be.bbr.sf4ranking.RankingType.TRENDING}">
         This ranking is based on only recent tournaments results from ${game.name()}. The best 12 results of the last 6 months are summed to form the trending score.
         The importance of tournaments is qualified by class, based on player skill attending.
-        If you would like to see how a player did the last 18 months of ${game.value} you can find a ranking on the <g:link
+        If you would like to see how a player did the last 12 months of ${game.value} you can find a ranking on the <g:link
             controller="rankings" action="rank" params="[rankingType: RankingType.ACTUAL.name(), id: game.name()]">Actual Ranking</g:link> page.
     </g:elseif>
     <g:else>
-        This ranking is based on tournaments results of the latest 18 months using the official tournament scoring detailed on <g:link
-            controller="about">FAQ</g:link>. The list is updated every week. The tournaments are judged by class, in a sliding window of the last 18 months. You can find an unlimited ranking based on pure tournament weight on the
+        This ranking is based on tournaments results of the latest 12 months using the official tournament scoring detailed on <g:link
+            controller="about">FAQ</g:link>. The list is updated every week. The tournaments are judged by class, in a sliding window of the last 12 months. You can find an unlimited ranking based on pure tournament weight on the
         <g:link controller="rankings" action="rank" params="[rankingType: RankingType.ALLTIME.name(), id: game.name()]">All-time Ranking</g:link> page, and a short-time trend via the <g:link controller="rankings" action="rank" params="[rankingType: RankingType.TRENDING.name(), id: game.name()]">trending </g:link>page.
     </g:else>
 </p>
@@ -60,10 +60,10 @@
             <th>Team</th>
             <th>Character</th>
             <th>Actual Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                 title="The actual current score is calculated over an 18 month window. His best 12 scores are used to calculate a total score, and a small decay is used over time.">(?)</a>
+                                 title="The actual current score is calculated over an 12 month window. His best 12 scores are used to calculate a total score, and a small decay is used over time.">(?)</a>
             </th>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
-                                      title="The amount of valid results in tournaments over last 18 months adding to the actual score, capped at 12 maximum.">(?)</a>
+                                      title="The amount of valid results in tournaments over last 12 months adding to the actual score, capped at 12 maximum.">(?)</a>
             </th>
             <th>Country</th>
             <g:if test="${snapshot != null && rankingType == RankingType.ACTUAL}">
@@ -81,7 +81,7 @@
                 </th>
             </g:elseif>
             <th>Lifetime Score <a href="#" data-toggle="tooltip" data-placement="top"
-                                  title="The lifetime score is the sum of a player's best 18 tournaments in this game without any decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
+                                  title="The lifetime score is the sum of a player's best 12 tournaments in this game without any decay or time constraints. This gives an idea on the overall player dominance throughout the lifespan of the game">(?)</a>
             <th>Tournaments <a href="#" data-toggle="tooltip" data-placement="top"
                                title="The total amount of tournaments eligible for lifetime best of score (of which only 18 count)">(?)</a></th>
             </th>

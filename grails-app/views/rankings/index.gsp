@@ -43,6 +43,7 @@
                             <g:img dir="images/chars/${Version.generalize(Version.SF5).name().toLowerCase()}" file="${c.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
                                    alt="${c.characterType.value}"
                                    class="charimg"/>
+                            ${c.characterType.value}
                         </g:link>
                         </td>
                         <td>
@@ -66,7 +67,13 @@
 &NonBreakingSpace;
 <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="dbfz.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.DBFZ, players: dbfzplayers]"/>
+    </div>
+
+
+%{--    <div class="col-md-6">
 
         <table class="table table-striped table-hover table-condensed table-responsive">
             <tr>
@@ -90,7 +97,7 @@
                 </td>
             </tr>
         </table>
-    </div>
+    </div>--}%
 
 
     <div class="col-md-6 top10box">
@@ -120,14 +127,16 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="mvci.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MVCI, players: mvciplayers]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
     </div>
 
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
-    </div>
+
 
 
 </div>
@@ -172,10 +181,9 @@
     </div>
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.AE2012, players: aeplayers]"/>
+        <g:img dir="images/banners" file="umvc3.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.UMVC3, players: umvc3players]"/>
     </div>
-
 </div>
 
 

@@ -145,7 +145,9 @@ class ApiController {
              totalscore: p.totalScore(game),
              trendingscore: p.trendingScore(game),
              cptScore: p.cptScore(),
+             cptScorePrev: p.cptGlobal()?.prevScore,
              cptRank: p.cptGlobal()?.rank,
+             cptRankPrev: p.cptGlobal()?.prevRank,
              cptNaScore: p.cptScore(Region.NA),
              cptNaRank: p.findCptRanking(Region.NA)?.rank,
              cptLaScore: p.cptScore(Region.LA),
@@ -192,12 +194,14 @@ class ApiController {
                     rankings: player.rankings.collectEntries {
                         [it.game?.name(),
                          [
-                                 rank      : it.rank,
-                                 weight    : it.skill,
-                                 score     : it.score,
-                                 totalscore: it.totalScore,
+                                 rank         : it.rank,
+                                 trendingRank : it.trendingRank,
+                                 alltimeRank  : it.totalRank,
+                                 weight       : it.skill,
+                                 score        : it.score,
+                                 totalscore   : it.totalScore,
                                  trendingscore: it.trendingScore,
-                                 main      : it.mainCharacters.collect { it.name() }
+                                 main         : it.mainCharacters.collect { it.name() }
                          ]
                         ]
                     },
