@@ -316,6 +316,7 @@ class CleanupService
             //println "$k: $v.game"
             if (v.size() > 1) {
                 Event event = findOrCreateEvent(k)
+                println "handling event $event"
                 v.each { t ->
                     if (!event.tournaments.find { it.name == t.name}) {
                         println "added $t.name to event $event.name"
@@ -327,6 +328,8 @@ class CleanupService
                         event.save(failOnError: true)
                     }
                 }
+                event.contributors = "nada"
+                event.save(failOnError: true)
             }
         }
         log.info("Done rolling up ${tournaments.size()} tournaments into ${sorted.size()} events")

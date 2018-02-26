@@ -73,32 +73,36 @@
     </div>
 
 
-%{--    <div class="col-md-6">
+    <div class="col-md-6">
 
         <table class="table table-striped table-hover table-condensed table-responsive">
             <tr>
                 <td class="amazon_row">
                     <script type="text/javascript">
                         amzn_assoc_placement = "adunit0";
-                        amzn_assoc_search_bar = "true";
-                        amzn_assoc_tracking_id = "hypegames02-20";
-                        amzn_assoc_search_bar_position = "bottom";
-                        amzn_assoc_ad_mode = "search";
+                        amzn_assoc_tracking_id = "mainpage-custom-20";
+                        amzn_assoc_ad_mode = "manual";
                         amzn_assoc_ad_type = "smart";
                         amzn_assoc_marketplace = "amazon";
                         amzn_assoc_region = "US";
-                        amzn_assoc_title = "";
-                        amzn_assoc_default_search_phrase = "fighting games";
-                        amzn_assoc_default_category = "VideoGames";
-                        amzn_assoc_linkid = "e4ba9d5f5b3e64e95cacb82067683103";
-                        amzn_assoc_default_browse_node = "468642";
+                        amzn_assoc_title = "Books";
+                        amzn_assoc_linkid = "fcb2f349ac65c1d244296f36cd2bf49f";
+                        amzn_assoc_asins = "B079WPXRC5,B01JOEKKWU,B074N7GFRP,1465414584,1927925193,B079342TFC,B01BVJ1U3Y,1421525666";
+                        amzn_assoc_search_bar = "false";
                     </script>
                     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                 </td>
             </tr>
         </table>
-    </div>--}%
+    </div>
 
+
+
+
+
+</div>
+&NonBreakingSpace;
+<div class="row">
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
@@ -106,16 +110,6 @@
     </div>
 
 
-</div>
-&NonBreakingSpace;
-<div class="row">
-
-
-
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
-    </div>
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="ggxrd.jpg" class="img-responsive"/>
@@ -127,14 +121,16 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="mvci.jpg" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.MVCI, players: mvciplayers]"/>
     </div>
 
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
-    </div>
+
 
 
 
@@ -145,15 +141,16 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="killerinstinct.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.KI, players: kiplayers]"/>
     </div>
 
 
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
-    </div>
 
 </div>
 
@@ -187,25 +184,40 @@
 </div>
 
 
-<div class="row top10box">
+
+
+<div class="row">
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="skullgirls.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.SKULLGIRLS, players: sgplayers]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.AE2012, players: aeplayers]"/>
+    </div>
+</div>
+
+<center>
+<div class="row top10box" style="margin: auto">
     <script type="text/javascript">
         amzn_assoc_placement = "adunit0";
-        amzn_assoc_search_bar = "true";
-        amzn_assoc_tracking_id = "search_sticks-20";
-        amzn_assoc_search_bar_position = "bottom";
+        amzn_assoc_search_bar = "false";
+        amzn_assoc_tracking_id = "capcombooks-20";
         amzn_assoc_ad_mode = "search";
         amzn_assoc_ad_type = "smart";
         amzn_assoc_marketplace = "amazon";
         amzn_assoc_region = "US";
-        amzn_assoc_title = "Arcade sticks";
-        amzn_assoc_default_search_phrase = "arcade stick";
-        amzn_assoc_default_category = "VideoGames";
-        amzn_assoc_linkid = "c2c81da42d0f20f02821f3c181733a91";
-        amzn_assoc_default_browse_node = "468642";
+        amzn_assoc_title = "Gaming Books";
+        amzn_assoc_default_search_phrase = "capcom";
+        amzn_assoc_default_category = "Books";
+        amzn_assoc_linkid = "2093b0ce7f3bad6de66a5be83c60edc5";
+        amzn_assoc_default_browse_node = "283155";
     </script>
     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
-
+</center>
 
 <div class="row">
     <div class="col-md-7">

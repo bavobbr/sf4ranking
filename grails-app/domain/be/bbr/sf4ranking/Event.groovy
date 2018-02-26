@@ -16,6 +16,7 @@ class Event
         region nullable: true
         host nullable: true
         twitter nullable: true
+        contributors nullable: true, editable: false
     }
 
     static mapping = {
@@ -32,16 +33,19 @@ class Event
     Region region = Region.UNKNOWN
     String host
     String twitter
+    String contributors
 
     static hasMany = [tournaments: Tournament]
 
     def beforeInsert() {
         codename = name.toUpperCase()
         if (!creator) creator = SecurityUtils.subject?.principal?.toString()
+        contributors = tournaments.collect { it.creator}.join(", ")
     }
 
     def beforeUpdate() {
         codename = name.toUpperCase()
+        contributors = tournaments.collect { it.creator}.join(", ")
     }
 
     public String toString() {

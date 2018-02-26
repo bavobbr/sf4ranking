@@ -20,6 +20,7 @@
       <th>Region</th>
       <th>Weight</th>
       <th>Host</th>
+      <th>Contributors</th>
     </tr>
     </thead>
     <g:each in="${events}" var="event">
@@ -37,6 +38,7 @@
         <td>${event.region}</td>
         <td>${event.weight}</td>
         <td>${event.host}</td>
+        <td>${event.contributors}</td>
       </tr>
     </g:each>
 

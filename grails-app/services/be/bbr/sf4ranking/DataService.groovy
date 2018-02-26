@@ -281,7 +281,7 @@ class DataService {
                     event.weight = it.weight
                     event.host = it.host
                     event.date = Date.parse("dd-MM-yyyy", it.date as String)
-                    event.countryCode = it.countryCode ? it.countryCiode as CountryCode : null
+                    event.countryCode = it.countryCode ? it.countryCode as CountryCode : null
                     event.region = it.region ? it.region as Region : null
                     event.save(failOnError: true)
                     log.info "saved event $event.id"
@@ -357,7 +357,7 @@ class DataService {
             CountryCode country = tjson.country as CountryCode
             Version version = tjson.version as Version
             if (Environment.current == Environment.DEVELOPMENT) {
-                if (!(version in [Version.SF5])) return
+                if (!(version in [Version.SF5, Version.T7])) return
             }
             Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
             TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN

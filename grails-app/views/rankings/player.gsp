@@ -370,18 +370,17 @@
 <div class="row top10box" align="center">
     <script type="text/javascript">
         amzn_assoc_placement = "adunit0";
-        amzn_assoc_search_bar = "true";
-        amzn_assoc_tracking_id = "hypegames02-20";
-        amzn_assoc_search_bar_position = "bottom";
+        amzn_assoc_search_bar = "false";
+        amzn_assoc_tracking_id = "capcomkindle-20";
         amzn_assoc_ad_mode = "search";
         amzn_assoc_ad_type = "smart";
         amzn_assoc_marketplace = "amazon";
         amzn_assoc_region = "US";
-        amzn_assoc_title = "";
-        amzn_assoc_default_search_phrase = "fighting games";
-        amzn_assoc_default_category = "VideoGames";
-        amzn_assoc_linkid = "e4ba9d5f5b3e64e95cacb82067683103";
-        amzn_assoc_default_browse_node = "468642";
+        amzn_assoc_title = "Kindle books";
+        amzn_assoc_default_search_phrase = "capcom game";
+        amzn_assoc_default_category = "KindleStore";
+        amzn_assoc_linkid = "30850ec2afc5d728b020a4c3e6114822";
+        amzn_assoc_default_browse_node = "133140011";
     </script>
     <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 </div>
