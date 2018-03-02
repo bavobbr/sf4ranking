@@ -56,6 +56,10 @@ grails.cache.config = {
     }
     cache {
         maxCapacity = 100
+        name 'charstats'
+    }
+    cache {
+        maxCapacity = 100
         name 'maxoplataCompare'
     }
     cache {
@@ -141,6 +145,7 @@ log4j = {
            'net.sf.ehcache.hibernate'
     debug   'be.bbr'
     info 'grails.plugin.searchable'
+    error 'grails.app.taglib.org.grails.plugin.resource'
 }
 
 global.isUpdating = false

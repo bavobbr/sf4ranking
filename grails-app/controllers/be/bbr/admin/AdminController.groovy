@@ -4,6 +4,7 @@ import be.bbr.sf4ranking.*
 import grails.converters.JSON
 import grails.plugin.cache.GrailsCacheManager
 import grails.util.Holders
+import groovy.xml.MarkupBuilder
 import org.apache.shiro.SecurityUtils
 
 import static be.bbr.sf4ranking.Version.AE2012
@@ -249,15 +250,10 @@ class AdminController
         def type = params.type
         def game = Version.fromString(params.game)
         List<String> feedback = dataService.validateResults(content, game, type)
-        log.info "rendering $feedback"
-        render(contentType: "text/html") {
-            div {
-                feedback.each {
-                    p(it)
-                }
-            }
-        }
-        log.info "rendered $feedback"
+        def lines = feedback.collect { "<p>$it</p>" }.join("\n")
+        def out = "<div><i>Click name to replace values directly</i><p/>$lines</div>"
+        log.info "rendered $out"
+        render(out)
     }
 
     def renderCharacterNames() {

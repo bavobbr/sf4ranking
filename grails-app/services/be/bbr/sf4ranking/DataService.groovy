@@ -198,7 +198,11 @@ class DataService {
                             }
                         }
                         if (suggestions) {
-                            feedback << "$handle is unknown. Sounds like: ${suggestions.name.join(", ")}"
+                            def alts = suggestions.collect {
+                                "<span id='s_$it.id'><a href=\"javascript:replace('$handle', '$it.name', 's_$it.id')\">$it.name</a> [${it.countryCode?.name()?: "n/a"}|${it.mainGame?.name()?:"n/a"}]</span>"
+                            }
+
+                            feedback << "$handle is unknown. Sounds like: ${alts.join(" ")}"
                         } else {
                             feedback << "$handle is unknown. No matching players found"
                         }

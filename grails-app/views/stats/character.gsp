@@ -284,18 +284,18 @@ These are all the ${tournamentWins.size()} non-local circuits where ${characterT
         <g:each in="${tournamentWins}" var="result">
             <tr>
                 <td>
-                    <g:link controller="rankings" action="tournament" params="[id: result.tournament.id]">
-                        ${result.tournament.name}
+                    <g:link controller="rankings" action="tournament" params="[id: result.tournament?.id]">
+                        ${result.tournament?.name}
                     </g:link>
                 </td>
                 <td>${result.place}</td>
 
-                <td>${result.tournament.countryCode}</td>
-                <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
-                <td>${result.tournament.weight}</td>
-                <td>${result.tournament.date}</td>
-                <td>${result.tournament.tournamentType.value}</td>
-                <td>${result.tournament.cptTournament.value}</td>
+                <td>${result.tournament?.countryCode}</td>
+                <td>${ScoringSystem.getScore(result.place, result.tournament?.tournamentType, result.tournament?.tournamentFormat)}</td>
+                <td>${result.tournament?.weight}</td>
+                <td>${result.tournament?.date}</td>
+                <td>${result.tournament?.tournamentType?.value}</td>
+                <td>${result.tournament?.cptTournament?.value}</td>
 
                 <td>
                     <g:link controller="rankings" action="player" params="[id: result.player.id]">
@@ -340,8 +340,8 @@ These are all the ${tournamentAll.size()} non-local circuits where ${characterTy
                 <td>${ScoringSystem.getScore(result.place, result.tournament.tournamentType, result.tournament.tournamentFormat)}</td>
                 <td>${result.tournament.weight}</td>
                 <td>${result.tournament.date}</td>
-                <td>${result.tournament.tournamentType.value}</td>
-                <td>${result.tournament.cptTournament.value}</td>
+                <td>${result.tournament.tournamentType?.value}</td>
+                <td>${result.tournament.cptTournament?.value}</td>
 
                 <td>
                     <g:link controller="rankings" action="player" params="[id: result.player.id]">

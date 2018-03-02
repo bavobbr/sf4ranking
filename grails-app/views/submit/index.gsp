@@ -14,13 +14,23 @@
 
 <body>
 <script>
+    function replace(original, newvalue, pid)
+    {
+        console.log("Replacing ${orginal} with ${newvalue}");
+        var str = document.getElementById("tresults").value;
+        var n = str.replace(original, newvalue);
+        document.getElementById("tresults").value = n;
+        document.getElementById(pid).style.display = 'none';
+    }
+</script>
+<script>
   $(function ()
     {
       $("#dialog").dialog({
                             autoOpen: false,
                             modal: true,
-                            height: 600,
-                            width: 800
+          height: 800,
+          width: 1000
                           });
         $("#info").dialog({
             autoOpen: false,
@@ -128,7 +138,7 @@ to use the 'validate' buttons before submitting, and to use the 'Help' buttons t
 
   <div class="form-group">
     <label for="tresults">(*) Results (1 to 64 max, use help buttons below for formatting tips and data validation)</label>
-    <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
+    <g:textArea id="tresults" name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                 title="${hint}"/><br/>
       <button type="button" id="validatePlayers" class="btn btn-success">Validate Players</button>
       <button type="button" id="validateChars" class="btn btn-success">Validate Chars</button>

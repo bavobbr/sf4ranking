@@ -104,8 +104,11 @@ class StatsController
     @Cacheable("charstats")
     def character()
     {
+        log.info("Rendering char stats for params $params")
         Version game = Version.fromString(params.game)
+        log.info("Game is $game")
         CharacterType charType = CharacterType.fromString(params.charname, Version.generalize(game))
+        log.info("Char is is $charType")
         Map<Version, CharacterStats> games = [:]
         if (game in [Version.USF4, Version.AE2012, Version.AE, Version.SUPER, Version.VANILLA]) {
             games[Version.VANILLA.value] = CharacterStats.findByGameAndCharacterType(Version.VANILLA, charType)
@@ -117,17 +120,20 @@ class StatsController
         else {
             games[game.value] = CharacterStats.findByGameAndCharacterType(game, charType)
         }
-        log.info "Finding 5 best players for game $game"
+        log.info "Finding 5 best players for game $game and char $charType"
         def best = queryService.findPlayers(charType, null, 100, 0, game)
+        log.info "Finding 5 best trending players for game $game and char $charType"
         def bestTrending = queryService.findPlayers(charType, null, 100, 0, game, RankingType.TRENDING)
         def bestMainplayers = best ? best.findAll {charType in it.main(game)} : []
         def bestTrendingplayers = bestTrending ? bestTrending.findAll {charType in it.main(game)} : []
+        log.info "Finding 5 best secondary players for game $game and char $charType"
         def bestSecondaryplayers = best ? best.findAll {
             !(charType in it.main(game))
         } : []
         def best5m = bestMainplayers.take(5)
         def best5t = bestTrendingplayers.take(5)
         def best5s = bestSecondaryplayers.take(5)
+        log.info "Finding stats for game $game and char $charType"
         def others = CharacterStats.findAllByGame(game)
         others.removeAll {it.characterType == CharacterType.UNKNOWN}
         def statnames = ["totalTimesUsed", "scoreAccumulated", "rankAccumulated", "totalUsagePercentage", "asMainInTop100", "asMainInTop50",
@@ -143,7 +149,7 @@ class StatsController
             def index = others.sort {a, b -> a."$stat" <=> b."$stat"}.findIndexOf {it.characterType == charType} + 1
             relativeStats[stat] = index
         }
-
+        log.info "Finding ranking results for game $game and char $charType"
         def characters = GameCharacter.findAllByCharacterType(charType)
         println "Found ${characters.size()} GameCharacters for $charType"
         def teams = characters.collect { it.gameTeam }
@@ -167,6 +173,7 @@ class StatsController
         tournamentWins.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
         def tournamentAll = results.findAll { it.tournament.tournamentType != TournamentType.LOCAL}
         tournamentAll.sort { ScoringSystem.getScore(it.place, it.tournament.tournamentType, it.tournament.tournamentFormat) }.reverse(true)
+        log.info "Returning data for game $game and char $charType"
 
         return [stats: games[game.value],
                 best5: best5m,

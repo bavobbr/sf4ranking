@@ -14,13 +14,23 @@
 
 <body>
 <script>
+    function replace(original, newvalue, pid)
+    {
+        console.log("Replacing ${orginal} with ${newvalue}");
+        var str = document.getElementById("results").value;
+        var n = str.replace(original, newvalue);
+        document.getElementById("results").value = n;
+        document.getElementById(pid).style.display = 'none';
+    }
+</script>
+<script>
   $(function ()
     {
       $("#dialog").dialog({
                             autoOpen: false,
                             modal: true,
-                            height: 600,
-                            width: 800
+          height: 800,
+          width: 1000
                           });
       $("#validatePlayers").click(function ()
                                   {
@@ -83,7 +93,7 @@
     <g:hiddenField name="game" class="form-control" value="${tournament.game}"/>
   <div class="form-group">
     <label for="results">Results (1 up to 64 max, mouse over for tips. Make sure the character name matches a known character type)</label>
-    <g:textArea name="results" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
+    <g:textArea id="results" name="results" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                 value="${results}"/>
     <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
     <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>

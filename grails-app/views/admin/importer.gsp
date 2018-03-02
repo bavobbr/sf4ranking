@@ -14,12 +14,24 @@
 
 <body>
 <script>
+    function replace(original, newvalue, pid)
+    {
+        console.log("Replacing ${orginal} with ${newvalue}");
+        var str = document.getElementById("tresults").value;
+        var n = str.replace(original, newvalue);
+        document.getElementById("tresults").value = n;
+        document.getElementById(pid).style.display = 'none';
+    }
+</script>
+<script>
+
+
     $(function () {
         $("#dialog").dialog({
             autoOpen: false,
             modal: true,
-            height: 600,
-            width: 800
+            height: 800,
+            width: 1000
         });
         $("#validatePlayers").click(function () {
             $.ajax({
@@ -131,7 +143,7 @@
         Ranking numbers and team names are stripped automatically if in format 'rank. team | playername'<br/>
         Characters are defined by follwing player name with '(character)'
         </label>
-        <g:textArea name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
+        <g:textArea id = "tresults" name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                     title="${hint}" value="${suggestedContent}"/>
         <button type="button" id="validatePlayers" class="btn btn-secondary">Validate Players</button>
         <button type="button" id="validateChars" class="btn btn-secondary">Validate Chars</button>
