@@ -17,7 +17,7 @@ class MaxoplataService
     @Cacheable("maxoplataCompare")
     Map<Version, Map<Player, Integer>> comparePlayers(Player p1, Player p2) {
         try {
-            def url = "http://www.maxoplata.net/compare/$p1.maxoplataId/$p2.maxoplataId"
+            def url = "http://www.fgcbattles.com/compare/$p1.maxoplataId/$p2.maxoplataId"
             def page = parsePage(url)
             return Version.values().collectEntries {
                 def maxoplataLabels = convertGameLabel(it)
@@ -42,7 +42,7 @@ class MaxoplataService
 
     private List<String> convertGameLabel(Version version) {
         switch (version) {
-            case Version.SF5: return ["SFV"]
+            case Version.SF5: return ["SFV", "SFV:S2", "SFVAE"]
             case Version.MKX: return ["MKX", "MKXL"]
             case Version.UMVC3: return ["MvC3","UMvC3"]
             case Version.IGAU: return ["Injustice"]
