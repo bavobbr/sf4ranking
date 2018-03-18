@@ -60,6 +60,7 @@ import static be.bbr.sf4ranking.Region.EU;
  */
 public enum CountryCode
 {
+
     // @formatter:off
     /** <a href="http://en.wikipedia.org/wiki/Andorra">Andorra</a> */
     AD("Andorra", "AND", 16, EU),

@@ -50,8 +50,8 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
-        runtime 'mysql:mysql-connector-java:5.1.24'
-        runtime 'org.apache.commons:commons-math:2.2'
+        compile 'mysql:mysql-connector-java:5.1.24'
+        compile 'org.apache.commons:commons-math:2.2'
         compile 'org.compass-project:compass:2.2.0'
         compile group: 'net.sourceforge.htmlcleaner', name: 'htmlcleaner', version: '2.18'
         compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
@@ -60,10 +60,10 @@ grails.project.dependency.resolution = {
     plugins {
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate:3.6.10.19" // or ":hibernate4:4.1.11.6"
-        runtime ":database-migration:1.3.8"
-        runtime ":jquery:1.11.1"
-        runtime ":resources:1.2.14"
+        compile ":hibernate:3.6.10.19" // or ":hibernate4:4.1.11.6"
+        compile ":database-migration:1.3.8"
+        compile ":jquery:1.11.1"
+        compile ":resources:1.2.14"
 
         compile ":shiro:1.2.1"
         compile ":searchable:0.6.9"

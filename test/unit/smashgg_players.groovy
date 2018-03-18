@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "final-round-20"
+def tournament = "capcom-cup-sfv-last-chance-qualifier"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -135,7 +135,7 @@ groupByEventSize.each {
 
 println "[DETAIL DATA]"
 
-def file = new File("/Users/bbr/Desktop/$filename")
+def file = new File("/Users/bbr/Desktop/newsmash/$filename")
 file.delete()
 file.withPrintWriter { writer ->
     attendees.each { p ->

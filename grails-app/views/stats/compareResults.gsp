@@ -78,11 +78,18 @@ You can click on the <a href="http://www.maxoplata.net" target="_blank">Maxoplat
                 <td class="${comparison.css(comparison.scoreResult)}">${comparison.scoreResult}</td>
             </tr>
             <tr>
-                <td>Total Score</td>
+                <td>Lifetime Score</td>
                 <td>${comparison.totalscoreP1}</td>
                 <td>${comparison.totalscoreP2}</td>
                 <td>${comparison.totalscoreDiff}</td>
                 <td class="${comparison.css(comparison.totalscoreResult)}">${comparison.totalscoreResult}</td>
+            </tr>
+            <tr>
+                <td>Trending Score</td>
+                <td>${comparison.trendingscoreP1}</td>
+                <td>${comparison.trendingscoreP2}</td>
+                <td>${comparison.trendingscoreDiff}</td>
+                <td class="${comparison.css(comparison.trendingscoreResult)}">${comparison.trendingscoreResult}</td>
             </tr>
             <tr>
                 <td>Current Ranking</td>

@@ -1,8 +1,8 @@
 import be.bbr.sf4ranking.CountryCode
 import groovy.json.JsonSlurper
 
-def gamename = "GGXRD"
-def smashname = "guilty"
+def gamename = "T7"
+def smashname = "tekken"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -20,11 +20,11 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["evo_2017"]
+def files = ["final_round_2018"]
 def smashids = []
 
 files.each { fname ->
-    def file = new File("/Users/bbr/Desktop/smash/${fname}.csv")
+    def file = new File("/Users/bbr/Desktop/newsmash/${fname}.csv")
     def rows = file.readLines()
     rows.each {
         def values = it.split(",")
@@ -70,8 +70,10 @@ groupByRegion.each { def region, players ->
     println "\n[$region]"
     println "----"
     println " "
-    println "rank | name | team | country | pchar | srk score | weight | cpt rank"
-    println "---- | ---- | -----| ------- | ----- | --------- | ------ | --------"
+    println "rank | name | team | country | pchar | srk score | weight"
+    //println "rank | name | team | country | pchar | srk score | weight | cpt rank"
+    println "---- | ---- | -----| ------- | ----- | --------- | ------"
+    //println "---- | ---- | -----| ------- | ----- | --------- | ------ | --------"
     players.sort { it[1] }.take(20).each {
         def srkrank = it[1]
         def name = it[2]
@@ -86,7 +88,7 @@ groupByRegion.each { def region, players ->
         //print "${srkrank}. ".padLeft(5)
         //print "$name".padRight(20)
         //println details
-        println "$srkrank | $urlname | $teams | $country | $pchar | $srkscore | $weight | $cptRank"
+        println "$srkrank | $urlname | $teams | $country | $pchar | $srkscore | $weight"
     }
 }
 

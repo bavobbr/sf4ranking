@@ -111,6 +111,10 @@ class RankingsController
     def cptStats_2016() {}
     def cptCharacterStats_2016() {}
 
+    def cpt_2017() {}
+    def cptStats_2017() {}
+    def cptCharacterStats_2017() {}
+
     @Cacheable('cpt')
     def cpt()
     {

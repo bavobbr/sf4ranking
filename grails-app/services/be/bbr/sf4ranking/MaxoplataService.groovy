@@ -52,8 +52,11 @@ class MaxoplataService
             case Version.SUPER: return ["SSF4"]
             case Version.VANILLA: return ["SF4"]
             case Version.SKULLGIRLS: return ["SG"]
-            case Version.BBCP: return ["BB:CPE", "BB:CP"]
+            case Version.BBCP: return ["BB:CPE", "BB:CP", "BB:CF"]
             case Version.KI: return ["KI"]
+            case Version.T7: return ["T7"]
+            case Version.DBFZ: return ["DBFZ"]
+            case Version.INJUSTICE2: return ["Injustice 2"]
             default: return [version.name()]
         }
     }

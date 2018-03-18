@@ -200,6 +200,10 @@
                                 <li><g:link action="cpt_2016" controller="rankings">Archived Standings 2016</g:link></li>
                                 <li><g:link action="cptStats_2016" controller="rankings">Archived Tournaments and countries 2016</g:link></li>
                                 <li><g:link action="cptCharacterStats_2016" controller="rankings">Archived Characters used 2016</g:link></li>
+                                <li class="divider"></li>
+                                <li><g:link action="cpt_2017" controller="rankings">Archived Standings 2017</g:link></li>
+                                <li><g:link action="cptStats_2017" controller="rankings">Archived Tournaments and countries 2017</g:link></li>
+                                <li><g:link action="cptCharacterStats_2017" controller="rankings">Archived Characters used 2017</g:link></li>
                             </ul>
                         </li>
                         <li class="dropdown">

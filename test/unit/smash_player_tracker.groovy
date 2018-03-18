@@ -1,8 +1,12 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def gamename = "MKX"
-def reddit = true
+gamename = "SF5"
+//smashgamename = "Street Fighter V"
+smashtournament = "final-round-2018"
+datasource = "final_round_2018"
+reddit = false
+smasheventid = 57087
 
 class AttendeePool {
     String name
@@ -35,9 +39,11 @@ public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
     def top100 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=0".toURL())
     def top200 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=100".toURL())
+    def top300 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=200".toURL())
+    def top400 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=300".toURL())
     //def top300 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=50&offset=200".toURL())
     //return top100 + top200 + top300
-    return top100 + top200
+    return top100 + top200 + top300 + top400
 }
 
 public def getPlayer(Integer id) {
@@ -49,14 +55,14 @@ public def getPlayer(Integer id) {
 
 public List<AttendeePool> getAttendeedata(Integer id, String name) {
     JsonSlurper slurper = new JsonSlurper()
-    def url = "https://api.smash.gg/tournament/evo-2017/attendees/$id".toURL()
+    def url = "https://api.smash.gg/tournament/$smashtournament/attendees/$id".toURL()
     //println "attendee url $url"
     def attendeedata = slurper.parse(url)
     def pools = attendeedata.entities.attendee[0].pools
     def entrants = attendeedata.entities.attendee[0].entrants.id
     //println "entrants: $entrants"
     //println entrantId
-    pools = pools.findAll { it.phaseName =~ /Injustice/ }
+    pools = pools.findAll { it.eventId == smasheventid }
     pools.collect {
         def ap = new AttendeePool(name: name, phase: it.phaseName, id: it.phaseGroupId, pool: it.groupName, order: it.phaseOrder, projected: it.projected, entrantIds: entrants)
         return ap
@@ -67,7 +73,7 @@ public List<PhaseSet> getPhaseData(Integer id, List<Integer> playerIds, Attendee
     //https://api.smash.gg/phase_group/178064?expand%5B%5D=sets&expand%5B%5D=standings&expand%5B%5D=selections
     JsonSlurper slurper = new JsonSlurper()
     def url = "https://api.smash.gg/phase_group/$id?expand[]=sets".toURL()
-    println "gettting $id $playerIds from $url"
+    //println "gettting $id $playerIds from $url"
     def phasedata = slurper.parse(url)
     def sets = phasedata.entities.sets
     //println sets
@@ -89,7 +95,7 @@ public List<PhaseSet> getPhaseData(Integer id, List<Integer> playerIds, Attendee
     }
 }
 
-def file = new File("/Users/bbr/Desktop/smash/evo_2017.csv")
+def file = new File("/Users/bbr/Desktop/newsmash/${datasource}.csv")
 def rows = file.readLines()
 def attendeeMapping = rows.collectEntries {
     def values = it.split(",")
@@ -101,7 +107,7 @@ def attendeeMapping = rows.collectEntries {
 
 
 def top100 = getTopPlayers(gamename)
-def top100b = getTopPlayers("IGAU")
+def top100b = getTopPlayers(gamename)
 top100b.each { pb ->
     println "checking $pb"
     if (!top100.find { it.name == pb.name }) {
@@ -111,8 +117,10 @@ top100b.each { pb ->
 }
 top100 = top100.sort { it.rank }
 if (reddit) {
-    println "| rank | player | country | round 1 | round 2 | semis | finals |"
-    println "| ---  | --- | --- | --- | --- | --- | --- |"
+    //println "| rank | player | country | round 1 | round 2 | semis | finals |"
+    println "| rank | player | country | round 1 | semis | finals |"
+    //println "| ---  | --- | --- | --- | --- | --- | --- |"
+    println "| ---  | --- | --- | --- | --- | --- |"
 }
 
 top100.each { playernode ->
@@ -148,17 +156,17 @@ top100.each { playernode ->
         def r4done = round4?.sets?.findAll { it.finished }
 
         def pname = playernode.name
-        println pname
+        //println pname
 
         if (r1done?.every { it.winnersBracket && it.win }) round1.winners = true
         if (r2done?.every { it.winnersBracket && it.win }) round2.winners = true
         if (r3done?.every { it.winnersBracket && it.win }) round3.winners = true
         if (r4done?.every { it.winnersBracket && it.win }) round4.winners = true
 
-        if (round1?.sets?.any { !it.winnersBracket }) round1.winners = false
-        if (round2?.sets?.any { !it.winnersBracket }) round2.winners = false
-        if (round3?.sets?.any { !it.winnersBracket }) round3.winners = false
-        if (round4?.sets?.any { !it.winnersBracket }) round4.winners = false
+        if (round1?.sets?.any { !it.winnersBracket && it.finished }) round1.winners = false
+        if (round2?.sets?.any { !it.winnersBracket && it.finished }) round2.winners = false
+        if (round3?.sets?.any { !it.winnersBracket && it.finished }) round3.winners = false
+        if (round4?.sets?.any { !it.winnersBracket && it.finished }) round4.winners = false
 
         if (round2?.sets?.size() > 0) round1.finished = true
         if (round3?.sets?.size() > 0) round2.finished = true
@@ -171,40 +179,76 @@ top100.each { playernode ->
 
         def r1state = ""
         if (round1?.sets) {
-            if (round1.winners && round1.finished) r1state = "WINNERS"
-            if (!round1.winners && round1.finished) r1state = "LOSERS"
-            if (round1.winners && !round1.finished) r1state = "WINNERS ONGOING"
-            if (!round1.winners && !round1.finished) r1state = "LOSERS ONGOING"
-            if (round1.eliminated) r1state = "OUT"
+            if (reddit) {
+                if (round1.winners && round1.finished) r1state = "winners done" // winners
+                if (!round1.winners && round1.finished) r1state = "losers done" // losers
+                if (round1.winners && !round1.finished) r1state = "winners ongoing" // winners ongoing
+                if (!round1.winners && !round1.finished) r1state = "losers ongoing" // losers ongoing
+                if (round1.eliminated) r1state = "eliminated" // out
+            }
+            else {
+                if (round1.winners && round1.finished) r1state = "1000" // winners
+                if (!round1.winners && round1.finished) r1state = "250" // losers
+                if (round1.winners && !round1.finished) r1state = "500" // winners ongoing
+                if (!round1.winners && !round1.finished) r1state = "125" // losers ongoing
+                if (round1.eliminated) r1state = "-1" // out
+            }
         }
 
         def r2state = ""
         if (round2?.sets) {
-            if (round2.winners && round2.finished) r2state = "WINNERS"
-            if (!round2.winners && round2.finished) r2state = "LOSERS"
-            if (round2.winners && !round2.finished) r2state = "WINNERS ONGOING"
-            if (!round2.winners && !round2.finished) r2state = "LOSERS ONGOING"
-            if (round2.eliminated) r2state = "OUT"
+            if (reddit) {
+                if (round2.winners && round2.finished) r2state = "winners done" // winners
+                if (!round2.winners && round2.finished) r2state = "losers done" // losers
+                if (round2.winners && !round2.finished) r2state = "winners ongoing" // winners ongoing
+                if (!round2.winners && !round2.finished) r2state = "losers ongoing" // losers ongoing
+                if (round2.eliminated) r2state = "eliminated" // out
+            }
+            else {
+                if (round2.winners && round2.finished) r2state = "1000" // winners
+                if (!round2.winners && round2.finished) r2state = "250" // losers
+                if (round2.winners && !round2.finished) r2state = "500" // winners ongoing
+                if (!round2.winners && !round2.finished) r2state = "125" // losers ongoing
+                if (round2.eliminated) r2state = "-1" // out
+            }
 
         }
 
         def r3state = ""
         if (round3?.sets) {
-            if (round3.winners && round3.finished) r3state = "WINNERS"
-            if (!round3.winners && round3.finished) r3state = "LOSERS"
-            if (round3.winners && !round3.finished) r3state = "WINNERS ONGOING"
-            if (!round3.winners && !round3.finished) r3state = "LOSERS ONGOING"
-            if (round3.eliminated) r3state = "OUT"
+            if (reddit) {
+                if (round3.winners && round3.finished) r3state = "winners done" // winners
+                if (!round3.winners && round3.finished) r3state = "losers done" // losers
+                if (round3.winners && !round3.finished) r3state = "winners ongoing" // winners ongoing
+                if (!round3.winners && !round3.finished) r3state = "losers ongoing" // losers ongoing
+                if (round3.eliminated) r3state = "eliminated" // out
+            }
+            else {
+                if (round3.winners && round3.finished) r3state = "1000" // winners
+                if (!round3.winners && round3.finished) r3state = "250" // losers
+                if (round3.winners && !round3.finished) r3state = "500" // winners ongoing
+                if (!round3.winners && !round3.finished) r3state = "125" // losers ongoing
+                if (round3.eliminated) r3state = "-1" // out
+            }
 
         }
 
         def r4state = ""
         if (round4?.sets) {
-            if (round4.winners && round4.finished) r4state = "WINNERS"
-            if (!round4.winners && round4.finished) r4state = "LOSERS"
-            if (round4.winners && !round4.finished) r4state = "WINNERS ONGOING"
-            if (!round4.winners && !round4.finished) r4state = "LOSERS ONGOING"
-            if (round4.eliminated) r4state = "OUT"
+            if (reddit) {
+                if (round4.winners && round4.finished) r4state = "winners done" // winners
+                if (!round4.winners && round4.finished) r4state = "losers done" // losers
+                if (round4.winners && !round4.finished) r4state = "winners ongoing" // winners ongoing
+                if (!round4.winners && !round4.finished) r4state = "losers ongoing" // losers ongoing
+                if (round4.eliminated) r4state = "eliminated" // out
+            }
+            else {
+                if (round4.winners && round4.finished) r4state = "1000" // winners
+                if (!round4.winners && round4.finished) r4state = "250" // losers
+                if (round4.winners && !round4.finished) r4state = "500" // winners ongoing
+                if (!round4.winners && !round4.finished) r4state = "125" // losers ongoing
+                if (round4.eliminated) r4state = "-1" // out
+            }
 
         }
 
@@ -220,13 +264,15 @@ top100.each { playernode ->
                 }
 
                 def urlname = "[$name](http://rank.shoryuken.com/rankings/player/byname/$round1.name)"
-                def smashurl = "[(results)](https://smash.gg/tournament/evo-2017/attendees/${smashid})"
+                def smashurl = "[(results)](https://smash.gg/tournament/${smashtournament}/attendee/${attendeeMapping[smashid]})"
                 def rank = playernode.rank
 
-                println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} | ${r4state.toLowerCase()} |"
+                //println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} | ${r4state.toLowerCase()} |"
+                println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} |"
             }
             else {
-                println "$round1.name, $playernode.country, $r1state, $r2state, $r3state, $r4state"
+                def rank = playernode.rank
+                println "$rank, $round1.name, $playernode.country, $r1state, $r2state, $r3state, $r4state"
             }
         }
 
