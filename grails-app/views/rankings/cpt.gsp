@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="artificial"/>
-    <title>Capcom Pro Tour Rankings 2017 - ${game.value}</title>
+    <title>Capcom Pro Tour Rankings 2018 - ${game.value}</title>
 </head>
 
 <body>
@@ -18,10 +18,7 @@
                 This ${game.value} ranking follows the <a
                     href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>
                 <ul>
-                    <li>30 players qualify via global points</li>
-                    <li>1 player auto-qualifies from previous year</li>
-                    <li>1 player qualifies via Capcom Cup Last Chance Event</li>
-                    <li>7 per region get invited into regional last chance premier</li>
+                    <li>TBD for 2018 rules!</li>
                 </ul>
             </div>
         </div>

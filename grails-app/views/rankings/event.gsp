@@ -18,6 +18,7 @@
       <th>Country</th>
       <th>Region</th>
       <th>Weight</th>
+      <th>Average</th>
     </tr>
     </thead>
     <tr>
@@ -34,6 +35,7 @@
       <td>${event.countryCode}</td>
       <td>${event.region}</td>
       <td>${event.weight}</td>
+      <td>${event.averageWeight}</td>
     </tr>
   </table>
 </div>

@@ -102,14 +102,14 @@ class ScoringSystem
         if (tournamentType == TournamentType.UNRANKED) return 0;
         Map formatscores = scores[tournamentFormat.name()]
         List typescores = formatscores[tournamentType.name()] as List
-        return typescores[rank - 1] as Integer
+        return rank > typescores.size()? 0 : typescores[rank - 1] as Integer
     }
 
     public static Integer getLegacyScore(Integer rank, Long weight, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
         Map formatscores = scores[tournamentFormat.name()]
         List typescores = formatscores[TournamentType.GRAND_SLAM.name()] as List
-        def score = typescores[rank - 1] as Integer
+        def score = rank > typescores.size()? 0 : typescores[rank - 1] as Integer
         return (score * weight / 1000) as Integer
     }
 

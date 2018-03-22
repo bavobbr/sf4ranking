@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta name="layout" content="artificial"/>
-  <title>Capcom Pro Tour 2017 Player and Character Stats</title>
+  <title>Capcom Pro Tour 2018 Player and Character Stats</title>
 </head>
 
 <body>
-<h2>Player Statistics in Capcom Pro Tour 2017</h2>
+<h2>Player Statistics in Capcom Pro Tour 2018</h2>
 
 
 Statistics drawn from past Capcom Pro Tour tournaments. They reflect the characters we will likely see in the Capcom Cup finals and who plays them, as well as overall statistics on what characters were used to compete in the Capcom Pro Tour.
@@ -20,7 +20,7 @@ These players will qualify if tournament started today:
 
 Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify. 1 place is reserved for a last chance qualifier before the Capcom Cup.
 
-<h2>Character Statistics in Capcom Pro Tour 2017</h2>
+<h2>Character Statistics in Capcom Pro Tour 2018</h2>
 
 <g:if test="${byMainCharacter32}">
     <h3 class="tournament">Main character usage of current qualifying players</h3>
@@ -115,7 +115,7 @@ Note that in early stages only 'qualified' players are guaranteed. The others ar
             </g:each>
         </table>
     </div>
-    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour 2017 tournament players.
+    A total of <b>${charToCount.size()} </b>have been used as main or secondary by all Capcom Pro Tour 2018 tournament players.
 </g:if>
 
 

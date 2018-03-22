@@ -19,6 +19,7 @@
       <th>Country</th>
       <th>Region</th>
       <th>Weight</th>
+      <th>Average</th>
       <th>Host</th>
       <th>Contributors</th>
     </tr>
@@ -37,8 +38,9 @@
         <td>${event.countryCode}</td>
         <td>${event.region}</td>
         <td>${event.weight}</td>
+        <td>${event.averageWeight}</td>
         <td>${event.host}</td>
-        <td>${event.contributors}</td>
+        <td>${event.contributors?.split(",")?.countBy { it.trim() }}</td>
       </tr>
     </g:each>
 

@@ -283,6 +283,7 @@ class DataService {
                     Event event = new Event(name: it.name)
                     event.twitter = it.twitter
                     event.weight = it.weight
+                    event.averageWeight = it.averageWeight
                     event.host = it.host
                     event.date = Date.parse("dd-MM-yyyy", it.date as String)
                     event.countryCode = it.countryCode ? it.countryCode as CountryCode : null
@@ -586,6 +587,7 @@ class DataService {
             event.countryCode = it.countryCode?.name()
             event.region = it.region?.name()
             event.weight = it.weight
+            event.averageWeight = it.averageWeight
             event.host = it.host
             events << event
         }

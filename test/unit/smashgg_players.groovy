@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "capcom-cup-sfv-last-chance-qualifier"
+def tournament = "final-round-2018"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};

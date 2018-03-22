@@ -294,6 +294,11 @@ class CleanupService
 
 
     def rollupEvents() {
+        Event.list().each {
+            it.weight = 0
+            it.averageWeight = 0
+            it.save()
+        }
         def tournaments = Tournament.list()
         log.info("Checking out ${tournaments.size()} tournaments")
         def grouped = tournaments.groupBy {
@@ -318,15 +323,18 @@ class CleanupService
                 Event event = findOrCreateEvent(k)
                 println "handling event $event"
                 v.each { t ->
+                    event.weight += t.weight
                     if (!event.tournaments.find { it.name == t.name}) {
-                        println "added $t.name to event $event.name"
+                        println "added $t.name to event $event.name with weight $t.weight"
                         event.addToTournaments(t)
                         event.date = t.date
                         event.countryCode = t.countryCode
-                        event.weight += t.weight
                         if (t.game == Version.SF5) event.region = t.region
                         event.save(failOnError: true)
                     }
+                }
+                if (event.tournaments && event.weight) {
+                    event.averageWeight = event.weight / event.tournaments.size()
                 }
                 event.contributors = "nada"
                 event.save(failOnError: true)

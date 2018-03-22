@@ -9,6 +9,7 @@ class Event
     static constraints = {
         name nullable: false, unique: true
         weight editable: false
+        averageWeight editable: false
         date nullable: false
         countryCode nullable: true
         codename nullable: true, unique: true, editable: false
@@ -27,6 +28,7 @@ class Event
     String name
     String codename
     Long weight
+    Long averageWeight
     Date date
     CountryCode countryCode
     String creator
