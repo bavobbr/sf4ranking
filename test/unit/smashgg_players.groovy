@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "final-round-2018"
+def tournament = "norcal-regionals-2018"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -60,7 +60,9 @@ while (hasNext) {
         }
         node.pools.each { poolnode ->
             def event = attendee.events.find { it.id == poolnode.eventId }
-            event.pools << new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName)
+            if (poolnode.phaseOrder == 1) {
+                event.pools << new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName)
+            }
         }
         println attendee
         return attendee
@@ -85,7 +87,7 @@ sortByCountry.each {
 
 println "[PLAYERS PER COUNTRY]"
 groupByCountry.sort {a,b -> b.value.size() <=> a.value.size() }.each {
-    println "$it.key: ${it.value.collect { it.gamertag?: it.name }.join(",")}"
+    println "$it.key: ${it.value.collect { it.gamertag?: it.name }.join(", ")}"
 }
 
 attendees.each { attendee ->

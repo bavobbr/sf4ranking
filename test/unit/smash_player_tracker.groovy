@@ -3,10 +3,12 @@ import groovy.transform.ToString
 
 gamename = "SF5"
 //smashgamename = "Street Fighter V"
-smashtournament = "final-round-2018"
-datasource = "final_round_2018"
+smashtournament = "tgu-2018"
+datasource = "tgu_2018"
 reddit = false
-smasheventid = 57087
+smasheventid = 84277
+
+def extra = ["fubarduck", "jeondding", "Aziz XIV"]
 
 class AttendeePool {
     String name
@@ -41,14 +43,15 @@ public List<String> getTopPlayers(String game) {
     def top200 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=100".toURL())
     def top300 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=200".toURL())
     def top400 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=300".toURL())
+    def top500 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=100&offset=400".toURL())
     //def top300 = slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=50&offset=200".toURL())
     //return top100 + top200 + top300
-    return top100 + top200 + top300 + top400
+    return top100 + top200 + top300 + top400+top500
 }
 
-public def getPlayer(Integer id) {
+public def getPlayer(String name) {
     JsonSlurper slurper = new JsonSlurper()
-    def player = slurper.parse("http://rank.shoryuken.com/api/player/id/${id}".toURL())
+    def player = slurper.parse("http://rank.shoryuken.com/api/player/byname/${name}".toURL())
     return player
 }
 
@@ -121,6 +124,9 @@ top100b.each { pb ->
     }
 }
 top100 = top100.sort { it.rank }
+extra.each {
+    top100.add(getPlayer(it))
+}
 if (reddit) {
     //println "| rank | player | country | round 1 | round 2 | semis | finals |"
     println "| rank | player | country | round 1 | semis | finals |"
