@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "norcal-regionals-2018"
+def tournament = "combo-breaker-2018-1"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -73,10 +73,13 @@ while (hasNext) {
 }
 
 println "[SUMMARY]"
-println attendees.size()
-
+println "Players: ${attendees.size()}"
+println "Registrations: ${attendees.sum { it.events.size() }}"
 def countByCountry = attendees.countBy { it.country }
 def groupByCountry =  attendees.groupBy { it.country }
+
+println "Countries: ${groupByCountry.size()}"
+
 def sortByCountry = countByCountry.sort { a, b -> b.value <=> a.value }
 println sortByCountry
 
@@ -92,8 +95,10 @@ groupByCountry.sort {a,b -> b.value.size() <=> a.value.size() }.each {
 
 attendees.each { attendee ->
     attendee.events.each { event ->
-        if (!groupByEvent.containsKey(event.name)) groupByEvent[event.name] = []
-        groupByEvent[event.name] << attendee
+        if (!(event.name =~ /Ladder/)) {
+            if (!groupByEvent.containsKey(event.name)) groupByEvent[event.name] = []
+            groupByEvent[event.name] << attendee
+        }
     }
 }
 

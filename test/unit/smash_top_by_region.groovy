@@ -2,7 +2,7 @@ import be.bbr.sf4ranking.CountryCode
 import groovy.json.JsonSlurper
 
 def gamename = "SF5"
-def smashname = "street fighter v"
+def smashname = "Street Fighter V Arcade Edition"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -20,7 +20,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["norcal_regionals_2018"]
+def files = ["stunfest_2018_1"]
 def smashids = []
 
 files.each { fname ->
@@ -32,7 +32,7 @@ files.each { fname ->
         def id = values[0]
         def game = values[8].trim().toLowerCase()
         def name = values[4].trim().toLowerCase()
-        if (game =~ smashname) {
+        if (game =~ smashname.toLowerCase()) {
             println "saved $name $id $game"
             smashids << id
         }

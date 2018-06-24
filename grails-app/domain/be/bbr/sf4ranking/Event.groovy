@@ -27,8 +27,8 @@ class Event
 
     String name
     String codename
-    Long weight
-    Long averageWeight
+    Long weight = 0
+    Long averageWeight = 0
     Date date
     CountryCode countryCode
     String creator

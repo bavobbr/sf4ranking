@@ -432,7 +432,7 @@ public enum CountryCode
     KR("Republic of Korea", "KOR", 410, Region.AO),
 
     /** <a href="http://en.wikipedia.org/wiki/Kuwait">Kuwait</a> */
-    KW("Kuwait", "KWT", 414, Region.AO),
+    KW("Kuwait", "KWT", 414, Region.EU),
 
     /** <a href="http://en.wikipedia.org/wiki/Cayman_Islands">Cayman Islands</a> */
     KY("Cayman Islands", "CYM", 136),

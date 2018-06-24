@@ -138,11 +138,13 @@ class RankingService {
                                     def score = it.tournament.cptTournament.getScore(it.place)
                                     cptScore += score
                                     if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
-                                        switch (it.tournament.region) {
-                                            case Region.AO: cptScoreAO += score; break;
-                                            case Region.LA: cptScoreLA += score; break;
-                                            case Region.NA: cptScoreNA += score; break;
-                                            case Region.EU: cptScoreEU += score; break;
+                                        if (p.countryCode?.region && p.countryCode.region == it.tournament.region) {
+                                            switch (it.tournament.region) {
+                                                case Region.AO: cptScoreAO += score; break;
+                                                case Region.LA: cptScoreLA += score; break;
+                                                case Region.NA: cptScoreNA += score; break;
+                                                case Region.EU: cptScoreEU += score; break;
+                                            }
                                         }
                                     }
                                     cptCount++

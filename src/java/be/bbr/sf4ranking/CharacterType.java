@@ -280,6 +280,8 @@ public enum CharacterType
     SF5_MENAT("MENAT", "menat", Version.SF5),
     SF5_ZEKU("ZEKU", "Zeku", Version.SF5),
     SF5_SAKURA("SAKURA", "Sakura", Version.SF5),
+    SF5_BLANKA("BLANKA", "Blanka", Version.SF5),
+    SF5_FALKE("FALKE", "Falke", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),
@@ -426,9 +428,9 @@ public enum CharacterType
     MVCI_VENOM("VENOM", "Venom", Version.MVCI),
     MVCI_WINTER_SOLDIER("WINTER SOLDIER", "Soldier", Version.MVCI),
 
-    DBFZ_ANDROID_16("ANDROID 16", "Android 16", Version.DBFZ),
-    DBFZ_ANDROID_18("ANDROID 18", "Android 18", Version.DBFZ),
-    DBFZ_ANDROID_21("ANDROID 21", "Android 21", Version.DBFZ),
+    DBFZ_ANDROID_16("ANDROID #16", "Android 16", Version.DBFZ),
+    DBFZ_ANDROID_18("ANDROID #18", "Android 18", Version.DBFZ),
+    DBFZ_ANDROID_21("ANDROID #21", "Android 21", Version.DBFZ),
     DBFZ_BEERUS("BEERUS", "Beerus", Version.DBFZ),
     DBFZ_CAPTAIN_GINYU("CAPTAIN GINYU", "Ginyu", Version.DBFZ),
     DBFZ_CELL("CELL", "Cell", Version.DBFZ),
@@ -436,7 +438,7 @@ public enum CharacterType
     DBFZ_GOHAN("TEEN GOHAN", "Gohan", Version.DBFZ),
     DBFZ_GOHAN_ADULT("ADULT GOHAN", "Gohan adult", Version.DBFZ),
     DBFZ_GOKU("GOKU", "Goku", Version.DBFZ),
-    DBFZ_GOKU_BLACK("GOKU BLACK", "Goku black", Version.DBFZ),
+    DBFZ_GOKU_BLACK("BLACK GOKU", "Goku black", Version.DBFZ),
     DBFZ_GOTENKS("GOTENKS", "Gotenks", Version.DBFZ),
     DBFZ_HIT("HIT", "Hit", Version.DBFZ),
     DBFZ_KID_BUU("KID BUU", "Kid Buu", Version.DBFZ),
@@ -444,12 +446,14 @@ public enum CharacterType
     DBFZ_MAJIN_BUU("MAJIN BUU", "Majin Buu", Version.DBFZ),
     DBFZ_NAPPA("NAPPA", "Nappa", Version.DBFZ),
     DBFZ_PICCOLO("PICCOLO", "Piccolo", Version.DBFZ),
-    DBFZ_SUPER_SAIYAN_BLUE_GOKU("SUPER SAIYAN BLUE GOKU", "Blue Goku", Version.DBFZ),
-    DBFZ_SUPER_SAIYAN_BLUE_VEGETA("SUPER SAIYAN BLUE VEGETA", "Blue Vegeta", Version.DBFZ),
+    DBFZ_SUPER_SAIYAN_BLUE_GOKU("Goku blue", "Blue Goku", Version.DBFZ),
+    DBFZ_SUPER_SAIYAN_BLUE_VEGETA("Vegeta blue", "Blue Vegeta", Version.DBFZ),
     DBFZ_TIEN("TIEN", "Tien", Version.DBFZ),
     DBFZ_TRUNKS("TRUNKS", "Trunks", Version.DBFZ),
     DBFZ_VEGETA("VEGETA", "Vegeta", Version.DBFZ),
-    DBFZ_YAMCHA("YAMCHA", "Yamcha", Version.DBFZ);
+    DBFZ_YAMCHA("YAMCHA", "Yamcha", Version.DBFZ),
+    DBFZ_BARDOCK("BARDOCK", "Bardock", Version.DBFZ),
+    DBFZ_BROLY("BROLY", "Broly", Version.DBFZ);
 
 
     private final String value;

@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gamename = "SF5"
-def smashname = "arcade"
+def gamename = "GGXRD"
+def smashname = "Guilty Gear Xrd: Rev 2"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,11 +19,11 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["final_round_2018"]
+def files = ["combo_breaker_2018_1"]
 def smashids = []
 
 files.each { fname ->
-    def file = new File("/Users/bbr/Desktop/allsmash/${fname}.csv")
+    def file = new File("/Users/bbr/Desktop/newsmash/${fname}.csv")
     def rows = file.readLines()
     rows.each {
         def values = it.split(",")
@@ -31,7 +31,7 @@ files.each { fname ->
         def id = values[0]
         def game = values[8].trim().toLowerCase()
         def name = values[4].trim().toLowerCase()
-        if (game =~ smashname) {
+        if (game =~ smashname.toLowerCase()) {
             println "saved $name $id $game"
             smashids << id
         }
@@ -41,7 +41,7 @@ files.each { fname ->
 def top100 = getTopPlayers(gamename)
 top100.collect { playernode ->
     def smashid = playernode.smashId as String
-    if (!smashid || !smashid in smashids) {
+    if (!smashid || !(smashid in smashids)) {
         def player = getPlayer(playernode.id)
         def name = player.name
         def country = player.country

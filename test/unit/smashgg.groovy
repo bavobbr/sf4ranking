@@ -1,8 +1,8 @@
 import groovy.json.JsonSlurper
 
 
-def tournament = "final-round-2018"
-def event = "street-fighter-v-arcade-edition"
+def tournament = "saigon-cup-2018"
+def event = "street-fighter-v-arcade-edition-cpt"
 
 def url = "https://api.smash.gg/tournament/$tournament/event/$event/standings?entityType=event&expand[]=entrants&mutations=playerData&per_page=64"
 def content = url.toURL().text

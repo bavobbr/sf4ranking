@@ -1,20 +1,26 @@
 import be.bbr.sf4ranking.CharacterType
 import be.bbr.sf4ranking.Version
 import groovy.json.JsonSlurper
+import org.joda.time.DateTime
 
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 
 def sf5tournaments = new JsonSlurper().parse("http://rank.shoryuken.com/api/tournament/game/SF5".toURL())
 def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect { it.name() }
 def months = []
 
-13.times { int idx ->
-    def refdate = new Date(116, idx+1, 1)
-    def enddate = refdate.plus(90)
+def startdate = new DateTime().withYear(2016).withDayOfMonth(1).withMonthOfYear(1)
+def current = new DateTime()
+def diff = (current.monthOfYear + current.year*12) - (startdate.monthOfYear+startdate.year*12)
+
+println "We found $diff months in between"
+def refdate = startdate
+
+diff.times { int idx ->
+    def enddate = refdate.plusMonths(3)
     def inWindow = sf5tournaments.findAll {
-        Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(it.date)
-        return date.before(enddate) && date.after(refdate)
+        DateTime date = new DateTime(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(it.date).time)
+        return date.isBefore(enddate) && date.isAfter(refdate)
     }
     println "Discovered ${inWindow.size()} tournaments in window $refdate to $enddate"
 
@@ -25,7 +31,7 @@ def months = []
             tournament.results.each { result ->
                 result.characters.each {
                     def character = it.first()
-                    def score = result.score
+                    def score = result.legacyScore
                     if (!scores[character]) scores[character] = []
                     scores[character] << score
                 }
@@ -44,9 +50,11 @@ def months = []
         [(sf5char): bychar.sum()]
     }
     months << [(refdate): summedPerCharacterPerTournament]
+    refdate = refdate.plusMonths(1)
+
 }
 
-def labels = months.collect { it.keySet()[0] }
+def labels = months.collect { it.keySet()[0] }.collect { Date date -> new SimpleDateFormat("dd/MM/yy").format(date) }
 labels.add(0, "")
 println labels.join(",")
 
@@ -55,7 +63,13 @@ sf5chars.each { name ->
     def ranks = months.collect {
         def charResults = it.values()[0]
         def sortedResult = charResults.sort { a, b -> b.value <=> a.value }
-        sortedResult.findIndexOf { it.key ==  name } + 1
+        def index = sortedResult.findIndexOf { it.key ==  name } + 1
+        if (!sortedResult[name]) {
+            return "-"
+        }
+        else {
+            return index
+        }
     }
     println ranks.join(",")
 }

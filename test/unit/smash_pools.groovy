@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
 def gamename = "SF5"
-def smashname = "street fighter v"
+def smashname = "Street Fighter V Arcade Edition"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["norcal_regionals_2018"]
+def files = ["stunfest_2018_1"]
 def idToPool = [:]
 
 def srkToPool = [:]
@@ -35,7 +35,7 @@ files.each { fname ->
         def name = values[4].trim().toLowerCase()
         def game = values[8].trim().toLowerCase()
         def pool = values[11].trim().toLowerCase()
-        if (game =~ smashname) {
+        if (game =~ smashname.toLowerCase()) {
             if (handle) idToPool[id] = pool
             if (pool) idToPool[id] = pool
             println "saved $id $name $handle $pool $game"

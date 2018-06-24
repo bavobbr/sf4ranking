@@ -237,9 +237,9 @@ class ApiController {
                     game      : tournament.game?.name(),
                     cpt       : tournament.cptTournament?.name(),
                     finished  : tournament.finished,
-                    weighting : tournament.weightingType.name(),
-                    classifier: tournament.tournamentType.name(),
-                    bracket   : tournament.tournamentFormat.name(),
+                    weighting : tournament.weightingType?.name(),
+                    classifier: tournament.tournamentType?.name(),
+                    bracket   : tournament.tournamentFormat?.name(),
                     weight    : tournament.weight,
             ]
             if (results) {
@@ -248,6 +248,7 @@ class ApiController {
                      playername : it.player.name,
                      place      : it.place,
                      score      : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
+                     legacyScore: ScoringSystem.getLegacyScore(it.place, it.tournament.weight, it.tournament.tournamentFormat),
                      cptScore   : it.tournament.cptTournament?.getScore(it.place)?: 0,
                      rank       : it.player.rank(it.tournament.game),
                      characters : it.characterTeams.collect {
