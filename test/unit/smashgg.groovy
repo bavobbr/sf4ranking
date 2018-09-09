@@ -1,8 +1,8 @@
 import groovy.json.JsonSlurper
 
 
-def tournament = "saigon-cup-2018"
-def event = "street-fighter-v-arcade-edition-cpt"
+def tournament = "weds-night-fights-x-esports-arena-las-vegas-evo-edition"
+def event = "dragon-ball-fighterz"
 
 def url = "https://api.smash.gg/tournament/$tournament/event/$event/standings?entityType=event&expand[]=entrants&mutations=playerData&per_page=64"
 def content = url.toURL().text
@@ -12,7 +12,7 @@ def data = new JsonSlurper().parseText(content)
 println data
 
 def entrants = data.items.entities.entrants
-entrants.each {
+def results = entrants.collect {
     def name = it.name
     def placement = it.finalPlacement
     def smashId = it.playerIds.values().first()
@@ -25,4 +25,9 @@ entrants.each {
     }
     catch (e) {}
     println "$placement, $name, $smashId, $srkplayername"
+    [name: name, srk: srkplayername, smash: smashId, place: placement]
+}
+results.sort { it.placement }.each {
+    def pname = it.srk?: it.name
+    println "${it.place}. ${pname}"
 }

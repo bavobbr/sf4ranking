@@ -1,5 +1,7 @@
 import groovy.json.JsonSlurper
 
+def players = [""]
+
 public List<String> getPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
     return slurper.parse("http://rank.shoryuken.com/api/top?game=${game}&format=json&size=50&offset=0".toURL()).collect { it.name }

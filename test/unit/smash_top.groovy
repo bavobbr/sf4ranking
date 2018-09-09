@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gamename = "DBFZ"
-def smashname = "Dragon Ball FighterZ"
+def gamename = "MVCI"
+def smashname = "marvel"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["combo_breaker_2018_1"]
+def files = ["evo_2018_official_mvci_side_event"]
 def smashids = []
 
 def entries = []

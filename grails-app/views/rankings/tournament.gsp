@@ -63,7 +63,13 @@
         </tr>
     </table>
 </div>
-
+<script id="mNCC" language="javascript">
+    medianet_width = "728";
+    medianet_height = "90";
+    medianet_crid = "626923800";
+    medianet_versionId = "3111299";
+</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>
 <h2 class="tournament"><large>${tournament.game.value} rankings</large></h2>
 
 <div class="table-responsive">
@@ -157,7 +163,38 @@
 
 </g:if>
 
-<div class="row top10box" align="center">
+<div class="row top10box" style="margin-top: 20px" align="center">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/575800?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="sf5_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/281479?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="sf5fist_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/270996?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="jin_small.png" class="img-responsive"/>
+                </g:link>
+
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/250306?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="gief_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+        </div>
+    </div>
+</div>
+
+%{--<div class="row top10box" align="center">
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
@@ -176,7 +213,7 @@
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
-</div>
+</div>--}%
 
 
 </body>

@@ -35,9 +35,10 @@ periods.each { List<Date> period ->
             tournament.results.each { result ->
                 result.characters.each {
                     def character = it.first()
-                    def score = result.legacyScore
+                    def score = result.legacyScore / result.characters.size()
+                    println "Score for $character is ${result.legacyScore} divided by size ${result.characters.size()}"
                     if (!scores[character]) scores[character] = []
-                    scores[character] << score
+                    scores[character] << score.toInteger()
                 }
             }
             return scores
@@ -74,4 +75,39 @@ sf5chars.each { name ->
         }
     }
     println ranks.join(",")
+}
+
+println labels.join(",")
+sf5chars.each { name ->
+    print name-"SF5_"+","
+    def ranks = months.collect {
+        def charResults = it.values()[0]
+        def sortedResult = charResults.sort { a, b -> b.value <=> a.value }
+        def total = sortedResult.find { it.key ==  name }.value
+        if (!sortedResult[name]) {
+            return "-"
+        }
+        else {
+            return total
+        }
+    }
+    println ranks.join(",")
+}
+
+println("|" + labels.join("|"))
+println("|" + labels.collect {" *** "}.join("|") )
+sf5chars.each { name ->
+    print name-"SF5_"+","
+    def ranks = months.collect {
+        def charResults = it.values()[0]
+        def sortedResult = charResults.sort { a, b -> b.value <=> a.value }
+        def index = sortedResult.findIndexOf { it.key ==  name } + 1
+        if (!sortedResult[name]) {
+            return "-"
+        }
+        else {
+            return index
+        }
+    }
+    println("|" + ranks.join("|"))
 }

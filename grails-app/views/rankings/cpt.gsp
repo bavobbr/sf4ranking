@@ -7,40 +7,6 @@
 
 <body>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Rules</h3>
-            </div>
-
-            <div class="panel-body">
-                This ${game.value} ranking follows the <a
-                    href="http://capcomprotour.com/rules/">Capcom Pro Tour ruleset</a>
-                <ul>
-                    <li>TBD for 2018 rules!</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6">
-
-        <g:if test="${updateMessage}">
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Updates</h3>
-                </div>
-                <div class="panel-body">
-                    <g:message message="${updateMessage}"/>
-
-                </div>
-            </div>
-        </g:if>
-    </div>
-</div>
-
 <h3>Global leader board</h3>
 
 Green means directly qualified, blue means qualification by points in the open global spots.
@@ -148,9 +114,40 @@ Green means directly qualified, blue means qualification by points in the open g
 The global board has 1 direct qualified player, 30 global points spots. One spot is open for Last Chance.
 </div>
 
-<div class="row" align="center">
+%{--<div class="row" align="center">
     <div class="col-md-12" align="center">
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=92a40fad-32f4-4e45-8e9c-ba21f4170ba9"></script>
+    </div>
+</div>--}%
+
+<div class="row top10box" style="margin-top: 20px" align="center">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/575800?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="sf5_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/281479?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="sf5fist_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/270996?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="jin_small.png" class="img-responsive"/>
+                </g:link>
+
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/250306?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="gief_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -254,7 +251,7 @@ The first 7 players from this region will be invited to a regional final that sc
 
 </g:each>
 
-<div class="row top10box" align="center">
+%{--<div class="row top10box" align="center">
     <div class="col-md-12" align="center">
         <script type="text/javascript">
             amzn_assoc_placement = "adunit0";
@@ -272,6 +269,38 @@ The first 7 players from this region will be invited to a regional final that sc
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
     </div>
+</div>--}%
+
+<div class="row top10box" style="margin-top: 20px" align="center">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/291193?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="cammy_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/284559?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="chun_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/259832?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="akuma_small.png" class="img-responsive"/>
+                </g:link>
+
+            </div>
+
+            <div class="col-md-3">
+                <g:link url="https://displate.com/displate/149208?merch=5b5a0ec49ef2b">
+                    <g:img dir="images/displate" file="sf_mini_small.png" class="img-responsive"/>
+                </g:link>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {

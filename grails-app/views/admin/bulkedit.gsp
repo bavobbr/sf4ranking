@@ -13,6 +13,7 @@
     <table class="table table-striped table-hover table-condensed">
     <thead>
     <tr>
+      <td>index</td>
       <td>name</td>
       <td>realname</td>
       <td>alias</td>
@@ -20,13 +21,13 @@
       <td>twitch</td>
       <td>maxoplata</td>
       <td>smash</td>
-      <td>vleague</td>
       <td>picture</td>
     </tr>
     </thead>
     <tbody>
-    <g:each in="${players}" var="player">
+    <g:each in="${players}" var="player" status="idx">
       <tr>
+        <td>${idx+1}</td>
         <td><g:link controller="rankings" action="player" params="[id:player.id]" target="_blank">${player.name}</g:link> </td>
         <td><g:textField name="name_${player.id}" value="${player.realname}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.alias}"/></td>
@@ -34,7 +35,6 @@
         <td><g:textField name="name_${player.id}" value="${player.twitch}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.maxoplataId}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.smashId}"/></td>
-        <td><g:textField name="name_${player.id}" value="${player.onlineId}"/></td>
         <td><g:textField name="name_${player.id}" value="${player.pictureUrl}"/></td>
       </tr>
     </g:each>

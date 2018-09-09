@@ -131,6 +131,10 @@ public enum CharacterType
     MIRA("MIRA", "Mira", Version.KI),
     GARGOS("GARGOS", "Gargos", Version.KI),
     KILGORE("KILGORE", "Kilgore", Version.KI),
+    KI_EAGLE("EAGLE", "Eagle", Version.KI),
+    KI_EYEDOL("EYEDOL", "Eyedol", Version.KI),
+    KI_GENERAL_RAAM("GENERAL RAAM", "Raam", Version.KI),
+    KI_KILGORE("KILGORE", "Kilgore", Version.KI),
 
     BIG_BAND("BIGBAND", "Big Band", Version.SKULLGIRLS),
     CEREBELLA("CEREBELLA", "Cerebella", Version.SKULLGIRLS),
@@ -277,11 +281,14 @@ public enum CharacterType
     SF5_KOLIN("KOLIN", "Kolin", Version.SF5),
     SF5_ED("ED", "Ed", Version.SF5),
     SF5_ABIGAIL("ABIGAIL", "Abigail", Version.SF5),
-    SF5_MENAT("MENAT", "menat", Version.SF5),
+    SF5_MENAT("MENAT", "Menat", Version.SF5),
     SF5_ZEKU("ZEKU", "Zeku", Version.SF5),
     SF5_SAKURA("SAKURA", "Sakura", Version.SF5),
     SF5_BLANKA("BLANKA", "Blanka", Version.SF5),
     SF5_FALKE("FALKE", "Falke", Version.SF5),
+    SF5_G("G", "g", Version.SF5),
+    SF5_SAGAT("SAGAT", "Sagat", Version.SF5),
+    SF5_CODY("Cody", "Cody", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),
@@ -322,6 +329,7 @@ public enum CharacterType
     T7_VIOLET("VIOLET", "Violet", Version.T7),
     T7_YOSHIMITSU("YOSHIMITSU", "Yoshimitsu", Version.T7),
     T7_GEESE_HOWARD("GEESE HOWARD", "Geese", Version.T7),
+    T7_NOCTIS("NOCTIS", "Noctis", Version.T7),
 
     INJ2_AQUAMAN("AQUAMAN", "Aquaman", Version.INJUSTICE2),
     INJ2_ATROCITUS("ATROCITUS", "Atrocitus", Version.INJUSTICE2),
@@ -453,7 +461,12 @@ public enum CharacterType
     DBFZ_VEGETA("VEGETA", "Vegeta", Version.DBFZ),
     DBFZ_YAMCHA("YAMCHA", "Yamcha", Version.DBFZ),
     DBFZ_BARDOCK("BARDOCK", "Bardock", Version.DBFZ),
-    DBFZ_BROLY("BROLY", "Broly", Version.DBFZ);
+    DBFZ_BROLY("BROLY", "Broly", Version.DBFZ),
+    DBFZ_VEGITO_BLUE("VEGITO", "Blue Vegito", Version.DBFZ),
+    DBFZ_FUSED_ZAMASU("FUSED ZAMASU", "Zamasu", Version.DBFZ),
+    DBFZ_GOKU_BASE("BASE GOKU", "Goku base", Version.DBFZ),
+    DBFZ_VEGETA_BASE("BASE VEGETA", "Vegeta base", Version.DBFZ);
+
 
 
     private final String value;

@@ -22,6 +22,7 @@
       <th>Known as</th>
       <th>Country</th>
       <th>Main Game</th>
+      <th>Smash id</th>
     </tr>
     </thead>
     <g:each in="${players}" var="player">
@@ -34,6 +35,7 @@
         <td>${player.alias}</td>
         <td>${player.countryCode}</td>
         <td>${player.mainGame}</td>
+        <td>${player.smashId}</td>
       </tr>
     </g:each>
 

@@ -1,6 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gameversion = "DBFZ"
+def gameversion = "MVCI"
+def smashgame = "marvel"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -18,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def folder = new File("/Users/bbr/Desktop/allsmash")
+def folder = new File("/Users/bbr/Desktop/evo")
 def files = folder.listFiles({dir, name -> name.endsWith(".csv")} as FilenameFilter)
 files = files.sort { it.lastModified() }
 println "Processing files in order: ${files*.name}"
@@ -45,7 +46,7 @@ files.each { file ->
         def name = values[4].trim().toLowerCase()
         def twitter = values[7].trim().toLowerCase()
         def game = values[8].trim().toLowerCase()
-        if (game =~ /melee/ || game =~ /smash/) return
+        if (game =~ /melee/ || game =~ /smash/ || !(game.toLowerCase() =~ smashgame.toLowerCase())) return
         if (name) nameToId[name] = id
         if (handle) handleToId[handle] = id
         if (handlejoin) handleJoinToId[handlejoin] = id
@@ -78,7 +79,6 @@ top100.each { playernode ->
     if (smashId) {
         println "skipping existing $name $smashId"
         cache["${rank}.${name}"] = smashId
-        //return
     }
     def fullnamereverse = null
     if (fullname && fullname.split(" ").size() > 1) {
@@ -130,7 +130,11 @@ println "matches"
 srkToId.each {
     def cached = cache[it.key]
     if (cached && cached != it.value) { println "$it [$cached]" }
-    else if (cached) { println "$it (*)" }
-    else { println it }
+    else if (cached) {
+        //println "$it (*)"
+    }
+    else {
+        println it
+    }
 }
 println srkToId.size()

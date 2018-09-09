@@ -1,8 +1,11 @@
 import be.bbr.sf4ranking.CountryCode
 import groovy.json.JsonSlurper
 
-def gamename = "SF5"
-def smashname = "Street Fighter V Arcade Edition"
+def gamename = "GGXRD"
+def smashname = "Guilty Gear Xrd REV2"
+def smashtournament = "evo-2018"
+def useCpt = false
+
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -20,8 +23,10 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["stunfest_2018_1"]
+def files = ["evo_2018"]
 def smashids = []
+def smashIdToPool = [:]
+def smashIdToAttendee = [:]
 
 files.each { fname ->
     def file = new File("/Users/bbr/Desktop/newsmash/${fname}.csv")
@@ -32,9 +37,13 @@ files.each { fname ->
         def id = values[0]
         def game = values[8].trim().toLowerCase()
         def name = values[4].trim().toLowerCase()
+        def pool = values[11].trim().toLowerCase()
+        def attendeeId = values[1].trim().toLowerCase()
         if (game =~ smashname.toLowerCase()) {
             println "saved $name $id $game"
             smashids << id
+            smashIdToPool[id] = pool
+            smashIdToAttendee[id] = attendeeId
         }
     }
 }
@@ -60,7 +69,7 @@ def results = top100.findResults { playernode ->
         def countryCode = country as CountryCode
         def region = null
         if (countryCode) region = countryCode.region
-        return [region, rank, name, countryCode, main.toLowerCase(), score, weight, cptRank, teams]
+        return [region, rank, name, countryCode, main.toLowerCase(), score, weight, cptRank, teams, smashid]
     }
     return null
 }
@@ -70,11 +79,16 @@ groupByRegion.each { def region, players ->
     println "\n[$region]"
     println "----"
     println " "
-    println "rank | name | team | country | pchar | srk score | weight"
-    //println "rank | name | team | country | pchar | srk score | weight | cpt rank"
-    println "---- | ---- | -----| ------- | ----- | --------- | ------"
+    if (useCpt) {
+        println "| rank | name | pool | team | country | main | srk score | cpt rank | weight |"
+        println "| ---- | ---- | -----| --- | ------- | ----- | --------- | ------ | --- |"
+    } else {
+        println "| rank | name | pool | team | country | main | srk score | weight |"
+        println "| ---- | ---- | -----| --- | ------- | ----- | ---------  | --- |"
+    }
+
     //println "---- | ---- | -----| ------- | ----- | --------- | ------ | --------"
-    players.sort { it[1] }.take(20).each {
+    players.sort { it[1] }.take(100).each {
         def srkrank = it[1]
         def name = it[2]
         def urlname = "[$name](http://rank.shoryuken.com/rankings/player/byname/$name)"
@@ -84,11 +98,24 @@ groupByRegion.each { def region, players ->
         def weight = it[6]
         def cptRank = it[7]
         def teams = it[8]
+        if (teams && teams.size() > 16) {
+            teams = teams[0..16]
+        }
+
+        def smashId = it[9]
         def details = "country: $country, char: $pchar, cpt: $cptRank, weight: ${weight}"
+        def attendeeId = smashIdToAttendee[smashId]
+        def poolId = smashIdToPool[smashId]
+        def smashurl = "[$poolId](https://smash.gg/tournament/${smashtournament}/attendee/${attendeeId})"
+
         //print "${srkrank}. ".padLeft(5)
         //print "$name".padRight(20)
         //println details
-        println "$srkrank | $urlname | $teams | $country | $pchar | $srkscore | $weight"
+        if (useCpt) {
+            println "| $srkrank | $urlname | $smashurl | ${teams} | $country | $pchar | $srkscore | $cptRank | $weight |"
+        } else {
+            println "| $srkrank | $urlname | $smashurl | ${teams} | $country | $pchar | $srkscore | $weight |"
+        }
     }
-}
 
+}

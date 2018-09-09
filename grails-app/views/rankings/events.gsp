@@ -14,13 +14,11 @@
     <tr class="stathead">
       <th>Name</th>
       <th>Date</th>
-      <th>Twitter</th>
       <th>Games</th>
       <th>Country</th>
       <th>Region</th>
       <th>Weight</th>
       <th>Average</th>
-      <th>Host</th>
       <th>Contributors</th>
     </tr>
     </thead>
@@ -29,18 +27,12 @@
       <tr>
         <td><g:link mapping="eventByName" controller="rankings" action="event" params="[name: event.name]">${event.name}</g:link></td>
         <td>${event.date?.format("yyyy-MM-dd")}</td>
-        <td>
-          <g:if test="${event.twitter}">
-            <a href="https://twitter.com/${event.twitter}" target="_blank">${event.twitter}</a>
-          </g:if>
-        </td>
         <td>${event.tournaments.collect { it.game.name() }.join(", ") }</td>
         <td>${event.countryCode}</td>
         <td>${event.region}</td>
         <td>${event.weight}</td>
         <td>${event.averageWeight}</td>
-        <td>${event.host}</td>
-        <td>${event.contributors?.split(",")?.countBy { it.trim() }}</td>
+        <td>${event.contributors?.split(",")?.countBy { it.trim() }?.collect { "$it.key: $it.value"}?.join(", ")}</td>
       </tr>
     </g:each>
 

@@ -42,7 +42,13 @@ This is for fine-grained maintenance, usually not required.
 <ul>
   <li><g:link action="merge">merge specified Players...</g:link></li>
   <g:each in="${Version.values()}" var="value">
-    <li><g:link action="bulkedit" params="[game: value.name()]">bulk edit Players of ${value}</g:link></li>
+    <li>
+      <g:link action="bulkedit" params="[game: value.name()]">bulk edit Players of ${value}</g:link>
+      <g:link action="bulkedit" params="[game: value.name(), page: 2]"> (page 2</g:link>
+      <g:link action="bulkedit" params="[game: value.name(), page: 3]"> page 3</g:link>
+      <g:link action="bulkedit" params="[game: value.name(), page: 4]"> page 4</g:link>
+      <g:link action="bulkedit" params="[game: value.name(), page: 5]"> page 5)</g:link>
+    </li>
   </g:each>
   <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
     <li><g:link action="initializeTournamentWeights">update Tournament weights based on player skills</g:link></li>

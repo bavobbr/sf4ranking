@@ -233,6 +233,7 @@ class ApiController {
                     name      : tournament.name,
                     date      : tournament.date,
                     country   : tournament.countryCode?.name(),
+                    region    : tournament.region?.name(),
                     coverage  : tournament.coverage,
                     game      : tournament.game?.name(),
                     cpt       : tournament.cptTournament?.name(),
@@ -241,6 +242,8 @@ class ApiController {
                     classifier: tournament.tournamentType?.name(),
                     bracket   : tournament.tournamentFormat?.name(),
                     weight    : tournament.weight,
+                    event     : tournament.event?.name,
+                    creator   : tournament.creator,
             ]
             if (results) {
                 tournamentMap["results"] = tournament.results.collect {

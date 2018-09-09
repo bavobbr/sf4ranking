@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "combo-breaker-2018-1"
+def tournament = "the-mixup-2018"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -26,6 +26,7 @@ class Event {
     String name
     List<Pool> pools = []
     Integer entrantId
+    Integer seed
 }
 
 @ToString
@@ -33,6 +34,24 @@ class Pool {
     Integer id
     String name
     String group
+    Integer phaseSeed
+    Integer nextPhase
+    Integer phaseId
+}
+
+def phaseCache = [:]
+
+def getPhaseData = { Integer id ->
+    if (phaseCache[id]) {
+        return phaseCache[id]
+    }
+    else {
+        JsonSlurper slurper = new JsonSlurper()
+        def phaseurl = "https://api.smash.gg/phase_group/$id?expand[]=seeds&expand[]=groups".toURL()
+        def phasedata = slurper.parse(phaseurl)
+        phaseCache[id] = phasedata
+        return phasedata
+    }
 }
 
 List<Attendee> attendees = []
@@ -60,8 +79,15 @@ while (hasNext) {
         }
         node.pools.each { poolnode ->
             def event = attendee.events.find { it.id == poolnode.eventId }
-            if (poolnode.phaseOrder == 1) {
-                event.pools << new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName)
+            if (poolnode.phaseOrder == 1 || poolnode.phaseName == "Phase 1") {
+                def poolobj = new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName, phaseId: poolnode.phaseId)
+                event.pools << poolobj
+                def phasedata = getPhaseData(poolnode.phaseGroupId)
+                def entrantdata = phasedata.entities.seeds.find { it.entrantId == event.entrantId }
+                def groupdata = phasedata.entities.groups
+                event.seed = entrantdata.seedNum
+                poolobj.phaseSeed = entrantdata.groupSeedNum
+                poolobj.nextPhase = groupdata.winnersTargetPhaseId
             }
         }
         println attendee
@@ -147,7 +173,7 @@ file.delete()
 file.withPrintWriter { writer ->
     attendees.each { p ->
         p.events.each {
-            def tokens = [p.id?: "", p.attendeeId?: "", p.tag?:"", p.gamertag?:"", p.name?:"", p.country?:"", p.state?:"", p.twitter?:"", it.name?:"", it.pools[0]?.id?:"", it.pools[0]?.name?:"", it.pools[0]?.group?:"", it.entrantId]
+            def tokens = [p.id?: "", p.attendeeId?: "", p.tag?:"", p.gamertag?:"", p.name?:"", p.country?:"", p.state?:"", p.twitter?:"", it.name?:"", it.pools[0]?.id?:"", it.pools[0]?.name?:"", it.pools[0]?.group?:"", it.entrantId, it.seed, it.pools[0]?.phaseSeed, it.pools[0]?.nextPhase, it.pools[0]?.phaseId]
             def clean = tokens.collect { it.toString().replace(",","-") }.collect { it.toString().replace("\"","'") }
             def quoted = clean.collect { "\"$it\"" }
             def line = quoted.join(",")

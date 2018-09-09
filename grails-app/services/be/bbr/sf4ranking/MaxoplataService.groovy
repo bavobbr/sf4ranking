@@ -17,7 +17,7 @@ class MaxoplataService
     @Cacheable("maxoplataCompare")
     Map<Version, Map<Player, Integer>> comparePlayers(Player p1, Player p2) {
         try {
-            def url = "http://www.fgcbattles.com/compare/$p1.maxoplataId/$p2.maxoplataId"
+            def url = "https://www.fgcbattles.com/compare/$p1.maxoplataId/$p2.maxoplataId"
             def page = parsePage(url)
             return Version.values().collectEntries {
                 def maxoplataLabels = convertGameLabel(it)
@@ -89,7 +89,7 @@ class MaxoplataService
         props.setOmitComments(true)
         TagNode tagNode = new HtmlCleaner(props).clean(body)
         def source = new PrettyXmlSerializer(props).getAsString(tagNode)
-        log.info("Data cleaned")
+        log.info("Data cleaned:\n$source")
         XmlSlurper slurper = new XmlSlurper(false, false)
         slurper.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
         slurper.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)

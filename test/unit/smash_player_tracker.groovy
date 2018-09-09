@@ -1,18 +1,25 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-gamename = "GGXRD"
+gamename = "SF5"
 //smashgamename = "Street Fighter V"
-smashtournament = "combo-breaker-2018-1"
-datasource = "combo_breaker_2018_1"
+smashtournament = "vsfighting-2018"
+datasource = "vsfighting_2018"
 reddit = true
-smasheventid = 70294
+smasheventid = 101722
 
 def extra = []
 entrantToName = [:]
 
-class AttendeePool {
+class AttendeeData {
+    List<AttendeePool> pools = []
     String name
+    Integer id
+    Integer placement
+}
+
+class AttendeePool {
+    AttendeeData attendee
     Integer id
     String phase
     String pool
@@ -60,7 +67,7 @@ public def getPlayer(String name) {
 }
 
 
-public List<AttendeePool> getAttendeedata(Integer id, String name) {
+public AttendeeData getAttendeedata(Integer id, String name) {
     JsonSlurper slurper = new JsonSlurper()
     def url = "https://api.smash.gg/tournament/$smashtournament/attendees/$id".toURL()
     //println "attendee url $url"
@@ -70,13 +77,23 @@ public List<AttendeePool> getAttendeedata(Integer id, String name) {
         def entrants = attendeedata.entities.attendee[0].entrants.id
         //println "entrants: $entrants"
         //println entrantId
-        pools = pools.findAll { it.eventId == smasheventid }.findAll { !(it.phaseName =~ /DEATHPOOL/)}
-        pools.collect {
-            def ap = new AttendeePool(name: name, phase: it.phaseName, id: it.phaseGroupId, pool: it.groupName, order: it.phaseOrder, projected: it.projected, entrantIds: entrants)
-            return ap
+        def entrantData = attendeedata.entities.attendee[0].entrants.find { it.eventId == smasheventid }
+        if (entrantData) {
+
+            pools = pools.findAll { it.eventId == smasheventid }.findAll { !(it.phaseName =~ /DEATHPOOL/) }
+            def poolobjects = pools.collect {
+                def ap = new AttendeePool(phase: it.phaseName, id: it.phaseGroupId, pool: it.groupName, order: it.phaseOrder, projected: it.projected, entrantIds: entrants)
+                return ap
+            }
+
+            def placement = entrantData?.finalPlacement
+            def attendeeobject = new AttendeeData(name: name, id: id, pools: poolobjects, placement: placement)
+            poolobjects.each { it.attendee = attendeeobject }
+            return attendeeobject
         }
+        else return null
     } catch (e) {
-        println "Couldnt fetch data for $id $name: $e"
+        //println "Couldnt fetch data for $id $name: $e"
         return null
     }
 }
@@ -130,32 +147,32 @@ entrantToName = rows.collectEntries {
 
 
 def top100 = getTopPlayers(gamename)
-def top100b = getTopPlayers(gamename)
+/*def top100b = getTopPlayers(gamename)
 top100b.each { pb ->
     println "checking $pb"
     if (!top100.find { it.name == pb.name }) {
         top100.add(pb)
         println "adding $pb"
     }
-}
+}*/
 top100 = top100.sort { it.rank }
 extra.each {
     top100.add(getPlayer(it))
 }
 if (reddit) {
-    //println "| rank | player | country | round 1 | round 2 | semis | finals |"
-    println "| rank | player | country | round 1 | semis | finals | killers |"
+    //println "| rank | player | country | round 1 | round 2 | round 3 | round 4 |"
+    println "| rank | player | country | round 1 | round 2 | round 3 | killers | result | "
     //println "| ---  | --- | --- | --- | --- | --- | --- |"
-    println "| ---  | --- | --- | --- | --- | --- | --- |"
+    println "| ---  | --- | --- | --- | --- | --- | --- | --- |"
 }
 
 top100.each { playernode ->
-    def smashid = playernode.smashId as String
+    def smashid = playernode["smashId"] as String
     if (smashid && attendeeMapping[smashid] ) {
         //println "getting data of $playernode"
-        def data = getAttendeedata(smashid as Integer, playernode.name)
+        def data = getAttendeedata(smashid as Integer, playernode["name"])
         if (data) {
-            def sorted = data.sort { it.order }
+            def sorted = data.pools.sort { it.order }
             def phases = sorted.each {
                 def phase = getPhaseData(it.id, it.entrantIds, it)
                 it.sets = phase
@@ -173,11 +190,11 @@ top100.each { playernode ->
                 }
             }
 
-
-            def round1 = phases.find { it.order == 2 }
-            def round2 = phases.find { it.order == 3 }
-            def round3 = phases.find { it.order == 4 }
-            def round4 = phases.find { it.order == 5 }
+            def orderOffset = phases.order.min()?: 0
+            def round1 = phases.find { it.order == 0+orderOffset }
+            def round2 = phases.find { it.order == 1+orderOffset }
+            def round3 = phases.find { it.order == 2+orderOffset }
+            def round4 = phases.find { it.order == 3+orderOffset }
 
             def r1done = round1?.sets?.findAll { it.finished }
             def r2done = round2?.sets?.findAll { it.finished }
@@ -278,8 +295,10 @@ top100.each { playernode ->
 
             if (round1) {
                 def killers = "${lostWinners?: "-"} / ${lostLosers?: "-"}"
+                killers = killers.replaceAll("\\|", "-")
+                pname = pname.replaceAll("\\|", "-")
                 if (reddit) {
-                    def name = round1.name
+                    def name = round1.attendee.name
                     if (round1.eliminated || round2?.eliminated || round3?.eliminated || round4?.eliminated) {
                         name = "~~" + name + "~~"
                     } else if (!round1.winners || (r2done && !round2.winners) || (r3done && !round3.winners) || (r4done && !round4.winners)) {
@@ -288,15 +307,25 @@ top100.each { playernode ->
                         name = "**" + name + "**"
                     }
 
-                    def urlname = "[$name](http://rank.shoryuken.com/rankings/player/byname/$round1.name)"
+                    def urlname = "[$name](http://rank.shoryuken.com/rankings/player/byname/$pname)"
                     def smashurl = "[(results)](https://smash.gg/tournament/${smashtournament}/attendee/${attendeeMapping[smashid]})"
                     def rank = playernode.rank
 
                     //println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} | ${r4state.toLowerCase()} |"
-                    println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} | $killers |"
+                    def finalPlacement
+                    if (round1.eliminated || round2?.eliminated || round3?.eliminated || round4?.eliminated) {
+                        finalPlacement = "**${round1.attendee.placement}**"
+                    }
+                    else finalPlacement = "${round1.attendee.placement}"
+                    println "| $rank | $urlname $smashurl | $playernode.country | ${r1state.toLowerCase()} | ${r2state.toLowerCase()} | ${r3state.toLowerCase()} | $killers | $finalPlacement"
                 } else {
+                    def finalPlacement
+                    if (round1.eliminated || round2?.eliminated || round3?.eliminated || round4?.eliminated) {
+                        finalPlacement = round1.attendee.placement
+                    }
+                    else finalPlacement = "- (${round1.attendee.placement})"
                     def rank = playernode.rank
-                    println "$rank, $round1.name, $playernode.country, $r1state, $r2state, $r3state, $r4state, $killers"
+                    println "$rank, $pname, $playernode.country, $r1state, $r2state, $r3state, $r4state, $killers, $finalPlacement"
                 }
             }
         }
