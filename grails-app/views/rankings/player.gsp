@@ -151,22 +151,26 @@
                 </dd>
             </g:if>
 
-            <dt>PSN/PC stats <a href="#" data-toggle="tooltip" data-placement="top"
-                                title="Link to v-league.pro that tracks player's online ranking and matches">(?)</a>
-            </dt>
-            <g:if test="${player.onlineId}">
-                <dd>
-                    <a href="http://v-league.pro/player/${player.onlineId}/profile" target="_blank">v-league.pro</a>
-                </dd>
-            </g:if>
-            <g:else>
-                <dd><small>(Tweet us the player id)</small></dd>
-            </g:else>
-
             <dt>Share page</dt>
             <dd>
                 <g:render template="/templates/share"/>&NonBreakingSpace;
             </dd>
+            <g:if test="${player.description}">
+                <dt>Background
+                <a href="#" data-toggle="tooltip" data-placement="top"
+                   title="Info from Liquipedia.net that contains detailed esports player info and tournament data">(?)</a>
+                </dt>
+                <dd>
+                    <div>
+                        <g:message message="${player.description.take(700)}"/>
+                        <g:if test="${player.description.size() >700}"> ...</g:if>
+                    </div>
+                    <br/>
+                    <p>
+                        Learn more about ${player.name} at <a href="http://liquipedia.net/fighters/${player.liquipedia}" target="_blank">Liquipedia Fighters!</a>
+                    </p>
+                </dd>
+            </g:if>
 
         </dl>
     </div>
@@ -370,11 +374,10 @@
 
     <g:if test="${SecurityUtils.subject.isPermitted("player")}">
         <div class="alert alert-info top10box">
-
-            <g:link controller="admin" action="selectPlayerVideos"
-                    params="['id': player.id]">[Update videos as admin]</g:link>
-            <g:link controller="player" action="show" params="['id': player.id]">[Update player as admin]</g:link>
-            <g:link controller="admin" action="split" params="['id': player.id]">[Split player as admin]</g:link>
+            <g:link controller="player" action="show" params="['id': player.id]">[See player]</g:link>
+            <g:link controller="player" action="edit" params="['id': player.id]">[Update player]</g:link>
+            <g:link controller="admin" action="split" params="['id': player.id]">[Split player]</g:link>
+            <g:link controller="admin" action="merge" params="['id': player.id]">[Merge player]</g:link>
         </div>
     </g:if>
 

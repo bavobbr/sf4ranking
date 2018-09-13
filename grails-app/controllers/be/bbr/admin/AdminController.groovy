@@ -282,8 +282,9 @@ class AdminController
         render view: "index"
     }
 
-    def merge()
+    def merge(Player p1)
     {
+        [player1: p1]
     }
 
     def bulkedit() {
@@ -306,15 +307,13 @@ class AdminController
                 def twitch = v[3]
                 def maxoplataId = v[4]
                 def smashId = v[5]
-                def onlineId = v[6]
-                def pictureUrl = v[7]
+                def pictureUrl = v[6]
                 player.realname = realname
                 player.alias = alias
                 player.twitter = twitter
                 player.twitch = twitch
                 player.maxoplataId = maxoplataId
                 player.smashId = smashId
-                player.onlineId = onlineId
                 player.pictureUrl = pictureUrl
                 player.save(failOnError: true)
                 println "Saved player $player"
@@ -330,7 +329,7 @@ class AdminController
             def display = "${value.tournament.game.name()} - ${value.tournament.name} - ${value.characterTeams}"
             list << [id: value.id, display: display]
         }
-        [players: Player.list(order: "asc", sort: 'name'), player: p, results: results]
+        [player: p, results: results]
     }
 
     def mergePlayers()

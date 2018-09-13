@@ -24,7 +24,7 @@ This will delete player 1 after copying the results to player 2. Make sure playe
       <g:message message="Merge player"/>
     </label>
     <div class="form-group">
-      <input id="p1" class="form-control" placeholder="Find a Player" name="p1">
+      <input id="p1" class="form-control" placeholder="Find a Player" name="p1" value="${player1?.name}">
     </div>
     <label for="p2">
       <g:message message="into" />

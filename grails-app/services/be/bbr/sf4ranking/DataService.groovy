@@ -316,10 +316,11 @@ class DataService {
             def onlineId = pjson.onlineId ?: ""
             def twitch = pjson.twitch ?: ""
             def alias = pjson.alias ?: ""
+            def liquipedia = pjson.liquipedia ?: ""
             Player p = new Player(name: pjson.name, countryCode: cc, videos: pjson.videos, wikilink: pjson.wikilink, twitter: pjson.twitter,
                     mainGame: mainGame, creator: pjson.creator, realname: pjson.realname, cptTournaments: cptTournaments, cptPrize: cptPrize, pictureCopyright: pictureCopyright,
                     pictureUrl: pictureUrl, description: description, maxoplataId: maxoplataId, smashId: smashId, onlineId: onlineId,
-                    twitch: twitch, alias: alias)
+                    twitch: twitch, alias: alias, liquipedia: liquipedia)
             if (cptRank) {
                 CptRanking cptRanking = new CptRanking(qualified: cptQualified, score: cptScore, prevScore: prevCptScore, rank: cptRank, prevRank: prevCptRank, region: Region.GLOBAL)
                 p.addToCptRankings(cptRanking)
@@ -490,6 +491,7 @@ class DataService {
             player.creator = it.creator
             player.pictureUrl = it.pictureUrl
             player.description = it.description
+            player.liquipedia = it.liquipedia
             player.pictureCopyright = it.pictureCopyright
             player.mainGame = it.mainGame?.name()
             player.cptPrize = it.cptPrize ?: 0
@@ -632,6 +634,15 @@ class DataService {
                 it.player = p2
                 it.save(failOnError: true, flush: true)
             }
+            if (p1.description && !p2.description) p2.description = p1.description
+            if (p1.twitch && !p2.twitch) p2.twitch = p1.twitch
+            if (p1.twitter && !p2.twitter) p2.twitter = p1.twitter
+            if (p1.realname && !p2.realname) p2.realname = p1.realname
+            if (p1.smashId && !p2.smashId) p2.smashId = p1.smashId
+            if (p1.alias && !p2.alias) p2.alias = p1.alias
+            if (p1.pictureUrl && !p2.pictureUrl) p2.pictureUrl = p1.pictureUrl
+            if (p1.liquipedia && !p2.liquipedia) p2.liquipedia = p1.liquipedia
+            if (p1.creator && !p2.creator) p2.creator = p1.creator
             p1.delete(failOnError: true)
             p2.save(failOnError: true)
         }

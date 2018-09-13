@@ -8,13 +8,13 @@ class Player
         name nullable: false, unique: true
         countryCode nullable: true
         videos nullable: true, unique: false
-        wikilink nullable: true
+        wikilink nullable: true, editable: false
         twitter nullable: true
         rankings nullable: false
         realname nullable: true
         alias nullable: true, unique: false, editable: true
         pictureUrl nullable: true
-        description nullable: true, widget: 'textarea'
+        description nullable: true, widget: 'textarea', editable: true
         pictureCopyright nullable: true
         hardware nullable: true
         maxoplataId nullable: true
@@ -23,8 +23,10 @@ class Player
         twitch nullable: true
         creator nullable: true, editable: false
         cptPrize nullable: false, editable: false
+        cptTournaments nullable: false, editable: false
         codename nullable: true, unique: true, editable: false
         simplified nullable: true, unique: false, editable: false
+        liquipedia nullable: true, unique: true, editable: true
     }
 
     static mapping = {
@@ -56,6 +58,7 @@ class Player
     String onlineId
     String twitch
     String alias
+    String liquipedia
     static hasMany = [videos: String, results: Result, teams: Team, rankings: PlayerRanking, cptRankings: CptRanking]
 
     static String pattern = /[^\dA-Za-z]/
