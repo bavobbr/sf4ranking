@@ -102,12 +102,22 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-right" role="search"
+                              action="${createLink(action: 'search', controller: 'rankings')}" id="searchBarForm">
+                            <div class="form-group">
+                                <input id="playerSearchBar" class="form-control" placeholder="Find a Player" name="player"
+                                       title="Press <ENTER> for advanced search">
+                            </div>
+                        </form>
+
+
                         <li class="dropdown">
                             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Rankings</a>
                             <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
                                 <li><g:link action="index" controller="rankings">Overview</g:link></li>
                                 <li><g:link action="teams" controller="rankings">Player Teams</g:link></li>
                                 <li><g:link action="index" controller="stats">Character Balance and Tiers</g:link></li>
+                                <li><g:link controller="gear">Controllers</g:link></li>
                                 <li class="divider"></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.SF5.name()]">World Rankings Street Fighter 5</g:link></li>
@@ -115,6 +125,8 @@
                                             params="['id': Version.MVCI.name()]">World Rankings Marvel Infinite</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.DBFZ.name()]">World Rankings Dragon Ball Fighterz</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.BBTAG.name()]">World Rankings Blazblue Cross Tag Battle</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
@@ -157,6 +169,8 @@
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.DBFZ.name()]">Dragon Ball Fighterz</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.BBTAG.name()]">Blazblue Cross Tag Battle</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.INJUSTICE2.name()]">Injustice 2</g:link></li>
@@ -183,7 +197,6 @@
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.VANILLA.name()]">SF4</g:link></li>
                             </ul>
                         </li>
-                        <li><g:link controller="gear">Controllers</g:link></li>
 
 
                         <li class="dropdown">
@@ -204,6 +217,11 @@
                                 <li><g:link action="cpt_2017" controller="rankings">Archived Standings 2017</g:link></li>
                                 <li><g:link action="cptStats_2017" controller="rankings">Archived Tournaments and countries 2017</g:link></li>
                                 <li><g:link action="cptCharacterStats_2017" controller="rankings">Archived Characters used 2017</g:link></li>
+                                <li class="divider"></li>
+                                <li><g:link action="cpt_2018" controller="rankings">Archived Standings 2018</g:link></li>
+                                <li><g:link action="cptStats_2018" controller="rankings">Archived Tournaments and countries 2018</g:link></li>
+                                <li><g:link action="cptCharacterStats_2018" controller="rankings">Archived Characters used 2018</g:link></li>
+
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -273,7 +291,9 @@
 
         <div class="container">
             <div class="row">
+                <div class="col-xs-12">
                 <g:layoutBody/>
+                </div>
             </div> <!-- row -->
         </div> <!-- container -->
 
@@ -281,7 +301,7 @@
             <div class="container">
                 <div class="row">
                         <div class="col-md-6">
-                            <h4>SRK Data &copy; 2013-2017 Bavo Bruylandt</h4>
+                            <h4>SRK Data &copy; 2013-2018 Bavo Bruylandt</h4>
                         </div>
                 </div> <!-- row -->
                 <div class="row">
@@ -292,7 +312,7 @@
             </div> <!-- container -->
         </aside> <!-- footer-widgets -->
         <footer id="footer">
-            <p>&copy; 2017 <a href="#">SRK</a>, inc. All rights reserved.</p>
+            <p>&copy; 2018 <a href="#">SRK</a>, inc. All rights reserved.</p>
         </footer>
 
     </div> <!-- boxed -->
@@ -425,17 +445,16 @@
             window.location = "${createLink(action: 'player', controller: 'rankings')}/byname/" + uid
         }
 
-        $("#playerSearch").autocomplete({
-            source: ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"]
-            //source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}",
-            //minLength: 3,
-/*            select: function (event, ui)
+        $("#playerSearchBar").autocomplete({
+            source: "${createLink(action: 'autocompletePlayer', controller: 'rankings')}", minLength: 3,
+            select: function (event, ui)
             {
                 if (ui.item) search(ui.item.value);
-            }*/
+            }
         });
     });
 </script>
+
 <script>
     $(function ()
     {
@@ -481,6 +500,19 @@
             if (e.which == 13)
             {
                 $('#searchForm').submit();
+                return false;    //<---- Add this line
+            }
+        });
+    })
+</script>
+<script>
+    $(document).ready(function ()
+    {
+        $('#playerSearch').keypress(function (e)
+        {
+            if (e.which == 13)
+            {
+                $('#searchFormBar').submit();
                 return false;    //<---- Add this line
             }
         });

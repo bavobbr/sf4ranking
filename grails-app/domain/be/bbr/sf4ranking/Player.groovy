@@ -26,7 +26,7 @@ class Player
         cptTournaments nullable: false, editable: false
         codename nullable: true, unique: true, editable: false
         simplified nullable: true, unique: false, editable: false
-        liquipedia nullable: true, unique: true, editable: true
+        liquipedia nullable: true, unique: false, editable: true
     }
 
     static mapping = {

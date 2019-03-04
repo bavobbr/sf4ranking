@@ -308,7 +308,7 @@
                 <div class="footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="large">FGC World Rankings &copy; 2013-2017 Bavo Bruylandt</p>
+                            <p class="large">FGC World Rankings &copy; 2013-2018 Bavo Bruylandt</p>
                         </div>
 
                         <div class="col-md-2">

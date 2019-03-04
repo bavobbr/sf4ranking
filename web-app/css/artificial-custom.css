@@ -1,3 +1,7 @@
+.navbar-right {
+    margin-right: 0px;
+}
+
 div.top10 {
     border-radius: 33px 33px 33px 33px;
     -moz-border-radius: 33px 33px 33px 33px;
@@ -31,6 +35,16 @@ div.top100 {
     -webkit-border-radius: 33px 33px 33px 33px;
     border: 2px dotted #b2d1ff;
     font-size: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.navbar-form {
+    margin-bottom: 0px;
+}
+
+div.spacer {
+    padding: 10px;
     text-align:center;
     vertical-align:middle;
 }

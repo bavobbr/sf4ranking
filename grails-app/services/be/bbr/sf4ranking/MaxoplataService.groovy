@@ -56,6 +56,7 @@ class MaxoplataService
             case Version.KI: return ["KI"]
             case Version.T7: return ["T7"]
             case Version.DBFZ: return ["DBFZ"]
+            case Version.BBTAG: return ["BB:CTB"]
             case Version.INJUSTICE2: return ["Injustice 2"]
             default: return [version.name()]
         }

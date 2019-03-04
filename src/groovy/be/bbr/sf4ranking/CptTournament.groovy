@@ -14,7 +14,8 @@ public enum CptTournament
     EVO("Evolution tier"),
     CC("Capcom Cup"),
     REGIONAL_FINAL("Regional Final"),
-    ONLINE_EVENT("Online Event")
+    ONLINE_EVENT("Online Event"),
+    REGIONAL_OPEN("Regional Open")
 
     private final String value
 
@@ -43,6 +44,13 @@ public enum CptTournament
         return premiers
     }
 
+    public static List<CptTournament> regionfinals() {
+        List<CptTournament> premiers = new ArrayList<CptTournament>()
+        premiers.add(REGIONAL_OPEN)
+        premiers.add(REGIONAL_FINAL)
+        return premiers
+    }
+
 
     public static CptTournament fromString(String input) {
         if (input == null || input.length() == 0) return null
@@ -60,6 +68,7 @@ public enum CptTournament
             case ONLINE_EVENT: return getRankingScore(place)
             case PREMIER: return getPremierScore(place)
             case REGIONAL_FINAL: return getRegionalFinalScore(place)
+            case REGIONAL_OPEN: return getPremierScore(place)
             case PREMIER_SCORELESS: return 0
             case EVO: return getEvoScore(place)
             case QUALIFIER: return getRankingScore(place)
@@ -81,7 +90,9 @@ public enum CptTournament
             case EVO:
                 return getEvoPrize(place)
             case REGIONAL_FINAL:
-                return getRegionalFinalPrize(place)
+                return getPremierPrize(place)
+            case REGIONAL_OPEN:
+                return getPremierPrize(place)
             case QUALIFIER:
                 return getRegionalFinalPrize(place)
             case NONE:
@@ -99,7 +110,8 @@ public enum CptTournament
             case RANKING: return 0
             case ONLINE_EVENT: return 0
             case PREMIER: return getPremierPrize(place)
-            case REGIONAL_FINAL: return getRegionalFinalPrize(place)
+            case REGIONAL_FINAL: return getPremierPrize(place)
+            case REGIONAL_OPEN: return getPremierPrize(place)
             case PREMIER_SCORELESS: return getPremierPrize(place)
             case EVO: return getEvoPrize(place)
             case QUALIFIER: return 0

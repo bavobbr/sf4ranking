@@ -84,10 +84,34 @@ class DataService {
             if (charmatcher.count > 0) {
                 boolean first = true
                 String allchars = charmatcher[0][1]
-                allchars.split(",").each {
+                String teamSplit1 = ","
+                String teamSplit2 = "\\|"
+                String charSplit = "/"
+                def validForm = true
+                def reverseForm = false
+                if (!tournament.game.isVariableCharacter()) {
+                    validForm = allchars.split("$teamSplit1|$teamSplit2").every {
+                        it.split(charSplit).size() == tournament.game.teamSize
+                    }
+                    if (!validForm) {
+                        log.warn("Not valid char team form, trying reverse...")
+                        reverseForm = allchars.split("$charSplit|$teamSplit2").every {
+                            it.split(teamSplit1).size() == tournament.game.teamSize
+                        }
+                    }
+                }
+                if (reverseForm) {
+                    log.warn("Applying reverse form for $allchars")
+                    teamSplit1 = "/"
+                    charSplit = ","
+                }
+                if (!validForm && !reverseForm) {
+                    log.warn("Could not find form of input of line: $allchars")
+                }
+                allchars.split("$teamSplit1|$teamSplit2").each {
                     GameTeam team = new GameTeam()
                     log.info "team: ${it.trim()}"
-                    it.split("/").each {
+                    it.split(charSplit).each {
                         CharacterType ctype = CharacterType.fromString(it.toUpperCase(), Version.generalize(tournament.game)) ?:
                                 CharacterType.UNKNOWN
                         team.addToPchars(new GameCharacter(characterType: ctype, main: first))

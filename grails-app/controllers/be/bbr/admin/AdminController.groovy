@@ -80,10 +80,10 @@ class AdminController
     }
 
     def resetProTour() {
-/*        Tournament.list().each {
+        Tournament.list().each {
             it.cptTournament = CptTournament.NONE
             it.save(failOnError: true, flush: true)
-        }*/
+        }
         Player.list().each { p ->
             println "dropping rankings of player $p.name"
             p.cptPrize = 0

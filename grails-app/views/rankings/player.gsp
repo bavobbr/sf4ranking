@@ -196,13 +196,32 @@
             </p>
         </g:else>
         <br/>
-        <script id="mNCC" language="javascript">
-            medianet_width = "468";
-            medianet_height = "60";
-            medianet_crid = "449988581";
+%{--        <script id="mNCC" language="javascript">
+            medianet_width = "300";
+            medianet_height = "250";
+            medianet_crid = "839144714";
             medianet_versionId = "3111299";
         </script>
-        <script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>
+        <script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>--}%
+
+
+        <script type="text/javascript">
+            amzn_assoc_tracking_id = "fgwora-20";
+            amzn_assoc_ad_mode = "manual";
+            amzn_assoc_ad_type = "smart";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+            amzn_assoc_design = "enhanced_links";
+            amzn_assoc_asins = "B07L6KD1K3";
+            amzn_assoc_placement = "adunit";
+            amzn_assoc_linkid = "6b679290b129908eef2fdae327456a12";
+        </script>
+        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
+
+
+
+
     </div>
 </div>
 
@@ -383,71 +402,7 @@
 
 </div>
 
-%{--<div class="row top10box" align="center">
-    <script type="text/javascript">
-        amzn_assoc_placement = "adunit0";
-        amzn_assoc_search_bar = "false";
-        amzn_assoc_tracking_id = "capcomkindle-20";
-        amzn_assoc_ad_mode = "search";
-        amzn_assoc_ad_type = "smart";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "US";
-        amzn_assoc_title = "Kindle books";
-        amzn_assoc_default_search_phrase = "capcom game";
-        amzn_assoc_default_category = "KindleStore";
-        amzn_assoc_linkid = "30850ec2afc5d728b020a4c3e6114822";
-        amzn_assoc_default_browse_node = "133140011";
-    </script>
-    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-</div>--}%
-<center>
-    <div class="row top10box" style="margin-top: 20px" align="center">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/291193?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="cammy_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
 
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/284559?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="chun_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
-
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/259832?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="akuma_small.png" class="img-responsive"/>
-                    </g:link>
-
-                </div>
-
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/149208?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="sf_mini_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
-            </div>
-        </div>
-    </div>
-</center>
-
-%{--        <div class="tab-pane" id="videos">
-            <g:if test="${player.videos}">
-                <h2>Player videos <small>found ${player.videos.size()} videos</small></h2>
-
-                <div class="row">
-                    <g:each in="${player.videos}" var="video">
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <div class="flex-video widescreen"><iframe src="//www.youtube.com/embed/${video}" frameborder="0"
-                                                                           allowfullscreen></iframe></div>
-                            </a>
-                        </div>
-                    </g:each>
-                </div>
-            </g:if></div>--}%
 
 <script>
     // Javascript to enable link to tab

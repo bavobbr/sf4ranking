@@ -1,9 +1,9 @@
 import be.bbr.sf4ranking.CountryCode
 import groovy.json.JsonSlurper
 
-def gamename = "GGXRD"
-def smashname = "Guilty Gear Xrd REV2"
-def smashtournament = "evo-2018"
+def gamename = "SF5"
+def smashname = "capcom"
+def smashtournament = "capcom-cup-2018-sfvae-last-chance-qualifier"
 def useCpt = false
 
 
@@ -23,7 +23,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["evo_2018"]
+def files = ["capcom_cup_2018_sfvae_last_chance_qualifier"]
 def smashids = []
 def smashIdToPool = [:]
 def smashIdToAttendee = [:]

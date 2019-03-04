@@ -81,7 +81,7 @@ h2 {
 .container { 
 	background: #fff; 
 	margin: 0 auto;
-	padding: 0;
+	padding: 20px;
 	-moz-box-shadow: 5px 0 0 rgba(0,0,0,0.03), -5px 0 0 rgba(0,0,0,0.03);
 	-webkit-box-shadow: 5px 0 0 rgba(0,0,0,0.03), -5px 0 0 rgba(0,0,0,0.03);
 	box-shadow: 5px 0 0 rgba(0,0,0,0.03), -5px 0 0 rgba(0,0,0,0.03);
@@ -311,6 +311,11 @@ a.nextLink {
 
 table tfoot tr td {
 	padding: 4px;
+}
+div.spacer {
+	padding: 10px;
+	text-align:center;
+	vertical-align:middle;
 }
 
 div.top10 {

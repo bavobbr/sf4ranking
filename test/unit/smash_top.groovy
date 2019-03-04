@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gamename = "MVCI"
-def smashname = "marvel"
+def gamename = "SF5"
+def smashname = "capcom"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["evo_2018_official_mvci_side_event"]
+def files = ["capcom_cup_2018_sfvae_last_chance_qualifier"]
 def smashids = []
 
 def entries = []

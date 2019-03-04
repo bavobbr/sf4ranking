@@ -25,7 +25,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["evo_2018"]
+def files = ["capcom_cup_2018_sfvae_last_chance_qualifier"]
 def idToPool = [:]
 def idToSeed = [:]
 def idToName = [:]

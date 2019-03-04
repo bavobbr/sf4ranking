@@ -342,7 +342,7 @@ class StatsController
         characters.each {GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
-            def score = ScoringSystem.getScore(r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+            def score = ScoringSystem.getLegacyScore(r.place, r.tournament.weight, r.tournament.tournamentFormat)
             stats.scoreAccumulated += score
             stats.rankAccumulated += 33 - r.place
         }

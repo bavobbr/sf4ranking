@@ -67,8 +67,12 @@ class RankingService {
             if (!tournaments) return
             // AUTO weighting starts from premier 5
             def lastTournament = tournaments.sort { Tournament t -> t.date }.last()
-            println "Using last tournament $lastTournament on ${lastTournament.date} as reference"
-            def yearAgo = lastTournament.date.minus(365)
+            Date lastDate = lastTournament.date
+            if (game.end && game.end.isBefore(lastTournament.date.time)) {
+                lastDate = game.end.toDate()
+            }
+            println "Using last tournament $lastTournament on ${lastTournament.date} as reference, last date is $lastDate"
+            def yearAgo = lastDate.minus(365)
 
             tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
             println "year ago is $yearAgo"
@@ -140,10 +144,21 @@ class RankingService {
                                     if (it.tournament.cptTournament == CptTournament.RANKING || it.tournament.cptTournament == CptTournament.ONLINE_EVENT) {
                                         if (p.countryCode?.region && p.countryCode.region == it.tournament.region) {
                                             switch (it.tournament.region) {
-                                                case Region.AO: cptScoreAO += score; break;
-                                                case Region.LA: cptScoreLA += score; break;
-                                                case Region.NA: cptScoreNA += score; break;
-                                                case Region.EU: cptScoreEU += score; break;
+                                                case Region.AO: cptScoreAO += score; break
+                                                case Region.LA: cptScoreLA += score; break
+                                                case Region.NA: cptScoreNA += score; break
+                                                case Region.EU: cptScoreEU += score; break
+                                            }
+                                        }
+                                    }
+                                    if (it.tournament.cptTournament == CptTournament.REGIONAL_OPEN) {
+                                        if (p.countryCode?.region && p.countryCode.region == it.tournament.region) {
+                                            def openscore = CptTournament.RANKING.getScore(it.place)
+                                            switch (it.tournament.region) {
+                                                case Region.AO: cptScoreAO += openscore; break
+                                                case Region.LA: cptScoreLA += openscore; break
+                                                case Region.NA: cptScoreNA += openscore; break
+                                                case Region.EU: cptScoreEU += openscore; break
                                             }
                                         }
                                     }
@@ -452,29 +467,25 @@ class RankingService {
             def playersLA = queryService.findCptPlayers(Region.LA)
             def playersAO = queryService.findCptPlayers(Region.AO)
             def playersEU = queryService.findCptPlayers(Region.EU)
-            applyDirectQualifiers()
+            def direct = applyDirectQualifiers()
             applyRegionalInvites(Region.NA, playersNA)
             applyRegionalInvites(Region.LA, playersLA)
             applyRegionalInvites(Region.AO, playersAO)
             applyRegionalInvites(Region.EU, playersEU)
-            boolean naDirect = applyRegionalWinners(Region.NA, playersNA)
-            boolean laDirect = applyRegionalWinners(Region.LA, playersLA)
-            boolean aoDirect = applyRegionalWinners(Region.AO, playersAO)
-            boolean euDirect = applyRegionalWinners(Region.EU, playersEU)
-            def extraspots = 4
-            if (naDirect) extraspots--
-            if (laDirect) extraspots--
-            if (aoDirect) extraspots--
-            if (euDirect) extraspots--
-            def totalPointSpots = 26 + extraspots
+            Player naDirect = applyRegionalWinners(Region.NA, playersNA, players)
+            Player laDirect = applyRegionalWinners(Region.LA, playersLA, players)
+            Player aoDirect = applyRegionalWinners(Region.AO, playersAO, players)
+            Player euDirect = applyRegionalWinners(Region.EU, playersEU, players)
+            def totalPointSpots = 26
+            if (direct.cptGlobal().rank <= 26) totalPointSpots++
             applyQualifiedByScore(players, totalPointSpots)
-
         }
     }
 
-    private void applyDirectQualifiers() {
+    private Player applyDirectQualifiers() {
         def player = Player.findByName("MenaRD")
         player.findOrCreateCptRanking(Region.GLOBAL).qualified = true
+        return player
     }
 
 
@@ -496,29 +507,36 @@ class RankingService {
                 it.findCptRanking(region).qualifiedByScore = false // reset
             }
         }
-        regionalPlayers.findAll { it.countryCode?.region == region}.sort { it.cptScore(region) }.reverse().take(7).each {
+        regionalPlayers.findAll { it.countryCode?.region == region}.sort { it.cptScore(region) }.reverse().take(8).each {
             it.findOrCreateCptRanking(region).qualifiedByScore = true
         }
     }
 
-    private boolean applyRegionalWinners(Region region, List<Player> regionalPlayers) {
+    private Player applyRegionalWinners(Region region, List<Player> regionalPlayers, List<Player> globalPlayers) {
         println "MARKING REGIONAL FINAL WINNER $region"
-        boolean outsider = false
+        Player selected = null
         regionalPlayers.each {
             if (it.findCptRanking(region)) {
                 it.findCptRanking(region).qualified = false // reset
             }
             def cptFinals = it.results.find { it.tournament.cptTournament == CptTournament.REGIONAL_FINAL && it.tournament.region == region}
             if (cptFinals && cptFinals.place == 1) {
-                it.findCptRanking(region).qualified = true
-                println "MARKED REGIONAL FINAL WINNER $region $it"
-                if (it.cptGlobal().rank >= 27) {
-                    outsider = true
+                if (it.cptGlobal().rank >= 26) {
+                    selected = it
                     println "WINNER IS AN OUTSIDER $it"
+                    it.findCptRanking(region).qualified = true
+                }
+                else {
+                    println "MARKED REGIONAL FINAL WINNER $region $it"
+                    it.findCptRanking(region).qualified = true
+                    selected = globalPlayers.find {
+                        it.countryCode.region == region && it.cptGlobal().rank > 26
+                    }
+                    selected.findCptRanking(region).qualified = true
                 }
             }
         }
-        return outsider
+        return selected
     }
 
 }

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="artificial"/>
-    <title>Capcom Pro Tour Rankings 2018 - ${game.value}</title>
+    <title>Capcom Pro Tour Rankings 2019 - ${game.value}</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@ Green means directly qualified, blue means qualification by points in the open g
         <g:each in="${players}" var="p">
 
             <tr class="${p.cptGlobal().score >= 564 ? 'qual' : 'unqual'} ${p.cptGlobal()?.qualified ? 'direct' : 'unqual'}">
-                <td class="${p.cptGlobal().rank <= 31? 'warning' : ''}">
+                <td class="${p.cptGlobal().rank <= 32? 'warning' : ''}">
                     ${p.cptGlobal().rank}
                 </td>
                 <td>
@@ -120,36 +120,6 @@ The global board has 1 direct qualified player, 30 global points spots. One spot
     </div>
 </div>--}%
 
-<div class="row top10box" style="margin-top: 20px" align="center">
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/575800?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="sf5_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/281479?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="sf5fist_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/270996?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="jin_small.png" class="img-responsive"/>
-                </g:link>
-
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/250306?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="gief_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <g:each in="${regionalPlayers.keySet()}" var="region" status="ridx">
@@ -251,56 +221,7 @@ The first 7 players from this region will be invited to a regional final that sc
 
 </g:each>
 
-%{--<div class="row top10box" align="center">
-    <div class="col-md-12" align="center">
-        <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "capcombooks-20";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Gaming Books";
-            amzn_assoc_default_search_phrase = "capcom";
-            amzn_assoc_default_category = "Books";
-            amzn_assoc_linkid = "2093b0ce7f3bad6de66a5be83c60edc5";
-            amzn_assoc_default_browse_node = "283155";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    </div>
-</div>--}%
 
-<div class="row top10box" style="margin-top: 20px" align="center">
-    <div class="panel panel-primary">
-        <div class="panel-body">
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/291193?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="cammy_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/284559?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="chun_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/259832?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="akuma_small.png" class="img-responsive"/>
-                </g:link>
-
-            </div>
-
-            <div class="col-md-3">
-                <g:link url="https://displate.com/displate/149208?merch=5b5a0ec49ef2b">
-                    <g:img dir="images/displate" file="sf_mini_small.png" class="img-responsive"/>
-                </g:link>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {

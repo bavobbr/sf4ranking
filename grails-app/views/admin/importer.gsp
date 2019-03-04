@@ -141,7 +141,7 @@
     <div class="form-group">
         <label for="tresults">Results (1 up 64 max, mouse over for tips. Use the validate buttons before submit to verify)<br/>
         Ranking numbers and team names are stripped automatically if in format 'rank. team | playername'<br/>
-        Characters are defined by follwing player name with '(character)'
+        Characters are defined by following player name with '(character)'. Characters in a team are split using "," or "/". Character teams are split using ",", "/" or "|".
         </label>
         <g:textArea id = "tresults" name="tresults" class="form-control" rows="20" placeholder="first player (RYU,SAGAT)"
                     title="${hint}" value="${suggestedContent}"/>

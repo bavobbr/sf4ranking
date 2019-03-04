@@ -78,35 +78,32 @@
 
         <table class="table table-striped table-hover table-condensed table-responsive">
             <tr>
-                %{--
-                                <td class="amazon_row">
-                                    <script type="text/javascript">
-                                        amzn_assoc_placement = "adunit0";
-                                        amzn_assoc_tracking_id = "mainpage-custom-20";
-                                        amzn_assoc_ad_mode = "manual";
-                                        amzn_assoc_ad_type = "smart";
-                                        amzn_assoc_marketplace = "amazon";
-                                        amzn_assoc_region = "US";
-                                        amzn_assoc_title = "Books";
-                                        amzn_assoc_linkid = "fcb2f349ac65c1d244296f36cd2bf49f";
-                                        amzn_assoc_asins = "B079WPXRC5,B01JOEKKWU,B074N7GFRP,1465414584,1927925193,B079342TFC,B01BVJ1U3Y,1421525666";
-                                        amzn_assoc_search_bar = "false";
-                                    </script>
-                                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-                                </td>
-                --}%
                 <td class="amazon_row">
-   %{--                 <g:link url="https://displate.com/displate/592124?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="ryu_large.png" class="img-responsive"/>
-                    </g:link>
-                </td>--}%
-                <script id="mNCC" language="javascript">
-                    medianet_width = "336";
-                    medianet_height = "280";
-                    medianet_crid = "592703599";
-                    medianet_versionId = "3111299";
-                </script>
-                <script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>
+                    <script type="text/javascript">
+                        amzn_assoc_tracking_id = "fgwora-20";
+                        amzn_assoc_ad_mode = "manual";
+                        amzn_assoc_ad_type = "smart";
+                        amzn_assoc_marketplace = "amazon";
+                        amzn_assoc_region = "US";
+                        amzn_assoc_design = "enhanced_links";
+                        amzn_assoc_asins = "B07MVP7K6Z";
+                        amzn_assoc_placement = "adunit";
+                        amzn_assoc_linkid = "d3dcc04866363f3af5048b4e0e9804eb";
+                    </script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+<br/>
+                    <script type="text/javascript">
+                        amzn_assoc_tracking_id = "fgwora-20";
+                        amzn_assoc_ad_mode = "manual";
+                        amzn_assoc_ad_type = "smart";
+                        amzn_assoc_marketplace = "amazon";
+                        amzn_assoc_region = "US";
+                        amzn_assoc_design = "enhanced_links";
+                        amzn_assoc_asins = "B07L6K5117";
+                        amzn_assoc_placement = "adunit";
+                        amzn_assoc_linkid = "aa82c908b72962dec48645de6a8052f0";
+                    </script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 
             </tr>
         </table>
@@ -161,17 +158,32 @@
 <div class="row">
     <div class="col-md-6 top10box">
         <td class="amazon_row">
-%{--            <g:link url="https://displate.com/displate/592812?merch=5b5a0ec49ef2b">
-                <g:img dir="images/displate" file="scorpion_large.png" class="img-responsive"/>
-            </g:link>
-        </td>--}%
-            <script id="mNCC" language="javascript">
-                medianet_width = "336";
-                medianet_height = "280";
-                medianet_crid = "592703599";
-                medianet_versionId = "3111299";
+            <script type="text/javascript">
+                amzn_assoc_tracking_id = "fgwora-20";
+                amzn_assoc_ad_mode = "manual";
+                amzn_assoc_ad_type = "smart";
+                amzn_assoc_marketplace = "amazon";
+                amzn_assoc_region = "US";
+                amzn_assoc_design = "enhanced_links";
+                amzn_assoc_asins = "B01N5OKGLH";
+                amzn_assoc_placement = "adunit";
+                amzn_assoc_linkid = "89415fc09da7131289c63003a8273cf6";
             </script>
-            <script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+            <br/>
+            <script type="text/javascript">
+                amzn_assoc_tracking_id = "fgwora-20";
+                amzn_assoc_ad_mode = "manual";
+                amzn_assoc_ad_type = "smart";
+                amzn_assoc_marketplace = "amazon";
+                amzn_assoc_region = "US";
+                amzn_assoc_design = "enhanced_links";
+                amzn_assoc_asins = "B07HCTJC91";
+                amzn_assoc_placement = "adunit";
+                amzn_assoc_linkid = "8aac245e0ad381fac70d68a01bb6c2ec";
+            </script>
+            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
     </div>
 
     <div class="col-md-6 top10box">
@@ -196,8 +208,6 @@
 </div>
 
 
-
-
 <div class="row">
 
     <div class="col-md-6 top10box">
@@ -211,54 +221,8 @@
     </div>
 </div>
 
-%{--<center>
-    <div class="row top10box" style="margin: auto">
-        <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "capcombooks-20";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Gaming Books";
-            amzn_assoc_default_search_phrase = "capcom";
-            amzn_assoc_default_category = "Books";
-            amzn_assoc_linkid = "2093b0ce7f3bad6de66a5be83c60edc5";
-            amzn_assoc_default_browse_node = "283155";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    </div>
-</center>--}%
-<center>
-    <div class="row top10box" style="margin: auto">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/291193?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="cammy_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/284559?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="chun_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/259832?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="akuma_small.png" class="img-responsive"/>
-                    </g:link>
 
-                </div>
-                <div class="col-md-3">
-                    <g:link url="https://displate.com/displate/149208?merch=5b5a0ec49ef2b">
-                        <g:img dir="images/displate" file="sf_mini_small.png" class="img-responsive"/>
-                    </g:link>
-                </div>
-            </div>
-        </div>
-    </div>
-</center>
+
 
 <div class="row">
     <div class="col-md-7">

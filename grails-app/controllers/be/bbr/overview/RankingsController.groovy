@@ -40,6 +40,7 @@ class RankingsController
         def ggplayers = queryService.findPlayers(null, null, 10, 0, Version.GGXRD)
         def mvciplayers = queryService.findPlayers(null, null, 10, 0, Version.MVCI)
         def dbfzplayers = queryService.findPlayers(null, null, 10, 0, Version.DBFZ)
+        def bbtagplayers = queryService.findPlayers(null, null, 10, 0, Version.BBTAG)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def last10Tournaments = queryService.lastTournaments(null, 10)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
@@ -49,7 +50,7 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        [bbtagplayers: bbtagplayers, dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()
@@ -84,9 +85,13 @@ class RankingsController
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def snapshot = null
         def lastTournament = queryService.lastTournament(pgame)
+        Date lastDate = lastTournament.date
+        if (pgame.end && pgame.end.isBefore(lastTournament.date.time)) {
+            lastDate = pgame.end.toDate()
+        }
         println "Last tournament : $lastTournament"
         if (lastTournament) {
-            def yearAgo = lastTournament?.date?.minus(365+182)
+            def yearAgo = lastDate.minus(365+182)
             if (players && !players.isEmpty()) {
                 snapshot = players?.first()?.snapshot(pgame)
                 players.each {
@@ -114,6 +119,11 @@ class RankingsController
     def cpt_2017() {}
     def cptStats_2017() {}
     def cptCharacterStats_2017() {}
+
+    def cpt_2018() {}
+    def cptStats_2018() {}
+    def cptCharacterStats_2018() {}
+
 
     @Cacheable('cpt')
     def cpt()
@@ -180,7 +190,7 @@ class RankingsController
             t.cptTournament in [CptTournament.RANKING]
         }
         def pointTournaments = comingTournaments.count { Tournament t ->
-            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT, CptTournament.EVO, CptTournament.PREMIER, CptTournament.REGIONAL_FINAL]
+            t.cptTournament in [CptTournament.RANKING, CptTournament.ONLINE_EVENT, CptTournament.EVO, CptTournament.PREMIER, CptTournament.REGIONAL_OPEN]
         }
         def pastTournaments = queryService.pastCptTournaments()
         Map<Region, List<Player>> regionalQualifyingHistories = [:]
@@ -191,7 +201,7 @@ class RankingsController
                 if (t.cptTournament in [CptTournament.PREMIER_SCORELESS, CptTournament.PREMIER, CptTournament.EVO, CptTournament.REGIONAL_FINAL]) {
                     return t.results?.sort { it.place }?.first()?.player?.name
                 }
-                else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT) {
+                else if (t.cptTournament == CptTournament.RANKING || t.cptTournament == CptTournament.ONLINE_EVENT || t.cptTournament == CptTournament.REGIONAL_OPEN) {
                     return t.results?.sort { it.place }?.first()?.player?.name
                 }
                 else return ""

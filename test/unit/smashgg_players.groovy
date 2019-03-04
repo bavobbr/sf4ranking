@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "the-mixup-2018"
+def tournament = "capcom-cup-2018-1"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -79,7 +79,7 @@ while (hasNext) {
         }
         node.pools.each { poolnode ->
             def event = attendee.events.find { it.id == poolnode.eventId }
-            if (poolnode.phaseOrder == 1 || poolnode.phaseName == "Phase 1") {
+            if (poolnode.phaseOrder == 1 || poolnode.phaseName == "Phase 1" || poolnode.phaseName == "Pools") {
                 def poolobj = new Pool(id: poolnode.phaseGroupId, name: poolnode.phaseName, group: poolnode.groupName, phaseId: poolnode.phaseId)
                 event.pools << poolobj
                 def phasedata = getPhaseData(poolnode.phaseGroupId)
