@@ -12,12 +12,12 @@
 
     <title>Capcom Pro Tour 2018 Player and Character Stats</title>
 
-    <link rel="shortcut icon" href="/sf4ranking/assets/img/favicon.png" />
+    <link rel="shortcut icon" href="/assets/img/favicon.png" />
 
     <meta name="description" content="">
 
     <!-- CSS -->
-    <link href="/sf4ranking/assets/css/preload.css" rel="stylesheet">
+    <link href="/assets/css/preload.css" rel="stylesheet">
 
     <!-- Compiled in vendors.js -->
     <!--
@@ -31,30 +31,30 @@
     <link href="assets/css/buttons.css" rel="stylesheet">
     -->
 
-    <link href="/sf4ranking/assets/css/vendors.css" rel="stylesheet">
-    <link href="/sf4ranking/assets/css/syntaxhighlighter/shCore.css" rel="stylesheet" >
+    <link href="/assets/css/vendors.css" rel="stylesheet">
+    <link href="/assets/css/syntaxhighlighter/shCore.css" rel="stylesheet" >
 
     <!-- RS5.0 Stylesheet -->
     <!--<link rel="stylesheet" type="text/css" href="assets/css/settings.css">
     <link rel="stylesheet" type="text/css" href="assets/css/layers.css">
     <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">-->
 
-    <link href="/sf4ranking/assets/css/style-blue2.css" rel="stylesheet" title="default">
-    <link href="/sf4ranking/assets/css/width-full.css" rel="stylesheet" title="default">
+    <link href="/assets/css/style-blue2.css" rel="stylesheet" title="default">
+    <link href="/assets/css/width-full.css" rel="stylesheet" title="default">
 
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="/sf4ranking/assets/js/html5shiv.min.js"></script>
-        <script src="/sf4ranking/assets/js/respond.min.js"></script>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/tablecloth.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/prettify.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/artificial-custom.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/bootstrap-tables.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/tablecloth.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/prettify.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/artificial-custom.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/bootstrap-tables.css" type="text/css">
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -70,7 +70,7 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1552062418442064&ev=PageView&noscript=1"/>
     </noscript>
 
-    <script src="/sf4ranking/assets/js/vendors.js"></script>
+    <script src="/assets/js/vendors.js"></script>
 
 
 </head>
@@ -108,7 +108,7 @@
                     <ul>
                         <li>Players qualified directly: <i>Gachikun, Punk, MenaRD, AngryBird, Crossover</i></li>
                         <li>Players qualifying by global score: <i>Tokido, Fujimura, Problem X, Fuudo, Sako, Justin Wong, NL, OilKing, NuckleDu, Daigo Umehara, Infiltration, Luffy, Haitani, Xiaohai, Phenom, Caba, Big Bird, Gachikun, Xian, CJ Truth, Bonchan, Mago, Punk, Itabashi Zangief, Momochi, stormKUBO</i></li>
-                        <li>Players qualifying for regional final: <i>Tokido, Fujimura, Problem X, Fuudo, Sako, Justin Wong, NL, NuckleDu, Luffy, Phenom, Caba, Gachikun, Xian, CJ Truth, Punk, MenaRD, Toi, Brolynho, MoMi, DoomSnake507, Hkdash, Chuan, Nephew, Idom, Hurricane, Flash, Pikoro, Swagskheletor, AngryBird, Keoma, RASS, Paulow3b</i></li>
+                        <li>Players qualifying for regional final: <i>Tokido, Fujimura, Problem X, Fuudo, Sako, Justin Wong, NL, NuckleDu, Luffy, Phenom, Caba, Gachikun, Xian, CJ Truth, Punk, MenaRD, Toi, Brolynho, MoMi, DoomSnake507, Hkdash, Chuan, Nephew, Idom, Hurricane, Flash, Pikoro, Swagskheletor, AngryBird, Keoma, RASS, Maximof</i></li>
                     </ul>
 
                     Note that in early stages only 'qualified' players are guaranteed. The others are still fighting for points to qualify. 1 place is reserved for a last chance qualifier before the Capcom Cup.
@@ -183,9 +183,15 @@
                             </tr>
 
                             <tr>
+                                <td>Nash</td>
+                                <td>1</td>
+                                <td>Bonchan</td>
+                            </tr>
+
+                            <tr>
                                 <td>Karin</td>
-                                <td>2</td>
-                                <td>Bonchan, Punk</td>
+                                <td>1</td>
+                                <td>Punk</td>
                             </tr>
 
                             <tr>
@@ -214,8 +220,8 @@
 
                         </table>
                     </div>
-                    A total of <b>14 </b>have been used as main by the current qualifying 29 CPT players<br/>
-                    Characters not used as main are: <b>Chun, Dhalsim, Ken, Laura, Nash, Ryu, Vega, Gief, FANG, Alex, Balrog, Urien, Juri, Ed, Sakura, Blanka, Falke, g, Sagat, Cody</b>
+                    A total of <b>15 </b>have been used as main by the current qualifying 29 CPT players<br/>
+                    Characters not used as main are: <b>Chun, Dhalsim, Ken, Laura, Ryu, Vega, Gief, FANG, Alex, Balrog, Urien, Juri, Ed, Sakura, Blanka, Falke, g, Sagat, Cody</b>
 
 
 
@@ -234,7 +240,7 @@
                             <tr>
                                 <td>Akuma</td>
                                 <td>6</td>
-                                <td>Haitani, Momochi, AngryBird, MenaRD, Crossover, Tokido</td>
+                                <td>Haitani, AngryBird, Momochi, Tokido, Crossover, MenaRD</td>
                             </tr>
 
                             <tr>
@@ -244,21 +250,21 @@
                             </tr>
 
                             <tr>
-                                <td>Abigail</td>
-                                <td>4</td>
-                                <td>Itabashi Zangief, stormKUBO, Problem X, MenaRD</td>
-                            </tr>
-
-                            <tr>
                                 <td>Bison</td>
                                 <td>2</td>
                                 <td>Phenom, Problem X</td>
                             </tr>
 
                             <tr>
+                                <td>Abigail</td>
+                                <td>4</td>
+                                <td>stormKUBO, Itabashi Zangief, MenaRD, Problem X</td>
+                            </tr>
+
+                            <tr>
                                 <td>g</td>
                                 <td>2</td>
-                                <td>Problem X, NuckleDu</td>
+                                <td>NuckleDu, Problem X</td>
                             </tr>
 
                             <tr>
@@ -270,49 +276,49 @@
                             <tr>
                                 <td>Mika</td>
                                 <td>3</td>
-                                <td>Fuudo, NuckleDu, Luffy</td>
+                                <td>NuckleDu, Luffy, Fuudo</td>
                             </tr>
 
                             <tr>
                                 <td>Birdie</td>
                                 <td>2</td>
-                                <td>Fuudo, MenaRD</td>
+                                <td>MenaRD, Fuudo</td>
                             </tr>
 
                             <tr>
                                 <td>Menat</td>
                                 <td>3</td>
-                                <td>Sako, Infiltration, Justin Wong</td>
-                            </tr>
-
-                            <tr>
-                                <td>Falke</td>
-                                <td>2</td>
-                                <td>OilKing, Justin Wong</td>
+                                <td>Justin Wong, Sako, Infiltration</td>
                             </tr>
 
                             <tr>
                                 <td>Karin</td>
                                 <td>4</td>
-                                <td>Mago, Punk, Bonchan, Justin Wong</td>
+                                <td>Justin Wong, Mago, Bonchan, Punk</td>
+                            </tr>
+
+                            <tr>
+                                <td>Falke</td>
+                                <td>2</td>
+                                <td>Justin Wong, OilKing</td>
                             </tr>
 
                             <tr>
                                 <td>Cammy</td>
                                 <td>6</td>
-                                <td>Xiaohai, CJ Truth, NL, NuckleDu, Mago, Punk</td>
+                                <td>Xiaohai, Mago, NL, NuckleDu, CJ Truth, Punk</td>
                             </tr>
 
                             <tr>
                                 <td>Rashid</td>
                                 <td>4</td>
-                                <td>OilKing, Gachikun, Mago, Big Bird</td>
+                                <td>Mago, Big Bird, Gachikun, OilKing</td>
                             </tr>
 
                             <tr>
                                 <td>Guile</td>
                                 <td>4</td>
-                                <td>Daigo Umehara, Phenom, NuckleDu, Caba</td>
+                                <td>Daigo Umehara, NuckleDu, Caba, Phenom</td>
                             </tr>
 
                             <tr>
@@ -340,15 +346,15 @@
                             </tr>
 
                             <tr>
-                                <td>Ken</td>
-                                <td>2</td>
-                                <td>Momochi, Big Bird</td>
+                                <td>Zeku</td>
+                                <td>3</td>
+                                <td>AngryBird, Big Bird, Momochi</td>
                             </tr>
 
                             <tr>
-                                <td>Zeku</td>
-                                <td>3</td>
-                                <td>Momochi, AngryBird, Big Bird</td>
+                                <td>Ken</td>
+                                <td>2</td>
+                                <td>Big Bird, Momochi</td>
                             </tr>
 
                             <tr>
@@ -377,7 +383,7 @@
 
                         </table>
                     </div>
-                    A total of <b>14 </b>have been used as main by the current best 29 CPT players. <br/>
+                    A total of <b>15 </b>have been used as main by the current best 29 CPT players. <br/>
                     Characters not used at all are: <b>Dhalsim, Laura, Vega, FANG, Alex, Urien, Ed, Sakura, Blanka, Cody</b>
 
 
@@ -398,7 +404,7 @@
                             <tr>
                                 <td>NuckleDu</td>
                                 <td>5</td>
-                                <td><b>Guile</b> (20), <b>Mika</b> (12), <b>Cammy</b> (12), <b>g</b> (1), <b>Juri</b> (1)</td>
+                                <td><b>Guile</b> (20), <b>Cammy</b> (12), <b>Mika</b> (12), <b>g</b> (1), <b>Juri</b> (1)</td>
                             </tr>
 
                             <tr>
@@ -410,13 +416,13 @@
                             <tr>
                                 <td>Punk</td>
                                 <td>4</td>
-                                <td><b>Karin</b> (16), <b>Cammy</b> (6), <b>Chun</b> (6), <b>Kolin</b> (2)</td>
+                                <td><b>Karin</b> (16), <b>Chun</b> (6), <b>Cammy</b> (6), <b>Kolin</b> (2)</td>
                             </tr>
 
                             <tr>
                                 <td>Problem X</td>
                                 <td>4</td>
-                                <td><b>Abigail</b> (17), <b>Bison</b> (17), <b>g</b> (1), <b>Balrog</b> (1)</td>
+                                <td><b>Bison</b> (17), <b>Abigail</b> (17), <b>g</b> (1), <b>Balrog</b> (1)</td>
                             </tr>
 
                             <tr>
@@ -586,58 +592,8 @@
                             </thead>
 
                             <tr>
-                                <td>Kolin</td>
-                                <td>88</td>
-                            </tr>
-
-                            <tr>
-                                <td>Cammy</td>
-                                <td>296</td>
-                            </tr>
-
-                            <tr>
-                                <td>Abigail</td>
-                                <td>133</td>
-                            </tr>
-
-                            <tr>
-                                <td>Bison</td>
-                                <td>137</td>
-                            </tr>
-
-                            <tr>
-                                <td>Chun</td>
-                                <td>100</td>
-                            </tr>
-
-                            <tr>
-                                <td>Gief</td>
-                                <td>46</td>
-                            </tr>
-
-                            <tr>
                                 <td>Rashid</td>
                                 <td>135</td>
-                            </tr>
-
-                            <tr>
-                                <td>Dhalsim</td>
-                                <td>85</td>
-                            </tr>
-
-                            <tr>
-                                <td>Birdie</td>
-                                <td>112</td>
-                            </tr>
-
-                            <tr>
-                                <td>Karin</td>
-                                <td>111</td>
-                            </tr>
-
-                            <tr>
-                                <td>Alex</td>
-                                <td>30</td>
                             </tr>
 
                             <tr>
@@ -651,32 +607,7 @@
                             </tr>
 
                             <tr>
-                                <td>Urien</td>
-                                <td>120</td>
-                            </tr>
-
-                            <tr>
-                                <td>Laura</td>
-                                <td>89</td>
-                            </tr>
-
-                            <tr>
-                                <td>Guile</td>
-                                <td>155</td>
-                            </tr>
-
-                            <tr>
-                                <td>Vega</td>
-                                <td>56</td>
-                            </tr>
-
-                            <tr>
-                                <td>Ken</td>
-                                <td>96</td>
-                            </tr>
-
-                            <tr>
-                                <td>Menat</td>
+                                <td>Ibuki</td>
                                 <td>117</td>
                             </tr>
 
@@ -686,23 +617,8 @@
                             </tr>
 
                             <tr>
-                                <td>Mika</td>
-                                <td>113</td>
-                            </tr>
-
-                            <tr>
-                                <td>Necalli</td>
-                                <td>90</td>
-                            </tr>
-
-                            <tr>
-                                <td>Juri</td>
-                                <td>26</td>
-                            </tr>
-
-                            <tr>
-                                <td>Ibuki</td>
-                                <td>117</td>
+                                <td>Urien</td>
+                                <td>120</td>
                             </tr>
 
                             <tr>
@@ -711,13 +627,103 @@
                             </tr>
 
                             <tr>
-                                <td>Sakura</td>
-                                <td>14</td>
+                                <td>Laura</td>
+                                <td>89</td>
+                            </tr>
+
+                            <tr>
+                                <td>Menat</td>
+                                <td>117</td>
+                            </tr>
+
+                            <tr>
+                                <td>Cammy</td>
+                                <td>296</td>
+                            </tr>
+
+                            <tr>
+                                <td>Abigail</td>
+                                <td>133</td>
+                            </tr>
+
+                            <tr>
+                                <td>Necalli</td>
+                                <td>90</td>
+                            </tr>
+
+                            <tr>
+                                <td>Karin</td>
+                                <td>111</td>
                             </tr>
 
                             <tr>
                                 <td>Zeku</td>
                                 <td>46</td>
+                            </tr>
+
+                            <tr>
+                                <td>Vega</td>
+                                <td>56</td>
+                            </tr>
+
+                            <tr>
+                                <td>Kolin</td>
+                                <td>88</td>
+                            </tr>
+
+                            <tr>
+                                <td>Bison</td>
+                                <td>137</td>
+                            </tr>
+
+                            <tr>
+                                <td>Dhalsim</td>
+                                <td>85</td>
+                            </tr>
+
+                            <tr>
+                                <td>Chun</td>
+                                <td>100</td>
+                            </tr>
+
+                            <tr>
+                                <td>Birdie</td>
+                                <td>112</td>
+                            </tr>
+
+                            <tr>
+                                <td>Mika</td>
+                                <td>113</td>
+                            </tr>
+
+                            <tr>
+                                <td>Alex</td>
+                                <td>30</td>
+                            </tr>
+
+                            <tr>
+                                <td>Guile</td>
+                                <td>155</td>
+                            </tr>
+
+                            <tr>
+                                <td>Gief</td>
+                                <td>46</td>
+                            </tr>
+
+                            <tr>
+                                <td>Ken</td>
+                                <td>96</td>
+                            </tr>
+
+                            <tr>
+                                <td>Juri</td>
+                                <td>26</td>
+                            </tr>
+
+                            <tr>
+                                <td>Sakura</td>
+                                <td>14</td>
                             </tr>
 
                             <tr>
@@ -798,7 +804,7 @@
 
 
     <form role="search"
-          action="/sf4ranking/rankings/search" id="searchForm">
+          action="/rankings/search" id="searchForm">
         <div class="input-group">
             <input type="text" id="playerSearch" class="form-control" placeholder="Find a Player" name="player"
                    title="Press <ENTER> for advanced search">
@@ -809,7 +815,7 @@
     </form>
 
     <form role="search"
-          action="/sf4ranking/rankings/searchTournament" id="searchTournamentForm">
+          action="/rankings/searchTournament" id="searchTournamentForm">
         <div class="input-group">
             <input type="text" id="tournamentSearch" class="form-control" placeholder="Find a Tournament" name="tournament"
                    title="Press <ENTER> for advanced search">
@@ -825,15 +831,15 @@
 
     <h2 class="slidebar-header no-margin-bottom">Navigation</h2>
     <ul class="slidebar-menu">
-        <li><a href="/sf4ranking/">Home</a></li>
-        <li><a href="/sf4ranking/rankings/cpt">Pro Tour</a></li>
-        <li><a href="/sf4ranking/rankings/teams">Teams</a></li>
-        <li><a href="/sf4ranking/rankings/events">Events</a></li>
-        <li><a href="/sf4ranking/rankings/rank/SF5">SF5 rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/T7">Tekken rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/INJUSTICE2">Injustice rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/GGXRD">GG rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/UMVC3">Marvel rankings</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/rankings/cpt">Pro Tour</a></li>
+        <li><a href="/rankings/teams">Teams</a></li>
+        <li><a href="/rankings/events">Events</a></li>
+        <li><a href="/rankings/rank/SF5">SF5 rankings</a></li>
+        <li><a href="/rankings/rank/T7">Tekken rankings</a></li>
+        <li><a href="/rankings/rank/INJUSTICE2">Injustice rankings</a></li>
+        <li><a href="/rankings/rank/GGXRD">GG rankings</a></li>
+        <li><a href="/rankings/rank/UMVC3">Marvel rankings</a></li>
     </ul>
 
     <h2 class="slidebar-header">Social Media</h2>
@@ -872,16 +878,16 @@
 <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>-->
 
 
-<script src="/sf4ranking/assets/js/styleswitcher.js"></script>
+<script src="/assets/js/styleswitcher.js"></script>
 
 <!-- Syntaxhighlighter -->
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shCore.js"></script>
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shBrushXml.js"></script>
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shBrushJScript.js"></script>
+<script src="/assets/js/syntaxhighlighter/shCore.js"></script>
+<script src="/assets/js/syntaxhighlighter/shBrushXml.js"></script>
+<script src="/assets/js/syntaxhighlighter/shBrushJScript.js"></script>
 
-<script src="/sf4ranking/assets/js/DropdownHover.js"></script>
-<script src="/sf4ranking/assets/js/app.js"></script>
-<script src="/sf4ranking/assets/js/holder.js"></script>
+<script src="/assets/js/DropdownHover.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/holder.js"></script>
 
 
 
@@ -891,11 +897,11 @@
     {
         function search(uid)
         {
-            window.location = "/sf4ranking/rankings/player/byname/" + uid
+            window.location = "/rankings/player/byname/" + uid
         }
 
         $("#playerSearchBar").autocomplete({
-            source: "/sf4ranking/rankings/autocompletePlayer", minLength: 3,
+            source: "/rankings/autocompletePlayer", minLength: 3,
             select: function (event, ui)
             {
                 if (ui.item) search(ui.item.value);
@@ -909,16 +915,16 @@
     {
         function searchTournament(uid)
         {
-            window.location = "/sf4ranking/rankings/tournament/byname/" + uid
+            window.location = "/rankings/tournament/byname/" + uid
         }
 
         function searchEvent(uid)
         {
-            window.location = "/sf4ranking/rankings/event/byname/" + uid
+            window.location = "/rankings/event/byname/" + uid
         }
 
         $("#tournamentSearch").autocomplete({
-            source: "/sf4ranking/rankings/autocompleteTournament",
+            source: "/rankings/autocompleteTournament",
             minLength: 2,
             select: function (event, ui)
             {
@@ -967,8 +973,8 @@
         });
     })
 </script>
-<script src="/sf4ranking/static/js/jquery.tablesorter.min.js"></script>
-<script src="/sf4ranking/static/js/jquery.tablecloth.js"></script>
+<script src="/static/js/jquery.tablesorter.min.js"></script>
+<script src="/static/js/jquery.tablecloth.js"></script>
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function ()
     {

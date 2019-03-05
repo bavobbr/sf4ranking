@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Capcom Pro Tour Rankings 2018 - Street Fighter 5</title>
+    <title>Capcom Pro Tour Rankings 2019 - Street Fighter 5</title>
 
-    <link rel="shortcut icon" href="/sf4ranking/assets/img/favicon.png" />
+    <link rel="shortcut icon" href="/assets/img/favicon.png" />
 
     <meta name="description" content="">
 
     <!-- CSS -->
-    <link href="/sf4ranking/assets/css/preload.css" rel="stylesheet">
+    <link href="/assets/css/preload.css" rel="stylesheet">
 
     <!-- Compiled in vendors.js -->
     <!--
@@ -31,30 +31,30 @@
     <link href="assets/css/buttons.css" rel="stylesheet">
     -->
 
-    <link href="/sf4ranking/assets/css/vendors.css" rel="stylesheet">
-    <link href="/sf4ranking/assets/css/syntaxhighlighter/shCore.css" rel="stylesheet" >
+    <link href="/assets/css/vendors.css" rel="stylesheet">
+    <link href="/assets/css/syntaxhighlighter/shCore.css" rel="stylesheet" >
 
     <!-- RS5.0 Stylesheet -->
     <!--<link rel="stylesheet" type="text/css" href="assets/css/settings.css">
     <link rel="stylesheet" type="text/css" href="assets/css/layers.css">
     <link rel="stylesheet" type="text/css" href="assets/css/navigation.css">-->
 
-    <link href="/sf4ranking/assets/css/style-blue2.css" rel="stylesheet" title="default">
-    <link href="/sf4ranking/assets/css/width-full.css" rel="stylesheet" title="default">
+    <link href="/assets/css/style-blue2.css" rel="stylesheet" title="default">
+    <link href="/assets/css/width-full.css" rel="stylesheet" title="default">
 
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="/sf4ranking/assets/js/html5shiv.min.js"></script>
-        <script src="/sf4ranking/assets/js/respond.min.js"></script>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/tablecloth.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/prettify.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/artificial-custom.css" type="text/css">
-    <link rel="stylesheet" href="/sf4ranking/static/css/bootstrap-tables.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/tablecloth.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/prettify.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/artificial-custom.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/bootstrap-tables.css" type="text/css">
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -70,7 +70,7 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1552062418442064&ev=PageView&noscript=1"/>
     </noscript>
 
-    <script src="/sf4ranking/assets/js/vendors.js"></script>
+    <script src="/assets/js/vendors.js"></script>
 
 
 </head>
@@ -89,7 +89,7 @@
 
         <header class="main-header">
             <div class="container">
-                <h1 class="page-title">Capcom Pro Tour Rankings 2018 - Street Fighter 5</h1>
+                <h1 class="page-title">Capcom Pro Tour Rankings 2019 - Street Fighter 5</h1>
 
 
             </div>
@@ -120,10 +120,10 @@
                                 <th>Qualifications <a href="#" data-toggle="tooltip" data-placement="top"
                                                       title="Qualifications for the Capcom Cup Finals">(?)</a></th>
                                 <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                 title="Diff against score before update at ">(?)</a>
+                                                 title="Diff against score before update at 2019-02-26">(?)</a>
                                 </th>
                                 <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Diff against rank before update at ">(?)</a></th>
+                                                title="Diff against rank before update at 2019-02-26">(?)</a></th>
                                 <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                                                   title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
                                 <th>Fight Money<a href="#" data-toggle="tooltip" data-placement="top"
@@ -139,22 +139,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tokido">Tokido</a>
+                                    <a href="/rankings/player/byname/Tokido">Tokido</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -169,10 +169,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+4431</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -187,24 +185,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Fujimura">Fujimura</a>
+                                    <a href="/rankings/player/byname/Fujimura">Fujimura</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FUDOH">FD</a>
+                                    <a href="/rankings/team/byname/FUDOH">FD</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -219,10 +217,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+2971</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -237,26 +233,26 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
-                                        <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
+                                        <img src="/static/images/countries/gb.png" class="countryflag" />
                                         GB
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Problem%20X">Problem X</a>
+                                    <a href="/rankings/player/byname/Problem%20X">Problem X</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Mousesports">Mouz</a>
+                                    <a href="/rankings/team/byname/Mousesports">Mouz</a>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Problem%20X%20Promotions">PxP</a>
+                                    <a href="/rankings/team/byname/Problem%20X%20Promotions">PxP</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -271,10 +267,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+2771</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -289,24 +283,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Fuudo">Fuudo</a>
+                                    <a href="/rankings/player/byname/Fuudo">Fuudo</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Cygames%20Beast">CYG BST</a>
+                                    <a href="/rankings/team/byname/Cygames%20Beast">CYG BST</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -321,10 +315,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+2301</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -339,24 +331,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Sako">Sako</a>
+                                    <a href="/rankings/player/byname/Sako">Sako</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FAV%20Gaming">FAV</a>
+                                    <a href="/rankings/team/byname/FAV%20Gaming">FAV</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -371,10 +363,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+2241</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -389,22 +379,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Justin%20Wong">Justin Wong</a>
+                                    <a href="/rankings/player/byname/Justin%20Wong">Justin Wong</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -419,10 +409,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1911</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -437,24 +425,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
-                                        <img src="/sf4ranking/static/images/countries/kr.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
+                                        <img src="/static/images/countries/kr.png" class="countryflag" />
                                         KR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/NL">NL</a>
+                                    <a href="/rankings/player/byname/NL">NL</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/UYU">UYU</a>
+                                    <a href="/rankings/team/byname/UYU">UYU</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -469,10 +457,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1842</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -487,24 +473,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=TW" data-toggle="tooltip" data-placement="top" title="Find players from Taiwan">
-                                        <img src="/sf4ranking/static/images/countries/tw.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=TW" data-toggle="tooltip" data-placement="top" title="Find players from Taiwan">
+                                        <img src="/static/images/countries/tw.png" class="countryflag" />
                                         TW
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/OilKing">OilKing</a>
+                                    <a href="/rankings/player/byname/OilKing">OilKing</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/UYU">UYU</a>
+                                    <a href="/rankings/team/byname/UYU">UYU</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -519,10 +505,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1840</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -537,24 +521,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/NuckleDu">NuckleDu</a>
+                                    <a href="/rankings/player/byname/NuckleDu">NuckleDu</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Echo%20Fox">FOX</a>
+                                    <a href="/rankings/team/byname/Echo%20Fox">FOX</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -569,10 +553,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1721</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -587,24 +569,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Daigo%20Umehara">Daigo Umehara</a>
+                                    <a href="/rankings/player/byname/Daigo%20Umehara">Daigo Umehara</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Cygames%20Beast">CYG BST</a>
+                                    <a href="/rankings/team/byname/Cygames%20Beast">CYG BST</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -619,10 +601,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1642</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -637,22 +617,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
-                                        <img src="/sf4ranking/static/images/countries/kr.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
+                                        <img src="/static/images/countries/kr.png" class="countryflag" />
                                         KR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Infiltration">Infiltration</a>
+                                    <a href="/rankings/player/byname/Infiltration">Infiltration</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -667,10 +647,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1600</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -685,24 +663,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=FR" data-toggle="tooltip" data-placement="top" title="Find players from France">
-                                        <img src="/sf4ranking/static/images/countries/fr.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=FR" data-toggle="tooltip" data-placement="top" title="Find players from France">
+                                        <img src="/static/images/countries/fr.png" class="countryflag" />
                                         FR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Luffy">Luffy</a>
+                                    <a href="/rankings/player/byname/Luffy">Luffy</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Besiktas%20Esports">bjk</a>
+                                    <a href="/rankings/team/byname/Besiktas%20Esports">bjk</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -717,10 +695,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1491</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -735,24 +711,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Haitani">Haitani</a>
+                                    <a href="/rankings/player/byname/Haitani">Haitani</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FUDOH">FD</a>
+                                    <a href="/rankings/team/byname/FUDOH">FD</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -767,10 +743,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1433</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -785,24 +759,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=CN" data-toggle="tooltip" data-placement="top" title="Find players from China">
-                                        <img src="/sf4ranking/static/images/countries/cn.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=CN" data-toggle="tooltip" data-placement="top" title="Find players from China">
+                                        <img src="/static/images/countries/cn.png" class="countryflag" />
                                         CN
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Xiaohai">Xiaohai</a>
+                                    <a href="/rankings/player/byname/Xiaohai">Xiaohai</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Qanba">Qanba</a>
+                                    <a href="/rankings/team/byname/Qanba">Qanba</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -817,10 +791,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1270</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -835,24 +807,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=NO" data-toggle="tooltip" data-placement="top" title="Find players from Norway">
-                                        <img src="/sf4ranking/static/images/countries/no.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=NO" data-toggle="tooltip" data-placement="top" title="Find players from Norway">
+                                        <img src="/static/images/countries/no.png" class="countryflag" />
                                         NO
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Phenom">Phenom</a>
+                                    <a href="/rankings/player/byname/Phenom">Phenom</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Nordavind">NVD</a>
+                                    <a href="/rankings/team/byname/Nordavind">NVD</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
+                                        <img src="/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
                                     </a>
 
                                 </td>
@@ -867,10 +839,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1242</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -885,24 +855,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=DO" data-toggle="tooltip" data-placement="top" title="Find players from Dominican Republic">
-                                        <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=DO" data-toggle="tooltip" data-placement="top" title="Find players from Dominican Republic">
+                                        <img src="/static/images/countries/do.png" class="countryflag" />
                                         DO
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Caba">Caba</a>
+                                    <a href="/rankings/player/byname/Caba">Caba</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Rise%20Nation">Rise</a>
+                                    <a href="/rankings/team/byname/Rise%20Nation">Rise</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -917,10 +887,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1172</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -935,24 +903,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=AE" data-toggle="tooltip" data-placement="top" title="Find players from United Arab Emirates">
-                                        <img src="/sf4ranking/static/images/countries/ae.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=AE" data-toggle="tooltip" data-placement="top" title="Find players from United Arab Emirates">
+                                        <img src="/static/images/countries/ae.png" class="countryflag" />
                                         AE
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Big%20Bird">Big Bird</a>
+                                    <a href="/rankings/player/byname/Big%20Bird">Big Bird</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/NASR%20eSports">NASR</a>
+                                    <a href="/rankings/team/byname/NASR%20eSports">NASR</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -967,10 +935,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1152</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -985,22 +951,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Gachikun">Gachikun</a>
+                                    <a href="/rankings/player/byname/Gachikun">Gachikun</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1015,10 +981,8 @@
 
                                     <small>Global | RF | Regional</small>
                                 </td>
-                                <td>+1114</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1033,24 +997,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=SG" data-toggle="tooltip" data-placement="top" title="Find players from Singapore">
-                                        <img src="/sf4ranking/static/images/countries/sg.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=SG" data-toggle="tooltip" data-placement="top" title="Find players from Singapore">
+                                        <img src="/static/images/countries/sg.png" class="countryflag" />
                                         SG
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Xian">Xian</a>
+                                    <a href="/rankings/player/byname/Xian">Xian</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Razer">RZR</a>
+                                    <a href="/rankings/team/byname/Team%20Razer">RZR</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1065,10 +1029,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1063</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1083,22 +1045,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/CJ%20Truth">CJ Truth</a>
+                                    <a href="/rankings/player/byname/CJ%20Truth">CJ Truth</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1113,10 +1075,8 @@
 
                                     <small>Global | Regional</small>
                                 </td>
-                                <td>+1023</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1131,24 +1091,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Bonchan">Bonchan</a>
+                                    <a href="/rankings/player/byname/Bonchan">Bonchan</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Red%20Bull%20eSports">RB</a>
+                                    <a href="/rankings/team/byname/Red%20Bull%20eSports">RB</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
+                                        <img src="/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1163,10 +1123,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+1012</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1181,22 +1139,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Mago">Mago</a>
+                                    <a href="/rankings/player/byname/Mago">Mago</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1211,10 +1169,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+993</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1229,22 +1185,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Punk">Punk</a>
+                                    <a href="/rankings/player/byname/Punk">Punk</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1259,10 +1215,8 @@
 
                                     <small>Global | RF | Regional</small>
                                 </td>
-                                <td>+933</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1277,24 +1231,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Itabashi%20Zangief">Itabashi Zangief</a>
+                                    <a href="/rankings/player/byname/Itabashi%20Zangief">Itabashi Zangief</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/DetonatioN%20Gaming">DNG</a>
+                                    <a href="/rankings/team/byname/DetonatioN%20Gaming">DNG</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1309,10 +1263,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+923</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1327,22 +1279,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Momochi">Momochi</a>
+                                    <a href="/rankings/player/byname/Momochi">Momochi</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
+                                        <img src="/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1357,10 +1309,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+921</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1375,24 +1325,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/stormKUBO">stormKUBO</a>
+                                    <a href="/rankings/player/byname/stormKUBO">stormKUBO</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Atlas%20Bear">AB</a>
+                                    <a href="/rankings/team/byname/Atlas%20Bear">AB</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1407,10 +1357,8 @@
 
                                     <small>Global</small>
                                 </td>
-                                <td>+861</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1425,24 +1373,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
-                                        <img src="/sf4ranking/static/images/countries/kr.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=KR" data-toggle="tooltip" data-placement="top" title="Find players from Republic of Korea">
+                                        <img src="/static/images/countries/kr.png" class="countryflag" />
                                         KR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Verloren">Verloren</a>
+                                    <a href="/rankings/player/byname/Verloren">Verloren</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Fursan%20Esports">FURSAN</a>
+                                    <a href="/rankings/team/byname/Fursan%20Esports">FURSAN</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1457,10 +1405,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+850</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1475,26 +1421,26 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Nemo">Nemo</a>
+                                    <a href="/rankings/player/byname/Nemo">Nemo</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Liquid">Liquid</a>
+                                    <a href="/rankings/team/byname/Alienware">AW</a>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Alienware">AW</a>
+                                    <a href="/rankings/team/byname/Team%20Liquid">Liquid</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1509,10 +1455,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+781</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1527,24 +1471,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Chris%20Tatarian">Chris Tatarian</a>
+                                    <a href="/rankings/player/byname/Chris%20Tatarian">Chris Tatarian</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Cygames%20Beast">CYG BST</a>
+                                    <a href="/rankings/team/byname/Cygames%20Beast">CYG BST</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
+                                        <img src="/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1559,10 +1503,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+773</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1577,24 +1519,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=DO" data-toggle="tooltip" data-placement="top" title="Find players from Dominican Republic">
-                                        <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=DO" data-toggle="tooltip" data-placement="top" title="Find players from Dominican Republic">
+                                        <img src="/static/images/countries/do.png" class="countryflag" />
                                         DO
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MenaRD">MenaRD</a>
+                                    <a href="/rankings/player/byname/MenaRD">MenaRD</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Rise%20Nation">Rise</a>
+                                    <a href="/rankings/team/byname/Rise%20Nation">Rise</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1612,10 +1554,8 @@
 
                                     <small>Direct | Regional</small>
                                 </td>
-                                <td>+722</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1630,24 +1570,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=TW" data-toggle="tooltip" data-placement="top" title="Find players from Taiwan">
-                                        <img src="/sf4ranking/static/images/countries/tw.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=TW" data-toggle="tooltip" data-placement="top" title="Find players from Taiwan">
+                                        <img src="/static/images/countries/tw.png" class="countryflag" />
                                         TW
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/GamerBee">GamerBee</a>
+                                    <a href="/rankings/player/byname/GamerBee">GamerBee</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Cygames%20Beast">CYG BST</a>
+                                    <a href="/rankings/team/byname/Cygames%20Beast">CYG BST</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1662,10 +1602,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+642</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1680,24 +1618,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/John%20Takeuchi">John Takeuchi</a>
+                                    <a href="/rankings/player/byname/John%20Takeuchi">John Takeuchi</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Liquid">Liquid</a>
+                                    <a href="/rankings/team/byname/Team%20Liquid">Liquid</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1712,10 +1650,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+586</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1730,22 +1666,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Toi">Toi</a>
+                                    <a href="/rankings/player/byname/Toi">Toi</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1760,10 +1696,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+561</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1778,24 +1712,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Dogura">Dogura</a>
+                                    <a href="/rankings/player/byname/Dogura">Dogura</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Cyclops%20Osaka">CAG</a>
+                                    <a href="/rankings/team/byname/Cyclops%20Osaka">CAG</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1810,10 +1744,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+521</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1828,22 +1760,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
-                                        <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
+                                        <img src="/static/images/countries/br.png" class="countryflag" />
                                         BR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brolynho">Brolynho</a>
+                                    <a href="/rankings/player/byname/Brolynho">Brolynho</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
+                                        <img src="/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1858,10 +1790,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+501</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1876,24 +1806,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=FR" data-toggle="tooltip" data-placement="top" title="Find players from France">
-                                        <img src="/sf4ranking/static/images/countries/fr.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=FR" data-toggle="tooltip" data-placement="top" title="Find players from France">
+                                        <img src="/static/images/countries/fr.png" class="countryflag" />
                                         FR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Akainu">Akainu</a>
+                                    <a href="/rankings/player/byname/Akainu">Akainu</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FNATIC">FNATIC</a>
+                                    <a href="/rankings/team/byname/FNATIC">FNATIC</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1908,10 +1838,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+493</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1926,24 +1854,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=NL" data-toggle="tooltip" data-placement="top" title="Find players from Netherlands">
-                                        <img src="/sf4ranking/static/images/countries/nl.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=NL" data-toggle="tooltip" data-placement="top" title="Find players from Netherlands">
+                                        <img src="/static/images/countries/nl.png" class="countryflag" />
                                         NL
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MoMi">MoMi</a>
+                                    <a href="/rankings/player/byname/MoMi">MoMi</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Nordavind">NVD</a>
+                                    <a href="/rankings/team/byname/Nordavind">NVD</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -1958,10 +1886,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+462</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -1976,24 +1902,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=PA" data-toggle="tooltip" data-placement="top" title="Find players from Panama">
-                                        <img src="/sf4ranking/static/images/countries/pa.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=PA" data-toggle="tooltip" data-placement="top" title="Find players from Panama">
+                                        <img src="/static/images/countries/pa.png" class="countryflag" />
                                         PA
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/DoomSnake507">DoomSnake507</a>
+                                    <a href="/rankings/player/byname/DoomSnake507">DoomSnake507</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Arakiba">SB</a>
+                                    <a href="/rankings/team/byname/Arakiba">SB</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_VEGA" data-toggle="tooltip" data-placement="top" title="Filter on Vega">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_vega.png" width="22" height="25" alt="Vega" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_VEGA" data-toggle="tooltip" data-placement="top" title="Filter on Vega">
+                                        <img src="/static/images/chars/sf5/sf5_vega.png" width="22" height="25" alt="Vega" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2008,10 +1934,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+441</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2026,22 +1950,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
-                                        <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
+                                        <img src="/static/images/countries/br.png" class="countryflag" />
                                         BR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Hkdash">Hkdash</a>
+                                    <a href="/rankings/player/byname/Hkdash">Hkdash</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2056,10 +1980,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+431</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2074,26 +1996,26 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=MY" data-toggle="tooltip" data-placement="top" title="Find players from Malaysia">
-                                        <img src="/sf4ranking/static/images/countries/my.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=MY" data-toggle="tooltip" data-placement="top" title="Find players from Malaysia">
+                                        <img src="/static/images/countries/my.png" class="countryflag" />
                                         MY
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Chuan">Chuan</a>
+                                    <a href="/rankings/player/byname/Chuan">Chuan</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/ViewSonic%20Gaming">VS.</a>
+                                    <a href="/rankings/team/byname/Team%20Flash%20Vision">FV</a>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Flash%20Vision">FV</a>
+                                    <a href="/rankings/team/byname/ViewSonic%20Gaming">VS.</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2108,10 +2030,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+420</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2126,26 +2046,26 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Smug">Smug</a>
+                                    <a href="/rankings/player/byname/Smug">Smug</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Professional%20Instigators%20Entertainment">PIE</a>
+                                    <a href="/rankings/team/byname/Rise%20Nation">Rise</a>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Rise%20Nation">Rise</a>
+                                    <a href="/rankings/team/byname/Professional%20Instigators%20Entertainment">PIE</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2160,10 +2080,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+380</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2178,22 +2096,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/TheCoolKid93">TheCoolKid93</a>
+                                    <a href="/rankings/player/byname/TheCoolKid93">TheCoolKid93</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2208,10 +2126,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+361</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2226,22 +2142,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Nephew">Nephew</a>
+                                    <a href="/rankings/player/byname/Nephew">Nephew</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
+                                        <img src="/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2256,10 +2172,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+321</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2274,22 +2188,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Idom">Idom</a>
+                                    <a href="/rankings/player/byname/Idom">Idom</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2304,10 +2218,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+320</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2322,24 +2234,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
-                                        <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
+                                        <img src="/static/images/countries/gb.png" class="countryflag" />
                                         GB
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Hurricane">Hurricane</a>
+                                    <a href="/rankings/player/byname/Hurricane">Hurricane</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Unequalled%20Media">UM</a>
+                                    <a href="/rankings/team/byname/Unequalled%20Media">UM</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2354,10 +2266,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+306</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2372,22 +2282,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/XsK%20Samurai">XsK Samurai</a>
+                                    <a href="/rankings/player/byname/XsK%20Samurai">XsK Samurai</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2402,10 +2312,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+293</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2420,24 +2328,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Moke">Moke</a>
+                                    <a href="/rankings/player/byname/Moke">Moke</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/PONOS">PONOS</a>
+                                    <a href="/rankings/team/byname/PONOS">PONOS</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2452,10 +2360,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+285</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2470,24 +2376,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
-                                        <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
+                                        <img src="/static/images/countries/gb.png" class="countryflag" />
                                         GB
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Shakz">Shakz</a>
+                                    <a href="/rankings/player/byname/Shakz">Shakz</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FNATIC">FNATIC</a>
+                                    <a href="/rankings/team/byname/FNATIC">FNATIC</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2502,10 +2408,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+273</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2520,24 +2424,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Kazunoko">Kazunoko</a>
+                                    <a href="/rankings/player/byname/Kazunoko">Kazunoko</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Godsgarden%20x%20G-Tune">GGP</a>
+                                    <a href="/rankings/team/byname/Godsgarden%20x%20G-Tune">GGP</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2552,10 +2456,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+264</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2570,22 +2472,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Flash">Flash</a>
+                                    <a href="/rankings/player/byname/Flash">Flash</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2600,10 +2502,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+261</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2618,22 +2518,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
-                                        <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
+                                        <img src="/static/images/countries/br.png" class="countryflag" />
                                         BR
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Zenith">Zenith</a>
+                                    <a href="/rankings/player/byname/Zenith">Zenith</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2648,10 +2548,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+251</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2666,22 +2564,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Machabo">Machabo</a>
+                                    <a href="/rankings/player/byname/Machabo">Machabo</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
+                                        <img src="/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2696,10 +2594,50 @@
 
                                     <small></small>
                                 </td>
-                                <td>+250</td>
-                                <td class="warning">
+                                <td>+0</td>
+                                <td class="">
 
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+
+                                </td>
+                                <td>3</td>
+                                <td>$0</td>
+                            </tr>
+
+
+                            <tr class="unqual unqual">
+                                <td class="">
+                                    52
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
+                                        JP
+                                    </a>
+
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Machaboo">Machaboo</a>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>250
+                                </td></td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 52 and score is 250 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2714,24 +2652,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Ryusei">Ryusei</a>
+                                    <a href="/rankings/player/byname/Ryusei">Ryusei</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FAV%20Gaming">FAV</a>
+                                    <a href="/rankings/team/byname/FAV%20Gaming">FAV</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2746,10 +2684,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+240</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2764,22 +2700,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=PE" data-toggle="tooltip" data-placement="top" title="Find players from Peru">
-                                        <img src="/sf4ranking/static/images/countries/pe.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=PE" data-toggle="tooltip" data-placement="top" title="Find players from Peru">
+                                        <img src="/static/images/countries/pe.png" class="countryflag" />
                                         PE
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Pikoro">Pikoro</a>
+                                    <a href="/rankings/player/byname/Pikoro">Pikoro</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2794,10 +2730,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+231</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2812,24 +2746,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
-                                        <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=JP" data-toggle="tooltip" data-placement="top" title="Find players from Japan">
+                                        <img src="/static/images/countries/jp.png" class="countryflag" />
                                         JP
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MOV">MOV</a>
+                                    <a href="/rankings/player/byname/MOV">MOV</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Grapht">GRPT</a>
+                                    <a href="/rankings/team/byname/Team%20Grapht">GRPT</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
+                                        <img src="/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2844,10 +2778,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+230</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2862,22 +2794,22 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=RU" data-toggle="tooltip" data-placement="top" title="Find players from Russian Federation">
-                                        <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=RU" data-toggle="tooltip" data-placement="top" title="Find players from Russian Federation">
+                                        <img src="/static/images/countries/ru.png" class="countryflag" />
                                         RU
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Swagskheletor">Swagskheletor</a>
+                                    <a href="/rankings/player/byname/Swagskheletor">Swagskheletor</a>
                                 </td>
                                 <td>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
+                                        <img src="/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2892,10 +2824,8 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>+220</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2910,24 +2840,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=SE" data-toggle="tooltip" data-placement="top" title="Find players from Sweden">
-                                        <img src="/sf4ranking/static/images/countries/se.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=SE" data-toggle="tooltip" data-placement="top" title="Find players from Sweden">
+                                        <img src="/static/images/countries/se.png" class="countryflag" />
                                         SE
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Atrosh">Atrosh</a>
+                                    <a href="/rankings/player/byname/Atrosh">Atrosh</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/FNATIC">FNATIC</a>
+                                    <a href="/rankings/team/byname/FNATIC">FNATIC</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2942,10 +2872,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+220</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -2960,24 +2888,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Alex%20Myers">Alex Myers</a>
+                                    <a href="/rankings/player/byname/Alex%20Myers">Alex Myers</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Tempo%20Storm">Tempo</a>
+                                    <a href="/rankings/team/byname/Tempo%20Storm">Tempo</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -2992,10 +2920,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+216</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3010,24 +2936,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=CN" data-toggle="tooltip" data-placement="top" title="Find players from China">
-                                        <img src="/sf4ranking/static/images/countries/cn.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=CN" data-toggle="tooltip" data-placement="top" title="Find players from China">
+                                        <img src="/static/images/countries/cn.png" class="countryflag" />
                                         CN
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Jiewa">Jiewa</a>
+                                    <a href="/rankings/player/byname/Jiewa">Jiewa</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/PandaTV">PandaTV</a>
+                                    <a href="/rankings/team/byname/PandaTV">PandaTV</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3042,10 +2968,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+212</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3060,24 +2984,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=AE" data-toggle="tooltip" data-placement="top" title="Find players from United Arab Emirates">
-                                        <img src="/sf4ranking/static/images/countries/ae.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=AE" data-toggle="tooltip" data-placement="top" title="Find players from United Arab Emirates">
+                                        <img src="/static/images/countries/ae.png" class="countryflag" />
                                         AE
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/AngryBird">AngryBird</a>
+                                    <a href="/rankings/player/byname/AngryBird">AngryBird</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/NASR%20eSports">NASR</a>
+                                    <a href="/rankings/team/byname/NASR%20eSports">NASR</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
+                                        <img src="/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3092,10 +3016,8 @@
 
                                     <small>RF | Regional</small>
                                 </td>
-                                <td>+211</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3110,72 +3032,24 @@
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
-                                        <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
-                                        BR
-                                    </a>
-
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/ArthuroRay">ArthuroRay</a>
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>210
-                                </td></td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 61 and score is 210 pts<li>LA rank is 11 and score is 140 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>+210</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-                                <td>5</td>
-                                <td>$0</td>
-                            </tr>
-
-
-                            <tr class="unqual unqual">
-                                <td class="">
-                                    61
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
-                                        <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=US" data-toggle="tooltip" data-placement="top" title="Find players from United States">
+                                        <img src="/static/images/countries/us.png" class="countryflag" />
                                         US
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Filipino%20Champ">Filipino Champ</a>
+                                    <a href="/rankings/player/byname/Filipino%20Champ">Filipino Champ</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Bud%20Light%20Esports">BUD</a>
+                                    <a href="/rankings/team/byname/Bud%20Light%20Esports">BUD</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
+                                        <img src="/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3190,10 +3064,8 @@
 
                                     <small></small>
                                 </td>
-                                <td>+210</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3204,28 +3076,74 @@
 
                             <tr class="unqual unqual">
                                 <td class="">
+                                    61
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?country=BR" data-toggle="tooltip" data-placement="top" title="Find players from Brazil">
+                                        <img src="/static/images/countries/br.png" class="countryflag" />
+                                        BR
+                                    </a>
+
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/ArthuroRay">ArthuroRay</a>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>210
+                                </td></td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 61 and score is 210 pts<li>LA rank is 11 and score is 140 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+                                <td>5</td>
+                                <td>$0</td>
+                            </tr>
+
+
+                            <tr class="unqual unqual">
+                                <td class="">
                                     63
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
-                                        <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <a href="/rankings/rank/SF5?country=GB" data-toggle="tooltip" data-placement="top" title="Find players from United Kingdom">
+                                        <img src="/static/images/countries/gb.png" class="countryflag" />
                                         GB
                                     </a>
 
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Broski">Broski</a>
+                                    <a href="/rankings/player/byname/Broski">Broski</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/team/byname/Team%20Method">Method</a>
+                                    <a href="/rankings/team/byname/Team%20Method">Method</a>
 
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
+                                        <img src="/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3240,62 +3158,12 @@
 
                                     <small></small>
                                 </td>
-                                <td>+202</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
                                 <td>9</td>
-                                <td>$0</td>
-                            </tr>
-
-
-                            <tr class="unqual unqual">
-                                <td class="">
-                                    64
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?country=HK" data-toggle="tooltip" data-placement="top" title="Find players from Hong Kong">
-                                        <img src="/sf4ranking/static/images/countries/hk.png" class="countryflag" />
-                                        HK
-                                    </a>
-
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/HumanBomb">HumanBomb</a>
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>194
-                                </td></td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 64 and score is 194 pts<li>AO rank is 38 and score is 1 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>+194</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-                                <td>14</td>
                                 <td>$0</td>
                             </tr>
 
@@ -3330,10 +3198,10 @@
                                 <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                                                   title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
                                 <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                 title="Diff against score before update at ">(?)</a>
+                                                 title="Diff against score before update at 2019-02-26">(?)</a>
                                 </th>
                                 <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Diff against rank before update at ">(?)</a></th>
+                                                title="Diff against rank before update at 2019-02-26">(?)</a></th>
                                 <th>Country</th>
                             </tr>
                             </thead>
@@ -3345,12 +3213,12 @@
                                     1
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tokido">Tokido</a>
+                                    <a href="/rankings/player/byname/Tokido">Tokido</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3367,10 +3235,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+380</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3378,7 +3244,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3390,12 +3256,12 @@
                                     2
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Chuan">Chuan</a>
+                                    <a href="/rankings/player/byname/Chuan">Chuan</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3412,10 +3278,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+310</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3423,7 +3287,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/my.png" class="countryflag" />
+                                    <img src="/static/images/countries/my.png" class="countryflag" />
                                     Malaysia
 
                                 </td>
@@ -3435,12 +3299,12 @@
                                     3
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Xian">Xian</a>
+                                    <a href="/rankings/player/byname/Xian">Xian</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3457,10 +3321,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+251</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3468,7 +3330,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/sg.png" class="countryflag" />
+                                    <img src="/static/images/countries/sg.png" class="countryflag" />
                                     Singapore
 
                                 </td>
@@ -3480,12 +3342,12 @@
                                     4
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Sako">Sako</a>
+                                    <a href="/rankings/player/byname/Sako">Sako</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3502,10 +3364,8 @@
                                 </td>
                                 <td>16</td>
 
-                                <td>+221</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3513,7 +3373,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3525,12 +3385,12 @@
                                     5
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Fujimura">Fujimura</a>
+                                    <a href="/rankings/player/byname/Fujimura">Fujimura</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3547,10 +3407,8 @@
                                 </td>
                                 <td>18</td>
 
-                                <td>+220</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3558,7 +3416,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3570,12 +3428,12 @@
                                     6
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Gachikun">Gachikun</a>
+                                    <a href="/rankings/player/byname/Gachikun">Gachikun</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3592,10 +3450,8 @@
                                 </td>
                                 <td>19</td>
 
-                                <td>+190</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3603,7 +3459,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3615,12 +3471,12 @@
                                     7
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/NL">NL</a>
+                                    <a href="/rankings/player/byname/NL">NL</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3637,10 +3493,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+162</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3648,7 +3502,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/kr.png" class="countryflag" />
+                                    <img src="/static/images/countries/kr.png" class="countryflag" />
                                     Republic of Korea
 
                                 </td>
@@ -3660,12 +3514,12 @@
                                     8
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Fuudo">Fuudo</a>
+                                    <a href="/rankings/player/byname/Fuudo">Fuudo</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3682,10 +3536,8 @@
                                 </td>
                                 <td>20</td>
 
-                                <td>+160</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3693,7 +3545,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3705,12 +3557,12 @@
                                     9
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/OilKing">OilKing</a>
+                                    <a href="/rankings/player/byname/OilKing">OilKing</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3727,10 +3579,8 @@
                                 </td>
                                 <td>22</td>
 
-                                <td>+150</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3738,7 +3588,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/tw.png" class="countryflag" />
+                                    <img src="/static/images/countries/tw.png" class="countryflag" />
                                     Taiwan
 
                                 </td>
@@ -3750,12 +3600,12 @@
                                     10
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Bonchan">Bonchan</a>
+                                    <a href="/rankings/player/byname/Bonchan">Bonchan</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
+                                        <img src="/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3772,10 +3622,8 @@
                                 </td>
                                 <td>18</td>
 
-                                <td>+111</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3783,7 +3631,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3795,12 +3643,12 @@
                                     11
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Don">Don</a>
+                                    <a href="/rankings/player/byname/Don">Don</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3817,10 +3665,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+80</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3828,7 +3674,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ph.png" class="countryflag" />
+                                    <img src="/static/images/countries/ph.png" class="countryflag" />
                                     Philippines
 
                                 </td>
@@ -3840,12 +3686,12 @@
                                     12
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/NekoXX">NekoXX</a>
+                                    <a href="/rankings/player/byname/NekoXX">NekoXX</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3862,10 +3708,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+71</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3873,7 +3717,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/my.png" class="countryflag" />
+                                    <img src="/static/images/countries/my.png" class="countryflag" />
                                     Malaysia
 
                                 </td>
@@ -3885,12 +3729,12 @@
                                     12
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Itabashi%20Zangief">Itabashi Zangief</a>
+                                    <a href="/rankings/player/byname/Itabashi%20Zangief">Itabashi Zangief</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3907,10 +3751,8 @@
                                 </td>
                                 <td>23</td>
 
-                                <td>+71</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -3918,7 +3760,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -3930,57 +3772,12 @@
                                     14
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Xiaohai">Xiaohai</a>
+                                    <a href="/rankings/player/byname/Bravery">Bravery</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>70
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul><li>Qualified by score in global board: 1270 pts / rank: 14</ul><ul><li>Global rank is 14 and score is 1270 pts<li>AO rank is 14 and score is 70 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small>Global</small>
-                                </td>
-                                <td>13</td>
-
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/cn.png" class="countryflag" />
-                                    China
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    14
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Bravery">Bravery</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -3997,10 +3794,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4008,7 +3803,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/sg.png" class="countryflag" />
+                                    <img src="/static/images/countries/sg.png" class="countryflag" />
                                     Singapore
 
                                 </td>
@@ -4020,12 +3815,55 @@
                                     14
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/UD">UD</a>
+                                    <a href="/rankings/player/byname/Xiaohai">Xiaohai</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>70
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul><li>Qualified by score in global board: 1270 pts / rank: 14</ul><ul><li>Global rank is 14 and score is 1270 pts<li>AO rank is 14 and score is 70 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small>Global</small>
+                                </td>
+                                <td>13</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/cn.png" class="countryflag" />
+                                    China
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    14
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/UD">UD</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4042,10 +3880,8 @@
                                 </td>
                                 <td>7</td>
 
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4053,7 +3889,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/cn.png" class="countryflag" />
+                                    <img src="/static/images/countries/cn.png" class="countryflag" />
                                     China
 
                                 </td>
@@ -4065,12 +3901,12 @@
                                     17
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Nemo">Nemo</a>
+                                    <a href="/rankings/player/byname/Nemo">Nemo</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4087,10 +3923,8 @@
                                 </td>
                                 <td>15</td>
 
-                                <td>+60</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4098,7 +3932,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -4110,12 +3944,12 @@
                                     17
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/GamerBee">GamerBee</a>
+                                    <a href="/rankings/player/byname/GamerBee">GamerBee</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4132,10 +3966,8 @@
                                 </td>
                                 <td>20</td>
 
-                                <td>+60</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4143,7 +3975,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/tw.png" class="countryflag" />
+                                    <img src="/static/images/countries/tw.png" class="countryflag" />
                                     Taiwan
 
                                 </td>
@@ -4155,12 +3987,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Haitani">Haitani</a>
+                                    <a href="/rankings/player/byname/Haitani">Haitani</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4177,10 +4009,8 @@
                                 </td>
                                 <td>21</td>
 
-                                <td>+50</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4188,7 +4018,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -4200,57 +4030,12 @@
                                     20
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brandon">Brandon</a>
+                                    <a href="/rankings/player/byname/Verloren">Verloren</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>40
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 135 and score is 41 pts<li>AO rank is 20 and score is 40 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>5</td>
-
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/sg.png" class="countryflag" />
-                                    Singapore
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    20
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Verloren">Verloren</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4267,10 +4052,8 @@
                                 </td>
                                 <td>12</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4278,7 +4061,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/kr.png" class="countryflag" />
+                                    <img src="/static/images/countries/kr.png" class="countryflag" />
                                     Republic of Korea
 
                                 </td>
@@ -4290,12 +4073,12 @@
                                     20
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Kichipa-mu">Kichipa-mu</a>
+                                    <a href="/rankings/player/byname/Kichipa-mu">Kichipa-mu</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZANGIEF" data-toggle="tooltip" data-placement="top" title="Filter on Gief">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zangief.png" width="22" height="25" alt="Gief" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ZANGIEF" data-toggle="tooltip" data-placement="top" title="Filter on Gief">
+                                        <img src="/static/images/chars/sf5/sf5_zangief.png" width="22" height="25" alt="Gief" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4312,10 +4095,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4323,8 +4104,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    20
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Brandon">Brandon</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>40
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 135 and score is 41 pts<li>AO rank is 20 and score is 40 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>5</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/sg.png" class="countryflag" />
+                                    Singapore
 
                                 </td>
                             </tr>
@@ -4335,12 +4159,12 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Momochi">Momochi</a>
+                                    <a href="/rankings/player/byname/Momochi">Momochi</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
+                                        <img src="/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4357,10 +4181,8 @@
                                 </td>
                                 <td>18</td>
 
-                                <td>+30</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4368,7 +4190,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -4380,57 +4202,12 @@
                                     24
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Daigo%20Umehara">Daigo Umehara</a>
+                                    <a href="/rankings/player/byname/Cogumerlim">Cogumerlim</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul><li>Qualified by score in global board: 1642 pts / rank: 10</ul><ul><li>Global rank is 10 and score is 1642 pts<li>AO rank is 24 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small>Global</small>
-                                </td>
-                                <td>14</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
-                                    Japan
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    24
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Cogumerlim">Cogumerlim</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
+                                        <img src="/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4447,10 +4224,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4458,7 +4233,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/th.png" class="countryflag" />
+                                    <img src="/static/images/countries/th.png" class="countryflag" />
                                     Thailand
 
                                 </td>
@@ -4470,12 +4245,12 @@
                                     24
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/AronManurung">AronManurung</a>
+                                    <a href="/rankings/player/byname/Daigo%20Umehara">Daigo Umehara</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4483,19 +4258,17 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>AO rank is 24 and score is 20 pts</ul>"
+                                            data-content="Qualifications: <ul><li>Qualified by score in global board: 1642 pts / rank: 10</ul><ul><li>Global rank is 10 and score is 1642 pts<li>AO rank is 24 and score is 20 pts</ul>"
                                             data-html="true" data-trigger="focus">
                                         info
                                     </button>
 
-                                    <small></small>
+                                    <small>Global</small>
                                 </td>
-                                <td>2</td>
+                                <td>14</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4503,8 +4276,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/id.png" class="countryflag" />
-                                    Indonesia
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
+                                    Japan
 
                                 </td>
                             </tr>
@@ -4515,12 +4288,12 @@
                                     24
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Mago">Mago</a>
+                                    <a href="/rankings/player/byname/Mago">Mago</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4537,10 +4310,8 @@
                                 </td>
                                 <td>20</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4548,7 +4319,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -4560,12 +4331,12 @@
                                     24
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tse4444">Tse4444</a>
+                                    <a href="/rankings/player/byname/Tse4444">Tse4444</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4582,10 +4353,8 @@
                                 </td>
                                 <td>7</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4593,8 +4362,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/hk.png" class="countryflag" />
+                                    <img src="/static/images/countries/hk.png" class="countryflag" />
                                     Hong Kong
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    24
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/AronManurung">AronManurung</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
+                                        <img src="/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>AO rank is 24 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>2</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/id.png" class="countryflag" />
+                                    Indonesia
 
                                 </td>
                             </tr>
@@ -4605,12 +4417,12 @@
                                     29
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/stormKUBO">stormKUBO</a>
+                                    <a href="/rankings/player/byname/stormKUBO">stormKUBO</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4627,10 +4439,8 @@
                                 </td>
                                 <td>19</td>
 
-                                <td>+11</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4638,7 +4448,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/jp.png" class="countryflag" />
+                                    <img src="/static/images/countries/jp.png" class="countryflag" />
                                     Japan
 
                                 </td>
@@ -4650,12 +4460,12 @@
                                     30
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/RB">RB</a>
+                                    <a href="/rankings/player/byname/OswaldAce">OswaldAce</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4663,7 +4473,7 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 95 and score is 120 pts<li>AO rank is 30 and score is 10 pts</ul>"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>AO rank is 30 and score is 10 pts</ul>"
                                             data-html="true" data-trigger="focus">
                                         info
                                     </button>
@@ -4672,10 +4482,8 @@
                                 </td>
                                 <td>4</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4683,8 +4491,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/tw.png" class="countryflag" />
-                                    Taiwan
+                                    <img src="/static/images/countries/sg.png" class="countryflag" />
+                                    Singapore
 
                                 </td>
                             </tr>
@@ -4715,10 +4523,10 @@
                                 <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                                                   title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
                                 <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                 title="Diff against score before update at ">(?)</a>
+                                                 title="Diff against score before update at 2019-02-26">(?)</a>
                                 </th>
                                 <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Diff against rank before update at ">(?)</a></th>
+                                                title="Diff against rank before update at 2019-02-26">(?)</a></th>
                                 <th>Country</th>
                             </tr>
                             </thead>
@@ -4730,12 +4538,12 @@
                                     1
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Caba">Caba</a>
+                                    <a href="/rankings/player/byname/Caba">Caba</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4752,10 +4560,8 @@
                                 </td>
                                 <td>15</td>
 
-                                <td>+521</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4763,7 +4569,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
                                     Dominican Republic
 
                                 </td>
@@ -4775,12 +4581,12 @@
                                     2
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brolynho">Brolynho</a>
+                                    <a href="/rankings/player/byname/Brolynho">Brolynho</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
+                                        <img src="/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4797,10 +4603,8 @@
                                 </td>
                                 <td>9</td>
 
-                                <td>+411</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4808,7 +4612,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -4820,12 +4624,12 @@
                                     3
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Hkdash">Hkdash</a>
+                                    <a href="/rankings/player/byname/Hkdash">Hkdash</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4842,10 +4646,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+311</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4853,7 +4655,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -4865,12 +4667,12 @@
                                     4
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Pikoro">Pikoro</a>
+                                    <a href="/rankings/player/byname/Pikoro">Pikoro</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4887,10 +4689,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+231</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4898,7 +4698,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/pe.png" class="countryflag" />
+                                    <img src="/static/images/countries/pe.png" class="countryflag" />
                                     Peru
 
                                 </td>
@@ -4910,12 +4710,12 @@
                                     5
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/DoomSnake507">DoomSnake507</a>
+                                    <a href="/rankings/player/byname/DoomSnake507">DoomSnake507</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_VEGA" data-toggle="tooltip" data-placement="top" title="Filter on Vega">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_vega.png" width="22" height="25" alt="Vega" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_VEGA" data-toggle="tooltip" data-placement="top" title="Filter on Vega">
+                                        <img src="/static/images/chars/sf5/sf5_vega.png" width="22" height="25" alt="Vega" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4932,10 +4732,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+220</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4943,7 +4741,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/pa.png" class="countryflag" />
+                                    <img src="/static/images/countries/pa.png" class="countryflag" />
                                     Panama
 
                                 </td>
@@ -4955,12 +4753,12 @@
                                     6
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MenaRD">MenaRD</a>
+                                    <a href="/rankings/player/byname/MenaRD">MenaRD</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -4980,10 +4778,8 @@
                                 </td>
                                 <td>15</td>
 
-                                <td>+180</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -4991,7 +4787,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
                                     Dominican Republic
 
                                 </td>
@@ -5003,12 +4799,12 @@
                                     7
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Keoma">Keoma</a>
+                                    <a href="/rankings/player/byname/Keoma">Keoma</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5025,10 +4821,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+170</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5036,53 +4830,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    8
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Maximof">Maximof</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>150
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 79 and score is 150 pts<li>LA rank is 8 and score is 150 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>3</td>
-
-                                <td>+150</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/mx.png" class="countryflag" />
-                                    Mexico
 
                                 </td>
                             </tr>
@@ -5093,12 +4842,12 @@
                                     8
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Paulow3b">Paulow3b</a>
+                                    <a href="/rankings/player/byname/Maximof">Maximof</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5113,12 +4862,10 @@
 
                                     <small>Regional</small>
                                 </td>
-                                <td>4</td>
+                                <td>3</td>
 
-                                <td>+150</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5126,7 +4873,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/mx.png" class="countryflag" />
+                                    Mexico
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    8
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Paulow3b">Paulow3b</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>150
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 79 and score is 150 pts<li>LA rank is 8 and score is 150 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>4</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5138,12 +4928,12 @@
                                     10
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Pr3da">Pr3da</a>
+                                    <a href="/rankings/player/byname/Pr3da">Pr3da</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5160,10 +4950,8 @@
                                 </td>
                                 <td>7</td>
 
-                                <td>+141</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5171,7 +4959,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5183,12 +4971,12 @@
                                     11
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/ArthuroRay">ArthuroRay</a>
+                                    <a href="/rankings/player/byname/ArthuroRay">ArthuroRay</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5205,10 +4993,8 @@
                                 </td>
                                 <td>5</td>
 
-                                <td>+140</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5216,7 +5002,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5228,12 +5014,12 @@
                                     12
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Stunner">Stunner</a>
+                                    <a href="/rankings/player/byname/Stunner">Stunner</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5250,10 +5036,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+131</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5261,7 +5045,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5273,12 +5057,12 @@
                                     13
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/YoungHou">YoungHou</a>
+                                    <a href="/rankings/player/byname/YoungHou">YoungHou</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5295,10 +5079,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+110</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5306,7 +5088,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/cl.png" class="countryflag" />
+                                    <img src="/static/images/countries/cl.png" class="countryflag" />
                                     Chile
 
                                 </td>
@@ -5318,12 +5100,12 @@
                                     14
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Zenith">Zenith</a>
+                                    <a href="/rankings/player/byname/Zenith">Zenith</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5340,10 +5122,8 @@
                                 </td>
                                 <td>5</td>
 
-                                <td>+91</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5351,7 +5131,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5363,12 +5143,12 @@
                                     15
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/DR%20Ray">DR Ray</a>
+                                    <a href="/rankings/player/byname/DR%20Ray">DR Ray</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5385,10 +5165,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+90</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5396,7 +5174,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
                                     Dominican Republic
 
                                 </td>
@@ -5408,12 +5186,12 @@
                                     16
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/JochyFocus">JochyFocus</a>
+                                    <a href="/rankings/player/byname/JochyFocus">JochyFocus</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5430,10 +5208,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5441,7 +5217,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
                                     Dominican Republic
 
                                 </td>
@@ -5453,12 +5229,12 @@
                                     16
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Kakaroto">Kakaroto</a>
+                                    <a href="/rankings/player/byname/Kakaroto">Kakaroto</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5475,10 +5251,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5486,7 +5260,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/pa.png" class="countryflag" />
+                                    <img src="/static/images/countries/pa.png" class="countryflag" />
                                     Panama
 
                                 </td>
@@ -5498,12 +5272,12 @@
                                     18
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Shingolex">Shingolex</a>
+                                    <a href="/rankings/player/byname/Shingolex">Shingolex</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5520,10 +5294,8 @@
                                 </td>
                                 <td>5</td>
 
-                                <td>+61</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5531,7 +5303,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5543,12 +5315,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Evilcraa">Evilcraa</a>
+                                    <a href="/rankings/player/byname/andyenigma">andyenigma</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=UNKNOWN" data-toggle="tooltip" data-placement="top" title="Filter on Not identified">
-                                        <img src="/sf4ranking/static/images/chars/sf5/unknown.png" width="22" height="25" alt="Not identified" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
+                                        <img src="/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5565,10 +5337,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5576,8 +5346,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/cl.png" class="countryflag" />
-                                    Chile
+                                    <img src="/static/images/countries/cr.png" class="countryflag" />
+                                    Costa Rica
 
                                 </td>
                             </tr>
@@ -5588,57 +5358,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Chino%20Funkey">Chino Funkey</a>
+                                    <a href="/rankings/player/byname/ElTigre">ElTigre</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>40
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 146 and score is 40 pts<li>LA rank is 19 and score is 40 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>1</td>
-
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/pe.png" class="countryflag" />
-                                    Peru
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    19
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/ElTigre">ElTigre</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5655,10 +5380,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5666,7 +5389,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/mx.png" class="countryflag" />
+                                    <img src="/static/images/countries/mx.png" class="countryflag" />
                                     Mexico
 
                                 </td>
@@ -5678,12 +5401,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/andyenigma">andyenigma</a>
+                                    <a href="/rankings/player/byname/Chino%20Funkey">Chino Funkey</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NASH" data-toggle="tooltip" data-placement="top" title="Filter on Nash">
+                                        <img src="/static/images/chars/sf5/sf5_nash.png" width="22" height="25" alt="Nash" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5700,10 +5423,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5711,8 +5432,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/cr.png" class="countryflag" />
-                                    Costa Rica
+                                    <img src="/static/images/countries/pe.png" class="countryflag" />
+                                    Peru
 
                                 </td>
                             </tr>
@@ -5723,12 +5444,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/JuanFraroth">JuanFraroth</a>
+                                    <a href="/rankings/player/byname/JuanFraroth">JuanFraroth</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
+                                        <img src="/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5745,10 +5466,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5756,8 +5475,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
                                     Dominican Republic
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    19
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Evilcraa">Evilcraa</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=UNKNOWN" data-toggle="tooltip" data-placement="top" title="Filter on Not identified">
+                                        <img src="/static/images/chars/sf5/unknown.png" width="22" height="25" alt="Not identified" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>40
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 146 and score is 40 pts<li>LA rank is 19 and score is 40 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>1</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/cl.png" class="countryflag" />
+                                    Chile
 
                                 </td>
                             </tr>
@@ -5768,12 +5530,12 @@
                                     24
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/TheGriffonMask">TheGriffonMask</a>
+                                    <a href="/rankings/player/byname/TheGriffonMask">TheGriffonMask</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BLANKA" data-toggle="tooltip" data-placement="top" title="Filter on Blanka">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_blanka.png" width="22" height="25" alt="Blanka" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BLANKA" data-toggle="tooltip" data-placement="top" title="Filter on Blanka">
+                                        <img src="/static/images/chars/sf5/sf5_blanka.png" width="22" height="25" alt="Blanka" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5790,10 +5552,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+21</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5801,7 +5561,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
                                     Brazil
 
                                 </td>
@@ -5813,147 +5573,12 @@
                                     25
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/eightgrade">eightgrade</a>
+                                    <a href="/rankings/player/byname/Mono">Mono</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>LA rank is 25 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>1</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/mx.png" class="countryflag" />
-                                    Mexico
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    25
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Baby%20Brasil">Baby Brasil</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 113 and score is 90 pts<li>LA rank is 25 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>6</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/br.png" class="countryflag" />
-                                    Brazil
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    25
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Luiman20">Luiman20</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 129 and score is 60 pts<li>LA rank is 25 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>5</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/do.png" class="countryflag" />
-                                    Dominican Republic
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    25
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Mono">Mono</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
+                                        <img src="/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
                                     </a>
 
                                 </td>
@@ -5970,10 +5595,8 @@
                                 </td>
                                 <td>9</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -5981,7 +5604,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/pr.png" class="countryflag" />
+                                    <img src="/static/images/countries/pr.png" class="countryflag" />
                                     Puerto Rico
 
                                 </td>
@@ -5993,12 +5616,98 @@
                                     25
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Old%20Trussy">Old Trussy</a>
+                                    <a href="/rankings/player/byname/Luiman20">Luiman20</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
+                                        <img src="/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 129 and score is 60 pts<li>LA rank is 25 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>5</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/do.png" class="countryflag" />
+                                    Dominican Republic
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    25
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Baby%20Brasil">Baby Brasil</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
+                                        <img src="/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 113 and score is 90 pts<li>LA rank is 25 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>6</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/br.png" class="countryflag" />
+                                    Brazil
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    25
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/eightgrade">eightgrade</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6015,10 +5724,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6026,7 +5733,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ar.png" class="countryflag" />
+                                    <img src="/static/images/countries/mx.png" class="countryflag" />
+                                    Mexico
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    25
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Old%20Trussy">Old Trussy</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>LA rank is 25 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>1</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/ar.png" class="countryflag" />
                                     Argentina
 
                                 </td>
@@ -6038,12 +5788,12 @@
                                     25
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MJMASTER">MJMASTER</a>
+                                    <a href="/rankings/player/byname/Misterio">Misterio</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6060,10 +5810,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6071,8 +5819,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/mx.png" class="countryflag" />
-                                    Mexico
+                                    <img src="/static/images/countries/cl.png" class="countryflag" />
+                                    Chile
 
                                 </td>
                             </tr>
@@ -6103,10 +5851,10 @@
                                 <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                                                   title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
                                 <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                 title="Diff against score before update at ">(?)</a>
+                                                 title="Diff against score before update at 2019-02-26">(?)</a>
                                 </th>
                                 <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Diff against rank before update at ">(?)</a></th>
+                                                title="Diff against rank before update at 2019-02-26">(?)</a></th>
                                 <th>Country</th>
                             </tr>
                             </thead>
@@ -6118,12 +5866,12 @@
                                     1
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Phenom">Phenom</a>
+                                    <a href="/rankings/player/byname/Phenom">Phenom</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_NECALLI" data-toggle="tooltip" data-placement="top" title="Filter on Necalli">
+                                        <img src="/static/images/chars/sf5/sf5_necalli.png" width="22" height="25" alt="Necalli" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6140,10 +5888,8 @@
                                 </td>
                                 <td>19</td>
 
-                                <td>+641</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6151,7 +5897,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/no.png" class="countryflag" />
+                                    <img src="/static/images/countries/no.png" class="countryflag" />
                                     Norway
 
                                 </td>
@@ -6163,12 +5909,12 @@
                                     2
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Luffy">Luffy</a>
+                                    <a href="/rankings/player/byname/Luffy">Luffy</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6185,10 +5931,8 @@
                                 </td>
                                 <td>16</td>
 
-                                <td>+440</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6196,7 +5940,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/fr.png" class="countryflag" />
+                                    <img src="/static/images/countries/fr.png" class="countryflag" />
                                     France
 
                                 </td>
@@ -6208,12 +5952,12 @@
                                     3
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Swagskheletor">Swagskheletor</a>
+                                    <a href="/rankings/player/byname/Swagskheletor">Swagskheletor</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
+                                        <img src="/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6230,10 +5974,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+220</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6241,7 +5983,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <img src="/static/images/countries/ru.png" class="countryflag" />
                                     Russian Federation
 
                                 </td>
@@ -6253,12 +5995,12 @@
                                     4
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Problem%20X">Problem X</a>
+                                    <a href="/rankings/player/byname/Problem%20X">Problem X</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6275,10 +6017,8 @@
                                 </td>
                                 <td>20</td>
 
-                                <td>+200</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6286,7 +6026,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -6298,12 +6038,12 @@
                                     5
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/MoMi">MoMi</a>
+                                    <a href="/rankings/player/byname/MoMi">MoMi</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6320,10 +6060,8 @@
                                 </td>
                                 <td>14</td>
 
-                                <td>+170</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6331,7 +6069,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/nl.png" class="countryflag" />
+                                    <img src="/static/images/countries/nl.png" class="countryflag" />
                                     Netherlands
 
                                 </td>
@@ -6343,12 +6081,12 @@
                                     6
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/AngryBird">AngryBird</a>
+                                    <a href="/rankings/player/byname/AngryBird">AngryBird</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
+                                        <img src="/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6365,10 +6103,8 @@
                                 </td>
                                 <td>10</td>
 
-                                <td>+160</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6376,7 +6112,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ae.png" class="countryflag" />
+                                    <img src="/static/images/countries/ae.png" class="countryflag" />
                                     United Arab Emirates
 
                                 </td>
@@ -6388,12 +6124,12 @@
                                     7
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Hurricane">Hurricane</a>
+                                    <a href="/rankings/player/byname/Hurricane">Hurricane</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6410,10 +6146,8 @@
                                 </td>
                                 <td>11</td>
 
-                                <td>+154</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6421,7 +6155,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -6433,12 +6167,12 @@
                                     8
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/RASS">RASS</a>
+                                    <a href="/rankings/player/byname/RASS">RASS</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6455,10 +6189,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+150</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6466,7 +6198,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <img src="/static/images/countries/ru.png" class="countryflag" />
                                     Russian Federation
 
                                 </td>
@@ -6478,12 +6210,12 @@
                                     9
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Akainu">Akainu</a>
+                                    <a href="/rankings/player/byname/Akainu">Akainu</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6500,10 +6232,8 @@
                                 </td>
                                 <td>14</td>
 
-                                <td>+142</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6511,7 +6241,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/fr.png" class="countryflag" />
+                                    <img src="/static/images/countries/fr.png" class="countryflag" />
                                     France
 
                                 </td>
@@ -6523,12 +6253,12 @@
                                     10
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Duwactik">Duwactik</a>
+                                    <a href="/rankings/player/byname/Duwactik">Duwactik</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6545,10 +6275,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+90</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6556,7 +6284,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <img src="/static/images/countries/ru.png" class="countryflag" />
                                     Russian Federation
 
                                 </td>
@@ -6568,12 +6296,12 @@
                                     11
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Broski">Broski</a>
+                                    <a href="/rankings/player/byname/Broski">Broski</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
+                                        <img src="/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6590,10 +6318,8 @@
                                 </td>
                                 <td>9</td>
 
-                                <td>+81</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6601,7 +6327,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -6613,57 +6339,12 @@
                                     12
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Infexious">Infexious</a>
+                                    <a href="/rankings/player/byname/VegaPatch">VegaPatch</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>71
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 65 and score is 191 pts<li>EU rank is 12 and score is 71 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>8</td>
-
-                                <td>+71</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
-                                    United Kingdom
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    12
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/VegaPatch">VegaPatch</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_FANG" data-toggle="tooltip" data-placement="top" title="Filter on FANG">
+                                        <img src="/static/images/chars/sf5/sf5_fang.png" width="22" height="25" alt="FANG" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6680,10 +6361,8 @@
                                 </td>
                                 <td>4</td>
 
-                                <td>+71</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6691,8 +6370,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/es.png" class="countryflag" />
+                                    <img src="/static/images/countries/es.png" class="countryflag" />
                                     Spain
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    12
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Infexious">Infexious</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ZEKU" data-toggle="tooltip" data-placement="top" title="Filter on Zeku">
+                                        <img src="/static/images/chars/sf5/sf5_zeku.png" width="22" height="25" alt="Zeku" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>71
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 65 and score is 191 pts<li>EU rank is 12 and score is 71 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>8</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
+                                    United Kingdom
 
                                 </td>
                             </tr>
@@ -6703,12 +6425,12 @@
                                     14
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Cobelcog">Cobelcog</a>
+                                    <a href="/rankings/player/byname/Cobelcog">Cobelcog</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6725,10 +6447,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+70</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6736,7 +6456,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ie.png" class="countryflag" />
+                                    <img src="/static/images/countries/ie.png" class="countryflag" />
                                     Ireland
 
                                 </td>
@@ -6748,12 +6468,12 @@
                                     15
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Shakz">Shakz</a>
+                                    <a href="/rankings/player/byname/Shakz">Shakz</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6770,10 +6490,8 @@
                                 </td>
                                 <td>11</td>
 
-                                <td>+61</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6781,7 +6499,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -6793,57 +6511,12 @@
                                     16
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Takamura">Takamura</a>
+                                    <a href="/rankings/player/byname/Big%20Bird">Big Bird</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>50
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 119 and score is 71 pts<li>EU rank is 16 and score is 50 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>9</td>
-
-                                <td>+50</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/be.png" class="countryflag" />
-                                    Belgium
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    16
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Big%20Bird">Big Bird</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6860,10 +6533,8 @@
                                 </td>
                                 <td>14</td>
 
-                                <td>+50</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6871,8 +6542,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ae.png" class="countryflag" />
+                                    <img src="/static/images/countries/ae.png" class="countryflag" />
                                     United Arab Emirates
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    16
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Takamura">Takamura</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>50
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 119 and score is 71 pts<li>EU rank is 16 and score is 50 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>9</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/be.png" class="countryflag" />
+                                    Belgium
 
                                 </td>
                             </tr>
@@ -6883,12 +6597,12 @@
                                     18
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/DrGulag">DrGulag</a>
+                                    <a href="/rankings/player/byname/DrGulag">DrGulag</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6905,10 +6619,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+41</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6916,7 +6628,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/fi.png" class="countryflag" />
+                                    <img src="/static/images/countries/fi.png" class="countryflag" />
                                     Finland
 
                                 </td>
@@ -6928,12 +6640,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tempo">Tempo</a>
+                                    <a href="/rankings/player/byname/Tempo">Tempo</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
+                                        <img src="/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6950,10 +6662,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -6961,7 +6671,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/fi.png" class="countryflag" />
+                                    <img src="/static/images/countries/fi.png" class="countryflag" />
                                     Finland
 
                                 </td>
@@ -6973,12 +6683,12 @@
                                     19
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Atrosh">Atrosh</a>
+                                    <a href="/rankings/player/byname/Atrosh">Atrosh</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -6995,10 +6705,8 @@
                                 </td>
                                 <td>5</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7006,7 +6714,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/se.png" class="countryflag" />
+                                    <img src="/static/images/countries/se.png" class="countryflag" />
                                     Sweden
 
                                 </td>
@@ -7018,12 +6726,12 @@
                                     21
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brian">Brian</a>
+                                    <a href="/rankings/player/byname/Brian">Brian</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BLANKA" data-toggle="tooltip" data-placement="top" title="Filter on Blanka">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_blanka.png" width="22" height="25" alt="Blanka" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BLANKA" data-toggle="tooltip" data-placement="top" title="Filter on Blanka">
+                                        <img src="/static/images/chars/sf5/sf5_blanka.png" width="22" height="25" alt="Blanka" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7040,10 +6748,8 @@
                                 </td>
                                 <td>7</td>
 
-                                <td>+30</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7051,7 +6757,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -7063,12 +6769,12 @@
                                     22
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Packz">Packz</a>
+                                    <a href="/rankings/player/byname/Shady">Shady</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7076,19 +6782,17 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 88 and score is 131 pts<li>EU rank is 22 and score is 20 pts</ul>"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>EU rank is 22 and score is 20 pts</ul>"
                                             data-html="true" data-trigger="focus">
                                         info
                                     </button>
 
                                     <small></small>
                                 </td>
-                                <td>8</td>
+                                <td>2</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7096,8 +6800,8 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
-                                    United Kingdom
+                                    <img src="/static/images/countries/fi.png" class="countryflag" />
+                                    Finland
 
                                 </td>
                             </tr>
@@ -7108,12 +6812,12 @@
                                     22
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/SaltyKid">SaltyKid</a>
+                                    <a href="/rankings/player/byname/SaltyKid">SaltyKid</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7130,10 +6834,8 @@
                                 </td>
                                 <td>12</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7141,7 +6843,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/se.png" class="countryflag" />
+                                    <img src="/static/images/countries/se.png" class="countryflag" />
                                     Sweden
 
                                 </td>
@@ -7153,57 +6855,12 @@
                                     22
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Shady">Shady</a>
+                                    <a href="/rankings/player/byname/K0Lder">K0Lder</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 184 and score is 20 pts<li>EU rank is 22 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>2</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/fi.png" class="countryflag" />
-                                    Finland
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    22
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/K0Lder">K0Lder</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7220,10 +6877,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7231,7 +6886,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <img src="/static/images/countries/ru.png" class="countryflag" />
                                     Russian Federation
 
                                 </td>
@@ -7243,12 +6898,12 @@
                                     22
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brick">Brick</a>
+                                    <a href="/rankings/player/byname/Brick">Brick</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ZANGIEF" data-toggle="tooltip" data-placement="top" title="Filter on Gief">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_zangief.png" width="22" height="25" alt="Gief" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ZANGIEF" data-toggle="tooltip" data-placement="top" title="Filter on Gief">
+                                        <img src="/static/images/chars/sf5/sf5_zangief.png" width="22" height="25" alt="Gief" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7265,10 +6920,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7276,8 +6929,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/se.png" class="countryflag" />
+                                    <img src="/static/images/countries/se.png" class="countryflag" />
                                     Sweden
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    22
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Packz">Packz</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 88 and score is 131 pts<li>EU rank is 22 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>8</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
+                                    United Kingdom
 
                                 </td>
                             </tr>
@@ -7288,12 +6984,12 @@
                                     27
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/SunMate">SunMate</a>
+                                    <a href="/rankings/player/byname/SunMate">SunMate</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BIRDIE" data-toggle="tooltip" data-placement="top" title="Filter on Birdie">
+                                        <img src="/static/images/chars/sf5/sf5_birdie.png" width="22" height="25" alt="Birdie" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7310,10 +7006,8 @@
                                 </td>
                                 <td>2</td>
 
-                                <td>+11</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7321,7 +7015,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ru.png" class="countryflag" />
+                                    <img src="/static/images/countries/ru.png" class="countryflag" />
                                     Russian Federation
 
                                 </td>
@@ -7333,57 +7027,12 @@
                                     28
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/maumas">maumas</a>
+                                    <a href="/rankings/player/byname/ImStillDaDaddy">ImStillDaDaddy</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>10
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>EU rank is 28 and score is 10 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>2</td>
-
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/pl.png" class="countryflag" />
-                                    Poland
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    28
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/ImStillDaDaddy">ImStillDaDaddy</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7400,10 +7049,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7411,7 +7058,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
+                                    <img src="/static/images/countries/gb.png" class="countryflag" />
                                     United Kingdom
 
                                 </td>
@@ -7423,12 +7070,12 @@
                                     28
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Isam">Isam</a>
+                                    <a href="/rankings/player/byname/Zera">Zera</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7436,19 +7083,17 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 224 and score is 11 pts<li>EU rank is 28 and score is 10 pts</ul>"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>EU rank is 28 and score is 10 pts</ul>"
                                             data-html="true" data-trigger="focus">
                                         info
                                     </button>
 
                                     <small></small>
                                 </td>
-                                <td>6</td>
+                                <td>3</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7456,8 +7101,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/gb.png" class="countryflag" />
-                                    United Kingdom
+                                    <img src="/static/images/countries/fr.png" class="countryflag" />
+                                    France
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    28
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/maumas">maumas</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ALEX" data-toggle="tooltip" data-placement="top" title="Filter on Alex">
+                                        <img src="/static/images/chars/sf5/sf5_alex.png" width="22" height="25" alt="Alex" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>10
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>EU rank is 28 and score is 10 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>2</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/pl.png" class="countryflag" />
+                                    Poland
 
                                 </td>
                             </tr>
@@ -7488,10 +7176,10 @@
                                 <th>Tournaments<a href="#" data-toggle="tooltip" data-placement="top"
                                                   title="Amount of CPT ranking/premier tournaments played">(?)</a></th>
                                 <th>Score diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                 title="Diff against score before update at ">(?)</a>
+                                                 title="Diff against score before update at 2019-02-26">(?)</a>
                                 </th>
                                 <th>Rank diff<a href="#" data-toggle="tooltip" data-placement="top"
-                                                title="Diff against rank before update at ">(?)</a></th>
+                                                title="Diff against rank before update at 2019-02-26">(?)</a></th>
                                 <th>Country</th>
                             </tr>
                             </thead>
@@ -7503,12 +7191,12 @@
                                     1
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/NuckleDu">NuckleDu</a>
+                                    <a href="/rankings/player/byname/NuckleDu">NuckleDu</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_GUILE" data-toggle="tooltip" data-placement="top" title="Filter on Guile">
+                                        <img src="/static/images/chars/sf5/sf5_guile.png" width="22" height="25" alt="Guile" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7525,10 +7213,8 @@
                                 </td>
                                 <td>21</td>
 
-                                <td>+671</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7536,7 +7222,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7548,12 +7234,12 @@
                                     2
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Justin%20Wong">Justin Wong</a>
+                                    <a href="/rankings/player/byname/Justin%20Wong">Justin Wong</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7570,10 +7256,8 @@
                                 </td>
                                 <td>18</td>
 
-                                <td>+370</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7581,7 +7265,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7593,12 +7277,12 @@
                                     3
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Punk">Punk</a>
+                                    <a href="/rankings/player/byname/Punk">Punk</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KARIN" data-toggle="tooltip" data-placement="top" title="Filter on Karin">
+                                        <img src="/static/images/chars/sf5/sf5_karin.png" width="22" height="25" alt="Karin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7615,10 +7299,8 @@
                                 </td>
                                 <td>19</td>
 
-                                <td>+351</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7626,7 +7308,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7638,12 +7320,12 @@
                                     4
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Idom">Idom</a>
+                                    <a href="/rankings/player/byname/Idom">Idom</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_LAURA" data-toggle="tooltip" data-placement="top" title="Filter on Laura">
+                                        <img src="/static/images/chars/sf5/sf5_laura.png" width="22" height="25" alt="Laura" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7660,10 +7342,8 @@
                                 </td>
                                 <td>8</td>
 
-                                <td>+250</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7671,7 +7351,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7683,12 +7363,12 @@
                                     5
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Toi">Toi</a>
+                                    <a href="/rankings/player/byname/Toi">Toi</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7705,10 +7385,8 @@
                                 </td>
                                 <td>12</td>
 
-                                <td>+241</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7716,7 +7394,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7728,12 +7406,12 @@
                                     6
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Nephew">Nephew</a>
+                                    <a href="/rankings/player/byname/Nephew">Nephew</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KOLIN" data-toggle="tooltip" data-placement="top" title="Filter on Kolin">
+                                        <img src="/static/images/chars/sf5/sf5_kolin.png" width="22" height="25" alt="Kolin" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7750,10 +7428,8 @@
                                 </td>
                                 <td>13</td>
 
-                                <td>+190</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7761,7 +7437,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7773,12 +7449,12 @@
                                     7
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/CJ%20Truth">CJ Truth</a>
+                                    <a href="/rankings/player/byname/CJ%20Truth">CJ Truth</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7795,10 +7471,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+181</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7806,7 +7480,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7818,12 +7492,12 @@
                                     8
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Flash">Flash</a>
+                                    <a href="/rankings/player/byname/Flash">Flash</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7840,10 +7514,8 @@
                                 </td>
                                 <td>9</td>
 
-                                <td>+150</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7851,7 +7523,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7863,12 +7535,12 @@
                                     9
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Smug">Smug</a>
+                                    <a href="/rankings/player/byname/Smug">Smug</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7885,10 +7557,8 @@
                                 </td>
                                 <td>15</td>
 
-                                <td>+80</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7896,7 +7566,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7908,12 +7578,12 @@
                                     10
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Chris%20Tatarian">Chris Tatarian</a>
+                                    <a href="/rankings/player/byname/Chris%20Tatarian">Chris Tatarian</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
+                                        <img src="/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
                                     </a>
 
                                 </td>
@@ -7930,10 +7600,8 @@
                                 </td>
                                 <td>18</td>
 
-                                <td>+60</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -7941,7 +7609,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -7953,57 +7621,12 @@
                                     11
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Terrence">Terrence</a>
+                                    <a href="/rankings/player/byname/Sabour">Sabour</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>50
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 109 and score is 92 pts<li>NA rank is 11 and score is 50 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>11</td>
-
-                                <td>+50</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    11
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Sabour">Sabour</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8020,10 +7643,8 @@
                                 </td>
                                 <td>4</td>
 
-                                <td>+50</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8031,8 +7652,51 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ca.png" class="countryflag" />
+                                    <img src="/static/images/countries/ca.png" class="countryflag" />
                                     Canada
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    11
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Terrence">Terrence</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
+                                        <img src="/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>50
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 109 and score is 92 pts<li>NA rank is 11 and score is 50 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>11</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
 
                                 </td>
                             </tr>
@@ -8043,12 +7707,12 @@
                                     13
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Alex%20Myers">Alex Myers</a>
+                                    <a href="/rankings/player/byname/Alex%20Myers">Alex Myers</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CAMMY" data-toggle="tooltip" data-placement="top" title="Filter on Cammy">
+                                        <img src="/static/images/chars/sf5/sf5_cammy.png" width="22" height="25" alt="Cammy" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8065,10 +7729,8 @@
                                 </td>
                                 <td>19</td>
 
-                                <td>+42</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8076,7 +7738,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8088,57 +7750,12 @@
                                     14
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tommy2step">Tommy2step</a>
+                                    <a href="/rankings/player/byname/Brenttiscool">Brenttiscool</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>40
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 135 and score is 41 pts<li>NA rank is 14 and score is 40 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>5</td>
-
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    14
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brenttiscool">Brenttiscool</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
+                                        <img src="/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8155,10 +7772,8 @@
                                 </td>
                                 <td>6</td>
 
-                                <td>+40</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8166,7 +7781,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    14
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Tommy2step">Tommy2step</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_URIEN" data-toggle="tooltip" data-placement="top" title="Filter on Urien">
+                                        <img src="/static/images/chars/sf5/sf5_urien.png" width="22" height="25" alt="Urien" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>40
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 135 and score is 41 pts<li>NA rank is 14 and score is 40 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>5</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8178,12 +7836,12 @@
                                     16
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/XsK%20Samurai">XsK Samurai</a>
+                                    <a href="/rankings/player/byname/XsK%20Samurai">XsK Samurai</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8200,10 +7858,8 @@
                                 </td>
                                 <td>9</td>
 
-                                <td>+21</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8211,7 +7867,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8223,12 +7879,12 @@
                                     16
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/JB">JB</a>
+                                    <a href="/rankings/player/byname/JB">JB</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RASHID" data-toggle="tooltip" data-placement="top" title="Filter on Rashid">
+                                        <img src="/static/images/chars/sf5/sf5_rashid.png" width="22" height="25" alt="Rashid" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8245,10 +7901,8 @@
                                 </td>
                                 <td>14</td>
 
-                                <td>+21</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8256,7 +7910,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8268,102 +7922,12 @@
                                     18
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Commander%20Jesse">Commander Jesse</a>
+                                    <a href="/rankings/player/byname/Shine%20%5BUS%5D">Shine [US]</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 109 and score is 92 pts<li>NA rank is 18 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>11</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    18
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Brian_F">Brian_F</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>20
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 101 and score is 102 pts<li>NA rank is 18 and score is 20 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>12</td>
-
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    18
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Shine%20%5BUS%5D">Shine [US]</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_IBUKI" data-toggle="tooltip" data-placement="top" title="Filter on Ibuki">
+                                        <img src="/static/images/chars/sf5/sf5_ibuki.png" width="22" height="25" alt="Ibuki" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8380,10 +7944,8 @@
                                 </td>
                                 <td>13</td>
 
-                                <td>+20</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8391,7 +7953,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8400,23 +7962,23 @@
 
                             <tr class="unqual ">
                                 <td>
-                                    21
+                                    18
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Mo-Joe">Mo-Joe</a>
+                                    <a href="/rankings/player/byname/Commander%20Jesse">Commander Jesse</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_DHALSIM" data-toggle="tooltip" data-placement="top" title="Filter on Dhalsim">
+                                        <img src="/static/images/chars/sf5/sf5_dhalsim.png" width="22" height="25" alt="Dhalsim" class="charimg" />
                                     </a>
 
                                 </td>
-                                <td>11
+                                <td>20
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 76 and score is 153 pts<li>NA rank is 21 and score is 11 pts</ul>"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 109 and score is 92 pts<li>NA rank is 18 and score is 20 pts</ul>"
                                             data-html="true" data-trigger="focus">
                                         info
                                     </button>
@@ -8425,10 +7987,8 @@
                                 </td>
                                 <td>11</td>
 
-                                <td>+11</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8436,7 +7996,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    18
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Brian_F">Brian_F</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_BALROG" data-toggle="tooltip" data-placement="top" title="Filter on Balrog">
+                                        <img src="/static/images/chars/sf5/sf5_balrog.png" width="22" height="25" alt="Balrog" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>20
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 101 and score is 102 pts<li>NA rank is 18 and score is 20 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>12</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8448,12 +8051,12 @@
                                     21
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Snake%20Eyez">Snake Eyez</a>
+                                    <a href="/rankings/player/byname/Snake%20Eyez">Snake Eyez</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_AKUMA" data-toggle="tooltip" data-placement="top" title="Filter on Akuma">
+                                        <img src="/static/images/chars/sf5/sf5_akuma.png" width="22" height="25" alt="Akuma" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8470,10 +8073,8 @@
                                 </td>
                                 <td>10</td>
 
-                                <td>+11</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8481,7 +8082,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    21
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Mo-Joe">Mo-Joe</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>11
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 76 and score is 153 pts<li>NA rank is 21 and score is 11 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>11</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8493,57 +8137,12 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/CeroBlast">CeroBlast</a>
+                                    <a href="/rankings/player/byname/Ricki%20Ortiz">Ricki Ortiz</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>10
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>NA rank is 23 and score is 10 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>4</td>
-
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/ca.png" class="countryflag" />
-                                    Canada
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    23
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Ricki%20Ortiz">Ricki Ortiz</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_CHUNLI" data-toggle="tooltip" data-placement="top" title="Filter on Chun">
+                                        <img src="/static/images/chars/sf5/sf5_chunli.png" width="22" height="25" alt="Chun" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8560,10 +8159,8 @@
                                 </td>
                                 <td>17</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8571,7 +8168,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8583,12 +8180,55 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Kreymore">Kreymore</a>
+                                    <a href="/rankings/player/byname/CeroBlast">CeroBlast</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_KEN" data-toggle="tooltip" data-placement="top" title="Filter on Ken">
+                                        <img src="/static/images/chars/sf5/sf5_ken.png" width="22" height="25" alt="Ken" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>10
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>NA rank is 23 and score is 10 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>4</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/ca.png" class="countryflag" />
+                                    Canada
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    23
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Kreymore">Kreymore</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8605,10 +8245,8 @@
                                 </td>
                                 <td>10</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8616,7 +8254,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8628,102 +8266,12 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Jot">Jot</a>
+                                    <a href="/rankings/player/byname/FluxWaves">FluxWaves</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>10
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 224 and score is 11 pts<li>NA rank is 23 and score is 10 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>2</td>
-
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    23
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Tampa%20Bison">Tampa Bison</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
-                                    </a>
-
-                                </td>
-                                <td>10
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
-                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>NA rank is 23 and score is 10 pts</ul>"
-                                            data-html="true" data-trigger="focus">
-                                        info
-                                    </button>
-
-                                    <small></small>
-                                </td>
-                                <td>2</td>
-
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-
-
-                                </td>
-
-
-                                <td>
-
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
-                                    United States
-
-                                </td>
-                            </tr>
-
-
-                            <tr class="unqual ">
-                                <td>
-                                    23
-                                </td>
-                                <td>
-                                    <a href="/sf4ranking/rankings/player/byname/FluxWaves">FluxWaves</a>
-                                </td>
-                                <td>
-
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_RMIKA" data-toggle="tooltip" data-placement="top" title="Filter on Mika">
+                                        <img src="/static/images/chars/sf5/sf5_rmika.png" width="22" height="25" alt="Mika" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8740,10 +8288,8 @@
                                 </td>
                                 <td>1</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8751,7 +8297,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/ca.png" class="countryflag" />
+                                    <img src="/static/images/countries/ca.png" class="countryflag" />
                                     Canada
 
                                 </td>
@@ -8763,12 +8309,55 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Dieminion">Dieminion</a>
+                                    <a href="/rankings/player/byname/Tampa%20Bison">Tampa Bison</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ED" data-toggle="tooltip" data-placement="top" title="Filter on Ed">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_ed.png" width="22" height="25" alt="Ed" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MBISON" data-toggle="tooltip" data-placement="top" title="Filter on Bison">
+                                        <img src="/static/images/chars/sf5/sf5_mbison.png" width="22" height="25" alt="Bison" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>10
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 237 and score is 10 pts<li>NA rank is 23 and score is 10 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>2</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    23
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Jot">Jot</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_MENAT" data-toggle="tooltip" data-placement="top" title="Filter on Menat">
+                                        <img src="/static/images/chars/sf5/sf5_menat.png" width="22" height="25" alt="Menat" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8783,12 +8372,10 @@
 
                                     <small></small>
                                 </td>
-                                <td>4</td>
+                                <td>2</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8796,7 +8383,7 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8808,12 +8395,12 @@
                                     23
                                 </td>
                                 <td>
-                                    <a href="/sf4ranking/rankings/player/byname/Jan">Jan</a>
+                                    <a href="/rankings/player/byname/Jan">Jan</a>
                                 </td>
                                 <td>
 
-                                    <a href="/sf4ranking/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
-                                        <img src="/sf4ranking/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ABIGAIL" data-toggle="tooltip" data-placement="top" title="Filter on Abigail">
+                                        <img src="/static/images/chars/sf5/sf5_abigail.png" width="22" height="25" alt="Abigail" class="charimg" />
                                     </a>
 
                                 </td>
@@ -8830,10 +8417,8 @@
                                 </td>
                                 <td>3</td>
 
-                                <td>+10</td>
-                                <td class="warning">
-
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                <td>+0</td>
+                                <td class="">
 
 
                                 </td>
@@ -8841,7 +8426,50 @@
 
                                 <td>
 
-                                    <img src="/sf4ranking/static/images/countries/us.png" class="countryflag" />
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
+                                    United States
+
+                                </td>
+                            </tr>
+
+
+                            <tr class="unqual ">
+                                <td>
+                                    23
+                                </td>
+                                <td>
+                                    <a href="/rankings/player/byname/Dieminion">Dieminion</a>
+                                </td>
+                                <td>
+
+                                    <a href="/rankings/rank/SF5?pchar=SF5_ED" data-toggle="tooltip" data-placement="top" title="Filter on Ed">
+                                        <img src="/static/images/chars/sf5/sf5_ed.png" width="22" height="25" alt="Ed" class="charimg" />
+                                    </a>
+
+                                </td>
+                                <td>10
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-xs btn-info" data-container="body" data-toggle="popover" data-placement="bottom"
+                                            data-content="Qualifications: <ul></ul><ul><li>Global rank is 224 and score is 11 pts<li>NA rank is 23 and score is 10 pts</ul>"
+                                            data-html="true" data-trigger="focus">
+                                        info
+                                    </button>
+
+                                    <small></small>
+                                </td>
+                                <td>4</td>
+
+                                <td>+0</td>
+                                <td class="">
+
+
+                                </td>
+
+
+                                <td>
+
+                                    <img src="/static/images/countries/us.png" class="countryflag" />
                                     United States
 
                                 </td>
@@ -8901,7 +8529,7 @@
 
 
     <form role="search"
-          action="/sf4ranking/rankings/search" id="searchForm">
+          action="/rankings/search" id="searchForm">
         <div class="input-group">
             <input type="text" id="playerSearch" class="form-control" placeholder="Find a Player" name="player"
                    title="Press <ENTER> for advanced search">
@@ -8912,7 +8540,7 @@
     </form>
 
     <form role="search"
-          action="/sf4ranking/rankings/searchTournament" id="searchTournamentForm">
+          action="/rankings/searchTournament" id="searchTournamentForm">
         <div class="input-group">
             <input type="text" id="tournamentSearch" class="form-control" placeholder="Find a Tournament" name="tournament"
                    title="Press <ENTER> for advanced search">
@@ -8928,15 +8556,15 @@
 
     <h2 class="slidebar-header no-margin-bottom">Navigation</h2>
     <ul class="slidebar-menu">
-        <li><a href="/sf4ranking/">Home</a></li>
-        <li><a href="/sf4ranking/rankings/cpt">Pro Tour</a></li>
-        <li><a href="/sf4ranking/rankings/teams">Teams</a></li>
-        <li><a href="/sf4ranking/rankings/events">Events</a></li>
-        <li><a href="/sf4ranking/rankings/rank/SF5">SF5 rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/T7">Tekken rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/INJUSTICE2">Injustice rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/GGXRD">GG rankings</a></li>
-        <li><a href="/sf4ranking/rankings/rank/UMVC3">Marvel rankings</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/rankings/cpt">Pro Tour</a></li>
+        <li><a href="/rankings/teams">Teams</a></li>
+        <li><a href="/rankings/events">Events</a></li>
+        <li><a href="/rankings/rank/SF5">SF5 rankings</a></li>
+        <li><a href="/rankings/rank/T7">Tekken rankings</a></li>
+        <li><a href="/rankings/rank/INJUSTICE2">Injustice rankings</a></li>
+        <li><a href="/rankings/rank/GGXRD">GG rankings</a></li>
+        <li><a href="/rankings/rank/UMVC3">Marvel rankings</a></li>
     </ul>
 
     <h2 class="slidebar-header">Social Media</h2>
@@ -8975,16 +8603,16 @@
 <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>-->
 
 
-<script src="/sf4ranking/assets/js/styleswitcher.js"></script>
+<script src="/assets/js/styleswitcher.js"></script>
 
 <!-- Syntaxhighlighter -->
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shCore.js"></script>
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shBrushXml.js"></script>
-<script src="/sf4ranking/assets/js/syntaxhighlighter/shBrushJScript.js"></script>
+<script src="/assets/js/syntaxhighlighter/shCore.js"></script>
+<script src="/assets/js/syntaxhighlighter/shBrushXml.js"></script>
+<script src="/assets/js/syntaxhighlighter/shBrushJScript.js"></script>
 
-<script src="/sf4ranking/assets/js/DropdownHover.js"></script>
-<script src="/sf4ranking/assets/js/app.js"></script>
-<script src="/sf4ranking/assets/js/holder.js"></script>
+<script src="/assets/js/DropdownHover.js"></script>
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/holder.js"></script>
 
 
 
@@ -8994,11 +8622,11 @@
     {
         function search(uid)
         {
-            window.location = "/sf4ranking/rankings/player/byname/" + uid
+            window.location = "/rankings/player/byname/" + uid
         }
 
         $("#playerSearchBar").autocomplete({
-            source: "/sf4ranking/rankings/autocompletePlayer", minLength: 3,
+            source: "/rankings/autocompletePlayer", minLength: 3,
             select: function (event, ui)
             {
                 if (ui.item) search(ui.item.value);
@@ -9012,16 +8640,16 @@
     {
         function searchTournament(uid)
         {
-            window.location = "/sf4ranking/rankings/tournament/byname/" + uid
+            window.location = "/rankings/tournament/byname/" + uid
         }
 
         function searchEvent(uid)
         {
-            window.location = "/sf4ranking/rankings/event/byname/" + uid
+            window.location = "/rankings/event/byname/" + uid
         }
 
         $("#tournamentSearch").autocomplete({
-            source: "/sf4ranking/rankings/autocompleteTournament",
+            source: "/rankings/autocompleteTournament",
             minLength: 2,
             select: function (event, ui)
             {
@@ -9070,8 +8698,8 @@
         });
     })
 </script>
-<script src="/sf4ranking/static/js/jquery.tablesorter.min.js"></script>
-<script src="/sf4ranking/static/js/jquery.tablecloth.js"></script>
+<script src="/static/js/jquery.tablesorter.min.js"></script>
+<script src="/static/js/jquery.tablecloth.js"></script>
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function ()
     {
