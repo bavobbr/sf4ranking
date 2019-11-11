@@ -39,6 +39,10 @@ div.top100 {
     vertical-align:middle;
 }
 
+.panel {
+    margin: 20px 10px 10px;
+}
+
 .navbar-form {
     margin-bottom: 0px;
 }

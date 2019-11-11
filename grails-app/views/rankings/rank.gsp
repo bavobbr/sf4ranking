@@ -47,6 +47,14 @@
     </g:else>
 </p>
 </div>
+
+<g:if test="${game.end}">
+    <div class="alert alert-info">
+        This game has ended competitive tracking at ${game.end}. All statistics are taken before that date. Results after the date are registered but not used in statistics.
+        When a game closes, data is considered for last two years instead of last 12 months.
+    </div>
+</g:if>
+
 <div class="table-responsive">
 
     <table class="table table-striped table-hover table-condensed">

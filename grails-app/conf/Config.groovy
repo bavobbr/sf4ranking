@@ -52,6 +52,10 @@ grails.cache.config = {
     }
     cache {
         maxCapacity = 100
+        name 'seedings'
+    }
+    cache {
+        maxCapacity = 100
         name 'cpt'
     }
     cache {

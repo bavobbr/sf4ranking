@@ -67,12 +67,18 @@ class RankingService {
             if (!tournaments) return
             // AUTO weighting starts from premier 5
             def lastTournament = tournaments.sort { Tournament t -> t.date }.last()
-            Date lastDate = lastTournament.date
+            Date lastDate = lastTournament?.date
+            def yearAgo = lastDate?.minus(365)
             if (game.end && game.end.isBefore(lastTournament.date.time)) {
                 lastDate = game.end.toDate()
+                yearAgo = lastDate.minus(365*2)
+                println "Using custom last date as $lastDate, as game is closed!"
+            }
+            else if (game.end) {
+                yearAgo = lastDate.minus(365*2)
+                println "Using custom last date as $lastDate, as game is closed!"
             }
             println "Using last tournament $lastTournament on ${lastTournament.date} as reference, last date is $lastDate"
-            def yearAgo = lastDate.minus(365)
 
             tournaments = tournaments.sort { a, b -> b.weight <=> a.weight }
             println "year ago is $yearAgo"
@@ -82,8 +88,17 @@ class RankingService {
             tournaments.findAll { it.date.before(yearAgo) }.each { Tournament t ->
                 t.tournamentType = TournamentType.UNRANKED
             }
+            tournaments.findAll { it.date.after(lastDate) }.each { Tournament t ->
+                t.tournamentType = TournamentType.UNRANKED
+            }
+            if (game.end) {
+                tournaments.findAll { it.weightingType == WeightingType.FIXED && it.tournamentType == TournamentType.UNRANKED }.each { Tournament t ->
+                    t.weightingType = WeightingType.AUTO
+                    // fix accidental unfix
+                }
+            }
             tournaments.removeAll {
-                !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo)
+                !it.ranked || !it.finished || it.weightingType == WeightingType.FIXED || it.date.before(yearAgo) || it.date.after(lastDate)
             }
             int end = applyType(tournaments, TournamentType.PREMIER_MANDATORY, 0, 5, 1)
             end = applyType(tournaments, TournamentType.PREMIER_5, end, 5, 1)
@@ -103,8 +118,13 @@ class RankingService {
     Integer updatePlayerScores(Version game) {
         List players = Player.list()
         def lastTournament = queryService.lastTournament(game)
+        def lastDate = lastTournament.date
+        if (game.end && game.end.isBefore(lastTournament.date.time)) {
+            lastDate = game.end.toDate()
+            println "Using custom last date as $lastDate, as game is closed!"
+        }
         if (lastTournament) {
-            def window = new DateTime(lastTournament.date.time).minusMonths(6)
+            def window = new DateTime(lastDate).minusMonths(6)
             configurationService.withUniqueSession {
                 players.eachWithIndex { Player p, Integer idx ->
                     log.info("Evaluating for $game player $p, looking for results [${idx + 1} / ${players.size()}]")
@@ -122,7 +142,8 @@ class RankingService {
                         }
                         def trendingScore = getScore(results, 12) { Result r ->
                             if (window.isBefore(r.tournament.date.time)) {
-                                return r.tournament.ranked ? ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
+                                def end = r.tournament.game.end?.toDate()?: new Date()
+                                return r.tournament.ranked ? ScoringSystem.getDecayedScore(r.tournament.date, end, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat) : 0
                             } else return 0
                         }
                         p.applyScore(game, actualScore)

@@ -767,6 +767,10 @@ class AdminController
                         println "set region $it.region for tournament $it"
                     }
                 }
+                if (it.countryCode.region && it.countryCode.region != it.region) {
+                    it.region = it.countryCode.region
+                    println "set region $it.region for tournament $it"
+                }
             }
         }
         Event.list().each {
@@ -777,6 +781,10 @@ class AdminController
                         println "set region $it.region for event $it"
                     }
                 }
+            }
+            if (it.countryCode.region && it.countryCode.region != it.region) {
+                it.region = it.countryCode.region
+                println "set region $it.region for event $it"
             }
         }
         flash.message = "Updated region"

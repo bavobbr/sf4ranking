@@ -26,7 +26,12 @@ class QueryService
             eq("rankAlias.game", game)
             property("rankAlias.${rankField}")
             gt("rankAlias.${rankField}", 0)
-            order("rankAlias.${rankField}", "asc")
+            if (rankingType == RankingType.WEIGHT) {
+                order("rankAlias.${rankField}", "desc")
+            }
+            else {
+                order("rankAlias.${rankField}", "asc")
+            }
 
             if (countryCode) eq("countryCode", countryCode)
             if (ctype)
@@ -109,7 +114,7 @@ class QueryService
         return rcount
     }
 
-    Integer countPlayerResultsAfter(Player player, Version game, Date date)
+    Integer countPlayerResultsAfter(Player player, Version game, Date start, Date end)
     {
         def resultCountQuery = Result.createCriteria()
         def rcount = resultCountQuery.get() {
@@ -118,7 +123,10 @@ class QueryService
             }
             tournament {
                 eq("game", game)
-                gt("date", date)
+                ge("date", start)
+                if (end) {
+                    le("date", end)
+                }
             }
             eq("player", player)
         }

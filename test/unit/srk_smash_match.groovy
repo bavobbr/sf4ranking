@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gameversion = "MVCI"
-def smashgame = "marvel"
+def gameversion = "DBFZ"
+def smashgame = "dragon"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def folder = new File("/Users/bbr/Desktop/evo")
+def folder = new File("/Users/bbr/Desktop/newsmash")
 def files = folder.listFiles({dir, name -> name.endsWith(".csv")} as FilenameFilter)
 files = files.sort { it.lastModified() }
 println "Processing files in order: ${files*.name}"
@@ -33,7 +33,11 @@ def twitterToId = [:]
 def srkToId = [:]
 def cache = [:]
 
-files.each { file ->
+def idToName = [:]
+def idToHandle = [:]
+
+files.sort { it.lastModified() }.each { file ->
+    println "Processing $file"
     def counter = 0
     def rows = file.readLines()
     rows.each {
@@ -51,10 +55,12 @@ files.each { file ->
         if (handle) handleToId[handle] = id
         if (handlejoin) handleJoinToId[handlejoin] = id
         if (twitter) twitterToId[twitter] = id
-        //println "saved $id $name $handle $twitter"
+        if (name) idToName[id] = name
+        if (handle) idToHandle[id] = handle
+        println "saved $id $name $handle $twitter from $file.name"
         counter++
     }
-    println "IMPORTED $counter names from $file"
+    println "IMPORTED $counter names from $file.name"
 }
 
 println nameToId.size()
@@ -129,12 +135,18 @@ top100.each { playernode ->
 println "matches"
 srkToId.each {
     def cached = cache[it.key]
-    if (cached && cached != it.value) { println "$it [$cached]" }
+    if (cached && cached != it.value) {
+        def sname = idToName[it.value]
+        def shandle = idToHandle[it.value]
+        println "$it [$cached] as $sname [$shandle]"
+    }
     else if (cached) {
         //println "$it (*)"
     }
     else {
-        println it
+        def sname = idToName[it.value]
+        def shandle = idToHandle[it.value]
+        println "$it as $sname [$shandle]"
     }
 }
 println srkToId.size()

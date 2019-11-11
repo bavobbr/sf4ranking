@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 import groovy.transform.ToString
 
-def tournament = "capcom-cup-2018-1"
+def tournament = "evo-2019"
 def filename = tournament.replace("-", "_")+".csv"
 def url = "https://api.smash.gg/tournament/$tournament/attendees"
 //https://smash.gg/api/-/gg_api./tournament/evo-2017/attendees;filter={"gamerTag":"daigo"};
@@ -59,6 +59,7 @@ boolean hasNext = true
 def page = 1
 def perpage = 100
 Map<String, List<Attendee>> groupByEvent = [:]
+Map<String, List<Attendee>> groupByUniqueEvent = [:]
 
 while (hasNext) {
     def apiQuery = url+"?page=$page&per_page=$perpage"
@@ -67,10 +68,10 @@ while (hasNext) {
     def data = new JsonSlurper().parseText(smashdata)
     def attendeeNodes = data.items.entities.attendee
     def attendeesBatch = attendeeNodes.collect { node ->
-        def attendee = new Attendee(name: node.player.name, id: node.player.id, gamertag: node.player.gamerTag, country: node.player.country, state: node.player.state)
+        def attendee = new Attendee(name: node.player?.name, id: node.player?.id, gamertag: node.player?.gamerTag, country: node.player?.country, state: node.player?.state)
         attendee.attendeeId = node.id
-        attendee.twitter = node.player.twitterHandle
-        attendee.tag = node.player.prefix
+        attendee.twitter = node.player?.twitterHandle
+        attendee.tag = node.player?.prefix
         attendee.events = node.events.collect {
             def evt = new Event(name: it.name, id: it.id)
             def entrant = node.entrants.find { it.eventId == evt.id }
@@ -85,8 +86,8 @@ while (hasNext) {
                 def phasedata = getPhaseData(poolnode.phaseGroupId)
                 def entrantdata = phasedata.entities.seeds.find { it.entrantId == event.entrantId }
                 def groupdata = phasedata.entities.groups
-                event.seed = entrantdata.seedNum
-                poolobj.phaseSeed = entrantdata.groupSeedNum
+                event.seed = entrantdata?.seedNum
+                poolobj.phaseSeed = entrantdata?.groupSeedNum
                 poolobj.nextPhase = groupdata.winnersTargetPhaseId
             }
         }
@@ -124,6 +125,10 @@ attendees.each { attendee ->
         if (!(event.name =~ /Ladder/)) {
             if (!groupByEvent.containsKey(event.name)) groupByEvent[event.name] = []
             groupByEvent[event.name] << attendee
+            if (attendee.events.size() == 1) {
+                if (!groupByUniqueEvent.containsKey(event.name)) groupByUniqueEvent[event.name] = []
+                groupByUniqueEvent[event.name] << attendee
+            }
         }
     }
 }
@@ -131,7 +136,8 @@ attendees.each { attendee ->
 println "[GAMES]"
 groupByEvent.each {
     def countGameByCountry =  it.value.countBy { it.country }
-    println "$it.key, ${it.value.size()}, ${countGameByCountry.size()}"
+    def uniques = groupByUniqueEvent[it.key]?: []
+    println "$it.key, ${it.value.size()}, ${countGameByCountry.size()}, ${uniques.size()}"
 }
 
 def events = groupByEvent.keySet()

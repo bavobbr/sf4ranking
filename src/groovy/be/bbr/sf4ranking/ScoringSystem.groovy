@@ -113,10 +113,10 @@ class ScoringSystem
         return (score * weight / 1000) as Integer
     }
 
-    public static Integer getDecayedScore(Date date, Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
+    public static Integer getDecayedScore(Date date, Date end, Integer rank, TournamentType tournamentType, TournamentFormat tournamentFormat = TournamentFormat.DOUBLE_BRACKET)
     {
         double decayFactor = 0.0
-        Integer monthsAgo = getMonthsDifference(date, new Date())
+        Integer monthsAgo = getMonthsDifference(date, end)
         switch (monthsAgo) {
             case { monthsAgo > 24 }: decayFactor = 0.99; break
             case { monthsAgo > 23 }: decayFactor = 0.98; break

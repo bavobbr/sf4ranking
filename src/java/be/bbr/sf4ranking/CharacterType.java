@@ -289,6 +289,7 @@ public enum CharacterType
     SF5_G("G", "g", Version.SF5),
     SF5_SAGAT("SAGAT", "Sagat", Version.SF5),
     SF5_CODY("Cody", "Cody", Version.SF5),
+    SF5_KAGE("Kage", "Kage", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),
@@ -331,6 +332,12 @@ public enum CharacterType
     T7_GEESE_HOWARD("GEESE HOWARD", "Geese", Version.T7),
     T7_NOCTIS("NOCTIS", "Noctis", Version.T7),
     T7_ANNA("ANNA", "Anna", Version.T7),
+    T7_ARMOR_KING("ARMOR KING", "Armor King", Version.T7),
+    T7_LEI("LEI", "Lei", Version.T7),
+    T7_JULIA("JULIA", "Julia", Version.T7),
+    T7_MARDUK("MARDUK", "Marduk", Version.T7),
+    T7_NEGAN("NEGAN", "Negan", Version.T7),
+    T7_DRAGUNOV("DRAGUNOV", "Dragunov", Version.T7),
 
     INJ2_AQUAMAN("AQUAMAN", "Aquaman", Version.INJUSTICE2),
     INJ2_ATROCITUS("ATROCITUS", "Atrocitus", Version.INJUSTICE2),
@@ -455,7 +462,7 @@ public enum CharacterType
     DBFZ_KRILLIN("KRILLIN", "Krillin", Version.DBFZ),
     DBFZ_MAJIN_BUU("MAJIN BUU", "Majin Buu", Version.DBFZ),
     DBFZ_NAPPA("NAPPA", "Nappa", Version.DBFZ),
-    DBFZ_PICCOLO("PICCOLO", "Piccolo", Version.DBFZ),
+    DBFZ_PICCOLO("PICCOLO", "Picolo", Version.DBFZ),
     DBFZ_SUPER_SAIYAN_BLUE_GOKU("Goku blue", "Blue Goku", Version.DBFZ),
     DBFZ_SUPER_SAIYAN_BLUE_VEGETA("Vegeta blue", "Blue Vegeta", Version.DBFZ),
     DBFZ_TIEN("TIEN", "Tien", Version.DBFZ),
@@ -468,6 +475,10 @@ public enum CharacterType
     DBFZ_FUSED_ZAMASU("FUSED ZAMASU", "Zamasu", Version.DBFZ),
     DBFZ_GOKU_BASE("BASE GOKU", "Goku base", Version.DBFZ),
     DBFZ_VEGETA_BASE("BASE VEGETA", "Vegeta base", Version.DBFZ),
+    DBFZ_COOLER("COOLER", "Cooler", Version.DBFZ),
+    DBFZ_VIDEL("VIDEL", "Videl", Version.DBFZ),
+    DBFZ_JIREN("JIREN", "Jiren", Version.DBFZ),
+    DBFZ_KID_GOKU("KID GOKU", "Kid Goku", Version.DBFZ),
 
     BBTAG_YIE("CHIE", "Chie", Version.BBTAG),
     BBTAG_NAOTO("NAOTO", "Naoto", Version.BBTAG),
@@ -508,9 +519,34 @@ public enum CharacterType
     BBTAG_RAGNA("RAGNA", "Ragna", Version.BBTAG),
     BBTAG_JUBEI("JUBEI", "Jubei", Version.BBTAG),
     BBTAG_RUBY("RUBY", "Ruby", Version.BBTAG),
-    BBTAG_KANJI("KANJI", "Kanji", Version.BBTAG);
+    BBTAG_KANJI("KANJI", "Kanji", Version.BBTAG),
 
-
+    MK11_BARAKA("BARAKA", "Baraka", Version.MK11),
+    MK11_CASSIE_CAGE("CASSIE CAGE", "Cassie", Version.MK11),
+    MK11_CETRION("CETRION", "Cetrion", Version.MK11),
+    MK11_DVORAH("DVORAH", "D'vorah", Version.MK11),
+    MK11_ERRON_BLACK("ERRON BLACK", "Erron", Version.MK11),
+    MK11_FROST("FROST", "Frost", Version.MK11),
+    MK11_GERAS("GERAS", "Geras", Version.MK11),
+    MK11_JACQUI("JACQUI", "Jacqui", Version.MK11),
+    MK11_JADE("JADE", "Jade", Version.MK11),
+    MK11_JAX("JAX", "Jax", Version.MK11),
+    MK11_JOHNNY_CAGE("Johnny Cage", "Johnny Cage", Version.MK11),
+    MK11_KABEL("KABAL", "Kabal", Version.MK11),
+    MK11_KANO("KANO", "Kano", Version.MK11),
+    MK11_KITANA("KITANA", "Kitana", Version.MK11),
+    MK11_KOLLECTOR("KOLLECTOR", "Kollector", Version.MK11),
+    MK11_KOTAL_KAHN("KOTAL KAHN", "Kotal Kahn", Version.MK11),
+    MK11_KUNG_LAO("KUNG LAO", "Kung Lao", Version.MK11),
+    MK11_LIU_KANG("LIU KANG", "Liu Kang", Version.MK11),
+    MK11_NOOB_SAIBOT("NOOB SAIBOT", "Noob Saibot", Version.MK11),
+    MK11_RAIDEN("RAIDEN", "Raiden", Version.MK11),
+    MK11_SCORPION("SCORPION", "Scorpion", Version.MK11),
+    MK11_SHAO_KAHN("SHAO KAHN", "Shao Kahn", Version.MK11),
+    MK11_SKARLET("SKARLET", "Skarlet", Version.MK11),
+    MK11_SONYA("SONYA", "Sonya", Version.MK11),
+    MK11_SUB_ZERO("SUB ZERO", "Sub-Zero", Version.MK11),
+    MK11_SHANG_TSUNG("SHANG TSUNG", "Shang-tsung", Version.MK11);
 
     private final String value;
     private final Version game;

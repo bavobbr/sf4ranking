@@ -41,8 +41,9 @@ class RankingsController
         def mvciplayers = queryService.findPlayers(null, null, 10, 0, Version.MVCI)
         def dbfzplayers = queryService.findPlayers(null, null, 10, 0, Version.DBFZ)
         def bbtagplayers = queryService.findPlayers(null, null, 10, 0, Version.BBTAG)
+        def mk11players = queryService.findPlayers(null, null, 10, 0, Version.MK11)
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
-        def last10Tournaments = queryService.lastTournaments(null, 10)
+        def last10Tournaments = queryService.lastTournaments(null, 20)
         def last10players = Player.list(order: "desc", sort: "id", max: 10)
 
         def cstats = CharacterStats.findAllByGame(Version.SF5)
@@ -50,7 +51,7 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [bbtagplayers: bbtagplayers, dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        [mk11players: mk11players, bbtagplayers: bbtagplayers, dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
     }
 
     def rank()
@@ -85,18 +86,25 @@ class RankingsController
         def lastUpdateMessage = Configuration.first().lastUpdateMessage
         def snapshot = null
         def lastTournament = queryService.lastTournament(pgame)
-        Date lastDate = lastTournament.date
+        Date lastDate = lastTournament?.date
+        def yearAgo = lastDate?.minus(365)
         if (pgame.end && pgame.end.isBefore(lastTournament.date.time)) {
             lastDate = pgame.end.toDate()
+            yearAgo = lastDate?.minus(365*2)
+            println "Using custom last date $lastDate iso last tournament at $lastTournament.date"
+        }
+
+        else if (pgame.end) {
+            yearAgo = lastDate?.minus(365*2)
+            println "Using custom last date $lastDate iso last tournament at $lastTournament.date"
         }
         println "Last tournament : $lastTournament"
         if (lastTournament) {
-            def yearAgo = lastDate.minus(365+182)
             if (players && !players.isEmpty()) {
                 snapshot = players?.first()?.snapshot(pgame)
                 players.each {
                     def numResults = queryService.countPlayerResults(it, pgame)
-                    def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo)
+                    def numResultsYear = queryService.countPlayerResultsAfter(it, pgame, yearAgo, lastDate)
                     it.metaClass.numResults << { numResults }
                     it.metaClass.numResultsYear << { Math.min(numResultsYear,12) }
                 }

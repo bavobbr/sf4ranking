@@ -58,6 +58,7 @@ class MaxoplataService
             case Version.DBFZ: return ["DBFZ"]
             case Version.BBTAG: return ["BB:CTB"]
             case Version.INJUSTICE2: return ["Injustice 2"]
+            case Version.MK11: return ["MK11"]
             default: return [version.name()]
         }
     }

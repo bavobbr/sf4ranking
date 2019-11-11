@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
-def gamename = "SF5"
-def smashname = "capcom"
+def gamename = "BBTAG"
+def smashname = "cross"
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -19,7 +19,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["capcom_cup_2018_sfvae_last_chance_qualifier"]
+def files = ["evo_2019"]
 def smashids = []
 
 def entries = []
@@ -38,10 +38,11 @@ files.each { fname ->
         if (game =~ smashname.toLowerCase()) {
             println "saved $name $id $game"
             smashids << id
+            if (!(game =~ /ladder/)) {
+                entries << [id: id, game: game, name: name, country: country]
+            }
         }
-        if (!(game =~ /ladder/)) {
-            entries << [id: id, game: game, name: name, country: country]
-        }
+
     }
 }
 
@@ -54,6 +55,7 @@ def cptscores = []
 
 top100.collect { playernode ->
     def smashid = playernode.smashId as String
+    //println "scanning $playernode"
     if (smashid && smashid in smashids) {
         def player = getPlayer(playernode.id)
         def name = player.name

@@ -122,27 +122,19 @@
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.SF5.name()]">World Rankings Street Fighter 5</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.T7.name()]">World Rankings Tekken 7</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.MVCI.name()]">World Rankings Marvel Infinite</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.DBFZ.name()]">World Rankings Dragon Ball Fighterz</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.BBTAG.name()]">World Rankings Blazblue Cross Tag Battle</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.T7.name()]">World Rankings Tekken 7</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.INJUSTICE2.name()]">World Rankings Injustice 2</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.GGXRD.name()]">World Rankings Guilty Gear</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
-                                            params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
-                                <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.BBCP.name()]">World Rankings Blazblue</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.MK11.name()]">World Rankings Mortal Kombat 11</g:link></li>
                                 <li class="divider"></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.IGAU.name()]">World Rankings Injustice</g:link></li>
@@ -156,6 +148,16 @@
                                             params="['id': Version.SUPER.name()]">World Rankings SSF4</g:link></li>
                                 <li><g:link action="rank" controller="rankings"
                                             params="['id': Version.VANILLA.name()]">World Rankings SF4</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.MKX.name()]">World Rankings Mortal Kombat X</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.INJUSTICE2.name()]">World Rankings Injustice 2</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.SKULLGIRLS.name()]">World Rankings Skullgirls</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.UMVC3.name()]">World Rankings Marvel vs Capcom 3</g:link></li>
+                                <li><g:link action="rank" controller="rankings"
+                                            params="['id': Version.KI.name()]">World Rankings Killer Instinct</g:link></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -165,27 +167,19 @@
                                 <li class="divider"></li>
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.SF5.name()]">Street Fighter 5</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.T7.name()]">Tekken 7</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.MVCI.name()]">Marvel Infinite</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.DBFZ.name()]">Dragon Ball Fighterz</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.BBTAG.name()]">Blazblue Cross Tag Battle</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.INJUSTICE2.name()]">Injustice 2</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.GGXRD.name()]">Guilty Gear Xrd</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.T7.name()]">Tekken 7</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
-                                            params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
-                                <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.BBCP.name()]">Blazblue CP</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.MK11.name()]">Mortal Kombat 11</g:link></li>
                                 <li class="divider"></li>
                                 <li><g:link action="tournaments" controller="rankings"
                                             params="['id': Version.IGAU.name()]">Injustice</g:link></li>
@@ -195,6 +189,16 @@
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.AE.name()]">SF4:AE</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.SUPER.name()]">SSF4</g:link></li>
                                 <li><g:link action="tournaments" controller="rankings" params="['id': Version.VANILLA.name()]">SF4</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.MKX.name()]">Mortal Kombat X</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.UMVC3.name()]">Marvel vs Capcom 3</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.KI.name()]">Killer Instinct</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.SKULLGIRLS.name()]">Skullgirls</g:link></li>
+                                <li><g:link action="tournaments" controller="rankings"
+                                            params="['id': Version.INJUSTICE2.name()]">Injustice 2</g:link></li>
                             </ul>
                         </li>
 
@@ -233,6 +237,7 @@
                                 <li><g:link controller="submit" action="list">List submitted tournaments</g:link></li>
                                 <li class="divider"></li>
                                 <li><g:link controller="api">Public REST/JSON API</g:link></li>
+                                <li><g:link controller="smash">Smash Seeding Tool (beta)</g:link></li>
                             </ul>
                         </li>
                         <g:if test="${SecurityUtils.subject.hasRole("Administrator")}">
@@ -382,9 +387,9 @@
         <li><g:link controller="rankings" action="events">Events</g:link></li>
         <li><g:link controller="rankings" action="rank" params="[id: Version.SF5.name()]">SF5 rankings</g:link></li>
         <li><g:link controller="rankings" action="rank" params="[id: Version.T7.name()]">Tekken rankings</g:link></li>
-        <li><g:link controller="rankings" action="rank" params="[id: Version.INJUSTICE2.name()]">Injustice rankings</g:link></li>
+        <li><g:link controller="rankings" action="rank" params="[id: Version.MK11.name()]">Mortal Kombat rankings</g:link></li>
         <li><g:link controller="rankings" action="rank" params="[id: Version.GGXRD.name()]">GG rankings</g:link></li>
-        <li><g:link controller="rankings" action="rank" params="[id: Version.UMVC3.name()]">Marvel rankings</g:link></li>
+        <li><g:link controller="rankings" action="rank" params="[id: Version.MVCI.name()]">Marvel rankings</g:link></li>
     </ul>
 
     <h2 class="slidebar-header">Social Media</h2>

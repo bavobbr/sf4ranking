@@ -122,13 +122,13 @@ public enum CptTournament
     }
 
     public Integer getRankingScore(Integer place) {
-        def scores_ranking = [[150], [70], [40], [20], [10] * 2, [1] * 2].flatten()
+        def scores_ranking = [[200], [100], [80], [20], [10] * 2, [5] * 2].flatten()
         return place <= scores_ranking.size()? scores_ranking[place-1] : 0
     }
 
     public Integer getPremierScore(Integer place) {
-        def scores_premier = [[700], [270], [200], [160], [130] * 2, [100] * 2, [70] * 4, [40] * 4, [20] * 8, [10] * 8,
-                              [1] * 16].flatten()
+        def scores_premier = [[700], [350], [200], [160], [130] * 2, [100] * 2, [70] * 4, [40] * 4, [20] * 8, [10] * 8,
+                              [5] * 16].flatten()
         return place <= scores_premier.size()? scores_premier[place-1] : 0
     }
 
@@ -137,8 +137,8 @@ public enum CptTournament
     }
 
     public Integer getEvoScore(Integer place) {
-        def scores_evo = [[1750], [850], [450], [400], [350] * 2, [270] * 2, [200] * 4, [160] * 4, [130] * 8, [100] * 8,
-                          [70] * 16, [40] * 16, [20] * 32, [10] * 32, [1] * 64].flatten()
+        def scores_evo = [[1000], [500], [300], [200], [160] * 2, [130] * 2, [100] * 4, [80] * 4, [60] * 8, [50] * 8,
+                          [40] * 16, [30] * 16, [20] * 32, [10] * 32, [5] * 64].flatten()
         return place <= scores_evo.size()? scores_evo[place-1] : 0
     }
 

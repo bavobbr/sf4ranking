@@ -406,8 +406,9 @@ class StatsController
         characters.each { GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
+            def date = r.tournament.game.end?.toDate()?: new Date()
             def score = ScoringSystem.
-                    getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                    getDecayedScore(r.tournament.date, date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
             stats.decayedScoreAccumulated += score
         }
     }
@@ -420,8 +421,9 @@ class StatsController
         characters.each { GameCharacter gc ->
             CharacterStats stats = statsmap[gc.characterType]
             Result r = gc.gameTeam.result
+            def end = r.tournament.game.end?.toDate()?: new Date()
             if (window.isBefore(r.tournament.date.time)) {
-                def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                def score = ScoringSystem.getDecayedScore(r.tournament.date, end, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                 stats.trendingScoreAccumulated += score
             }
         }
@@ -496,8 +498,9 @@ class StatsController
         def top100 = queryService.findPlayers(null, null, 100, 0, game)
         top100.each {Player p ->
             p.results.findAll {it.tournament.game == game}.each {Result r ->
+                def end = r.tournament.game.end?.toDate()?: new Date()
                 def score = ScoringSystem.
-                        getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                        getDecayedScore(r.tournament.date, end, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                 r.characterTeams.each {
                     it.pchars.each {
                         CharacterStats cstats = statsmap[it.characterType]
@@ -515,8 +518,9 @@ class StatsController
         def top100 = queryService.findPlayers(null, null, 100, 0, game)
         top100.each {Player p ->
             p.results.findAll {it.tournament.game == game}.each {Result r ->
+                def end = r.tournament.game.end?.toDate()?: new Date()
                 if (window.isBefore(r.tournament.date.time)) {
-                    def score = ScoringSystem.getDecayedScore(r.tournament.date, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
+                    def score = ScoringSystem.getDecayedScore(r.tournament.date, end, r.place, r.tournament.tournamentType, r.tournament.tournamentFormat)
                     r.characterTeams.each {
                         it.pchars.each {
                             CharacterStats cstats = statsmap[it.characterType]

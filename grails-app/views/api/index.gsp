@@ -68,6 +68,18 @@ The JSON and XML formats give you some high-level details on the player, but als
     <li><g:link controller="api" action="top" params="[cpt: 'true', size: '20', format: 'json']">/api/top?cpt&size=20&format=json</g:link></li>
 </ul>
 
+
+<h3>Seedings API</h3>
+
+You can get a top player seedings per game and in multiple formats. Default is HTML for SF5. There is JSON and XML as well.
+The JSON and XML formats give you some high-level details on the player, but also the ID which you can use to get more info using for example <i>/api/player/id/{id}</i>
+<ul>
+    <li><g:link controller="api" action="seeds" params="[game: 'SF5', format: 'xml']">/seeds/top?game=SF5&format=xml</g:link></li>
+    <li><g:link controller="api" action="seeds" params="[game: 'MKX', size: '20']">/seeds/top?game=MKX&size=20</g:link></li>
+    <li><g:link controller="api" action="seeds" params="[game: 'MKX', size: '10', offset: '50']">/seeds/top?game=MKX&size=20&offset=50</g:link></li>
+    <li><g:link controller="api" action="seeds" params="[game: 'UMVC3', size: '20', format: 'json']">/seeds/top?game=UMVC3&size=20&format=json</g:link></li>
+</ul>
+
 Do not use the API as a remote database for clients such as mobile apps or websites. If you create clients that directly use this API, make sure it is efficient.
 </body>
 </html>

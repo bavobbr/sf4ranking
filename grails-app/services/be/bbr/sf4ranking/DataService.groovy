@@ -386,9 +386,9 @@ class DataService {
             log.info "Importing tournament $tjson.name at $tjson.date"
             CountryCode country = tjson.country as CountryCode
             Version version = tjson.version as Version
-            if (Environment.current == Environment.DEVELOPMENT) {
+  /*          if (Environment.current == Environment.DEVELOPMENT) {
                 if (!(version in [Version.SF5])) return
-            }
+            }*/
             Date date = Date.parse("dd-MM-yyyy", tjson.date as String)
             TournamentFormat format = TournamentFormat.fromString(tjson.format) ?: TournamentFormat.UNKNOWN
             WeightingType weightingType = WeightingType.fromString(tjson.wtype) ?: WeightingType.AUTO
@@ -528,25 +528,29 @@ class DataService {
             player.onlineId = it.onlineId
             player.twitch = it.twitch
             def rankings = []
+            log.info("Exporting player $it.name with rankings ${it.rankings}")
             it.rankings.each {
-                def ranking = [:]
-                ranking.rank = it.rank
-                ranking.totalRank = it.totalRank
-                ranking.trendingRank = it.trendingRank
-                ranking.score = it.score
-                ranking.totalScore = it.totalScore
-                ranking.trendingScore = it.trendingScore
-                ranking.skill = it.skill
-                ranking.oldRank = it.oldRank
-                ranking.oldScore = it.oldScore
-                ranking.snapshot = it.snapshot
-                def mainTeam = []
-                it.mainCharacters.each {
-                    mainTeam << it.name()
+                if (it == null) log.info("NULL ranking found!")
+                else {
+                    def ranking = [:]
+                    ranking.rank = it.rank
+                    ranking.totalRank = it.totalRank
+                    ranking.trendingRank = it.trendingRank
+                    ranking.score = it.score
+                    ranking.totalScore = it.totalScore
+                    ranking.trendingScore = it.trendingScore
+                    ranking.skill = it.skill
+                    ranking.oldRank = it.oldRank
+                    ranking.oldScore = it.oldScore
+                    ranking.snapshot = it.snapshot
+                    def mainTeam = []
+                    it.mainCharacters.each {
+                        mainTeam << it.name()
+                    }
+                    ranking.mainTeam = mainTeam
+                    ranking.game = it.game.name()
+                    rankings << ranking
                 }
-                ranking.mainTeam = mainTeam
-                ranking.game = it.game.name()
-                rankings << ranking
             }
             player.rankings = rankings
             players << player
@@ -707,6 +711,7 @@ class DataService {
         log.info("Clearing cache...")
         grailsCacheManager.getCache('index')?.clear()
         grailsCacheManager.getCache('top')?.clear()
+        grailsCacheManager.getCache('seedings')?.clear()
         grailsCacheManager.getCache('cpt')?.clear()
         grailsCacheManager.getCache('cptStats')?.clear()
         grailsCacheManager.getCache('cptChars')?.clear()

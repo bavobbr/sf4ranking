@@ -117,6 +117,38 @@ class ApiController {
         }
     }
 
+    @Cacheable('seedings')
+    def seeds() {
+        println "Rendering top with params $params"
+        Version game = Version.fromString(params.game)?: Version.SF5
+        Integer size = params.getInt("size", 200) > 500? 500 : params.getInt("size", 500)
+        Integer offset = params.getInt("offset", 0)
+        def players = []
+        players = queryService.findPlayers(null, null, size, offset, game, RankingType.ACTUAL)
+        players = players.sort { it.skill(game)}.reverse()
+        def topplayers = players.collect { p ->
+            [name: p.name,
+             fullname: p.realname,
+             weight: p.skill(game),
+             country: p.countryCode?.name()?.toLowerCase(),
+             rank: p.rank(game),
+             id: p.id,
+             score: p.score(game),
+             totalscore: p.totalScore(game),
+             cptRank: p.cptGlobal()?.rank,
+             cptNaRank: p.findCptRanking(Region.NA)?.rank,
+             cptLaRank: p.findCptRanking(Region.LA)?.rank,
+             cptAoRank: p.findCptRanking(Region.AO)?.rank,
+             cptEuRank: p.findCptRanking(Region.EU)?.rank
+            ]
+        }
+        withFormat {
+            html(players: topplayers, game: game)
+            json { render topplayers as JSON }
+            xml { render topplayers as XML }
+        }
+    }
+
     @Cacheable('top')
     def top() {
         println "Rendering top with params $params"
@@ -142,6 +174,7 @@ class ApiController {
              smashId: p.smashId,
              maxoplataId: p.maxoplataId,
              onlineId: p.onlineId,
+             weight: p.skill(game),
              totalscore: p.totalScore(game),
              trendingscore: p.trendingScore(game),
              cptScore: p.cptScore(),
@@ -213,7 +246,7 @@ class ApiController {
                          score         : ScoringSystem.getScore(it.place, it.tournament.tournamentType),
                          legacyScore   : ScoringSystem.getLegacyScore(it.place, it.tournament.weight, it.tournament.tournamentFormat),
                          date          : it.tournament.date,
-                         type          : it.tournament.tournamentType.name(),
+                         type          : it.tournament.tournamentType?.name(),
                          characters    : it.characterTeams.collect {
                              it.pchars.collect {
                                  it.characterType.name()

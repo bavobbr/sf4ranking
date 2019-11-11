@@ -14,18 +14,19 @@ public enum Version
     AE2012("SSF4:AE 2012", 1, new DateTime().withDate(2012, 1, 8), new DateTime().withDate(2014, 6, 1)),
     USF4("Ultra SF4", 1, new DateTime().withDate(2014, 6, 1), new DateTime().withDate(2016, 2, 16)),
     UMVC3("Ultimate Marvel vs Capcom 3", 3, new DateTime().withDate(2011, 2, 26), new DateTime().withDate(2017, 9, 19)),
-    KI("Killer Instinct", 1, new DateTime().withDate(2013, 11, 22), null),
+    KI("Killer Instinct", 1, new DateTime().withDate(2013, 11, 22), new DateTime().withDate(2018, 8, 6)),
     SKULLGIRLS("Skullgirls", 0, new DateTime().withDate(2012, 4, 15), new DateTime().withDate(2015, 12, 31)),
     BBCP("BlazBlue", 1, new DateTime().withDate(2013, 12, 1), new DateTime().withDate(2018, 6, 23)),
     IGAU("Injustice", 1, new DateTime().withDate(2013, 4, 18), new DateTime().withDate(2015, 4, 26)),
-    MKX("Mortal Kombat X", 1, new DateTime().withDate(2015, 4, 26), null),
+    MKX("Mortal Kombat X", 1, new DateTime().withDate(2015, 4, 26), new DateTime().withDate(2017, 10, 1)),
     SF5("Street Fighter 5", 1, new DateTime().withDate(2016, 2, 16), null),
     T7("Tekken 7", 1, new DateTime().withDate(2015, 7, 19), null),
     INJUSTICE2("Injustice 2", 1, new DateTime().withDate(2017, 5, 20), null),
     GGXRD("Guilty Gear Xrd", 1, new DateTime().withDate(2015, 1, 1), null),
     MVCI("Marvel Infinite", 2, new DateTime().withDate(2017, 9, 19), null),
     DBFZ("Dragon Ball Fighterz", 3, new DateTime().withDate(2018, 1, 27), null),
-    BBTAG("Blazblue: Cross Tag Battle", 2, new DateTime().withDate(2018, 6, 23), null);
+    BBTAG("Blazblue: Cross Tag Battle", 2, new DateTime().withDate(2018, 6, 23), null),
+    MK11("Mortal Kombat 11", 1, new DateTime().withDate(2019, 5, 1), null);
 
     private String value;
     private Integer teamSize;
@@ -115,6 +116,8 @@ public enum Version
                 return Version.DBFZ;
             case BBTAG:
                 return Version.BBTAG;
+            case MK11:
+                return Version.MK11;
             default:
                 return Version.UNKNOWN;
         }

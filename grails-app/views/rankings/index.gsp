@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
+        <g:img dir="images/banners" file="sfv.jpg" class="img-responsive"/>
         <h4>SF5 Top 10 trending characters</h4>
 
         <div>
@@ -128,9 +128,10 @@
 
 <div class="row">
 
+
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
+        <g:img dir="images/banners" file="mk11.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MK11, players: mk11players]"/>
     </div>
 
     <div class="col-md-6 top10box">
@@ -144,8 +145,8 @@
 <div class="row">
 
     <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+        <g:img dir="images/banners" file="injustice2.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.INJUSTICE2, players: inj2players]"/>
     </div>
 
     <div class="col-md-6 top10box">
@@ -221,11 +222,23 @@
     </div>
 </div>
 
+<div class="row">
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="mkx.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.MKX, players: mkxplayers]"/>
+    </div>
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="ae2012.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.AE2012, players: aeplayers]"/>
+    </div>
+</div>
 
 
 
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Latest Tournaments</h3>
@@ -235,28 +248,12 @@
                 <ul>
                     <g:each in="${lastTournaments}" var="t">
                         <li><g:link controller="rankings" action="tournament"
-                                    params="[id: t.id]">${t.name}</g:link></li>
+                                    params="[id: t.id]">${t.name} in ${t.countryCode?.name} region ${t.region?.value}</g:link></li>
                     </g:each>
             </div>
         </div>
     </div>
 
-
-    <div class="col-md-5">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Newest Players</h3>
-            </div>
-
-            <div class="panel-body">
-                <ul>
-                    <g:each in="${lastPlayers}" var="p">
-                        <li><g:link controller="rankings" action="player"
-                                    params="[id: p.id]">${p.name}</g:link></li>
-                    </g:each>
-            </div>
-        </div>
-    </div>
 </div>
 </body>
 </html>

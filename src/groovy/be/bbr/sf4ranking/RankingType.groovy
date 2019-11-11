@@ -5,7 +5,8 @@ enum RankingType {
 
     ACTUAL("Actual", "rank"),
     ALLTIME("Alltime", "totalRank"),
-    TRENDING("Trending", "trendingRank")
+    TRENDING("Trending", "trendingRank"),
+    WEIGHT("Weight", "skill")
 
     String name
     String field

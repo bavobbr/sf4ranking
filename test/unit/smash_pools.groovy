@@ -1,13 +1,13 @@
 import groovy.json.JsonSlurper
 import org.apache.commons.math.stat.descriptive.SummaryStatistics
 
-def gamename = "BBCP"
-def smashname = "blaz"
-def smashtournament = "evo-2018"
-def eventname = "s"
+def gamename = "DBFZ"
+def smashname = "dragon"
+def smashtournament = "evo-2019"
+def eventname = "dragon-ball-fighterz"
 //https://smash.gg/tournament/evo-2018/events/street-fighter-v-arcade-edition/brackets/204959/663063/
 //https://smash.gg/tournament/evo-2018/events/blazblue-cross-tag-battle/brackets/204954/662899/
-def reddit = true
+def reddit = false
 
 public List<String> getTopPlayers(String game) {
     JsonSlurper slurper = new JsonSlurper()
@@ -25,7 +25,7 @@ public def getPlayer(Integer id) {
     return player
 }
 
-def files = ["capcom_cup_2018_sfvae_last_chance_qualifier"]
+def files = ["evo_2019"]
 def idToPool = [:]
 def idToSeed = [:]
 def idToName = [:]
@@ -218,5 +218,6 @@ if (reddit) {
     println "| $statistics.min | $statistics.max | $statistics.sum | $statistics.mean | $statistics.variance | $statistics.standardDeviation |"
 
 }
-
-println "$statistics.min, $statistics.max, $statistics.sum, $statistics.mean, $statistics.variance, $statistics.standardDeviation"
+else {
+    println "$statistics.min, $statistics.max, $statistics.sum, $statistics.mean, $statistics.variance, $statistics.standardDeviation"
+}

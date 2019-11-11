@@ -2,7 +2,7 @@ import groovy.transform.Canonical
 import groovy.transform.ToString
 import groovy.transform.TupleConstructor
 
-def file = new File("/Users/bbr/Desktop/newsmash/socal_regionals_2018.csv")
+def file = new File("/Users/bbr/Desktop/newsmash/evo_2019.csv")
 
 @TupleConstructor
 @ToString
