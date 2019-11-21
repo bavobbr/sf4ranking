@@ -41,17 +41,17 @@
                         <td><g:link controller="stats" action="character"
                                     params="[charname: c.characterType.name(), game: Version.SF5.name()]">
                             <g:img dir="images/chars/${Version.generalize(Version.SF5).name().toLowerCase()}"
-                                   file="${c.characterType.name().toLowerCase() + '.png'}" width="22" height="25"
-                                   alt="${c.characterType.value}"
+                                   file="${c.characterType?.name()?.toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${c.characterType?.value}"
                                    class="charimg"/>
-                            ${c.characterType.value}
+                            ${c.characterType?.value}
                         </g:link>
                         </td>
                         <td>
                             ${c.trendingScoreAccumulated}
                         </td>
                         <td>
-                            ${c.trendingPlayer.name}
+                            ${c.trendingPlayer?.name}
                         </td>
                         <td>
                             ${c.top1finishesTrending}
@@ -68,56 +68,66 @@
 &NonBreakingSpace;
 <div class="row">
 
-    <div class="col-md-6 top10box">
-        <g:img dir="images/banners" file="dbfz.jpg" class="img-responsive"/>
-        <g:render template="/templates/top20" model="[game: Version.DBFZ, players: dbfzplayers]"/>
-    </div>
 
 
-    <div class="col-md-6">
-
-        <table class="table table-striped table-hover table-condensed table-responsive">
-            <tr>
-                <td class="amazon_row">
-                    <script type="text/javascript">
-                        amzn_assoc_tracking_id = "fgwora-20";
-                        amzn_assoc_ad_mode = "manual";
-                        amzn_assoc_ad_type = "smart";
-                        amzn_assoc_marketplace = "amazon";
-                        amzn_assoc_region = "US";
-                        amzn_assoc_design = "enhanced_links";
-                        amzn_assoc_asins = "B07MVP7K6Z";
-                        amzn_assoc_placement = "adunit";
-                        amzn_assoc_linkid = "d3dcc04866363f3af5048b4e0e9804eb";
-                    </script>
-                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-<br/>
-                    <script type="text/javascript">
-                        amzn_assoc_tracking_id = "fgwora-20";
-                        amzn_assoc_ad_mode = "manual";
-                        amzn_assoc_ad_type = "smart";
-                        amzn_assoc_marketplace = "amazon";
-                        amzn_assoc_region = "US";
-                        amzn_assoc_design = "enhanced_links";
-                        amzn_assoc_asins = "B07L6K5117";
-                        amzn_assoc_placement = "adunit";
-                        amzn_assoc_linkid = "aa82c908b72962dec48645de6a8052f0";
-                    </script>
-                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-
-            </tr>
-        </table>
-    </div>
-
-</div>
-&NonBreakingSpace;
-<div class="row">
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
         <g:render template="/templates/top20" model="[game: Version.T7, players: t7players]"/>
     </div>
 
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="tekken7.png" class="img-responsive"/>
+        <h4>T7 Top 10 trending characters</h4>
+
+        <div>
+            <table class="table table-striped table-hover table-condensed table-responsive">
+                <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Trending score</th>
+                    <th>Top trending player</th>
+                    <th>Character wins</th>
+                </tr>
+                </thead>
+                <g:each in="${topt7chars}" var="c" status="idx">
+                    <tr class="top10table">
+                        <td>${idx + 1}</td>
+                        <td><g:link controller="stats" action="character"
+                                    params="[charname: c.characterType.name(), game: Version.T7.name()]">
+                            <g:img dir="images/chars/${Version.generalize(Version.T7).name().toLowerCase()}"
+                                   file="${c.characterType?.name()?.toLowerCase() + '.png'}" width="22" height="25"
+                                   alt="${c.characterType?.value}"
+                                   class="charimg"/>
+                            ${c.characterType?.value}
+                        </g:link>
+                        </td>
+                        <td>
+                            ${c.trendingScoreAccumulated}
+                        </td>
+                        <td>
+                            ${c.trendingPlayer?.name}
+                        </td>
+                        <td>
+                            ${c.top1finishesTrending}
+                        </td>
+                    </tr>
+                </g:each>
+            </table></div>
+        View <g:link action="index" controller="stats" params="['id': Version.SF5.name()]"
+                     class="toplink">all character rankings (alltime, current and trending)</g:link>
+    </div>
+
+
+</div>
+&NonBreakingSpace;
+<div class="row">
+
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="dbfz.jpg" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.DBFZ, players: dbfzplayers]"/>
+    </div>
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="ggxrd.jpg" class="img-responsive"/>
@@ -157,35 +167,12 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 top10box">
-        <td class="amazon_row">
-            <script type="text/javascript">
-                amzn_assoc_tracking_id = "fgwora-20";
-                amzn_assoc_ad_mode = "manual";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_design = "enhanced_links";
-                amzn_assoc_asins = "B01N5OKGLH";
-                amzn_assoc_placement = "adunit";
-                amzn_assoc_linkid = "89415fc09da7131289c63003a8273cf6";
-            </script>
-            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-            <br/>
-            <script type="text/javascript">
-                amzn_assoc_tracking_id = "fgwora-20";
-                amzn_assoc_ad_mode = "manual";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_design = "enhanced_links";
-                amzn_assoc_asins = "B07HCTJC91";
-                amzn_assoc_placement = "adunit";
-                amzn_assoc_linkid = "8aac245e0ad381fac70d68a01bb6c2ec";
-            </script>
-            <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 
+    <div class="col-md-6 top10box">
+        <g:img dir="images/banners" file="bbcp.png" class="img-responsive"/>
+        <g:render template="/templates/top20" model="[game: Version.BBTAG, players: bbtagplayers]"/>
     </div>
+
 
     <div class="col-md-6 top10box">
         <g:img dir="images/banners" file="igau.png" class="img-responsive"/>

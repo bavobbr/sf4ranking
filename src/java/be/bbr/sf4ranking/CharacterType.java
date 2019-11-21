@@ -290,6 +290,8 @@ public enum CharacterType
     SF5_SAGAT("SAGAT", "Sagat", Version.SF5),
     SF5_CODY("Cody", "Cody", Version.SF5),
     SF5_KAGE("Kage", "Kage", Version.SF5),
+    SF5_LUCIA("Lucia", "Lucia", Version.SF5),
+    SF5_POISON("Poison", "Poison", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),

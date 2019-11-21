@@ -277,23 +277,7 @@ This is a list of the best ${game.value} tournament players world-wide. The ${ga
         </div>
     </div>
 
-    <div class="col-md-5">
-        <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "false";
-            amzn_assoc_tracking_id = "capcombooks-20";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Gaming Books";
-            amzn_assoc_default_search_phrase = "capcom";
-            amzn_assoc_default_category = "Books";
-            amzn_assoc_linkid = "2093b0ce7f3bad6de66a5be83c60edc5";
-            amzn_assoc_default_browse_node = "283155";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    </div>
+
 </div>
 </body>
 </html>

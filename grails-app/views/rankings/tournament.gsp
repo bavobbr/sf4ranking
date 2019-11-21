@@ -63,29 +63,7 @@
         </tr>
     </table>
 </div>
-%{--<script id="mNCC" language="javascript">
-    medianet_width = "728";
-    medianet_height = "90";
-    medianet_crid = "626923800";
-    medianet_versionId = "3111299";
-</script>
 
-<script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>--}%
-
-
-
-<script type="text/javascript">
-    amzn_assoc_tracking_id = "fgwora-20";
-    amzn_assoc_ad_mode = "manual";
-    amzn_assoc_ad_type = "smart";
-    amzn_assoc_marketplace = "amazon";
-    amzn_assoc_region = "US";
-    amzn_assoc_design = "enhanced_links";
-    amzn_assoc_asins = "B07L6KD1K3";
-    amzn_assoc_placement = "adunit";
-    amzn_assoc_linkid = "6b679290b129908eef2fdae327456a12";
-</script>
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 <h2 class="tournament"><large>${tournament.game.value} rankings</large></h2>
 
 <div class="table-responsive">
@@ -180,26 +158,7 @@
 </g:if>
 
 
-%{--<div class="row top10box" align="center">
-    <div class="col-md-12" align="center">
-        <script type="text/javascript">
-            amzn_assoc_placement = "adunit0";
-            amzn_assoc_search_bar = "true";
-            amzn_assoc_tracking_id = "search_sticks-20";
-            amzn_assoc_search_bar_position = "bottom";
-            amzn_assoc_ad_mode = "search";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_title = "Arcade sticks";
-            amzn_assoc_default_search_phrase = "arcade stick";
-            amzn_assoc_default_category = "VideoGames";
-            amzn_assoc_linkid = "c2c81da42d0f20f02821f3c181733a91";
-            amzn_assoc_default_browse_node = "468642";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    </div>
-</div>--}%
+
 
 
 </body>

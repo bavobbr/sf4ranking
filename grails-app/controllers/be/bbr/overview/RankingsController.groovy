@@ -51,7 +51,12 @@ class RankingsController
         cstats.removeAll {it.characterType == CharacterType.UNKNOWN}
         cstats = cstats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
 
-        [mk11players: mk11players, bbtagplayers: bbtagplayers, dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats]
+        def t7stats = CharacterStats.findAllByGame(Version.T7)
+        log.info "returning ${cstats.size()} char stats"
+        t7stats.removeAll {it.characterType == CharacterType.UNKNOWN}
+        t7stats = t7stats.sort {a, b -> b.trendingScoreAccumulated <=> a.trendingScoreAccumulated}.take(10)
+
+        [mk11players: mk11players, bbtagplayers: bbtagplayers, dbfzplayers:dbfzplayers, mvciplayers:mvciplayers, aeplayers: aeplayers, ggplayers: ggplayers, inj2players: inj2players, t7players: t7players, sf5players: sf5players, kiplayers: kiplayers, sgplayers: sgplayers, umvc3players: umvc3players, igauplayers: igauplayers, usf4players: usf4players, bbcpplayers: bbcpplayers, mkxplayers: mkxplayers, updateMessage: lastUpdateMessage, lastTournaments: last10Tournaments, lastPlayers: last10players, topsf5chars: cstats, topt7chars: t7stats]
     }
 
     def rank()

@@ -504,7 +504,7 @@ class RankingService {
     }
 
     private Player applyDirectQualifiers() {
-        def player = Player.findByName("MenaRD")
+        def player = Player.findByName("Gachikun")
         player.findOrCreateCptRanking(Region.GLOBAL).qualified = true
         return player
     }

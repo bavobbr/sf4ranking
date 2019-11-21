@@ -196,28 +196,6 @@
             </p>
         </g:else>
         <br/>
-%{--        <script id="mNCC" language="javascript">
-            medianet_width = "300";
-            medianet_height = "250";
-            medianet_crid = "839144714";
-            medianet_versionId = "3111299";
-        </script>
-        <script src="//contextual.media.net/nmedianet.js?cid=8CU54R87O"></script>--}%
-
-
-        <script type="text/javascript">
-            amzn_assoc_tracking_id = "fgwora-20";
-            amzn_assoc_ad_mode = "manual";
-            amzn_assoc_ad_type = "smart";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
-            amzn_assoc_design = "enhanced_links";
-            amzn_assoc_asins = "B07L6KD1K3";
-            amzn_assoc_placement = "adunit";
-            amzn_assoc_linkid = "6b679290b129908eef2fdae327456a12";
-        </script>
-        <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-
 
 
 
