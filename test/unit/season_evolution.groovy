@@ -10,14 +10,17 @@ def sf5chars = CharacterType.values().findAll { it.game == Version.SF5 }.collect
 def months = []
 
 def s1 = new DateTime().withDate(2016, 1, 1)
+def s1b = new DateTime().withDate(2016, 6, 1)
 def s2 = new DateTime().withDate(2016, 12, 20)
 def s2b = new DateTime().withDate(2017, 5, 31)
 def s3 = new DateTime().withDate(2018, 1, 16)
 def s3b = new DateTime().withDate(2018, 4, 15)
+def s4 = new DateTime().withDate(2018, 12, 20)
+def s4b = new DateTime().withDate(2019, 6, 1)
 def end = new DateTime()
 
-//List<List<Date>> periods = [[s1, s2], [s2, s2b], [s2b, s3], [s3, s3b], [s3b, end]]
-List<List<Date>> periods = [[s1, s2], [s2, s3], [s3, end]]
+List<List<Date>> periods = [[s1, s1b], [s1b, s2], [s2, s2b], [s2b, s3], [s3, s3b], [s3b, s4], [s4, s4b], [s4b, end]]
+//List<List<Date>> periods = [[s1, s2], [s2, s3], [s3, s4], [s4, end]]
 
 periods.each { List<Date> period ->
     def refdate = period[0]
@@ -58,7 +61,9 @@ periods.each { List<Date> period ->
 }
 
 def labels = months.collect { it.keySet()[0] }.collect { DateTime date -> new SimpleDateFormat("dd/MM/yy").format(new Date(date.millis)) }
-labels.add(0, "")
+labels.add(0, "name")
+labels.add(1, "season")
+labels.add(2, "image")
 println labels.join(",")
 
 sf5chars.each { name ->
@@ -80,6 +85,9 @@ sf5chars.each { name ->
 println labels.join(",")
 sf5chars.each { name ->
     print name-"SF5_"+","
+    print "s1"+","
+    def url = "http://rank.shoryuken.com/static/images/chars/sf5/"
+    print "$url${name.toLowerCase()}.png,"
     def ranks = months.collect {
         def charResults = it.values()[0]
         def sortedResult = charResults.sort { a, b -> b.value <=> a.value }
