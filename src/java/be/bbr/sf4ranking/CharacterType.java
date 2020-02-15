@@ -292,6 +292,9 @@ public enum CharacterType
     SF5_KAGE("Kage", "Kage", Version.SF5),
     SF5_LUCIA("Lucia", "Lucia", Version.SF5),
     SF5_POISON("Poison", "Poison", Version.SF5),
+    SF5_HONDA("Honda", "Honda", Version.SF5),
+    SF5_GILL("Gill", "Gill", Version.SF5),
+    SF5_SETH("Seth", "Seth", Version.SF5),
 
     T7_AKUMA("AKUMA", "Akuma", Version.T7),
     T7_ALISA_BOSCONOVITCH("ALISA BOSCONOVITCH", "Alisa", Version.T7),
@@ -340,6 +343,9 @@ public enum CharacterType
     T7_MARDUK("MARDUK", "Marduk", Version.T7),
     T7_NEGAN("NEGAN", "Negan", Version.T7),
     T7_DRAGUNOV("DRAGUNOV", "Dragunov", Version.T7),
+    T7_GANRYU("GANRYU", "Ganryu", Version.T7),
+    T7_LEROY("LEROY", "Leroy", Version.T7),
+    T7_ZAFINA("ZAFINA", "Zafina", Version.T7),
 
     INJ2_AQUAMAN("AQUAMAN", "Aquaman", Version.INJUSTICE2),
     INJ2_ATROCITUS("ATROCITUS", "Atrocitus", Version.INJUSTICE2),
@@ -480,7 +486,9 @@ public enum CharacterType
     DBFZ_COOLER("COOLER", "Cooler", Version.DBFZ),
     DBFZ_VIDEL("VIDEL", "Videl", Version.DBFZ),
     DBFZ_JIREN("JIREN", "Jiren", Version.DBFZ),
-    DBFZ_KID_GOKU("KID GOKU", "Kid Goku", Version.DBFZ),
+    DBFZ_KID_GOKU("GT GOKU", "Kid Goku", Version.DBFZ),
+    DBFZ_GOGETA("GOGETA", "Gogeta", Version.DBFZ),
+    DBFZ_JANEMBA("JANEMBA", "Janemba", Version.DBFZ),
 
     BBTAG_YIE("CHIE", "Chie", Version.BBTAG),
     BBTAG_NAOTO("NAOTO", "Naoto", Version.BBTAG),
